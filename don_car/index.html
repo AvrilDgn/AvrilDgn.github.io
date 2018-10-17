@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="img/logo.png">
+
+		<title>Don Car - прокат и аренда автомобилей</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<!-- Fonts	 -->
+		<link href="css/fonts.css" rel="stylesheet"> 
+		<!-- slick-slider -->
+		<link rel="stylesheet" href="slick/slick-theme.css">
+		<link rel="stylesheet" href="slick/slick.css">
+		<!-- Custom styles for this template -->
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="leaves">
+					<div class="leaves__item leaves__item__1"><img src="img/header/leaves_1.png" alt="Лист 1"></div>
+					<div class="leaves__item leaves__item__2"><img src="img/header/leaves_2.png" alt="Лист 2"></div>
+					<div class="leaves__item leaves__item__3"><img src="img/header/leaves_3.png" alt="Лист 3"></div>
+					<div class="leaves__item leaves__item__4"><img src="img/header/leaves_4.png" alt="Лист 4"></div>
+					<div class="leaves__item leaves__item__5"><img src="img/header/leaves_5.png" alt="Лист 5"></div>
+					<div class="leaves__item leaves__item__6"><img src="img/header/leaves_6.png" alt="Лист 6"></div>
+					<div class="leaves__item leaves__item__7"><img src="img/header/leaves_7.png" alt="Лист 7"></div>
+				</div>
+				<div class="header__top-menu top-menu">
+					<div class="container">
+						<div class="row">
+							<div class="col-6 col-md-3 col-lg-2">
+								<div class="top-menu__logo">
+									<a href="#" class="logo">
+										<img class="logo__img" src="img/logo.png" alt="Don Car - прокат и аренда автомобилей">
+										<span class="logo__text">
+											Автопрокат номер один
+										</span>
+									</a>
+								</div>
+							</div>
+							<div class="d-none d-md-block col">
+								<nav class="top-menu__nav nav">
+									<ul>
+										<li><a href="#">ГЛАВНАЯ</a></li>
+										<li><a href="#choice-car">АВТОПАРК</a></li>
+										<li><a href="#comparison">ТАРИФЫ И УСЛУГИ</a></li>
+										<li><a href="#conditions">УЛОВИЯ АРЕНДЫ</a></li>
+										<li><a href="#reviews">ОТЗЫВЫ,КОНТАКТЫ</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="d-none d-md-block col-md-3">
+								<div class="top-menu__call-me call-me">
+									<a class="call-me__button button" href="tel:+792318290000">
+										позвоните мне
+									</a>
+									<div class="call-me__ph-number">
+										+ 7 923 18290000
+									</div>
+								</div>
+							</div>
+							<div class="col d-md-none d-flex justify-content-end">
+								<button class="top-menu__nav-btn nav-btn"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header__title-block title-block">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<h1 class="title-block__main-heading main-heading">
+									<span>ПРОКАТ И АРЕНДА</span> 
+									<span class="main-heading_amber">АВТОМОБИЛЕЙ</span>
+								</h1>
+								<p class="title-block__location">
+									<span>В Новосибирске</span>
+								</p>
+								<p class="title-block__classes">
+									<span>Автомобилей классов: Эконом, среднего</span>
+									<span>и премиум класса, микроавтобусы</span> 
+									<span>от 1600 рублей</span>
+								</p>
+								<a href="#choice-car" class="title-block__button button">
+									ВЫБРАТЬ АВТОМОБИЛЬ
+								</a>
+								<p class="title-block__ordering">
+									<span>Закажи авто прямо сейчас и мы доставим</span>
+									<span>авто в любою точку Новосибирска за 30-60</span>
+									<span>минут</span>
+							 	</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<section class="advantages">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<ul class="advantages__blocks">
+								<li class="advantages__blocks__block advantages__block">
+									<div class="advantages__block__icon"></div>
+									<div class="advantages__block__text">
+										Оформление занимает не более 15 минут
+									</div>
+								</li>
+								<li class="advantages__blocks__block advantages__block">
+									<div class="advantages__block__icon"></div>
+									<div class="advantages__block__text">
+										Подача авто в течении 60-ти минут
+									</div>
+								</li>
+								<li class="advantages__blocks__block advantages__block">
+									<div class="advantages__block__icon"></div>
+									<div class="advantages__block__text">
+										Включены страховки ОСАГО
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="form top-form">
+				<div class="container">
+					<div class="row">
+						<div class="col-1 d-none d-md-block">
+							<div class="top-form__left-car">
+								<div class="top-form__left-car-img"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-flex justify-content-center">
+							<h2 class="form__heading top-form__heading">Оставьте заявку сейчас и получите
+							<span class="form__heading_amber">+4 часа</span> к прокату бесплатно</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-flex justify-content-center">
+							<form action="" class="form__handler handler top-form__handler">
+								<div class="handler__fields top-form__fields">
+									<label class="form__field field-name top-form__name">
+										<input class="form__input field-name__input top-form__name__input" type="text" placeholder="Ваше имя" required>
+										<i class="field-name__icon top-form__name__icon"></i>
+									</label>
+									<label class="form__field field-phone top-form__phone">
+										<input class="form__input field-phone__input top-form__phone__input wpcf7-tel wpcf7-validates-as-tel" type="tel" placeholder="Контактный телефон" required>
+										<i class="field-phone__icon top-form__phone__icon"></i>
+									</label>
+									<button class="form__button button top-form__button">
+										позвоните мне!
+									</button>
+								</div>
+								<label class="handler__checkbox checkbox top-form__phone__checkbox">
+									<input type="checkbox">
+									<div class="checkbox__text">Даю согласие на обработку моих персональных данных.</div>
+								</label>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="choice-car" class="choice-car">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h2 class="choice-car__heading heading heading_black">
+								<div class="heading__block-name block-name">
+									<div class="block-name__text">20 авто</div>
+									<div class="block-name__circle">01</div>
+								</div>
+								В НАШЕМ АВТОПАРКЕ ПРЕДСТАВЛЕНО 20 АВТОМОБИЛЕЙ
+							</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="choice-car__tabs">
+								<li class="choice-car__tab"><a href="" class="js_choice_car"><i></i>ЭКОНОМ КЛАСС</a></li>
+								<li class="choice-car__tab"><a href="" class="js_choice_car"><i></i>СРЕДНИЙ КЛАСС</a></li>
+								<li class="choice-car__tab"><a href="" class="js_choice_car"><i></i>БИЗНЕС КЛАСС</a></li>
+								<li class="choice-car__tab"><a href="" class="js_choice_car"><i></i>МИКРОАВТОБУСЫ</a></li>
+								<li class="choice-car__tab"><a href="" class="js_choice_car"><i></i>Универсалы</a></li>
+								<li class="choice-car__tab"><a href="" class="js_choice_car"><i></i>внедорожники</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="choice-car__items">
+								<li class="choice-car__item car-item">
+									<div class="car-item__image">
+										<img src="img/choice-car/car-item1.png" alt="KIA RIO">
+									</div>
+									<div class="car-item__name">KIA RIO</div>
+									<div class="car-item__price">1 600 R / День</div>
+									<button class="car-item__button button js_car_item">Выбрать</button>
+								</li>
+								<li class="choice-car__item car-item">
+									<div class="car-item__image">
+										<img src="img/choice-car/car-item2.png" alt="KIA RIO">
+									</div>
+									<div class="car-item__name">KIA RIO</div>
+									<div class="car-item__price">1 600 R / День</div>
+									<button class="car-item__button button js_car_item">Выбрать</button>
+								</li>
+								<li class="choice-car__item car-item">
+									<div class="car-item__image">
+										<img src="img/choice-car/car-item3.png" alt="KIA RIO">
+									</div>
+									<div class="car-item__name">KIA RIO</div>
+									<div class="car-item__price">1 600 R / День</div>
+									<button class="car-item__button button js_car_item">Выбрать</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-flex justify-content-center">
+							<div class="modals">	
+								<div class="booking-modal js_booking_modal">
+									<button class="booking-modal__close js_booking_close"></button>
+									<h2 class="booking-modal__heading">KIA RIO</h2>
+									<div class="booking-modal__slider slider__blocks">
+										<div class="booking-modal__slider__block">
+											<img src="img/booking-modal/slider-item1.jpg">
+										</div>
+										<div class="booking-modal__slider__block">
+											<img src="img/booking-modal/slider-item1.jpg">
+										</div>
+									</div>
+									<h3 class="booking-modal__char-heading">характеристики автомобиля</h3>
+									<ul class="booking-modal__char-table">
+										<li class="booking-modal__char-col">
+											<ul>
+												<li>
+													<h4>Цвет</h4>
+													<p>Белый</p>
+												</li>
+												<li>
+													<h4>объем двигателя</h4>
+													<p>1.6</p>
+												</li>
+												<li>
+													<h4>кол-во мест</h4>
+													<p>5</p>
+												</li>
+												<li>
+													<h4>кондиционер</h4>
+													<p>Есть</p>
+												</li>
+												<li>
+													<h4>Трансмиссия</h4>
+													<p>Автомат</p>	
+												</li>
+											</ul>
+										</li>
+										<li class="booking-modal__char-col">
+											<ul>
+												<li>
+													<h4>кол-во дверей</h4>
+													<p>4</p>
+												</li>
+												<li>
+													<h4>кол-во багажа</h4>
+													<p>4</p>
+												</li>
+												<li>
+													<h4>подогрев сидений</h4>
+													<p>Есть</p>
+												</li>
+												<li>
+													<h4>Руль</h4>
+													<p>Левый</p>
+												</li>
+												<li>
+													<h4>Расход</h4>
+													<p>7</p>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<div class="booking-modal__inform-blocks">
+										<div class="booking-modal__important-info important-info">
+											<h4 class="important-info__heading">Важная информация</h4>
+											<p class="important-info__item">Дневной лимит</p>
+											<p class="important-info__item important-info__item_yellow">300км</p>
+											<p class="important-info__item">Залог</p>
+											<p class="important-info__item important-info__item_yellow">5 000 рублей</p>
+										</div>
+										<div class="booking-modal__add-services add-services">
+											<h4 class="add-services__heading">Дополнительные услуги</h4>
+											<ul>
+												<li>
+													<label class="checkbox add-services__checkbox">
+														<input type="checkbox">
+														<div class="checkbox__text checkbox add-services__checkbox__text">Детское кресло - бесплатно</div>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox add-services__checkbox">
+														<input type="checkbox">
+														<div class="checkbox__text checkbox add-services__checkbox__text">Крепление под телефон - бесплатно</div>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox add-services__checkbox">
+														<input type="checkbox">
+														<div class="checkbox__text checkbox add-services__checkbox__text">ЗУ с поддержкой быстрой зарядки с 2-умя портами USB бесплатно</div>
+													</label>
+												</li>
+												<li>
+													<label class="checkbox add-services__checkbox">
+														<input type="checkbox">
+														<div class="checkbox__text checkbox add-services__checkbox__text">Кабель aux для аудио системы - бесплатно</div>
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="receiving-car">
+										<h4 class="receiving-car__heading">Получение авто</h4>
+										<ul class="receiving-car__choice">
+											<li>
+												<label class="radio receiving-car__radio">
+													<input name="receiving_car" type="radio">
+													<div class="radio__text receiving-car__radio__text">
+														<p>Встреча в аэропорту</p>
+														<p class="receiving-car__radio__text_yellow">1000 рублей</p>
+													</div>
+												</label>
+											</li>
+											<li>
+												<label class="radio receiving-car__radio">
+													<input name="receiving_car" type="radio">
+													<div class="radio__text receiving-car__radio__text">
+														<p>Доставить авто в город</p>
+														<p class="receiving-car__radio__text_yellow">1000 рублей</p>
+													</div>
+												</label>
+											</li>
+											<li>
+												<label class="radio receiving-car__radio">
+													<input name="receiving_car" type="radio">
+													<div class="radio__text receiving-car__radio__text">
+														<p>Встреча на вокзале</p>
+														<p class="receiving-car__radio__text_yellow">500 рублей</p>
+													</div>
+												</label>
+											</li>
+											<li>
+												<label class="radio receiving-car__radio">
+													<input name="receiving_car" type="radio">
+													<div class="radio__text receiving-car__radio__text">
+														<p>Самостоетельный</p>
+														<p class="receiving-car__radio__text_yellow">Бесплатно</p>
+													</div>
+												</label>
+											</li>
+										</ul>
+									</div>
+									<div class="booking-modal__hire hire-car">
+										<div class="hire-car__date">
+											Дата проката
+										</div>
+										<button class="form__button button hire-car__button js_hire_car">
+											Забронировать
+										</button>
+									</div>
+									<div class="booking-modal__totals totals">
+										<p class="totals__title">Итого:</p>
+										<p class="totals__price-1">24 500 р - 21 день</p>
+										<p class="totals__price-21">1800 р - 1 день</p>
+									</div>
+								</div>
+			
+								<div class="order-modal js_order_modal">
+									<form action="" class="form__handler handler order-modal__handler">
+										<label class="form__field field-name order-modal__field">
+											<input class="form__input field-name__input order-modal__input" type="text" placeholder="Ваше имя" required>
+											<i class="field-name__icon order-modal__name-icon"></i>
+										</label>
+										<label class="form__field field-phone order-modal__field">
+											<input class="form__input field-phone__input order-modal__input wpcf7-tel wpcf7-validates-as-tel" type="tel" placeholder="Контактный телефон" required>
+											<i class="field-phone__icon order-modal__phone-icon"></i>
+										</label>
+										<label class="handler__checkbox checkbox order-modal__slide__checkbox slide__checkbox">
+											<input type="checkbox">
+											<div class="checkbox__text slide__checkbox__text">Получить скидку  10% на след. аренду</div>
+										</label>
+										<button class="form__button button order-modal__button">
+											Заказать
+										</button>
+										<label class="handler__checkbox checkbox order-modal__checkbox">
+											<input type="checkbox">
+											<div class="checkbox__text order-modal__checkbox__text">Даю согласие на обработку моих персональных данных.</div>
+										</label>
+									</form>
+								</div>
+			
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="road">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="road__car"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="capabilities">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<ul class="capabilities__list">
+								<li class="capabilities__item">
+									<h3 class="capabilities__heading">Комфорт при вождении</h3>
+									<div class="capabilities__text">
+										<p>— АКПП</p> 
+										<p>— Аудиосистема - с кабелем AUX или Bluetooth-переходником</p>
+										<p>— Чистый и не прокуренный салон</p>
+									</div>
+								</li>
+								<li class="capabilities__item">
+									<h3 class="capabilities__heading">Бесплатные опции </h3>
+									<div class="capabilities__text">
+										<p>— Детское кресло</p>
+										<p>— Крепление под телефон</p>
+										<p>— ЗУ - с поддежкой быстрой зарядки QC 2.0 для вашего смартфона</p>
+									</div>
+								</li>
+								<li class="capabilities__item">
+									<h3 class="capabilities__heading">Мы экономим ваши деньги</h3>
+									<div class="capabilities__text">Каждый авто мы комплектуем Видеорегистратором ShoMe. 
+									Базы камер и огран. скорости синхранизируется по GPS, 
+									позволяя максимально точно показать сколько меторов осталось до камеры,</div>
+								</li>
+								<li class="capabilities__item">
+									<h3 class="capabilities__heading">Мы экономим ваше время</h3>
+									<div class="capabilities__text">Вам не нужно тратить время и деньги, мы всегда готовы  
+									подать авто в удобное для вас место и время 500р-по городу 
+									1000р - аэропорт/ночное время</div>
+								</li>
+								<li class="capabilities__item">
+									<h3 class="capabilities__heading">Вы не тратите свое время</h3>
+									<div class="capabilities__text">Вы можете вернуть авто грязным Стоиомость мойки авто 700руб</div>
+								</li>
+								<li class="capabilities__item">
+									<h3 class="capabilities__heading">Застрахованы по ОСАГО</h3>
+									<div class="capabilities__text">Все автомобили застрахованы по рискам гражданской ответственности</div>
+								</li>
+							</ul>
+						</div>
+						<div class="col-6 justify-content-end d-none d-md-flex">
+							<img class="capabilities__img" src="img/capabilities/car.png" alt="">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="form bottom-form">
+				<div class="container">
+					<div class="row">
+						<div class="col-1 d-none d-md-block">
+							<div class="bottom-form__left-car">
+								<div class="bottom-form__left-car-img"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-none d-sm-flex justify-content-center">
+							<p class="bottom-form__text">Мы максимально упростили процесс
+							 выдачи и возврата авто, для экономии вашего времени.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-flex justify-content-center">
+							<h2 class="form__heading bottom-form__heading">МЫ ПРЕДОСТАВЛЯЕМ УСЛУГИ ПО САМОЙ 
+							<span class="form__heading_amber">НИЗКОЙ ЦЕНЕ</span> ПО ГОРОДУ</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-flex justify-content-center">
+							<form action="" class="form__handler handler bottom-form__handler">
+								<div class="handler__fields bottom-form__fields">
+									<label class="form__field field-name bottom-form__name">
+										<input class="form__input field-name__input bottom-form__name__input" type="text" placeholder="Ваше имя" required>
+										<i class="field-name__icon bottom-form__icon"></i>
+									</label>
+									<label class="form__field field-phone bottom-form__phone">
+										<input class="form__input field-phone__input bottom-form__phone__input wpcf7-tel wpcf7-validates-as-tel" type="tel" placeholder="Контактный телефон" required>
+										<i class="field-phone__icon bottom-form__phone__icon"></i>
+									</label>
+									<button class="form__button button bottom-form__button">
+										позвоните мне!
+									</button>
+								</div>
+								<label class="handler__checkbox checkbox bottom-form__checkbox">
+									<input type="checkbox">
+									<div class="checkbox__text">Даю согласие на обработку моих персональных данных.</div>
+								</label>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="cards-adv">
+				<div class="container">
+					<div class="row">
+						<div class="col d-none d-md-block">
+							<div class="cards-adv__right-car">
+								<div class="cards-adv__right-car-img"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="cards-adv__items">
+								<li class="cards-adv__item adv-card">
+									<div class="adv-card__icon"></div>
+									<h3 class="adv-card__heading">Скорость</h3>
+									<p class="adv-card__text">оформление документов за 15 мин</p>
+								</li>
+								<li class="cards-adv__item adv-card">
+									<div class="adv-card__icon"></div>
+									<h3 class="adv-card__heading">Принимаем заявки круглосуточно 24/7</h3>
+									<p class="adv-card__text">Мы всегда на готове привезти авто к вам</p>
+								</li>
+								<li class="cards-adv__item adv-card">
+									<div class="adv-card__icon"></div>
+									<h3 class="adv-card__heading">Самая низкая цена на рынке</h3>
+									<p class="adv-card__text">цена первого дня как и 30-го дня</p>
+								</li>
+								<li class="cards-adv__item adv-card">
+									<div class="adv-card__icon"></div>
+									<h3 class="adv-card__heading">Точный расчет стоимости</h3>
+									<p class="adv-card__text">по прокату машин производим при заключении договора</p>
+								</li>
+								<li class="cards-adv__item adv-card">
+									<div class="adv-card__icon"></div>
+									<h3 class="adv-card__heading">С нами выгодно!</h3>
+									<p class="adv-card__text">накопительная система,ваши дни всегда сумируются для последующих скидок</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="conditions" class="conditions">
+				<div class="container">
+					<div class="row">
+						<div class="col-1">
+							<div class="conditions__left-car">
+								<div class="conditions__left-car-img"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h2 class="conditions__heading heading heading_white">
+								<div class="heading__block-name block-name conditions__block-name">
+									<div class="block-name__text conditions__block-name__text">АРЕНДА</div>
+									<div class="block-name__circle conditions__block-name__circle">02</div>
+								</div>
+								Условия проката автомобилей в Новосибирске
+							</h2>
+							<p class="conditions__subtitle subtitle subtitle_white">2 условия, чтоб получить авто в аренду</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col d-flex flex-column flex-md-row align-items-center  justify-content-md-between justify-content-xl-center flex-wrap align-items-md-end">
+							<div class="conditions__documents documents conditions__item">
+								<fieldset class="documents__fieldset  conditions__item__fieldset">
+								    <legend align="left"></legend>
+							  	</fieldset>
+							  	<h3 class="conditions__item__heading documents__heading">Документы</h3>
+							  	<div class="conditions__item__text documents__text">
+							  		<p>-Гражданский паспорт</p>
+							  		<p>-Возраст от 25 лет</p>
+							  		<p>-Водительское удостоверение</p>
+							  		<p>-стаж вождения от 3-х лет</p>
+							  	</div>
+								<div class="documents__icon"></div>
+							</div>
+							<div class="conditions__payment payment  conditions__item">
+								<fieldset class="payment__fieldset  conditions__item__fieldset">
+								    <legend align="left"></legend>
+							  	</fieldset>
+							  	<h3 class="conditions__item__heading payment__heading">Оплата</h3>
+							  	<div class="conditions__item__text payment__text">
+							  		<p>1)100% предоплата; при возврате раньше срока производится перерасчет;</p>
+							  		<p>2)Залог за авто,является гарантом выполнения Арендатором своих обязательство по соблюдению условий договора аренды автомобиля, возвращается залог после сдачи автомобиля.</p>
+							  	</div>
+								<div class="payment__icon"></div>
+							</div>
+							<div class="conditions__methods-payment methods-payment  conditions__item">
+								<fieldset class="methods-payment__fieldset  conditions__item__fieldset">
+								    <legend align="left"></legend>
+							  	</fieldset>
+							  	<h3 class="conditions__item__heading methods-payment__heading">Способы оплаты</h3>
+							  	<div class="conditions__item__text methods-payment__text">
+							  		<p>1) Наличными при получении автомобиля;</p>
+							  		<p>2) Банковским переводом;</p>
+							  		<p>3)Оплата от юридических лиц принимается  по наличному или безналичному расчету;</p>
+							  	</div>
+								<div class="methods-payment__icon"></div>
+							</div>
+							<div class="conditions__extradition extradition conditions__item">
+								<fieldset class="extradition__fieldset  conditions__item__fieldset">
+								    <legend align="left"></legend>
+							  	</fieldset>
+							  	<h3 class="conditions__item__heading extradition__heading">выдача и возврат автомобиля</h3>
+							  	<div class="conditions__item__text extradition__text">
+							  		<p>1) Автомобиль в аренду предоставляется чистым,</p>
+							  		<p>Если при возврате внешнее состояние автомобиля затрудняет его осмотр, осмотр проводится только после мойки</p>
+							  		<p>стоимость мойки авто - 700р, стоомость химчистки от 3000р</p>
+							  		<p>2) Заправлен авто на 20 литров топлива,</p>
+							  		<p>За не достоющие топлтиво 45 Р/литр</p>
+							  		<p>3) Для продления или рассторжения договора аренды автомобиля необходимо заблаговременно сообщить об этом нам</p>
+							  		<p>*Арендодатель может отказать в выдаче автомобиля без объяснения причины, о чем уведомляет клиента не менее чем за 4 часа до предполагаемой выдачи в прокат автомобиля;</p>
+							  	</div>
+								<div class="extradition__icon"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="comparison" class="comparison">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h2 class="comparison__heading heading heading_black">
+								<div class="heading__block-name block-name comparison__block-name">
+									<div class="block-name__text comparison__block-name__text">наши конкуренты</div>
+									<div class="block-name__circle comparison__block-name__circle">03</div>
+								</div>
+								сравнение с другими арендодателями
+							</h2>
+							<p class="comparison__subtitle subtitle subtitle_black">Наши показатели</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="d-none d-md-block col">
+							<ul class="comparison__table">
+								<li class="comparison__table__indicators comparison__table__col">
+									<ul>
+										<li>Показатели</li>
+										<li>Скорость подачи авто</li>
+										<li>Платное ожидание</li>
+										<li>Далее по городу</li>
+										<li>За пределами города</li>
+										<li>Комфорт</li>
+										<li>Стоимость пути из аэропорта в город</li>
+										<li>Процесс получения авто</li>
+										<li>ндс 18%</li>
+										<li>Автомобили</li>
+										<li>Итого 300 км дороги обойдется вам</li>
+									</ul>
+								</li>
+								<li class="comparison__table__our comparison__table__col">
+									<ul>
+										<li>Наш автопрокат</li>
+										<li>30 - 60 мин</li>
+										<li>включено в минимальную стоиомость (24 часа)</li>
+										<li>включено в минимальную стоиомость, при обычном тарифе до 300 км/ день</li>
+										<li>включено в минимальную стоиомость, при обычном тарифе до 300 км/ день</li>
+										<li>максимальный</li>
+										<li>1000 руб чтобы мы доставили авто в аэропорт</li>
+										<li>простой</li>
+										<li>нет</li>
+										<li>новые Kia rio, hyundai solaris</li>
+										<li>c ожиданием  от 1 600R</li>
+									</ul>
+								</li>
+								<li class="comparison__table__economy comparison__table__col">
+									<ul>
+										<li>Такси эконом класса</li>
+										<li>15 мин</li>
+										<li>(не включено в минимальную стоимость!) 5 Р/мин</li>
+										<li>10 Р/км 1 Р/мин</li>
+										<li>8 Р/км 5 Р/мин</li>
+										<li>эконом класс</li>
+										<li>15000р</li>
+										<li>простой</li>
+										<li>есть</li>
+										<li>старые авто Renault logan, daewoo nexia, chevrolet nexia, а так же  праворульные авто</li>
+										<li>без ожидания от 3 610R</li>
+									</ul>
+								</li>
+								<li class="comparison__table__comfort comparison__table__col">
+									<ul>
+										<li>Такси комфорт класса</li>
+										<li>15 мин</li>
+										<li>(не включено в минимальную стоимость!) 5 Р/мин</li>
+										<li>12 Р/км 1 Р/мин</li>
+										<li>10 Р/км 5 Р/мин</li>
+										<li>эконом класс</li>
+										<li>15000р</li>
+										<li>простой</li>
+										<li>есть</li>
+										<li>новые Kia rio, hyundai solarisо</li>
+										<li>без ожидания  от 4 350R</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="col d-flex justify-content-center d-md-none ">
+							<div class="comparison__mini-table">
+								<img src="img/comparison/table_xl.jpg" alt="Наши показатели">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ques-answer">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h2 class="ques-answer__heading heading heading_white">
+								<div class="heading__block-name block-name ques-answer__block-name">
+									<div class="block-name__text ques-answer__block-name__text">Ваши вопросы</div>
+									<div class="block-name__circle ques-answer__block-name__circle">04</div>
+								</div>
+								вопрос - ответ
+							</h2>
+							<p class="ques-answer__subtitle subtitle subtitle_white">Частые вопросы</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 d-flex justify-content-end">
+							<div class="ques-answer__right-car">
+								<div class="ques-answer__right-car-img"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="ques-answer__list list-qa">
+								<li class="ques-answer__item list-qa__item">
+									<h3 class="list-qa__headings">
+										Вы можете <span>привезти/забрать авто?</span>
+									</h3>
+									<p class="list-qa__texts ques-answer__texts">Автомобиль в аренду предоставляется чистым, оснащенным всем необходимым (кондиционер, штатная аудиосистема, запасное колесо, сезонная резина)</p>
+								</li>
+								<li class="ques-answer__item list-qa__item">
+									<h3 class="list-qa__headings">
+										Как комлектуется автомобиль?
+									</h3>
+									<p class="list-qa__texts ques-answer__texts">Автомобиль в аренду предоставляется чистым, оснащенным всем необходимым (кондиционер, штатная аудиосистема, запасное колесо, сезонная резина)</p>
+								</li>
+								<li class="ques-answer__item list-qa__item">
+									<h3 class="list-qa__headings">
+										Могу ли я выехать на арендованном авто за границу?
+									</h3>
+									<p class="list-qa__texts ques-answer__texts">Автомобиль в аренду предоставляется чистым, оснащенным всем необходимым (кондиционер, штатная аудиосистема, запасное колесо, сезонная резина)</p>
+								</li>
+								<li class="ques-answer__item list-qa__item">
+									<h3 class="list-qa__headings">
+										Что делать в случае ДТП?
+									</h3>
+									<p class="list-qa__texts ques-answer__texts">Автомобиль в аренду предоставляется чистым, оснащенным всем необходимым (кондиционер, штатная аудиосистема, запасное колесо, сезонная резина)</p>
+								</li>
+								<li class="ques-answer__item list-qa__item">
+									<h3 class="list-qa__headings">
+										Могу ли я продлить договор аренды ?
+									</h3>
+									<p class="list-qa__texts ques-answer__texts">Автомобиль в аренду предоставляется чистым, оснащенным всем необходимым (кондиционер, штатная аудиосистема, запасное колесо, сезонная резина)</p>
+								</li>
+								<li class="ques-answer__item list-qa__item">
+									<h3 class="list-qa__headings">
+										Какие дополнительные услуги: у вас есть ?
+									</h3>
+									<p class="list-qa__texts ques-answer__texts">Автомобиль в аренду предоставляется чистым, оснащенным всем необходимым (кондиционер, штатная аудиосистема, запасное колесо, сезонная резина)</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- <section id="reviews" class="reviews">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h2 class="reviews__heading heading heading_black">
+								<div class="heading__block-name block-name reviews__block-name">
+									<div class="block-name__text reviews__block-name__text">наших клиентов</div>
+									<div class="block-name__circle reviews__block-name__circle">05</div>
+								</div>
+								отзывы
+							</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="reviews__block"></div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+			<section class="contacts">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-md-9 d-flex align-items-center">
+							<iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/-/CBBumQGNxD" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+						</div>
+						<div class="col-12 col-md-3 d-flex align-items-center">
+							<ul class="contacts__list">
+								<li class="contacts__item">
+									<p>Офис: г. Москва, д. Сосенки, дом 150</p>
+								</li>
+								<li class="contacts__item">
+									<p>+7 (499) 270-20-21</p>
+								</li>
+								<li class="contacts__item">
+									<p><strong>Режим работы:</strong></p>
+									<p>Пн. – Чт.: с 8:00 до 18:00</p>
+									<p>Пт.: с 8:00 до 17:00</p>
+									<p>Сб. - Вс.: выходные</p>
+								</li>
+								<li class="contacts__item">
+									<p><strong>E-mail</strong></p>
+									<p>lab@ecopole.info</p>
+									<p>ecopole@gmail.com</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 d-flex flex-column col-md-6 align-items-center align-items-md-start">
+							<div class="footer__logo">
+								<a href="#" class="logo">
+									<img class="logo__img" src="img/logo.png" alt="Don Car - прокат и аренда автомобилей">
+									<span class="logo__text">
+										Автопрокат номер один
+									</span>
+								</a>
+							</div>
+							<a class="footer__conf" href="#">Политика конфидециальности</a>
+						</div>
+						<div class="col-12 col-md-6 d-flex flex-column flex-md-row justify-content-md-end  align-items-center">
+							<div class="footer__call-me call-me">
+								<a class="call-me__button button" href="tel:+792318290000">
+									позвоните мне!
+								</a>
+								<div class="call-me__ph-number">
+									+ 7 923 18290000
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+
+
+
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
+		<script src="slick/slick.js"></script>
+		<script src="js/jquery.maskedinput.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

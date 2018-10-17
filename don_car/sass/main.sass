@@ -1,0 +1,1454 @@
+@import "main/resset"
+@import "main/colors"
+
+html, body, .wrapper
+	position: relative
+	height: 100%
+	overflow-x: hidden
+
+body
+	background-color: $white
+	font-family: "Montserrat-Regular", sans-serif
+	font-weight: normal
+	color: $white
+	counter-reset: section
+	counter-reset: cardnumb
+	counter-reset: answers
+
+img
+	max-width: 100%
+a, a:hover
+	font-family: "Montserrat-Regular", sans-serif
+	font-weight: normal
+	color: $white
+h1, h2, h3
+	font-family: "Montserrat-Bold", sans-serif
+	
+.con
+	background-color: #fff
+	color: #000
+	width: 100px
+	height: 20px
+	position: fixed
+	top: 0
+	left: 0
+
+.checkbox 
+	input 
+		position: absolute
+		z-index: -1
+		opacity: 0
+		margin: 10px 0 0 20px
+		&:checked + .checkbox__text:before 
+			background: #373737
+	&__text 
+		position: relative
+		margin-top: 10px
+		padding: 3px 0 0 30px
+		cursor: pointer
+		font-family: "Roboto-Regular", sans-serif
+		font-size: 11px
+		color: #b9b9b9
+		&:before 
+			content: ''
+			position: absolute
+			top: 0px
+			left: 0px
+			width: 17px
+			height: 17px
+			border: 1px solid #616161
+			border-radius: 5px
+			background: inherit
+.radio 
+	input 
+		position: absolute
+		z-index: -1
+		opacity: 0
+		margin: 10px 0 0 20px
+		&:checked + .radio__text:before 
+			background: #373737	
+	&__text 
+		position: relative
+		margin-top: 10px
+		padding: 3px 0 0 30px
+		cursor: pointer
+		&:before 
+			content: ''
+			position: absolute
+			top: 0px
+			left: 0px
+			width: 22px
+			height: 22px
+			border: 1px solid #000
+			background: inherit	
+.button
+	background-color: #ffdc61
+	border-radius: 5px
+	cursor: pointer
+	font-family: "Montserrat-Bold", sans-serif
+	text-transform: uppercase
+	color: #03060a
+	&:hover
+		color: #03060a
+		font-family: "Montserrat-Bold", sans-serif
+
+// leaves
+.leaves
+	position: relative
+	&__item
+		position: absolute
+		transform: translateY(10px)
+		transition-property: all
+		transition-duration: 2s	
+		&__1
+			top: 560px
+			right: 205px
+		&__2
+			top: -48px
+			left: 153px
+		&__3
+			top: 720px
+			left: 138px
+		&__4
+			top: 174px
+			right: -34px
+		&__5
+			top: 468px
+			right: -210px
+		&__6
+			top: 374px
+			right: 524px
+		&__7
+			top: 312px
+			left: -26px
+
+	.parallax-window 
+		min-height: 1000px
+		background: transparent
+
+
+
+.header
+	width: 100%
+	height: 778px
+	background-image: url(../img/header/background.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	
+.top-menu
+	width: 100%
+	height: 96px
+	&__logo
+		margin-top: 28px
+	&__nav
+		margin-top: 42px
+		ul
+			li
+				margin-left: 20px
+	&__call-me
+		margin-top: 32px
+	&__nav-btn
+		margin-top: 36px
+
+.nav-btn
+	width: 31px
+	height: 23px
+	background: inherit
+	background-image: url(../img/header/menu-btn.png)
+
+	cursor: pointer
+	
+
+.logo
+	display: flex
+	align-items: center
+	&__text
+		width: 55px
+		margin-left: 10px
+		font-family: "BebasNeue-Bold", sans-serif
+		font-size: 14px
+		text-transform: uppercase
+
+.nav
+	ul
+		display: flex
+		li
+			a
+				position: relative
+				font-size: 12px
+				text-transform: uppercase
+				&::after
+					content: ''
+					display: none
+					position: absolute
+					width: calc(100% + 12px)
+					height: 3px
+					bottom: -24px
+					left: -6px
+					background-color: #cdac3a
+				&:hover
+					&::after
+						display: block
+						
+.call-me
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+	&__button
+		display: block
+		padding-top: 14px
+		text-align: center
+		width: 214px
+		height: 38px
+		font-size: 10px
+	&__ph-number
+		position: relative
+		margin-top: 12px
+		margin-right: 32px
+		font-family: "Montserrat-Bold", sans-serif
+		font-size: 14px
+		color: #ffdc61
+		&::before
+			content: ''
+			position: absolute
+			display: block
+			top: -3px
+			left: -26px
+			width: 16px
+			height: 16px
+			background-image: url(../img/contact_iconset.png)
+	
+.title-block
+	width: 100%
+	height: 682px
+	font-size: 16px
+	span
+		display: block
+	&__main-heading
+		margin-top: 68px		
+	&__button
+		display: block
+		padding-top: 24px
+		text-align: center
+		margin-top: 56px
+		width: 308px
+		height: 62px
+		font-size: 14px
+	&__location
+		margin-top: 20px
+		margin-left: 12px
+		line-height: 18px
+	&__classes
+		margin-top: 42px
+		margin-left: 12px
+		line-height: 18px
+	&__ordering
+		margin-top: 30px
+		margin-left: 12px
+		line-height: 18px
+
+.main-heading
+	font-family: "Montserrat-Black", sans-serif
+	font-size: 54px
+	color: #fff
+	line-height: 65px
+	&_amber
+		color: #ffdc61
+
+
+/* advantages */
+.advantages 
+	height: 130px
+	&__blocks
+		margin-top: -24px
+		display: flex
+		justify-content: space-between
+		&__block:nth-child(2)
+			box-shadow: 0 20px 90px -15px rgba(0,0,0,0.2)
+			z-index: 1
+	&__block
+		display: flex
+		align-items: center
+		width: 386px
+		height: 130px
+		background-color: #fff
+		box-shadow: 0 0 90px 4px rgba(0,0,0,0.2)
+		&__icon
+			margin-left: 60px
+			width: 46px
+			height: 50px
+			background-image: url(../img/advantages/iconset.png)
+		&__text
+			margin-left: 28px
+			width: 160px
+			font-family: "Roboto-Regular", sans-serif
+			font-size: 14px
+			color: #000
+			line-height: 17px
+		&:nth-child(2)
+			.advantages__block__icon
+				width: 47px
+				height: 51px
+				background-position-x: -80px
+		&:nth-child(3)
+			.advantages__block__icon
+				width: 56px
+				height: 50px
+				background-position-x: -155px
+			.advantages__block__text
+				width: 200px
+		&:hover
+			background-color: #ffdc61
+			.advantages__block__icon
+				background-position-y: -80px
+
+
+/* form top-form*/
+.form
+	&__heading
+		text-transform: uppercase
+		text-align: center
+		&_amber
+			color: #ffdc61
+	&__handler
+		width: 672px
+	&__field
+		position: relative
+		cursor: text
+	&__input
+		width: 250px
+		height: 40px
+		font-size: 10px
+		background: none
+		border: 1px solid #bcbcbc
+		border-radius: 5px
+		font-family: "Roboto-Regular", sans-serif
+		font-size: 12px
+		color: #bcbcbc
+		padding-left: 32px
+		&::placeholder
+			color: #bcbcbc
+			opacity: 1
+	&__button
+		width: 156px
+		height: 40px
+		font-size: 10px
+
+.handler
+	&__fields
+		display: flex
+		justify-content: space-between
+
+
+.top-form
+	width: 100%
+	height: 258px
+	background-image: url(../img/top-form/background.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	&__left-car
+		position: relative
+	&__left-car-img
+		position: absolute
+		width: 484px
+		height: 265px
+		top: -4px
+		left: -375px
+		background-image: url(../img/top-form/left-car.png)
+	&__heading
+		margin-top: 44px
+		margin-bottom: 36px
+		width: 600px
+		font-size: 26px
+		line-height: 31px
+
+.field-name
+	&__icon
+		position: absolute
+		display: block
+		width: 12px
+		height: 16px
+		top: 11px
+		left: 11px
+		background-image: url(../img/contact_iconset.png)
+		background-position-x: -20px
+.field-phone
+	&__icon
+		position: absolute
+		display: block
+		width: 15px
+		height: 15px
+		top: 12px
+		left: 9px
+		background-image: url(../img/contact_iconset.png)
+		background-position-x: -40px
+		background-position-y: -1px
+
+
+/* choice-car */
+.choice-car
+	height: 634px
+	&__heading
+		margin-top: 34px
+		width: 330px
+	&__tabs
+		margin-top: 10px
+		width: 100%
+		display: inline-flex
+		justify-content: space-between
+		padding: 0 5px
+	&__tab 
+		position: relative
+		a
+			display: flex
+			padding: 10px
+			align-items: center
+			font-size: 15px
+			color: #c5c5c5
+		i
+			display: block
+			margin-right: 8px
+			width: 22px
+			height: 19px
+			background-image: url(../img/choice-car/iconset.png)
+			background-position-x: 0px
+		&::after
+			content: ''
+			display: none
+			position: absolute
+			width: calc(100% + 14px)
+			height: 3px
+			bottom: -24px
+			left: -7px
+			background-color: #ffdc61
+		&:hover
+			a
+				color: #000
+			i
+				background-position-y: -30px
+			&::after
+				display: block
+		&:nth-child(2) i
+			width: 26px
+			height: 21px
+			background-position-x: -50px
+		&:nth-child(3) i
+			width: 31px
+			height: 20px
+			background-position-x: -100px
+		&:nth-child(4) i
+			width: 33px
+			height: 21px
+			background-position-x: -150px
+		&:nth-child(5) i
+			width: 46px
+			height: 18px
+			background-position-x: -200px
+		&:nth-child(6) i
+			width: 43px
+			height: 20px
+			background-position-x: -260px
+	&__items
+		margin-top: 66px
+		display: flex
+		justify-content: space-between
+
+.heading
+	position: relative
+	font-family: "Montserrat-Bold", sans-serif
+	font-size: 26px
+	line-height: 31px
+	text-transform: uppercase
+	&_black
+		color: #000
+	&_white
+		color: #fff
+.subtitle
+	font-size: 14px
+	&_black
+		color: #000
+	&_white
+		color: #fff
+
+.block-name
+	margin-left: -26px
+	position: absolute
+	left: -30px
+	color: #bcbcbc
+	display: flex
+	flex-direction: column
+	&__text
+		margin-top: -24px
+		font-family: "Montserrat-Regular", sans-serif
+		font-size: 9px
+		text-transform: uppercase
+		transform: rotate(-90deg)
+		transform-origin: right bottom 0
+	&__circle
+		margin-top: 50px
+		margin-left: 8px
+		padding-top: 11px
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		border: 1px solid #bcbcbc
+		font-family: "Montserrat-Bold", sans-serif
+		font-size: 7px
+		text-align: center
+		line-height: 1
+
+.car-item
+	display: flex
+	flex-direction: column
+	align-items: center
+	font-size: 15px
+	color: #000
+	&__image
+		width: 375px
+		height: 167px
+		background-image: url(../img/choice-car/car-item1_bg.jpg)
+		background-repeat: no-repeat
+		img
+			max-width: initial
+			margin: -32px 0 0 -15px
+	&:nth-child(2) &__image
+		background-image: url(../img/choice-car/car-item2_bg.jpg)
+		img
+			margin: -17px 0 0 -22px
+	&:nth-child(3) &__image
+		background-image: url(../img/choice-car/car-item3_bg.jpg)
+		img
+			margin: -23px 0 0 6px
+	&:hover &__image
+		background-image: url(../img/choice-car/car-item1_bg_amber.jpg)
+	&:hover.car-item:nth-child(2) &__image
+		background-image: url(../img/choice-car/car-item2_bg_amber.jpg)
+	&:hover.car-item:nth-child(3) &__image
+		background-image: url(../img/choice-car/car-item3_bg_amber.jpg)
+	&__name
+		margin-top: 23px
+		font-family: "Montserrat-Bold", sans-serif
+	&__price
+		margin-top: 8px
+		font-family: "Montserrat-Regular", sans-serif
+	&__button
+		margin-top: 22px
+		width: 222px
+		height: 42px
+		font-size: 12px
+		
+
+/* road */
+.road
+	height: 230px
+	background-image: url(../img/road/road.png)
+	&__car
+		margin-top: 22px
+		margin-left: -48px
+		width: 411px
+		height: 208px
+		background-image: url(../img/road/car.png)
+		
+
+/* capabilities */
+.capabilities
+	height: 630px
+	&__list
+		counter-reset: section
+		margin-top: 25px
+		display: flex
+		flex-wrap: wrap
+		padding-right: 35px
+	&__item
+		position: relative
+		margin-top: 35px
+		width: 50%
+		padding-left: 70px
+		color: #000
+		&::before
+			counter-increment: section
+			content: counter(section)
+			position: absolute
+			top: -5px
+			left: 5px
+			font-family: "Montserrat-Thin", sans-serif
+			font-size: 86px
+			color: #ffdc61
+	&__heading
+		width: 155px
+		font-size: 17px
+		line-height: 21px
+	&__text
+		margin-top: 10px
+		font-size: 13px
+		line-height: 15px
+	&__img
+		margin-top: 70px
+		margin-left: -20px
+		max-width: initial
+		max-height: initial
+
+
+/* form-bottom */
+.bottom-form
+	width: 100%
+	height: 299px
+	background-image: url(../img/bottom-form/background.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	&__text
+		margin-top: 24px
+		width: 570px
+		font-size: 19px
+		color: #aaa
+		text-align: center
+		line-height: 23px
+	&__left-car
+		position: relative
+	&__left-car-img
+		position: absolute
+		width: 519px
+		height: 290px
+		top: 2px
+		left: -375px
+		background-image: url(../img/bottom-form/left-car.png)
+	&__heading
+		margin-top: 13px
+		margin-bottom: 30px
+		width: 750px
+		font-size: 32px
+		line-height: 39px
+
+
+/* cards-adv */
+.cards-adv
+	min-height: 774px
+	height: 100%
+	&__items
+		margin-top: 80px
+		display: flex
+		justify-content: space-between
+		padding: 0 55px
+		counter-reset: cardnumb
+	&__item
+		&:nth-child(2n)
+			margin-top: 206px
+	&__right-car
+		position: relative
+	&__right-car-img
+		position: absolute
+		width: 519px
+		height: 492px
+		top: 284px
+		right: -375px
+		background-image: url(../img/cards-adv/car.png)
+
+.adv-card
+	display: flex
+	position: relative
+	flex-direction: column
+	align-items: center
+	padding: 0 30px
+	width: 200px
+	min-height: 247px
+	height: 100%
+	border-radius: 28px
+	background-color: #fff
+	font-size: 15px
+	line-height: 18px
+	color: #000
+	text-align: center
+	overflow: hidden
+	&__icon
+		margin-top: 48px
+		margin-bottom: 22px
+		width: 48px
+		height: 51px
+		background-image: url(../img/cards-adv/iconset.png)
+	&:nth-child(2) &__icon
+		margin-top: 51px
+		margin-bottom: 23px
+		width: 46px
+		height: 47px
+		background-position-x: -87px
+	&:nth-child(3) &__icon
+		margin-top: 51px
+		margin-bottom: 26px
+		width: 46px
+		height: 44px
+		background-position-x: -167px
+	&:nth-child(4) &__icon
+		margin-top: 60px
+		margin-bottom: 12px
+		width: 55px
+		height: 49px
+		background-position-x: -251px
+	&:nth-child(5) &__icon
+		margin-top: 47px
+		margin-bottom: 22px
+		width: 52px
+		height: 52px
+		background-position-x: -339px
+	&__text
+		margin-top: 16px
+		margin-bottom: 40px
+		font-family: "Montserrat-Regular", sans-serif
+	&::before
+		counter-increment: cardnumb
+		content: "0" counter(cardnumb)
+		position: absolute
+		width: 76px
+		height: 62px
+		border-radius: 28px
+		background-color: #f5f5f5
+		top: -12px
+		left: -20px
+		box-sizing: border-box
+		padding-top: 27px
+		padding-left: 14px
+		font-family: "Montserrat-Bold", sans-serif
+		font-size: 15px
+		color: #000
+		opacity: 0
+	&:hover
+		box-shadow: 0 0px 122px 0px rgba(0,0,0,0.07)
+		&::before
+			opacity: 1
+			
+
+/* conditions */
+.conditions
+	margin-top: -4px
+	height: 689px
+	width: 100%
+	background-image: url(../img/conditions/background.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	&__left-car
+		position: relative
+	&__left-car-img
+		position: absolute
+		width: 481px
+		height: 399px
+		top: 165px
+		left: -378px
+		background-image: url(../img/conditions/car.png)
+	&__heading
+		margin-top: 34px
+		width: 530px
+	&__block-name
+		margin-left: -28px
+		&__circle
+			margin-left: 9px
+	&__subtitle
+		margin-top: 15px
+	&__item
+		position: relative
+		margin: 0 17px
+		margin-bottom: 32px
+		&__fieldset
+			position: absolute
+			border-radius: 25px
+			transform: rotate(-90deg)
+			transform-origin: 100% 0
+			border: 1px solid #f7d61b
+		&__heading
+			padding-top: 6px
+			background-color: #f7d61b
+			font-size: 16px
+			color: #000
+			text-transform: uppercase
+			text-align: center
+		&__text
+			margin-top: 14px
+			font-size: 14px
+			color: #fff
+			line-height: 17px
+		&:hover &__fieldset
+			border: 1px solid #fff
+			
+.documents
+	width: 323px
+	height: 251px
+	&__fieldset
+		width: 251px
+		height: 323px
+		top: 0
+		left: -251px
+		legend
+			margin-left: 170px
+			width: 54px
+			height: 1px
+	&__heading
+		width: 140px
+		height: 30px
+		margin-top: 35px
+		margin-left: 48px
+	&__text
+		margin-left: 54px
+		p
+			margin-bottom: 18px
+	&__icon
+		position: absolute
+		width: 35px
+		height: 39px
+		top: 34px
+		left: -15px
+		background-image: url(../img/conditions/iconset.png)
+		
+.payment
+	width: 323px
+	height: 289px
+	&__fieldset
+		width: 289px
+		height: 323px
+		top: 0
+		left: -289px
+		legend
+			margin-left: 204px
+			width: 40px
+			height: 1px
+	&__heading
+		width: 110px
+		height: 30px
+		margin-top: 34px
+		margin-left: 45px
+	&__text
+		margin-left: 54px
+	&__icon
+		position: absolute
+		width: 48px
+		height: 45px
+		top: 37px
+		left: -18px
+		background-image: url(../img/conditions/iconset.png)
+		background-position-x: -70px
+
+.methods-payment
+	width: 394px
+	height: 209px
+	&__fieldset
+		width: 209px
+		height: 394px
+		top: 0
+		left: -209px
+		legend
+			margin-left: 120px
+			width: 50px
+			height: 1px
+	&__heading
+		width: 188px
+		height: 30px
+		margin-top: 35px
+		margin-left: 48px
+	&__text
+		margin-left: 54px
+	&__icon
+		position: absolute
+		width: 37px
+		height: 37px
+		top: 44px
+		left: -18px
+		background-image: url(../img/conditions/iconset.png)
+		background-position-x: -150px 
+
+.extradition
+	width: 1103px
+	height: 214px
+	&__fieldset
+		width: 214px
+		height: 1103px
+		top: 0
+		left: -214px
+		legend
+			margin-left: 128px
+			width: 44px
+			height: 1px
+	&__heading
+		width: 324px
+		height: 30px
+		margin-top: 20px
+		margin-left: 45px
+	&__text
+		margin-left: 54px
+	&__icon
+		position: absolute
+		width: 45px
+		height: 32px
+		top: 48px
+		left: -21px
+		background-image: url(../img/conditions/iconset.png)
+		background-position-x: -218px
+
+
+/* comparison */
+.comparison
+	height: 1044px
+	&__heading
+		margin-top: 34px
+		width: 360px
+		text-transform: uppercase
+	&__subtitle
+		margin-top: 15px
+	&__block-name
+		margin-left: -90px
+		align-items: flex-end
+		&__circle
+			margin-top: 110px
+		&__text
+			margin-top: -42px
+	&__table
+		margin-top: 110px
+		display: flex
+		color: #000
+		font-size: 14px
+		&__col
+			& ul li
+				height: 70px
+				display: flex
+				justify-content: center
+				align-items: center
+				padding: 0 35px
+				text-align: center
+				&:nth-child(2n)
+					background-color: #f7f7f7
+				&:first-child
+					font-family: "Montserrat-Bold", sans-serif
+		&__indicators
+			width: 244px
+			& ul li
+				border-left: 1px solid #f7d61b
+				border-right: 1px solid #f7d61b
+				&:first-child
+					border: 1px solid #f7d61b
+					border-bottom: none
+				&:last-child
+					background-color: #c4c4c4
+					border: none
+		&__our
+			width: 310px
+			box-shadow: 0 0px 122px 0px rgba(0,0,0,0.15)
+			z-index: 1
+			& ul li
+				&:first-child
+					position: relative
+					background-color: #f7d61b
+					&::before
+						content: ''
+						display: inline-block
+						margin-right: 12px
+						width: 20px
+						height: 18px
+						background-image: url(../img/comparison/iconset.png)
+				&:last-child
+					background-color: #6ed96e
+					font-family: "Montserrat-Bold", sans-serif
+		&__economy
+			width: 307px
+			& ul li
+				&:last-child
+					background-color: #c74343
+					width: 305px
+					font-family: "Montserrat-Bold", sans-serif
+				&:first-child
+					&::before
+						content: ''
+						display: inline-block
+						margin-right: 16px
+						width: 17px
+						height: 17px
+						background-image: url(../img/comparison/iconset.png)
+						background-position-x: -30px
+		&__comfort
+			width: 307px
+			& ul li
+				&:last-child
+					background-color: #c74343
+					width: 305px
+					margin-left: 2px
+					font-family: "Montserrat-Bold", sans-serif
+				&:first-child
+					&::before
+						content: ''
+						display: inline-block
+						margin-right: 16px
+						width: 17px
+						height: 17px
+						background-image: url(../img/comparison/iconset.png)
+						background-position-x: -30px
+
+
+/* ques-answer */
+.ques-answer
+	height: 566px
+	width: 100%
+	background-image: url(../img/ques-answer/background.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	&__right-car
+		position: relative
+	&__right-car-img
+		position: absolute
+		width: 667px
+		height: 346px
+		top: -201px
+		left: -70px
+		background-image: url(../img/ques-answer/car.png)
+	&__heading
+		margin-top: 72px
+	&__block-name
+		margin-left: -74px
+		align-items: flex-end
+		&__circle
+			margin-top: 95px
+		&__text
+			margin-top: -62px
+	&__subtitle
+		margin-top: 15px
+	&__list
+		margin-top: 86px
+		margin-right: -20px
+	&__item
+		position: relative
+		margin-left: 28px
+		&:nth-child(2n)
+			margin-top: 88px
+		&::before
+			counter-increment: answers
+			content: "0" counter(answers)
+			position: absolute
+			top: 14px
+			left: -28px
+			font-family: "Montserrat-Bold", sans-serif
+			font-size: 14px
+			color: #f7d61b
+	
+.list-qa
+	display: flex
+	&__item
+		width: 16.5%
+		&:hover .list-qa__texts
+			display: block
+	&__headings
+		font-size: 14px
+		color: #fff
+		line-height: 18px
+		span
+			display: block
+	&__texts
+		display: none
+		position: relative
+		margin-top: 14px
+		font-size: 12px
+		color: #f7f7f7
+		line-height: 14px
+		&::before
+			content: ''
+			position: absolute
+			display: block
+			width: 2px
+			height: 100%
+			left: -20px
+			background-color: #f7d61b
+
+/* reviews */
+.reviews
+	min-height: 540px
+	&__heading
+		margin-top: 118px
+	&__block-name
+		margin-left: -84px
+		align-items: flex-end
+		&__circle
+			margin-top: 105px
+		&__text
+			margin-top: -78px
+	&__block
+		margin-top: 70px
+		min-width: 693px
+		width: 100%
+		min-height: 281px
+		background-image: url(../img/reviews/demo.jpg)
+		background-repeat: no-repeat
+		background-position: top center
+		
+		
+/* contacts */
+.contacts
+	padding-top: 20px
+	width: 100%
+	height: 290px
+	&__map
+		width: 846px
+		height: 243px
+	&__list
+		display: flex
+		flex-direction: column
+	&__item
+		position: relative
+		margin: 7px 0
+		margin-left: 24px
+		p
+			font-family: "Roboto-Regular", sans-serif
+			font-size: 14px
+			color: #000
+			line-height: 17px
+			strong
+				font-family: "Roboto-Bold", sans-serif
+		&::before
+			content: ''
+			position: absolute
+			display: block
+			width: 14px
+			height: 21px
+			top: -2px
+			left: -30px
+			background-image: url(../img/contacts/iconset.png)
+		&:nth-child(2)::before
+			width: 19px
+			height: 19px
+			top: -2px
+			left: -34px
+			background-position-x: -32px
+		&:nth-child(3)::before
+			width: 19px
+			height: 19px
+			top: 1px
+			left: -33px
+			background-position-x: -71px
+		&:nth-child(4)::before
+			width: 20px
+			height: 15px
+			top: 3px
+			left: -36px
+			background-position-x: -111px
+			
+
+/* footer */
+.footer
+	height: 180px
+	width: 100%
+	background-image: url(../img/footer/background.jpg)
+	background-position: top center
+	background-repeat: no-repeat
+	&__logo
+		margin-top: 42px
+		margin-bottom: 10px
+	&__call-me
+		margin-top: 52px
+	&__conf
+		font-family: "Roboto-Regular", sans-serif
+		font-size: 11px
+		color: #fff
+		text-decoration: underline
+		&:hover
+			font-family: "Roboto-Regular", sans-serif
+			font-size: 11px
+
+
+
+
+
+/* modals */
+.modals
+	position: relative
+/* booking-modal */
+.booking-modal
+	position: absolute
+	top: -1251px
+	left: -36px
+	display: none
+	z-index: 100
+	background-color: #fff
+	flex-direction: column
+	align-items: center
+	width: 562px
+	height: 1236px
+	box-shadow: 0 0px 136px 0px rgba(0,0,0,0.4)
+	&__close
+		position: absolute
+		width: 10px
+		height: 10px
+		top: 8px
+		right: 8px
+		background: none
+		background-image: url(../img/booking-modal/icons.png)
+		background-position-x: -72px
+		cursor: pointer
+	&__heading
+		margin-top: 44px
+		font-size: 22px
+		color: #000
+		text-transform: uppercase
+	&__slider
+		margin-top: 38px
+		width: 410px
+		height: 200px
+		&__block img
+			margin: 0 auto
+	&__char-heading
+		margin-top: 16px
+		width: 250px
+		font-size: 21px
+		color: #000
+		text-transform: uppercase
+		text-align: center
+	&__char-table
+		margin-top: 28px
+		display: flex
+		justify-content: center
+	&__char-col
+		margin: 0 3px
+		color: #000
+		li
+			width: 190px
+			height: 56px
+			padding: 11px
+			h4
+				font-family: "Montserrat-Bold", sans-serif
+				font-size: 14px
+				text-transform: uppercase
+			p
+				margin-top: 6px
+				font-family: "Montserrat-Regular", sans-serif
+				font-size: 14px
+
+			&:nth-child(2n-1)
+				background-color: #f1f1f1
+	&__inform-blocks
+		margin-top: 22px
+		margin-left: 50px
+		display: flex
+		justify-content: center
+	&__important-info
+		width: 190px
+		height: 142px
+		border: 1px solid #f5da15
+
+.important-info
+	padding: 12px 11px
+	&__heading
+		margin-bottom: 18px
+		font-size: 14px
+		color: #000
+		font-family: "Montserrat-Bold", sans-serif
+	&__item
+		margin-bottom: 8px
+		font-size: 14px
+		color: #000
+		font-family: "Montserrat-Regular", sans-serif
+		&_yellow
+			margin-left: 2px
+			font-family: "Montserrat-Bold", sans-serif
+			color: #f5da15
+.add-services
+	padding: 12px 11px
+	width: 246px
+	&__heading
+		font-size: 14px
+		color: #000
+		font-family: "Montserrat-Bold", sans-serif
+	&__checkbox
+		&__text
+			font-size: 14px
+			color: #000
+			font-family: "Montserrat-Regular", sans-serif
+			line-height: 17px
+			&::before
+				width: 18px
+				height: 18px
+				top: 12px
+				border-radius: 0
+				border: 1px solid #8a8a8a
+
+.receiving-car
+	width: 463px
+	height: 156px
+	padding: 0 32px
+	background-color: #f1f1f1
+	&__heading
+		margin-top: 16px
+		font-size: 14px
+		color: #000
+		font-family: "Montserrat-Bold", sans-serif
+		text-align: center
+	&__choice
+		margin-top: 10px
+		display: flex
+		flex-wrap: wrap
+		li
+			width: 50%
+	&__radio
+		&__text
+			font-size: 14px
+			color: #000
+			font-family: "Montserrat-Regular", sans-serif
+			line-height: 17px
+			&::before
+				width: 18px
+				height: 18px
+				top: 4px
+				left: 4px
+				border-radius: 50%
+				border: 1px solid #8a8a8a
+			&_yellow
+				font-family: "Montserrat-Bold", sans-serif
+				color: #f6df36
+	
+.hire-car
+	margin-top: 9px
+	width: 463px
+	display: flex
+	justify-content: flex-end
+	&__date
+		margin-top: 12px
+		margin-right: 38px
+		position: relative
+		font-size: 14px
+		color: #000
+		font-family: "Montserrat-Regular", sans-serif
+		&::before
+			content: ''
+			position: absolute
+			display: block
+			width: 28px
+			height: 28px
+			top: -8px
+			left: -44px
+			background-image: url(../img/booking-modal/icons.png)
+			background-position-x: -29px
+	&__button
+		margin-right: 22px
+		width: 233px
+		height: 40px
+		font-size: 11px
+		background-color: #f5da15
+
+.totals
+	display: flex
+	justify-content: center
+	align-items: center
+	margin-top: 15px
+	width: 410px
+	height: 40px
+	border: 1px solid #f5da15
+	border-radius: 5px
+	font-size: 14px
+	color: #000
+	font-family: "Montserrat-Regular", sans-serif
+	&__title
+		padding-top: 13px
+		height: 100%
+		width: 82px
+		padding-left: 20px
+	&__price-1
+		padding-top: 13px
+		height: 100%
+		width: 158px
+		padding-left: 15px
+		font-family: "Montserrat-Bold", sans-serif
+		background-color: #f5da15
+	&__price-21
+		padding-top: 13px
+		padding-left: 24px
+		height: 100%
+		width: 168px
+
+
+.slick-prev, .slick-next 
+	width: 40px
+	height: 40px
+	border: 1px solid #f6df36
+	border-radius: 50%
+.slick-prev 
+	left: -40px
+.slick-next 
+	right: -40px
+.slick-arrow::before
+	content: ''
+	display: block
+	width: 12px
+	height: 22px
+	margin-left: 10px
+	background-image: url(../img/booking-modal/icons.png)
+.slick-next::before 
+	margin-left: 14px
+	transform: rotate(-180deg)
+
+
+
+
+
+/* order-modal */
+.order-modal
+	position: absolute
+	top: -304px
+	left: -290px
+	display: none
+	z-index: 110
+	background-color: #fff
+	width: 280px
+	height: 230px
+	padding-top: 14px
+	box-shadow: 0 0px 136px 0px rgba(0,0,0,0.8)
+	&__handler
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__button
+		margin-top: 14px
+		width: 250px
+		height: 40px
+		font-size: 10px
+		background-color: #f5da15
+	&__field
+		margin-bottom: 9px
+	&__slide__checkbox
+		margin-top: -6px
+	&__checkbox
+		&__text
+			padding: 3px 0 0 48px
+			color: #525252
+			&::before
+				top: 2px
+				left: 18px
+				border: 1px solid #bcbcbc
+.slide__checkbox
+	&__text 
+		padding: 3px 0 0 50px
+		position: relative
+		cursor: pointer
+		color: #525252
+		&:before 
+			content: ''
+			position: absolute
+			top: -4px
+			left: 0
+			width: 42px
+			height: 22px
+			border-radius: 13px
+			border: 1px solid #bcbcbc
+			background: #fff
+		&:after 
+			content: ''
+			position: absolute
+			top: -3px
+			left: 1px
+			width: 20px
+			height: 20px
+			border-radius: 10px
+			background: #f5da15
+			transition: .2s
+	input:checked + .slide__checkbox__text:after
+		left: 21px
+	input:checked + .slide__checkbox__text:before 
+		background-color: #fff
+
+
+
+
+
+
+@import "main/media"
