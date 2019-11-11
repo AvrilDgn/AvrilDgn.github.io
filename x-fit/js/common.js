@@ -50,13 +50,17 @@ $('document').ready(function() {
 	});
 
 	//map
-	function initMap() {
+	(function() {
 		var coordinates = {lat: 47.212325, lng: 38.933663},
 			map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 15,
 				center: coordinates,
 				scrollwheel: false,
        			disableDefaultUI: true,
+			}),
+			marker = new google.maps.Marker({
+				position: uluru,
+				map: map
 			});
-	}
+	})();
 });
