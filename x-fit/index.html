@@ -31,8 +31,8 @@
 		<!-- begin header -->
 		<header class="header" id="header">	
 			<div class="container">
-				<nav class="navbar navbar-expand-lg navbar-custom">
-					<a class="navbar-brand" href="#">
+				<nav class="header__navbar navbar navbar-expand-lg navbar-custom">
+					<a class="header__navbar-brand navbar-brand" href="#">
 						<img src="img/logo.png" alt="x-fit">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -65,7 +65,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="navbar__contacts contacts">
+					<div class="navbar__contacts contacts ml-auto">
 						<a class="contacts__phone phone" href="tel:8(8652)62-66-22">8 (8652) 62-66-22</a>
 						<div class="contacts__address">г.Ставрополь ул.Васильева, 2</div>
 					</div>
@@ -806,23 +806,66 @@
 				</div>
 			</form>
 		</section>
-		<!-- <form id="form" class="popup-phone__form" enctype="multipart/form-data" method="post">
-				<input id="phone-input" class="popup-phone__input" name="phone" type="tel" placeholder="+7 (   )" required 
-				onkeyup="Check_Phone_Input(this)"/>
-				<button class="button popup-phone__button" type="submit" disabled>Оставить заявку</button>
-		</form> -->
 		<!-- end consultation -->
+	
+		<section id="map" class="map">
+			<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2369.954973665913!2d41.919545420454156!3d45.05805934076432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f907450137b4f3%3A0x521229e65a45620d!2sX-Fit%20Premium%20Stavropol!5e0!3m2!1sru!2sua!4v1573452926441!5m2!1sru!2sua" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+		</section>
 
 		<!-- begin footer -->
 		<footer class="footer">
 			
+			<div class="container">
+				<nav class="footer__navbar navbar navbar-expand navbar-custom justify-content-between">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav nav">
+							<li class="nav-item">
+								<a class="nav-link active" href="#">Услуги<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">SPA-Салон</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Расписание</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">О нас</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Команда</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">3D-Тур</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="">Контакты</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__social-icons social-icons">
+						<a class="social-icons__icon" href="http://www.facebook.com/">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+						</a>
+						<a class="social-icons__icon" href="http://www.vk.com/">
+							<i class="fa fa-vk" aria-hidden="true"></i>
+						</a>
+						<a class="social-icons__icon" href="http://www.instagram.com/">
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="footer__contacts navbar__contacts contacts">
+						<a class="contacts__phone phone" href="tel:8(8652)62-66-22">8 (8652) 62-66-22</a>
+						<div class="contacts__address">г.Ставрополь ул.Васильева, 2</div>
+					</div>
+				</nav>
+			</div>
 		</footer>
 		<!-- end footer -->
 
 	</div>
 	<!-- end wrapper -->
 
-
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8sC5D_WbZfm1VRTfv5XDDtH-pTRL6fm4&callback=initMap"></script>
 	<script src="js/scripts.min.js"></script>
 
 </body>
