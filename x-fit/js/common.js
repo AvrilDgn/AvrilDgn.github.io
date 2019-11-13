@@ -50,7 +50,7 @@ $('document').ready(function() {
 	});
 
 	//map
-	(function() {
+	/*(function() {
 		var coordinates = {lat: 47.212325, lng: 38.933663},
 			map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 15,
@@ -62,5 +62,13 @@ $('document').ready(function() {
 				position: uluru,
 				map: map
 			});
-	})();
+	})();*/
+	var activeTable = $('.table-day');
+	$('.table-day').on('click', function (e) {
+		e.preventDefault();
+		var actClass = $(this).parent();
+		actClass.toggleClass("active");
+		activeTable.toggleClass("active");
+		activeTable = actClass;
+	});
 });
