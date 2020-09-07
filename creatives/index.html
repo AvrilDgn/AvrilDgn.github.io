@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
     <title>Document</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      //-document.documentElement.classList.remove("no-js");
+    </script>
     <link rel="stylesheet" href="css/style.min.css"/>
   </head>
   <body>
@@ -65,7 +69,7 @@
           <div class="weare__features weare-features">
             <div class="row">
               <div class="col-12 col-md-6 col-lg-3">
-                <div class="weare-features__item features-item slide-up">
+                <div class="weare-features__item features-item slide-to-right">
                   <div class="features-item__image">
                     <div class="features-item__icon">
                       <svg class="svg-sprite svg-sprite_write ">
@@ -83,7 +87,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-3">
-                <div class="weare-features__item features-item slide-down">
+                <div class="weare-features__item features-item slide-to-right">
                   <div class="features-item__image">
                     <div class="features-item__icon">
                       <svg class="svg-sprite svg-sprite_write ">
@@ -101,7 +105,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-3">
-                <div class="weare-features__item features-item slide-up">
+                <div class="weare-features__item features-item slide-to-left">
                   <div class="features-item__image">
                     <div class="features-item__icon">
                       <svg class="svg-sprite svg-sprite_search ">
@@ -119,7 +123,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-3">
-                <div class="weare-features__item features-item slide-down">
+                <div class="weare-features__item features-item slide-to-left">
                   <div class="features-item__image">
                     <div class="features-item__icon">
                       <svg class="svg-sprite svg-sprite_says ">
@@ -356,7 +360,7 @@
           <div class="team__persons team-persons">
             <div class="row">
               <div class="col-12 col-md-6 col-xl-3">
-                <div class="team-persons__card persons-card slide-down"><picture><source srcset="img/7_-_team/photo_1.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_1.jpg" alt="team persone 1"/></picture>
+                <div class="team-persons__card persons-card slide-to-right"><picture><source srcset="img/7_-_team/photo_1.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_1.jpg" alt="team persone 1"/></picture>
                   <div class="persons-card__signature">
                     <div class="persons-card__name heading">JOHN SNOW</div>
                     <div class="persons-card__position">CEO</div>
@@ -364,7 +368,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-xl-3">
-                <div class="team-persons__card persons-card slide-up"><picture><source srcset="img/7_-_team/photo_2.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_2.jpg" alt="team persone 2"/></picture>
+                <div class="team-persons__card persons-card slide-to-right"><picture><source srcset="img/7_-_team/photo_2.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_2.jpg" alt="team persone 2"/></picture>
                   <div class="persons-card__signature">
                     <div class="persons-card__name heading">Mark Castle</div>
                     <div class="persons-card__position">WebDesigner</div>
@@ -372,7 +376,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-xl-3">
-                <div class="team-persons__card persons-card slide-down"><picture><source srcset="img/7_-_team/photo_3.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_3.jpg" alt="team persone 3"/></picture>
+                <div class="team-persons__card persons-card slide-to-left"><picture><source srcset="img/7_-_team/photo_3.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_3.jpg" alt="team persone 3"/></picture>
                   <div class="persons-card__signature">
                     <div class="persons-card__name heading">DAVID SMITH</div>
                     <div class="persons-card__position">Photographer</div>
@@ -380,7 +384,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-xl-3">
-                <div class="team-persons__card persons-card slide-up"><picture><source srcset="img/7_-_team/photo_4.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_4.jpg" alt="team persone 4"/></picture>
+                <div class="team-persons__card persons-card slide-to-left"><picture><source srcset="img/7_-_team/photo_4.webp" type="image/webp"><img class="persons-card__image" src="img/7_-_team/photo_4.jpg" alt="team persone 4"/></picture>
                   <div class="persons-card__signature">
                     <div class="persons-card__name heading">LADY SANSA</div>
                     <div class="persons-card__position">Photographer</div>
