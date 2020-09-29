@@ -21,18 +21,18 @@
       <div class="popup__container container">
         <form class="row popup__form popup-form" action="#" method="post">
           <div class="popup__front-out col-12" id="popup-front-out"></div>
-          <div class="popup__background col-8 offset-2" id="popup-bg"></div>
-          <div class="col-8 offset-2">
+          <div class="popup__background col-sm-8 offset-sm-2" id="popup-bg"></div>
+          <div class="col-sm-8 offset-sm-2">
             <h2 class="popup-form__heading">Напишите нам</h2>
           </div>
-          <div class="col-8 col-lg-4 offset-2">
-            <div class="popup-form__input popup-form__field form-field">
+          <div class="col-sm-8 col-lg-4 offset-sm-2">
+            <div class="popup-form__input popup-form__field form-field popup_indent-left">
               <input class="form-field__input" id="popup-name" type="text" name="name" placeholder="Ф.И.О." required="required"/>
               <label class="form-field__label" for="popup-name">Ф.И.О.</label>
             </div>
           </div>
-          <div class="col-8 offset-2 col-lg-4 offset-lg-0 offset-fl-2">
-            <div class="popup-form__input popup-form__field form-field">
+          <div class="col-sm-8 offset-sm-2 col-lg-4 offset-lg-0 offset-fl-0">
+            <div class="popup-form__input popup-form__field form-field popup_indent-right">
               <input class="form-field__input phone-input" id="popup-phone" type="tel" name="phone" placeholder="Телефон" minlength="16" pattern="+7([0-9]{3})[0-9]{3}-[0-9]{2}-[0-9]{2}" required="required"/>
               <label class="form-field__label" for="popup-phone">Телефон</label>
               <div class="form-info">
@@ -43,15 +43,15 @@
               </div>
             </div>
           </div>
-          <div class="col-8 col-lg-5 offset-2">
-            <div class="popup-form__textarea popup-form__field form-field">
+          <div class="col-sm-8 col-lg-5 offset-sm-2">
+            <div class="popup-form__textarea popup-form__field form-field popup_indent-left">
               <textarea class="form-field__input form-field__textarea" id="popup-text" name="text" placeholder="Сообщение" required="required"></textarea>
               <label class="form-field__label" for="popup-text">Сообщение</label>
             </div>
           </div>
-          <div class="col-8 offset-2 col-lg-3 offset-lg-0 offset-fl-2">
-            <div class="popup-form__submit-block submit-block">
-              <div class="submit-block__recaptcha g-recaptcha"><img src="/img/recaptcha.jpg" alt="recaptcha"/></div>
+          <div class="col-sm-8 offset-sm-2 col-lg-3 offset-lg-0 offset-fl-0">
+            <div class="popup-form__submit-block submit-block popup_indent-right">
+              <div class="submit-block__recaptcha g-recaptcha"><img src="img/recaptcha.jpg" alt="recaptcha"/></div>
               <div class="submit-block__agreement">Нажимая кнопку отправить, Вы соглашаетесь с пользовательским <a class="submit-block__agreement-link" href="#">соглашением.</a></div>
               <button class="submit-block__button button" type="submit">Отправить</button>
             </div>
@@ -369,7 +369,7 @@
               <li class="news-pagination__item"><a class="news-pagination__link" href="post.html"> <span class="news-pagination__arrow_prev news-pagination__arrow"></span></a></li>
               <li class="news-pagination__item"><a class="news-pagination__link" href="post.html">1</a></li>
               <li class="news-pagination__item"><a class="news-pagination__link" href="post.html">2</a></li>
-              <li class="news-pagination__item"><a class="news-pagination__link" href="post.html">3</a></li>
+              <li class="news-pagination__item"><a class="news-pagination__link news-pagination__link_active" href="post.html">3</a></li>
               <li class="news-pagination__item"><a class="news-pagination__link" href="post.html">4</a></li>
               <li class="news-pagination__item"><a class="news-pagination__link" href="post.html">5</a></li>
               <li class="news-pagination__item"><a class="news-pagination__link" href="post.html"> <span class="news-pagination__arrow_next news-pagination__arrow"></span></a></li>
@@ -443,7 +443,7 @@
       <section class="socials-block" id="socials">
         <div class="container">
           <div class="row">
-            <div class="order-2 order-lg-1 socials-block__background lazy lazy-bg" data-bg="img/follow_socials/background"></div>
+            <div class="d-none d-sm-block order-2 order-lg-1 socials-block__background lazy lazy-bg" data-bg="img/follow_socials/background"></div>
             <div class="col-md-10 col-lg-7 offset-lg-5 col-fl-8 offset-fl-4">
               <h2 class="socials-block__heading">Следите за нами в социальных сетях</h2>
               <p class="socials-block__text">
