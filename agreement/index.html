@@ -13,25 +13,51 @@
   <body>
     <div class="popup">
       <div class="container">
-        <div class="container__right"><a class="popup__logo logo" href="index.html">СОГЛАСИЕ</a>
-          <div class="popup__wrap">
+        <div class="container__left"></div>
+        <div class="container__right">
+          <div class="popup__wrap"><a class="popup__logo logo" href="index.html"><img src="img/logo.svg" alt="Согласие"/></a>
             <h2 class="popup__heading">Оформление полиса</h2>
-            <form class="popup__form popup-form" action="post">
+            <form class="popup__form popup-form popup-form_active popup-payment" action="post">
               <fieldset class="popup-form__fields-group">
                 <div class="popup-form__field form-field">
                   <p class="form-field__heading popup-form__heading">Введите номер карты</p>
-                  <input class="form-field__input popup-form__input" id="popup-card-number" type="password" name="card-number" placeholder="**** **** **** ****" minlength="16" maxlength="16" required="required"/>
-                  <label class="popup-form__label form-label" for="popup-card-number"></label>
+                  <input class="form-field__input popup-form__input" id="popup-card-number" type="text" name="card-number" placeholder="4444 **** **** 2222" minlength="19" maxlength="19" required="required"/>
+                  <label class="popup-form__label form-label label-card" for="popup-card-number"><i class="label-card__icon">
+                      <svg class="svg-sprite svg-sprite_credit-card ">
+                        <use xlink:href="img/sprite/sprite.svg#credit-card"></use>
+                      </svg></i></label>
                 </div>
                 <div class="popup-form__field form-field">
                   <p class="form-field__heading popup-form__heading">Введите номер мобильного телефона</p>
-                  <input class="form-field__input phone-input popup-form__input" id="popup-phone" type="tel" name="phone" placeholder="Номер телефона" minlength="14" required="required"/>
-                  <label class="popup-form__label form-label" for="popup-phone">+7</label>
+                  <input class="form-field__input phone-input popup-form__input" id="popup-phone" type="tel" name="phone" placeholder="Номер телефона" minlength="15" required="required"/>
+                  <label class="popup-form__label form-label label-phone" for="popup-phone"><i class="label-phone__icon">
+                      <svg class="svg-sprite svg-sprite_smartphone ">
+                        <use xlink:href="img/sprite/sprite.svg#smartphone"></use>
+                      </svg></i>+7</label>
                 </div>
               </fieldset>
-              <button class="popup-form__button button button_orange" id="popup-submit" type="submit">Продолжить</button>
+              <button class="popup-form__button button button_orange" id="popup-submit" type="submit" disabled="disabled">Продолжить</button>
               <label class="check option">
-                <input class="check__input" id="agreement" type="checkbox" checked="checked" required="required"/><span class="check__box"></span>Нажимая на кнопку, вы соглашаетесь с <a href="#">правилами</a>пользования сайтом и выражаете <a href="#">Согласие на обработку персональных данных</a>
+                <input class="check__input" id="agreement" type="checkbox" checked="checked"/><span class="check__box">
+                  <svg class="svg-sprite svg-sprite_check-mark ">
+                    <use xlink:href="img/sprite/sprite.svg#check-mark"></use>
+                  </svg></span>Нажимая на кнопку, вы соглашаетесь<br/>с <a href="#">правилами</a>пользования сайтом <b>и выражаете <br/><a href="#">Согласие на обработку персональных данных</a></b>
+              </label>
+            </form>
+            <form class="popup__form popup-form popup-confirmation d-none" action="post">
+              <fieldset class="popup-form__fields-group popup-confirmation__fields-group">
+                <div class="popup-form__field form-field">
+                  <p class="form-field__heading popup-form__heading popup-confirmation__heading">Введите код, полученный в SMS сообщении</p>
+                  <input class="form-field__input popup-form__input popup-confirmation__input" id="popup-sms-code" type="text" name="sms-code" placeholder="Введите пятизначный код..." minlength="5" maxlength="5" required="required"/>
+                </div>
+                <p class="popup-confirmation__subtext">Стоимость 30 рублей в день.<br/>Дополнительная комиссия не взимается.</p>
+              </fieldset>
+              <button class="popup-form__button button button_orange" id="popup-confirmation-submit" type="submit" disabled="disabled">Продолжить</button>
+              <label class="check option">
+                <input class="check__input" id="confirmation-agreement" type="checkbox" checked="checked"/><span class="check__box">
+                  <svg class="svg-sprite svg-sprite_check-mark ">
+                    <use xlink:href="img/sprite/sprite.svg#check-mark"></use>
+                  </svg></span>Нажимая на кнопку, вы соглашаетесь<br/>с <a href="#">правилами</a>пользования сайтом <b>и выражаете <br/><a href="#">Согласие на обработку персональных данных</a></b>
               </label>
             </form>
           </div>
@@ -46,24 +72,30 @@
             <div class="title__wrap">
               <h1 class="title__heading">Страхование банковских карт</h1>
               <div class="title__text">
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Atque accusantium non
-                inventore qui sapiente? Laudantium,
-                reprehenderit quidem! Veritatis harum
-                sequi eum iste odio fuga dolor, excepturi
-                quidem doloremque, minima atque?
+                Страхование банковской карты на
+                случай несанкционированного
+                использования третьими лицами
+                поможет вам вернуть средства в
+                случае различных мошеннических
+                действий с вашей картой, а также в
+                случае ее кражи, утери или
+                повреждения. Будьте уверены в
+                сохранности своих средств.
               </div><a class="title__button button button_orange button-popup" href="#">Оформить полис</a>
             </div>
           </div>
           <div class="container__right">
-            <div class="title__wrap"><a class="title__logo logo" href="index.html">СОГЛАСИЕ</a>
+            <div class="title__wrap"><a class="title__logo logo" href="index.html"><img src="img/logo.svg" alt="Согласие"/></a>
               <form class="title__form title-form" action="post">
                 <fieldset class="title-form__fields-group">
                   <div class="title-form__input title-form__field form-field">
                     <p class="form-field__heading">Подтвердите номер телефона для входа в систему</p>
-                    <input class="form-field__input phone-input" id="title-phone" type="tel" name="phone" placeholder="Номер телефона" minlength="14" required="required"/>
+                    <input class="form-field__input phone-input" id="title-phone" type="tel" name="phone" placeholder="Номер телефона" minlength="15" required="required"/>
                     <p class="form-field__over-text">Номер телефона</p>
-                    <label class="title-form__label form-label" for="title-phone">+7</label>
+                    <label class="title-form__label form-label label-phone" for="title-phone"><i class="label-phone__icon">
+                        <svg class="svg-sprite svg-sprite_smartphone ">
+                          <use xlink:href="img/sprite/sprite.svg#smartphone"></use>
+                        </svg></i>+7</label>
                   </div>
                   <div class="title-form__input title-form__field form-field">
                     <p class="form-field__heading">Последние 4 цифры страхуемой карты</p>
@@ -74,15 +106,51 @@
                 </fieldset>
                 <button class="title-form__button button button_red" type="submit" disabled="disabled">Введите номер телефона и последние 4 цифры номера страхуемой карты</button>
               </form>
+              <div class="title__support"><a class="title__support-link" href="#">Служба поддержки</a></div>
             </div>
-            <div class="title__support"><a class="title__support-link" href="#">Служба поддержки</a></div>
           </div>
         </div>
       </div>
       <div class="advantages">
         <div class="container">
           <div class="container__left"></div>
-          <div class="container__right"></div>
+          <div class="container__right">
+            <div class="block-you-get">
+              <h2 class="advantages__heading">Что вы получаете:</h2>
+              <ul class="advantages__list">
+                <li class="advantages__item"><img class="advantages__item-image" src="img/advantages/online-appointment.png" alt="Оформление онлайн"/>
+                  <h3 class="advantages__item-heading">Оформление онлайн</h3>
+                  <p class="advantages__item-text">
+                    Оформи полис
+                    менее чем
+                    за 5 минут
+                  </p>
+                </li>
+                <li class="advantages__item"><img class="advantages__item-image" src="img/advantages/smartphone.png" alt="Удобное получение"/>
+                  <h3 class="advantages__item-heading">Удобное получение</h3>
+                  <p class="advantages__item-text">
+                    Полис придет
+                    на телефон
+                    SMS сообщением
+                  </p>
+                </li>
+                <li class="advantages__item"><img class="advantages__item-image" src="img/advantages/appointment.png" alt="Уникальные возможности"/>
+                  <h3 class="advantages__item-heading">Уникальные возможности</h3>
+                  <p class="advantages__item-text">
+                    Полис вступает в силу
+                    на 31-й день
+                    после оплаты
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="block-protection">
+              <h2 class="advantages__heading">Чувствовать себя защищенным –<br/>это важно!</h2>
+              <div class="advantages__insurance-scheme"><img class="advantages__insurance-scheme-image" src="img/advantages/card-shield.png" alt="Программа страхования"/>
+                <p class="advantages__insurance-scheme-text">Программа страхования<br/>банковских Карт разработана совместно<br/>со страховой компанией<br/>ООО «СК «Согласие», являющейся одним<br/>из лидеров на рынке.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
