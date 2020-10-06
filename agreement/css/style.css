@@ -397,6 +397,14 @@ p {
   margin: 0;
 }
 
+a {
+  -webkit-box-shadow: 0 0 1px 2px transparent;
+          box-shadow: 0 0 1px 2px transparent;
+  -webkit-transition: all ease .25s;
+  -o-transition: all ease .25s;
+  transition: all ease .25s;
+}
+
 a:focus {
   outline: none;
   -webkit-box-shadow: 0 0 1px 2px #fc783a;
@@ -625,6 +633,7 @@ input::-webkit-inner-spin-button {
   font-size: 15px;
   font-weight: 400;
   color: #fc783a;
+  cursor: text;
 }
 
 /* Option */
@@ -670,6 +679,13 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
   border: 2px solid #fc783a;
   display: block;
+  -webkit-box-shadow: 0 0 1px 1px transparent;
+          box-shadow: 0 0 1px 1px transparent;
+  -webkit-transition: -webkit-box-shadow ease .25s;
+  transition: -webkit-box-shadow ease .25s;
+  -o-transition: box-shadow ease .25s;
+  transition: box-shadow ease .25s;
+  transition: box-shadow ease .25s, -webkit-box-shadow ease .25s;
 }
 
 .check__box .svg-sprite {
@@ -748,9 +764,11 @@ input::-webkit-inner-spin-button {
   font-weight: 400;
   color: white;
   line-height: 1.5;
-  -webkit-transition: background ease 0.25s;
-  -o-transition: background ease 0.25s;
-  transition: background ease 0.25s;
+  -webkit-box-shadow: 0 0 4px 0 transparent;
+          box-shadow: 0 0 4px 0 transparent;
+  -webkit-transition: all ease .25s;
+  -o-transition: all ease .25s;
+  transition: all ease .25s;
 }
 
 .button:focus {
@@ -771,6 +789,8 @@ input::-webkit-inner-spin-button {
   line-height: 1.6;
   padding-left: 80px;
   padding-right: 80px;
+  -webkit-box-shadow: 0 0 4px 1px transparent;
+          box-shadow: 0 0 4px 1px transparent;
 }
 
 .button_red:hover {
@@ -1049,9 +1069,11 @@ input::-webkit-inner-spin-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .advantages__item {
@@ -1264,11 +1286,11 @@ input::-webkit-inner-spin-button {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-  -webkit-transition: -webkit-transform ease 0.25s;
-  transition: -webkit-transform ease 0.25s;
-  -o-transition: transform ease 0.25s;
-  transition: transform ease 0.25s;
-  transition: transform ease 0.25s, -webkit-transform ease 0.25s;
+  -webkit-box-shadow: 2px 2px 2px 0 transparent;
+          box-shadow: 2px 2px 2px 0 transparent;
+  -webkit-transition: all ease 0.25s;
+  -o-transition: all ease 0.25s;
+  transition: all ease 0.25s;
 }
 
 .insurance-cover__table-unwraper.up {
@@ -1336,10 +1358,6 @@ input::-webkit-inner-spin-button {
   }
 
   .advantages__list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     margin-top: 20px;
   }
 
@@ -1365,12 +1383,20 @@ input::-webkit-inner-spin-button {
     margin-left: 0;
   }
 
+  .popup .container__right {
+    min-height: inherit;
+  }
+
   .title__wrap {
     margin: 0;
   }
 
   .title__support {
     left: 180px;
+  }
+
+  .title .container__left {
+    min-height: inherit;
   }
 
   .advantages__insurance-scheme-text {
@@ -1611,6 +1637,19 @@ input::-webkit-inner-spin-button {
 
   .popup-confirmation__heading {
     margin: 0;
+  }
+
+  .popup-confirmation__subtext {
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .popup-form__input {
