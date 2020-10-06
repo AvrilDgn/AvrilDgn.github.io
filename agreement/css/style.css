@@ -667,10 +667,7 @@ input::-webkit-inner-spin-button {
   width: 18px;
   height: 18px;
   overflow: hidden;
-  border-radius: 0.05em;
   background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   border: 2px solid #fc783a;
   display: block;
 }
@@ -700,12 +697,14 @@ input::-webkit-inner-spin-button {
   outline: none;
   -webkit-box-shadow: 0 0 1px 1px #e6141d;
           box-shadow: 0 0 1px 1px #e6141d;
+  background-color: #dddce1;
 }
 
 .check__input:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+  border: none;
 }
 
 .label-phone__icon {
