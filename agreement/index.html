@@ -11,59 +11,6 @@
     <link rel="stylesheet" href="css/style.min.css"/>
   </head>
   <body>
-    <div class="popup">
-      <div class="container">
-        <div class="container__left"></div>
-        <div class="container__right">
-          <div class="popup__wrap"><a class="popup__logo logo" href="index.html"><img src="img/logo.svg" alt="Согласие"/></a>
-            <h2 class="popup__heading">Оформление полиса</h2>
-            <form class="popup__form popup-form popup-form_active popup-payment" action="post">
-              <fieldset class="popup-form__fields-group">
-                <div class="popup-form__field form-field">
-                  <p class="form-field__heading popup-form__heading">Введите номер карты</p>
-                  <input class="form-field__input popup-form__input" id="popup-card-number" type="text" name="card-number" placeholder="4444 **** **** 2222" minlength="19" maxlength="19" required="required"/>
-                  <label class="popup-form__label form-label label-card" for="popup-card-number"><i class="label-card__icon">
-                      <svg class="svg-sprite svg-sprite_credit-card ">
-                        <use xlink:href="img/sprite/sprite.svg#credit-card"></use>
-                      </svg></i></label>
-                </div>
-                <div class="popup-form__field form-field">
-                  <p class="form-field__heading popup-form__heading">Введите номер мобильного телефона</p>
-                  <input class="form-field__input phone-input popup-form__input" id="popup-phone" type="tel" name="phone" placeholder="Номер телефона" minlength="15" required="required"/>
-                  <label class="popup-form__label form-label label-phone" for="popup-phone"><i class="label-phone__icon">
-                      <svg class="svg-sprite svg-sprite_smartphone ">
-                        <use xlink:href="img/sprite/sprite.svg#smartphone"></use>
-                      </svg></i>+7</label>
-                </div>
-              </fieldset>
-              <button class="popup-form__button button button_orange" id="popup-submit" type="submit" disabled="disabled">Продолжить</button>
-              <label class="check option">
-                <input class="check__input" id="agreement" type="checkbox" checked="checked"/><span class="check__box">
-                  <svg class="svg-sprite svg-sprite_check-mark ">
-                    <use xlink:href="img/sprite/sprite.svg#check-mark"></use>
-                  </svg></span>Нажимая на кнопку, вы соглашаетесь<br/>с <a href="#">правилами</a>пользования сайтом <b>и выражаете <br/><a href="#">Согласие на обработку персональных данных</a></b>
-              </label>
-            </form>
-            <form class="popup__form popup-form popup-confirmation d-none" action="post">
-              <fieldset class="popup-form__fields-group popup-confirmation__fields-group">
-                <div class="popup-form__field form-field">
-                  <p class="form-field__heading popup-form__heading popup-confirmation__heading">Введите код, полученный в SMS сообщении</p>
-                  <input class="form-field__input popup-form__input popup-confirmation__input" id="popup-sms-code" type="text" name="sms-code" placeholder="Введите пятизначный код..." minlength="5" maxlength="5" required="required"/>
-                </div>
-                <p class="popup-confirmation__subtext">Стоимость 30 рублей в день.<br/>Дополнительная комиссия не взимается.</p>
-              </fieldset>
-              <button class="popup-form__button button button_orange" id="popup-confirmation-submit" type="submit" disabled="disabled">Продолжить</button>
-              <label class="check option">
-                <input class="check__input" id="confirmation-agreement" type="checkbox" checked="checked"/><span class="check__box">
-                  <svg class="svg-sprite svg-sprite_check-mark ">
-                    <use xlink:href="img/sprite/sprite.svg#check-mark"></use>
-                  </svg></span>Нажимая на кнопку, вы соглашаетесь<br/>с <a href="#">правилами</a>пользования сайтом <b>и выражаете <br/><a href="#">Согласие на обработку персональных данных</a></b>
-              </label>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     <main class="main" id="main">
       <div class="main__background"></div>
       <div class="title">
@@ -145,7 +92,7 @@
               </ul>
             </div>
             <div class="block-protection">
-              <h2 class="advantages__heading">Чувствовать себя защищенным –<br/>это важно!</h2>
+              <h2 class="advantages__heading">Чувствовать себя защищенным – <br class="d-none d-xl-inline"/>это важно!</h2>
               <div class="advantages__insurance-scheme"><img class="advantages__insurance-scheme-image" src="img/advantages/card-shield.png" alt="Программа страхования"/>
                 <p class="advantages__insurance-scheme-text">Программа страхования<br/>банковских Карт разработана совместно<br/>со страховой компанией<br/>ООО «СК «Согласие», являющейся одним<br/>из лидеров на рынке.</p>
               </div>
@@ -157,31 +104,31 @@
         <div class="container">
           <div class="container__left"></div>
           <div class="container__right">
-            <h2 class="necessity__heading">В каких страховых случаях помогает<br/>полис страхования банковсской карты:</h2>
+            <h2 class="necessity__heading">В каких страховых случаях помогает <br class="d-none d-xl-inline"/>полис страхования банковсской карты:</h2>
             <ul class="necessity__list">
               <li class="necessity__item"><i class="necessity__item-icon">
                   <svg class="svg-sprite svg-sprite_clickbait ">
                     <use xlink:href="img/sprite/sprite.svg#clickbait"></use>
                   </svg></i>
-                <p class="necessity__item-text">Несанкционированное снятие денежных средств с банковской карты<br/>третьими лицами вследствие ее потери, кражи или копирования.</p>
+                <p class="necessity__item-text">Несанкционированное снятие денежных средств с банковской карты <br/>третьими лицами вследствие ее потери, кражи или копирования.</p>
               </li>
               <li class="necessity__item"><i class="necessity__item-icon">
                   <svg class="svg-sprite svg-sprite_cyber-attack ">
                     <use xlink:href="img/sprite/sprite.svg#cyber-attack"></use>
                   </svg></i>
-                <p class="necessity__item-text">Хищение средств с банковской карты в результате<br/>интернет-мошенничества, кражи личных данных держателя карты,<br/>фишинга или скимминга.</p>
+                <p class="necessity__item-text">Хищение средств с банковской карты в результате <br/>интернет-мошенничества, кражи личных данных держателя карты, <br/>фишинга или скимминга.</p>
               </li>
               <li class="necessity__item"><i class="necessity__item-icon">
                   <svg class="svg-sprite svg-sprite_withdraw ">
                     <use xlink:href="img/sprite/sprite.svg#withdraw"></use>
                   </svg></i>
-                <p class="necessity__item-text">Хищение наличных денежных средств, полученных в банкомате по<br/>банковской карте.</p>
+                <p class="necessity__item-text">Хищение наличных денежных средств, полученных в банкомате по <br/>банковской карте.</p>
               </li>
               <li class="necessity__item"><i class="necessity__item-icon">
                   <svg class="svg-sprite svg-sprite_steal ">
                     <use xlink:href="img/sprite/sprite.svg#steal"></use>
                   </svg></i>
-                <p class="necessity__item-text">Утрата банковской карты вследствие хищения, утери, случайных<br/>механических, термических повреждений или размагничивания,<br/>а также неисправной работы банкомата.</p>
+                <p class="necessity__item-text">Утрата банковской карты вследствие хищения, утери, случайных <br/>механических, термических повреждений или размагничивания, <br/>а также неисправной работы банкомата.</p>
               </li>
             </ul><a class="necessity__button button button_orange button-popup" href="#">Оформить полис</a>
           </div>
@@ -191,7 +138,7 @@
         <div class="container">
           <div class="container__left"></div>
           <div class="container__right">
-            <h2 class="insurance-cover__heading">Страховое покрытие зависит от<br/>внесеных Вами денежных средств<br/>в течение первых 30 дней</h2>
+            <h2 class="insurance-cover__heading">Страховое покрытие зависит от <br class="d-none d-xl-inline"/>внесеных Вами денежных средств<br class="d-none d-xl-inline"/>в течение первых 30 дней</h2>
             <div class="insurance-cover__table-wrap">
               <div class="insurance-cover__table-collapse">
                 <table class="insurance-cover__table">
@@ -230,11 +177,64 @@
                 </table>
               </div><a class="insurance-cover__table-unwraper" href="#"></a>
             </div>
-            <p class="insurance-cover__copyright">Copyright © 2018 All rights reserved. <a class="insurance-cover__copyright-link" href="#">Соглашение об боработке персональныз данных,</a><br/><a class="insurance-cover__copyright-link" href="#">Договор-оферта</a></p>
+            <p class="insurance-cover__copyright">Copyright © 2018 All rights reserved. <a class="insurance-cover__copyright-link" href="#">Соглашение об боработке персональныз данных, </a><br class="d-none d-xl-inline"/><a class="insurance-cover__copyright-link" href="#">Договор-оферта</a></p>
           </div>
         </div>
       </div>
     </main>
+    <div class="popup">
+      <div class="container">
+        <div class="container__left"></div>
+        <div class="container__right">
+          <div class="popup__wrap"><a class="popup__logo logo" href="index.html"><img src="img/logo.svg" alt="Согласие"/></a>
+            <h2 class="popup__heading">Оформление полиса</h2>
+            <form class="popup__form popup-form popup-form_active popup-payment" action="post">
+              <fieldset class="popup-form__fields-group">
+                <div class="popup-form__field form-field">
+                  <p class="form-field__heading popup-form__heading">Введите номер карты</p>
+                  <input class="form-field__input popup-form__input" id="popup-card-number" type="text" name="card-number" placeholder="4444 **** **** 2222" minlength="19" maxlength="19" required="required"/>
+                  <label class="popup-form__label form-label label-card" for="popup-card-number"><i class="label-card__icon">
+                      <svg class="svg-sprite svg-sprite_credit-card ">
+                        <use xlink:href="img/sprite/sprite.svg#credit-card"></use>
+                      </svg></i></label>
+                </div>
+                <div class="popup-form__field form-field">
+                  <p class="form-field__heading popup-form__heading">Введите номер мобильного телефона</p>
+                  <input class="form-field__input phone-input popup-form__input" id="popup-phone" type="tel" name="phone" placeholder="Номер телефона" minlength="15" required="required"/>
+                  <label class="popup-form__label form-label label-phone" for="popup-phone"><i class="label-phone__icon">
+                      <svg class="svg-sprite svg-sprite_smartphone ">
+                        <use xlink:href="img/sprite/sprite.svg#smartphone"></use>
+                      </svg></i>+7</label>
+                </div>
+              </fieldset>
+              <button class="popup-form__button button button_orange" id="popup-submit" type="submit" disabled="disabled">Продолжить</button>
+              <label class="check option">
+                <input class="check__input" id="agreement" type="checkbox" checked="checked"/><span class="check__box">
+                  <svg class="svg-sprite svg-sprite_check-mark ">
+                    <use xlink:href="img/sprite/sprite.svg#check-mark"></use>
+                  </svg></span>Нажимая на кнопку, вы соглашаетесь <br class="d-none d-xl-inline"/>с <a href="#">правилами </a>пользования сайтом <b>и выражаете <br class="d-none d-xl-inline"/><a href="#">Согласие на обработку персональных данных</a></b>
+              </label>
+            </form>
+            <form class="popup__form popup-form popup-confirmation d-none" action="post">
+              <fieldset class="popup-form__fields-group popup-confirmation__fields-group">
+                <div class="popup-form__field form-field">
+                  <p class="form-field__heading popup-form__heading popup-confirmation__heading">Введите код, полученный в SMS сообщении</p>
+                  <input class="form-field__input popup-form__input popup-confirmation__input" id="popup-sms-code" type="text" name="sms-code" placeholder="Введите пятизначный код..." minlength="5" maxlength="5" required="required"/>
+                </div>
+                <p class="popup-confirmation__subtext">Стоимость 30 рублей в день.<br/>Дополнительная комиссия не взимается.</p>
+              </fieldset>
+              <button class="popup-form__button button button_orange" id="popup-confirmation-submit" type="submit" disabled="disabled">Продолжить</button>
+              <label class="check option">
+                <input class="check__input" id="confirmation-agreement" type="checkbox" checked="checked"/><span class="check__box">
+                  <svg class="svg-sprite svg-sprite_check-mark ">
+                    <use xlink:href="img/sprite/sprite.svg#check-mark"></use>
+                  </svg></span>Нажимая на кнопку, вы соглашаетесь<br/>с <a href="#">правилами</a>пользования сайтом <b>и выражаете <br/><a href="#">Согласие на обработку персональных данных</a></b>
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="js/main.min.js"></script>
   </body>
 </html>

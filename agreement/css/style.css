@@ -613,7 +613,7 @@ input::-webkit-inner-spin-button {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  bottom: 17px;
+  bottom: 19px;
   left: 11px;
   font-family: roboto, sans-serif;
   font-size: 15px;
@@ -1186,7 +1186,7 @@ input::-webkit-inner-spin-button {
 }
 
 .insurance-cover__table-collapse {
-  height: 393px;
+  height: 390px;
   overflow: hidden;
   border-bottom: 2px solid #383838;
   padding-bottom: 15px;
@@ -1273,6 +1273,413 @@ input::-webkit-inner-spin-button {
 
 .insurance-cover__copyright-link:hover {
   color: #eb5f0a;
+}
+
+@media screen and (min-width: 1350px) {
+  .d-xl-inline {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 1349px) {
+  .d-xl-inline {
+    display: none;
+  }
+
+  .container__right {
+    padding-right: 20px;
+  }
+
+  .popup__wrap {
+    margin-left: 60px;
+  }
+
+  .popup__logo {
+    right: -60px;
+  }
+
+  .title__wrap {
+    margin-right: 40px;
+    margin-left: 60px;
+  }
+
+  .title__support {
+    left: 240px;
+  }
+
+  .advantages__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .advantages__item {
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  .insurance-cover__table-row .insurance-cover__table-data:last-child,
+  .insurance-cover__table-row .insurance-cover__table-heading:last-child {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  .insurance-cover__table-row .insurance-cover__table-data:first-child,
+  .insurance-cover__table-row .insurance-cover__table-heading:first-child {
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  .popup__wrap {
+    margin-left: 0;
+  }
+
+  .title__wrap {
+    margin: 0;
+  }
+
+  .title__support {
+    left: 180px;
+  }
+
+  .advantages__insurance-scheme-text {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .main {
+    background-color: #dddce1;
+    position: relative;
+    height: auto;
+  }
+
+  .main__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    width: 100%;
+    height: inherit;
+    min-height: inherit;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .container__left {
+    padding-right: 60px;
+    padding-left: 60px;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background-color: #dddce1;
+  }
+
+  .container__right {
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background-color: #dddce1;
+  }
+
+  .popup__wrap {
+    width: 400px;
+  }
+
+  .popup__heading {
+    font-size: 50px;
+  }
+
+  .popup__logo {
+    left: 0;
+  }
+
+  .title__heading {
+    font-size: 50px;
+  }
+
+  .title__wrap {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .title__support {
+    left: 60px;
+  }
+
+  .advantages__heading {
+    margin-left: 0;
+  }
+
+  .advantages__list {
+    margin-left: 0;
+  }
+
+  .advantages__insurance-scheme {
+    margin-left: 0;
+  }
+
+  .necessity {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .necessity__heading {
+    margin-top: 80px;
+    margin-left: 0;
+  }
+
+  .necessity__list {
+    margin-left: 0;
+  }
+
+  .necessity__button {
+    margin-left: 0;
+  }
+
+  .insurance-cover {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .insurance-cover__heading {
+    margin-top: 80px;
+    margin-left: 0;
+  }
+
+  .insurance-cover__copyright {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+
+  .insurance-cover__table-collapse {
+    height: 420px;
+  }
+
+  .insurance-cover__table-collapse {
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+  .container__left {
+    padding-right: 15px;
+    padding-left: 15px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .container__right {
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .form-field__heading {
+    font-size: 15px;
+  }
+
+  .form-field__input {
+    padding-left: 50px;
+  }
+
+  .phone-input {
+    padding-left: 60px;
+  }
+
+  .check {
+    margin-top: 40px;
+    padding-left: 50px;
+  }
+
+  .check__box {
+    margin-left: -40px;
+  }
+
+  .button {
+    height: 50px;
+    width: 338px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .button_red {
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 1.6;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .button_orange {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .popup__wrap {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .popup__heading {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .popup__logo {
+    top: 20px;
+  }
+
+  .popup-confirmation__input {
+    padding-left: 20px;
+  }
+
+  .popup-form__input {
+    margin-top: 20px;
+  }
+
+  .popup-form__button {
+    margin-top: 40px;
+  }
+
+  .title__heading {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .title__text {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .title__wrap {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .title__support {
+    left: 15px;
+    bottom: 0;
+  }
+
+  .title-form__button {
+    margin-top: 40px;
+  }
+
+  .advantages__heading {
+    font-size: 22px;
+  }
+
+  .advantages .block-protection {
+    padding-top: 100px;
+  }
+
+  .advantages__insurance-scheme {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .advantages__insurance-scheme-image {
+    width: 100%;
+    height: 100%;
+    max-width: 181px;
+    max-height: 154px;
+  }
+
+  .advantages__insurance-scheme-text {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .necessity__heading {
+    font-size: 22px;
+  }
+
+  .necessity__list {
+    margin-top: 10px;
+  }
+
+  .necessity__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .necessity__item-icon {
+    margin: 0;
+  }
+
+  .necessity__item-text {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .insurance-cover {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .insurance-cover__heading {
+    font-size: 22px;
+  }
+
+  .insurance-cover__copyright {
+    margin-top: 80px;
+  }
+
+  .insurance-cover__table-heading {
+    font-size: 18px;
+  }
+
+  .insurance-cover__table-data {
+    font-size: 15px;
+  }
+
+  .insurance-cover__table-collapse {
+    height: 340px;
+  }
 }
 
 @media screen and (min-height: 667px) {
