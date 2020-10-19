@@ -39,7 +39,7 @@
     </div>
     <main class="main">
       <header class="header" id="header">
-        <div class="container d-flex justify-content-between"><a class="header__logo" href="index.html">Медвежий угол</a>
+        <div class="container d-flex flex-column flex-xl-row justify-content-between"><a class="header__logo" href="index.html">Медвежий угол</a>
           <nav class="header__nav header-nav">
             <ul class="header-nav__links-list">
               <li class="header-nav__links-item"><a class="header-nav__link anchor-link" href="#land-map">Выбор участка</a></li>
@@ -50,7 +50,7 @@
             <div class="header-nav__info">
               <p class="header-nav__working-hours">пн-вс: 8:00-22:00</p><a class="header-nav__phone-number" href="tel:+79811949870">Tel: +7 981 194-98-70</a>
             </div>
-          </nav>
+          </nav><a class="header__toggle-btn" href="#"><span></span></a>
         </div>
         <div class="cloud cloud_bottom"></div>
       </header>
@@ -65,12 +65,12 @@
         <div class="cloud cloud_top"></div>
         <div class="container">
           <div class="row">
-            <div class="col-7">
+            <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column align-items-center d-lg-block">
               <p class="title__subheading">Коттеджный поселок</p>
               <h1 class="title__heading">Медвежий угол</h1>
               <p class="title__description">Земельные участки в Ломоносовском районе от <b>70 000 руб/сотка </b>от собственника с коммуникациями без доп. платежей</p><a class="title__button btn" href="#"><span class="btn__blackout"></span><span class="btn__text">Записаться на просмотр</span></a>
             </div>
-            <div class="col-5 d-flex justify-content-center"><img class="title__image" src="img/title/house.png" alt="Дом"/></div>
+            <div class="col-lg-5 d-flex justify-content-center order-1 order-lg-2"><img class="title__image" src="img/title/house.png" alt="Дом"/></div>
           </div>
         </div>
         <div class="cloud cloud_bottom"></div>
@@ -78,8 +78,8 @@
       <article class="signup-top" id="signup-top">
         <div class="container">
           <div class="row">
-            <div class="col-7">
-              <div class="signup-top__arrow">
+            <div class="col-12 col-lg-8 col-xl-7 offset-lg-2 offset-xl-0">
+              <div class="signup-top__arrow d-none d-xxl-block">
                 <svg class="svg-sprite svg-sprite_arrow_1 ">
                   <use xlink:href="img/sprite/sprite.svg#arrow_1"></use>
                 </svg>
@@ -88,7 +88,7 @@
               <p class="signup-top__convention">Нажимая "Записаться", вы принимаете <br/><a class="signup-top__link" href="#">Соглашение </a>и <a class="signup-top__link" href="#">Политику конфиденциальности сайта</a></p>
               <p class="signup-top__select-plot">Выберите свой участок <br/>в “Медвежьем углу”</p>
             </div>
-            <div class="col-5 d-flex flex column align-items-end justify-content-end">
+            <div class="col-12 col-xl-5 d-flex flex-column align-items-end justify-content-xl-end align-items-center align-items-xl-start">
               <form class="signup-top__form signup-top-form" id="signup-top-form" action="#" method="post">
                 <input class="signup-top-form__input phone-input" type="tel" name="phone" placeholder="Введите свой телефон" minlength="18" required="required"/>
                 <input class="signup-top-form__input" type="text" name="name" placeholder="Ваше имя" required="required"/>
@@ -630,7 +630,7 @@
               строительство в 10 км от КАД
             </h2>
             <ul class="row advantage__list">
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_road ">
                     <use xlink:href="img/sprite/sprite.svg#road"></use>
@@ -638,7 +638,7 @@
                 </div>
                 <p class="advantage__name">Дороги</p>
               </li>
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_flash ">
                     <use xlink:href="img/sprite/sprite.svg#flash"></use>
@@ -646,7 +646,7 @@
                 </div>
                 <p class="advantage__name">Электричество</p>
               </li>
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_flashlight ">
                     <use xlink:href="img/sprite/sprite.svg#flashlight"></use>
@@ -654,7 +654,7 @@
                 </div>
                 <p class="advantage__name">Освещение</p>
               </li>
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_document ">
                     <use xlink:href="img/sprite/sprite.svg#document"></use>
@@ -670,7 +670,7 @@
               жизнь спокойной
             </h2>
             <ul class="row advantage__list">
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_shield ">
                     <use xlink:href="img/sprite/sprite.svg#shield"></use>
@@ -678,7 +678,7 @@
                 </div>
                 <p class="advantage__name">Круглосуточная <br/>охрана</p>
               </li>
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_broom ">
                     <use xlink:href="img/sprite/sprite.svg#broom"></use>
@@ -686,7 +686,7 @@
                 </div>
                 <p class="advantage__name">Уборка<br/>территории</p>
               </li>
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_wrench ">
                     <use xlink:href="img/sprite/sprite.svg#wrench"></use>
@@ -694,7 +694,7 @@
                 </div>
                 <p class="advantage__name">Решение<br/>проблем</p>
               </li>
-              <li class="col-3 advantage__item">
+              <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_truck ">
                     <use xlink:href="img/sprite/sprite.svg#truck"></use>
@@ -709,7 +709,7 @@
       <article class="buy-ways" id="buy-ways">
         <div class="cloud cloud_top"></div>
         <div class="container d-flex flex-column align-items-center">
-          <h2 class="buy-ways__heading">Приобрести земельный участок <br/>Вы сможете с помощью:</h2>
+          <h2 class="buy-ways__heading">Приобрести земельный участок <br class="d-none d-md-inline"/>Вы сможете с помощью:</h2>
           <div class="buy-ways__swiper">
             <ul class="swiper-wrapper">
               <li class="swiper-slide">
@@ -804,14 +804,14 @@
               </li>
             </ul>
           </div>
-          <div class="buy-ways__arrow buy-ways__arrow_next"></div>
-          <div class="buy-ways__arrow buy-ways__arrow_prev"></div>
+          <div class="buy-ways__arrow buy-ways__arrow_next d-none d-xxl-block"></div>
+          <div class="buy-ways__arrow buy-ways__arrow_prev d-none d-xxl-block"></div>
           <div class="buy-ways__pagination"></div>
         </div>
       </article>
       <article class="signup-bottom" id="signup-bottom">
         <div class="container">
-          <div class="signup-bottom__arrow">
+          <div class="signup-bottom__arrow d-none d-xxl-block">
             <svg class="svg-sprite svg-sprite_arrow_2 ">
               <use xlink:href="img/sprite/sprite.svg#arrow_2"></use>
             </svg>
@@ -838,8 +838,8 @@
               </ul>
             </nav>
             <div class="row footer__contacts">
-              <div class="col-6"><a class="footer__link footer__sales-department" href="#">Отдел продаж</a><a class="footer__link footer__whatsapp" href="https://whatsapp.com/" target="_blank" data-apk="whatsapp://send?phone=79061150567" data-android-apk="intent://send?phone=79061150567&amp;text=#Intent;package=com.whatsapp;scheme=whatsapp;end">Whatsapp: +79677799922</a><a class="footer__link footer__phone-number" href="tel:+79811949870">Tel: +79677799922</a><a class="footer__link footer__logo" href="index.html">Медвежий угол</a></div>
-              <div class="col-6 d-flex flex-column align-items-end">
+              <div class="col-12 col-lg-6"><a class="footer__link footer__sales-department" href="#">Отдел продаж</a><a class="footer__link footer__whatsapp" href="https://whatsapp.com/" target="_blank" data-apk="whatsapp://send?phone=79061150567" data-android-apk="intent://send?phone=79061150567&amp;text=#Intent;package=com.whatsapp;scheme=whatsapp;end">Whatsapp: +79677799922</a><a class="footer__link footer__phone-number" href="tel:+79811949870">Tel: +79677799922</a><a class="footer__link footer__logo" href="index.html">Медвежий угол</a></div>
+              <div class="col-12 col-lg-6 d-flex flex-column align-items-lg-end">
                 <div class="footer__map">
                   <iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CCQ~iVFk1D"></iframe>
                 </div><a class="footer__link footer__mail" href="mailto:example@mail.ru">Email: example@mail.ru</a>
@@ -852,10 +852,10 @@
           <div class="cloud cloud_top"></div>
           <div class="container">
             <div class="row">
-              <div class="col-6">
+              <div class="col-12 col-lg-5">
                 <div class="footer__copy">© Copyright 2020</div>
               </div>
-              <div class="col-6 d-flex flex-column align-items-end"><a class="footer__privacy-policy" href="#">Политика конфиденциальности</a></div>
+              <div class="col-12 col-lg-7 d-flex flex-column align-items-lg-end"><a class="footer__privacy-policy" href="#">Политика конфиденциальности</a></div>
             </div>
           </div>
         </div>
