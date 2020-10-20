@@ -5774,7 +5774,7 @@ article {
 
 .signup-top__arrow {
   position: absolute;
-  top: 110px;
+  top: 100px;
   left: 610px;
   width: 311px;
   height: 92px;
@@ -5916,7 +5916,7 @@ article {
 
 .land-map__overlay-text {
   font-family: roboto, sans-serif;
-  font-size: 42px;
+  font-size: 24px;
   font-weight: 700;
   color: white;
   text-align: center;
@@ -6685,7 +6685,7 @@ article {
 .signup-bottom__arrow {
   position: absolute;
   top: 0px;
-  left: 1150px;
+  left: 1370px;
   width: 214px;
   height: 97px;
   fill: transparent;
@@ -11936,7 +11936,7 @@ article {
   }
 
   .signup-top__heading {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .signup-top__convention,
@@ -11945,7 +11945,7 @@ article {
   }
 
   .signup-top__select-plot {
-    font-size: 26px;
+    font-size: 20px;
   }
 
   .signup-top-form__input {
@@ -11971,7 +11971,7 @@ article {
   }
 
   .offers__description-heading {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .offers__description-text {
@@ -11992,7 +11992,7 @@ article {
   }
 
   .buy-ways__heading {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .swiper-wrapper__card {
@@ -12005,7 +12005,7 @@ article {
   }
 
   .signup-bottom__heading {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .signup-bottom-form__input {
