@@ -5153,7 +5153,7 @@ article {
 }
 
 .body_popup-active .popup {
-  visibility: visible;
+  opacity: 1;
 }
 
 .popup {
@@ -5168,6 +5168,10 @@ article {
   overflow-y: auto;
   z-index: 200;
   visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity ease 0.25s;
+  -o-transition: opacity ease 0.25s;
+  transition: opacity ease 0.25s;
 }
 
 .popup__blackout {
@@ -5229,9 +5233,7 @@ article {
 
 .popup__close-button {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -5520,9 +5522,17 @@ article {
   color: black;
 }
 
+.no-js .footer__top,
+.no-webp .footer__top {
+  background-image: url("../img/footer/background.lowquality.jpg");
+}
+
+.webp .footer__top {
+  background-image: url("../img/footer/background.lowquality.webp");
+}
+
 .footer__top {
   position: relative;
-  background-image: url("../img/footer/background.jpg");
   background-position: center;
   background-size: cover;
   padding-top: 134px;
@@ -5709,8 +5719,16 @@ article {
   text-decoration: none;
 }
 
+.no-js .signup-top,
+.no-webp .signup-top {
+  background-image: url("../img/signup-top/background.lowquality.jpg");
+}
+
+.webp .signup-top {
+  background-image: url("../img/signup-top/background.lowquality.webp");
+}
+
 .signup-top {
-  background-image: url(../img/signup-top/background.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -5851,23 +5869,33 @@ article {
 
 .land-map {
   position: relative;
+  width: 100%;
+}
+
+.land-map__container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.land-map__wrap {
+  position: relative;
+  max-width: 1920px;
+  width: 100%;
+  min-width: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 1920px;
-  width: 100%;
-  min-width: 1200px;
   margin: 0 auto;
 }
 
 .land-map__overlay {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -5876,7 +5904,7 @@ article {
           align-items: center;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 200%;
   height: 100%;
   background-color: rgba(47, 47, 73, 0.5);
   z-index: 1;
@@ -5892,9 +5920,35 @@ article {
   font-weight: 700;
   color: white;
   text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  max-width: 100vw;
+  top: 0;
+  left: 0;
+  padding: 0 25px;
 }
 
-.land-map__wrap {
+.land-map__overlay-cursor {
+  margin-top: 40px;
+  width: 111px;
+  height: 145px;
+}
+
+.land-map__plots-content {
   position: relative;
   min-width: 1920px;
   width: 1920px;
@@ -5990,10 +6044,10 @@ article {
   font-size: 15px;
   font-weight: 500;
   opacity: 0;
-  -webkit-transition: height ease 0.25s, width ease 0.25s, opacity ease 0.25s;
-  -o-transition: height ease 0.25s, width ease 0.25s, opacity ease 0.25s;
-  transition: height ease 0.25s, width ease 0.25s, opacity ease 0.25s;
-  z-index: 20;
+  -webkit-transition: height ease 0.25s, width ease 0.25s, opacity ease 0.25s;
+  -o-transition: height ease 0.25s, width ease 0.25s, opacity ease 0.25s;
+  transition: height ease 0.25s, width ease 0.25s, opacity ease 0.25s;
+  z-index: 21;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6255,11 +6309,8 @@ article {
 }
 
 .compas {
-  width: auto;
-  height: auto;
-}
-
-.compas__path {
+  width: 155px;
+  height: 155px;
   fill: #a8b4a7;
   stroke: white;
   stroke-width: 0.572px;
@@ -6336,8 +6387,8 @@ article {
 
 .watch-online__eye {
   fill: #3a5939;
-  width: auto;
-  height: auto;
+  width: 36px;
+  height: 23px;
 }
 
 .watch-online__text {
@@ -6410,8 +6461,16 @@ article {
   color: black;
 }
 
+.no-js .signup-top,
+.no-webp .signup-top {
+  background-image: url("../img/advantage/background.lowquality.jpg");
+}
+
+.webp .signup-top {
+  background-image: url("../img/advantage/background.lowquality.webp");
+}
+
 .advantage {
-  background-image: url(../img/advantage/background.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -11542,7 +11601,6 @@ article {
   }
 
   .body_header-show {
-    height: 100vh;
     overflow-y: hidden;
   }
 
@@ -11709,11 +11767,7 @@ article {
     bottom: -77px;
   }
 
-  .land-map {
-    overflow-x: auto;
-  }
-
-  .land-map__wrap {
+  .land-map__plots-content {
     /* map shift */
     margin-left: -100px;
   }
@@ -11795,6 +11849,16 @@ article {
 
   .cloud_bottom {
     bottom: -67px;
+  }
+
+  .popup__close-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .popup__container {
+    padding: 50px;
   }
 
   .header {
@@ -12090,7 +12154,7 @@ article {
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1920px) {
-  .land-map__wrap {
+  .land-map__plots-content {
     /* map shift */
     margin-left: calc(-100px + 100 * (100vw - 1200px) / (1920 - 1200));
   }
@@ -12135,5 +12199,32 @@ article {
     display: -webkit-inline-box !important;
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
+  }
+}
+
+@media screen and (max-height: 1200px) {
+  .popup__container {
+    padding: 40px;
+    width: 560px;
+  }
+
+  .popup-form__input {
+    height: 60px;
+  }
+
+  .popup-form__textarea {
+    height: 180px;
+  }
+
+  .popup__phone {
+    font-size: 38px;
+  }
+
+  .popup-form__input,
+  .popup-form__textarea,
+  .popup-form__input-label,
+  .popup__convention,
+  .popup__link {
+    font-size: 22px;
   }
 }
