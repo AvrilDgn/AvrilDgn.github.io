@@ -56,9 +56,21 @@
       </header>
       <article class="carousel" id="carousel">
         <ul class="swiper-wrapper">
-          <li class="swiper-slide"><img class="carousel__image" src="img/carousel/slide_1.jpg" alt="изображение дома"/></li>
-          <li class="swiper-slide"><img class="carousel__image" src="img/carousel/slide_1.jpg" alt="изображение дома"/></li>
-          <li class="swiper-slide"><img class="carousel__image" src="img/carousel/slide_1.jpg" alt="изображение дома"/></li>
+          <li class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="img/carousel/slide_1.lowquality.webp" data-srcset="img/carousel/slide_1.webp 1x,						img/carousel/slide_1@2x.webp 2x,						img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="img/carousel/slide_1.lowquality.jpg" data-src="img/carousel/slide_1.jpg" data-srcset="img/carousel/slide_1@2x.jpg 2x,						img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="img/carousel/slide_1.lowquality.webp" data-srcset="img/carousel/slide_1.webp 1x,						img/carousel/slide_1@2x.webp 2x,						img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="img/carousel/slide_1.lowquality.jpg" data-src="img/carousel/slide_1.jpg" data-srcset="img/carousel/slide_1@2x.jpg 2x,						img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
+            </picture>
+          </li>
+          <li class="swiper-slide">
+            <picture>
+              <source type="image/webp" srcset="img/carousel/slide_1.lowquality.webp" data-srcset="img/carousel/slide_1.webp 1x,						img/carousel/slide_1@2x.webp 2x,						img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="img/carousel/slide_1.lowquality.jpg" data-src="img/carousel/slide_1.jpg" data-srcset="img/carousel/slide_1@2x.jpg 2x,						img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
+            </picture>
+          </li>
         </ul>
       </article>
       <article class="title" id="title">
@@ -70,7 +82,11 @@
               <h1 class="title__heading">Медвежий угол</h1>
               <p class="title__description">Земельные участки в Ломоносовском районе от <b>70 000 руб/сотка </b>от собственника с коммуникациями без доп. платежей</p><a class="title__button btn popup_show-btn" href="#"><span class="btn__blackout"></span><span class="btn__text">Записаться на просмотр</span></a>
             </div>
-            <div class="col-lg-5 d-flex justify-content-center order-1 order-lg-2"><img class="title__image" src="img/title/house.png" alt="Дом"/></div>
+            <div class="col-lg-5 d-flex justify-content-center order-1 order-lg-2">
+              <picture>
+                <source type="image/webp" srcset="img/title/house.lowquality.webp" data-srcset="img/title/house.webp 1x,							img/title/house@2x.webp 2x,							img/title/house@3x.webp 3x"/><img class="title__image lazy" src="img/title/house.lowquality.png" data-src="img/title/house.png" data-srcset="img/title/house@2x.png 2x,							img/title/house@3x.png 3x" alt="Дом"/>
+              </picture>
+            </div>
           </div>
         </div>
         <div class="cloud cloud_bottom"></div>
@@ -111,7 +127,10 @@
                     <use xlink:href="img/sprite/sprite.svg#cursor-click"></use>
                   </svg></span></p>
             </div>
-            <div class="land-map__plots-content"><img class="land-map__background" src="img/land-plots-map/land-background.jpg" alt="Карта участков"/>
+            <div class="land-map__plots-content">
+              <picture>
+                <source type="image/webp" srcset="img/land-plots-map/land-background.lowquality.webp" data-srcset="img/land-plots-map/land-background.webp 1x,							img/land-plots-map/land-background@2x.webp 2x,							img/land-plots-map/land-background@3x.webp 3x"/><img class="land-map__background lazy" src="img/land-plots-map/land-background.lowquality.jpg" data-src="img/land-plots-map/land-background.jpg" data-srcset="img/land-plots-map/land-background@2x.jpg 2x,							img/land-plots-map/land-background@3x.jpg 3x" alt="Карта участков"/>
+              </picture>
               <svg class="land-map__plots land-plots" id="land-plots" xmlns="http://www.w3.org/2000/svg">
                 <g id="land-plots__group" transform="translate(-56.661 -154.244)">
                   <g id="land-plots__wrap" transform="rotate(2 -5563.34 19828.083)">
@@ -585,10 +604,11 @@
             </div>
           </div>
           <form class="tooltip__form tooltip-form" id="tooltip-form" action="#" method="post">
+            <p class="tooltip-form__plot-number"></p>
             <input class="tooltip-form__input" type="text" name="name" placeholder="Введите имя" required="required"/>
             <input class="tooltip-form__input" type="text" name="surname" placeholder="Введите фамилию" required="required"/>
             <input class="tooltip-form__input phone-input" type="tel" name="phone" placeholder="Номер телефона" minlength="18" required="required"/>
-            <input class="tooltip-form__input" type="number" name="plot-number" placeholder="Номер участка" required="required"/>
+            <input class="tooltip-form__input plot-input" type="hidden" name="plot-number" placeholder="Номер участка" required="required"/>
             <button class="tooltip-form__button" type="submit">Отправить</button>
           </form>
         </div>
@@ -598,7 +618,10 @@
         <div class="container">
           <h2 class="offers__heading">Акции и спец предложения</h2>
           <ul class="offers__list">
-            <li class="offers__item"><img class="offers__image" src="img/offers/mortgage.png" alt="Ипотека"/>
+            <li class="offers__item">
+              <picture>
+                <source type="image/webp" srcset="img/offers/mortgage.lowquality.webp" data-srcset="img/offers/mortgage.webp 1x,							img/offers/mortgage@2x.webp 2x,							img/offers/mortgage@3x.webp 3x"/><img class="offers__image lazy" src="img/offers/mortgage.lowquality.png" data-src="img/offers/mortgage.png" data-srcset="img/offers/mortgage@2x.png 2x,							img/offers/mortgage@3x.png 3x" alt="Ипотека"/>
+              </picture>
               <div class="offers__description">
                 <h3 class="offers__description-heading">Ипотека? Поможем оформить!</h3>
                 <p class="offers__description-text">
@@ -607,7 +630,10 @@
                 </p>
               </div>
             </li>
-            <li class="offers__item"><img class="offers__image" src="img/offers/installments.png" alt="Рассрочка"/>
+            <li class="offers__item">
+              <picture>
+                <source type="image/webp" srcset="img/offers/installments.lowquality.webp" data-srcset="img/offers/installments.webp 1x,							img/offers/installments@2x.webp 2x,							img/offers/installments@3x.webp 3x"/><img class="offers__image lazy" src="img/offers/installments.lowquality.png" data-src="img/offers/installments.png" data-srcset="img/offers/installments@2x.png 2x,							img/offers/installments@3x.png 3x" alt="Рассрочка"/>
+              </picture>
               <div class="offers__description">
                 <h3 class="offers__description-heading">Рассрочка</h3>
                 <p class="offers__description-text">
@@ -617,7 +643,10 @@
                 </p>
               </div>
             </li>
-            <li class="offers__item"><img class="offers__image" src="img/offers/discounts.png" alt="Скидки"/>
+            <li class="offers__item">
+              <picture>
+                <source type="image/webp" srcset="img/offers/discounts.lowquality.webp" data-srcset="img/offers/discounts.webp 1x,							img/offers/discounts@2x.webp 2x,							img/offers/discounts@3x.webp 3x"/><img class="offers__image lazy" src="img/offers/discounts.lowquality.png" data-src="img/offers/discounts.png" data-srcset="img/offers/discounts@2x.png 2x,							img/offers/discounts@3x.png 3x" alt="Скидки"/>
+              </picture>
               <div class="offers__description">
                 <h3 class="offers__description-heading">Скидки</h3>
                 <p class="offers__description-text">Специальное предложение! Участки без скрытых платежей от 55 тыс. рублей за сотку.</p>
