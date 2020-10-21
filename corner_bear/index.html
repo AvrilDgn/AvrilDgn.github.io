@@ -5,38 +5,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
     <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
-    <link rel="stylesheet" href="css/style.min.css"/>
+    <link rel="stylesheet" href="app/css/style.min.css"/>
   </head>
   <body>
-    <div class="popup" id="popup">
-      <div class="popup__blackout"></div>
-      <div class="popup__container">
-        <div class="popup__close-button"></div>
-        <form class="popup__form popup-form" id="popup-form" action="#" method="post">
-          <p class="popup-form__field">
-            <input class="popup-form__input" id="popup-name" type="text" name="name" placeholder=" " minlength="1" required="required"/>
-            <label class="popup-form__input-label" for="#popup-name">Введите имя<span>*</span></label>
-          </p>
-          <p class="popup-form__field">
-            <input class="popup-form__input" id="popup-surname" type="text" name="surname" placeholder=" " minlength="1" required="required"/>
-            <label class="popup-form__input-label" for="#popup-surname">Введите фамилию<span>*</span></label>
-          </p>
-          <p class="popup-form__field">
-            <input class="popup-form__input email-input" id="popup-email" type="email" name="email" placeholder=" " required="required"/>
-            <label class="popup-form__input-label" for="#popup-email">Email<span>*</span></label>
-          </p>
-          <p class="popup-form__field">
-            <input class="popup-form__input phone-input" id="popup-tel" type="tel" name="phone" placeholder=" " minlength="18" maxlength="18" required="required"/>
-            <label class="popup-form__input-label" for="#popup-tel">Номер телефона<span>*</span></label>
-          </p>
-          <p class="popup-form__field">
-            <textarea class="popup-form__textarea" id="popup-message" name="message" placeholder="Введите сообщение"></textarea>
-          </p>
-          <button class="popup-form__button" type="submit">Отправить</button>
-        </form><a class="popup__phone" href="tel:+79811949870">+7 981 194-98-70</a>
-        <p class="popup__convention">Нажимая "Отправить", вы принимаете <a class="popup__link" href="#">Соглашение </a>и <a class="popup__link" href="#">Политику конфиденциальности сайта</a></p>
-      </div>
-    </div>
     <main class="main">
       <header class="header" id="header">
         <div class="container d-flex flex-column flex-xl-row justify-content-between"><a class="header__logo" href="index.html">Медвежий угол</a>
@@ -58,17 +29,17 @@
         <ul class="swiper-wrapper">
           <li class="swiper-slide">
             <picture>
-              <source type="image/webp" srcset="img/carousel/slide_1.lowquality.webp" data-srcset="img/carousel/slide_1.webp 1x,						img/carousel/slide_1@2x.webp 2x,						img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="img/carousel/slide_1.lowquality.jpg" data-src="img/carousel/slide_1.jpg" data-srcset="img/carousel/slide_1@2x.jpg 2x,						img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
+              <source type="image/webp" srcset="app/img/carousel/slide_1.lowquality.webp" data-srcset="app/img/carousel/slide_1.webp 1x,						app/img/carousel/slide_1@2x.webp 2x,						app/img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="app/img/carousel/slide_1.lowquality.jpg" data-src="app/img/carousel/slide_1.jpg" data-srcset="app/img/carousel/slide_1@2x.jpg 2x,						app/img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
             </picture>
           </li>
           <li class="swiper-slide">
             <picture>
-              <source type="image/webp" srcset="img/carousel/slide_1.lowquality.webp" data-srcset="img/carousel/slide_1.webp 1x,						img/carousel/slide_1@2x.webp 2x,						img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="img/carousel/slide_1.lowquality.jpg" data-src="img/carousel/slide_1.jpg" data-srcset="img/carousel/slide_1@2x.jpg 2x,						img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
+              <source type="image/webp" srcset="app/img/carousel/slide_1.lowquality.webp" data-srcset="app/img/carousel/slide_1.webp 1x,						app/img/carousel/slide_1@2x.webp 2x,						app/img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="app/img/carousel/slide_1.lowquality.jpg" data-src="app/img/carousel/slide_1.jpg" data-srcset="app/img/carousel/slide_1@2x.jpg 2x,						app/img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
             </picture>
           </li>
           <li class="swiper-slide">
             <picture>
-              <source type="image/webp" srcset="img/carousel/slide_1.lowquality.webp" data-srcset="img/carousel/slide_1.webp 1x,						img/carousel/slide_1@2x.webp 2x,						img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="img/carousel/slide_1.lowquality.jpg" data-src="img/carousel/slide_1.jpg" data-srcset="img/carousel/slide_1@2x.jpg 2x,						img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
+              <source type="image/webp" srcset="app/img/carousel/slide_1.lowquality.webp" data-srcset="app/img/carousel/slide_1.webp 1x,						app/img/carousel/slide_1@2x.webp 2x,						app/img/carousel/slide_1@3x.webp 3x"/><img class="carousel__image lazy" src="app/img/carousel/slide_1.lowquality.jpg" data-src="app/img/carousel/slide_1.jpg" data-srcset="app/img/carousel/slide_1@2x.jpg 2x,						app/img/carousel/slide_1@3x.jpg 3x" alt="изображение дома"/>
             </picture>
           </li>
         </ul>
@@ -84,20 +55,20 @@
             </div>
             <div class="col-lg-5 d-flex justify-content-center order-1 order-lg-2">
               <picture>
-                <source type="image/webp" srcset="img/title/house.lowquality.webp" data-srcset="img/title/house.webp 1x,							img/title/house@2x.webp 2x,							img/title/house@3x.webp 3x"/><img class="title__image lazy" src="img/title/house.lowquality.png" data-src="img/title/house.png" data-srcset="img/title/house@2x.png 2x,							img/title/house@3x.png 3x" alt="Дом"/>
+                <source type="image/webp" srcset="app/img/title/house.lowquality.webp" data-srcset="app/img/title/house.webp 1x,							app/img/title/house@2x.webp 2x,							app/img/title/house@3x.webp 3x"/><img class="title__image lazy" src="app/img/title/house.lowquality.png" data-src="app/img/title/house.png" data-srcset="app/img/title/house@2x.png 2x,							app/img/title/house@3x.png 3x" alt="Дом"/>
               </picture>
             </div>
           </div>
         </div>
         <div class="cloud cloud_bottom"></div>
       </article>
-      <article class="signup-top lazy lazy-bg" id="signup-top" data-bg="img/signup-top/background">
+      <article class="signup-top lazy lazy-bg" id="signup-top" data-bg="app/img/signup-top/background">
         <div class="container">
           <div class="row">
             <div class="col-12 col-lg-8 col-xl-7 offset-lg-2 offset-xl-0">
               <div class="signup-top__arrow d-none d-xxl-block">
                 <svg class="svg-sprite svg-sprite_arrow_1 ">
-                  <use xlink:href="img/sprite/sprite.svg#arrow_1"></use>
+                  <use xlink:href="app/img/sprite/sprite.svg#arrow_1"></use>
                 </svg>
               </div>
               <h2 class="signup-top__heading">Запишитесь на просмотр <br/>и получите подарок</h2>
@@ -124,12 +95,12 @@
             <div class="land-map__overlay">
               <p class="land-map__overlay-text">Выберите свой участок и кликнете <br class="d-none d-md-inline"/>по нему для подробной информации<span class="land-map__overlay-cursor">
                   <svg class="svg-sprite svg-sprite_cursor-click ">
-                    <use xlink:href="img/sprite/sprite.svg#cursor-click"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#cursor-click"></use>
                   </svg></span></p>
             </div>
             <div class="land-map__plots-content">
               <picture>
-                <source type="image/webp" srcset="img/land-plots-map/land-background.lowquality.webp" data-srcset="img/land-plots-map/land-background.webp 1x,							img/land-plots-map/land-background@2x.webp 2x,							img/land-plots-map/land-background@3x.webp 3x"/><img class="land-map__background lazy" src="img/land-plots-map/land-background.lowquality.jpg" data-src="img/land-plots-map/land-background.jpg" data-srcset="img/land-plots-map/land-background@2x.jpg 2x,							img/land-plots-map/land-background@3x.jpg 3x" alt="Карта участков"/>
+                <source type="image/webp" srcset="app/img/land-plots-map/land-background.lowquality.webp" data-srcset="app/img/land-plots-map/land-background.webp 1x,							app/img/land-plots-map/land-background@2x.webp 2x,							app/img/land-plots-map/land-background@3x.webp 3x"/><img class="land-map__background lazy" src="app/img/land-plots-map/land-background.lowquality.jpg" data-src="app/img/land-plots-map/land-background.jpg" data-srcset="app/img/land-plots-map/land-background@2x.jpg 2x,							app/img/land-plots-map/land-background@3x.jpg 3x" alt="Карта участков"/>
               </picture>
               <svg class="land-map__plots land-plots" id="land-plots" xmlns="http://www.w3.org/2000/svg">
                 <g id="land-plots__group" transform="translate(-56.661 -154.244)">
@@ -560,7 +531,7 @@
             </div>
             <div class="land-map__compas compas">
               <svg class="svg-sprite svg-sprite_compas ">
-                <use xlink:href="img/sprite/sprite.svg#compas"></use>
+                <use xlink:href="app/img/sprite/sprite.svg#compas"></use>
               </svg>
             </div>
             <ul class="land-map__info-status info-status">
@@ -582,7 +553,7 @@
             </ul><a class="land-map__watch-online watch-online" href="https://yandex.ru/maps/-/CCQ~iVFglA" target="_blank">
               <div class="watch-online__eye">
                 <svg class="svg-sprite svg-sprite_eye ">
-                  <use xlink:href="img/sprite/sprite.svg#eye"></use>
+                  <use xlink:href="app/img/sprite/sprite.svg#eye"></use>
                 </svg>
               </div>
               <div class="watch-online__text">Смотреть участок <br/><b>Онлайн</b></div></a>
@@ -603,13 +574,17 @@
               </svg>
             </div>
           </div>
-          <form class="tooltip__form tooltip-form" id="tooltip-form" action="#" method="post">
-            <p class="tooltip-form__plot-number"></p>
-            <input class="tooltip-form__input" type="text" name="name" placeholder="Введите имя" required="required"/>
-            <input class="tooltip-form__input" type="text" name="surname" placeholder="Введите фамилию" required="required"/>
-            <input class="tooltip-form__input phone-input" type="tel" name="phone" placeholder="Номер телефона" minlength="18" required="required"/>
-            <input class="tooltip-form__input plot-input" type="hidden" name="plot-number" placeholder="Номер участка" required="required"/>
-            <button class="tooltip-form__button" type="submit">Отправить</button>
+        </div>
+        <div class="land-map-popup">
+          <div class="land-map-popup__blackout"></div>
+          <form class="land-map-form" id="land-map-form" action="#" method="post">
+            <div class="land-map-form__close-button"></div>
+            <p class="land-map-form__plot-number"></p>
+            <input class="land-map-form__input" type="text" name="name" placeholder="Введите имя" required="required"/>
+            <input class="land-map-form__input" type="text" name="surname" placeholder="Введите фамилию" required="required"/>
+            <input class="land-map-form__input phone-input" type="tel" name="phone" placeholder="Номер телефона" minlength="18" required="required"/>
+            <input class="land-map-form__input plot-input" type="hidden" name="plot-number" placeholder="Номер участка" required="required"/>
+            <button class="land-map-form__button" type="submit">Отправить</button>
           </form>
         </div>
       </article>
@@ -620,7 +595,7 @@
           <ul class="offers__list">
             <li class="offers__item">
               <picture>
-                <source type="image/webp" srcset="img/offers/mortgage.lowquality.webp" data-srcset="img/offers/mortgage.webp 1x,							img/offers/mortgage@2x.webp 2x,							img/offers/mortgage@3x.webp 3x"/><img class="offers__image lazy" src="img/offers/mortgage.lowquality.png" data-src="img/offers/mortgage.png" data-srcset="img/offers/mortgage@2x.png 2x,							img/offers/mortgage@3x.png 3x" alt="Ипотека"/>
+                <source type="image/webp" srcset="app/img/offers/mortgage.lowquality.webp" data-srcset="app/img/offers/mortgage.webp 1x,							app/img/offers/mortgage@2x.webp 2x,							app/img/offers/mortgage@3x.webp 3x"/><img class="offers__image lazy" src="app/img/offers/mortgage.lowquality.png" data-src="app/img/offers/mortgage.png" data-srcset="app/img/offers/mortgage@2x.png 2x,							app/img/offers/mortgage@3x.png 3x" alt="Ипотека"/>
               </picture>
               <div class="offers__description">
                 <h3 class="offers__description-heading">Ипотека? Поможем оформить!</h3>
@@ -632,7 +607,7 @@
             </li>
             <li class="offers__item">
               <picture>
-                <source type="image/webp" srcset="img/offers/installments.lowquality.webp" data-srcset="img/offers/installments.webp 1x,							img/offers/installments@2x.webp 2x,							img/offers/installments@3x.webp 3x"/><img class="offers__image lazy" src="img/offers/installments.lowquality.png" data-src="img/offers/installments.png" data-srcset="img/offers/installments@2x.png 2x,							img/offers/installments@3x.png 3x" alt="Рассрочка"/>
+                <source type="image/webp" srcset="app/img/offers/installments.lowquality.webp" data-srcset="app/img/offers/installments.webp 1x,							app/img/offers/installments@2x.webp 2x,							app/img/offers/installments@3x.webp 3x"/><img class="offers__image lazy" src="app/img/offers/installments.lowquality.png" data-src="app/img/offers/installments.png" data-srcset="app/img/offers/installments@2x.png 2x,							app/img/offers/installments@3x.png 3x" alt="Рассрочка"/>
               </picture>
               <div class="offers__description">
                 <h3 class="offers__description-heading">Рассрочка</h3>
@@ -645,7 +620,7 @@
             </li>
             <li class="offers__item">
               <picture>
-                <source type="image/webp" srcset="img/offers/discounts.lowquality.webp" data-srcset="img/offers/discounts.webp 1x,							img/offers/discounts@2x.webp 2x,							img/offers/discounts@3x.webp 3x"/><img class="offers__image lazy" src="img/offers/discounts.lowquality.png" data-src="img/offers/discounts.png" data-srcset="img/offers/discounts@2x.png 2x,							img/offers/discounts@3x.png 3x" alt="Скидки"/>
+                <source type="image/webp" srcset="app/img/offers/discounts.lowquality.webp" data-srcset="app/img/offers/discounts.webp 1x,							app/img/offers/discounts@2x.webp 2x,							app/img/offers/discounts@3x.webp 3x"/><img class="offers__image lazy" src="app/img/offers/discounts.lowquality.png" data-src="app/img/offers/discounts.png" data-srcset="app/img/offers/discounts@2x.png 2x,							app/img/offers/discounts@3x.png 3x" alt="Скидки"/>
               </picture>
               <div class="offers__description">
                 <h3 class="offers__description-heading">Скидки</h3>
@@ -656,7 +631,7 @@
         </div>
         <div class="cloud cloud_bottom"></div>
       </article>
-      <article class="advantage lazy lazy-bg" id="advantage" data-bg="img/advantage/background">
+      <article class="advantage lazy lazy-bg" id="advantage" data-bg="app/img/advantage/background">
         <div class="container">
           <div class="advantage__block advantage__block_top">
             <h2 class="advantage__heading">
@@ -667,7 +642,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_road ">
-                    <use xlink:href="img/sprite/sprite.svg#road"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#road"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Дороги</p>
@@ -675,7 +650,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_flash ">
-                    <use xlink:href="img/sprite/sprite.svg#flash"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#flash"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Электричество</p>
@@ -683,7 +658,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_flashlight ">
-                    <use xlink:href="img/sprite/sprite.svg#flashlight"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#flashlight"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Освещение</p>
@@ -691,7 +666,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_document ">
-                    <use xlink:href="img/sprite/sprite.svg#document"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#document"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Земля<br/>в собственности</p>
@@ -707,7 +682,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_shield ">
-                    <use xlink:href="img/sprite/sprite.svg#shield"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#shield"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Круглосуточная <br/>охрана</p>
@@ -715,7 +690,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_broom ">
-                    <use xlink:href="img/sprite/sprite.svg#broom"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#broom"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Уборка<br/>территории</p>
@@ -723,7 +698,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_wrench ">
-                    <use xlink:href="img/sprite/sprite.svg#wrench"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#wrench"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Решение<br/>проблем</p>
@@ -731,7 +706,7 @@
               <li class="col-12 col-md-6 col-xl-3 advantage__item">
                 <div class="advantage__icon">
                   <svg class="svg-sprite svg-sprite_truck ">
-                    <use xlink:href="img/sprite/sprite.svg#truck"></use>
+                    <use xlink:href="app/img/sprite/sprite.svg#truck"></use>
                   </svg>
                 </div>
                 <p class="advantage__name">Вывоз<br/>мусора</p>
@@ -750,7 +725,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_certificate ">
-                      <use xlink:href="img/sprite/sprite.svg#certificate"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#certificate"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Земельного сертификата</p>
@@ -760,7 +735,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_banknote ">
-                      <use xlink:href="img/sprite/sprite.svg#banknote"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#banknote"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Материнского капитала</p>
@@ -770,7 +745,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_dollar ">
-                      <use xlink:href="img/sprite/sprite.svg#dollar"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#dollar"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Безвозмездной субсидии от государства</p>
@@ -780,7 +755,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_certificate ">
-                      <use xlink:href="img/sprite/sprite.svg#certificate"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#certificate"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Земельного сертификата</p>
@@ -790,7 +765,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_banknote ">
-                      <use xlink:href="img/sprite/sprite.svg#banknote"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#banknote"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Материнского капитала</p>
@@ -800,7 +775,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_dollar ">
-                      <use xlink:href="img/sprite/sprite.svg#dollar"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#dollar"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Безвозмездной субсидии от государства</p>
@@ -810,7 +785,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_certificate ">
-                      <use xlink:href="img/sprite/sprite.svg#certificate"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#certificate"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Земельного сертификата</p>
@@ -820,7 +795,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_banknote ">
-                      <use xlink:href="img/sprite/sprite.svg#banknote"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#banknote"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Материнского капитала</p>
@@ -830,7 +805,7 @@
                 <div class="swiper-wrapper__card">
                   <div class="swiper-wrapper__icon">
                     <svg class="svg-sprite svg-sprite_dollar ">
-                      <use xlink:href="img/sprite/sprite.svg#dollar"></use>
+                      <use xlink:href="app/img/sprite/sprite.svg#dollar"></use>
                     </svg>
                   </div>
                   <p class="swiper-wrapper__text">Безвозмездной субсидии от государства</p>
@@ -847,7 +822,7 @@
         <div class="container">
           <div class="signup-bottom__arrow d-none d-xxl-block">
             <svg class="svg-sprite svg-sprite_arrow_2 ">
-              <use xlink:href="img/sprite/sprite.svg#arrow_2"></use>
+              <use xlink:href="app/img/sprite/sprite.svg#arrow_2"></use>
             </svg>
           </div>
           <h2 class="signup-bottom__heading">Запишитесь на просмотр и получите подарок</h2>
@@ -861,7 +836,7 @@
         <div class="cloud cloud_bottom"></div>
       </article>
       <footer class="footer">
-        <div class="footer__top lazy lazy-bg" data-bg="img/footer/background">
+        <div class="footer__top lazy lazy-bg" data-bg="app/img/footer/background">
           <div class="container">
             <nav class="footer__nav footer-nav">
               <ul class="footer-nav__links-list">
@@ -872,12 +847,12 @@
               </ul>
             </nav>
             <div class="row footer__contacts">
-              <div class="col-12 col-lg-6"><a class="footer__link footer__sales-department" href="#">Отдел продаж</a><a class="footer__link footer__whatsapp" href="https://whatsapp.com/" target="_blank" data-apk="whatsapp://send?phone=79061150567" data-android-apk="intent://send?phone=79061150567&amp;text=#Intent;package=com.whatsapp;scheme=whatsapp;end">Whatsapp: +79677799922</a><a class="footer__link footer__phone-number" href="tel:+79811949870">Tel: +79677799922</a><a class="footer__link footer__logo" href="index.html">Медвежий угол</a></div>
-              <div class="col-12 col-lg-6 d-flex flex-column align-items-lg-end">
+              <div class="col-12 col-lg-6 d-lg-flex flex-column justify-content-lg-between"><a class="footer__link" href="#">Отдел продаж</a><a class="footer__link footer__whatsapp" href="https://whatsapp.com/" target="_blank" data-apk="whatsapp://send?phone=79061150567" data-android-apk="intent://send?phone=79061150567&amp;text=#Intent;package=com.whatsapp;scheme=whatsapp;end">Whatsapp: +79677799922</a><a class="footer__link" href="tel:+79811949870">Tel: +79677799922</a><a class="footer__link footer__logo" href="index.html">Медвежий угол</a></div>
+              <div class="footer__column_right col-12 col-lg-6 d-flex flex-column align-items-lg-end justify-content-lg-between">
                 <div class="footer__map">
                   <iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CCQ~iVFk1D"></iframe>
-                </div><a class="footer__link footer__mail" href="mailto:example@mail.ru">Email: example@mail.ru</a>
-                <p class="footer__text footer__working-hours">пн-вс: 8.00 - 22.00</p><a class="footer__link footer__address" href="https://yandex.ru/maps/-/CCQ~iVFglA" target="_blank">Ленинградская область, Россия</a>
+                </div><a class="footer__link" href="mailto:example@mail.ru">Email: example@mail.ru</a>
+                <p class="footer__text">пн-вс: 8.00 - 22.00</p><a class="footer__link" href="https://yandex.ru/maps/-/CCQ~iVFglA" target="_blank">Ленинградская область, Россия</a>
               </div>
             </div>
           </div>
@@ -895,6 +870,35 @@
         </div>
       </footer>
     </main>
-    <script src="js/main.min.js"></script>
+    <div class="popup" id="popup">
+      <div class="popup__blackout"></div>
+      <div class="popup__container">
+        <div class="popup__close-button"></div>
+        <form class="popup__form popup-form" id="popup-form" action="#" method="post">
+          <p class="popup-form__field">
+            <input class="popup-form__input" id="popup-name" type="text" name="name" placeholder=" " minlength="1" required="required"/>
+            <label class="popup-form__input-label" for="#popup-name">Введите имя<span>*</span></label>
+          </p>
+          <p class="popup-form__field">
+            <input class="popup-form__input" id="popup-surname" type="text" name="surname" placeholder=" " minlength="1" required="required"/>
+            <label class="popup-form__input-label" for="#popup-surname">Введите фамилию<span>*</span></label>
+          </p>
+          <p class="popup-form__field">
+            <input class="popup-form__input email-input" id="popup-email" type="email" name="email" placeholder=" " required="required"/>
+            <label class="popup-form__input-label" for="#popup-email">Email<span>*</span></label>
+          </p>
+          <p class="popup-form__field">
+            <input class="popup-form__input phone-input" id="popup-tel" type="tel" name="phone" placeholder=" " minlength="18" maxlength="18" required="required"/>
+            <label class="popup-form__input-label" for="#popup-tel">Номер телефона<span>*</span></label>
+          </p>
+          <p class="popup-form__field">
+            <textarea class="popup-form__textarea" id="popup-message" name="message" placeholder="Введите сообщение"></textarea>
+          </p>
+          <button class="popup-form__button" type="submit">Отправить</button>
+        </form><a class="popup__phone" href="tel:+79811949870">+7 981 194-98-70</a>
+        <p class="popup__convention">Нажимая "Отправить", вы принимаете <a class="popup__link" href="#">Соглашение </a>и <a class="popup__link" href="#">Политику конфиденциальности сайта</a></p>
+      </div>
+    </div>
+    <script src="app/js/main.min.js"></script>
   </body>
 </html>
