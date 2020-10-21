@@ -11851,6 +11851,7 @@ article {
   .offers__image {
     -o-object-fit: contain;
        object-fit: contain;
+    margin: 0 auto;
   }
 
   .offers__description {
