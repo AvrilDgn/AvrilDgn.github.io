@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>Edulid</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header" id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-3 d-flex"><a class="header__logo logo" href="index.html"><img class="logo__img" src="assets/img/logo/logo.png" alt="Edulid - партнерская сеть в онлайн образовании"/><span class="logo__text">Edulid.com</span></a></div>
+            <div class="col-9 d-flex justify-content-end align-items-center">
+              <nav class="header__nav header-nav">
+                <ul class="header-nav__list">
+                  <li class="header-nav__item"><a class="header-nav__link" href="advertisers.html">Рекламодателям</a></li>
+                  <li class="header-nav__item"><a class="header-nav__link" href="webmasters.html">Веб-мастерам</a></li>
+                  <li class="header-nav__item"><a class="header-nav__link" href="#">Инструкции</a></li>
+                  <li class="header-nav__item"><a class="header-nav__link" href="#">Контакты</a></li>
+                </ul>
+              </nav><a class="header__profile" href="#">
+                <svg class="svg-sprite svg-sprite_user header__profile-icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                </svg></a><a class="header__signup btn btn_link btn_blue" href="#">Регистрация</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="title webmasters-title" id="webmasters-title">
+        <div class="container">
+          <h1 class="title__heading">Зарабатывай вместе с нами <br/><span class="title__heading-span">на проверенных предложениях</span></h1>
+          <div class="webmasters-title__registration registration-block">
+            <div class="registration-block__column"><img src="assets/img/webmasters-title/icons.png" alt="иконки"/></div>
+            <div class="registration-block__column registration-block__column_right">
+              <p class="registration-block__text">
+                В растущей сфере
+                онлайн образования <span class="registration-block__text_lite-grey">
+                  с гарантированной
+                  оплатой</span>
+              </p><a class="registration-block__btn btn btn_link btn_red" href="#">Регистрация</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="advantages" id="advantages">
+        <div class="container">
+          <h2 class="heading advantages__heading">Преимущества</h2>
+          <ul class="advantages__list">
+            <li class="advantages__item">
+              <svg class="svg-sprite svg-sprite_credit-cards advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#credit-cards"></use>
+              </svg>
+              <p class="advantages__text">Прозрачная <br/>система расчётов</p>
+            </li>
+            <li class="advantages__item">
+              <svg class="svg-sprite svg-sprite_shield advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#shield"></use>
+              </svg>
+              <p class="advantages__text">Гарантия выплат <br/>от системы </p>
+            </li>
+            <li class="advantages__item">
+              <svg class="svg-sprite svg-sprite_online-payment advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#online-payment"></use>
+              </svg>
+              <p class="advantages__text">Авансовые платежи <br/>от рекламодателей</p>
+            </li>
+            <li class="advantages__item">
+              <svg class="svg-sprite svg-sprite_web advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#web"></use>
+              </svg>
+              <p class="advantages__text">Готовые конверсионные <br/>лендинги</p>
+            </li>
+            <li class="advantages__item">
+              <svg class="svg-sprite svg-sprite_ad advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#ad"></use>
+              </svg>
+              <p class="advantages__text">Набор базовых <br/>креативов</p>
+            </li>
+            <li class="advantages__item">
+              <svg class="svg-sprite svg-sprite_deny advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#deny"></use>
+              </svg>
+              <p class="advantages__text">Отсутствие общения <br/>с рекламодателями <br/>и клиентами</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="nuances" id="nuances">
+        <div class="container">
+          <h2 class="heading nuances__heading">Приятные нюансы работы с нами:</h2>
+          <ul class="nuances__list">
+            <li class="nuances__item"><span class="nuances__arrow"></span>Выплаты в течение 3ёх дней после подтверждения</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>Полный доступ к статистике и данным</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>Защита от обмана рекламодателей</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>Высокий процент выплат от 20% от чека</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>Высокий средний чек онлайн образования</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>Проверенные экспертами предложения</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>Большой выбор предложений под любой трафик</li>
+            <li class="nuances__item"><span class="nuances__arrow"></span>История оплат и работы по каждому предложению <br/>и рекламодателю.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="efficiency" id="efficiency">
+        <div class="container">
+          <h2 class="heading efficiency__heading">Почему с нами работать эффективнее?</h2>
+          <ul class="efficiency__list">
+            <li class="efficiency__item">
+              <div class="efficiency__icon">
+                <svg class="svg-sprite svg-sprite_spaceship ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#spaceship"></use>
+                </svg>
+              </div>
+              <p class="efficiency__text">Быстрый старт</p>
+            </li>
+            <li class="efficiency__item">
+              <div class="efficiency__icon">
+                <svg class="svg-sprite svg-sprite_recommendation ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#recommendation"></use>
+                </svg>
+              </div>
+              <p class="efficiency__text">Рекомендации по каждому предложению </p>
+            </li>
+            <li class="efficiency__item">
+              <div class="efficiency__icon">
+                <svg class="svg-sprite svg-sprite_papers ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#papers"></use>
+                </svg>
+              </div>
+              <p class="efficiency__text">Готовность материалов для работы</p>
+            </li>
+            <li class="efficiency__item">
+              <div class="efficiency__icon">
+                <svg class="svg-sprite svg-sprite_circulation ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#circulation"></use>
+                </svg>
+              </div>
+              <p class="efficiency__text">Полное отсутствие заморозки денег</p>
+            </li>
+            <li class="efficiency__item">
+              <div class="efficiency__icon">
+                <svg class="svg-sprite svg-sprite_save-money ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#save-money"></use>
+                </svg>
+              </div>
+              <p class="efficiency__text">Нет минимальной суммы вывода</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <nav class="footer__nav footer-nav">
+            <ul class="footer-nav__list">
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">контакты</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">главная</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">о системе</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">новости</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">пресс-релизы</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">рейтинг</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">справка</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">правила</a></li>
+            </ul>
+          </nav>
+          <ul class="footer__socials footer-socials">
+            <li class="footer-socials__item"><a class="footer-socials__link" href="tel:+74957879283">
+                <svg class="svg-sprite svg-sprite_phone footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                </svg><span class="footer-socials__text">+7 (495) 787-92-83</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="mailto:welcome@admitad.com">
+                <svg class="svg-sprite svg-sprite_arroba footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#arroba"></use>
+                </svg><span class="footer-socials__text">welcome@admitad.com</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_vk footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_instagram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_telegram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_facebook footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>Edulid</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header" id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-3 d-flex"><a class="header__logo logo" href="index.html"><img class="logo__img" src="assets/img/logo/logo.png" alt="Edulid - партнерская сеть в онлайн образовании"/><span class="logo__text">Edulid.com</span></a></div>
+            <div class="col-9 d-flex justify-content-end align-items-center">
+              <nav class="header__nav header-nav">
+                <ul class="header-nav__list">
+                  <li class="header-nav__item"><a class="header-nav__link" href="advertisers.html">Рекламодателям</a></li>
+                  <li class="header-nav__item"><a class="header-nav__link" href="webmasters.html">Веб-мастерам</a></li>
+                  <li class="header-nav__item"><a class="header-nav__link" href="#">Инструкции</a></li>
+                  <li class="header-nav__item"><a class="header-nav__link" href="#">Контакты</a></li>
+                </ul>
+              </nav><a class="header__profile" href="#">
+                <svg class="svg-sprite svg-sprite_user header__profile-icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                </svg></a><a class="header__signup btn btn_link btn_blue" href="#">Регистрация</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="title main-title" id="main-title">
+        <div class="container">
+          <h1 class="title__heading">Партнёрская сеть <span class="title__heading-span">в онлайн образовании</span></h1>
+          <p class="title__subheading">Помогаем онлайн школам привлекать новых клиентов, <br/>а веб-мастерам зарабатывать в интернете</p>
+          <div class="row">
+            <div class="col-5"><img class="main-title__philosopher" src="assets/img/main-title/philosopher.png" alt="Философ"/></div>
+            <div class="col-7 d-flex align-items-center justify-content-end">
+              <ul class="main-title__client-cats client-cats">
+                <li class="client-cats__item"><a class="client-cats__btn btn btn_bold btn_link btn_red" href="webmasters.html">Веб-мастерам</a>
+                  <p class="client-cats__description">Я арбитражник, владелец сайта, блогер <br/>и хочу зарабатывать на партнерских программах</p>
+                </li>
+                <li class="client-cats__item"><a class="client-cats__btn btn btn_bold btn_link btn_green" href="advertisers.html">Рекламодателям</a>
+                  <p class="client-cats__description">Я владелец онлайн школы и хочу привлечь <br/>новых клиентов с помощью онлайн рекламы</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <ul class="main-title__advantages main-title-advantages">
+            <li class="main-title-advantages__item">
+              <svg class="svg-sprite svg-sprite_puzzle main-title-advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#puzzle"></use>
+              </svg>
+              <p class="main-title-advantages__text">100+ веб-мастеров</p>
+            </li>
+            <li class="main-title-advantages__item">
+              <svg class="svg-sprite svg-sprite_portfolio main-title-advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#portfolio"></use>
+              </svg>
+              <p class="main-title-advantages__text">500+ рекламодателей</p>
+            </li>
+            <li class="main-title-advantages__item">
+              <svg class="svg-sprite svg-sprite_money-bag main-title-advantages__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#money-bag"></use>
+              </svg>
+              <p class="main-title-advantages__text">>10 000 000 руб объем продаж  </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="howitwork" id="howitwork">
+        <div class="container">
+          <h2 class="heading howitwork__heading">Как это работает?</h2>
+          <ul class="howitwork__steps howitwork-steps">
+            <li class="howitwork-steps__item"><img class="howitwork-steps__image" src="assets/img/howitwork/man.png" alt="Веб-мастер"/>
+              <p class="howitwork-steps__description"><b class="howitwork-steps__description_bold">Веб-мастер</b>— человек или компания,
+                которые могут посоветовать продукты
+                рекламодателя своей аудитории и
+                привести к нему клиентов
+              </p>
+            </li>
+            <li class="howitwork-steps__item"><img class="howitwork-steps__image" src="assets/img/howitwork/edulid.png" alt="Edulid"/>
+              <p class="howitwork-steps__description"><b class="howitwork-steps__description_bold">Edulid</b>собирает веб-мастеров и
+                рекламодателей на одной площадке
+                и помогает им найти друг друга.
+                Мы предоставляем инструменты для
+                работы, помогаем и консультируем.
+              </p>
+            </li>
+            <li class="howitwork-steps__item"><img class="howitwork-steps__image" src="assets/img/howitwork/group-people.png" alt="Рекламодатель"/>
+              <p class="howitwork-steps__description"><b class="howitwork-steps__description_bold">Рекламодатель</b>— онлайн школа,
+                которая хочет разместить рекламу
+                своего продукта в интернете
+                и увеличить продажи.  
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="partners" id="partners">
+        <div class="container">
+          <h2 class="heading partners__heading">С нами работают</h2>
+          <ul class="partners__list">
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/vikium.png" alt="Vikium - тренажеры для мозга"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/skillbox.png" alt="Skillbox"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/beauty.png" alt="Образовательная Beauty платформа"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/numerologi.png" alt="Numerologi"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/mayya-dragan.png" alt="Mayya Dragan"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/mutk.png" alt="Международный университет технологий красоты"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/engforme.png" alt="EngForMe - английский online"/></li>
+            <li class="partners__item"><img class="partners__image" src="assets/img/partners/helpiki.png" alt="Helpiki"/></li>
+          </ul>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <nav class="footer__nav footer-nav">
+            <ul class="footer-nav__list">
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">контакты</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">главная</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">о системе</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">новости</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">пресс-релизы</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">рейтинг</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">справка</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">правила</a></li>
+            </ul>
+          </nav>
+          <ul class="footer__socials footer-socials">
+            <li class="footer-socials__item"><a class="footer-socials__link" href="tel:+74957879283">
+                <svg class="svg-sprite svg-sprite_phone footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                </svg><span class="footer-socials__text">+7 (495) 787-92-83</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="mailto:welcome@admitad.com">
+                <svg class="svg-sprite svg-sprite_arroba footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#arroba"></use>
+                </svg><span class="footer-socials__text">welcome@admitad.com</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_vk footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_instagram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_telegram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="#">
+                <svg class="svg-sprite svg-sprite_facebook footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>
