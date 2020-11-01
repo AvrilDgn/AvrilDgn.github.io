@@ -12,8 +12,9 @@
       <header class="header" id="header">
         <div class="container">
           <div class="row">
-            <div class="col-3 d-flex"><a class="header__logo logo" href="index.html"><img class="logo__img" src="assets/img/logo/logo.png" alt="Edulid - партнерская сеть в онлайн образовании"/><span class="logo__text">Edulid.com</span></a></div>
-            <div class="col-9 d-flex justify-content-end align-items-center">
+            <div class="col-10 col-lg-3 d-flex"><a class="header__logo logo" href="index.html"><img class="logo__img" src="assets/img/logo/logo.png" alt="Edulid - партнерская сеть в онлайн образовании"/><span class="logo__text">Edulid.com</span></a></div>
+            <div class="col-2 d-lg-none"><a class="header__toggle-btn" href="#"><span></span></a></div>
+            <div class="col-lg-9 header__collapse d-flex justify-content-lg-end align-items-center flex-column flex-lg-row">
               <nav class="header__nav header-nav">
                 <ul class="header-nav__list">
                   <li class="header-nav__item"><a class="header-nav__link" href="advertisers.html">Рекламодателям</a></li>
@@ -24,66 +25,72 @@
               </nav><a class="header__profile" href="#">
                 <svg class="svg-sprite svg-sprite_user header__profile-icon">
                   <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
-                </svg></a><a class="header__signup btn btn_link btn_blue" href="#">Регистрация</a>
+                </svg></a><a class="header__signup btn btn_link btn_blue" href="#">
+                <div class="btn__blackout"></div>Регистрация</a>
             </div>
           </div>
         </div>
       </header>
       <section class="title webmasters-title" id="webmasters-title">
         <div class="container">
-          <h1 class="title__heading">Зарабатывай вместе с нами <br/><span class="title__heading-span">на проверенных предложениях</span></h1>
+          <h1 class="title__heading">Зарабатывай вместе с нами <br class="d-none d-lg-inline"/><span class="title__heading-span">на проверенных предложениях</span></h1>
           <div class="webmasters-title__registration registration-block">
-            <div class="registration-block__column"><img src="assets/img/webmasters-title/icons.png" alt="иконки"/></div>
+            <div class="registration-block__column">
+              <picture>
+                <source type="image/webp" srcset="assets/img/webmasters-title/icons.webp 1x,							assets/img/webmasters-title/icons@2x.webp 2x,							assets/img/webmasters-title/icons@3x.webp 3x"/><img class="howitwork-steps__image" src="assets/img/webmasters-title/icons.png" srcset="assets/img/webmasters-title/icons@2x.png 2x,							assets/img/webmasters-title/icons@3x.png 3x" alt="Иконки"/>
+              </picture>
+            </div>
             <div class="registration-block__column registration-block__column_right">
               <p class="registration-block__text">
                 В растущей сфере
                 онлайн образования <span class="registration-block__text_lite-grey">
                   с гарантированной
                   оплатой</span>
-              </p><a class="registration-block__btn btn btn_link btn_red" href="#">Регистрация</a>
+              </p><a class="registration-block__btn btn btn_link btn_red" href="#">
+                <div class="btn__blackout"></div>Регистрация</a>
             </div>
           </div>
         </div>
       </section>
-      <section class="advantages" id="advantages">
+      <section class="webmasters-advantages" id="webmasters-advantages">
         <div class="container">
-          <h2 class="heading advantages__heading">Преимущества</h2>
-          <ul class="advantages__list">
-            <li class="advantages__item">
+          <h2 class="heading webmasters-advantages__heading">Преимущества</h2>
+          <ul class="webmasters-advantages__list">
+            <li class="webmasters-advantages__item">
               <svg class="svg-sprite svg-sprite_credit-cards advantages__icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#credit-cards"></use>
               </svg>
-              <p class="advantages__text">Прозрачная <br/>система расчётов</p>
+              <p class="webmasters-advantages__text">Прозрачная <br class="d-none d-lg-inline"/>система расчётов</p>
             </li>
-            <li class="advantages__item">
+            <li class="webmasters-advantages__item">
               <svg class="svg-sprite svg-sprite_shield advantages__icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#shield"></use>
               </svg>
-              <p class="advantages__text">Гарантия выплат <br/>от системы </p>
+              <p class="webmasters-advantages__text">Гарантия выплат <br class="d-none d-lg-inline"/>от системы </p>
             </li>
-            <li class="advantages__item">
+            <li class="webmasters-advantages__item">
               <svg class="svg-sprite svg-sprite_online-payment advantages__icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#online-payment"></use>
               </svg>
-              <p class="advantages__text">Авансовые платежи <br/>от рекламодателей</p>
+              <p class="webmasters-advantages__text">Авансовые платежи <br class="d-none d-lg-inline"/>от рекламодателей</p>
             </li>
-            <li class="advantages__item">
+            <li class="webmasters-advantages__item">
               <svg class="svg-sprite svg-sprite_web advantages__icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#web"></use>
               </svg>
-              <p class="advantages__text">Готовые конверсионные <br/>лендинги</p>
+              <p class="webmasters-advantages__text">Готовые конверсионные <br class="d-none d-lg-inline"/>лендинги</p>
             </li>
-            <li class="advantages__item">
+            <li class="webmasters-advantages__item">
               <svg class="svg-sprite svg-sprite_ad advantages__icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#ad"></use>
               </svg>
-              <p class="advantages__text">Набор базовых <br/>креативов</p>
+              <p class="webmasters-advantages__text">Набор базовых <br class="d-none d-lg-inline"/>креативов</p>
             </li>
-            <li class="advantages__item">
+            <li class="webmasters-advantages__item">
               <svg class="svg-sprite svg-sprite_deny advantages__icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#deny"></use>
               </svg>
-              <p class="advantages__text">Отсутствие общения <br/>с рекламодателями <br/>и клиентами</p>
+              <p class="webmasters-advantages__text">Отсутствие общения <br class="d-none d-lg-inline"/>с рекламодателями <br class="d-none d-lg-inline"/>и клиентами</p>
             </li>
           </ul>
         </div>
