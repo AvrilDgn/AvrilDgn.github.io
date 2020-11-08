@@ -2108,8 +2108,8 @@ section {
 }
 
 .webmasters-advantages__item:nth-child(3) .svg-sprite {
-  margin-right: 22px;
-  width: 56px;
+  margin-right: 20px;
+  width: 65px;
   height: 64px;
 }
 
@@ -2291,6 +2291,13 @@ section {
   font-weight: 400;
   font-size: 14px;
   color: #35383b;
+}
+
+.efficiency__btn {
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 400px;
+  height: 62px;
 }
 
 .advertisers-title {
@@ -7210,6 +7217,10 @@ section {
   .efficiency__icon {
     margin: 0 20px;
     min-width: 60px;
+  }
+
+  .efficiency__btn {
+    width: 100%;
   }
 }
 
