@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>Твоя Москва</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header" id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 d-lg-none"><a class="header__toggle-btn" href="#"><span></span></a></div>
+            <nav class="col-12 header__nav header-nav d-flex justify-content-lg-end align-items-center flex-column flex-lg-row">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link header-nav__link_active" href="index.html#schedule">Расписание</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="team.html">Команда</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="excursions.html">Список экскурсий</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="contacts.html">Контакты</a></li>
+              </ul>
+              <form class="header-nav__search search-form" action="#" method="get">
+                <input class="search-form__input" id="search" type="search" name="search" placeholder="Поиск"/>
+                <button class="search-form__btn" id="search-btn" type="submit">
+                  <svg class="svg-sprite svg-sprite_magnifier ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                  </svg>
+                </button>
+              </form>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <section class="title" id="title">
+        <svg class="svg-sprite svg-sprite_waves_1 title__waves title__waves_top">
+          <use xlink:href="assets/img/sprite/sprite.svg#waves_1"></use>
+        </svg>
+        <div class="container d-flex flex-column align-items-end">
+          <div class="a">
+            <h1 class="title__heading">Твоя <span class="title__span">М
+                <svg class="svg-sprite svg-sprite_logo title__logo">
+                  <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
+                </svg></span>осква</h1>
+            <p class="title__subheading">Бесплатные <br/>пешеходные экскурсии</p>
+          </div>
+        </div>
+        <svg class="svg-sprite svg-sprite_waves_2 title__waves title__waves_bottom">
+          <use xlink:href="assets/img/sprite/sprite.svg#waves_2"></use>
+        </svg>
+      </section>
+      <section class="schedule" id="schedule">
+        <div class="container">
+          <h2 class="schedule__heading heading">Расписание экскурсий</h2>
+          <p class="schedule__subheading subheading">
+            от клуба профессиональных 
+            гидов-экскурсоводов "Твоя Москва"
+          </p>
+          <ul class="schedule__list schedule-excursion">
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">30 октября, пт</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">14:00–16:00</p>
+                  <p class="schedule-excursion__name">
+                    Кекушев и Бойцов, два
+                    мастера на одной улице"
+                  </p>
+                  <p class="schedule-excursion__guide">Сергей Беляев</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">31 октября, сб</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12.00-14:00</p>
+                  <p class="schedule-excursion__name">Городки на Пироговке</p>
+                  <p class="schedule-excursion__guide">Ирина Кальвина</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">1 ноября, вc</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13.00-15:00</p>
+                  <p class="schedule-excursion__name">Чудо-остров в Измайлово</p>
+                  <p class="schedule-excursion__guide">Татьяна Ивлиева</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">4 ноября, ср</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:30–14:30</p>
+                  <p class="schedule-excursion__name">
+                    Бесплатная экскурсия
+                    «Петровский парк и его
+                    обитатели»
+                  </p>
+                  <p class="schedule-excursion__guide">Петр Конкин</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">8 ноября, вс</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:00–14:00</p>
+                  <p class="schedule-excursion__name">Городки на Пироговке</p>
+                  <p class="schedule-excursion__guide">Ирина Кальвина</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:30–14:30</p>
+                  <p class="schedule-excursion__name">
+                    Русский Версаль-
+                    усадьба Кузьминки
+                  </p>
+                  <p class="schedule-excursion__guide">Петр Конкин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13:00 –15:00</p>
+                  <p class="schedule-excursion__name">
+                    Мясницкая парадная
+                    и непарадная
+                  </p>
+                  <p class="schedule-excursion__guide">Оксана Новикова</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13:00 –15:00</p>
+                  <p class="schedule-excursion__name">
+                    Секреты Земляного города:
+                    от Красных ворот в
+                    Кобыльскую слободу
+                  </p>
+                  <p class="schedule-excursion__guide">Денис Карелин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">15:30 –17:30</p>
+                  <p class="schedule-excursion__name">
+                    Битте-дритте -
+                    немцы в городе!
+                  </p>
+                  <p class="schedule-excursion__guide">Сергей Беляев</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">13 ноября, пт</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13.30-15:30</p>
+                  <p class="schedule-excursion__name">
+                    Переулками
+                    Калашной слободы
+                  </p>
+                  <p class="schedule-excursion__guide">Лариса Стефанова</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">14 ноября, сб</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13.00-15:00</p>
+                  <p class="schedule-excursion__name">Чудо-остров в Измайлово</p>
+                  <p class="schedule-excursion__guide">Татьяна Ивлиева</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:00–14:00</p>
+                  <p class="schedule-excursion__name">Городки на Пироговке</p>
+                  <p class="schedule-excursion__guide">Ирина Кальвина</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:30–14:30</p>
+                  <p class="schedule-excursion__name">
+                    Русский Версаль-
+                    усадьба Кузьминки
+                  </p>
+                  <p class="schedule-excursion__guide">Петр Конкин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13:00 –15:00</p>
+                  <p class="schedule-excursion__name">
+                    Мясницкая парадная
+                    и непарадная
+                  </p>
+                  <p class="schedule-excursion__guide">Оксана Новикова</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13:00 –15:00</p>
+                  <p class="schedule-excursion__name">
+                    Секреты Земляного города:
+                    от Красных ворот в
+                    Кобыльскую слободу
+                  </p>
+                  <p class="schedule-excursion__guide">Денис Карелин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">15:30 –17:30</p>
+                  <p class="schedule-excursion__name">
+                    Битте-дритте -
+                    немцы в городе!
+                  </p>
+                  <p class="schedule-excursion__guide">Сергей Беляев</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">15 ноября, вс</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:30–14:30</p>
+                  <p class="schedule-excursion__name">
+                    Бесплатная экскурсия
+                    «Петровский парк и его
+                    обитатели»
+                  </p>
+                  <p class="schedule-excursion__guide">Петр Конкин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:30–14:30</p>
+                  <p class="schedule-excursion__name">
+                    Русский Версаль-
+                    усадьба Кузьминки
+                  </p>
+                  <p class="schedule-excursion__guide">Петр Конкин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13:00–15:00</p>
+                  <p class="schedule-excursion__name">
+                    Мясницкая парадная
+                    и непарадная
+                  </p>
+                  <p class="schedule-excursion__guide">Оксана Новикова</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">13:00–15:00</p>
+                  <p class="schedule-excursion__name">
+                    Секреты Земляного города:
+                    от Красных ворот в
+                    Кобыльскую слободу
+                  </p>
+                  <p class="schedule-excursion__guide">Денис Карелин</p>
+                </li>
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">15:30–17:30</p>
+                  <p class="schedule-excursion__name">
+                    Битте-дритте -
+                    немцы в городе!
+                  </p>
+                  <p class="schedule-excursion__guide">Сергей Беляев</p>
+                </li>
+              </ul>
+            </li>
+            <li class="schedule-excursion__item">
+              <p class="schedule-excursion__date">19 ноября, чт</p>
+              <ul class="schedule-excursion__info">
+                <li class="schedule-excursion__info-item">
+                  <p class="schedule-excursion__time">12:00–14:00</p>
+                  <p class="schedule-excursion__name">Городки на Пироговке</p>
+                  <p class="schedule-excursion__guide">Ирина Кальвина</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="subscribe" id="subscribe">
+        <form class="subscribe__form form" action="#" method="get">
+          <fieldset class="subscribe__fieldset form__fieldset">
+            <legend class="subscribe__heading form__heading">
+              подпишитесь на уведомления
+              о новых экскурсиях 
+            </legend>
+            <p class="subscribe__field form__field">
+              <input class="subscribe__input form__input" type="text" name="name" placeholder="Ваше имя" required="required"/>
+            </p>
+            <p class="subscribe__field form__field">
+              <input class="subscribe__input form__input" type="email" name="email" placeholder="E-mail" required="required"/>
+            </p>
+            <button class="subscribe__btn form__btn btn" type="submit">Подписаться</button>
+          </fieldset>
+        </form>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <ul class="footer__socials footer-socials">
+            <li class="footer-socials__item"><a class="footer-socials__link" href="tel:+79017922612">
+                <svg class="svg-sprite svg-sprite_phone footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                </svg><span class="footer-socials__text">8901-792-2612</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="mailto:tvojamoskva@yandex.ru">
+                <svg class="svg-sprite svg-sprite_arroba footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#arroba"></use>
+                </svg><span class="footer-socials__text">tvojamoskva@yandex.ru</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://facebook.com/" data-apk="fb://profile/@put_name@" data-android-apk="intent://profile/@put_name@#Intent;package=com.facebook.katana;scheme=fb;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_facebook footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://vk.com/" data-apk="vk://vk.com/@put_name@" data-android-apk="intent://vk.com/@put_name@#Intent;package=com.vkontakte.android-apkoid;scheme=vkontakte;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_vk footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://instagram.com/" data-apk="instagram://@put_name@" data-android-apk="intent://instagram.com/_u/@put_name@/#Intent;package=com.instagram.android;scheme=https;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_instagram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

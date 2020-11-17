@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>Твоя Москва</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header" id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 d-lg-none"><a class="header__toggle-btn" href="#"><span></span></a></div>
+            <nav class="col-12 header__nav header-nav d-flex justify-content-lg-end align-items-center flex-column flex-lg-row">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link header-nav__link_active" href="index.html#schedule">Расписание</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="team.html">Команда</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="excursions.html">Список экскурсий</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="contacts.html">Контакты</a></li>
+              </ul>
+              <form class="header-nav__search search-form" action="#" method="get">
+                <input class="search-form__input" id="search" type="search" name="search" placeholder="Поиск"/>
+                <button class="search-form__btn" id="search-btn" type="submit">
+                  <svg class="svg-sprite svg-sprite_magnifier ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                  </svg>
+                </button>
+              </form>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <section class="title" id="title">
+        <svg class="svg-sprite svg-sprite_waves_1 title__waves title__waves_top">
+          <use xlink:href="assets/img/sprite/sprite.svg#waves_1"></use>
+        </svg>
+        <div class="container d-flex flex-column align-items-end">
+          <div class="a">
+            <h1 class="title__heading">Твоя <span class="title__span">М
+                <svg class="svg-sprite svg-sprite_logo title__logo">
+                  <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
+                </svg></span>осква</h1>
+            <p class="title__subheading">Бесплатные <br/>пешеходные экскурсии</p>
+          </div>
+        </div>
+        <svg class="svg-sprite svg-sprite_waves_2 title__waves title__waves_bottom">
+          <use xlink:href="assets/img/sprite/sprite.svg#waves_2"></use>
+        </svg>
+      </section>
+      <section class="team" id="team">
+        <div class="container">
+          <h2 class="team__heading heading">Наша команда</h2>
+          <div class="team__general-description">
+            <p>
+              Наш клуб собрал людей, увлеченных своим призванием - знакомить слушателей с любимым городом, вдохновлять
+              и объединять любовью к Москве. Кроме того, все наши экскурсоводы аккредитованы экспертным советом при
+              Комитете по туризму города Москвы, так что в их профессиональных качествах можно быть уверенными. Мы создали
+              наш клуб в марте 2018 года, и за прошедшее время, по данным сервиса Timepad.ru, на наших экскурсиях побывало 15204 человек.
+            </p>
+            <p>
+              Мы устроим для вас интересную прогулку, покажем самые красивые и любопытные места города. С нами вы узнаете новые
+              и яркие факты, необычные истории, откроете для себя заповедные уголки и старинные дворянские усадьбы.
+            </p>
+            <p>С нами столица станет действительно Твоей Москвой.</p>
+          </div>
+          <ul class="team__list">
+            <li class="team__item">
+              <div class="team__top">
+                <div class="team__image"><img src="assets/img/team/person_1.jpg" alt="Фото члена команды"/></div>
+                <div class="team__routes-block">
+                  <h4 class="team__routes-heading">Актуальные маршруты:</h4>
+                  <ol class="team__routes-list">
+                    <li class="team__routes-item">Легенды и были Царицыно</li>
+                    <li class="team__routes-item">История московской торговли</li>
+                    <li class="team__routes-item">Где тополи на Плющихе?</li>
+                    <li class="team__routes-item">Иноземцы в Москве</li>
+                    <li class="team__routes-item">Вдоль по улице Просвещения</li>
+                    <li class="team__routes-item">Созвездие Трех вокзалов</li>
+                    <li class="team__routes-item">Киевский вокзал+башня</li>
+                    <li class="team__routes-item">Курский вокзал - загадка стеклянного фасада</li>
+                  </ol>
+                </div>
+              </div>
+              <h3 class="team__persone">Денис Карелин - аккредитованный гид-экскурсовод</h3>
+              <p class="team__quote">
+                "Москва - город разноплановый и этим он и хорош. Потому что проходя по улицам и переулкам, мы можем прочесть
+                ее более чем восьмивековую историю. Москва полна загадок, легенд и преданий. Я приглашаю вас на свои экскурсии,
+                давайте попробуем вместе раскрыть все московские тайны".
+              </p>
+            </li>
+            <li class="team__item">
+              <div class="team__top">
+                <div class="team__image"><img src="assets/img/team/person_2.jpg" alt="Фото члена команды"/></div>
+                <div class="team__routes-block">
+                  <h4 class="team__routes-heading">Актуальные маршруты:</h4>
+                  <ol class="team__routes-list">
+                    <li class="team__routes-item">Коломенское: от Тишайшего до Великого</li>
+                    <li class="team__routes-item">Симонов монастырь \5 конструктивизм</li>
+                    <li class="team__routes-item">Улица гурманов</li>
+                    <li class="team__routes-item">Чудо-остров в Измайлово</li>
+                    <li class="team__routes-item">Большой театр снаружи и изнутри</li>
+                    <li class="team__routes-item">Казанский вокзал и его создатель: Алексей Щусев</li>
+                    <li class="team__routes-item">Авангардная Шаболовка</li>
+                  </ol>
+                </div>
+              </div>
+              <h3 class="team__persone">Татьяна Ивлиева - аккредитованный гид-экскурсовод</h3>
+              <p class="team__quote">
+                "Наш город - это волшебная шкатулка, полная удивительных историй, настоящих сокровищ, которые можно изучать
+                всю жизнь. А в компании единомышленников, людей, столь же увлеченных историей и архитектурой родного города,
+                это интересней вдвойне".
+              </p>
+            </li>
+            <li class="team__item">
+              <div class="team__top">
+                <div class="team__image"><img src="assets/img/team/person_3.jpg" alt="Фото члена команды"/></div>
+                <div class="team__routes-block">
+                  <h4 class="team__routes-heading">Актуальные маршруты:</h4>
+                  <ol class="team__routes-list">
+                    <li class="team__routes-item">Осколки Садового кольца</li>
+                    <li class="team__routes-item">По Гончарной слободе</li>
+                    <li class="team__routes-item">От "Трубы" до МУРа</li>
+                    <li class="team__routes-item">Тайны Земляного города</li>
+                    <li class="team__routes-item">Городки на Пироговке</li>
+                    <li class="team__routes-item">Загадка Л.НЛ.</li>
+                    <li class="team__routes-item">Динамо и окрестности : не только футбол</li>
+                    <li class="team__routes-item">По Новой Басманной в гости к Василию Львовичу Пушкину</li>
+                  </ol>
+                </div>
+              </div>
+              <h3 class="team__persone">Ирина Кальвина - аккредитованный гид-экскурсовод</h3>
+              <p class="team__quote">
+                "В архитектуре и планировке Москвы отражается наша история, наш характер. Не один раз наш город пробовали
+                перестраивать, перекраивать, заключить в рамки, ограничить, и до конца ни у кого это сделать не получилось.
+                Так и возникла эта пестрая и веселая, надоевшая и любимая путаница захолустных переулков, автострад и глухих
+                упиков, парков и пустырей, где можно бесконечно рыться как в бабушкиной шкатулке и всегда найти что-то новое,
+                еще никогда невиданное!"
+              </p>
+            </li>
+            <li class="team__item">
+              <div class="team__top">
+                <div class="team__image"><img src="assets/img/team/person_4.jpg" alt="Фото члена команды"/></div>
+                <div class="team__routes-block">
+                  <h4 class="team__routes-heading">Актуальные маршруты:</h4>
+                  <ol class="team__routes-list">
+                    <li class="team__routes-item">Моя Садовая-Сухаревская</li>
+                    <li class="team__routes-item">Москва советская : Проспект Мира</li>
+                    <li class="team__routes-item">Дома и судьбы Никитского бульвара</li>
+                    <li class="team__routes-item">От Покровских до Яузских ворот</li>
+                    <li class="team__routes-item">Москва Владимира Высоцкого и Глеба Жеглова</li>
+                    <li class="team__routes-item">По Зарядью, по Варварке</li>
+                    <li class="team__routes-item">Миуссы и окрестности</li>
+                  </ol>
+                </div>
+              </div>
+              <h3 class="team__persone">Анна Котомкина - аккредитованный гид-экскурсовод</h3>
+              <p class="team__quote">
+                "Любимые темы: Москва 30-50-х годов, архитектура и быт того времени. Больше всего люблю довоенные дома.
+                Любимые места: Садовая-Сухаревская и вокруг, Садовое кольцо, Проспект Мира, Ленинградский проспект и
+                многое другое. Собираюсь и дальше создавать и водить экскурсии по своим любимым темам,
+                с удовольствием изучаю сама и показываю другим все красивые и необычные здания на пути. Политикой не занимаюсь".
+              </p>
+            </li>
+            <li class="team__item">
+              <div class="team__top">
+                <div class="team__image"><img src="assets/img/team/person_5.jpg" alt="Фото члена команды"/></div>
+                <div class="team__routes-block">
+                  <h4 class="team__routes-heading">Актуальные маршруты:</h4>
+                  <ol class="team__routes-list">
+                    <li class="team__routes-item">Москва Маяковского</li>
+                    <li class="team__routes-item">Страсти века на Страстном бульваре</li>
+                    <li class="team__routes-item">Московские адреса Сергея Есенина</li>
+                  </ol>
+                </div>
+              </div>
+              <h3 class="team__persone">Ирина Мамонтова - филолог, экскурсовод, лектор-просветитель</h3>
+              <p class="team__quote">
+                "В 1977 году закончила филологический факультет МГУ им. М.В. Ломоносова. 1969 по 1991 годы являлась научным
+                сотрудником Государственного музея В. В. Маяковского, где вела экскурсии, читала лекции и создавала экспозиции.
+                Встречалась по работе со многими современниками Маяковского, в том числе с Лилей Брик. После работы в музее
+                многие годы преподавала русский язык и литературу в школе".
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <ul class="footer__socials footer-socials">
+            <li class="footer-socials__item"><a class="footer-socials__link" href="tel:+79017922612">
+                <svg class="svg-sprite svg-sprite_phone footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                </svg><span class="footer-socials__text">8901-792-2612</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="mailto:tvojamoskva@yandex.ru">
+                <svg class="svg-sprite svg-sprite_arroba footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#arroba"></use>
+                </svg><span class="footer-socials__text">tvojamoskva@yandex.ru</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://facebook.com/" data-apk="fb://profile/@put_name@" data-android-apk="intent://profile/@put_name@#Intent;package=com.facebook.katana;scheme=fb;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_facebook footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://vk.com/" data-apk="vk://vk.com/@put_name@" data-android-apk="intent://vk.com/@put_name@#Intent;package=com.vkontakte.android-apkoid;scheme=vkontakte;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_vk footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://instagram.com/" data-apk="instagram://@put_name@" data-android-apk="intent://instagram.com/_u/@put_name@/#Intent;package=com.instagram.android;scheme=https;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_instagram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>Твоя Москва</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <script>!function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);</script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <header class="header" id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 d-lg-none"><a class="header__toggle-btn" href="#"><span></span></a></div>
+            <nav class="col-12 header__nav header-nav d-flex justify-content-lg-end align-items-center flex-column flex-lg-row">
+              <ul class="header-nav__list">
+                <li class="header-nav__item"><a class="header-nav__link header-nav__link_active" href="index.html#schedule">Расписание</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="team.html">Команда</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="excursions.html">Список экскурсий</a></li>
+                <li class="header-nav__item"><a class="header-nav__link" href="contacts.html">Контакты</a></li>
+              </ul>
+              <form class="header-nav__search search-form" action="#" method="get">
+                <input class="search-form__input" id="search" type="search" name="search" placeholder="Поиск"/>
+                <button class="search-form__btn" id="search-btn" type="submit">
+                  <svg class="svg-sprite svg-sprite_magnifier ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                  </svg>
+                </button>
+              </form>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <section class="title" id="title">
+        <svg class="svg-sprite svg-sprite_waves_1 title__waves title__waves_top">
+          <use xlink:href="assets/img/sprite/sprite.svg#waves_1"></use>
+        </svg>
+        <div class="container d-flex flex-column align-items-end">
+          <div class="a">
+            <h1 class="title__heading">Твоя <span class="title__span">М
+                <svg class="svg-sprite svg-sprite_logo title__logo">
+                  <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
+                </svg></span>осква</h1>
+            <p class="title__subheading">Бесплатные <br/>пешеходные экскурсии</p>
+          </div>
+        </div>
+        <svg class="svg-sprite svg-sprite_waves_2 title__waves title__waves_bottom">
+          <use xlink:href="assets/img/sprite/sprite.svg#waves_2"></use>
+        </svg>
+      </section>
+      <sectionexcursion-card class="htmlexcursions excursions">
+        <div class="container">
+          <h2 class="excursions__heading heading">Наши экскурсии</h2>
+          <ul class="excursions__list">
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Арбат</a><a class="excursions__link" href="excursion-card.html">Арбатская история</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Братцево (усадьба)</a><a class="excursions__link" href="excursion-card.html">Булгаковская Москва</a><a class="excursions__link" href="excursion-card.html">Большой театр</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Варварка</a><a class="excursions__link" href="excursion-card.html">Визбор</a><a class="excursions__link" href="excursion-card.html">Волхонка</a><a class="excursions__link" href="excursion-card.html">Воронцово поле</a><a class="excursions__link" href="excursion-card.html">Высоцкий и Жеглов</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Гоголевский бульвар</a><a class="excursions__link" href="excursion-card.html">Гончарная слобода</a><a class="excursions__link" href="excursion-card.html">Грачевка</a><a class="excursions__link" href="excursion-card.html">Гурченко</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Дворец Алексея Михайловича</a><a class="excursions__link" href="excursion-card.html">Девичье Поле</a><a class="excursions__link" href="excursion-card.html">Дмитров</a><a class="excursions__link" href="excursion-card.html">Динамо</a><a class="excursions__link" href="excursion-card.html">Большая Дмитровка</a><a class="excursions__link" href="excursion-card.html">Дом на набережной</a><a class="excursions__link" href="excursion-card.html">Донской монастырь</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Есенин</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Замоскворечье</a><a class="excursions__link" href="excursion-card.html">Знаменка</a><a class="excursions__link" href="excursion-card.html">Золотая миля</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Ивановская горка</a><a class="excursions__link" href="excursion-card.html">Измайлово</a><a class="excursions__link" href="excursion-card.html">Ильинка</a><a class="excursions__link" href="excursion-card.html">Иноземцы</a><a class="excursions__link" href="excursion-card.html">История московской торговли</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Казанский вокзал</a><a class="excursions__link" href="excursion-card.html">Казенная слобода, Лялин и Подсосенский пер.</a><a class="excursions__link" href="excursion-card.html">Калашная слобода</a><a class="excursions__link" href="excursion-card.html">Киевский вокзал</a><a class="excursions__link" href="excursion-card.html">Китай-город</a><a class="excursions__link" href="excursion-card.html">Коломенское</a><a class="excursions__link" href="excursion-card.html">Коломна</a><a class="excursions__link" href="excursion-card.html">Красная площадь и Александровский сад</a><a class="excursions__link" href="excursion-card.html">Кремль и Александровский сад</a><a class="excursions__link" href="excursion-card.html">Кузнецкий мост</a><a class="excursions__link" href="excursion-card.html">Кузьминки (усадьба)</a><a class="excursions__link" href="excursion-card.html">Курский вокзал</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Ленинградский вокзал</a><a class="excursions__link" href="excursion-card.html">Ленинградский проспект</a><a class="excursions__link" href="excursion-card.html">Лефортово</a><a class="excursions__link" href="excursion-card.html">Лубянка</a><a class="excursions__link" href="excursion-card.html">Люблино (усадьба)</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Маяковский</a><a class="excursions__link" href="excursion-card.html">Метро</a><a class="excursions__link" href="excursion-card.html">Мещанская слобода</a><a class="excursions__link" href="excursion-card.html">Миуссы</a><a class="excursions__link" href="excursion-card.html">Московские пассажи</a><a class="excursions__link" href="excursion-card.html">Мясницкая</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Неглинная</a><a class="excursions__link" href="excursion-card.html">Немцы в Москве</a><a class="excursions__link" href="excursion-card.html">Немецкая слобода</a><a class="excursions__link" href="excursion-card.html">Никитский бульвар</a><a class="excursions__link" href="excursion-card.html">Никольская улица</a><a class="excursions__link" href="excursion-card.html">Новая Басманная</a><a class="excursions__link" href="excursion-card.html">Новинский бульвар и окрестности</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Остоженка</a><a class="excursions__link" href="excursion-card.html">Модерн на Остоженке</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Патриаршие пруды</a><a class="excursions__link" href="excursion-card.html">Переулки Арбата</a><a class="excursions__link" href="excursion-card.html">Переулки между Арбатом и Пречистенкой</a><a class="excursions__link" href="excursion-card.html">Переулки между Остоженкой и Пречистенкой</a><a class="excursions__link" href="excursion-card.html">Петровский бульвар</a><a class="excursions__link" href="excursion-card.html">Петровский парк</a><a class="excursions__link" href="excursion-card.html">Пироговка</a><a class="excursions__link" href="excursion-card.html">Плющиха</a><a class="excursions__link" href="excursion-card.html">Поварская</a><a class="excursions__link" href="excursion-card.html">Покровский бульвар</a><a class="excursions__link" href="excursion-card.html">Проспект Мира</a><a class="excursions__link" href="excursion-card.html">Пречистенка</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Рождественка</a><a class="excursions__link" href="excursion-card.html">Рождественский бульвар</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Садовая-Сухаревская</a><a class="excursions__link" href="excursion-card.html">Садовая-Черногрязская</a><a class="excursions__link" href="excursion-card.html">Сергиев Посад</a><a class="excursions__link" href="excursion-card.html">Симоновская слобода</a><a class="excursions__link" href="excursion-card.html">Сретенский бульвар</a><a class="excursions__link" href="excursion-card.html">Старая Басманная</a><a class="excursions__link" href="excursion-card.html">Страстной бульвар</a><a class="excursions__link" href="excursion-card.html">Сыромятники</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Таганка</a><a class="excursions__link" href="excursion-card.html">Тверская</a><a class="excursions__link" href="excursion-card.html">Тверской бульвар</a><a class="excursions__link" href="excursion-card.html">Театральная Москва</a><a class="excursions__link" href="excursion-card.html">Лев Толстой</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Хамовники</a><a class="excursions__link" href="excursion-card.html">Храм Христа Спасителя</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Царицыно</a><a class="excursions__link" href="excursion-card.html">Центросоюз</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Чистопрудный бульвар</a><a class="excursions__link" href="excursion-card.html">Чехов в Москве</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Шаболовка</a><a class="excursions__link" href="excursion-card.html">Шехтель и Кекушев</a><a class="excursions__link" href="excursion-card.html">Шуя</a></li>
+            <li class="excursions__group-list"><a class="excursions__link" href="excursion-card.html">Ярославский вокзал</a><a class="excursions__link" href="excursion-card.html">Яузский бульвар</a><a class="excursions__link" href="excursion-card.html">Яузская улица</a></li>
+          </ul>
+        </div>
+      </sectionexcursion-card>
+      <footer class="footer">
+        <div class="container">
+          <ul class="footer__socials footer-socials">
+            <li class="footer-socials__item"><a class="footer-socials__link" href="tel:+79017922612">
+                <svg class="svg-sprite svg-sprite_phone footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                </svg><span class="footer-socials__text">8901-792-2612</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link" href="mailto:tvojamoskva@yandex.ru">
+                <svg class="svg-sprite svg-sprite_arroba footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#arroba"></use>
+                </svg><span class="footer-socials__text">tvojamoskva@yandex.ru</span></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://facebook.com/" data-apk="fb://profile/@put_name@" data-android-apk="intent://profile/@put_name@#Intent;package=com.facebook.katana;scheme=fb;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_facebook footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://vk.com/" data-apk="vk://vk.com/@put_name@" data-android-apk="intent://vk.com/@put_name@#Intent;package=com.vkontakte.android-apkoid;scheme=vkontakte;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_vk footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="footer-socials__item"><a class="footer-socials__link deeplink" href="https://instagram.com/" data-apk="instagram://@put_name@" data-android-apk="intent://instagram.com/_u/@put_name@/#Intent;package=com.instagram.android;scheme=https;end" target="_blank">
+                <svg class="svg-sprite svg-sprite_instagram footer-socials__icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>
