@@ -10,35 +10,34 @@
   <body>
     <main class="wrapper">
       <header class="header" id="header">
-        <div class="container">
-          <div class="row">
-            <div class="col-2 d-lg-none"><a class="header__toggle-btn" href="#"><span></span></a></div>
-            <nav class="col-12 header__nav header-nav d-flex justify-content-lg-end align-items-center flex-column flex-lg-row">
-              <ul class="header-nav__list">
-                <li class="header-nav__item"><a class="header-nav__link" href="index.html">Расписание</a></li>
-                <li class="header-nav__item"><a class="header-nav__link" href="team.html">Команда</a></li>
-                <li class="header-nav__item"><a class="header-nav__link" href="excursions.html">Список экскурсий</a></li>
-                <li class="header-nav__item"><a class="header-nav__link header-nav__link_active" href="contacts.html">Контакты</a></li>
-              </ul>
-              <form class="header-nav__search search-form" action="#" method="get">
-                <input class="search-form__input" id="search" type="search" name="search" placeholder="Поиск"/>
-                <button class="search-form__btn" id="search-btn" type="submit">
-                  <svg class="svg-sprite svg-sprite_magnifier ">
-                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
-                  </svg>
-                </button>
-              </form>
-            </nav>
-          </div>
+        <div class="container d-flex flex-column flex-xl-row justify-content-lg-end">
+          <form class="header__search search-form order-xl-1" action="#" method="get">
+            <label class="search-form__label" for="search">
+              <input class="search-form__input" id="search" type="search" name="search" placeholder="Поиск"/>
+              <button class="search-form__btn" id="search-btn" type="submit">
+                <svg class="svg-sprite svg-sprite_magnifier ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                </svg>
+              </button>
+            </label>
+          </form>
+          <nav class="header__nav header-nav d-flex justify-content-xl-end align-items-center flex-column flex-xl-row">
+            <ul class="header-nav__list">
+              <li class="header-nav__item"><a class="header-nav__link header-nav__link_active" href="index.html">Расписание</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="team.html">Команда</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="excursions.html">Список экскурсий</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav><a class="d-xl-none header__toggle-btn" href="#"><span></span></a>
         </div>
       </header>
       <section class="title" id="title">
         <svg class="svg-sprite svg-sprite_waves_1 title__waves title__waves_top">
           <use xlink:href="assets/img/sprite/sprite.svg#waves_1"></use>
         </svg>
-        <div class="container d-flex flex-column align-items-end">
-          <div class="a">
-            <h1 class="title__heading">Твоя <span class="title__span">М
+        <div class="container d-flex flex-column align-items-center align-items-lg-end">
+          <div class="title__content">
+            <h1 class="title__heading">Твоя <br/><span class="title__span">М
                 <svg class="svg-sprite svg-sprite_logo title__logo">
                   <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
                 </svg></span>осква</h1>
@@ -72,7 +71,7 @@
               <input class="check__input" id="agreement" type="checkbox" checked="checked"/><span class="check__box">
                 <svg class="svg-sprite svg-sprite_check-mark ">
                   <use xlink:href="assets/img/sprite/sprite.svg#check-mark"></use>
-                </svg></span>Я даю <a class="check__link" href="#">Согласие на обработку данных</a>
+                </svg></span>Я даю &nbsp;<a class="check__link" href="#">Согласие на обработку данных</a>
             </label>
             <button class="message__btn form__btn btn" type="submit">отправить</button>
           </fieldset>
