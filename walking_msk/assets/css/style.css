@@ -1522,6 +1522,7 @@ figure {
   position: relative;
   margin: 0 auto;
   overflow: hidden;
+  max-width: 1440px;
 }
 
 article,
@@ -1911,6 +1912,7 @@ section {
 .header {
   position: fixed;
   z-index: 20;
+  max-width: 1440px;
   width: 100%;
   background-color: white;
   top: 0;
@@ -1983,7 +1985,7 @@ section {
 
 .title__waves {
   position: absolute;
-  left: calc((100vw - 1440px) / 2);
+  left: 0px;
   fill: white;
 }
 
@@ -6215,6 +6217,16 @@ section {
   }
 }
 
+@media screen and (max-width: 1439px) {
+  .header {
+    max-width: unset;
+  }
+
+  .title__waves {
+    left: calc((100vw - 1440px) / 2);
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .footer-socials__item:not(:first-child) {
     margin-left: 40px;
@@ -6263,6 +6275,7 @@ section {
     -webkit-transition: all ease 0.25s;
     -o-transition: all ease 0.25s;
     transition: all ease 0.25s;
+    overflow: hidden;
   }
 
   .header__search {
