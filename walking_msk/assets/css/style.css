@@ -1971,11 +1971,13 @@ section {
 .title__span {
   position: relative;
   color: transparent;
-  margin-right: -16px;
+  margin-right: -2px;
+  display: inline-block;
 }
 
 .title__logo {
   position: absolute;
+  display: block;
   fill: white;
   width: 50px;
   height: 178px;
@@ -2338,7 +2340,7 @@ section {
 }
 
 .team__item:not(:last-child) {
-  margin-bottom: 170px;
+  margin-bottom: 100px;
 }
 
 .team__item:nth-child(odd) .team__image {
@@ -6521,6 +6523,10 @@ section {
     width: 50px;
     height: 146px;
     bottom: 18px;
+  }
+
+  .title__span {
+    margin-right: -7px;
   }
 
   .message__form {
