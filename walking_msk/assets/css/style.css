@@ -1454,6 +1454,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   position: relative;
+  background-color: #000;
 }
 
 .h1,
@@ -1519,6 +1520,7 @@ figure {
 }
 
 .wrapper {
+  background-color: #fff;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -1910,11 +1912,11 @@ section {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 20;
   max-width: 1440px;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   top: 0;
   padding-top: 25px;
   -webkit-transition: all ease 0.25s;
@@ -1923,6 +1925,8 @@ section {
 }
 
 .header_not-top {
+  position: fixed;
+  background-color: white;
   padding-bottom: 25px;
   -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -1941,12 +1945,17 @@ section {
 }
 
 .title {
+  margin-top: 38px;
   position: relative;
-  height: 780px;
-  padding-top: 300px;
+  height: 636px;
+  padding-top: 230px;
   background-image: url(../img/title/background.jpg);
   background-repeat: no-repeat;
-  background-position: center 66px;
+  background-position: right top;
+}
+
+.title__content {
+  margin-right: -75px;
 }
 
 .title__heading {
@@ -1985,20 +1994,20 @@ section {
 
 .title__waves {
   position: absolute;
-  left: 0px;
+  right: 0px;
   fill: white;
 }
 
 .title__waves_top {
-  top: 0;
+  top: -1px;
   width: 1440px;
-  height: 174px;
+  height: 90px;
 }
 
 .title__waves_bottom {
-  bottom: 0;
+  bottom: -1px;
   width: 1440px;
-  height: 120px;
+  height: 96px;
 }
 
 .schedule {
@@ -2045,7 +2054,7 @@ section {
   display: block;
   font-family: opensans, sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.76;
   color: #2e3799;
 }
@@ -2056,7 +2065,7 @@ section {
   font-weight: 700;
   font-size: 18px;
   line-height: 1.61;
-  color: black;
+  color: #7b2019;
 }
 
 .subscribe {
@@ -2345,11 +2354,14 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .team__image {
-  width: 430px;
-  height: 430px;
+  width: 350px;
+  height: 350px;
   border: solid 6px #d24c2f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2363,6 +2375,10 @@ section {
   border-radius: 50%;
   padding: 16px;
   overflow: hidden;
+}
+
+.team__image img {
+  width: 100%;
 }
 
 .team__routes-block {
@@ -6222,8 +6238,8 @@ section {
     max-width: unset;
   }
 
-  .title__waves {
-    left: calc((100vw - 1440px) / 2);
+  .title__content {
+    margin-right: calc(50px + -125 * ((100vw - 1200px) / 240));
   }
 }
 
@@ -6270,6 +6286,7 @@ section {
   }
 
   .header {
+    background-color: white;
     height: 56px;
     padding-top: 15px;
     -webkit-transition: all ease 0.25s;
@@ -6300,7 +6317,7 @@ section {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    top: 7px;
+    top: 12px;
     right: 20px;
     width: 26px;
     height: 26px;
@@ -6368,20 +6385,17 @@ section {
     height: 71px;
   }
 
-  .team__top {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .title {
+    margin-top: 26px;
   }
 
-  .team__image {
-    margin: 0 auto;
+  .title__content {
+    margin-right: calc(45px + -100 * ((100vw - 992px) / 208));
   }
 
   .team__routes-block {
-    margin-top: 40px;
-    margin-left: 250px;
+    margin-left: 70px;
+    width: 510px;
   }
 }
 
@@ -6427,12 +6441,21 @@ section {
     padding-bottom: 60px;
   }
 
+  .title {
+    padding-top: 195px;
+    height: 680px;
+  }
+
   .title__heading {
     text-align: center;
   }
 
   .title__subheading {
     text-align: center;
+  }
+
+  .title__content {
+    margin-right: calc(125px + -125 * ((100vw - 768px) / 224));
   }
 
   .schedule-excursion__item {
@@ -6454,8 +6477,24 @@ section {
     overflow: auto;
   }
 
+  .team__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .team__image {
+    margin: 0 auto;
+  }
+
   .team__routes-block {
+    margin-top: 40px;
     margin-left: 130px;
+    width: auto;
   }
 }
 
@@ -6466,6 +6505,22 @@ section {
 
   .btn {
     font-size: 15px;
+  }
+
+  .title {
+    height: 620px;
+    padding-top: 150px;
+    background-position-y: bottom;
+  }
+
+  .title__content {
+    margin-right: 0;
+  }
+
+  .title__logo {
+    width: 50px;
+    height: 146px;
+    bottom: 18px;
   }
 
   .message__form {
@@ -6487,7 +6542,8 @@ section {
     margin: 0;
     max-width: 320px;
     max-height: 320px;
-    width: 100%;
+    width: 80%;
+    height: 80%;
   }
 
   .team__image img {
@@ -6536,13 +6592,18 @@ section {
     margin-left: 20px;
   }
 
+  .title {
+    height: 600px;
+    padding-top: 160px;
+  }
+
   .title__heading {
-    font-size: 65px;
+    font-size: 62px;
   }
 
   .title__logo {
     width: 40px;
-    height: 145px;
+    height: 110px;
     bottom: 15px;
     left: 6px;
   }
@@ -6551,12 +6612,28 @@ section {
     font-size: 32px;
   }
 
+  .schedule__list {
+    margin-top: 70px;
+  }
+
   .schedule-excursion__item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     padding-left: 0;
     padding-right: 0;
     text-align: center;
+  }
+
+  .schedule-excursion__time {
+    margin-top: 15px;
+  }
+
+  .schedule-excursion__name {
+    margin-top: 12px;
+  }
+
+  .schedule-excursion__guide {
+    margin-top: 12px;
   }
 
   .subscribe__field {
