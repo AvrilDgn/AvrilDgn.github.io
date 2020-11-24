@@ -1971,8 +1971,7 @@ section {
 .title__span {
   position: relative;
   color: transparent;
-  margin-right: -2px;
-  display: inline-block;
+  margin-right: -20px;
 }
 
 .title__logo {
@@ -1982,7 +1981,7 @@ section {
   width: 50px;
   height: 178px;
   bottom: 18px;
-  left: 6px;
+  left: 9px;
 }
 
 .title__subheading {
@@ -6525,10 +6524,6 @@ section {
     bottom: 18px;
   }
 
-  .title__span {
-    margin-right: -7px;
-  }
-
   .message__form {
     max-width: 602px;
     width: 100%;
@@ -6604,14 +6599,18 @@ section {
   }
 
   .title__heading {
-    font-size: 62px;
+    font-size: 54px;
   }
 
   .title__logo {
-    width: 40px;
-    height: 110px;
-    bottom: 15px;
-    left: 6px;
+    width: 33px;
+    height: 119px;
+    bottom: 13px;
+    left: 9px;
+  }
+
+  .title__span {
+    margin-right: -12px;
   }
 
   .title__subheading {
