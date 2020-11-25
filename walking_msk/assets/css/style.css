@@ -1944,12 +1944,20 @@ section {
   padding-bottom: 143px;
 }
 
+.webp .title {
+  background-image: url(../img/title/background.webp);
+}
+
+.no-webp .title,
+.no-js .title {
+  background-image: url(../img/title/background.jpg);
+}
+
 .title {
   margin-top: 38px;
   position: relative;
   height: 636px;
   padding-top: 230px;
-  background-image: url(../img/title/background.jpg);
   background-repeat: no-repeat;
   background-position: right top;
 }
@@ -6727,5 +6735,31 @@ section {
     display: -webkit-inline-box !important;
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .no-js .title,
+  .no-webp .title {
+    background-image: url("../img/title/background@2x.jpg");
+    background-size: cover;
+  }
+
+  .webp .title {
+    background-image: url("../img/title/background@2x.webp");
+    background-size: cover;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+  .no-js .title,
+  .no-webp .title {
+    background-image: url("../img/title/background@3x.jpg");
+    background-size: cover;
+  }
+
+  .webp .title {
+    background-image: url("../img/title/background@3x.webp");
+    background-size: cover;
   }
 }
