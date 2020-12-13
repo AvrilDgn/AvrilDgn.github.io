@@ -2274,6 +2274,16 @@ section {
   height: 51px;
 }
 
+.efficiency__item:nth-child(6) .svg-sprite {
+  width: 42px;
+  height: 36px;
+}
+
+.efficiency__item:nth-child(7) .svg-sprite {
+  width: 41px;
+  height: 41px;
+}
+
 .efficiency__icon {
   width: 58px;
   margin-left: 32px;
@@ -2298,6 +2308,71 @@ section {
   margin-top: 60px;
   width: 400px;
   height: 62px;
+}
+
+.reviews {
+  padding-top: 72px;
+  padding-bottom: 57px;
+}
+
+.reviews__list {
+  margin: 60px auto 0;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.reviews__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.reviews__img {
+  display: block;
+  max-width: 400px;
+}
+
+.reviews__text-block {
+  margin-left: 40px;
+}
+
+.reviews__message {
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.reviews__author {
+  margin-top: 20px;
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.reviews__pagination {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.reviews__bullet {
+  margin: 10px 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #425bfe;
+  background-color: transparent;
+}
+
+.reviews__bullet_active {
+  background-color: #425bfe;
 }
 
 .advertisers-title {
@@ -6858,6 +6933,32 @@ section {
 
   .nuances .container {
     padding: 0 15px;
+  }
+
+  .reviews__slide {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .reviews__list {
+    width: 100%;
+  }
+
+  .reviews__text-block {
+    margin-top: 30px;
+  }
+
+  .reviews__message {
+    font-size: 18px;
+  }
+
+  .reviews__author {
+    font-size: 14px;
   }
 
   .advertisers-title-block {
