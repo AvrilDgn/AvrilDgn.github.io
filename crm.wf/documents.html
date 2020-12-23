@@ -8,13 +8,20 @@
   </head>
   <body>
     <main class="wrapper">
+      <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <symbol id="calendar" width="14" height="16" viewbox="0 0 14 16">
+            <path d="M4.51416 7.25H3.01416V8.75H4.51416V7.25ZM7.51416 7.25H6.01416V8.75H7.51416V7.25ZM10.5142 7.25H9.01416V8.75H10.5142V7.25ZM12.0142 2H11.2642V0.5H9.76416V2H3.76416V0.5H2.26416V2H1.51416C0.68166 2 0.0216601 2.675 0.0216601 3.5L0.0141602 14C0.0141602 14.825 0.68166 15.5 1.51416 15.5H12.0142C12.8392 15.5 13.5142 14.825 13.5142 14V3.5C13.5142 2.675 12.8392 2 12.0142 2ZM12.0142 14H1.51416V5.75H12.0142V14Z"></path>
+          </symbol>
+        </svg>
+      </div>
       <header class="header" id="header">
         <div class="header__collapse"><a class="header__hide-btn" href="#"><span></span></a>
           <nav class="header__nav nav">
             <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link nav__link_active" href="services.html">Услуги</a></li>
+              <li class="nav__item"><a class="nav__link" href="services.html">Услуги</a></li>
               <li class="nav__item"><a class="nav__link" href="advertising.html">Реклама</a></li>
-              <li class="nav__item"><a class="nav__link" href="documents.html">Документы</a></li>
+              <li class="nav__item"><a class="nav__link nav__link_active" href="documents.html">Документы</a></li>
             </ul>
           </nav>
           <div class="header__user user">
@@ -22,6 +29,88 @@
           </div>
         </div><a class="header__show-btn" href="#"><span></span></a>
       </header>
+      <section class="content documents" id="documents">
+        <h1 class="heading documents__heading">Документы</h1>
+        <ul class="documents__types doc-types">
+          <li class="doc-types__item"><a class="doc-types__link doc-types__link_active" href="#">Все</a></li>
+          <li class="doc-types__item"><a class="doc-types__link" href="#">Счета</a></li>
+          <li class="doc-types__item"><a class="doc-types__link" href="#">Акты</a></li>
+        </ul>
+        <form class="documents__filter doc-filter" id="filter-form" action="#" method="get">
+          <div class="doc-filter__company select">
+            <button class="select__btn" type="button" name="chose-company" value="all"><span>Все компании</span><i class="select__arrow"></i></button>
+            <ul class="select__list">
+              <li class="select__option" data-value="all">Все компании</li>
+              <li class="select__option" data-value="1">Компания 1</li>
+              <li class="select__option" data-value="2">Компания 2</li>
+              <li class="select__option" data-value="3">ООО “Бла бла бла”</li>
+            </ul>
+          </div>
+          <div class="doc-filter__date filter-date"><span class="filter-date__text">Дата</span>
+            <p class="filter-date__field">
+              <input class="filter-date__date-input" id="filter-date-from" type="text" name="date-from" placeholder="от" readonly="readonly"/>
+              <label class="filter-date__label-icon" for="filter-date-from">
+                <svg class="filter-date__svg-calendar">
+                  <use href="#calendar"></use>
+                </svg>
+              </label>
+            </p>
+            <p class="filter-date__field">
+              <input class="filter-date__date-input" id="filter-date-to" type="text" name="date-to" placeholder="до" readonly="readonly"/>
+              <label class="filter-date__label-icon" for="filter-date-to">
+                <svg class="filter-date__svg-calendar">
+                  <use href="#calendar"></use>
+                </svg>
+              </label>
+            </p>
+          </div>
+          <button class="doc-filter__button filter-button" type="submit">Показать</button>
+        </form>
+        <table class="documents__table doc-table">
+          <tr class="doc-table__row">
+            <td class="doc-table__cell">№</td>
+            <td class="doc-table__cell">Дата</td>
+            <td class="doc-table__cell">Клиент</td>
+            <td class="doc-table__cell">Сумма</td>
+            <td class="doc-table__cell">Оплачен</td>
+          </tr>
+          <tr class="doc-table__row">
+            <td class="doc-table__cell"><a href="#">2234</a></td>
+            <td class="doc-table__cell">03.09.2020</td>
+            <td class="doc-table__cell">ООО “Бла бла бла”</td>
+            <td class="doc-table__cell">5000 руб.</td>
+            <td class="doc-table__cell doc-table__cell_red">Нет</td>
+          </tr>
+          <tr class="doc-table__row">
+            <td class="doc-table__cell"><a href="#">2234</a></td>
+            <td class="doc-table__cell">03.09.2020</td>
+            <td class="doc-table__cell">ООО “Бла бла бла”</td>
+            <td class="doc-table__cell">5000 руб.</td>
+            <td class="doc-table__cell doc-table__cell_green">Нет</td>
+          </tr>
+          <tr class="doc-table__row">
+            <td class="doc-table__cell"><a href="#">2234</a></td>
+            <td class="doc-table__cell">03.09.2020</td>
+            <td class="doc-table__cell">ООО “Бла бла бла”</td>
+            <td class="doc-table__cell">5000 руб.</td>
+            <td class="doc-table__cell doc-table__cell_green">Нет</td>
+          </tr>
+          <tr class="doc-table__row">
+            <td class="doc-table__cell"><a href="#">2234</a></td>
+            <td class="doc-table__cell">03.09.2020</td>
+            <td class="doc-table__cell">ООО “Бла бла бла”</td>
+            <td class="doc-table__cell">5000 руб.</td>
+            <td class="doc-table__cell doc-table__cell_red">Нет</td>
+          </tr>
+          <tr class="doc-table__row">
+            <td class="doc-table__cell"><a href="#">2234</a></td>
+            <td class="doc-table__cell">03.09.2020</td>
+            <td class="doc-table__cell">ООО “Бла бла бла”</td>
+            <td class="doc-table__cell">5000 руб.</td>
+            <td class="doc-table__cell doc-table__cell_green">Нет</td>
+          </tr>
+        </table>
+      </section>
     </main>
     <script src="assets/js/main.min.js"></script>
   </body>
