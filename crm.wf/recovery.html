@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>crm.wf</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="auth" id="authorization">
+        <form class="auth-form" action="#" method="post">
+          <p class="auth-form__new-pass-text">Новый пароль будет оптравлен на e-mail</p>
+          <p class="auth-form__field auth-form__field_recovery-mail auth-form__field_incorrect">
+            <input class="auth-form__input" id="recovery-mail" type="email" name="mail" placeholder="Ваш e-mail" required="required"/>
+            <label class="auth-form__incorrect-text" for="recovery-mail">E-mail отсутствует или указан не верно</label>
+          </p>
+          <button class="auth-form__button" type="submit">Отправить</button>
+        </form>
+      </section>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

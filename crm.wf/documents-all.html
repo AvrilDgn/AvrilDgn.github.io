@@ -19,22 +19,28 @@
         <div class="header__collapse"><a class="header__hide-btn" href="#"><span></span></a>
           <nav class="header__nav nav">
             <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link" href="services.html">Услуги</a></li>
-              <li class="nav__item"><a class="nav__link" href="advertising.html">Реклама</a></li>
-              <li class="nav__item"><a class="nav__link nav__link_active" href="documents.html">Документы</a></li>
+              <li class="nav__item"><a class="nav__link" href="services.html">Услуги</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="advertising.html">Реклама</a>
+              </li>
+              <li class="nav__item"><a class="nav__link nav__link_active" href="documents-all.html">Документы</a>
+              </li>
             </ul>
           </nav>
           <div class="header__user user">
             <div class="user__mail">dima@web-format.com</div><a class="user__logout" href="auth.html">Выйти</a>
           </div>
         </div><a class="header__show-btn" href="#"><span></span></a>
-        <h1 class="heading header__heading">Услуги</h1>
+        <h1 class="heading header__heading">Документы</h1>
       </header>
       <section class="content documents" id="documents">
         <ul class="documents__types doc-types">
-          <li class="doc-types__item"><a class="doc-types__link" href="documents.html">Все</a></li>
-          <li class="doc-types__item"><a class="doc-types__link doc-types__link_active" href="accounts.html">Счета</a></li>
-          <li class="doc-types__item"><a class="doc-types__link" href="acts.html">Акты</a></li>
+          <li class="doc-types__item"><a class="doc-types__link doc-types__link_active" href="documents-all.html">Все</a>
+          </li>
+          <li class="doc-types__item"><a class="doc-types__link" href="documents-accounts.html">Счета</a>
+          </li>
+          <li class="doc-types__item"><a class="doc-types__link" href="documents-acts.html">Акты</a>
+          </li>
         </ul>
         <form class="documents__filter doc-filter" id="filter-form" action="#" method="get">
           <div class="doc-filter__company select">
@@ -43,7 +49,7 @@
               <li class="select__option" data-value="all">Все компании</li>
               <li class="select__option" data-value="1">Компания 1</li>
               <li class="select__option" data-value="2">Компания 2</li>
-              <li class="select__option" data-value="3">ООО “Бла бла бла”</li>
+              <li class="select__option" data-value="3">ООО “Бла бла бла”ООО”</li>
             </ul>
           </div>
           <div class="doc-filter__date filter-date"><span class="filter-date__text">Дата</span>
@@ -102,6 +108,30 @@
               <td class="doc-table__cell">ООО “Бла бла бла”</td>
               <td class="doc-table__cell">5000 руб.</td>
               <td class="doc-table__cell doc-table__cell_red">Нет</td>
+            </tr>
+            <tr>
+              <td class="doc-table__arrow-cell">
+                <div class="doc-table__arrow"></div>
+              </td>
+              <td colspan="3">
+                <table class="doc-table doc-table__sub">
+                  <tr class="doc-table__row">
+                    <td class="doc-table__cell" colspan="4">Акты</td>
+                  </tr>
+                  <tr class="doc-table__row">
+                    <td class="doc-table__cell"><a href="#">2234</a></td>
+                    <td class="doc-table__cell">03.09.2020</td>
+                    <td class="doc-table__cell">ООО “Бла бла бла”</td>
+                    <td class="doc-table__cell">5000 руб.</td>
+                  </tr>
+                  <tr class="doc-table__row">
+                    <td class="doc-table__cell"><a href="#">2234</a></td>
+                    <td class="doc-table__cell">03.09.2020</td>
+                    <td class="doc-table__cell">ООО “Бла бла бла”</td>
+                    <td class="doc-table__cell">5000 руб.</td>
+                  </tr>
+                </table>
+              </td>
             </tr>
             <tr class="doc-table__row">
               <td class="doc-table__cell"><a href="#">2234</a></td>
