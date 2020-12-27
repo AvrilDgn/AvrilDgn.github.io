@@ -833,7 +833,6 @@ figure {
 
 button:focus {
   outline: none;
-  border: 1px solid black;
   -webkit-padding-before: 0px;
           padding-block-start: 0px;
   -webkit-padding-after: 0px;
@@ -938,13 +937,13 @@ button::-moz-focus-inner {
 
 .nav__link:focus {
   outline: none;
-  border: 1px solid #727272;
-  padding: 9px 23px 0;
 }
 
 .nav__link_active {
   background-color: #F7F7F7;
   color: #3080DE;
+  pointer-events: none;
+  cursor: default;
 }
 
 .nav__link_active:hover {
@@ -1160,6 +1159,7 @@ button::-moz-focus-inner {
 .doc-types__link_active {
   border-color: #C4C4C4;
   color: #727272;
+  pointer-events: none;
   cursor: default;
 }
 
@@ -1170,7 +1170,6 @@ button::-moz-focus-inner {
 
 .doc-types__link:focus {
   outline: none;
-  border: 1px solid black;
 }
 
 .doc-filter {
@@ -1178,6 +1177,9 @@ button::-moz-focus-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .doc-filter__date {
@@ -1199,6 +1201,7 @@ button::-moz-focus-inner {
   max-width: 500px;
   height: 33px;
   border: 1px solid #3080DE;
+  padding: 0;
   padding-left: 16px;
   padding-right: 30px;
   color: #3080DE;
@@ -1207,6 +1210,13 @@ button::-moz-focus-inner {
   text-align: left;
   background-color: transparent;
   cursor: pointer;
+}
+
+.select__btn span {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .select__btn:focus {
@@ -1261,6 +1271,11 @@ button::-moz-focus-inner {
   background-color: #F2F2F2;
 }
 
+.select__option:focus {
+  outline: none;
+  background-color: #F2F2F2;
+}
+
 .filter-date {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1294,6 +1309,11 @@ button::-moz-focus-inner {
 .filter-date__date-input::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
+}
+
+.filter-date__date-input:focus {
+  outline: none;
+  border-color: #C4C4C4;
 }
 
 .filter-date__label-icon {
