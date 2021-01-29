@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+        <div class="header__collapse">
+          <!--header hide menu button --><a class="header__hide-btn" href="#"><span></span></a>
+          <!--end header hide menu button -->
+          <!--header navigation -->
+          <nav class="header__nav h-nav">
+            <ul class="h-nav__list">
+              <li class="h-nav__item"><a class="h-nav__link" href="dashboard.html">Dashboard</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="index.html">Products</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="categories.html">Categories</a></li>
+            </ul>
+          </nav>
+          <!--end header navigation -->
+          <!--header search -->
+          <form class="header__search h-search" action="" method="get">
+            <input class="h-search__input" type="search" name="search" placeholder="Search" required="required"/>
+            <button class="h-search__button" type="submit">
+              <svg class="svg-sprite svg-sprite_magnifier ">
+                <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+              </svg>
+            </button>
+          </form>
+          <!--end header search -->
+          <!--header user -->
+          <div class="header__user h-user"><a class="h-user__profile" href="account.html">Hello, Adam!</a><a class="h-user__logout" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end header user -->
+        </div>
+        <!--header show menu button --><a class="header__show-btn" href="#"><span></span></a>
+        <!--end header show menu button -->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Account ***-->
+      <article class="container acc" id="account">
+        <!--*** Account Sidebar ***-->
+        <aside class="acc__sidebar acc-sidebar wow animate__animated animate__fadeInLeft">
+          <!--account avatar -->
+          <div class="acc-sidebar__avatar acc-avatar"><img class="acc-avatar__img" src="assets/img/account/avatar.jpg" alt="аватар"/><a class="acc-avatar__edit" href="#">
+              <svg class="svg-sprite svg-sprite_pen ">
+                <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+              </svg></a></div>
+          <!--end account avatar-->
+          <!--account name -->
+          <div class="acc-sidebar__name">Adam Howell</div>
+          <!--end account name -->
+          <!--account role -->
+          <div class="acc-sidebar__role">Market Manager</div>
+          <!--end account role -->
+          <!--account items checked cards-->
+          <ul class="acc-sidebar__items-checked-list">
+            <li class="acc-items-checked">
+              <div class="acc-items-checked__period">
+                <svg class="svg-sprite svg-sprite_total ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#total"></use>
+                </svg>Total items checked
+              </div>
+              <div class="acc-items-checked__number">232</div>
+            </li>
+            <li class="acc-items-checked">
+              <div class="acc-items-checked__period">
+                <svg class="svg-sprite svg-sprite_week ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#week"></use>
+                </svg>Items checked this week
+              </div>
+              <div class="acc-items-checked__number">23</div>
+            </li>
+            <li class="acc-items-checked">
+              <div class="acc-items-checked__period">
+                <svg class="svg-sprite svg-sprite_today ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#today"></use>
+                </svg>Items Checked today
+              </div>
+              <div class="acc-items-checked__number">2</div>
+            </li>
+          </ul>
+          <!--end account items checked cards-->
+          <!--account actions -->
+          <div class="acc-sidebar__acc-actions"><a class="acc-sidebar__del-acc acc-sidebar__link" href="#">
+              <svg class="svg-sprite svg-sprite_basket ">
+                <use xlink:href="assets/img/sprite/sprite.svg#basket"></use>
+              </svg>Delete Account</a><a class="acc-sidebar__logout acc-sidebar__link" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end account actions-->
+        </aside>
+        <!--*** End Account Sidebar ***-->
+        <!--*** Account Content ***-->
+        <section class="acc__content acc-content wow animate__animated animate__fadeInRight">
+          <!--account content menu line-->
+          <div class="acc-content__top-line">
+            <!--account content tabs -->
+            <div class="acc-content__tabs">
+              <button class="acc-content__tab-btn acc-content__tab-btn_active" data-content="acc-data" tab-index="-1"><span>Account Detail</span></button>
+              <button class="acc-content__tab-btn" data-content="acc-actions"><span>Latest Actions</span></button>
+            </div>
+            <!--end account content tabs -->
+          </div>
+          <!--end account content menu line-->
+          <!--account content data block-->
+          <section class="acc-content__main-block acc-data" id="acc-data">
+            <form class="acc-data__main-form acc-data-main-form" id="acc-main-form" action="#" method="post">
+              <p class="acc-data-main-form__field"><span class="acc-data-main-form__input-name">First Name</span>
+                <input class="acc-data-main-form__input" id="acc-first-name" type="text" name="first-name" value="Adam"/>
+                <label class="acc-data-main-form__label" for="acc-first-name">
+                  <svg class="svg-sprite svg-sprite_persone ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#persone"></use>
+                  </svg>
+                </label>
+              </p>
+              <p class="acc-data-main-form__field"><span class="acc-data-main-form__input-name">Last Name</span>
+                <input class="acc-data-main-form__input" id="acc-last-name" type="text" name="last-name" value="Howell"/>
+                <label class="acc-data-main-form__label" for="acc-last-name">
+                  <svg class="svg-sprite svg-sprite_persone ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#persone"></use>
+                  </svg>
+                </label>
+              </p>
+              <p class="acc-data-main-form__field"><span class="acc-data-main-form__input-name">Email Address</span>
+                <input class="acc-data-main-form__input" id="acc-mail" type="email" name="mail" value="adamhowell@email.com"/>
+                <label class="acc-data-main-form__label" for="acc-mail">
+                  <svg class="svg-sprite svg-sprite_mail ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
+                  </svg>
+                </label>
+              </p>
+              <p class="acc-data-main-form__field"><span class="acc-data-main-form__input-name">Telephone</span>
+                <input class="acc-data-main-form__input" id="acc-tel" type="tel" name="name" value="+34 608 637 263"/>
+                <label class="acc-data-main-form__label" for="acc-tel">
+                  <svg class="svg-sprite svg-sprite_phone ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                  </svg>
+                </label>
+              </p>
+              <p class="acc-data-main-form__field"><span class="acc-data-main-form__input-name">Role</span>
+                <input class="acc-data-main-form__input" id="acc-role" type="text" name="name" value="Market Manager"/>
+                <label class="acc-data-main-form__label" for="acc-role">
+                  <svg class="svg-sprite svg-sprite_role ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#role"></use>
+                  </svg>
+                </label>
+              </p>
+              <p class="acc-data-main-form__field"><span class="acc-data-main-form__input-name">Date Created</span>
+                <input class="acc-data-main-form__input" id="acc-data" type="text" name="name" value="08/07/2020" readonly="readonly"/>
+                <label class="acc-data-main-form__label" for="acc-data">
+                  <svg class="svg-sprite svg-sprite_calendar ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#calendar"></use>
+                  </svg>
+                </label>
+              </p>
+            </form>
+            <form class="acc-data__pass-form acc-data-pass-form" id="acc-pass-form" action="#" method="post">
+              <fieldset>
+                <legend class="acc-data-pass-form__heading">Change Password</legend>
+                <div class="acc-data-pass-form__block">
+                  <p class="acc-data-pass-form__field"><span class="acc-data-pass-form__input-name">Current Password</span>
+                    <input class="acc-data-pass-form__input" id="acc-pass" type="password" name="pass" value="123123123"/>
+                    <label class="acc-data-pass-form__label" for="acc-pass">
+                      <svg class="svg-sprite svg-sprite_key ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#key"></use>
+                      </svg>
+                    </label><a class="acc-data-pass-form__remember" href="#">Remember my password</a>
+                  </p>
+                  <button class="acc-data-pass-form__submit" type="submit">Change Password</button>
+                </div>
+              </fieldset>
+            </form>
+            <button class="acc-data__main-submit" type="submit" form="acc-main-form">Save Changes</button>
+          </section>
+          <!--end account content data block-->
+          <!--account content actions block-->
+          <section class="acc-content__main-block acc-actions" id="acc-actions">
+            <div class="acc-actions__top-line">
+              <h2 class="acc-actions__heading">Last Product You Checked</h2>
+              <!--actions search -->
+              <form class="acc-actions__search acc-actions-search" action="" method="get">
+                <input class="acc-actions-search__input" type="search" name="search" placeholder="Search Product"/>
+                <button class="acc-actions-search__button" type="submit">
+                  <svg class="svg-sprite svg-sprite_magnifier ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                  </svg>
+                </button>
+              </form>
+              <!--end actions search -->
+              <form class="acc-actions__select-period acc-actions-period" id="acc-actions-period-form" action="" method="get">
+                <input class="acc-actions-period__input" id="acc-actions-period" type="text" placeholder="Select Period" readonly="readonly"/>
+                <label class="acc-actions-period__arrow" for="acc-actions-period"></label>
+              </form>
+            </div>
+            <div class="acc-actions__product-wrap">
+              <table class="acc-actions__acc-product-table acc-product-table">
+                <tr class="acc-product-table__row">
+                  <th class="acc-product-table__cell acc-product-table__cell_head"></th>
+                  <th class="acc-product-table__cell acc-product-table__cell_head">Product Name</th>
+                  <th class="acc-product-table__cell acc-product-table__cell_head">Time</th>
+                  <th class="acc-product-table__cell acc-product-table__cell_head">Date</th>
+                  <th class="acc-product-table__cell acc-product-table__cell_head">Actions</th>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+                <tr class="acc-product-table__row">
+                  <td class="acc-product-table__cell"><img class="acc-product-table__img" src="assets/img/account/product.jpg" alt=""/></td>
+                  <td class="acc-product-table__cell">Café molido Blasón Gourmet americano tostado y molido 400 g</td>
+                  <td class="acc-product-table__cell">06:17<span class="acc-product-table__time">PM</span></td>
+                  <td class="acc-product-table__cell">07/12/2020</td>
+                  <td class="acc-product-table__cell">
+                    <p class="acc-product-table__action">Total Matches: <span class="acc-product-table__action-number">12</span></p>
+                    <p class="acc-product-table__action">Similar: <span class="acc-product-table__action-number">3</span></p>
+                    <p class="acc-product-table__action">Not a Match: <span class="acc-product-table__action-number">5</span></p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <ul class="acc-actions__pagination acc-product-pgn">
+              <li class="acc-product-pgn__item"><a class="acc-product-pgn__link acc-product-pgn__prev" href="#"></a></li>
+              <li class="acc-product-pgn__item"><a class="acc-product-pgn__link acc-product-pgn__link_active" href="#">1</a></li>
+              <li class="acc-product-pgn__item"><span class="acc-product-pgn__dots acc-product-pgn__dots_disable">...</span></li>
+              <li class="acc-product-pgn__item"><a class="acc-product-pgn__link" href="#">2</a></li>
+              <li class="acc-product-pgn__item"><a class="acc-product-pgn__link" href="#">3</a></li>
+              <li class="acc-product-pgn__item"> <a class="acc-product-pgn__link" href="#">4</a></li>
+              <li class="acc-product-pgn__item"><span class="acc-product-pgn__dots">...</span></li>
+              <li class="acc-product-pgn__item"><a class="acc-product-pgn__link" href="#">9</a></li>
+              <li class="acc-product-pgn__item"><a class="acc-product-pgn__link acc-product-pgn__next" href="#"></a></li>
+            </ul>
+          </section>
+          <!--end account content actions block-->
+          <!--account content remove --><a class="acc-content-rm" id="acc-content-rm" href="#"><span class="acc-content-rm__text">Remove this employee</span><span class="acc-content-rm__icon">
+              <svg class="svg-sprite svg-sprite_basket ">
+                <use xlink:href="assets/img/sprite/sprite.svg#basket"></use>
+              </svg></span></a>
+          <!--end account content remove -->
+          <script>
+            let rm = document.getElementById('acc-content-rm'),
+            	tl = document.getElementsByClassName('acc-content__top-line')[0];
+            if (window.matchMedia("(min-width: 768px)").matches) {
+            	tl.appendChild(rm);
+            }
+            
+          </script>
+        </section>
+        <!--*** End Account Content ***-->
+      </article>
+      <!--*** End Account ***-->
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

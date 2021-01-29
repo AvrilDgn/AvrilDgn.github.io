@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Authorization ***-->
+      <article class="container auth" id="authorization">
+        <!--left background image -->
+        <div class="auth__background wow animate__animated animate__fadeInLeft"><img src="assets/img/auth/background.png" alt=""/></div>
+        <!--end left background image-->
+        <!--authorization form -->
+        <form class="auth__form auth-form wow animate__animated animate__fadeInRight" action="#" method="post">
+          <!--form heading-logo -->
+          <h1 class="auth-form__heading"><img src="assets/img/auth/logo.png" alt="NAU"/></h1>
+          <!--end form heading-logo -->
+          <!--form subheading -->
+          <p class="auth-form__subheading">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut aliquid commodi nesciunt.</p>
+          <!--end form subheading -->
+          <!--form mail input -->
+          <p class="auth-form__field auth-form__field_mail">
+            <input class="auth-form__input" id="auth-mail" type="email" name="mail" placeholder="Email" required="required"/><span class="auth-form__incorrect-text">Unknown E-mail</span>
+            <label class="auth-form__label auth-form__label_mail" for="auth-mail">
+              <svg class="svg-sprite svg-sprite_persone ">
+                <use xlink:href="assets/img/sprite/sprite.svg#persone"></use>
+              </svg>
+            </label>
+          </p>
+          <!--end form mail input -->
+          <!--form password input -->
+          <p class="auth-form__field auth-form__field_pass auth-form__field_incorrect">
+            <input class="auth-form__input" id="auth-pass" type="password" name="pass" placeholder="Password" required="required"/><span class="auth-form__incorrect-text">Wrong password</span>
+            <label class="auth-form__label auth-form__label_pass" for="auth-pass">
+              <svg class="svg-sprite svg-sprite_key ">
+                <use xlink:href="assets/img/sprite/sprite.svg#key"></use>
+              </svg>
+            </label><a class="auth-form__visibility" href="#">
+              <svg class="svg-sprite svg-sprite_eye ">
+                <use xlink:href="assets/img/sprite/sprite.svg#eye"></use>
+              </svg></a><a class="auth-form__forgot-pass" href="#">Forgot Password?</a>
+          </p>
+          <!--end form password input -->
+          <div class="auth-form__bottom-block">
+            <!--form remember me checkbox -->
+            <p class="auth-form__remember auth-checkbox">
+              <input class="auth-checkbox__input" id="auth-remember" type="checkbox" name="remember"/>
+              <label class="auth-checkbox__label" for="auth-remember">Remember Me</label>
+            </p>
+            <!--end form remember me checkbox -->
+            <!--form submit button -->
+            <button class="auth-form__button" id="auth-submit" type="submit">Login</button>
+            <!--end form submit button -->
+          </div>
+        </form>
+        <!--end authorization form -->
+      </article>
+      <!--*** End Authorization ***-->
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>
