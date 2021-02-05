@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+        <div class="header__collapse">
+          <!--header hide menu button --><a class="header__hide-btn" href="#"><span></span></a>
+          <!--end header hide menu button -->
+          <!--header navigation -->
+          <nav class="header__nav h-nav">
+            <ul class="h-nav__list">
+              <li class="h-nav__item"><a class="h-nav__link" href="dashboard.html">Dashboard</a></li>
+              <li class="h-nav__item"><a class="h-nav__link h-nav__link_active" href="index.html">Products</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="categories.html">Categories</a></li>
+            </ul>
+          </nav>
+          <!--end header navigation -->
+          <!--header search -->
+          <form class="header__search h-search" action="" method="get">
+            <input class="h-search__input" type="search" name="search" placeholder="Search" required="required"/>
+            <button class="h-search__button" type="submit">
+              <svg class="svg-sprite svg-sprite_magnifier ">
+                <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+              </svg>
+            </button>
+          </form>
+          <!--end header search -->
+          <!--header user -->
+          <div class="header__user h-user"><a class="h-user__profile" href="account.html">Hello, Adam!</a><a class="h-user__logout" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end header user -->
+        </div>
+        <!--header show menu button --><a class="header__show-btn" href="#"><span></span></a>
+        <!--end header show menu button -->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Product Page ***-->
+      <article class="container prod-page" id="product-page">
+        <!--*** Product Page Content ***-->
+        <section class="prod-page__content prod-page-content wow animate__animated animate__fadeInLeft">
+          <div class="prod-page-content__prod-view">
+            <svg class="svg-sprite svg-sprite_apple ">
+              <use xlink:href="assets/img/sprite/sprite.svg#apple"></use>
+            </svg>Food
+          </div><a class="prod-page-content__edit-link" href="#">
+            <svg class="svg-sprite svg-sprite_writing ">
+              <use xlink:href="assets/img/sprite/sprite.svg#writing"></use>
+            </svg></a>
+          <div class="prod-page-content__img"><img src="assets/img/product-page/product-full.jpg" alt="product image"/></div>
+          <h1 class="prod-page-content__heading">Café molido Blasón Gourmet americano tostado y molido 400 g</h1>
+          <div class="prod-page-content__description">
+            <p>Café molido Blasón Gourmet americano es un café tostado 100% arábica que refleja las virtudes de un café equilibrado, sin excesos o matices extremos. Su espléndido aroma se combina con un sabor completo y un excelente cuerpo, que regalan las mejores notas de un café de altura. </p>
+            <p>Blasón Gourmet es un café de la región Pluma, Oaxaca, ideal para cualquier hora del día. Molido fino, cosecha 100% de origen. Certificación Kosher.</p>
+          </div>
+          <div class="prod-page-content__about">
+            <ul>
+              <li>One set of 2 Tesadorz blue resealable 8x10 plastic bags; perfect for storing your coffee to help maintain freshness longer.</li>
+              <li>Blason Americano Ground Coffee, 14.1 Ounces and Tesadorz Resealable Bags bundle</li>
+              <li>Blason coffee is made in Mexico and the bag contains 400 grams (14.1 ounces) of ground coffee</li>
+              <li>Enjoy the delicious flavor of the Mexican made Americano blend; fine ground made with 100% Arabica coffee beans.</li>
+            </ul>
+          </div>
+        </section>
+        <!--*** End Product Page Content ***-->
+        <!--*** Product Page Sidebar ***-->
+        <aside class="prod-page__sidebar prod-page-sb wow animate__animated animate__fadeInRight"><a class="prod-page-sb__edit-link" href="#">
+            <svg class="svg-sprite svg-sprite_writing ">
+              <use xlink:href="assets/img/sprite/sprite.svg#writing"></use>
+            </svg></a>
+          <div class="prod-page-sb__row-block prod-page-sb-price">$95.50</div>
+          <div class="prod-page-sb__row-block prod-page-sb-upc">
+            <div class="prod-page-sb__heading">UPC</div>
+            <div class="prod-page-sb__value-text">0009733803227</div>
+          </div>
+          <div class="prod-page-sb__row-block prod-page-sb-model">
+            <div class="prod-page-sb__heading">Model</div>
+            <div class="prod-page-sb__value-text">None</div>
+            <div class="prod-page-sb__annot-text">(Recog.: Blas)</div>
+          </div>
+          <div class="prod-page-sb__row-block prod-page-sb-brand">
+            <div class="prod-page-sb__heading">Brand</div>
+            <div class="prod-page-sb__value-text">Blasón</div>
+            <div class="prod-page-sb__annot-text">(Recog.: Blas)</div>
+          </div>
+          <div class="prod-page-sb__row-block prod-page-sb-suppliers"><img class="prod-page-sb-suppliers__image" src="assets/img/suppliers/supplier.png" alt="supplier logo image"/><a class="prod-page-sb-suppliers__view-link" href="#">View</a></div>
+          <div class="prod-page-sb__row-block prod-page-sb-category">
+            <ul class="prod-page-sb-category__cats-list">
+              <li class="prod-page-sb-category__cats-item"><a class="prod-page-sb-category__cats-link" href="#">Café</a></li>
+              <li class="prod-page-sb-category__cats-item"><a class="prod-page-sb-category__cats-link" href="#">Molido</a></li>
+            </ul><a class="prod-page-sb-category__change-link" href="#">Change Category</a>
+          </div>
+          <div class="prod-page-sb__row-block prod-page-sb-tags">
+            <li class="prod-page-sb-tags__tag-item prod-page-sb-tags__tag-item_orange">Catalog # 224448</li>
+            <li class="prod-page-sb-tags__tag-item prod-page-sb-tags__tag-item_blue">Available</li>
+            <li class="prod-page-sb-tags__tag-item prod-page-sb-tags__tag-item_green">Automatch step: UPC</li>
+          </div>
+          <div class="prod-page-sb__row-block prod-page-sb-checked">
+            <h3 class="prod-page-sb__heading prod-page-sb__heading_with-icon">Checked<span class="prod-page-sb-checked__check-icon">
+                <svg class="svg-sprite svg-sprite_check ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                </svg></span></h3>
+            <p class="prod-page-sb-checked__checked-by">Last Edited by <b class="prod-page-sb-checked__checked-by_bold">Adam Howell</b></p>
+          </div>
+          <div class="prod-page-sb__row-block prod-page-sb-reviews">
+            <div class="prod-page-sb-reviews__col">
+              <h3 class="prod-page-sb__heading">Matches: </h3>
+              <p class="prod-page-sb-reviews_number">3</p>
+            </div>
+            <div class="prod-page-sb-reviews__col">
+              <h3 class="prod-page-sb__heading">Similar: </h3>
+              <p class="prod-page-sb-reviews_number">1</p>
+            </div>
+          </div>
+        </aside>
+        <!--*** End Product Page Sidebar ***-->
+      </article>
+      <!--*** End Product Page ***-->
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+        <div class="header__collapse">
+          <!--header hide menu button --><a class="header__hide-btn" href="#"><span></span></a>
+          <!--end header hide menu button -->
+          <!--header navigation -->
+          <nav class="header__nav h-nav">
+            <ul class="h-nav__list">
+              <li class="h-nav__item"><a class="h-nav__link" href="dashboard.html">Dashboard</a></li>
+              <li class="h-nav__item"><a class="h-nav__link h-nav__link_active" href="index.html">Products</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="categories.html">Categories</a></li>
+            </ul>
+          </nav>
+          <!--end header navigation -->
+          <!--header search -->
+          <form class="header__search h-search" action="" method="get">
+            <input class="h-search__input" type="search" name="search" placeholder="Search" required="required"/>
+            <button class="h-search__button" type="submit">
+              <svg class="svg-sprite svg-sprite_magnifier ">
+                <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+              </svg>
+            </button>
+          </form>
+          <!--end header search -->
+          <!--header user -->
+          <div class="header__user h-user"><a class="h-user__profile" href="account.html">Hello, Adam!</a><a class="h-user__logout" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end header user -->
+        </div>
+        <!--header show menu button --><a class="header__show-btn" href="#"><span></span></a>
+        <!--end header show menu button -->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Product List ***-->
+      <article class="container prod-list" id="product-list">
+        <!--*** Product List Sidebar ***-->
+        <aside class="prod-list__sidebar prod-list-sidebar sidebar wow animate__animated animate__fadeInLeft">
+          <div class="sidebar__wrapper">
+            <!--*** Main Sidebar ***-->
+            <div class="prod-list-sidebar__main-sb-block sidebar__main-block sb-main-block">
+              <form class="prod-list-sidebar__search prod-list-search-product" action="" method="get">
+                <input class="prod-list-search-product__input" type="search" name="search" placeholder="Search Product"/>
+                <button class="prod-list-search-product__button" type="submit">
+                  <svg class="svg-sprite svg-sprite_magnifier ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                  </svg>
+                </button>
+              </form>
+              <form class="prod-list-sidebar__cat-form prod-list-cats" id="prod-list-main-sb-form" action="" method="get">
+                <fieldset class="prod-list-sidebar__fieldset prod-list-sidebar__fieldset_main">
+                  <legend class="prod-list-cats__heading-main">Categories</legend>
+                  <div class="prod-list-cats__views-cats prod-cat-view">
+                    <p class="prod-cat-view__field">
+                      <input class="prod-cat-view__input" id="prod-list-products" type="radio" name="products-view" value="products"/>
+                      <label class="prod-cat-view__label" for="prod-list-products">
+                        <svg class="svg-sprite svg-sprite_shirt ">
+                          <use xlink:href="assets/img/sprite/sprite.svg#shirt"></use>
+                        </svg>Products
+                      </label>
+                    </p>
+                    <p class="prod-cat-view__field">
+                      <input class="prod-cat-view__input" id="prod-list-food" type="radio" name="products-view" value="food" checked="checked"/>
+                      <label class="prod-cat-view__label" for="prod-list-food">
+                        <svg class="svg-sprite svg-sprite_apple ">
+                          <use xlink:href="assets/img/sprite/sprite.svg#apple"></use>
+                        </svg>Food
+                      </label>
+                    </p>
+                  </div>
+                </fieldset>
+                <fieldset class="prod-list-sidebar__fieldset prod-list-sidebar__fieldset_main prod-list-sidebar__fieldset_main-last">
+                  <legend class="prod-list-cats__heading-sub">Sub Categories</legend>
+                  <ol class="prod-list-cats__select-cats-list">
+                    <li class="prod-list-cats__select-cats-item">
+                      <select class="prod-list-cats__select-cats-sel custom-select" id="prod-list-select-category-one" name="category 1">
+                        <option value="">Category</option>
+                        <option value="Category 1"></option>
+                        <option value="Category 2"></option>
+                        <option value="Category 3"></option>
+                      </select>
+                    </li>
+                    <li class="prod-list-cats__select-cats-item">
+                      <select class="prod-list-cats__select-cats-sel custom-select" id="prod-list-select-category-two" name="category 1">
+                        <option value="">Category</option>
+                        <option value="Category 1"></option>
+                        <option value="Category 2"></option>
+                        <option value="Category 3"></option>
+                      </select>
+                    </li>
+                    <li class="prod-list-cats__select-cats-item">
+                      <select class="prod-list-cats__select-cats-sel custom-select" id="prod-list-select-category-three" name="category 1">
+                        <option value="">Category</option>
+                        <option value="Category 1"></option>
+                        <option value="Category 2"></option>
+                        <option value="Category 3"></option>
+                      </select>
+                    </li>
+                  </ol>
+                </fieldset><a class="prod-list-sidebar__res-filter" href="#" data-target="prod-list-main-sb-form">Reset Filter</a>
+              </form>
+              <div class="prod-list-sidebar__number-of-prods">Nº of Products in Catalog <b class="prod-list-sidebar__number-of-prods_bold">65,544</b></div>
+            </div>
+            <!--*** End Main Sidebar ***-->
+            <!--*** Additional Sidebar ***-->
+            <div class="prod-list-sidebar__additional-sb-block sidebar__add-block sb-add-block">
+              <form class="prod-list-sidebar__cat-form prod-list-add sb-add-block__content" id="prod-list-add-sb-form" action="" method="get">
+                <fieldset class="prod-list-sidebar__fieldset">
+                  <legend class="prod-list-add__heading">Match</legend>
+                  <select class="custom-select" id="prod-list-select-match" name="match-status">
+                    <option value="">Match Status</option>
+                    <option value="Status 1"></option>
+                    <option value="Status 2"></option>
+                    <option value="Status 3"></option>
+                  </select>
+                  <div class="prod-list-add__select-switch select-switch">
+                    <input class="select-switch__input select-switch__input_left" id="prod-list-match-auto" type="radio" name="prod-list-match" value="auto"/>
+                    <label class="select-switch__label" for="prod-list-match-auto">Auto</label>
+                    <input class="select-switch__input select-switch__input_mid" id="prod-list-match-manual" type="radio" name="prod-list-match" value="manual" checked="checked"/>
+                    <label class="select-switch__label" for="prod-list-match-manual">Manual</label>
+                    <input class="select-switch__input select-switch__input_right" id="prod-list-match-both" type="radio" name="prod-list-match" value="both"/>
+                    <label class="select-switch__label" for="prod-list-match-both">Both</label><span class="select-switch__selection"></span>
+                  </div>
+                </fieldset>
+                <fieldset class="prod-list-sidebar__fieldset">
+                  <legend class="prod-list-add__heading">Availability</legend>
+                  <select class="custom-select" id="prod-list-select-availability" name="availability-status">
+                    <option value="">Availability Status</option>
+                    <option value="Status 1"></option>
+                    <option value="Status 2"></option>
+                    <option value="Status 3"></option>
+                    <option value="All Status"></option>
+                  </select>
+                </fieldset>
+                <fieldset class="prod-list-sidebar__fieldset">
+                  <legend class="prod-list-add__heading">Reclassify Status</legend>
+                  <select class="custom-select" id="prod-list-select-reclassify" name="reclassify-status">
+                    <option value="">Reclassify Status</option>
+                    <option value="Status 1"></option>
+                    <option value="Status 2"></option>
+                    <option value="Status 3"></option>
+                    <option value="All Status"></option>
+                  </select>
+                </fieldset>
+                <fieldset class="prod-list-sidebar__fieldset prod-list-sidebar__fieldset_add-last">
+                  <legend class="prod-list-add__heading">Supplier</legend>
+                  <select class="custom-select custom-select_search" id="prod-list-select-supplier" name="supplier[]" multiple="multiple">
+                    <option value="">Search Store</option>
+                    <option value="Liverpool"></option>
+                    <option value="Superama"></option>
+                    <option value="kuper Walmart"></option>
+                    <option value="auper amart"></option>
+                    <option value="duper grart"></option>
+                    <option value="Super htmart"></option>
+                    <option value="euper flmart"></option>
+                  </select>
+                  <div class="prod-list-add__radio-choice-block">
+                    <P class="prod-list-add__radio-choice radio-choice"><span class="radio-choice__text">To Checked</span>
+                      <input class="radio-choice__input" id="prod-list-radio-to_checked-yes" type="radio" name="to_checked" value="yes"/>
+                      <label class="radio-choice__label" for="prod-list-radio-to_checked-yes"><span class="radio-choice__check">
+                          <svg class="svg-sprite svg-sprite_check ">
+                            <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                          </svg></span>Yes</label>
+                      <input class="radio-choice__input" id="prod-list-radio-to_checked-no" type="radio" name="to_checked" value="no"/>
+                      <label class="radio-choice__label" for="prod-list-radio-to_checked-no"><span class="radio-choice__check">
+                          <svg class="svg-sprite svg-sprite_check ">
+                            <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                          </svg></span>No</label>
+                      <input class="radio-choice__input" id="prod-list-radio-to_checked-all" type="radio" name="to_checked" value="all"/>
+                      <label class="radio-choice__label" for="prod-list-radio-to_checked-all"><span class="radio-choice__check">
+                          <svg class="svg-sprite svg-sprite_check ">
+                            <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                          </svg></span>All</label>
+                    </P>
+                    <P class="prod-list-add__radio-choice radio-choice"><span class="radio-choice__text">Has Similar</span>
+                      <input class="radio-choice__input" id="prod-list-radio-has_similar-yes" type="radio" name="has_similar" value="yes"/>
+                      <label class="radio-choice__label" for="prod-list-radio-has_similar-yes"><span class="radio-choice__check">
+                          <svg class="svg-sprite svg-sprite_check ">
+                            <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                          </svg></span>Yes</label>
+                      <input class="radio-choice__input" id="prod-list-radio-has_similar-no" type="radio" name="has_similar" value="no"/>
+                      <label class="radio-choice__label" for="prod-list-radio-has_similar-no"><span class="radio-choice__check">
+                          <svg class="svg-sprite svg-sprite_check ">
+                            <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                          </svg></span>No</label>
+                      <input class="radio-choice__input" id="prod-list-radio-has_similar-all" type="radio" name="has_similar" value="all"/>
+                      <label class="radio-choice__label" for="prod-list-radio-has_similar-all"><span class="radio-choice__check">
+                          <svg class="svg-sprite svg-sprite_check ">
+                            <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                          </svg></span>All</label>
+                    </P>
+                  </div>
+                </fieldset><a class="prod-list-sidebar__res-filter" href="#" data-target="prod-list-add-sb-form">Reset Filter</a>
+              </form>
+            </div>
+            <button class="sidebar__toggle-btn sidebar-toggle-btn">
+              <div class="sidebar-toggle-btn__content sidebar-toggle-btn__content_open">
+                <svg class="svg-sprite svg-sprite_filter ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#filter"></use>
+                </svg>
+              </div>
+              <div class="sidebar-toggle-btn__content sidebar-toggle-btn__content_close">Filters</div>
+            </button>
+            <!--*** End Additional Sidebar ***-->
+          </div>
+        </aside>
+        <!--*** End Product List Sidebar ***-->
+        <!--*** Product List Content ***-->
+        <section class="prod-list__content prod-list-content wow animate__animated animate__fadeInRight">
+          <ul class="prod-list-content__prod-cards">
+            <li class="prod-card prod-list-content__card">
+              <div class="prod-card__img-block prod-card__col-block"><a class="prod-card__img-link" href="product-page.html"><img src="assets/img/product-list/item-1.jpg" alt="product image"/></a></div>
+              <div class="prod-card__description-block prod-card__col-block">
+                <h2><a class="prod-card__name-link" href="product-page.html">Café molido Los Portales gourmet original 1 kg</a></h2>
+                <p class="prod-card__prod-desc">Los Portales tiene para ti el único y tradicional sabor, ahora tostado y molido en su</p>
+                <ul class="prod-card__tags-list">
+                  <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                </ul>
+              </div>
+              <div class="prod-card__main-info-block prod-card__col-block">
+                <div class="prod-card__upc-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Upc</h3>
+                  <p class="prod-card__upc-code">0009733803227</p>
+                </div>
+                <div class="prod-card__suppliers-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Suppliers</h3>
+                  <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p>
+                </div>
+              </div>
+              <div class="prod-card__recomendation-block prod-card__col-block">
+                <div class="prod-card__review-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Review</h3>
+                  <div class="prod-card__review-content">
+                    <p class="prod-card__review-text">Similar: <b class="prod-card__review-text_number">3</b></p>
+                    <p class="prod-card__review-text">Total Matches: <b class="prod-card__review-text_number">12</b></p>
+                  </div>
+                </div>
+                <div class="prod-card__checked-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading prod-card__block-heading_bold prod-card__block-heading_with-icon">Checked<span class="prod-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="prod-card__checked-by">By Adam Howell</p>
+                </div>
+              </div>
+            </li>
+            <li class="prod-card prod-list-content__card">
+              <div class="prod-card__img-block prod-card__col-block"><a class="prod-card__img-link" href="product-page.html"><img src="assets/img/product-list/item-1.jpg" alt="product image"/></a></div>
+              <div class="prod-card__description-block prod-card__col-block">
+                <h2><a class="prod-card__name-link" href="product-page.html">Café molido Los Portales gourmet original 1 kg</a></h2>
+                <p class="prod-card__prod-desc">Los Portales tiene para ti el único y tradicional sabor, ahora tostado y molido en su</p>
+                <ul class="prod-card__tags-list">
+                  <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                </ul>
+              </div>
+              <div class="prod-card__main-info-block prod-card__col-block">
+                <div class="prod-card__upc-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Upc</h3>
+                  <p class="prod-card__upc-code">0009733803227</p>
+                </div>
+                <div class="prod-card__suppliers-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Suppliers</h3>
+                  <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p>
+                </div>
+              </div>
+              <div class="prod-card__recomendation-block prod-card__col-block">
+                <div class="prod-card__review-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Review</h3>
+                  <div class="prod-card__review-content">
+                    <p class="prod-card__review-text">Similar: <b class="prod-card__review-text_number">3</b></p>
+                    <p class="prod-card__review-text">Total Matches: <b class="prod-card__review-text_number">12</b></p>
+                  </div>
+                </div>
+                <div class="prod-card__checked-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading prod-card__block-heading_bold prod-card__block-heading_with-icon">Checked<span class="prod-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="prod-card__checked-by">By Adam Howell</p>
+                </div>
+              </div>
+            </li>
+            <li class="prod-card prod-list-content__card">
+              <div class="prod-card__img-block prod-card__col-block"><a class="prod-card__img-link" href="product-page.html"><img src="assets/img/product-list/item-1.jpg" alt="product image"/></a></div>
+              <div class="prod-card__description-block prod-card__col-block">
+                <h2><a class="prod-card__name-link" href="product-page.html">Café molido Los Portales gourmet original 1 kg</a></h2>
+                <p class="prod-card__prod-desc">Los Portales tiene para ti el único y tradicional sabor, ahora tostado y molido en su</p>
+                <ul class="prod-card__tags-list">
+                  <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                </ul>
+              </div>
+              <div class="prod-card__main-info-block prod-card__col-block">
+                <div class="prod-card__upc-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Upc</h3>
+                  <p class="prod-card__upc-code">0009733803227</p>
+                </div>
+                <div class="prod-card__suppliers-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Suppliers</h3>
+                  <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p>
+                </div>
+              </div>
+              <div class="prod-card__recomendation-block prod-card__col-block">
+                <div class="prod-card__review-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Review</h3>
+                  <div class="prod-card__review-content">
+                    <p class="prod-card__review-text">Similar: <b class="prod-card__review-text_number">3</b></p>
+                    <p class="prod-card__review-text">Total Matches: <b class="prod-card__review-text_number">12</b></p>
+                  </div>
+                </div>
+                <div class="prod-card__checked-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading prod-card__block-heading_bold prod-card__block-heading_with-icon">Checked<span class="prod-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="prod-card__checked-by">By Adam Howell</p>
+                </div>
+              </div>
+            </li>
+            <li class="prod-card prod-list-content__card">
+              <div class="prod-card__img-block prod-card__col-block"><a class="prod-card__img-link" href="product-page.html"><img src="assets/img/product-list/item-1.jpg" alt="product image"/></a></div>
+              <div class="prod-card__description-block prod-card__col-block">
+                <h2><a class="prod-card__name-link" href="product-page.html">Café molido Los Portales gourmet original 1 kg</a></h2>
+                <p class="prod-card__prod-desc">Los Portales tiene para ti el único y tradicional sabor, ahora tostado y molido en su</p>
+                <ul class="prod-card__tags-list">
+                  <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                </ul>
+              </div>
+              <div class="prod-card__main-info-block prod-card__col-block">
+                <div class="prod-card__upc-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Upc</h3>
+                  <p class="prod-card__upc-code">0009733803227</p>
+                </div>
+                <div class="prod-card__suppliers-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Suppliers</h3>
+                  <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p>
+                </div>
+              </div>
+              <div class="prod-card__recomendation-block prod-card__col-block">
+                <div class="prod-card__review-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Review</h3>
+                  <div class="prod-card__review-content">
+                    <p class="prod-card__review-text">Similar: <b class="prod-card__review-text_number">3</b></p>
+                    <p class="prod-card__review-text">Total Matches: <b class="prod-card__review-text_number">12</b></p>
+                  </div>
+                </div>
+                <div class="prod-card__checked-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading prod-card__block-heading_bold prod-card__block-heading_with-icon">Checked<span class="prod-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="prod-card__checked-by">By Adam Howell</p>
+                </div>
+              </div>
+            </li>
+            <li class="prod-card prod-list-content__card">
+              <div class="prod-card__img-block prod-card__col-block"><a class="prod-card__img-link" href="product-page.html"><img src="assets/img/product-list/item-1.jpg" alt="product image"/></a></div>
+              <div class="prod-card__description-block prod-card__col-block">
+                <h2><a class="prod-card__name-link" href="product-page.html">Café molido Los Portales gourmet original 1 kg</a></h2>
+                <p class="prod-card__prod-desc">Los Portales tiene para ti el único y tradicional sabor, ahora tostado y molido en su</p>
+                <ul class="prod-card__tags-list">
+                  <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                  <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                </ul>
+              </div>
+              <div class="prod-card__main-info-block prod-card__col-block">
+                <div class="prod-card__upc-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Upc</h3>
+                  <p class="prod-card__upc-code">0009733803227</p>
+                </div>
+                <div class="prod-card__suppliers-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Suppliers</h3>
+                  <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p>
+                </div>
+              </div>
+              <div class="prod-card__recomendation-block prod-card__col-block">
+                <div class="prod-card__review-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading">Review</h3>
+                  <div class="prod-card__review-content">
+                    <p class="prod-card__review-text">Similar: <b class="prod-card__review-text_number">3</b></p>
+                    <p class="prod-card__review-text">Total Matches: <b class="prod-card__review-text_number">12</b></p>
+                  </div>
+                </div>
+                <div class="prod-card__checked-block prod-card__row-block">
+                  <h3 class="prod-card__block-heading prod-card__block-heading_bold prod-card__block-heading_with-icon">Checked<span class="prod-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="prod-card__checked-by">By Adam Howell</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <!--*** End Product List Content ***-->
+      </article>
+      <!--*** End Product List ***-->
+    </main>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>
