@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+        <div class="header__collapse">
+          <!--header hide menu button --><a class="header__hide-btn" href="#"><span></span></a>
+          <!--end header hide menu button -->
+          <!--header navigation -->
+          <nav class="header__nav h-nav">
+            <ul class="h-nav__list">
+              <li class="h-nav__item"><a class="h-nav__link" href="dashboard.html">Dashboard</a></li>
+              <li class="h-nav__item"><a class="h-nav__link h-nav__link_active" href="index.html">Products</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="categories-supermarket.html">Categories</a></li>
+            </ul>
+          </nav>
+          <!--end header navigation -->
+          <!--header search -->
+          <form class="header__search h-search" action="" method="get">
+            <input class="h-search__input" type="search" name="search" placeholder="Search" required="required"/>
+            <button class="h-search__button" type="submit">
+              <svg class="svg-sprite svg-sprite_magnifier ">
+                <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+              </svg>
+            </button>
+          </form>
+          <!--end header search -->
+          <!--header user -->
+          <div class="header__user h-user"><a class="h-user__profile" href="account.html">Hello, Adam!</a><a class="h-user__logout" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end header user -->
+        </div>
+        <!--header show menu button --><a class="header__show-btn" href="#"><span></span></a>
+        <!--end header show menu button -->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Product Comparison ***-->
+      <article class="container prod-comp" id="product-comparison">
+        <!--*** Product Comparison Content ***-->
+        <section class="prod-comp__content prod-comp-content">
+          <div class="prod-comp-content__top-line wow animate__animated animate__fadeInLeft">
+            <form class="prod-comp-content__search prod-comp-search" action="" method="get">
+              <input class="prod-comp-search__input" type="search" name="search" placeholder="Search"/>
+              <button class="prod-comp-search__button" type="submit">
+                <svg class="svg-sprite svg-sprite_magnifier ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                </svg>
+              </button>
+            </form>
+            <nav class="prod-comp-content__navigation prod-comp-nav">
+              <ul class="prod-comp-nav__list">
+                <li class="prod-comp-nav__item"><a class="prod-comp-nav__link prod-comp-nav__link_active" href="#">Results</a></li>
+                <li class="prod-comp-nav__item"><a class="prod-comp-nav__link" href="#">Matches</a></li>
+                <li class="prod-comp-nav__item"><a class="prod-comp-nav__link" href="#">Similars</a></li>
+                <li class="prod-comp-nav__item"><a class="prod-comp-nav__link" href="#">Not Matches</a></li>
+                <li class="prod-comp-nav__item"><a class="prod-comp-nav__link" href="#">History</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="prod-comp-content__matches-in-db prod-comp-matches-in-db wow animate__animated animate__fadeInLeft">
+            <div class="prod-comp-matches-in-db__top-line">
+              <h2 class="prod-comp-content__heading">Product has <span class="prod-comp-content__heading_number">3 </span>matches in database</h2><a class="prod-comp-matches-in-db__clear-link" href="#">Clear (<span class="prod-comp-matches-in-db__clear-link_number">3</span>)</a>
+            </div>
+            <ul class="prod-comp-content__prod-cards">
+              <li class="prod-card prod-comp-content__card">
+                <div class="prod-card__img-block prod-img-block prod-card__col-block prod-comp-content__img-block prod-comp-content__img-block"><a class="prod-img-block__img-link" href="product-page.html"><img src="assets/img/product-comparison/item-1.jpg" alt="product image"/></a></div>
+                <div class="prod-card__description-block prod-card__col-block prod-comp-content__description-block">
+                  <div class="prod-card__text-block prod-text-block prod-card__row-block">
+                    <h2><a class="prod-text-block__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                    <p class="prod-text-block__prod-desc">Café molido Blasón Gourmet americano es un café tostado 100% arábica que refleja las</p>
+                  </div>
+                  <ul class="prod-card__tags-list">
+                    <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                  </ul>
+                </div>
+                <div class="prod-card__main-info-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <div class="prod-card__upc-block prod-card__row-block">
+                    <h3 class="prod-card__block-heading">Upc</h3>
+                    <p class="prod-card__upc-code">0009733803227</p>
+                    <p class="prod-card__price">$95.50</p>
+                  </div>
+                  <div class="prod-card__suppliers-block prod-card__row-block">
+                    <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p><a class="prod-card__view-link" href="#">View</a>
+                  </div>
+                </div>
+                <div class="prod-card__matches-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_match">
+                    <input class="prod-card-matches__input" id="prod-card-match-1" type="radio" name="products-matches-1" value="match"/>
+                    <label class="prod-card-matches__label" for="prod-card-match-1">Match<span class="prod-card-matches__icon prod-card-matches__icon_check"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_not-a-match">
+                    <input class="prod-card-matches__input" id="prod-card-not-a-match-1" type="radio" name="products-matches-1" value="not-a-match"/>
+                    <label class="prod-card-matches__label" for="prod-card-not-a-match-1">Not a match<span class="prod-card-matches__icon prod-card-matches__icon_cross"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_similar">
+                    <input class="prod-card-matches__input" id="prod-card-similar-1" type="radio" name="products-matches-1" value="similar"/>
+                    <label class="prod-card-matches__label" for="prod-card-similar-1">Similar<span class="prod-card-matches__icon prod-card-matches__icon_equal"></span></label>
+                  </p>
+                </div>
+              </li>
+              <li class="prod-card prod-comp-content__card">
+                <div class="prod-card__img-block prod-img-block prod-card__col-block prod-comp-content__img-block prod-comp-content__img-block"><a class="prod-img-block__img-link" href="product-page.html"><img src="assets/img/product-comparison/item-1.jpg" alt="product image"/></a></div>
+                <div class="prod-card__description-block prod-card__col-block prod-comp-content__description-block">
+                  <div class="prod-card__text-block prod-text-block prod-card__row-block">
+                    <h2><a class="prod-text-block__name-link" href="product-page.html">Café Blason Americano 400 Gr</a></h2>
+                    <p class="prod-text-block__prod-desc">Café de Grano Blason Americano 400 Gramos</p>
+                  </div>
+                  <ul class="prod-card__tags-list">
+                    <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                  </ul>
+                </div>
+                <div class="prod-card__main-info-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <div class="prod-card__upc-block prod-card__row-block">
+                    <h3 class="prod-card__block-heading">Upc</h3>
+                    <p class="prod-card__upc-code">0009733803227</p>
+                    <p class="prod-card__price">$95.50</p>
+                  </div>
+                  <div class="prod-card__suppliers-block prod-card__row-block">
+                    <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p><a class="prod-card__view-link" href="#">View</a>
+                  </div>
+                </div>
+                <div class="prod-card__matches-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_match">
+                    <input class="prod-card-matches__input" id="prod-card-match-2" type="radio" name="products-matches-2" value="match"/>
+                    <label class="prod-card-matches__label" for="prod-card-match-2">Match<span class="prod-card-matches__icon prod-card-matches__icon_check"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_not-a-match">
+                    <input class="prod-card-matches__input" id="prod-card-not-a-match-2" type="radio" name="products-matches-2" value="not-a-match"/>
+                    <label class="prod-card-matches__label" for="prod-card-not-a-match-2">Not a match<span class="prod-card-matches__icon prod-card-matches__icon_cross"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_similar">
+                    <input class="prod-card-matches__input" id="prod-card-similar-2" type="radio" name="products-matches-2" value="similar"/>
+                    <label class="prod-card-matches__label" for="prod-card-similar-2">Similar<span class="prod-card-matches__icon prod-card-matches__icon_equal"></span></label>
+                  </p>
+                </div>
+              </li>
+              <li class="prod-card prod-comp-content__card">
+                <div class="prod-card__img-block prod-img-block prod-card__col-block prod-comp-content__img-block prod-comp-content__img-block"><a class="prod-img-block__img-link" href="product-page.html"><img src="assets/img/product-comparison/item-1.jpg" alt="product image"/></a></div>
+                <div class="prod-card__description-block prod-card__col-block prod-comp-content__description-block">
+                  <div class="prod-card__text-block prod-text-block prod-card__row-block">
+                    <h2><a class="prod-text-block__name-link" href="product-page.html">Cafe americano gourmet</a></h2>
+                    <p class="prod-text-block__prod-desc">Cafe americano gourmet BLASON 400 GRS</p>
+                  </div>
+                  <ul class="prod-card__tags-list">
+                    <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                  </ul>
+                </div>
+                <div class="prod-card__main-info-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <div class="prod-card__upc-block prod-card__row-block">
+                    <h3 class="prod-card__block-heading">Upc</h3>
+                    <p class="prod-card__upc-code">0009733803227</p>
+                    <p class="prod-card__price">$95.50</p>
+                  </div>
+                  <div class="prod-card__suppliers-block prod-card__row-block">
+                    <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p><a class="prod-card__view-link" href="#">View</a>
+                  </div>
+                </div>
+                <div class="prod-card__matches-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_match">
+                    <input class="prod-card-matches__input" id="prod-card-match-3" type="radio" name="products-matches-3" value="match"/>
+                    <label class="prod-card-matches__label" for="prod-card-match-3">Match<span class="prod-card-matches__icon prod-card-matches__icon_check"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_not-a-match">
+                    <input class="prod-card-matches__input" id="prod-card-not-a-match-3" type="radio" name="products-matches-3" value="not-a-match"/>
+                    <label class="prod-card-matches__label" for="prod-card-not-a-match-3">Not a match<span class="prod-card-matches__icon prod-card-matches__icon_cross"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_similar">
+                    <input class="prod-card-matches__input" id="prod-card-similar-3" type="radio" name="products-matches-3" value="similar"/>
+                    <label class="prod-card-matches__label" for="prod-card-similar-3">Similar<span class="prod-card-matches__icon prod-card-matches__icon_equal"></span></label>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="prod-comp-content__matched prod-comp-matched wow animate__animated animate__fadeInLeft">
+            <h2 class="prod-comp-content__heading">Matched Products<span class="prod-comp-content__heading_number prod-comp-content__heading_number_square">3 </span></h2>
+            <ul class="prod-comp-content__prod-cards">
+              <li class="prod-card prod-comp-content__card">
+                <div class="prod-card__img-block prod-img-block prod-card__col-block prod-comp-content__img-block prod-comp-content__img-block"><a class="prod-img-block__img-link" href="product-page.html"><img src="assets/img/product-comparison/item-1.jpg" alt="product image"/></a></div>
+                <div class="prod-card__description-block prod-card__col-block prod-comp-content__description-block">
+                  <div class="prod-card__text-block prod-text-block prod-card__row-block">
+                    <h2><a class="prod-text-block__name-link" href="product-page.html">Cafe americano gourmet</a></h2>
+                    <p class="prod-text-block__prod-desc">Cafe americano gourmet BLASON 400 GRS</p>
+                  </div>
+                  <ul class="prod-card__tags-list">
+                    <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                  </ul>
+                </div>
+                <div class="prod-card__main-info-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <div class="prod-card__upc-block prod-card__row-block">
+                    <h3 class="prod-card__block-heading">Upc</h3>
+                    <p class="prod-card__upc-code">0009733803227</p>
+                    <p class="prod-card__price">$95.50</p>
+                  </div>
+                  <div class="prod-card__suppliers-block prod-card__row-block">
+                    <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p><a class="prod-card__view-link" href="#">View</a>
+                  </div>
+                </div>
+                <div class="prod-card__matches-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_match">
+                    <input class="prod-card-matches__input" id="prod-card-match-4" type="radio" name="products-matches-4" value="match"/>
+                    <label class="prod-card-matches__label" for="prod-card-match-4">Match<span class="prod-card-matches__icon prod-card-matches__icon_check"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_not-a-match">
+                    <input class="prod-card-matches__input" id="prod-card-not-a-match-4" type="radio" name="products-matches-4" value="not-a-match"/>
+                    <label class="prod-card-matches__label" for="prod-card-not-a-match-4">Not a match<span class="prod-card-matches__icon prod-card-matches__icon_cross"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_similar">
+                    <input class="prod-card-matches__input" id="prod-card-similar-4" type="radio" name="products-matches-4" value="similar"/>
+                    <label class="prod-card-matches__label" for="prod-card-similar-4">Similar<span class="prod-card-matches__icon prod-card-matches__icon_equal"></span></label>
+                  </p>
+                </div>
+              </li>
+              <li class="prod-card prod-comp-content__card">
+                <div class="prod-card__img-block prod-img-block prod-card__col-block prod-comp-content__img-block prod-comp-content__img-block"><a class="prod-img-block__img-link" href="product-page.html"><img src="assets/img/product-comparison/item-1.jpg" alt="product image"/></a></div>
+                <div class="prod-card__description-block prod-card__col-block prod-comp-content__description-block">
+                  <div class="prod-card__text-block prod-text-block prod-card__row-block">
+                    <h2><a class="prod-text-block__name-link" href="product-page.html">Cafe americano gourmet</a></h2>
+                    <p class="prod-text-block__prod-desc">Cafe americano gourmet BLASON 400 GRS</p>
+                  </div>
+                  <ul class="prod-card__tags-list">
+                    <li class="prod-card__tag-item prod-card__tag-item_orange">Catalog # 224448</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_green">Automatch step: UPC</li>
+                    <li class="prod-card__tag-item prod-card__tag-item_blue">Available</li>
+                  </ul>
+                </div>
+                <div class="prod-card__main-info-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <div class="prod-card__upc-block prod-card__row-block">
+                    <h3 class="prod-card__block-heading">Upc</h3>
+                    <p class="prod-card__upc-code">0009733803227</p>
+                    <p class="prod-card__price">$95.50</p>
+                  </div>
+                  <div class="prod-card__suppliers-block prod-card__row-block">
+                    <p class="prod-card__suppliers-img"><img src="assets/img/suppliers/supplier.png" alt="supplier logo image"/></p><a class="prod-card__view-link" href="#">View</a>
+                  </div>
+                </div>
+                <div class="prod-card__matches-block prod-card__col-block prod-card__col-block_line prod-card__col-block_line_border">
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_match">
+                    <input class="prod-card-matches__input" id="prod-card-match-5" type="radio" name="products-matches-5" value="match"/>
+                    <label class="prod-card-matches__label" for="prod-card-match-5">Match<span class="prod-card-matches__icon prod-card-matches__icon_check"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_not-a-match">
+                    <input class="prod-card-matches__input" id="prod-card-not-a-match-5" type="radio" name="products-matches-5" value="not-a-match"/>
+                    <label class="prod-card-matches__label" for="prod-card-not-a-match-5">Not a match<span class="prod-card-matches__icon prod-card-matches__icon_cross"></span></label>
+                  </p>
+                  <p class="prod-card__matches-field prod-card-matches prod-card-matches_similar">
+                    <input class="prod-card-matches__input" id="prod-card-similar-5" type="radio" name="products-matches-5" value="similar"/>
+                    <label class="prod-card-matches__label" for="prod-card-similar-5">Similar<span class="prod-card-matches__icon prod-card-matches__icon_equal"></span></label>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!--*** End Product Comparison Content ***-->
+        <!--*** Product Comparison Sidebar ***-->
+        <aside class="prod-comp__sidebar prod-comp-sb prod-sb-info wow animate__animated animate__fadeInRight">
+          <h2 class="prod-comp-sb__header"><img src="assets/img/product-comparison/logo.png" alt="logo"/><span class="prod-comp-sb__header_text">Reference</span></h2>
+          <div class="prod-comp-sb__wrapper prod-sb-info">
+            <div class="prod-sb-info__img-block prod-img-block prod-sb-info__img-block"><a class="prod-img-block__img-link" href="product-page.html"><img src="assets/img/product-comparison/item-info.jpg" alt="product image"/></a></div>
+            <div class="prod-sb-info__text-block prod-text-block">
+              <h2><a class="prod-text-block__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+              <p class="prod-text-block__prod-desc">Café molido Blasón Gourmet americano es un café tostado 100% arábica que refleja las virtudes de un café equilibrado, sin excesos o matices extremos. </p>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__price prod-price">$95.50</div>
+            <div class="prod-sb-info__row-block prod-sb-info__checked prod-checked">
+              <h3 class="prod-heading prod-heading_with-icon">Human check<span class="prod-checked__check-icon">
+                  <svg class="svg-sprite svg-sprite_check ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                  </svg></span></h3>
+              <p class="prod-checked__checked-by">Last Edited by <b class="prod-checked__checked-by_bold">Adam Howell</b></p>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__tags prod-tags">
+              <li class="prod-tags__tag-item prod-tags__tag-item_orange">Catalog # 224448</li>
+              <li class="prod-tags__tag-item prod-tags__tag-item_blue">Available</li>
+              <li class="prod-tags__tag-item prod-tags__tag-item_green">Automatch step: UPC</li>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__upc prod-upc">
+              <div class="prod-heading">UPC</div>
+              <div class="prod-value-text">0009733803227</div>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__model prod-model">
+              <div class="prod-heading">Model</div>
+              <div class="prod-value-text">None</div>
+              <div class="prod-annot-text">(Recog.: Blas)</div>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__brand prod-brand">
+              <div class="prod-heading">Brand</div>
+              <div class="prod-value-text">Blasón</div>
+              <div class="prod-annot-text">(Recog.: Blas)</div>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__suppliers prod-suppliers"><img class="prod-suppliers__image" src="assets/img/suppliers/supplier.png" alt="supplier logo image"/><a class="prod-suppliers__view-link" href="#">View</a></div>
+            <div class="prod-sb-info__row-block prod-sb-info__category prod-cat-crumbs">
+              <ul class="prod-cat-crumbs__list">
+                <li class="prod-cat-crumbs__item"><a class="prod-cat-crumbs__cats-link" href="#">Café</a></li>
+                <li class="prod-cat-crumbs__item"><a class="prod-cat-crumbs__cats-link" href="#">Molido</a></li>
+              </ul><a class="prod-cat-crumbs__change-link" href="product-comparison.html">Change Category</a>
+            </div>
+            <div class="prod-sb-info__row-block prod-sb-info__reviews prod-reviews">
+              <div class="prod-reviews__col">
+                <h3 class="prod-heading">Matches: </h3>
+                <p class="prod-reviews_number">3</p>
+              </div>
+              <div class="prod-reviews__col">
+                <h3 class="prod-heading">Similar: </h3>
+                <p class="prod-reviews_number">1</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!--*** End Product Comparison Sidebar ***-->
+      </article>
+      <!--*** End Product Comparison ***-->
+      <!--*** Product Comparison Popup ***-->
+      <div class="prod-comp-popup">
+        <div class="prod-comp-popup__blackout"></div>
+        <div class="prod-comp-popup__wrapper">
+          <button class="prod-comp-popup__toggle-btn"><span class="prod-comp-popup__toggle-btn_text">Check</span></button>
+          <div class="prod-comp-popup__content">
+            <div class="prod-comp-popup__top-line">
+              <h2 class="prod-comp-popup__heading">Recent Activity</h2><a class="prod-comp-popup__clear-link" href="#">Clear (<span class="prod-comp-matches-in-db__clear-link_number">3</span>)</a>
+            </div>
+            <ul class="prod-comp-popup__recent-act-card-list">
+              <li class="prod-comp-popup__recent-act-card-item recent-act-card recent-act-card_match"><a class="recent-act-card__edit-link" href="#">Match<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> <img src="assets/img/product-comparison/recent-activity-item-1.jpg" alt="product image"/></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="prod-comp-popup__recent-act-card-item recent-act-card recent-act-card_not-match"><a class="recent-act-card__edit-link" href="#">Not Match<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> <img src="assets/img/product-comparison/recent-activity-item-1.jpg" alt="product image"/></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="prod-comp-popup__recent-act-card-item recent-act-card recent-act-card_similar"><a class="recent-act-card__edit-link" href="#">Similar<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> <img src="assets/img/product-comparison/recent-activity-item-1.jpg" alt="product image"/></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="prod-comp-popup__recent-act-card-item recent-act-card recent-act-card_match"><a class="recent-act-card__edit-link" href="#">Match<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> <img src="assets/img/product-comparison/recent-activity-item-1.jpg" alt="product image"/></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="prod-comp-popup__recent-act-card-item recent-act-card recent-act-card_match"><a class="recent-act-card__edit-link" href="#">Match<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> <img src="assets/img/product-comparison/recent-activity-item-1.jpg" alt="product image"/></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--*** End Product Comparison Popup ***-->
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

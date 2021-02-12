@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+        <div class="header__collapse">
+          <!--header hide menu button --><a class="header__hide-btn" href="#"><span></span></a>
+          <!--end header hide menu button -->
+          <!--header navigation -->
+          <nav class="header__nav h-nav">
+            <ul class="h-nav__list">
+              <li class="h-nav__item"><a class="h-nav__link" href="dashboard.html">Dashboard</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="index.html">Products</a></li>
+              <li class="h-nav__item"><a class="h-nav__link h-nav__link_active" href="categories-supermarket.html">Categories</a></li>
+            </ul>
+          </nav>
+          <!--end header navigation -->
+          <!--header search -->
+          <form class="header__search h-search" action="" method="get">
+            <input class="h-search__input" type="search" name="search" placeholder="Search" required="required"/>
+            <button class="h-search__button" type="submit">
+              <svg class="svg-sprite svg-sprite_magnifier ">
+                <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+              </svg>
+            </button>
+          </form>
+          <!--end header search -->
+          <!--header user -->
+          <div class="header__user h-user"><a class="h-user__profile" href="account.html">Hello, Adam!</a><a class="h-user__logout" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end header user -->
+        </div>
+        <!--header show menu button --><a class="header__show-btn" href="#"><span></span></a>
+        <!--end header show menu button -->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Categories Page ***-->
+      <article class="container cat-page cat-page-supermarket" id="categories-supermarket">
+        <div class="cat-page__top-line"> 
+          <h1 class="cat-page__heading">Supermarket Categories</h1>
+          <div class="cat-page__tabs"><a class="cat-page__tab-btn cat-page__tab-btn_active" href="categories-supermarket.html" tab-index="-1"><span>Supermarket Categories</span></a><a class="cat-page__tab-btn" href="categories-product.html"><span>Nau Categories</span></a></div>
+        </div>
+        <!--*** Categories Page Sidebar ***-->
+        <aside class="cat-page__sidebar cat-page-sidebar sidebar-filter wow animate__animated animate__fadeInLeft">
+          <div class="sidebar-filter__wrapper">
+            <!--*** Main Sidebar ***-->
+            <div class="sidebar-filter__main-block sb-filter-main-block">
+              <form class="sidebar-filter__search sb-filter-search" id="categories-supermarket-search-form" action="" method="get">
+                <input class="sb-filter-search__input" type="search" name="search" placeholder="Search Product"/>
+                <button class="sb-filter-search__button" type="submit">
+                  <svg class="svg-sprite svg-sprite_magnifier ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+                  </svg>
+                </button>
+              </form>
+              <form class="sidebar-filter__form sb-filter-form" id="categories-supermarket-main-sb-form" action="" method="get">
+                <ul class="sb-filter-form__select-cats-list">
+                  <li class="sb-filter-form__select-cats-item">
+                    <fieldset class="sidebar-filter__fieldset sb-filter-main-block__fieldset">
+                      <legend class="sb-filter-form__heading sb-filter-form__heading_min cat-page-sidebar__heading">Supermarket</legend>
+                      <select class="custom-select" id="categories-supermarket-select-category-one" name="category 1">
+                        <option value="">Category</option>
+                        <option value="Category 1"></option>
+                        <option value="Category 2"></option>
+                        <option value="Category 3"></option>
+                      </select>
+                    </fieldset>
+                  </li>
+                  <li class="sb-filter-form__select-cats-item">
+                    <fieldset class="sidebar-filter__fieldset sb-filter-main-block__fieldset">
+                      <legend class="sb-filter-form__heading sb-filter-form__heading_min cat-page-sidebar__heading">Level</legend>
+                      <select class="custom-select" id="categories-supermarket-select-category-two" name="category 1">
+                        <option value="">Category</option>
+                        <option value="Category 1"></option>
+                        <option value="Category 2"></option>
+                        <option value="Category 3"></option>
+                      </select>
+                    </fieldset>
+                  </li>
+                  <li class="sb-filter-form__select-cats-item">
+                    <fieldset class="sidebar-filter__fieldset sb-filter-main-block__fieldset sb-filter-main-block__fieldset_last">
+                      <legend class="sb-filter-form__heading sb-filter-form__heading_min cat-page-sidebar__heading">Status</legend>
+                      <select class="custom-select" id="categories-supermarket-select-category-three" name="category 1">
+                        <option value="">Category</option>
+                        <option value="Category 1"></option>
+                        <option value="Category 2"></option>
+                        <option value="Category 3"></option>
+                      </select>
+                    </fieldset>
+                  </li>
+                </ul><a class="sidebar-filter__res-filter" href="#" data-target="categories-supermarket-main-sb-form">Reset Filter</a>
+              </form>
+              <div class="sidebar-filter__summary"><b class="sidebar-filter__summary_number">65,544</b>matched of<b class="sidebar-filter__summary_number-of">14819</b></div>
+            </div>
+            <!--*** End Main Sidebar ***-->
+            <!--*** Additional Sidebar ***-->
+            <div class="sidebar-filter__additional-block sb-filter-add-block">
+              <form class="sidebar-filter__form sb-filter-form sb-filter-add-block__content" id="categories-supermarket-add-sb-form" action="" method="get">
+                <fieldset class="sidebar-filter__fieldset sb-filter-add-block__fieldset">
+                  <legend class="sb-filter-form__heading sb-filter-form__heading_min cat-page-sidebar__heading">Match</legend>
+                  <select class="custom-select" id="categories-supermarket-select-category-four" name="match-status">
+                    <option value="">Match Status</option>
+                    <option value="Status 1"></option>
+                    <option value="Status 2"></option>
+                    <option value="Status 3"></option>
+                  </select>
+                </fieldset>
+                <fieldset class="sidebar-filter__fieldset sb-filter-add-block__fieldset">
+                  <legend class="sb-filter-form__heading sb-filter-form__heading_min cat-page-sidebar__heading">Availability</legend>
+                  <select class="custom-select" id="categories-supermarket-select-category-five" name="availability-status">
+                    <option value="">Availability Status</option>
+                    <option value="Status 1"></option>
+                    <option value="Status 2"></option>
+                    <option value="Status 3"></option>
+                    <option value="All Status"></option>
+                  </select>
+                </fieldset>
+                <fieldset class="sidebar-filter__fieldset sb-filter-add-block__fieldset sb-filter-add-block__fieldset_last">
+                  <legend class="sb-filter-form__heading sb-filter-form__heading_min cat-page-sidebar__heading">Reclassify Status</legend>
+                  <select class="custom-select" id="categories-supermarket-select-category-six" name="reclassify-status">
+                    <option value="">Reclassify Status</option>
+                    <option value="Status 1"></option>
+                    <option value="Status 2"></option>
+                    <option value="Status 3"></option>
+                    <option value="All Status"></option>
+                  </select>
+                </fieldset><a class="sidebar-filter__res-filter" href="#" data-target="categories-supermarket-add-sb-form">Reset Filter</a>
+              </form>
+              <button class="sidebar-filter__toggle-btn sb-filter-toggle-btn"><span class="sb-filter-toggle-btn__content sb-filter-toggle-btn__content_open">
+                  <svg class="svg-sprite svg-sprite_filter ">
+                    <use xlink:href="assets/img/sprite/sprite.svg#filter"></use>
+                  </svg></span><span class="sb-filter-toggle-btn__content sb-filter-toggle-btn__content_close"><span class="sb-filter-toggle-btn__content_close_text">Filters</span></span></button>
+            </div>
+            <!--*** End Additional Sidebar ***-->
+          </div>
+        </aside>
+        <!--*** End Categories Page Sidebar ***-->
+        <!--*** Categories Page Content ***-->
+        <section class="cat-page__content cat-page-content wow animate__animated animate__fadeInRight">
+          <ul class="cat-page-content__cat-cards">
+            <li class="cat-card cat-page-content__card">
+              <div class="cat-card__col-block cat-card__img-block"><a class="cat-card__prod-img-link" href="category-matcher.html"><img src="assets/img/categories-supermarket/item-1.jpg" alt="product image"/></a><img class="cat-card__supermarket-img" src="assets/img/categories-supermarket/walmart.png" alt="walmart logo"/></div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__row-block cat-card__cat-path">
+                  <h3 class="cat-card__heading cat-card__cat-path-heading">Category full Path</h3>
+                  <ol class="cat-card__cat-crumbs cat-card-crumbs">
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Productors</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Apple</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Phone</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Iphone</a></li>
+                  </ol>
+                </div>
+                <div class="cat-card__row-block cat-card__row-block_with-cols cat-card__cat-info">
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">NAU category</h3>
+                    <p class="cat-card__value-text cat-card__value-text_min">Computo<span class="cat-card__value-text_note cat-card__value-text_n-line">(1.06.03.99)</span></p>
+                  </div>
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">cat.id</h3>
+                    <p class="cat-card__value-text">22569 </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__checked-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Checked<span class="cat-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="cat-card__checked-by">By Adam Howell</p>
+                </div>
+                <div class="cat-card__monitored-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Is Monitored<span class="cat-card__check-icon cat-card__check-icon_blue">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                </div>
+              </div>
+            </li>
+            <li class="cat-card cat-page-content__card">
+              <div class="cat-card__col-block cat-card__img-block"><a class="cat-card__prod-img-link" href="category-matcher.html"><img src="assets/img/categories-supermarket/item-1.jpg" alt="product image"/></a><img class="cat-card__supermarket-img" src="assets/img/categories-supermarket/walmart.png" alt="walmart logo"/></div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__row-block cat-card__cat-path">
+                  <h3 class="cat-card__heading">Category full Path</h3>
+                  <ol class="cat-card__cat-crumbs cat-card-crumbs">
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Productors</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Apple</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Phone</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Iphone</a></li>
+                  </ol>
+                </div>
+                <div class="cat-card__row-block cat-card__row-block_with-cols cat-card__cat-info">
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">NAU category</h3>
+                    <p class="cat-card__value-text cat-card__value-text_min">Computo<span class="cat-card__value-text_note cat-card__value-text_n-line">(1.06.03.99)</span></p>
+                  </div>
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">cat.id</h3>
+                    <p class="cat-card__value-text">22569 </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__checked-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Checked<span class="cat-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="cat-card__checked-by">By Adam Howell</p>
+                </div>
+                <div class="cat-card__monitored-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Is Monitored<span class="cat-card__check-icon cat-card__check-icon_blue">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                </div>
+              </div>
+            </li>
+            <li class="cat-card cat-page-content__card">
+              <div class="cat-card__col-block cat-card__img-block"><a class="cat-card__prod-img-link" href="category-matcher.html"><img src="assets/img/categories-supermarket/item-1.jpg" alt="product image"/></a><img class="cat-card__supermarket-img" src="assets/img/categories-supermarket/walmart.png" alt="walmart logo"/></div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__row-block cat-card__cat-path">
+                  <h3 class="cat-card__heading">Category full Path</h3>
+                  <ol class="cat-card__cat-crumbs cat-card-crumbs">
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Productors</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Apple</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Phone</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Iphone</a></li>
+                  </ol>
+                </div>
+                <div class="cat-card__row-block cat-card__row-block_with-cols cat-card__cat-info">
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">NAU category</h3>
+                    <p class="cat-card__value-text cat-card__value-text_min">Computo<span class="cat-card__value-text_note cat-card__value-text_n-line">(1.06.03.99)</span></p>
+                  </div>
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">cat.id</h3>
+                    <p class="cat-card__value-text">22569 </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__checked-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Checked<span class="cat-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="cat-card__checked-by">By Adam Howell</p>
+                </div>
+                <div class="cat-card__monitored-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Is Monitored<span class="cat-card__check-icon cat-card__check-icon_blue">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                </div>
+              </div>
+            </li>
+            <li class="cat-card cat-page-content__card">
+              <div class="cat-card__col-block cat-card__img-block"><a class="cat-card__prod-img-link" href="category-matcher.html"><img src="assets/img/categories-supermarket/item-1.jpg" alt="product image"/></a><img class="cat-card__supermarket-img" src="assets/img/categories-supermarket/walmart.png" alt="walmart logo"/></div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__row-block cat-card__cat-path">
+                  <h3 class="cat-card__heading">Category full Path</h3>
+                  <ol class="cat-card__cat-crumbs cat-card-crumbs">
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Productors</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Apple</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Phone</a></li>
+                    <li class="cat-card-crumbs__item"><a class="cat-card-crumbs__link" href="#">Iphone</a></li>
+                  </ol>
+                </div>
+                <div class="cat-card__row-block cat-card__row-block_with-cols cat-card__cat-info">
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">NAU category</h3>
+                    <p class="cat-card__value-text cat-card__value-text_min">Computo<span class="cat-card__value-text_note cat-card__value-text_n-line">(1.06.03.99)</span></p>
+                  </div>
+                  <div class="cat-card__cell">
+                    <h3 class="cat-card__heading">cat.id</h3>
+                    <p class="cat-card__value-text">22569 </p>
+                  </div>
+                </div>
+              </div>
+              <div class="cat-card__col-block">
+                <div class="cat-card__checked-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Checked<span class="cat-card__check-icon">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                  <p class="cat-card__checked-by">By Adam Howell</p>
+                </div>
+                <div class="cat-card__monitored-block cat-card__row-block">
+                  <h3 class="cat-card__heading cat-card__heading_bold">Is Monitored<span class="cat-card__check-icon cat-card__check-icon_blue">
+                      <svg class="svg-sprite svg-sprite_check ">
+                        <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                      </svg></span></h3>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <!--*** EndCategories Page Content ***-->
+      </article>
+      <!--*** End Categories Page ***-->
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
