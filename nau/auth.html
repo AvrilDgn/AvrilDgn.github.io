@@ -25,12 +25,20 @@
       <!--*** Authorization ***-->
       <article class="container auth" id="authorization">
         <!--left background image -->
-        <div class="auth__background wow animate__animated animate__fadeInLeft"><img src="assets/img/auth/background.png" alt=""/></div>
+        <div class="auth__background wow animate__animated animate__fadeInLeft">
+          <picture>
+            <source type="image/webp" srcset="assets/img/auth/background.webp 1x, assets/img/auth/background@2x.webp 2x, assets/img/auth/background@3x.webp 3x"/><img src="assets/img/auth/background.png" srcset="assets/img/auth/background@2x.png 2x, assets/img/auth/background@3x.png 3x" alt="background"/>
+          </picture>
+        </div>
         <!--end left background image-->
         <!--authorization form -->
         <form class="auth__form auth-form wow animate__animated animate__fadeInRight" action="#" method="post">
           <!--form heading-logo -->
-          <h1 class="auth-form__heading"><img src="assets/img/auth/logo.png" alt="NAU"/></h1>
+          <h1 class="auth-form__heading">
+            <picture>
+              <source type="image/webp" srcset="assets/img/auth/logo.webp 1x, assets/img/auth/logo@2x.webp 2x, assets/img/auth/logo@3x.webp 3x"/><img src="assets/img/auth/logo.png" srcset="assets/img/auth/logo@2x.png 2x, assets/img/auth/logo@3x.png 3x" alt="nau"/>
+            </picture>
+          </h1>
           <!--end form heading-logo -->
           <!--form subheading -->
           <p class="auth-form__subheading">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut aliquid commodi nesciunt.</p>
