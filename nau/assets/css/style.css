@@ -9036,8 +9036,6 @@ button::-moz-focus-inner {
 }
 
 .prod-comp-popup {
-  height: auto;
-  overflow: visible;
   position: fixed;
   top: 0;
   left: calc((100% - 1440px) / 2);
