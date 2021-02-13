@@ -6543,7 +6543,7 @@ __webpack_require__.r(__webpack_exports__);
 			return;
 		}
 
-		if (w.matchMedia("(min-width: 768px)").matches) {
+		if (w.matchMedia("screen and (min-width: 768px)").matches) {
 			btn.parentElement.parentElement.appendChild(btn);
 		}
 	})();
@@ -6564,7 +6564,7 @@ __webpack_require__.r(__webpack_exports__);
 		// sbMainHeight = sbMainBlock.offsetHeight;
 		// sbAddHeight = sbAddBlock.offsetHeight;
 
-		if (w.matchMedia("(min-width: 768px)").matches) {
+		if (w.matchMedia("screen and (min-width: 768px)").matches) {
 			sbAddBlock.style.height = '0px';
 		} else {
 			sbAddBlock.style.marginTop = -sbAddBlock.offsetHeight + 56 + 'px';
@@ -6575,7 +6575,7 @@ __webpack_require__.r(__webpack_exports__);
 
 			if (sidebar.classList.contains('sidebar-filter_opened')) {
 				sidebar.classList.remove('sidebar-filter_opened');
-				if (w.matchMedia("(min-width: 768px)").matches) {
+				if (w.matchMedia("screen and (min-width: 768px)").matches) {
 					setTimeout(() => {
 						sbAddBlock.style.height = '0px';
 						// sbMainBlock.removeAttribute('style');
@@ -6623,7 +6623,7 @@ __webpack_require__.r(__webpack_exports__);
 			popup.style.overflowX = 'hidden';
 			popup.style.overflowY = 'auto';
 			popup.classList.add('prod-comp-popup_active');
-			if (w.matchMedia("(min-width: 576px)").matches) {
+			if (w.matchMedia("screen and (min-width: 576px)").matches) {
 				popupСontent.style.visibility = 'visible';
 			} else {
 				popupWrapper.style.width = '100%';
@@ -6633,10 +6633,12 @@ __webpack_require__.r(__webpack_exports__);
 		function hidePopup() {
 			body.removeAttribute('style');
 			popup.classList.remove('prod-comp-popup_active');
-			if (w.matchMedia("(min-width: 576px)").matches) {
+			if (w.matchMedia("screen and (min-width: 576px)").matches) {
 				setTimeout(function () {
+					popup.style.position = 'relative';
 					popup.removeAttribute('style');
 					popupСontent.style.visibility = 'hidden';
+					popup.style.position = 'absolute';
 				}, 250);
 			} else {
 				popup.removeAttribute('style');

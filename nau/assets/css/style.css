@@ -9036,6 +9036,8 @@ button::-moz-focus-inner {
 }
 
 .prod-comp-popup {
+  height: auto;
+  overflow: visible;
   position: fixed;
   top: 0;
   left: calc((100% - 1440px) / 2);
@@ -9916,6 +9918,10 @@ button::-moz-focus-inner {
 }
 
 @media screen and (max-width: 1199px) {
+  .header {
+    z-index: 100;
+  }
+
   .header__search {
     margin-top: 40px;
   }
