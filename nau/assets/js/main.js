@@ -6643,7 +6643,9 @@ __webpack_require__.r(__webpack_exports__);
 			} else {
 				popup.removeAttribute('style');
 				setTimeout(function () {
+					popup.style.position = 'relative';
 					popupWrapper.style.width = '0';
+					popup.style.position = 'absolute';
 				}, 250);
 			}
 		} 
