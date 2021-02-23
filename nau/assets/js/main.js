@@ -6379,7 +6379,7 @@ __webpack_require__.r(__webpack_exports__);
 			deactivationTabLinks();
 			hideContents();
 			curEl.classList.add('acc-content__tab-btn_active');
-			curEl.setAttribute('tabindex', '-1');
+			curEl.setAttribute('disabled', 'disabled');
 			// curEl.onfocus = () => {
 			// 	curEl.blur();
 			// };
@@ -6389,7 +6389,7 @@ __webpack_require__.r(__webpack_exports__);
 		function deactivationTabLinks() {
 			for (let i = 0; i < tablinks.length; i++) {
 				tablinks[i].classList.remove('acc-content__tab-btn_active');
-				tablinks[i].removeAttribute('tabindex');
+				tablinks[i].removeAttribute('disabled');
 			}
 		}
 
@@ -6430,20 +6430,41 @@ __webpack_require__.r(__webpack_exports__);
 
 		for (let i = 0; i < selects.length; i++) {
 			let choices;
+			let selectId = selects[i].getAttribute('id');
+
+			if (!selectId) {
+				console.assert(selects[i].hasAttribute('id'), selects[i], 'select has no id set');
+				return;
+			}
 
 			if (selects[i].classList.contains('custom-select_search')) {
-				if (!selects[i].hasAttribute('id')) {
-					console.log('select has no id set');
-					return;
-				}
 
 				choices = new choices_js__WEBPACK_IMPORTED_MODULE_3___default.a(selects[i], {
 					searchEnabled: true,
 					addItems: true,
 					duplicateItemsAllowed: false,
 					removeItemButton: true,
-					shouldSortItems: true,
+					// shouldSortItems: true,
 					// itemSelectText: '',
+					classNames: {
+						containerOuter: selectId + ' choices',
+						// containerInner: selectId + '__inner' + ' choices__inner',
+						// listItems: selectId + '__list--multiple' + ' choices__list--multiple',
+						// listSingle: selectId + '__list--single' + ' choices__list--single',
+						// inputCloned: selectId + '__input--cloned' + ' choices__input--cloned',
+						// item: selectId + '__item' + ' choices__item',
+						// itemDisabled: selectId + '__item--disabled choices__item--disabled',
+						// itemChoice: selectId + '__item--choice' + ' choices__item--choice',
+						// placeholder: selectId + '__placeholder' + ' choices__placeholder',
+						// group: selectId + '__group' + ' choices__group',
+						// groupHeading: selectId + '__heading' + ' choices__heading',
+						// button: selectId + '__button' + ' choices__button',
+
+						// list: selectId + '__list' + ' choices__list',
+						// input: selectId + '__input' + ' choices__input',
+						// listDropdown: selectId + '__list--dropdown choices__list--dropdown',
+						// itemSelectable: selectId + '__item--selectable' + ' choices__item--selectable',
+					},
 				});
 
 				let parent = selects[i].parentNode.parentNode,
@@ -6456,8 +6477,14 @@ __webpack_require__.r(__webpack_exports__);
 					searchLabelSvg = d.createElementNS('http://www.w3.org/2000/svg', 'svg'),
 					searchLabelSvgUse = d.createElementNS('http://www.w3.org/2000/svg', 'use');
 
+				//tags position
+				if (selects[i].hasAttribute("data-tags-outer")) {
+					parent.after(multiple);
+				} else {
+					parent.appendChild(multiple);
+				}
+
 				//dropdown position
-				parent.appendChild(multiple);
 				dropdown.style.top = inner.offsetHeight + 'px';
 
 				//add label
@@ -6471,6 +6498,24 @@ __webpack_require__.r(__webpack_exports__);
 				searchLabelSvgUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', 'assets/img/sprite/sprite.svg#magnifier');
 				searchLabelSvg.appendChild(searchLabelSvgUse);
 				searchLabel.appendChild(searchLabelSvg);
+
+				//click events on remove item buttons
+				choices.passedElement.element.addEventListener('addItem', rmBtnEvent, false);
+				choices.passedElement.element.addEventListener('removeItem', rmBtnEvent, false);
+
+				function rmBtnEvent (event) {
+					let items = multiple.getElementsByClassName('choices__item');
+
+					for (let index = 0; index < items.length; index++) {
+						const item = items[index];
+						let value = item.getAttribute('data-value');
+						let rmBtn = item.getElementsByClassName('choices__button')[0];
+
+						rmBtn.addEventListener('click', (e) => {
+							choices.removeActiveItemsByValue(value);
+						});
+					}
+				}
 			} else {
 				choices = new choices_js__WEBPACK_IMPORTED_MODULE_3___default.a(selects[i], {
 					searchEnabled: false,
@@ -6594,18 +6639,18 @@ __webpack_require__.r(__webpack_exports__);
 	/*** Popap show/hide ***/
 	(() => {
 		let body = d.body,
-			popup = d.getElementsByClassName('prod-comp-popup')[0],
-			popupBlackout = d.getElementsByClassName('prod-comp-popup__blackout')[0],
-			popupСontent = d.getElementsByClassName('prod-comp-popup__content')[0],
-			popupWrapper = d.getElementsByClassName('prod-comp-popup__wrapper')[0],
-			popupToggleBtn = d.getElementsByClassName('prod-comp-popup__toggle-btn')[0];
+			popup = d.getElementsByClassName('recent-act-popup')[0],
+			popupBlackout = d.getElementsByClassName('recent-act-popup__blackout')[0],
+			popupСontent = d.getElementsByClassName('recent-act-popup__content')[0],
+			popupWrapper = d.getElementsByClassName('recent-act-popup__wrapper')[0],
+			popupToggleBtn = d.getElementsByClassName('recent-act-popup__toggle-btn')[0];
 
 		if (!popup || !popupToggleBtn || !popupBlackout || !popupСontent || !popupWrapper) {
 			return;
 		}
 
 		popupToggleBtn.onclick = (e) => {
-			if (popup.classList.contains('prod-comp-popup_active')) {
+			if (popup.classList.contains('recent-act-popup_active')) {
 				hidePopup();
 			} else {
 				showPopup();
@@ -6619,10 +6664,9 @@ __webpack_require__.r(__webpack_exports__);
 		function showPopup() {
 			body.style.height = '100vh';
 			body.style.overflow = 'hidden';
-			popup.style.height = '100vh';
 			popup.style.overflowX = 'hidden';
 			popup.style.overflowY = 'auto';
-			popup.classList.add('prod-comp-popup_active');
+			popup.classList.add('recent-act-popup_active');
 			if (w.matchMedia("screen and (min-width: 576px)").matches) {
 				popupСontent.style.visibility = 'visible';
 			} else {
@@ -6632,24 +6676,20 @@ __webpack_require__.r(__webpack_exports__);
 
 		function hidePopup() {
 			body.removeAttribute('style');
-			popup.classList.remove('prod-comp-popup_active');
+			popup.classList.remove('recent-act-popup_active');
 			if (w.matchMedia("screen and (min-width: 576px)").matches) {
 				setTimeout(function () {
-					popup.style.position = 'relative';
 					popup.removeAttribute('style');
 					popupСontent.style.visibility = 'hidden';
-					popup.style.position = 'absolute';
 				}, 250);
 			} else {
 				popup.removeAttribute('style');
 				setTimeout(function () {
-					popup.style.position = 'relative';
 					popupWrapper.style.width = '0';
-					popup.style.position = 'absolute';
 				}, 250);
 			}
-		} 
-		
+		}
+
 	})();
 
 })(document, window)

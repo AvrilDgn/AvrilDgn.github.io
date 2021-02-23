@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>nau</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header wow animate__animated animate__fadeInDown" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header/logo.webp 1x, assets/img/header/logo@2x.webp 2x, assets/img/header/logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header/logo.png" srcset="assets/img/header/logo@2x.png 2x, assets/img/header/logo@3x.png 3x" alt="nau"/>
+          </picture></a>
+        <!--end header logo-->
+        <div class="header__collapse">
+          <!--header hide menu button --><a class="header__hide-btn" href="#"><span></span></a>
+          <!--end header hide menu button -->
+          <!--header navigation -->
+          <nav class="header__nav h-nav">
+            <ul class="h-nav__list">
+              <li class="h-nav__item"><a class="h-nav__link" href="dashboard.html">Dashboard</a></li>
+              <li class="h-nav__item"><a class="h-nav__link" href="index.html">Products</a></li>
+              <li class="h-nav__item"><a class="h-nav__link h-nav__link_active" href="categories-supermarket.html">Categories</a></li>
+            </ul>
+          </nav>
+          <!--end header navigation -->
+          <!--header search -->
+          <form class="header__search h-search" action="" method="get">
+            <input class="h-search__input" type="search" name="search" placeholder="Search" required="required"/>
+            <button class="h-search__button" type="submit">
+              <svg class="svg-sprite svg-sprite_magnifier ">
+                <use xlink:href="assets/img/sprite/sprite.svg#magnifier"></use>
+              </svg>
+            </button>
+          </form>
+          <!--end header search -->
+          <!--header user -->
+          <div class="header__user h-user"><a class="h-user__profile" href="account.html">Hello, Adam!</a><a class="h-user__logout" href="auth.html">
+              <svg class="svg-sprite svg-sprite_logout ">
+                <use xlink:href="assets/img/sprite/sprite.svg#logout"></use>
+              </svg>Logout</a></div>
+          <!--end header user -->
+        </div>
+        <!--header show menu button --><a class="header__show-btn" href="#"><span></span></a>
+        <!--end header show menu button -->
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Categories Reclassification ***-->
+      <article class="container cat-reclfn" id="categories-reclassification">
+        <!--*** Categories Reclassification Content ***-->
+        <section class="cat-reclfn__content cat-reclfn-ctnt">
+          <h1 class="cat-reclfn-ctnt__heading wow animate__animated animate__fadeInLeft">Reclassify</h1>
+          <form class="cat-reclfn-ctnt__search-form cat-reclfn-srh-form wow animate__animated animate__fadeInLeft" id="cat-reclfn-srh-form" action="#" method="get">
+            <select class="custom-select custom-select_search" id="cat-reclfn-select-cats" name="categories[]" data-tags-outer="" multiple="multiple">
+              <option value="">Search a Nau Categorie</option>
+              <option value="Cómputo"></option>
+              <option value="Celulares"></option>
+              <option value="Electrónica"></option>
+              <option value="Apple"></option>
+              <option value="iPhone"></option>
+              <option value="Accesorios Celulares"></option>
+            </select>
+            <button class="select-submit-btn cat-reclfn-srh-form__btn" type="submit">Make a Match</button>
+          </form>
+          <ul class="cat-reclfn-ctnt__prod-cards">
+            <li class="cat-reclfn-card cat-reclfn-ctnt__card wow animate__animated animate__fadeInLeft">
+              <div class="cat-reclfn-card__col-block cat-reclfn-card__match-block">
+                <h3 class="cat-reclfn-card__heading">Match</h3>
+                <div class="cat-reclfn-card__match reclfn-card-match">
+                  <input class="reclfn-card-match__input" id="cat-reclfn-match-1" type="checkbox" name="match-1"/>
+                  <label class="reclfn-card-match__label" for="cat-reclfn-match-1">
+                    <svg class="svg-sprite svg-sprite_check ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                    </svg>
+                  </label>
+                </div>
+              </div>
+              <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_remaining-space">
+                <div class="cat-reclfn-card__row-block">
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__prod-name-block">
+                    <picture class="cat-reclfn-card__prod-img">
+                      <source type="image/webp" srcset="assets/img/categories-supermarket/item-1.webp 1x, assets/img/categories-supermarket/item-1@2x.webp 2x, assets/img/categories-supermarket/item-1@3x.webp 3x"/><img src="assets/img/categories-supermarket/item-1.jpg" srcset="assets/img/categories-supermarket/item-1@2x.jpg 2x, assets/img/categories-supermarket/item-1@3x.jpg 3x" alt="product image"/>
+                    </picture>
+                    <h3 class="cat-reclfn-card__heading">Name</h3>
+                    <p class="cat-reclfn-card__value">
+                      Apple iPhone X - 64GB 
+                      Space Gray (Unlocked) A1901
+                    </p>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__price-block">
+                    <h3 class="cat-reclfn-card__heading">PRICE</h3>
+                    <p class="cat-reclfn-card__value">$630.99</p>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__upc-block">
+                    <h3 class="cat-reclfn-card__heading">Upc</h3>
+                    <p class="cat-reclfn-card__value_number">0009733803227</p>
+                  </div>
+                </div>
+                <div class="cat-reclfn-card__row-block">
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__crumbs-block">
+                    <h3 class="cat-reclfn-card__heading">Supplier Category</h3>
+                    <ul class="cat-reclfn-card__cat-crumbs reclfn-card-crumbs">
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Electrónica</a></li>
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Accesorios para Celular</a></li>
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Fundas para Iphone</a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__supplier-block">
+                    <h3 class="cat-reclfn-card__heading">supplier</h3>
+                    <picture class="cat-reclfn-card__supllier-img">
+                      <source type="image/webp" srcset="assets/img/categories-supermarket/walmart.webp 1x, assets/img/categories-supermarket/walmart@2x.webp 2x, assets/img/categories-supermarket/walmart@3x.webp 3x"/><img src="assets/img/categories-supermarket/walmart.png" srcset="assets/img/categories-supermarket/walmart@2x.png 2x, assets/img/categories-supermarket/walmart@3x.png 3x" alt="walmart logo"/>
+                    </picture><a class="cat-reclfn-card__view-link" href="#">View on Site</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="cat-reclfn-card cat-reclfn-ctnt__card wow animate__animated animate__fadeInLeft">
+              <div class="cat-reclfn-card__col-block cat-reclfn-card__match-block">
+                <h3 class="cat-reclfn-card__heading">Match</h3>
+                <div class="cat-reclfn-card__match reclfn-card-match">
+                  <input class="reclfn-card-match__input" id="cat-reclfn-match-2" type="checkbox" name="match-2"/>
+                  <label class="reclfn-card-match__label" for="cat-reclfn-match-2">
+                    <svg class="svg-sprite svg-sprite_check ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                    </svg>
+                  </label>
+                </div>
+              </div>
+              <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_remaining-space">
+                <div class="cat-reclfn-card__row-block">
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__prod-name-block">
+                    <picture class="cat-reclfn-card__prod-img">
+                      <source type="image/webp" srcset="assets/img/categories-supermarket/item-1.webp 1x, assets/img/categories-supermarket/item-1@2x.webp 2x, assets/img/categories-supermarket/item-1@3x.webp 3x"/><img src="assets/img/categories-supermarket/item-1.jpg" srcset="assets/img/categories-supermarket/item-1@2x.jpg 2x, assets/img/categories-supermarket/item-1@3x.jpg 3x" alt="product image"/>
+                    </picture>
+                    <h3 class="cat-reclfn-card__heading">Name</h3>
+                    <p class="cat-reclfn-card__value">
+                      Apple iPhone X - 64GB 
+                      Space Gray (Unlocked) A1901
+                    </p>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__price-block">
+                    <h3 class="cat-reclfn-card__heading">PRICE</h3>
+                    <p class="cat-reclfn-card__value">$630.99</p>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__upc-block">
+                    <h3 class="cat-reclfn-card__heading">Upc</h3>
+                    <p class="cat-reclfn-card__value_number">0009733803227</p>
+                  </div>
+                </div>
+                <div class="cat-reclfn-card__row-block">
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__crumbs-block">
+                    <h3 class="cat-reclfn-card__heading">Supplier Category</h3>
+                    <ul class="cat-reclfn-card__cat-crumbs reclfn-card-crumbs">
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Electrónica</a></li>
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Accesorios para Celular</a></li>
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Fundas para Iphone</a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__supplier-block">
+                    <h3 class="cat-reclfn-card__heading">supplier</h3>
+                    <picture class="cat-reclfn-card__supllier-img">
+                      <source type="image/webp" srcset="assets/img/categories-supermarket/walmart.webp 1x, assets/img/categories-supermarket/walmart@2x.webp 2x, assets/img/categories-supermarket/walmart@3x.webp 3x"/><img src="assets/img/categories-supermarket/walmart.png" srcset="assets/img/categories-supermarket/walmart@2x.png 2x, assets/img/categories-supermarket/walmart@3x.png 3x" alt="walmart logo"/>
+                    </picture><a class="cat-reclfn-card__view-link" href="#">View on Site</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="cat-reclfn-card cat-reclfn-ctnt__card wow animate__animated animate__fadeInLeft">
+              <div class="cat-reclfn-card__col-block cat-reclfn-card__match-block">
+                <h3 class="cat-reclfn-card__heading">Match</h3>
+                <div class="cat-reclfn-card__match reclfn-card-match">
+                  <input class="reclfn-card-match__input" id="cat-reclfn-match-3" type="checkbox" name="match-3"/>
+                  <label class="reclfn-card-match__label" for="cat-reclfn-match-3">
+                    <svg class="svg-sprite svg-sprite_check ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                    </svg>
+                  </label>
+                </div>
+              </div>
+              <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_remaining-space">
+                <div class="cat-reclfn-card__row-block">
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__prod-name-block">
+                    <picture class="cat-reclfn-card__prod-img">
+                      <source type="image/webp" srcset="assets/img/categories-supermarket/item-1.webp 1x, assets/img/categories-supermarket/item-1@2x.webp 2x, assets/img/categories-supermarket/item-1@3x.webp 3x"/><img src="assets/img/categories-supermarket/item-1.jpg" srcset="assets/img/categories-supermarket/item-1@2x.jpg 2x, assets/img/categories-supermarket/item-1@3x.jpg 3x" alt="product image"/>
+                    </picture>
+                    <h3 class="cat-reclfn-card__heading">Name</h3>
+                    <p class="cat-reclfn-card__value">
+                      Apple iPhone X - 64GB 
+                      Space Gray (Unlocked) A1901
+                    </p>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__price-block">
+                    <h3 class="cat-reclfn-card__heading">PRICE</h3>
+                    <p class="cat-reclfn-card__value">$630.99</p>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__upc-block">
+                    <h3 class="cat-reclfn-card__heading">Upc</h3>
+                    <p class="cat-reclfn-card__value_number">0009733803227</p>
+                  </div>
+                </div>
+                <div class="cat-reclfn-card__row-block">
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__crumbs-block">
+                    <h3 class="cat-reclfn-card__heading">Supplier Category</h3>
+                    <ul class="cat-reclfn-card__cat-crumbs reclfn-card-crumbs">
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Electrónica</a></li>
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Accesorios para Celular</a></li>
+                      <li class="reclfn-card-crumbs__item"><a class="reclfn-card-crumbs__link" href="categories-product.html">Fundas para Iphone</a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-reclfn-card__col-block cat-reclfn-card__col-block_cell cat-reclfn-card__supplier-block">
+                    <h3 class="cat-reclfn-card__heading">supplier</h3>
+                    <picture class="cat-reclfn-card__supllier-img">
+                      <source type="image/webp" srcset="assets/img/categories-supermarket/walmart.webp 1x, assets/img/categories-supermarket/walmart@2x.webp 2x, assets/img/categories-supermarket/walmart@3x.webp 3x"/><img src="assets/img/categories-supermarket/walmart.png" srcset="assets/img/categories-supermarket/walmart@2x.png 2x, assets/img/categories-supermarket/walmart@3x.png 3x" alt="walmart logo"/>
+                    </picture><a class="cat-reclfn-card__view-link" href="#">View on Site</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <!--*** End Categories Reclassification Content ***-->
+        <!--*** Categories Reclassification Sidebar ***-->
+        <aside class="cat-reclfn__sidebar cat-reclfn-sb wow animate__animated animate__fadeInRight">
+          <h2 class="cat-reclfn-sb__main-heading">
+            <picture>
+              <source type="image/webp" srcset="assets/img/product-comparison/logo.webp 1x, assets/img/product-comparison/logo@2x.webp 2x, assets/img/product-comparison/logo@3x.webp 3x"/><img src="assets/img/product-comparison/logo.png" srcset="assets/img/product-comparison/logo@2x.png 2x, assets/img/product-comparison/logo@3x.png 3x" alt="logo"/>
+            </picture><span class="cat-reclfn-sb__main-heading_text">Category</span>
+          </h2>
+          <div class="cat-reclfn-sb__wrapper">
+            <ol class="cat-reclfn-sb__block cat-crumbs cat-reclfn-sb__crumbs">
+              <li class="cat-crumbs__item"><a class="cat-crumbs__link" href="#">Computo</a></li>
+              <li class="cat-crumbs__item"><a class="cat-crumbs__link" href="#">Apple</a></li>
+              <li class="cat-crumbs__item"><a class="cat-crumbs__link" href="#">Reclassify</a></li>
+            </ol>
+            <div class="cat-reclfn-sb__block cat-checked cat-reclfn-sb__checked">
+              <h3 class="cat-reclfn-sb__heading cat-checked__heading">Human Check</h3><span class="cat-checked__icon">
+                <svg class="svg-sprite svg-sprite_check ">
+                  <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                </svg></span>
+              <p class="cat-checked__by-text">Last Edited by <b class="cat-checked__by-text_bold">Adam Howell</b></p>
+            </div>
+            <div class="cat-reclfn-sb__block cat-prod-count cat-reclfn-sb__prod-count">
+              <h3 class="cat-reclfn-sb__heading cat-prod-count__heading">Products Count</h3><span class="cat-prod-count__value-text cat-prod-count__value-text_green">58</span>
+            </div>
+            <div class="cat-reclfn-sb__reclassify-cats reclas-cats-block">
+              <h3 class="cat-reclfn-sb__heading reclas-cats-block__heading">Categories assigned to reclassify</h3>
+              <div class="reclas-cats-block__wrapper">
+                <ul class="reclas-cats-block__list">
+                  <li class="reclas-cats-block__item reclas-cat-card">
+                    <p class="reclas-cat-card__name"><span class="reclas-cat-card__number">L3</span>Apple</p>
+                    <h4 class="reclas-cat-card__supplier-heading">supplier</h4><img class="reclas-cat-card__supplier-img" src="assets/img/suppliers/walmart.png" alt="walmart"/>
+                  </li>
+                  <li class="reclas-cats-block__item reclas-cat-card">
+                    <p class="reclas-cat-card__name"><span class="reclas-cat-card__number">L3</span>Cellphone</p>
+                    <h4 class="reclas-cat-card__supplier-heading">supplier</h4><img class="reclas-cat-card__supplier-img" src="assets/img/suppliers/walmart.png" alt="walmart"/>
+                  </li>
+                  <li class="reclas-cats-block__item reclas-cat-card">
+                    <p class="reclas-cat-card__name"><span class="reclas-cat-card__number">L3</span>Cellphone Acessories</p>
+                    <h4 class="reclas-cat-card__supplier-heading">supplier</h4><img class="reclas-cat-card__supplier-img" src="assets/img/suppliers/walmart.png" alt="walmart"/>
+                  </li>
+                  <li class="reclas-cats-block__item reclas-cat-card">
+                    <p class="reclas-cat-card__name"><span class="reclas-cat-card__number">L3</span>Apple</p>
+                    <h4 class="reclas-cat-card__supplier-heading">supplier</h4><img class="reclas-cat-card__supplier-img" src="assets/img/suppliers/walmart.png" alt="walmart"/>
+                  </li>
+                  <li class="reclas-cats-block__item reclas-cat-card">
+                    <p class="reclas-cat-card__name"><span class="reclas-cat-card__number">L3</span>Cellphone</p>
+                    <h4 class="reclas-cat-card__supplier-heading">supplier</h4><img class="reclas-cat-card__supplier-img" src="assets/img/suppliers/walmart.png" alt="walmart"/>
+                  </li>
+                  <li class="reclas-cats-block__item reclas-cat-card">
+                    <p class="reclas-cat-card__name"><span class="reclas-cat-card__number">L3</span>Cellphone Acessories</p>
+                    <h4 class="reclas-cat-card__supplier-heading">supplier</h4><img class="reclas-cat-card__supplier-img" src="assets/img/suppliers/walmart.png" alt="walmart"/>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!--*** End Categories Reclassification Sidebar ***-->
+      </article>
+      <!--*** End Categories Reclassification ***-->
+      <!--*** Recent Activity Popup ***-->
+      <div class="recent-act-popup">
+        <div class="recent-act-popup__blackout"></div>
+        <div class="recent-act-popup__wrapper">
+          <button class="recent-act-popup__toggle-btn"><span class="recent-act-popup__toggle-btn_text">Check</span></button>
+          <div class="recent-act-popup__content">
+            <div class="recent-act-popup__top-line">
+              <h2 class="recent-act-popup__heading">Recent Activity</h2><a class="recent-act-popup__clear-link" href="#">Clear (<span class="prod-comp-matches-in-db__clear-link_number">3</span>)</a>
+            </div>
+            <ul class="recent-act-popup__recent-act-card-list">
+              <li class="recent-act-popup__recent-act-card-item recent-act-card recent-act-card_reclasified"><a class="recent-act-card__edit-link" href="product-page.html">Reclasified<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html">
+                  <picture>
+                    <source type="image/webp" srcset="assets/img/product-comparison/recent-activity-item-1.webp 1x, assets/img/product-comparison/recent-activity-item-1@2x.webp 2x, assets/img/product-comparison/recent-activity-item-1@3x.webp 3x"/><img src="assets/img/product-comparison/recent-activity-item-1.jpg" srcset="assets/img/product-comparison/recent-activity-item-1@2x.jpg 2x, assets/img/product-comparison/recent-activity-item-1@3x.jpg 3x" alt="product image"/>
+                  </picture></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="recent-act-popup__recent-act-card-item recent-act-card recent-act-card_reclasified"><a class="recent-act-card__edit-link" href="product-page.html">Reclasified<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> 
+                  <picture>
+                    <source type="image/webp" srcset="assets/img/product-comparison/recent-activity-item-1.webp 1x, assets/img/product-comparison/recent-activity-item-1@2x.webp 2x, assets/img/product-comparison/recent-activity-item-1@3x.webp 3x"/><img src="assets/img/product-comparison/recent-activity-item-1.jpg" srcset="assets/img/product-comparison/recent-activity-item-1@2x.jpg 2x, assets/img/product-comparison/recent-activity-item-1@3x.jpg 3x" alt="product image"/>
+                  </picture></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="recent-act-popup__recent-act-card-item recent-act-card recent-act-card_reclasified"><a class="recent-act-card__edit-link" href="product-page.html">Reclasified<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> 
+                  <picture>
+                    <source type="image/webp" srcset="assets/img/product-comparison/recent-activity-item-1.webp 1x, assets/img/product-comparison/recent-activity-item-1@2x.webp 2x, assets/img/product-comparison/recent-activity-item-1@3x.webp 3x"/><img src="assets/img/product-comparison/recent-activity-item-1.jpg" srcset="assets/img/product-comparison/recent-activity-item-1@2x.jpg 2x, assets/img/product-comparison/recent-activity-item-1@3x.jpg 3x" alt="product image"/>
+                  </picture></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="recent-act-popup__recent-act-card-item recent-act-card recent-act-card_reclasified"><a class="recent-act-card__edit-link" href="product-page.html">Reclasified<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> 
+                  <picture>
+                    <source type="image/webp" srcset="assets/img/product-comparison/recent-activity-item-1.webp 1x, assets/img/product-comparison/recent-activity-item-1@2x.webp 2x, assets/img/product-comparison/recent-activity-item-1@3x.webp 3x"/><img src="assets/img/product-comparison/recent-activity-item-1.jpg" srcset="assets/img/product-comparison/recent-activity-item-1@2x.jpg 2x, assets/img/product-comparison/recent-activity-item-1@3x.jpg 3x" alt="product image"/>
+                  </picture></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+              <li class="recent-act-popup__recent-act-card-item recent-act-card recent-act-card_reclasified"><a class="recent-act-card__edit-link" href="product-page.html">Reclasified<span class="recent-act-card__edit-link_icon">
+                    <svg class="svg-sprite svg-sprite_pen ">
+                      <use xlink:href="assets/img/sprite/sprite.svg#pen"></use>
+                    </svg></span></a><a class="recent-act-card__img" href="product-page.html"> 
+                  <picture>
+                    <source type="image/webp" srcset="assets/img/product-comparison/recent-activity-item-1.webp 1x, assets/img/product-comparison/recent-activity-item-1@2x.webp 2x, assets/img/product-comparison/recent-activity-item-1@3x.webp 3x"/><img src="assets/img/product-comparison/recent-activity-item-1.jpg" srcset="assets/img/product-comparison/recent-activity-item-1@2x.jpg 2x, assets/img/product-comparison/recent-activity-item-1@3x.jpg 3x" alt="product image"/>
+                  </picture></a>
+                <div class="recent-act-card__text-block"> 
+                  <h2 class="recent-act-card__name"><a class="recent-act-card__name-link" href="product-page.html">Café molido Blasón Gourmet americano tostado y molido 400 g</a></h2>
+                  <div class="recent-act-card__upc">0009733803227</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--*** End Recent Activity Popup ***-->
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
