@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <title>rosterem</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <!-- Check Webp-->
+    <script>
+      !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+      
+    </script>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="wrapper">
+      <!--*** Header ***-->
+      <header class="header" id="header">
+        <!--header logo--><a class="header__logo logo" href="index.html">
+          <picture>
+            <source type="image/webp" srcset="assets/img/header_logo.webp 1x, assets/img/header_logo@2x.webp 2x, assets/img/header_logo@3x.webp 3x"/><img class="logo__img" src="assets/img/header_logo.png" srcset="assets/img/header_logo@2x.png 2x, assets/img/header_logo@3x.png 3x" alt="rosterem - логотип"/>
+          </picture></a>
+        <!--header mobile toggle menu button --><a class="header__mobToggleBtn toggleBtn" href="#toggle-menu"><span></span></a>
+        <div class="header__collapse">
+          <!--header navigation -->
+          <nav class="header__nav navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link" href="#houses">Дома</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#location">Расположение</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#stages">Этапы</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#equipment">Комплектации</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#reviews">Отзывы</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#contacts">Контакты</a></li>
+            </ul>
+          </nav>
+          <!--header phone--><a class="header__phoneLink" href="tel:88452703001">
+            <svg class="svg-sprite svg-sprite_phone header__phoneLinkIcon">
+              <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+            </svg>8 (8452) 703-001</a>
+          <!--header socials-->
+          <ul class="header__socials socials">
+            <li class="socials__item"><a class="socials__link" href="whatsapp://send?phone=+79626224343" title="WhatsApp">
+                <svg class="svg-sprite svg-sprite_whatsapp socials__icon socials__icon_whatsapp">
+                  <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="https://instagram.com/rosterem_rf/" title="Instagram" target="_blank">
+                <svg class="svg-sprite svg-sprite_instagram socials__icon socials__icon_instagram">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="https://youtube.com/channel/UC3xDcTn_nJ_tOr1veDxr2PQ" title="YouTube" target="_blank">
+                <svg class="svg-sprite svg-sprite_youtube socials__icon socials__icon_youtube">
+                  <use xlink:href="assets/img/sprite/sprite.svg#youtube"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link" href="https://facebook.com/rosterem.rf/" title="Facebook" target="_blank">
+                <svg class="svg-sprite svg-sprite_facebook socials__icon socials__icon_facebook">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </header>
+      <!--*** End Header ***-->
+      <!--*** Hero Block ***-->
+      <section class="hero parallax" id="hero">
+        <div class="parallax__overlay"></div>
+        <h1 class="hero__title">Комфортные дома <br/>на Зеленой горке</h1>
+        <p class="hero__subtitle">под финишную отделку от <br/>компании Ростерем.рф</p><a class="hero__btn" href="#houses">Цены и планировки</a>
+      </section>
+      <!--*** End Hero Block ***-->
+      <!--*** Description Block ***-->
+      <section class="description" id="description">
+        <div class="description__left">
+          <p>«Уникальное месторасположение земельных участков в городе Саратове, чистый воздух, родник и дикие белки на участках. Район 8-й Дачной.</p>
+        </div>
+        <div class="description__right"> 
+          <p>Продаются участки и комфортные дома на 8-ой Дачной по ул. Савельевской. Вы можете самостоятельно выбрать планировку. Предлагаем дома от компании ТМ Ростерем в коттеджном мини-поселке в самом центре п. Зеленая горка, в 10 минутах от Саратова. </p>
+          <p>Возможность выбрать планировку, количество, размеры, расположение комнат, окон, дверей, варианты отделки, цвета фасада, кровли, окон  и входной двери.</p>
+          <p>Начало строительства - май 2021, сдача - сентябрь 2021.</p>
+        </div>
+      </section>
+      <!--*** End Description Block ***-->
+      <!--*** Houses Block ***-->
+      <section class="houses" id="houses">
+        <div class="houses__overlay"></div>
+        <h2 class="houses__title">Варианты домов </h2>
+        <p class="houses__subtitle">Выбери планировку, комплектации и получи точный расчет стоимости</p>
+        <Ul class="houses__cards"> 
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557195_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557195_350.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557197_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557197_430.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557196_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557196_423.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557196_423.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557198_430.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557199_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557199_446.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557200_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557200_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+          <li class="houses__card houseCard">
+            <div class="houseCard__slidesList swiper-container">
+              <div class="swiper-wrapper gallery"><a class="houseCard__slide swiper-slide" href="/assets/img/17557201_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557201_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557193_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557193_463.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a><a class="houseCard__slide swiper-slide" href="/assets/img/17557194_1920.jpg"> <img class="swiper-lazy" src="" data-src="/assets/img/17557194_472.jpg" alt=""/>
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div></a></div>
+              <div class="sliderButton sliderButton_prev">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="sliderButton sliderButton_next">
+                <div class="sliderButton__arrow"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <h3 class="houseCard__name">
+               Проект №1 - 98м2</h3>
+            <div class="houseCard__textBlock">
+              <p>Одноэтажный жилой дом под финишную отделку</p>
+              <p>Общая площадь 98,9 м²</p>
+              <p>Высота здания 6,94 м</p>
+              <p>Уклон кровли 30°, 35°</p>
+              <p>Высота потолков  2,9 м</p>
+              <p>Материал стен: газобетон</p>
+              <p>Возможны варианты планировки</p><br/>
+              <p>Стоимость дома зависит от варианта отделки и материалов и не включает стоимость участка в Зелёной Горке</p>
+            </div>
+            <div class="houseCard__bottomBlock"> <a class="houseCard__btn popupOpenBtn" href="#" data-target="popup-project-variants">Комлектации и цены‍</a>
+              <p class="houseCard__price">
+                 3 700 000 ₽</p>
+            </div>
+          </li>
+        </Ul>
+      </section>
+      <!--*** End Houses Block ***-->
+      <!--*** Houses Location ***-->
+      <section class="housesLocation" id="location">
+        <div class="housesLocation__map yaMap lazy" data-center="51.585473820795826,45.90400985711612" data-zoom="15" data-data="&quot;title&quot;:&quot;Савельевская улица&quot;,&quot;body&quot;:&quot;Россия, Саратов, природный парк Кумысная поляна&quot;,&quot;coords&quot;:[51.583314943996044,45.908966579375644],&quot;color&quot;:&quot;#449b5a&quot;"></div>
+        <div class="housesLocation__content">
+          <div class="housesLocation__card houseCard houseCard_location">
+            <h3 class="houseCard__name">
+               Расположение домов:</h3>
+            <div class="houseCard__textBlock">
+              <p>Поворот с ул. Гвардейской на ул. Савельевскую, вверх по Савельевской 300 м.</p>
+            </div>
+            <div class="houseCard__textBlock houseCard__textBlock_borderTop">
+              <p>Рядом : образовательные учреждения, школа, прогимназия , фок, остановки общественного транспорта , сетевые магазины , по границе посёлка тропы с пешими маршрутами для прогулок по лесу. Чистейший воздух и родник.</p>
+              <p>Пожалуй лучшее месторасположение в районе.</p>
+            </div><a class="houseCard__btn houseCard__btn_black popupOpenBtn" href="#" data-target="popup-ask-question">Задать нам вопрос</a><a class="houseCard__btn houseCard__btn_green" href="whatsapp://send?phone=+79626224343">Написать в Whatsapp</a><a class="houseCard__btn houseCard__btn_yellow popupOpenBtn" href="#" data-target="popup-get-catalog">Получить каталог проектов</a>
+          </div>
+        </div>
+      </section>
+      <!--*** End Houses Location ***-->
+      <!--*** Stages ***-->
+      <section class="stages" id="stages">
+        <h2 class="stages__title">Этапы строительства домов</h2>
+        <p class="stages__subtitle">Все этапы регламентированы по датам</p>
+        <div class="stages__content"> 
+          <div class="stages__column">
+            <h3 class="stages__typeTitle">Подготовка</h3>
+            <ul class="stages__spoilerList">
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17608883_90.png" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Подготовка участков под фундамент</p>
+                  <p class="stagesSpoiler__date">апрель 2021</p>
+                </div>
+              </li>
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17608889_107.jpg" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Устройство фундамента</p>
+                  <p class="stagesSpoiler__date">апрель-май 2021</p>
+                </div>
+              </li>
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17562993_107.jpg" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Набор прочности бетона</p>
+                  <p class="stagesSpoiler__date">май 2021</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="stages__column">
+            <h3 class="stages__typeTitle">Строительство</h3>
+            <ul class="stages__spoilerList">
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17609156_143.jpg" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Возведение стен и перекрытий</p>
+                  <p class="stagesSpoiler__date">июнь 2021</p>
+                </div>
+              </li>
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17609123_109.jpg" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Устройство кровли/утепление фасада</p>
+                  <p class="stagesSpoiler__date">июнь 2021</p>
+                </div>
+              </li>
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17609092_107.jpg" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Установка окон/дверей</p>
+                  <p class="stagesSpoiler__date">август 2021</p>
+                </div>
+              </li>
+              <li class="stages__spoilerItem stagesSpoiler"><img class="stagesSpoiler__img lazy" src="" data-src="assets/img/17609082_115.jpg" alt="изображение этапа"/>
+                <div class="stagesSpoiler__text">
+                  <p class="stagesSpoiler__title">Внутренние работы</p>
+                  <p class="stagesSpoiler__date">август 2021</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--*** End Stages ***-->
+      <!--*** Equipment ***-->
+      <section class="equipment" id="equipment">
+        <h2 class="equipment__title">Комплектация домов</h2>
+        <p class="equipment__subtitle">Стандартная комплектация дома</p>
+        <div class="equipment__content"> 
+          <div class="equipment__column">
+            <h3 class="equipment__typeTitle">Фундамент/кровля</h3>
+            <ul class="equipment__list"> 
+              <li class="equipment__item">
+                 фундамент ленточный монолитный из бетона класса С16/20;</li>
+              <li class="equipment__item">
+                 пол 1-го этажа -утеплённый по грунту;</li>
+              <li class="equipment__item">
+                 пол 1-го этажа -утеплённый по грунту;</li>
+              <li class="equipment__item">
+                 кровля - стропильная система  с покрытием металлочерепицей.</li>
+            </ul>
+          </div>
+          <div class="equipment__column">
+            <h3 class="equipment__typeTitle">Стены</h3>
+            <ul class="equipment__list"> 
+              <li class="equipment__item">наружные стены - блоки легкоячеистые марки 600 В 2.5 на клею - 250 мм;</li>
+              <li class="equipment__item">утепление стен толщ. 100 мм, цветной оштукатуренный фасад;</li>
+              <li class="equipment__item">внутренние несущие стены: блоки легкоячеистые марки 600 В 2.5 на клею - 250 мм;</li>
+            </ul>
+          </div>
+          <div class="equipment__column">
+            <h3 class="equipment__typeTitle">Внутренняя отделка</h3>
+            <ul class="equipment__list"> 
+              <li class="equipment__item">штукатурка по маякам</li>
+              <li class="equipment__item">полы черновые под покрытие</li>
+              <li class="equipment__item">потолки черновые под натяжной потолок</li>
+              <li class="equipment__item">окна пластиковые</li>
+              <li class="equipment__item">дверь входная металлическая</li>
+              <li class="equipment__item">электрическая разводка</li>
+              <li class="equipment__item">сантех. трубы (вода, отопление)</li>
+              <li class="equipment__item">газовый котел</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--*** End Equipment ***-->
+      <!--*** Solutions ***-->
+      <section class="solutions" id="solutions">
+        <div class="solutions__overlay"></div>
+        <h2 class="solutions__title">Предоставляйте свои проектные решения и наш коллектив построит ваш дом по вашему проекту</h2>
+        <div class="solutions__content">
+          <div class="solutions__column">
+            <h3 class="solutions__typeTitle">Планировка/Фундамент/Кровля</h3>
+            <ul class="solutions__list">
+              <li class="solutions__item"><span class="solutions__name">варианты планировки</span>(зеркально, изменить несущие стены, перегородки), сдвинуть окна и двери,  возможна своя планировка</li>
+              <li class="solutions__item"><span class="solutions__name">варианты фундамента - </span>ростверк, свайно-винтовой, устройство цокольного этажа, в т.ч. с гаражом, предусмотреть погреб и т.д</li>
+              <li class="solutions__item"><span class="solutions__name">варианты перекрытий - </span>ж/б плиты, усиленные балки и т.д.</li>
+              <li class="solutions__item"><span class="solutions__name">устройство водяного теплого пола </span>по всему дому или в отдельных помещениях</li>
+              <li class="solutions__item"><span class="solutions__name">кровля: </span>дополнительное утепление, система вентиляции, мягкая черепица, выбор цвета и формы кровли, козырьки, навесы, террасы, стропильная система  с покрытием металлочерепицей.</li>
+            </ul>
+          </div>
+          <div class="solutions__column">
+            <h3 class="solutions__typeTitle">Стены</h3>
+            <ul class="solutions__list">
+              <li class="solutions__item"><span class="solutions__name">наружные стены - </span>возможна замена на теплоблок, кирпич, любой другой материал, усиление, увеличение толщины блока и т.д.</li>
+              <li class="solutions__item"><span class="solutions__name">утепление - </span>возможен выбор материала и толщины утеплений, создание комбинированных вариантов утепления, вентфасад и т.д.</li>
+              <li class="solutions__item"><span class="solutions__name">облицовка - </span>возможна облицовка кирпичом, дагестанским камнем, имитацией бруса, любым декоративным покрытием фасада</li>
+              <li class="solutions__item"><span class="solutions__name">внутренние стены: </span>замена на другие варианты - блоки, кирпич, гипсокартон, дополнительная звукоизоляция и т.д.</li>
+              <li class="solutions__item"><span class="solutions__name">цвет и фактура фасада - </span>возможен выбор цвета, фактуры штукатурки, выбор материала финишной отделки стен</li>
+            </ul>
+          </div>
+          <div class="solutions__column">
+            <h3 class="solutions__typeTitle">Внутренняя отделка</h3>
+            <ul class="solutions__list">
+              <li class="solutions__item"><span class="solutions__name">электрика: - </span>устройство дополнительных электроточек - бра, светильники, розетки под кухню и технику, дополнительное освещение кухни, лестниц, проемов, устройство защиты линий от скачков напряжение, дополнительная защита, электричество на участке, освещение фасада дома, установка системы защиты от протечек, сигнализации и видеонаблюдения под штукатурку без лишних проводов.</li>
+              <li class="solutions__item"><span class="solutions__name">водоснабжение - </span>размещение точек для воды и канализации в удобном месте, теплые полы в детской, ванной, коридорах</li>
+              <li class="solutions__item"><span class="solutions__name">отопление - </span>замена отопления на систему теплый водяной пол, дополнительные контуры - на полотенцесушитель, отопление ванной, выбор марки и мощности котла ит.д.</li>
+              <li class="solutions__item"><span class="solutions__name">окна и двери - </span>выбор качества и цвета окон и входной двери, устройство откосов</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--*** End Solutions ***-->
+      <!--*** Consultation ***-->
+      <section class="consultation" id="consultation">
+        <div class="consultation__textBlock">
+          <h2 class="consultation__title">Получите консультацию</h2>
+          <div class="consultation__subtitle">
+            <p>Заинтересовались проектом? Есть вопросы? Хотели бы произвести точный расчет с вашими предпочтениями? Хотите стройку на своем участке?</p>
+            <p>Спрашивайте! Ответим на все Ваши вопросы!</p>
+          </div>
+        </div>
+        <div class="consultation__btnsBlock"><a class="consultation__btn consultation__btn_yellow popupOpenBtn" href="#" data-target="popup-get-catalog">Получить каталог проектов</a><a class="consultation__btn consultation__btn_black popupOpenBtn" href="#" data-target="popup-ask-question">Задать вопрос</a><a class="consultation__btn consultation__btn_green" href="whatsapp://send?phone=+79626224343">Спросить в Whatsapp</a></div>
+      </section>
+      <!--*** End Consultation ***-->
+      <!--*** Subscribe ***-->
+      <section class="subscribe" id="subscribe">
+        <h2 class="subscribe__title">Следить за стройкой на e-mail:</h2><a class="subscribe__btn popupOpenBtn" href="#" data-target="popup-subscribe">Подписаться</a>
+      </section>
+      <!--*** End Subscribe ***-->
+      <!--*** Reviews ***-->
+      <section class="reviews" id="reviews">
+        <h2 class="reviews__title">Отзывы о компании Ростерем</h2>
+        <ul class="reviews__list">
+          <li class="reviews__item review">
+            <div class="review__text">
+              <p>В 2019 году решился на стройку дома. Долго выбирал из чего строить, какие материалы. Но оказалось, что найти грамотного строителя не так то просто. Некоторые просто цены ломят. Другие, что подешевле - не могут точно расчитать смету. Ну начнем а там будет видно, плюс минус. В общем горе-строители, послал их куда подальше. В Ростерем обратился не сразу, но с первого раза было понятно, что строить умеют - грамотно все объяснили. </p>
+              <p>Договорились о детализированной смете по моему проекту. Рассчитали все что мне было нужно. Конечно сравнил потом цены с другими - вполне нормально. Плюс действительно правильно оформленная гарантия. </p>
+              <p>Даже приезжал с юристом на подписание договора, ну а как та дала добро- уже был спокоен. Построили коробку из блоков за 2 месяца, сильно не спешили по моей просьбе. </p>
+              <p>Кровля и подготовка под отделку - еще за месяц не торопясь и качественно. В смету уложились, чему я был удивлен, никаких доплат. Никаких там стонов дай дядя еще денег. </p>
+              <p>Мелкие мои просьбы постарались учесть. Сейчас зиму пережил - очень доволен. Тем кому надо хорошее качество при нормальных деньгах- рекомендую. </p>
+              <p>Тем кто хочет подешевле - становитесь сами прорабами и командуйте гостями из средней азии. Я не собираюсь потом от трещин в домах избавляться. </p>
+              <p>В этом году жду тепла и там же баню закажу, уже о скидке договорился. Итог - рекомендую.</p>
+            </div>
+            <div class="review__author"><img class="review__img lazy" src="" data-src="assets/img/17621335_60.jpg" alt="автор отзыва"/>
+              <div class="review__authorInfo">
+                <p class="review__name">Максим Левченко</p><a class="review__link" href="https://2gis.ru/saratov/search/ростерем/firm/70000001019908476/46.151779%2C51.6023/tab/reviews?m=46.119728%2C51.475864%2F10.83" rel="noopener noreferrer" target="_blank">
+                   ссылка на отзыв</a>
+              </div>
+            </div>
+          </li>
+          <li class="reviews__item review review_dark">
+            <div class="review__text">
+              <p>Перебрал наверное 20 фирм и столько же мастеров с авито прежде чем заказал дом из блоков, облицовка кирпич. В отличие от других - здесь понравился подход - сначала все обсудим, утвердим, посчитаем, затем будем строить. </p>
+              <p>Был опыт уже строительства у других - обещают за 100, затем еще 20, еще 80, еще 66 и т.д. В итоге отдашь 300 вместо заявленных 100. Из частников тоже адекватных не нашел. Это я не делаю, это наймите других, здесь скорей всего не надо. Удрученный прежним опытом - не за ценой гнался, а за профессионалами, в итоге меньше денег и нервов отдашь. </p>
+              <p>Не зря искал. Ростерему - однозначно плюс. </p>
+              <p>Фундамент ленточный - сделали по проекту, чтобы не переплачивать за "на всякий случай". Каменщики и кровельщики адекватные. </p>
+              <p>Стройматериалы частично сам покупал, частично они - в некоторых позициях у них получилось дешевле. </p>
+              <p>Понравилось, что ставят видеокамеру - следят за порядком на участке, ну и чтобы материалы не "ушли" никуда. </p>
+              <p>Дисциплина - в норме, без пьяных шатаний. Опять же камера все видит. Мой совет - стоит того, чтобы обратится.</p>
+            </div>
+            <div class="review__author"><img class="review__img lazy" src="" data-src="assets/img/17512997_60.jpg" alt="автор отзыва"/>
+              <div class="review__authorInfo">
+                <p class="review__name">Иван</p><a class="review__link" href="https://yandex.ru/maps/?ll=46.174519%2C51.599003&amp;mode=search&amp;oid=210780864456&amp;ol=biz&amp;sctx=ZAAAAAgBEAAaKAoSCcTsZdtpE0dAEVlrKLUXzUlAEhIJc%2BgX6TSDsj8RIq629DL%2Fpj8iBQABAgQFKAowADieybyb2dPlo39A%2FKIHSAFVzczMPlgAagJydXAAnQHNzEw9oAEAqAEAvQFNqFhewgEGyP%2BSnJEG&amp;sll=46.174519%2C51.599003&amp;sspn=0.090294%2C0.033676&amp;text=ростерем%20саратов&amp;z=14" draggable="false" rel="noopener noreferrer" target="_blank">
+                   ссылка на отзыв</a>
+              </div>
+            </div>
+          </li>
+          <li class="reviews__item review review_dark">
+            <div class="review__text">
+              <p>Заказывали баню 4х4 из бревна. Изначально хотели каркасную, но пообщались, и взяли настоящую. </p>
+              <p>Привезли, собрали быстро, претензий нет. Бревна действительно, как и обещали обработаны отлично. Лес качественный, северный, без обмана. Сравнивали с тем, что есть у нас в регионе - отличие есть. Жду усадки и буду готовится к отделке.</p>
+            </div>
+            <div class="review__author"><img class="review__img lazy" src="" data-src="assets/img/17621445_60.jpg" alt="автор отзыва"/>
+              <div class="review__authorInfo">
+                <p class="review__name">Елена Шиповалова</p><a class="review__link" href="https://2gis.ru/saratov/search/ростерем/firm/70000001019908476/46.151779%2C51.6023/tab/reviews?m=46.119728%2C51.475864%2F10.83" rel="noopener noreferrer" target="_blank">
+                   ссылка на отзыв</a>
+              </div>
+            </div>
+          </li>
+          <li class="reviews__item review">
+            <div class="review__text">
+              <p>Могу рекомендовать, заказали типовой проект из клееного бруса. </p>
+              <p>Не пожалели, что выбрали такой материал, качество отличное, стоимость квадратного метра устроила полностью. И она не изменилась по окончанию строительства, так что не переплатили ни копейки лишней, обратите внимание, все по договору строго. Сроки не нарушили, плюс/минус пара недель.</p>
+            </div>
+            <div class="review__author"><img class="review__img lazy" src="" data-src="assets/img/17621501_91.jpg" alt="автор отзыва"/>
+              <div class="review__authorInfo">
+                <p class="review__name">Ирина тун Ков</p><a class="review__link" href="https://2gis.ru/saratov/search/ростерем/firm/70000001019908476/46.151779%2C51.6023/tab/reviews?m=46.119728%2C51.475864%2F10.83" rel="noopener noreferrer" target="_blank">
+                   ссылка на отзыв</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!--*** End Reviews ***-->
+      <!--*** Useful Video ***-->
+      <section class="usefulVideo" id="useful-video">
+        <h2 class="usefulVideo__title">Полезное видео с нашего канала</h2>
+        <p class="usefulVideo__subtitle">Расскажем о том как надо и как не надо строить</p>
+        <ul class="usefulVideo__list">
+          <li class="usefulVideo__item">
+            <div class="usefulVideo__wrap">
+              <iframe class="usefulVideo__iframe lazy" data-src="https://www.youtube.com/embed/4TJy_o92xtg?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;playsinline=1&amp;color=white&amp;enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" src=""></iframe>
+            </div>
+          </li>
+          <li class="usefulVideo__item">
+            <div class="usefulVideo__wrap">
+              <iframe class="usefulVideo__iframe lazy" data-src="https://www.youtube.com/embed/EXvR3VqjI7Q?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;playsinline=1&amp;color=white&amp;enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" src=""></iframe>
+            </div>
+          </li>
+          <li class="usefulVideo__item">
+            <div class="usefulVideo__wrap">
+              <iframe class="usefulVideo__iframe lazy" data-src="https://www.youtube.com/embed/Jbb3pfeLR0M?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;playsinline=1&amp;color=white&amp;enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" src=""></iframe>
+            </div>
+          </li>
+          <li class="usefulVideo__item">
+            <div class="usefulVideo__wrap">
+              <iframe class="usefulVideo__iframe lazy" data-src="https://www.youtube.com/embed/8z3Q21JYNb4?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;playsinline=1&amp;color=white&amp;enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" src=""></iframe>
+            </div>
+          </li>
+          <li class="usefulVideo__item">
+            <div class="usefulVideo__wrap">
+              <iframe class="usefulVideo__iframe lazy" data-src="https://www.youtube.com/embed/QRbKQEcvbSw?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;playsinline=1&amp;color=white&amp;enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" src=""></iframe>
+            </div>
+          </li>
+          <li class="usefulVideo__item">
+            <div class="usefulVideo__wrap">
+              <iframe class="usefulVideo__iframe lazy" data-src="https://www.youtube.com/embed/Rsf1CupNQDs?vq=hd1080&amp;rel=0&amp;modestbranding=1&amp;showinfo=0&amp;autohide=1&amp;playsinline=1&amp;color=white&amp;enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" src=""></iframe>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!--*** End Useful Video ***-->
+      <!--*** Partners ***-->
+      <section class="partners" id="partners">
+        <h2 class="partners__title">Наши партнеры по стройматериалам</h2>
+        <ul class="partners__list"> 
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622249_160.png"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/11201740_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622208_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622214_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622217_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622251_160.png"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/11343080_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622225_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622226_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622228_160.png"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622234_160.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622271_160.png"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622287_160.png"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622308_127.jpg"/></li>
+          <li class="partners__item"> <img class="lazy" src="" alt="лого партнера" data-src="assets/img/17622320_160.jpg"/></li>
+        </ul>
+      </section>
+      <!--*** End Partners ***-->
+      <!--*** Contacts ***-->
+      <section class="contacts" id="contacts">
+        <div class="contacts__content">
+          <h2 class="contacts__title">
+             Контакты</h2>
+          <div class="contacts__text"> 
+            <p><strong class="contacts__name">Компания ТМ Ростерем:</strong></p>
+            <p>Ждем вас в гости в наш офис. </p>
+            <p>Мы работаем с 9 утра до 18 вечера по будням.</p>
+            <p>Не удобно в это время? Звоните!</p>
+          </div>
+          <div class="contacts__item"><strong class="contacts__name">Адрес: </strong>Саратов, посёлок Новогусельский, Курдюмская улица, 29</div>
+          <div class="contacts__item"><strong class="contacts__name">Телефон: </strong><a href="tel:+78452703001">+7 (8452) 703-001</a></div>
+          <div class="contacts__item"><strong class="contacts__name">Email: </strong><a href="mailto:info@rosterem.ru">info@rosterem.ru</a></div>
+          <div class="contacts__btnsBlock"><a class="contacts__btn contacts__btn_black popupOpenBtn" href="#" data-target="popup-ask-question">Задать вопрос</a><a class="contacts__btn contacts__btn_green" href="whatsapp://send?phone=+79626224343">Задать вопрос в Whatsapp</a><a class="contacts__btn contacts__btn_yellow popupOpenBtn" href="#" data-target="popup-get-catalog">Получить каталог проектов</a></div>
+        </div>
+        <div class="contacts__map yaMap lazy" data-center="51.60215368407319,46.15171099999998" data-zoom="15" data-data="&quot;title&quot;:&quot;Компания ТМ Ростерем&quot;,&quot;body&quot;:&quot;Россия, Саратовская область, Саратовский район, посёлок Новогусельский, Курдюмская улица, 27&quot;,&quot;coords&quot;:[51.602299,46.151711],&quot;color&quot;:&quot;#000000&quot;"></div>
+      </section>
+      <!--*** End Contacts ***-->
+      <!--*** Footer ***-->
+      <footer class="footer" id="footer">
+        <div class="footer__column">
+          <!--footer logo--><a class="footer__logo logo" href="index.html">
+            <picture>
+              <source type="image/webp" srcset="assets/img/footer_logo.webp 1x, assets/img/footer_logo@2x.webp 2x, assets/img/footer_logo@3x.webp 3x"/><img class="logo__img" src="assets/img/footer_logo.png" srcset="assets/img/footer_logo@2x.png 2x, assets/img/footer_logo@3x.png 3x" alt="rosterem - логотип"/>
+            </picture></a>
+        </div>
+        <div class="footer__column">
+          <div class="footer__contactBlock"> 
+            <svg class="svg-sprite svg-sprite_phone-alt footer__contactIcon">
+              <use xlink:href="assets/img/sprite/sprite.svg#phone-alt"></use>
+            </svg>
+            <div class="footer__contactTextBlock">
+              <p class="footer__contactTitle"><a href="tel:+78452703001">
+                   +7 (8452) 703-001</a></p>
+              <p class="footer__contactSubtitle">С 9 утра до 8 вечера</p>
+            </div>
+          </div>
+          <div class="footer__contactBlock"> 
+            <svg class="svg-sprite svg-sprite_check-in-marker footer__contactIcon">
+              <use xlink:href="assets/img/sprite/sprite.svg#check-in-marker"></use>
+            </svg>
+            <div class="footer__contactTextBlock">
+              <p class="footer__contactTitle">Адрес</p>
+              <p class="footer__contactSubtitle">Саратов, посёлок Новогусельский, Курдюмская улица, 29</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer__column">
+          <!--footer socials-->
+          <ul class="footer__socials socials socials_footer">
+            <li class="socials__item"><a class="socials__link" href="whatsapp://send?phone=+79626224343" title="WhatsApp">
+                <svg class="svg-sprite svg-sprite_whatsapp socials__icon socials__icon_whatsapp">
+                  <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+                </svg>WhatsApp</a></li>
+            <li class="socials__item"><a class="socials__link" href="https://instagram.com/rosterem_rf/" title="Instagram" target="_blank">
+                <svg class="svg-sprite svg-sprite_instagram socials__icon socials__icon_instagram">
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg>Instagram</a></li>
+            <li class="socials__item"><a class="socials__link" href="https://facebook.com/rosterem.rf/" title="Facebook" target="_blank">
+                <svg class="svg-sprite svg-sprite_facebook-alt socials__icon socials__icon_facebook">
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook-alt"></use>
+                </svg>Facebook</a></li>
+          </ul><a class="footer__btn popupOpenBtn" href="#" data-target="popup-get-catalog">Получить каталог проектов</a>
+        </div>
+      </footer>
+      <!--*** End Footer ***-->
+      <div class="popup" id="popup">
+        <div class="popup__overlay"> </div>
+        <div class="popup__wrapper"><a class="popup__closeBtn" href="#"> </a>
+          <div class="popup__container popup__container_withImage" id="popup-get-catalog"><img class="popup__img lazy" src="" alt="" data-src="assets/img/17645968_678.jpg"/>
+            <div class="popup__contentBlock">
+              <h3 class="popup__title">
+                 Получить каталог проектов и материалы для выбора дома</h3>
+              <form class="popup__form popupForm" action="#" method="post">
+                <p class="popupForm__field">
+                  <label class="popupForm__label" for="get-catalog-name">Имя *</label>
+                  <input class="popupForm__input" id="get-catalog-name" type="text" name="name" required="required"/>
+                </p>
+                <p class="popupForm__field">
+                  <label class="popupForm__label" for="get-catalog-phone">Телефон *</label>
+                  <input class="popupForm__input phoneMask" id="get-catalog-phone" type="tel" name="phone" required="required"/>
+                </p>
+                <p class="popupForm__field">
+                  <label class="popupForm__label" for="get-catalog-mail">Email *</label>
+                  <input class="popupForm__input" id="get-catalog-mail" type="email" name="mail" required="required"/>
+                </p>
+                <button class="popupForm__submitBtn" type="submit">Получить</button>
+              </form>
+              <p class="popup__policyData">Нажимая на кнопку, вы даете согласие на обработку <a class="popup__policyMessage" href="%file%" target="_blank">
+                   персональных данных</a></p>
+            </div>
+          </div>
+          <div class="popup__container" id="popup-project-variants">
+            <h3 class="popup__title">
+               Получить все варианты проекта</h3>
+            <form class="popup__form popupForm" action="#" method="post">
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="project-variants-name">Имя *</label>
+                <input class="popupForm__input" id="project-variants-name" type="text" name="name" required="required"/>
+              </p>
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="project-variants-phone">Телефон *</label>
+                <input class="popupForm__input phoneMask" id="project-variants-phone" type="tel" name="phone" required="required"/>
+              </p>
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="project-variants-mail">Email *</label>
+                <input class="popupForm__input" id="project-variants-mail" type="email" name="mail" required="required"/>
+              </p>
+              <button class="popupForm__submitBtn" type="submit">Отправить</button>
+            </form>
+            <p class="popup__policyData">Нажимая на кнопку, вы даете согласие на обработку <a class="popup__policyMessage" href="%file%" target="_blank">
+                 персональных данных</a></p>
+            <p class="popup__noSpam">Обещаем - никакого спама!</p>
+          </div>
+          <div class="popup__container" id="popup-ask-question">
+            <h3 class="popup__title">
+               Задать вопрос</h3>
+            <form class="popup__form popupForm" action="#" method="post">
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="ask-question-name">Имя</label>
+                <input class="popupForm__input" id="ask-question-name" type="text" name="name"/>
+              </p>
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="ask-question-phone">Телефон *</label>
+                <input class="popupForm__input phoneMask" id="ask-question-phone" type="tel" name="phone" required="required"/>
+              </p>
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="ask-question-mail">Email *</label>
+                <input class="popupForm__input" id="ask-question-mail" type="email" name="mail" required="required"/>
+              </p>
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="ask-question-question">Вопрос *</label>
+                <textarea class="popupForm__input popupForm__input_textarea" id="ask-question-question" name="question" required="required"> </textarea>
+              </p>
+              <button class="popupForm__submitBtn" type="submit">Отправить</button>
+            </form>
+            <p class="popup__policyData">Нажимая на кнопку, вы даете согласие на обработку <a class="popup__policyMessage" href="%file%" target="_blank">
+                 персональных данных</a></p>
+          </div>
+          <div class="popup__container" id="popup-subscribe"></div>
+        </div>
+      </div>
+    </main>
+    <script defer="defer" src="assets/js/main.js"></script>
+  </body>
+</html>
