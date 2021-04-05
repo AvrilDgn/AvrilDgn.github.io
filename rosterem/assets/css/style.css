@@ -2389,6 +2389,10 @@ button::-moz-focus-inner {
           animation-fill-mode: forwards;
 }
 
+.logo__img {
+  width: 100%;
+}
+
 .navigation__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4609,6 +4613,8 @@ button::-moz-focus-inner {
   .footer__socials {
     -ms-flex-item-align: center;
         align-self: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .footer__btn {
@@ -4622,6 +4628,8 @@ button::-moz-focus-inner {
   }
 
   .hero {
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 20px;
     background-size: auto;
     background-position-x: center;
@@ -4944,5 +4952,20 @@ button::-moz-focus-inner {
   .wrapper {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .contacts__btnsBlock {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .contacts__btn_green {
+    margin-left: 0;
   }
 }
