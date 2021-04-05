@@ -839,7 +839,7 @@
             <div class="popup__contentBlock">
               <h3 class="popup__title">
                  Получить каталог проектов и материалы для выбора дома</h3>
-              <form class="popup__form popupForm" action="#" method="post">
+              <form class="popup__form popupForm" id="form-get-catalog" action="#" method="post">
                 <p class="popupForm__field">
                   <label class="popupForm__label" for="get-catalog-name">Имя *</label>
                   <input class="popupForm__input" id="get-catalog-name" type="text" name="name" required="required"/>
@@ -861,7 +861,7 @@
           <div class="popup__container" id="popup-project-variants">
             <h3 class="popup__title">
                Получить все варианты проекта</h3>
-            <form class="popup__form popupForm" action="#" method="post">
+            <form class="popup__form popupForm" id="form-project-variants" action="#" method="post">
               <p class="popupForm__field">
                 <label class="popupForm__label" for="project-variants-name">Имя *</label>
                 <input class="popupForm__input" id="project-variants-name" type="text" name="name" required="required"/>
@@ -883,7 +883,7 @@
           <div class="popup__container" id="popup-ask-question">
             <h3 class="popup__title">
                Задать вопрос</h3>
-            <form class="popup__form popupForm" action="#" method="post">
+            <form class="popup__form popupForm" id="form-ask-question" action="#" method="post">
               <p class="popupForm__field">
                 <label class="popupForm__label" for="ask-question-name">Имя</label>
                 <input class="popupForm__input" id="ask-question-name" type="text" name="name"/>
@@ -905,7 +905,19 @@
             <p class="popup__policyData">Нажимая на кнопку, вы даете согласие на обработку <a class="popup__policyMessage" href="%file%" target="_blank">
                  персональных данных</a></p>
           </div>
-          <div class="popup__container" id="popup-subscribe"></div>
+          <div class="popup__container" id="popup-subscribe">
+            <h3 class="popup__title">
+               Подпишитесь на e-mail рассылку о ходе строительства  коттеджного поселка в Усть-Курдюме</h3>
+            <form class="popup__form popupForm" id="form-subscribe" action="#" method="post">
+              <p class="popupForm__field">
+                <label class="popupForm__label" for="subscribe-mail">Email *</label>
+                <input class="popupForm__input" id="subscribe-mail" type="email" name="mail" placeholder="username@gmail.com" required="required"/>
+              </p>
+              <button class="popupForm__submitBtn" type="submit">Подписаться</button>
+            </form>
+            <p class="popup__policyData">Нажимая на кнопку, вы даете согласие на обработку <a class="popup__policyMessage" href="%file%" target="_blank">
+                 персональных данных</a></p>
+          </div>
         </div>
       </div>
     </main>
