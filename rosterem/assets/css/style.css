@@ -4442,7 +4442,7 @@ button::-moz-focus-inner {
   .solutions {
     padding-left: 30px;
     padding-right: 30px;
-    width: calc(100% + 50px);
+    width: calc(100% + 30px);
   }
 
   .solutions__column {
@@ -4846,6 +4846,8 @@ button::-moz-focus-inner {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .houses__title {
