@@ -3137,6 +3137,9 @@ button::-moz-focus-inner {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .houses__card {
@@ -3641,6 +3644,8 @@ button::-moz-focus-inner {
   margin-right: 15px;
   width: calc(33.33333% - 30px);
   padding: 30px;
+  padding-right: 40px;
+  padding-bottom: 50px;
   margin-left: 25px;
   margin-right: 25px;
   width: calc(33.33333% - 50px);
@@ -3661,7 +3666,7 @@ button::-moz-focus-inner {
 }
 
 .solutions__list {
-  padding: 10px 0;
+  padding: 0;
   list-style-type: disc;
   padding-left: 28px;
 }
@@ -3761,7 +3766,7 @@ button::-moz-focus-inner {
 .consultation__btn {
   margin: 10px;
   width: 100%;
-  height: 40px;
+  height: 45px;
   font-size: 14px;
   font-weight: 500;
   display: -webkit-inline-box;
