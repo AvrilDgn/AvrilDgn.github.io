@@ -3043,10 +3043,17 @@ button::-moz-focus-inner {
   overflow: hidden;
 }
 
-.hero .parlx-children {
+.hero .parallax__background {
   position: absolute;
+  background-image: url(../img/hero_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 10%;
+  background-position-x: center;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 150%;
 }
 
 .hero .container {
@@ -5262,5 +5269,11 @@ button::-moz-focus-inner {
 
   .contacts__btn_green {
     margin-left: 0;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .hero .parallax__background {
+    background-size: auto 120vh;
   }
 }
