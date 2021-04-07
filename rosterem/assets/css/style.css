@@ -4644,6 +4644,10 @@ button::-moz-focus-inner {
 }
 
 @media screen and (max-width: 991px) {
+  .container {
+    max-width: 450px;
+  }
+
   .header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -5248,12 +5252,6 @@ button::-moz-focus-inner {
   .wrapper {
     padding-left: 15px;
     padding-right: 15px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .container {
-    max-width: 450px;
   }
 }
 
