@@ -413,12 +413,12 @@ button::-moz-focus-inner {
 }
 
 .cardField__input_date {
-  width: 60px;
+  width: 66px;
   padding-left: 5px;
 }
 
 .cardField__input_cvv {
-  width: 42px;
+  width: 46px;
   padding-left: 5px;
 }
 
