@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>billing</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="title">Start you 14-day free trial.</h1>
+      <p class="subtitle">Start monitornig your domains today. Cancel anytime, for any reason.</p>
+      <div class="content">
+        <section class="formContainer">
+          <form class="paymentForm" id="payment-form" action="#" method="post">
+            <div class="paymentForm__pricingPlans pricingPlans">
+              <input class="pricingPlans__input" id="price-monthly" type="radio" name="pricing-plan" value="monthly" checked="checked"/>
+              <label class="pricingPlans__label" for="price-monthly">
+                <p class="pricingPlans__value">Pay Monthly</p>
+                <div class="pricingPlans__priceBlock">
+                  <div class="pricingPlans__price">$49</div>
+                  <div class="pricingPlans__period pricingPlans__period_black">per month</div>
+                </div>
+              </label>
+              <input class="pricingPlans__input" id="price-annually" type="radio" name="pricing-plan" value="annually"/>
+              <label class="pricingPlans__label" for="price-annually">
+                <p class="pricingPlans__value">Pay Annually</p>
+                <div class="pricingPlans__info">
+                  <div class="pricingPlans__priceBlock pricingPlans__priceBlock_strikethrough">
+                    <div class="pricingPlans__price">£588</div>
+                    <div class="pricingPlans__period">/yr</div>
+                  </div>
+                  <div class="pricingPlans__priceBlock">
+                    <div class="pricingPlans__price">$399</div>
+                    <div class="pricingPlans__period">/yr</div>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <h2 class="paymentForm__title">Payment details</h2>
+            <div class="paymentForm__cardField cardField">
+              <label class="cardField__label" for="card-number">Credit card information</label>
+              <div class="cardField__inputsBlock">
+                <input class="cardField__input cardField__input_number" id="card-number" type="text" name="card-number" placeholder="number" required="required" minlength="19"/>
+                <input class="cardField__input cardField__input_date" id="card-date" type="text" name="card-date" placeholder="mm/yy" required="required" minlength="5"/>
+                <input class="cardField__input cardField__input_cvv" id="card-cvv" type="number" name="card-cvv" placeholder="cvv" required="required" minlength="3"/>
+              </div>
+            </div>
+            <div class="paymentForm__field">
+              <input class="paymentForm__input" id="full-name" type="text" name="name" required="required"/>
+              <label class="paymentForm__label" for="full-name">Full Name</label>
+            </div>
+            <div class="paymentForm__group">
+              <div class="paymentForm__field">
+                <input class="paymentForm__input" id="address" type="text" name="address" required="required"/>
+                <label class="paymentForm__label" for="address">Address</label>
+              </div>
+              <div class="paymentForm__field">
+                <input class="paymentForm__input" id="city" type="text" name="city" required="required"/>
+                <label class="paymentForm__label" for="city">City</label>
+              </div>
+            </div>
+            <div class="paymentForm__group">
+              <div class="paymentForm__field">
+                <select class="paymentForm__input paymentForm__input_select" id="area-type" name="area-type">
+                  <option value="state">State</option>
+                  <option value="province" selected="selected">Province</option>
+                </select>
+                <label class="paymentForm__label" for="area-type">State/Province</label>
+              </div>
+              <div class="paymentForm__field">
+                <input class="paymentForm__input" id="postal-code" type="text" name="postal-code" required="required"/>
+                <label class="paymentForm__label" for="postal-code">ZIP/Postal</label>
+              </div>
+            </div>
+            <div class="paymentForm__field">
+              <input class="paymentForm__input" id="country" type="text" name="country" required="required"/>
+              <label class="paymentForm__label" for="country">Country</label>
+            </div>
+            <div class="paymentForm__rememberCard rememberCard">
+              <input class="rememberCard__input" id="remember-card" type="checkbox" name="remember-card"/>
+              <label class="rememberCard__label" for="remember-card"><span class="rememberCard__checkbox"></span>Remember card information</label>
+            </div>
+          </form>
+        </section>
+        <section class="infoContainer">
+          <div class="resultBlock">
+            <div class="resultBlock__titleBlock resultBlock__titleBlock_main">
+              <div class="resultBlock__textInfo">
+                <p class="resultBlock__title">Domboard <b>PRO</b></p>
+                <p class="resultBlock__billed">Billed Monthly</p>
+              </div>
+              <p class="resultBlock__price resultBlock__price_changeable">$49</p>
+            </div>
+            <div class="resultBlock__titleBlock">
+              <p class="resultBlock__billed">Billed today:</p>
+              <p class="resultBlock__price">$0</p>
+            </div>
+            <div class="resultBlock__titleBlock">
+              <p class="resultBlock__billed">Billed on 14th of March:</p>
+              <p class="resultBlock__price resultBlock__price_changeable">$49</p>
+            </div>
+            <button class="resultBlock__button" type="submit" form="payment-form">Start free 14-day trial</button>
+          </div>
+          <ul class="advantages">
+            <li class="advantages__item">Track up to 500 domains</li>
+            <li class="advantages__item">Track up to 100 trademarks</li>
+            <li class="advantages__item">Receive email notifcations</li>
+            <li class="advantages__item">Receive regular portfolio snapshots</li>
+            <li class="advantages__item">Track DNS changes for your domains</li>
+          </ul>
+          <div class="secureBlock"><img src="assets/img/stabs/secure-block.png" alt="secure block"/></div>
+        </section>
+      </div>
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
