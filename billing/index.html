@@ -41,40 +41,37 @@
             <div class="paymentForm__cardField cardField">
               <label class="cardField__label" for="card-number">Credit card information</label>
               <div class="cardField__inputsBlock">
-                <input class="cardField__input cardField__input_number" id="card-number" type="text" name="card-number" placeholder="number" required="required" minlength="19"/>
-                <input class="cardField__input cardField__input_date" id="card-date" type="text" name="card-date" placeholder="mm/yy" required="required" minlength="5"/>
-                <input class="cardField__input cardField__input_cvv" id="card-cvv" type="number" name="card-cvv" placeholder="cvv" required="required" minlength="3"/>
+                <input class="cardField__input cardField__input_number" id="card-number" type="text" name="card-number" placeholder="Card number" required="required" pattern=".{19,19}"/>
+                <input class="cardField__input cardField__input_date" id="card-date" type="text" name="card-date" placeholder="MM / YY" required="required" pattern=".{7,7}"/>
+                <input class="cardField__input cardField__input_cvv" id="card-cvv" type="text" name="card-cvv" placeholder="CVC" required="required" pattern="[0-9]{3,3}"/>
               </div>
             </div>
             <div class="paymentForm__field">
-              <input class="paymentForm__input" id="full-name" type="text" name="name" required="required"/>
+              <input class="paymentForm__input" id="full-name" type="text" name="name" placeholder="Full Name" required="required"/>
               <label class="paymentForm__label" for="full-name">Full Name</label>
             </div>
             <div class="paymentForm__group">
               <div class="paymentForm__field">
-                <input class="paymentForm__input" id="address" type="text" name="address" required="required"/>
+                <input class="paymentForm__input" id="address" type="text" name="address" placeholder="Address" required="required"/>
                 <label class="paymentForm__label" for="address">Address</label>
               </div>
               <div class="paymentForm__field">
-                <input class="paymentForm__input" id="city" type="text" name="city" required="required"/>
+                <input class="paymentForm__input" id="city" type="text" name="city" placeholder="City" required="required"/>
                 <label class="paymentForm__label" for="city">City</label>
               </div>
             </div>
             <div class="paymentForm__group">
               <div class="paymentForm__field">
-                <select class="paymentForm__input paymentForm__input_select" id="area-type" name="area-type">
-                  <option value="state">State</option>
-                  <option value="province" selected="selected">Province</option>
-                </select>
+                <input class="paymentForm__input" id="area-type" type="text" name="area-type" placeholder="Province" required="required"/>
                 <label class="paymentForm__label" for="area-type">State/Province</label>
               </div>
               <div class="paymentForm__field">
-                <input class="paymentForm__input" id="postal-code" type="text" name="postal-code" required="required"/>
+                <input class="paymentForm__input" id="postal-code" type="text" name="postal-code" placeholder="ZIP/Postal" required="required"/>
                 <label class="paymentForm__label" for="postal-code">ZIP/Postal</label>
               </div>
             </div>
             <div class="paymentForm__field">
-              <input class="paymentForm__input" id="country" type="text" name="country" required="required"/>
+              <input class="paymentForm__input" id="country" type="text" name="country" placeholder="Country" required="required"/>
               <label class="paymentForm__label" for="country">Country</label>
             </div>
             <div class="paymentForm__rememberCard rememberCard">

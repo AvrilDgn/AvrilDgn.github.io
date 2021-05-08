@@ -1,108 +1,3 @@
-@charset "UTF-8";
-
-.custom-select-container {
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.custom-select-container * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.custom-select-container.is-disabled {
-  opacity: .333;
-}
-
-.custom-select-opener {
-  background-color: #ccc;
-  padding: 0.5em;
-  display: block;
-  cursor: pointer;
-  width: 100%;
-}
-
-.custom-select-container select {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.custom-select-panel {
-  max-height: 0;
-  -webkit-transition: max-height .5s ease-out, overflow-y 0.1s 0.5s;
-  -o-transition: max-height .5s ease-out, overflow-y 0.1s 0.5s;
-  transition: max-height .5s ease-out, overflow-y 0.1s 0.5s;
-  overflow: hidden;
-  background-color: #e9e9e9;
-  position: absolute;
-  top: 100%;
-  z-index: 1;
-  width: 100%;
-}
-
-.custom-select-container.is-open .custom-select-panel {
-  max-height: 10.7em;
-  overflow-y: auto;
-}
-
-.custom-select-option {
-  padding: 0.5em;
-}
-
-.custom-select-option.has-focus {
-  background-color: LightBlue;
-}
-
-.custom-select-option.is-selected::before {
-  content: "✔";
-  padding-right: 0.5em;
-}
-
-.custom-select-optgroup > .custom-select-option {
-  padding-left: 2em;
-}
-
-.custom-select-optgroup::before {
-  content: attr(data-label);
-  display: block;
-  padding: 0.5em;
-  color: #888;
-}
-
-.custom-select-container {
-  margin-top: 4px;
-  height: 44px;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-
-.custom-select-opener {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
-  background: #F7F7F7;
-  border: 1px solid #E6E9EF;
-  height: 100%;
-  width: 100%;
-  font-size: 14px;
-  line-height: 160%;
-  color: #949AA7;
-  border-radius: 8px;
-}
-
-.custom-select-option {
-  cursor: pointer;
-}
-
 @font-face {
   font-family: "poppins";
   font-display: swap;
@@ -432,6 +327,7 @@ button::-moz-focus-inner {
 .paymentForm__group .paymentForm__field {
   margin-left: 6px;
   margin-right: 6px;
+  width: calc(50% - 12px);
 }
 
 .paymentForm__field {
@@ -460,10 +356,6 @@ button::-moz-focus-inner {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-}
-
-.paymentForm__input_select {
-  cursor: pointer;
 }
 
 .paymentForm__label {
@@ -778,6 +670,7 @@ button::-moz-focus-inner {
   .paymentForm__group .paymentForm__field {
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
   }
 }
 
