@@ -671,7 +671,7 @@
 </svg>
     </div>
     <!--*** End SVG ***-->
-    <div class="wrapper loading-page">
+    <div class="wrapper supermarkets-result-page">
       <!--*** Header ***-->
       <header class="header">
         <!--header logo--><a class="header__logo logo" href="index.html">
@@ -730,36 +730,251 @@
       <main class="content">
         <!--*** Hero ***-->
         <section class="hero">
-          <div class="hero__background">
-            <div class="hero__fighters">
-              <svg class="svg-sprite svg-sprite_fighter-1">
-                <use xlink:href="#fighter-1" x="-10" y="-10"></use>
-              </svg>
-              <svg class="svg-sprite svg-sprite_fighter-2">
-                <use xlink:href="#fighter-2" x="-10" y="-10"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="hero__ring">
-            <svg class="svg-sprite svg-sprite_ring">
-              <use xlink:href="#ring" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none"></use>
-            </svg>
-          </div>
-          <div class="hero__learn-best learn-best">
-            <h2 class="learn-best__title">Loading...</h2>
-            <div class="learn-best__top-group">
-              <div class="learn-best__participant"><img src="assets/img/supermarkets/walmart.png" alt="walmart"/></div>
-              <div class="learn-best__versus versus"><span class="versus__dots"></span><span class="versus__dots versus__dots_right"></span><span class="versus__dots versus__dots_bottom"></span>
-                <svg class="svg-sprite svg-sprite_vs ">
-                  <use xlink:href="#vs" x="0" y="0" width="100%" height="100%"></use>
-                </svg>
-              </div>
-              <div class="learn-best__participant"><img src="assets/img/supermarkets/costco.png" alt="costco"/></div>
-            </div>
-            <div class="learn-best__participant learn-best__participant_bottom"><img src="assets/img/supermarkets/walmart.png" alt="walmart"/></div>
+          <div class="hero__background"></div>
+          <h2 class="hero__title hero__title_min">And the winner is...</h2>
+          <div class="hero__winners winners">
+            <ul class="winners__list">
+              <li class="winners__item">
+                <div class="winners__crown crown crown_gold">
+                  <svg>
+                    <use xlink:href="#crown"></use>
+                  </svg>
+                  <div class="crown__position"><b>1</b>st</div>
+                </div>
+                <div class="winners__img"><a href="#"> <img src="assets/img/winners/costco.png" alt="costco"/></a></div>
+                <div class="winners__info-block">
+                  <p class="winners__expensive">Lowest Prices</p>
+                  <p class="winners__categories">All Categories</p>
+                  <p class="winners__count">13 products in 10 categories</p>
+                  <div class="winners__place-number">1</div>
+                </div>
+              </li>
+              <li class="winners__item">
+                <div class="winners__crown crown crown_silver">
+                  <svg>
+                    <use xlink:href="#crown"></use>
+                  </svg>
+                  <div class="crown__position"><b>2</b>nd</div>
+                </div>
+                <div class="winners__img"><a href="#"> <img src="assets/img/winners/walmart.png" alt="walmart"/></a></div>
+                <div class="winners__info-block">
+                  <p class="winners__expensive">10% more expensive than <b class="winners__best-supermarket">Costco</b></p>
+                  <p class="winners__categories">Fruits & Vegetables</p>
+                  <p class="winners__count">13 products</p>
+                  <div class="winners__place-number">2</div>
+                </div>
+              </li>
+              <li class="winners__item">
+                <div class="winners__crown crown">
+                  <svg>
+                    <use xlink:href="#crown"></use>
+                  </svg>
+                  <div class="crown__position"><b>3</b>rd</div>
+                </div>
+                <div class="winners__img"><a href="#"> <img src="assets/img/winners/walmart.png" alt="walmart"/></a></div>
+                <div class="winners__info-block">
+                  <p class="winners__expensive">10% more expensive than <b class="winners__best-supermarket">Costco</b></p>
+                  <p class="winners__categories">Fruits & Vegetables</p>
+                  <p class="winners__count">13 products</p>
+                  <div class="winners__place-number">3	</div>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
         <!--*** End Hero ***-->
+        <!--*** Browse Block-->
+        <div class="browse-block">
+          <section class="browse-block__slider browse-slider">
+            <div class="browse-slider__top">
+              <h3 class="browse-slider__title">Browse results by categories</h3>
+              <div class="browse-slider__nav-arrows arrows">
+                <div class="arrows__item arrows__item_prev"></div>
+                <div class="arrows__item arrows__item_next"></div>
+              </div>
+            </div>
+            <ul class="browse-slider__list">
+              <li class="browse-slider__item"><a class="category-card browse-slider__card" href="#"><img class="category-card__background" src="assets/img/browse-result/seafood.jpg" alt="Fish &amp; Seafood"/><span class="category-card__blackout"></span><span class="category-card__top"><span class="category-card__supermarket"><img src="assets/img/browse-result/costco.png" alt="costco"/></span><span class="category-card__expensive">Lowest Prices</span></span><span class="category-card__name">Fish & <br/>Seafood</span></a></li>
+              <li class="browse-slider__item"><a class="category-card browse-slider__card" href="#"><img class="category-card__background" src="assets/img/browse-result/breads.jpg" alt="Bread &amp; Bakery"/><span class="category-card__blackout"></span><span class="category-card__top"><span class="category-card__supermarket"><img src="assets/img/browse-result/costco.png" alt="costco"/></span><span class="category-card__expensive">Lowest Prices</span></span><span class="category-card__name">Bread & <br/>Bakery</span></a></li>
+              <li class="browse-slider__item"><a class="category-card browse-slider__card" href="#"><img class="category-card__background" src="assets/img/browse-result/dairy.jpg" alt="Dairy Products"/><span class="category-card__blackout"></span><span class="category-card__top"><span class="category-card__supermarket"><img src="assets/img/browse-result/costco.png" alt="costco"/></span><span class="category-card__expensive">Lowest Prices</span></span><span class="category-card__name">Dairy <br/>Products</span></a></li>
+              <li class="browse-slider__item"><a class="category-card browse-slider__card" href="#"><img class="category-card__background" src="assets/img/browse-result/cereal.jpg" alt="Breakfast &amp; Cereal"/><span class="category-card__blackout"></span><span class="category-card__top"><span class="category-card__supermarket"><img src="assets/img/browse-result/costco.png" alt="costco"/></span><span class="category-card__expensive">Lowest Prices</span></span><span class="category-card__name">Breakfast & <br/>Cereal</span></a></li>
+              <li class="browse-slider__item"><a class="category-card browse-slider__card" href="#"><img class="category-card__background" src="assets/img/browse-result/breads.jpg" alt="Bread &amp; Bakery"/><span class="category-card__blackout"></span><span class="category-card__top"><span class="category-card__supermarket"><img src="assets/img/browse-result/costco.png" alt="costco"/></span><span class="category-card__expensive">Lowest Prices</span></span><span class="category-card__name">Bread & <br/>Bakery</span></a></li>
+            </ul>
+            <div class="browse-slider__pagination pagination"></div>
+          </section>
+          <section class="browse-block__products browse-products">
+            <div class="browse-products__top">
+              <h3 class="browse-products__title">Browse best priced PRODUCTS from  COSTCO</h3>
+              <div class="select select_filter browse-products__select browse-products__select_filter">
+                <input class="select__input" type="hidden" name="filter"/>
+                <div class="select__opener"><span class="select__value">Filter by:</span></div>
+                <ul class="select__list">
+                  <li class="select__item">Price: Low to High</li>
+                  <li class="select__item">Price: High to Low</li>
+                  <li class="select__item">Name</li>
+                </ul>
+              </div>
+              <div class="select select_filter browse-products__select">
+                <input class="select__input" type="hidden" name="filter"/>
+                <div class="select__opener"><span class="select__value">Sort by:</span></div>
+                <ul class="select__list">
+                  <li class="select__item">Price: Low to High</li>
+                  <li class="select__item">Price: High to Low</li>
+                  <li class="select__item">Name</li>
+                </ul>
+              </div>
+            </div>
+            <ul class="browse-products__list">
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/avocados.jpg" alt="avocados"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Avocados - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$4.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/blueberries.jpg" alt="blueberries"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Fresh blueberries - 6 oz</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$12.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/tomatoes.jpg" alt="tomatoes"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Tomatoes - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$999.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/limes.jpg" alt="limes"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Limes - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$79.99</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/ginger.jpg" alt="ginger root"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Fresh Ginger Root - per lb</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$35.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/banana.jpg" alt="avocados"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Banana - 12uni</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$4.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/apples.jpg" alt="blueberries"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Apples - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$12.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/zucchinis.jpg" alt="tomatoes"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Zucchinis - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$999.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/onions.jpg" alt="limes"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Onions - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$79.99</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+              <li class="browse-products__card product-card"><a class="product-card__img-link" href="#"><img class="product-card__img" src="assets/img/products/potatoes.jpg" alt="ginger root"/></a><a class="product-card__category" href="#">Fruits & Vegetables</a>
+                <h3 class="product-card__title"><a href="#">Baking Potatoes - each</a></h3>
+                <p class="product-card__from">From</p>
+                <p class="product-card__price">$35.00</p><a class="product-card__see-offer" href="#">
+                   See Offer</a>
+              </li>
+            </ul><a class="browse-products__see-all-btn" href="#">See All Products</a>
+          </section>
+        </div>
+        <!--*** End Browse Block ***-->
+        <!--*** How Works-->
+        <section class="how-works">
+          <div class="background">
+            <svg class="svg-sprite svg-sprite_background-curve ">
+              <use xlink:href="#background-curve" x="0" y="0" width="100%" height="100%"></use>
+            </svg>
+          </div>
+          <div class="shadow shadow_force-centered"></div>
+          <h2 class="how-works__title">How NAU Works</h2>
+          <ul class="how-works__list"> 
+            <li class="how-works__item">
+              <div class="how-works__icon">
+                <svg class="svg-sprite svg-sprite_star-12 ">
+                  <use xlink:href="#star-12" x="0" y="0" width="100%" height="100%"></use>
+                </svg>
+                <svg class="svg-sprite svg-sprite_vs-2 ">
+                  <use xlink:href="#vs-2" x="0" y="0" width="100%" height="100%"></use>
+                </svg>
+              </div>
+              <h3 class="how-works__stage">Choose Your Fighters</h3>
+              <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+            <li class="how-works__item">
+              <div class="how-works__icon">
+                <svg class="svg-sprite svg-sprite_star-12 ">
+                  <use xlink:href="#star-12" x="0" y="0" width="100%" height="100%"></use>
+                </svg>
+                <svg class="svg-sprite svg-sprite_ring-2 ">
+                  <use xlink:href="#ring-2" x="0" y="0" width="100%" height="100%"></use>
+                </svg>
+              </div>
+              <h3 class="how-works__stage">Compare Prices</h3>
+              <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+            <li class="how-works__item">
+              <div class="how-works__icon">
+                <svg class="svg-sprite svg-sprite_star-12 ">
+                  <use xlink:href="#star-12" x="0" y="0" width="100%" height="100%"></use>
+                </svg>
+                <svg class="svg-sprite svg-sprite_winner ">
+                  <use xlink:href="#winner" x="0" y="0" width="100%" height="100%"></use>
+                </svg>
+              </div>
+              <h3 class="how-works__stage">Meet the Winner</h3>
+              <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+          </ul><a class="how-works__learn-more" href="#">Learn More</a>
+        </section>
+        <!--*** End How Works-->
+        <!--*** Last Posts-->
+        <section class="last-posts">
+          <div class="background background_lite-green">
+            <svg class="svg-sprite svg-sprite_background-curve ">
+              <use xlink:href="#background-curve" x="0" y="0" width="100%" height="100%"></use>
+            </svg>
+          </div>
+          <div class="shadow"></div>
+          <div class="last-posts__content">
+            <div class="last-posts__top-group">
+              <h2 class="last-posts__title">Last Posts</h2><a class="last-posts__see-all" href="#">See All</a>
+            </div>
+            <ul class="last-posts__list">
+              <li class="last-posts__item last-post-card"><a class="last-post-card__img-link" href="#"><img src="assets/img/last-posts/post-1.jpg" alt="post image"/></a><a class="last-post-card__category" href="#">Lorem ipsum dolor</a>
+                <h3 class="last-post-card__prod-name"><a href="#">Lorem ipsum dolor sit consectetur </a></h3>
+                <p class="last-post-card__text">Lorem ipsum dolor sit am et, consectetur adipiscing elit dolor sit ipsum...</p><a class="last-post-card__read-more" href="#">Read More</a>
+              </li>
+              <li class="last-posts__item last-post-card"><a class="last-post-card__img-link" href="#"><img src="assets/img/last-posts/post-2.jpg" alt="post image"/></a><a class="last-post-card__category" href="#">Lorem ipsum dolor</a>
+                <h3 class="last-post-card__prod-name"><a href="#">Lorem ipsum dolor sit consectetur </a></h3>
+                <p class="last-post-card__text">Lorem ipsum dolor sit am et, consectetur adipiscing elit dolor sit ipsum...</p><a class="last-post-card__read-more" href="#">Read More</a>
+              </li>
+              <li class="last-posts__item last-post-card"><a class="last-post-card__img-link" href="#"><img src="assets/img/last-posts/post-1.jpg" alt="post image"/></a><a class="last-post-card__category" href="#">Lorem ipsum dolor</a>
+                <h3 class="last-post-card__prod-name"><a href="#">Lorem ipsum dolor sit consectetur </a></h3>
+                <p class="last-post-card__text">Lorem ipsum dolor sit am et, consectetur adipiscing elit dolor sit ipsum...</p><a class="last-post-card__read-more" href="#">Read More</a>
+              </li>
+              <li class="last-posts__item last-post-card"><a class="last-post-card__img-link" href="#"><img src="assets/img/last-posts/post-2.jpg" alt="post image"/></a><a class="last-post-card__category" href="#">Lorem ipsum dolor</a>
+                <h3 class="last-post-card__prod-name"><a href="#">Lorem ipsum dolor sit consectetur </a></h3>
+                <p class="last-post-card__text">Lorem ipsum dolor sit am et, consectetur adipiscing elit dolor sit ipsum...</p><a class="last-post-card__read-more" href="#">Read More</a>
+              </li>
+              <li class="last-posts__item last-post-card"><a class="last-post-card__img-link" href="#"><img src="assets/img/last-posts/post-1.jpg" alt="post image"/></a><a class="last-post-card__category" href="#">Lorem ipsum dolor</a>
+                <h3 class="last-post-card__prod-name"><a href="#">Lorem ipsum dolor sit consectetur </a></h3>
+                <p class="last-post-card__text">Lorem ipsum dolor sit am et, consectetur adipiscing elit dolor sit ipsum...</p><a class="last-post-card__read-more" href="#">Read More</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!--*** End Last Posts-->
       </main>
       <!--*** End Content ***-->
       <!--*** Footer ***-->
