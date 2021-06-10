@@ -10967,6 +10967,20 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		},
 	});
 
+	//product general
+	const prodGeneral = new core_class(".product-general__other-stores-wrapper", {
+		wrapperClass: 'product-general__other-stores-list',
+		slideClass: 'product-general__other-stores-item',
+		direction: "vertical",
+		slidesPerView: "auto",
+		freeMode: true,
+		scrollbar: {
+			el: ".product-general__other-stores-sidebar",
+			dragClass: "product-general__other-stores-sidebar_drag"
+		},
+		mousewheel: true,
+	});
+
 
 	/**
 	 * header toggle menu
@@ -11004,6 +11018,23 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	mediaQueryLarge.addListener(handleHeaderChange)
 	handleHeaderChange(mediaQueryLarge)
 
+
+	/**
+	 * Blog-post scroll up
+	 */
+
+	let postScrollUpBtn = document.querySelector('.post-content__arrow-up');
+
+	if (postScrollUpBtn) {
+		postScrollUpBtn.onclick = e => {
+			e.preventDefault()
+
+			document.body.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			})
+		};
+	}
 });
 
 
