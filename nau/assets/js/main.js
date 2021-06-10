@@ -10993,9 +10993,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	if (menuOpenBtn && menuCloseBtn) {
 		menuOpenBtn.addEventListener('click', e => {
+			e.preventDefault();
 			menuCollapse.classList.add('collapse-menu_opened');
 		});
 		menuCloseBtn.addEventListener('click', e => {
+			e.preventDefault();
 			menuCollapse.classList.remove('collapse-menu_opened');
 		});
 		menuBlackout.addEventListener('click', e => {
