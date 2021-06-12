@@ -4844,10 +4844,6 @@ button::-moz-focus-inner {
     height: 36px;
   }
 
-  .hero__background {
-    background-size: contain;
-  }
-
   .hero__title {
     font-size: 46px;
   }
