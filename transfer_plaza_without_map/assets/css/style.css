@@ -1675,6 +1675,7 @@ button:focus {
     -webkit-transform: translateX(0%);
         -ms-transform: translateX(0%);
             transform: translateX(0%);
+    overflow-y: auto;
   }
 
   .header__overlay {
@@ -1801,6 +1802,11 @@ button:focus {
   .logo {
     max-width: 280px;
     height: auto;
+  }
+
+  .header__collapse {
+    width: 100%;
+    min-width: initial;
   }
 
   .popup__container {
