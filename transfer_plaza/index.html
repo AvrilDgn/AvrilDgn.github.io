@@ -31,7 +31,10 @@
           <img src="assets/img/logo/logo.png" srcset="assets/img/logo/logo@2x.png 2x, assets/img/logo/logo@3x.png 3x" alt="Transfer Plaza">
         </a>
 
+        <div class="header__blackout"></div>
+
         <div class="header__collapse">
+          <a class="header__submenu-close" href="#"></a>
           <nav class="nav header__nav">
             <ul class="nav__list">
               <li class="nav__item"><a class="nav__link" href="#car-park">Авто в аренду</a>
@@ -46,9 +49,13 @@
           <div class="header__phones-group">
             <p class="header__phone-number">8 960 800 6780</p>
             <p class="header__phone-number">8 347 299 67 80</p>
-            <a class="header__callme-link" href="#modal-callme">Позвоните мне</a>
+            <a class="header__callme-link" href="tel:89608006780">Позвоните мне</a>
           </div>
         </div>
+
+        <a class="header__submenu-open" href="#">
+          <span></span>
+        </a>
       </div>
     </header>
     <!-- End Header -->
@@ -99,7 +106,7 @@
     <!-- End Hero Block -->
 
     <!-- Car Park -->
-    <section class="car-park">
+    <section id="car-park" class="car-park">
       <div class="container">
         <h2 class="title car-park__title">Наш автопарк</h2>
 
@@ -282,7 +289,7 @@
     <!-- End Car Park -->
 
     <!-- Advantages -->
-    <section class="advantages">
+    <section id="advantages" class="advantages">
       <div class="container">
         <h2 class="title advantages__title">Преимущества работы с нами</h2>
 
@@ -540,7 +547,7 @@
     <!-- End Questions -->
 
     <!-- Contacts -->
-    <section class="contacts">
+    <section id="contacts" class="contacts">
       <div class="contacts__map">
         <iframe src="https://yandex.ru/map-widget/v1/-/CCUeiWBdhB" allowfullscreen></iframe>
       </div>
@@ -599,6 +606,8 @@
     <!-- End Footer -->
 
   </main>
+
+
 
 
   <script src="assets/js/main.js"></script>
