@@ -132,12 +132,6 @@ button:focus {
   width: 100%;
 }
 
-.hero {
-  font-weight: 700;
-  font-size: 2rem;
-  color: #000;
-}
-
 .title {
   font-size: 2rem;
   font-weight: 700;
@@ -659,8 +653,7 @@ button:focus {
       flex-wrap: wrap;
 }
 
-.footer__logo {
-  display: block;
+.footer__logo-wrap {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
@@ -1173,8 +1166,8 @@ button:focus {
   border-radius: 30px;
   background-image: -o-linear-gradient(355.9deg, #00a4ff -9.14%, #0065c1 119.99%);
   background-image: linear-gradient(94.1deg, #00a4ff -9.14%, #0065c1 119.99%);
-  -webkit-box-shadow: 0 0 15px rgba(20, 66, 109, 0.5);
-          box-shadow: 0 0 15px rgba(20, 66, 109, 0.5);
+  -webkit-box-shadow: 0 0 15px rgba(20, 66, 109, 0.05);
+          box-shadow: 0 0 15px rgba(20, 66, 109, 0.05);
 }
 
 .advantages-card__icon--dollar {
@@ -1378,6 +1371,7 @@ button:focus {
   max-width: 389px;
   width: 100%;
   height: 71px;
+  font-size: 1.3334rem;
 }
 
 .conditions {
@@ -1480,8 +1474,6 @@ button:focus {
 
 .faq__item--active .faq__answer {
   max-height: initial;
-  padding-top: 13px;
-  padding-bottom: 24px;
 }
 
 .faq__question {
@@ -1491,16 +1483,30 @@ button:focus {
 }
 
 .faq__answer {
-  padding-left: 24px;
   font-size: 0.8889rem;
   color: #212121;
   max-height: 0;
   overflow: hidden;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: max-height 0.25s ease;
+  -o-transition: max-height 0.25s ease;
+  transition: max-height 0.25s ease;
+}
+
+.faq__answer p {
+  padding-left: 24px;
+  padding-top: 13px;
+  padding-bottom: 24px;
+}
+
+.faq__answer--hide {
+  max-height: 0;
   padding-top: 0;
   padding-bottom: 0;
-  -webkit-transition: max-height 0.25s ease, padding 0.25s ease;
-  -o-transition: max-height 0.25s ease, padding 0.25s ease;
-  transition: max-height 0.25s ease, padding 0.25s ease;
+  -webkit-transition: max-height 1s ease, padding 1s ease;
+  -o-transition: max-height 1s ease, padding 1s ease;
+  transition: max-height 1s ease, padding 1s ease;
 }
 
 .questions {
