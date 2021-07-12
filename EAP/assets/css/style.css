@@ -140,21 +140,23 @@ button:focus {
 
 .main img {
   margin: auto;
-  max-width: 45.9685vw;
+  max-width: 35.784vw;
   max-height: 50vh;
 }
 
 .header {
   width: 100%;
-  padding-top: 3.571vh;
-  padding-left: 5.071vw;
+  padding-top: 8.843vh;
+  padding-left: 3.932vw;
 }
 
 .header__title {
   font-family: ptsans, sans-serif;
   font-weight: 400;
   font-size: 1.43478rem;
-  letter-spacing: 0.06em;
+  font-size: 33px;
+  line-height: 1.2;
+  letter-spacing: 0.38px;
 }
 
 .header__subtitle {
@@ -162,10 +164,13 @@ button:focus {
   font-family: minionpro, sans-serif;
   font-weight: 700;
   font-size: 1rem;
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
 }
 
 .footer {
-  margin-bottom: 7.936vh;
+  margin-bottom: 5.895vh;
   width: 100%;
   text-align: center;
 }
@@ -175,7 +180,11 @@ button:focus {
   font-family: minionpro, sans-serif;
   font-weight: 700;
   font-size: 1.04348rem;
+  color: #3f8bf9;
   text-decoration: none;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .footer__link::after {
@@ -187,11 +196,15 @@ button:focus {
   display: block;
   width: 0;
   height: 2px;
-  background-color: #c1c1c1;
+  background-color: #3f8bf9;
   overflow: hidden;
   -webkit-transition: width 0.25s ease;
   -o-transition: width 0.25s ease;
   transition: width 0.25s ease;
+}
+
+.footer__link:hover {
+  color: #3f8bf9;
 }
 
 .footer__link:hover::after {
@@ -202,14 +215,7 @@ button:focus {
 
 @media screen and (max-width: 1199px) {
   .main img {
-    max-width: 80vw;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  html,
-  body {
-    font-size: 18px;
+    max-width: 60vw;
   }
 }
 
