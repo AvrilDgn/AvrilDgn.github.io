@@ -29,7 +29,7 @@ body {
   font-family: ptsans, sans-serif;
   font-weight: 400;
   font-size: 23px;
-  color: #c1c1c1;
+  color: #c7c7c7;
   background-color: #fff;
 }
 
@@ -51,12 +51,12 @@ p {
 }
 
 a {
-  color: #c1c1c1;
+  color: #3f8bf9;
 }
 
 a:hover {
   text-decoration: none;
-  color: #c1c1c1;
+  color: #3f8bf9;
 }
 
 a:focus {
@@ -120,6 +120,7 @@ button:focus {
 .main {
   position: relative;
   margin: 0 auto;
+  padding-right: 5.3vw;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -140,11 +141,15 @@ button:focus {
 
 .main img {
   margin: auto;
-  max-width: 35.784vw;
+  max-width: 35.8vw;
   max-height: 50vh;
+  opacity: 0.95;
 }
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   padding-top: 8.843vh;
   padding-left: 3.932vw;
@@ -153,26 +158,26 @@ button:focus {
 .header__title {
   font-family: ptsans, sans-serif;
   font-weight: 400;
-  font-size: 1.43478rem;
-  font-size: 33px;
+  font-size: 34px;
   line-height: 1.2;
   letter-spacing: 0.38px;
 }
 
 .header__subtitle {
-  margin-left: 2px;
+  margin-left: 3px;
   margin-top: 1em;
   font-family: minionpro, sans-serif;
   font-weight: 700;
-  font-size: 1rem;
-  font-size: 23px;
+  font-size: 24px;
   line-height: 1.2;
   letter-spacing: 0.2px;
 }
 
 .footer {
   margin-bottom: 5.895vh;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
   text-align: center;
 }
 
