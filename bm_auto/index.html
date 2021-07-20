@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BM Auto</title>
+
+  <!-- Favicon -->
+
+
+
+  <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+  <div style="position: absolute; height: 0; width: 0; visibility: hidden;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <style>
+          .logo-svg__text{fill:#010101;}
+        </style>
+        <style>
+          .logo-svg__gradient{fill:url(#logo-svg__gradient);}
+        </style>
+        <linearGradient id="logo-svg__gradient" x1="557.19" y1="246.77" x2="295.75" y2="366.25" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#268bcb" />
+          <stop offset="0.15" stop-color="#2584c2" />
+          <stop offset="0.41" stop-color="#2270a8" />
+          <stop offset="0.73" stop-color="#1d517f" />
+          <stop offset="1" stop-color="#193257" />
+        </linearGradient>
+      </defs>
+      <symbol id="logo-svg" viewBox="0 0 402.73 241.98">
+        <g class="logo-svg__text" transform="translate(-220.54 -168.44)">
+          <path d="M220.54,384h14.33c6.19,0,8.88,3,8.88,6.66a5.69,5.69,0,0,1-3.86,5.52c2.5.78,4.81,2.71,4.81,6,0,4.86-3.73,7.71-10.07,7.71H220.54Zm13,10.13c2.81,0,3.71-1.12,3.71-2.68,0-1.95-1.48-2.75-3.65-2.75h-6.88v5.43Zm-6.82,11.07h7.09c2.42,0,4.26-.71,4.26-3.27,0-2.06-1.41-3.13-4.14-3.13h-7.21Z"
+          />
+          <path d="M273.34,400c0-4.46,0-9.1.18-12h0c-1.28,4.78-3.71,12.37-6.76,21.89h-5.53c-2.37-8.35-5.09-17-6.47-21.88h0c.19,3,.43,8,.43,12.44v9.44h-5.66V384h9.07c2.6,8,5,15,5.76,18.58h0c1.09-4.08,3.43-10.88,5.95-18.58h9.12v25.88h-6.06Z" />
+          <path d="M301.71,404l-2.25,5.88H293L303.42,384h8.05l11,25.88h-6.79L313.23,404Zm9.77-5c-2.41-5.93-3.58-9-4.2-10.93h0c-.58,1.93-1.95,5.87-3.9,10.93Z" />
+          <path d="M331,384v14.63c0,5.5,2.88,6.89,6.06,6.89,3.39,0,5.65-1.46,5.65-6.89V384H349v14.83c0,7.85-4.41,11.6-12.1,11.6-7.44,0-12.17-3.43-12.17-11.46V384Z" />
+          <path d="M362,389h-9.11v-5h24.47v5h-9.07v20.88H362Z" />
+          <path d="M407.28,396.85c0,7.17-4.78,13.58-14.19,13.58-8.78,0-13.79-6-13.79-13.56,0-7.11,5.31-13.42,14.08-13.42C402.41,383.45,407.28,389.79,407.28,396.85Zm-21.36-.05c0,4.89,2.48,8.72,7.52,8.72,5.21,0,7.22-4.39,7.22-8.6,0-4.59-2.23-8.57-7.47-8.57C388.15,388.35,385.92,392.43,385.92,396.8Z"
+          />
+          <path d="M447.5,402.54c-1.64,4.45-4.74,7.89-11.82,7.89-8.36,0-13.2-5.89-13.2-13.6s5.39-13.73,13.31-13.73c7.33,0,10.65,3.87,11.82,8.13h-2.4c-1.45-3.41-3.93-6-9.45-6-6.61,0-10.84,4.82-10.84,11.54,0,6.53,4.29,11.55,10.87,11.55,5.58,0,7.74-2.48,9.38-5.77Z"
+          />
+          <path d="M478.71,396.69c0,7.49-5.1,13.74-13.5,13.74-8.2,0-13.6-6.06-13.6-13.78a13.55,13.55,0,1,1,27.1,0Zm-24.65-.15c0,6,3.93,11.77,11.16,11.77,7,0,11-5.1,11-11.55,0-5.85-4-11.54-11.27-11.54C458.35,385.22,454.06,390.41,454.06,396.54Z" />
+          <path d="M510.37,397.91c0-5.1,0-9.84.14-12.45h0c-1.29,3.48-7,15.73-11,24.42h-1.95c-3-6.76-9.21-20.68-10.68-24.38h0c.25,3,.33,8.76.33,13.17v11.21H484.9V383.65h3.25c4.12,8.84,9.67,21.5,10.44,23.3h0c1.32-2.79,7-15.16,10.7-23.3h3.32v26.23h-2.28Z" />
+          <path d="M520.73,383.65h11.65c6.74,0,9.13,3.52,9.13,7.44,0,5-3.39,7.73-8.89,7.73H523v11.06h-2.29Zm2.29,13h9.05c4.09,0,7-1.13,7-5.54,0-3.42-2.37-5.32-7-5.32H523Z" />
+          <path d="M547.41,400.87l-4,9H541l11.66-26.23h2.55l12.06,26.23h-2.52l-4.11-9Zm12.32-2.12c-3.61-7.9-5.28-11.52-5.87-13.18h0c-.52,1.59-2.52,6.35-5.51,13.18Z" />
+          <path d="M572,409.88V383.65h2.78c5.12,6.6,16.47,20.92,17.87,23.4h.08c-.23-3.76-.19-7.5-.19-11.72V383.65h2.21v26.23H592.1c-4.65-5.95-15.94-20.68-18-23.76H574c.19,3.45.19,7.16.19,11.79v12Z" />
+          <path d="M609.81,409.88V399.57a.79.79,0,0,0-.22-.55l-11.05-15.37h2.75c3.32,4.69,8.57,11.73,9.74,13.76,1.29-2.06,6.25-9.07,9.61-13.76h2.63l-11,15.37a1,1,0,0,0-.19.59v10.27Z" />
+        </g>
+        <g class="logo-svg__gradient" transform="translate(-220.54 -168.44)">
+          <path d="M439.47,233.87a36.94,36.94,0,0,1,34.42-10.2l29,29a38.6,38.6,0,0,1,.8,7.81v93a.44.44,0,0,1-.8.26L426.3,247.57a.44.44,0,0,1,0-.57Zm-43,48.52,22,26.43,21.3-26.62c.15-.17-21.2-29.78-21.2-29.78C418.38,252.25,396.36,282.22,396.49,282.39Zm-62.9,71.39,76.58-106.21a.44.44,0,0,0,0-.57L397,233.87a36.92,36.92,0,0,0-33.32-10.44L333.6,253.5a39.76,39.76,0,0,0-.81,8v92A.44.44,0,0,0,333.59,353.78Zm181.18-89.23v98.31h98.31Zm-68.68,24.62-27.44,34.3-28.58-34.24-20.29,73.63h99.1ZM321.7,265.41l-97.45,97.45H321.7ZM404.84,226l13.89,12.9,12.9-12.9A48.24,48.24,0,0,1,462,211.79l-43.35-43.35-43.42,43.42A48.22,48.22,0,0,1,404.84,226Z"
+          />
+        </g>
+      </symbol>
+    </svg>
+  </div>
+
+  <main class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <a href="index.html" class="logo header__logo">
+            <svg>
+              <use xlink:href="#logo-svg" style="fill: url(#logo-svg__gradient)"></use>
+            </svg>
+          </a>
+
+          <a class="header__submenu-open" href="#">
+            <span></span>
+          </a>
+
+          <div class="header__collapse">
+            <a class="header__submenu-close" href="#"></a>
+
+            <button class="header__auth-btn button button--auth">
+              <i class="button__icon button__icon--profile"></i>Вход / Регистрация
+            </button>
+
+            <div class="header__info-group">
+              <a class="header__phone" href="tel:+79273162830">
+                <i></i>
+                <span>+7 927 316-28-30</span>
+              </a>
+              <p class="header__address">
+                <i></i>Днепропетровский проезд 5 стр 1
+              </p>
+            </div>
+            <div class="header__info-group">
+              <a class="header__mail" href="mailto:Bmauto.gmail.com">
+                <i></i>
+                <span>Bmauto.gmail.com</span>
+              </a>
+              <p class="header__time">
+                <i></i>
+                <b>Время работы:  </b>пн-пт 10:00 - 20:00
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom">
+        <div class="container">
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link nav__link--about" href="#about">О компании</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--services" href="#services">Услуги</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--advantages" href="#advantages">Преимущества</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav__link--contacts" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Hero Block -->
+    <div class="hero">
+      <div class="container">
+        <h1 class="hero__title">Ремонт автотранспорта</h1>
+        <p class="hero__description">Ремонт и обслуживание автотранспорта для корпоративных клиентов</p>
+        <p class="hero__slogan">C НАМИ УДОБНО!</p>
+      </div>
+    </div>
+    <!-- End Hero Block -->
+
+    <!-- About Block -->
+    <div id="about" class="about">
+      <div class="container">
+        <h2 class="about__title title">О компании</h2>
+        <p class="about__description">
+          ТОО «BM Auto Company» - компания по комплексному техническому обслуживанию и ремонту автотранспортных средств любого уровня сложности в любой точке Казахстана. Компания осуществляет деятельность в корпоративном сегменте рынка.
+          <br />Наша задача что бы наши клиенты получили прекрасно функционирующий автомобиль, способный надежно служить многие тысячи километров.
+          <br />Мы дорожим своей репутацией. Для нас важнее репутация, а не минутная выгода.
+        </p>
+        <a class="about__link" href="#">Видеообзор</a>
+      </div>
+    </div>
+    <!-- End About Block -->
+
+    <!-- Services Block -->
+    <div id="services" class="services">
+      <div class="container">
+        <h2 class="title">Наши услуги</h2>
+        <p class="services__description">Наша задача что бы наши клиенты получили прекрасно функционирующий автомобиль, способный надежно служить многие тысячи километров.</p>
+        <ul class="services__list">
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--maintenance"><i></i></span>
+              <span class="services-card__name">ТЕХ. ОБСЛУЖИВАНИЕ</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--diagnostics"><i></i></span>
+              <span class="services-card__name">ДИАГНОСТИКА АВТО</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--fuel-system"><i></i></span>
+              <span class="services-card__name">РЕМОНТ <br /> ТОПЛИВНОЙ СИСТЕМЫ</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--heating-system"><i></i></span>
+              <span class="services-card__name">РЕМОНТ <br /> СИСТЕМ ОТОПЛЕНИЯ</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--cooling"><i></i></span>
+              <span class="services-card__name">РАДИАТОР <br /> И ОХЛАЖДЕНИЕ</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--autoelectrician"><i></i></span>
+              <span class="services-card__name">АВТОЭЛЕКТРИК</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--avacuator"><i></i></span>
+              <span class="services-card__name">ЭВАКУАТОР</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--tinontazh"><i></i></span>
+              <span class="services-card__name">ШИНОМОНТАЖ</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--chassis"><i></i></span>
+              <span class="services-card__name">Ремонт ходовой</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--engine"><i></i></span>
+              <span class="services-card__name">Ремонт двигателя</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--exhaust-system"><i></i></span>
+              <span class="services-card__name">Ремонт выхлопной системы</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--spot-alignment"><i></i></span>
+              <span class="services-card__name">3D развал-схождение</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--transmission"><i></i></span>
+              <span class="services-card__name">Ремонт трансмиссии</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--conditioning"><i></i></span>
+              <span class="services-card__name">Система кондиционирования</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--brake-system"><i></i></span>
+              <span class="services-card__name">Тормозная система</span>
+            </a>
+          </li>
+          <li class="services__item">
+            <a href="#" class="services__link services-card">
+              <span class="services-card__icon services-card__icon--auto-parts"><i></i></span>
+              <span class="services-card__name">Автозапчасти</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Services Block -->
+
+    <!-- Advantages Block -->
+    <div id="advantages" class="advantages">
+      <div class="container">
+        <h2 class="title">Преимущества</h2>
+
+        <ul class="advantages__list">
+          <li class="advantages__item advantages__item--document">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Один договор на все виды услуг во всех регионах РК
+              </p>
+            </div>
+          </li>
+          <li class="advantages__item advantages__item--pin-marks">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Большое количество СТО по всей территории РК
+              </p>
+            </div>
+          </li>
+          <li class="advantages__item advantages__item--speaking">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Персональный менеджер на весь автопарк Клиента
+              </p>
+            </div>
+          </li>
+          <li class="advantages__item advantages__item--gear">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Удобное программное обеспечение. Подача заявок на ремонт online
+              </p>
+            </div>
+          </li>
+          <li class="advantages__item advantages__item--laptop">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Возможность руководителя контролировать заявки и ремонт online
+              </p>
+            </div>
+          </li>
+          <li class="advantages__item advantages__item--camera">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Фото/видео отчеты по ремонту
+              </p>
+            </div>
+          </li>
+          <li class="advantages__item advantages__item--sandglass">
+            <div class="advantages__wrap">
+              <div class="advantages__icon"><i></i>
+              </div>
+              <p class="advantages__text">
+                Перераспределение авто по СТО снижает вероятность ожидания ремонта в очереди.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Advantages Block -->
+
+    <!-- Contacts Block -->
+    <div id="contacts" class="contacts">
+      <div class="container">
+        <h2 class="title">Наши контакты</h2>
+        <p class="contacts__description">Закажите обратный звонок и мы ответим на все ваши вопросы</p>
+
+        <div class="contacts__content">
+          <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/-/CCUiAMwXLA" allowfullscreen></iframe>
+
+          <div class="contacts__info-block">
+            <h3 class="contacts__title-three">Контакты</h3>
+
+            <div class="contacts__data">
+              <p class="contacts__address">
+                <i></i>Днепропетровский проезд 5 стр 1
+              </p>
+
+              <a class="contacts__phone" href="tel:+79273162830">
+                <i></i>
+                <span>+7 927 316-28-30</span>
+              </a>
+
+              <a class="contacts__mail" href="mailto:Bmautocompany.gmail.com">
+                <i></i>
+                <span>Bmautocompany.gmail.com</span>
+              </a>
+            </div>
+
+            <button class="contacts__btn button modal-opener" data-target="modal-callme">Заказать звонок</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contacts Block -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <a href="index.html" class="logo footer__logo">
+          <svg>
+            <use xlink:href="#logo-svg" style="fill: url(#logo-svg__gradient)"></use>
+          </svg>
+        </a>
+
+        <div class="footer__info-block">
+          <p class="footer__about">
+            ТОО «BM Auto Company» - компания по комплексному техническому обслуживанию и ремонту автотранспортных средств любого уровня сложности в любой точке Казахстана. Компания осуществляет деятельность в корпоративном сегменте рынка.
+          </p>
+
+          <div class="footer__contacts">
+            <h3 class="footer__title">Контакты:</h3>
+
+            <a class="footer__phone" href="tel:+79273162830">
+              <i></i>
+              <span>+7 927 316-28-30</span>
+            </a>
+
+            <a class="footer__mail" href="mailto:Bmauto.gmail.com">
+              <i></i>
+              <span>Bmauto.gmail.com</span>
+            </a>
+          </div>
+
+          <div class="footer__important">
+            <a class="footer__privacy" href="#">Политика конфиденциальности</a>
+            <p class="footer__copy">Copyright 2021 ©</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+  </main>
+
+
+  <!-- <div class="modal">
+	<div class="modal__overlay"></div>
+	<div class="modal__wrapper">
+		<a class="modal__close-btn" href="#"></a>
+		
+		<div class="modal__container" id="modal-callme">
+			<h3 class="modal__title">Заказать звонок</h3>
+			<form class="modal__form modal-form" id="form-question" action="#" method="post">
+				<p class="modal-form__field">
+					<label class="modal-form__label" for="question-name">Имя</label>
+					<input class="modal-form__input" id="question-name" type="text" name="name"/>
+				</p>
+				<p class="modal-form__field">
+					<label class="modal-form__label" for="question-phone">Телефон *</label>
+					<input class="modal-form__input phoneMask" id="question-phone" type="tel" name="phone" required="required"/>
+				</p>
+				<button class="button modal-form__submit-btn" type="submit">
+					<span class="button__text">Отправить</span></button>
+			</form>
+		</div>
+		
+	</div>
+</div> -->
+
+
+
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
