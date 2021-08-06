@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Региональное Бюро Банкротств</title>
+
+  <!-- Favicon -->
+
+
+  <!-- Check support .webp -->
+  <script>
+    !function(e,n,A){function o(e,n){return typeof e===n}function t(){var e,n,A,t,a,i,l;for(var f in r)if(r.hasOwnProperty(f)){if(e=[],n=r[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(A=0;A<n.options.aliases.length;A++)e.push(n.options.aliases[A].toLowerCase());for(t=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)i=e[a],l=i.split("."),1===l.length?Modernizr[l[0]]=t:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=t),s.push((t?"":"no-")+l.join("-"))}}function a(e){var n=u.className,A=Modernizr._config.classPrefix||"";if(c&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+A+"no-js(\\s|$)");n=n.replace(o,"$1"+A+"js$2")}Modernizr._config.enableClasses&&(n+=" "+A+e.join(" "+A),c?u.className.baseVal=n:u.className=n)}function i(e,n){if("object"==typeof e)for(var A in e)f(e,A)&&i(A,e[A]);else{e=e.toLowerCase();var o=e.split("."),t=Modernizr[o[0]];if(2==o.length&&(t=t[o[1]]),"undefined"!=typeof t)return Modernizr;n="function"==typeof n?n():n,1==o.length?Modernizr[o[0]]=n:(!Modernizr[o[0]]||Modernizr[o[0]]instanceof Boolean||(Modernizr[o[0]]=new Boolean(Modernizr[o[0]])),Modernizr[o[0]][o[1]]=n),a([(n&&0!=n?"":"no-")+o.join("-")]),Modernizr._trigger(e,n)}return Modernizr}var s=[],r=[],l={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var A=this;setTimeout(function(){n(A[e])},0)},addTest:function(e,n,A){r.push({name:e,fn:n,options:A})},addAsyncTest:function(e){r.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var f,u=n.documentElement,c="svg"===u.nodeName.toLowerCase();!function(){var e={}.hasOwnProperty;f=o(e,"undefined")||o(e.call,"undefined")?function(e,n){return n in e&&o(e.constructor.prototype[n],"undefined")}:function(n,A){return e.call(n,A)}}(),l._l={},l.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},l._trigger=function(e,n){if(this._l[e]){var A=this._l[e];setTimeout(function(){var e,o;for(e=0;e<A.length;e++)(o=A[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){l.addTest=i}),Modernizr.addAsyncTest(function(){function e(e,n,A){function o(n){var o=n&&"load"===n.type?1==t.width:!1,a="webp"===e;i(e,a&&o?new Boolean(o):o),A&&A(n)}var t=new Image;t.onerror=o,t.onload=o,t.src=n}var n=[{uri:"data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",name:"webp"},{uri:"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",name:"webp.alpha"},{uri:"data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",name:"webp.animation"},{uri:"data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",name:"webp.lossless"}],A=n.shift();e(A.name,A.uri,function(A){if(A&&"load"===A.type)for(var o=0;o<n.length;o++)e(n[o].name,n[o].uri)})}),t(),a(s),delete l.addTest,delete l.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
+  </script>
+
+
+  <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+  <main class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo header__logo anchor">
+          <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x, assets/img/logo@3x.png 3x" alt="Региональное Бюро Банкротств - логотип">
+        </a>
+
+        <div class="header__overlay"></div>
+
+        <div class="header__collapse">
+          <a class="header__submenu-close" href="#"></a>
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link anchor" href="#advantages">Преимущества</a>
+              </li>
+              <li class="nav__item"><a class="nav__link anchor" href="#costs">Расценки</a>
+              </li>
+              <li class="nav__item"><a class="nav__link anchor" href="#results">Результаты</a>
+              </li>
+              <li class="nav__item"><a class="nav__link anchor" href="#reviews">Отзывы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link anchor" href="#about">О нас</a>
+              </li>
+              <li class="nav__item"><a class="nav__link anchor" href="#footer">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__phones-group">
+            <a class="header__phone-number" href="tel:89872544933">8 987 254 49 33</a>
+            <a class="header__phone-number" href="tel:83472944933">8 347 294 49 33</a>
+            <a class="header__callme-link modal-opener" href="#modal-application">Заказать звонок</a>
+          </div>
+        </div>
+
+        <a class="header__mobile-phone" href="tel:89872544933">
+          <svg>
+            <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+          </svg>
+        </a>
+
+        <a class="header__submenu-open" href="#">
+          <span></span>
+        </a>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Hero Block -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__heading">
+          <h1 class="hero__title">Банкротство <br /> физических лиц под ключ</h1>
+          <p class="hero__subtitle">Спишите долги
+            <br />с гарантией результата</p>
+        </div>
+
+        <div class="hero__action-wrap">
+          <div class="test-and-cost">
+            <div class="test-and-cost__background"></div>
+            <p class="test-and-cost__text">
+              Пройдите <b>бесплатный тест</b> 
+              <br />и узнайте стоимость
+              <br />банкротства
+            </p>
+            <a class="test-and-cost__btn button modal-opener" href="#modal-application">Узнать стоимость</a>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </section>
+    <!-- End Hero Block -->
+
+    <!-- Advantages Block -->
+    <section id="advantages" class="advantages">
+      <div class="container">
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <svg class="advantages__icon advantages__icon--lock">
+              <use xlink:href="assets/img/sprite/sprite.svg#lock"></use>
+            </svg>
+            <h3 class="advantages__name">Полностью под ключ</h3>
+            <p class="advantages__description">90% действий без вашего участия, в 2 раза быстрее, чем у других</p>
+          </li>
+          <li class="advantages__item">
+            <svg class="advantages__icon advantages__icon--ban-on-departure">
+              <use xlink:href="assets/img/sprite/sprite.svg#ban-on-departure"></use>
+            </svg>
+            <h3 class="advantages__name">Без запрета на выезд</h3>
+            <p class="advantages__description">Снимем все ограничения на выезд за границу</p>
+          </li>
+          <li class="advantages__item">
+            <svg class="advantages__icon advantages__icon--briefcase">
+              <use xlink:href="assets/img/sprite/sprite.svg#briefcase"></use>
+            </svg>
+            <h3 class="advantages__name">Сохраним ваше имущество</h3>
+            <p class="advantages__description">Знаем все юридический тонкости 127-ФЗ и практику судов</p>
+          </li>
+          <li class="advantages__item">
+            <svg class="advantages__icon advantages__icon--guarantee">
+              <use xlink:href="assets/img/sprite/sprite.svg#guarantee"></use>
+            </svg>
+            <h3 class="advantages__name">Даём гарантию</h3>
+            <p class="advantages__description">100% списание долгов или вернем деньги</p>
+          </li>
+          <li class="advantages__item">
+            <svg class="advantages__icon advantages__icon--collectors">
+              <use xlink:href="assets/img/sprite/sprite.svg#collectors"></use>
+            </svg>
+            <h3 class="advantages__name">Избавляем от коллекторов</h3>
+            <p class="advantages__description">Парализуем действия коллекторов и приставов сразу</p>
+          </li>
+          <li class="advantages__item">
+            <svg class="advantages__icon advantages__icon--experience">
+              <use xlink:href="assets/img/sprite/sprite.svg#experience"></use>
+            </svg>
+            <h3 class="advantages__name">Уникальный опыт</h3>
+            <p class="advantages__description">Знаем и избегаем ошибок коллег по цеху</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Advantages Block -->
+
+    <!-- Debt Block -->
+    <section class="debt">
+      <div class="container">
+        <div class="debt__heading">
+          <h2 class="debt__title title title--white">Спишите ваши долги</h2>
+          <p class="debt__subtitle">с помощью банкротства, уменьшения долга или его реструктуризации</p>
+        </div>
+        <a href="#modal-application" class="button debt__btn modal-opener">Бесплатная консультация</a>
+      </div>
+    </section>
+    <!-- End Debt Block -->
+
+    <!-- Costs -->
+    <section id="costs" class="costs">
+      <div class="container">
+        <h2 class="title costs__title">Расходы по делам о несостоятельности регулируются 127-ФЗ</h2>
+
+        <ul class="costs__list">
+          <li class="costs__item">
+            <p class="costs__type">Государственная пошлина</p>
+            <p class="costs__price">300 руб.</p>
+          </li>
+          <li class="costs__item">
+            <p class="costs__type">Фиксированное вознаграждение финансового управляющего, назначенного судом</p>
+            <p class="costs__price">25 000 руб.</p>
+          </li>
+          <li class="costs__item">
+            <p class="costs__type">Публикации в ЕФРСБ - "Едины федеральный реестр сведений о банкротстве"</p>
+            <p class="costs__price">от 4 000 руб.</p>
+          </li>
+          <li class="costs__item">
+            <p class="costs__type">Публикация официальных сведений о банкротстве в газете "Коммерсант"</p>
+            <p class="costs__price">от 10 000 руб.</p>
+          </li>
+          <li class="costs__item">
+            <p class="costs__type">Расходы на юридическое сопровождение банкротства градланина</p>
+            <p class="costs__price">от 12 000 руб.</p>
+          </li>
+          <li class="costs__item costs__item--result">
+            <p class="costs__type">Итого стоимость услуг по банкротству "под ключ"</p>
+            <p class="costs__price">от 51 300 руб.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Costs -->
+
+    <!-- Find-out Your Cost Block -->
+    <section class="your-cost">
+      <div class="container">
+        <div class="your-cost__heading">
+          <h2 class="your-cost__title title title--white">Какая стоимость услуги для Вас?</h2>
+          <p class="your-cost__subtitle">Пройдите бесплатный тест. Это не займет много времени</p>
+        </div>
+        <a href="#modal-application" class="button your-cost__btn modal-opener">Узнать стоимость</a>
+      </div>
+    </section>
+    <!-- End Find-out Your Cost Block -->
+
+    <!-- Results Block -->
+    <section id="results" class="results">
+      <div class="container">
+        <h2 class="results__title title">Результаты нашей работы</h2>
+        <p class="results__subtitle">
+          Ознакомьтесь с решениями в пользу клиентов, подтверждающими окончание процедуры банкротства и фактическое списание долгов
+        </p>
+
+        <div class="results__slider slider">
+          <div class="slider__wrapper">
+            <ul class="slider__list">
+              <li class="slider__item result-block">
+                <img class="result-block__image" src="assets/img/results/document.jpg" srcset="assets/img/results/document@2x.jpg 2x, assets/img/results/document@3x.jpg 3x" alt="Скриншот решения суда">
+                <h3 class="result-block__title">Списано <br /> 35 886 445 руб.</h3>
+                <a href="#" class="result-block__more-btn button">Определение суда</a>
+              </li>
+              <li class="slider__item result-block">
+                <img class="result-block__image" src="assets/img/results/document.jpg" srcset="assets/img/results/document@2x.jpg 2x, assets/img/results/document@3x.jpg 3x" alt="Скриншот решения суда">
+                <h3 class="result-block__title">Списано <br /> 35 886 445 руб.</h3>
+                <a href="#" class="result-block__more-btn button">Определение суда</a>
+              </li>
+              <li class="slider__item result-block">
+                <img class="result-block__image" src="assets/img/results/document.jpg" srcset="assets/img/results/document@2x.jpg 2x, assets/img/results/document@3x.jpg 3x" alt="Скриншот решения суда">
+                <h3 class="result-block__title">Списано <br /> 35 886 445 руб.</h3>
+                <a href="#" class="result-block__more-btn button">Определение суда</a>
+              </li>
+              <li class="slider__item result-block">
+                <img class="result-block__image" src="assets/img/results/document.jpg" srcset="assets/img/results/document@2x.jpg 2x, assets/img/results/document@3x.jpg 3x" alt="Скриншот решения суда">
+                <h3 class="result-block__title">Списано <br /> 35 886 445 руб.</h3>
+                <a href="#" class="result-block__more-btn button">Определение суда</a>
+              </li>
+              <li class="slider__item result-block">
+                <img class="result-block__image" src="assets/img/results/document.jpg" srcset="assets/img/results/document@2x.jpg 2x, assets/img/results/document@3x.jpg 3x" alt="Скриншот решения суда">
+                <h3 class="result-block__title">Списано <br /> 35 886 445 руб.</h3>
+                <a href="#" class="result-block__more-btn button">Определение суда</a>
+              </li>
+            </ul>
+          </div>
+
+          <button class="slider-arrow slider-arrow--prev"></button>
+          <button class="slider-arrow slider-arrow--next"></button>
+        </div>
+      </div>
+    </section>
+    <!-- End Results Block -->
+
+    <!-- Reviews Block -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2 class="reviews__title title">Отзывы</h2>
+
+        <div class="reviews__slider slider">
+          <div class="slider__wrapper">
+            <ul class="slider__list">
+              <li class="slider__item reviews-block">
+                <img class="reviews-block__image" src="assets/img/reviews/screen.jpg" srcset="assets/img/reviews/screen@2x.jpg 2x, assets/img/reviews/screen@3x.jpg 3x" alt="Скриншот отзыва">
+              </li>
+              <li class="slider__item reviews-block">
+                <img class="reviews-block__image" src="assets/img/reviews/screen.jpg" srcset="assets/img/reviews/screen@2x.jpg 2x, assets/img/reviews/screen@3x.jpg 3x" alt="Скриншот отзыва">
+              </li>
+              <li class="slider__item reviews-block">
+                <img class="reviews-block__image" src="assets/img/reviews/screen.jpg" srcset="assets/img/reviews/screen@2x.jpg 2x, assets/img/reviews/screen@3x.jpg 3x" alt="Скриншот отзыва">
+              </li>
+              <li class="slider__item reviews-block">
+                <img class="reviews-block__image" src="assets/img/reviews/screen.jpg" srcset="assets/img/reviews/screen@2x.jpg 2x, assets/img/reviews/screen@3x.jpg 3x" alt="Скриншот отзыва">
+              </li>
+              <li class="slider__item reviews-block">
+                <img class="reviews-block__image" src="assets/img/reviews/screen.jpg" srcset="assets/img/reviews/screen@2x.jpg 2x, assets/img/reviews/screen@3x.jpg 3x" alt="Скриншот отзыва">
+              </li>
+            </ul>
+          </div>
+
+          <button class="slider-arrow slider-arrow--prev"></button>
+          <button class="slider-arrow slider-arrow--next"></button>
+        </div>
+      </div>
+    </section>
+    <!-- End Reviews Block -->
+
+    <!-- About Block -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="about__title title title--white">О нас</h2>
+
+        <ul class="about__list">
+          <li class="about__item">
+            <p class="about__value">5</p>
+            <p class="about__type">юристов в штате</p>
+          </li>
+          <li class="about__item">
+            <p class="about__value">274</p>
+            <p class="about__type">дела выиграно в суде</p>
+          </li>
+          <li class="about__item">
+            <p class="about__value">10</p>
+            <p class="about__type">лет на рынке</p>
+          </li>
+          <li class="about__item">
+            <p class="about__value">423</p>
+            <p class="about__type">млн списано</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End About Block -->
+
+    <!-- Map Block -->
+    <section class="map">
+      <iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CCUiJRSxlD" allowfullscreen></iframe>
+    </section>
+    <!-- End Map Block -->
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            <h2 class="title title--white footer__title-contacts">Как с нами связаться?</h2>
+
+            <div class="footer__phones">
+              <a class="footer__phone-number" href="tel:89872544933">8 987 254 49 33</a>
+              <a class="footer__phone-number" href="tel:83472944933">8 347 294 49 33</a>
+            </div>
+
+            <p class="footer__address">
+              г. Уфа, ул. Карла Маркса, д. 37/4,
+              <br/>Офис 411 (БЦ Капитал)
+            </p>
+          </div>
+
+          <div class="column">
+            <h2 class="title title--white footer__title-consultation">Проконсультируйтесь с юристом</h2>
+            <p class="footer__subtitle">Оставьте заявку</p>
+            <a class="footer__btn button modal-opener" href="#modal-application">Бесплатная консультация</a>
+          </div>
+        </div>
+
+        <p class="footer__owner-info">ООО ИП Иванов, ИНН 1234567</p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+  </main>
+
+
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__wrapper">
+      <a class="modal__close-btn" href="#"></a>
+      <div class="modal__container" id="modal-application">
+        <h3 class="modal__title">Оставьте заявку и мы вам перезвоним</h3>
+        <form class="modal__form modal-form" id="form-get-catalog" action="#" method="post">
+          <p class="modal-form__field">
+            <label class="modal-form__label" for="get-catalog-name">Имя</label>
+            <input class="modal-form__input" id="get-catalog-name" type="text" name="name" />
+          </p>
+          <p class="modal-form__field">
+            <label class="modal-form__label" for="get-catalog-phone">Телефон *</label>
+            <input class="modal-form__input phoneMask" id="get-catalog-phone" type="tel" name="phone" required="required" />
+          </p>
+          <button class="button modal-form__submit-btn" type="submit">
+            <span class="button__text">Отправить</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
