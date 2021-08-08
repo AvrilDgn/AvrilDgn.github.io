@@ -682,6 +682,46 @@ button:focus {
   width: 100%;
 }
 
+.modal .form-status {
+  position: relative;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #000;
+  bottom: initial;
+}
+
+.modal .form-status--fault {
+  color: #e24955;
+}
+
+@-webkit-keyframes status {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes status {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .footer {
   padding-top: 56px;
   padding-bottom: 36px;

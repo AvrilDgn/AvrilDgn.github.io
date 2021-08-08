@@ -7758,6 +7758,8 @@ var dist_default = /*#__PURE__*/__webpack_require__.n(dist);
 /***** Main script *****/
 document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
+	let windowWidth = document.body.clientWidth;
+
 	core_class.use([navigation, pagination]);
 
 	let raf = function (callback) {
@@ -7847,6 +7849,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 	window.onresize = function (e) {
+		if (windowWidth === document.body.clientWidth) {
+			return;
+		}
+		
+		windowWidth = document.body.clientWidth;
+
 		if (menuCollapse.classList.contains('header__collapse--opened')) {
 			scroll_lock_default.a.enablePageScroll(menuCollapse);
 			menuCollapse.classList.remove('header__collapse--opened');
@@ -8070,67 +8078,67 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	/**
 	 * Form
-	 *//*
+	 */
 
-let forms = document.forms;
+	let forms = document.forms;
 
-for (let i = 0; i < forms.length; i++) {
-  if (forms[i] && window.FormData) {
-	  let form = forms[i];
+	for (let i = 0; i < forms.length; i++) {
+		if (forms[i] && window.FormData) {
+			let form = forms[i];
 
-	  let btn = form.querySelector('button[type="submit"]');
+			let btn = form.querySelector('button[type="submit"]');
 
-	  let message = new Object();
-	  message.loading = 'Загрузка...';
-	  message.success = 'Спасибо! Отправка прошла успешно!';
-	  message.failure = 'Что-то пошло не так...';
+			let message = new Object();
+			message.loading = 'Загрузка...';
+			message.success = 'Спасибо! Отправка прошла успешно!';
+			message.failure = 'Что-то пошло не так...';
 
-	  let statusMessage = document.createElement('div');
-	  statusMessage.classList.add('form-status');
+			let statusMessage = document.createElement('div');
+			statusMessage.classList.add('form-status');
 
-	  let request = new XMLHttpRequest();
-	  request.open('POST', 'form.php', true);
-	  request.setRequestHeader('accept', 'application/json');
+			let request = new XMLHttpRequest();
+			request.open('POST', 'form.php', true);
+			request.setRequestHeader('accept', 'application/json');
 
-	  form.addEventListener('submit', function (e) {
-		  e.preventDefault();
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
 
-		  btn.disabled = true;
+				btn.disabled = true;
 
-		  let formData = new FormData(form);
-		  let statusOn = false;
-		  statusMessage.classList.remove('form-status--fault');
+				let formData = new FormData(form);
+				let statusOn = false;
+				statusMessage.classList.remove('form-status--fault');
 
-		  request.send(formData);
+				request.send(formData);
 
-		  request.onreadystatechange = function () {
-			  if (request.readyState < 4) {
-				  statusMessage.innerHTML = message.loading;
-			  }
-			  else if (request.readyState === 4) {
-				  if (request.status == 200 && request.status < 300) {
-					  statusMessage.innerHTML = message.success;
-					  btn.disabled = false;
-				  }
-				  else {
-					  statusMessage.classList.add('form-status--fault');
-					  statusMessage.innerHTML = message.failure;
-					  btn.disabled = false;
-				  }
-			  }
+				request.onreadystatechange = function () {
+					if (request.readyState < 4) {
+						statusMessage.innerHTML = message.loading;
+					}
+					else if (request.readyState === 4) {
+						if (request.status == 200 && request.status < 300) {
+							statusMessage.innerHTML = message.success;
+							btn.disabled = false;
+						}
+						else {
+							statusMessage.classList.add('form-status--fault');
+							statusMessage.innerHTML = message.failure;
+							btn.disabled = false;
+						}
+					}
 
-			  if (request.responseText) {
-				  statusMessage.innerHTML = request.responseText;
-			  }
+					if (request.responseText) {
+						statusMessage.innerHTML = request.responseText;
+					}
 
-			  if (!statusOn) {
-				  form.appendChild(statusMessage);
-				  statusOn = true;
-			  }
-		  }
-	  });
-  }
-}*/
+					if (!statusOn) {
+						form.appendChild(statusMessage);
+						statusOn = true;
+					}
+				}
+			});
+		}
+	}
 });
 
 /***/ })
