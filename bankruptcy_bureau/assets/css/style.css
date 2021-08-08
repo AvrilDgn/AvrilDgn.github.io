@@ -1299,6 +1299,7 @@ button:focus {
 
   .header__phones-group {
     margin-top: 50px;
+    margin-bottom: 20px;
     text-align: left;
   }
 

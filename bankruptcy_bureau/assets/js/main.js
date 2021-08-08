@@ -7904,8 +7904,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		loop: true,
 
 		navigation: {
-			nextEl: ".slider-arrow--next",
-			prevEl: ".slider-arrow--prev",
+			nextEl: ".results__slider .slider-arrow--next",
+			prevEl: ".results__slider .slider-arrow--prev",
 			disabledClass: 'slider__arrow--disabled',
 		},
 
@@ -7942,8 +7942,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		loop: true,
 
 		navigation: {
-			nextEl: ".slider-arrow--next",
-			prevEl: ".slider-arrow--prev",
+			nextEl: ".reviews__slider .slider-arrow--next",
+			prevEl: ".reviews__slider .slider-arrow--prev",
 			disabledClass: 'slider__arrow--disabled',
 		},
 
