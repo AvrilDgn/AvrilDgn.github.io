@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Сауна “Малибу” - Главная</title>
+  <title>Сауна “Малибу” - Страница зала</title>
 
   <!-- Favicon -->
 
@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="home-simple">
+<body class="simple-hall">
 
   <main class="main">
 
@@ -62,92 +62,6 @@
     </header>
     <!-- End Header -->
 
-    <!-- Hero Block -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero__info">
-          <div class="hero__heading">
-            <h1 class="hero__title">САУНА “малибу” в красноярске</h1>
-            <p class="hero__schedule">
-              с 8: 00 до 14: 00 - 240р пн-пт
-              <span class="hero__schedule-info">(без ограничений по времени посещения)</span>
-            </p>
-            <a href="#modal-feedback" class="hero__feedback-btn button modal-opener">Заказать обратный звонок</a>
-          </div>
-
-          <div class="hero__contacts">
-            <p class="hero__address address">
-              <svg class="address__icon">
-                <use xlink:href="assets/img/sprite/sprite.svg#marker"></use>
-              </svg>
-              <span class="address__text">
-
-						г. Москва, Проспект Мира, д. 123
-
-					</span>
-            </p>
-
-            <ul class="hero__socials socials">
-              <li class="socials__item">
-                <a href="#" class="socials__link socials__link--vk">
-                  <svg>
-                    <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="socials__item">
-                <a href="#" class="socials__link socials__link--instagram">
-                  <svg>
-                    <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="socials__item">
-                <a href="#" class="socials__link socials__link--facebook">
-                  <svg>
-                    <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="hero__book-form book-form">
-          <form id="form-book" action="#" method="post">
-            <h2 class="book-form__title">Забронировать сауну</h2>
-            <p class="book-form__field">
-              <input class="book-form__input" type="tel" name="phone" id="form-book-phone" placeholder="Ваш телефон" required>
-            </p>
-            <p class="book-form__field">
-              <input class="book-form__input" type="text" name="visiting-time" id="form-book-visiting-time" placeholder="Время посещения сауны" required>
-            </p>
-            <p class="book-form__field">
-              <input class="book-form__input" type="number" name="usage-time" id="form-book-usage-time" placeholder="Введите число часов" required>
-            </p>
-            <p class="book-form__agreement agreement-check">
-              <label class="checkbox agreement-check__checkbox">
-                <input type="checkbox" name="agreement" id="form-book-agreement" required>
-                <svg class="checkbox__check-icon">
-                  <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
-                </svg>
-              </label>
-              <span class="agreement-check__text">
-
-						Согласен на обработку и передачу
-
-						персональных данных в соответствии с
-
-						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
-
-					</span>
-            </p>
-            <button class="book-form__btn button button--transparent" type="submit">ЗАБРОНИРОВАТЬ</button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <!-- End Hero Block -->
     <!-- Hall Main Block -->
     <section class="hall-main">
       <div class="container">
@@ -277,6 +191,43 @@
       </div>
     </section>
     <!-- End About Block -->
+    <!-- check-free Form Block -->
+    <section class="check-free-form container">
+      <form id="form-check-free" action="#" method="post">
+        <h2 class="check-free-form__title">узнать, свободна ли сауна?</h2>
+
+        <p class="check-free-form__field">
+          <input class="check-free-form__input" type="tel" name="phone" id="form-check-free-phone" placeholder="Ваш телефон" required>
+        </p>
+        <p class="check-free-form__field">
+          <input class="check-free-form__input" type="text" name="time" id="form-check-free-time" placeholder="Время посещения сауны" required>
+        </p>
+        <p class="check-free-form__field">
+          <input class="check-free-form__input" type="number" name="rating" id="form-check-free-rating" placeholder="Сколько часов" required>
+        </p>
+
+        <p class="check-free-form__agreement agreement-check">
+          <label class="checkbox agreement-check__checkbox">
+            <input type="checkbox" name="agreement" id="form-check-free-agreement" required>
+            <svg class="checkbox__check-icon">
+              <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+            </svg>
+          </label>
+          <span class="agreement-check__text">
+
+				Согласен на обработку и передачу
+
+				персональных данных в соответствии с
+
+				<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+
+			</span>
+        </p>
+
+        <button class="check-free-form__btn button" type="submit">Проверить сауну на дату</button>
+      </form>
+    </section>
+    <!-- End check-free Form Block -->
     <!-- Reviews -->
     <section class="reviews">
       <div class="container">
@@ -503,6 +454,117 @@
       </form>
     </section>
     <!-- End Review Form Block -->
+    <!-- Halls-Short -->
+    <section class="halls-short">
+      <div class="container">
+        <h2 class="halls-short__title title">Наши залы</h2>
+
+        <div class="halls-short__slider">
+          <div class="halls-short__wrapper">
+            <ul class="halls-short__list">
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="simple-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="simple-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="simple-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="simple-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="halls-short__arrow arrow arrow--prev"></button>
+        <button class="halls-short__arrow arrow arrow--next"></button>
+
+        <a href="halls.html" class="halls-short__all-hals-btn button button--transparent">Все залы</a>
+      </div>
+    </section>
+    <!-- End Halls-Short -->
     <!-- Contacts Block -->
     <section class="contacts">
       <!-- 55.825032, 37.643381 -->
