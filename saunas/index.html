@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Home</title>
+
+  <!-- Favicon -->
+
+
+
+
+
+
+  <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+  <main class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo header__logo">
+          <svg class="logo__icon">
+            <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
+          </svg>
+          <span class="logo__description">
+
+				Сауна в оздоровительном комплексе Paradise
+
+			</span>
+        </a>
+
+        <a class="header__submenu-open" href="#">
+          <span></span>
+        </a>
+
+        <div class="header__collapse">
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link" href="#">Залы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link nav__link--active" href="#">О нас</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#">Отзывы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__contacts">
+            <a class="header__phone" href="tel:+79253033333">+7 (925) 303-33-33</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Hero Block -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__info">
+          <div class="hero__heading">
+            <h1 class="hero__title">САУНА “малибу” в красноярске</h1>
+            <p class="hero__schedule">
+              с 8: 00 до 14: 00 - 240р пн-пт
+              <span class="hero__schedule-info">(без ограничений по времени посещения)</span>
+            </p>
+            <a href="#" class="hero__feedback-btn button">Заказать обратный звонок</a>
+          </div>
+
+          <div class="hero__contacts">
+            <p class="hero__address address">
+              <svg class="address__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#marker"></use>
+              </svg>
+              <span class="address__text">
+
+						г. Москва, Проспект Мира, д. 123
+
+					</span>
+            </p>
+
+            <ul class="hero__socials socials">
+              <li class="socials__item">
+                <a href="#" class="socials__link socials__link--vk">
+                  <svg>
+                    <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link socials__link--instagram">
+                  <svg>
+                    <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link socials__link--facebook">
+                  <svg>
+                    <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hero__book-form book-form">
+          <form id="form-book" action="#" method="post">
+            <h2 class="book-form__title">Забронировать сауну</h2>
+            <p class="book-form__field">
+              <input class="book-form__input" type="tel" name="phone" id="form-book-phone" placeholder="Ваш телефон" required>
+            </p>
+            <p class="book-form__field">
+              <input class="book-form__input" type="text" name="visiting-time" id="form-book-visiting-time" placeholder="Время посещения сауны" required>
+            </p>
+            <p class="book-form__field">
+              <input class="book-form__input" type="number" name="usage-time" id="form-book-usage-time" placeholder="Введите число часов" required>
+            </p>
+            <p class="book-form__agreement agreement-check">
+              <label class="checkbox agreement-check__checkbox">
+                <input type="checkbox" name="agreement" id="form-book-agreement" required>
+                <svg class="checkbox__check-icon">
+                  <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                </svg>
+              </label>
+              <span class="agreement-check__text">
+
+						Согласен на обработку и передачу
+
+						персональных данных в соответствии с
+
+						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+
+					</span>
+            </p>
+            <button class="book-form__btn button button--transparent" type="submit">ЗАБРОНИРОВАТЬ</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Block -->
+    <!-- Halls-Short -->
+    <section class="halls-short">
+      <div class="container">
+        <h2 class="halls-short__title title">наши залы</h2>
+
+        <div class="halls-short__slider">
+          <div class="halls-short__wrapper">
+            <ul class="halls-short__list">
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="#" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="#" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="#" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+              <li class="halls-short__item">
+                <div class="halls-short__card hall-card">
+                  <img class="hall-card__image" src="assets/img/halls/image.jpg" alt="Изображение зала">
+
+                  <div class="hall-card__visitors-block visitors">
+                    <svg class="visitors__icon">
+                      <use xlink:href="assets/img/sprite/sprite.svg#user"></use>
+                    </svg>
+                    <p class="visitors__text">
+                      <b class="visitors__number">3</b> чел
+                    </p>
+                  </div>
+
+                  <div class="hall-card__info-block">
+                    <div class="hall-card__promotion">Акция</div>
+
+                    <h3 class="hall-card__name">Русская баня Малибу</h3>
+                    <p class="hall-card__type">финская</p>
+                    <p class="hall-card__cost">от <b class="hall-card__cost-number">500</b> руб.</p>
+                    <a href="#" class="hall-card__more button button--transparent">Подробнее</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="halls-short__arrow arrow arrow--prev"></button>
+        <button class="halls-short__arrow arrow arrow--next"></button>
+
+        <a href="#" class="halls-short__all-hals-btn button button--transparent">Все залы</a>
+      </div>
+    </section>
+    <!-- End Halls-Short -->
+    <!-- Advantages -->
+    <section class="advantages">
+      <div class="container">
+        <h2 class="advantages__title title">Наши преимущества</h2>
+
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <div class="advantages__icon advantages__icon--aqua"><i></i>
+            </div>
+            <h3 class="advantages__name">аквазона</h3>
+            <p class="advantages__text">
+              Бассейн,
+              <br>Размеры (Ш x Д x Г),
+              <br>м: 3 x 3 x 1.6,
+              <br>Теплый бассейн, Гидромассаж, Гейзер, Подсветка, Фильтрация, Душ
+            </p>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__icon advantages__icon--relax"><i></i>
+            </div>
+            <h3 class="advantages__name">Комната отдыха</h3>
+            <p class="advantages__text">
+              С комнатой отдыха
+              <br>S: 4 м2,
+              <br>вместимость: 2 чел.
+            </p>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__icon advantages__icon--food"><i></i>
+            </div>
+            <h3 class="advantages__name">Питание/Напитки</h3>
+            <p class="advantages__text">
+              Можно со своей едой, Бар, Обеденная зона, Вместимость: 6 чел., Чай
+            </p>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__icon advantages__icon--entertainment"><i></i>
+            </div>
+            <h3 class="advantages__name">Развлечения</h3>
+            <p class="advantages__text">
+              Кальян (+500 руб.)
+            </p>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__icon advantages__icon--additionally"><i></i>
+            </div>
+            <h3 class="advantages__name">Дополнительно</h3>
+            <p class="advantages__text">
+              Есть веники, Березовый, Дубовый, Эвкалиптовый, Со своим веником
+              <br>(+200 руб.), Парковка, Тапочки (+60 руб.), Простыни (+60 руб.), Полотенца (+60 руб.), Шампунь (+30 руб.),
+              <br>Мыло (+30 руб.), Посуда
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Advantages -->
+    <!-- Promotions -->
+    <section class="promotions">
+      <div class="container">
+        <h2 class="promotions__title title">актуальные скидки и акции</h2>
+
+        <div class="promotions__slider">
+          <div class="promotions__wrapper">
+            <ul class="promotions__list">
+              <li class="promotions__item">
+                <div class="promotions__card promotion">
+                  <h3 class="promotion__title">Спецпредложение!</h3>
+                  <p class="promotion__type">Получите скидку 10%</p>
+                  <p class="promotion__value">на сауну “Малибу”</p>
+                  <a href="#" class="promotion__more-btn button">Подробнее</a>
+                </div>
+              </li>
+              <li class="promotions__item">
+                <div class="promotions__card promotion">
+                  <h3 class="promotion__title">Спецпредложение!</h3>
+                  <p class="promotion__type">Получите скидку 10%</p>
+                  <p class="promotion__value">на сауну “Малибу”</p>
+                  <a href="#" class="promotion__more-btn button">Подробнее</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="promotions__pagination pagination"></div>
+        <button class="promotions__arrow arrow arrow--prev"></button>
+        <button class="promotions__arrow arrow arrow--next"></button>
+      </div>
+    </section>
+    <!-- End Promotions -->
+    <!-- About Block -->
+    <section class="about">
+      <div class="container">
+        <h2 class="about__title title">О нашей бане</h2>
+
+        <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,</p>
+      </div>
+    </section>
+    <!-- End About Block -->
+    <!-- Reviews -->
+    <section class="reviews">
+      <div class="container">
+        <h2 class="reviews__title title title--white">Отзывы наших клиентов</h2>
+
+        <div class="reviews__slider">
+          <div class="reviews__wrapper">
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <div class="reviews__card review">
+                  <div class="review__header">
+                    <h3 class="review__author">Смирнов Игорь</h3>
+
+                    <ul class="review__rating rating" data-rating="4">
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="review__date">10. 01. 2021</p>
+
+                  <p class="review__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </li>
+              <li class="reviews__item">
+                <div class="reviews__card review">
+                  <div class="review__header">
+                    <h3 class="review__author">kfjjljeafjelafj jlwddkakwdjaljf</h3>
+
+                    <ul class="review__rating rating" data-rating="3">
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="review__date">10. 01. 2021</p>
+
+                  <p class="review__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </li>
+              <li class="reviews__item">
+                <div class="reviews__card review">
+                  <div class="review__header">
+                    <h3 class="review__author">Смирнов Игорь</h3>
+
+                    <ul class="review__rating rating" data-rating="4">
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="review__date">10. 01. 2021</p>
+
+                  <p class="review__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </li>
+              <li class="reviews__item">
+                <div class="reviews__card review">
+                  <div class="review__header">
+                    <h3 class="review__author">Смирнов Игорь</h3>
+
+                    <ul class="review__rating rating" data-rating="4">
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg>
+                          <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="review__date">10. 01. 2021</p>
+
+                  <p class="review__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reviews__pagination pagination"></div>
+        <button class="reviews__arrow arrow arrow--prev"></button>
+        <button class="reviews__arrow arrow arrow--next"></button>
+
+      </div>
+    </section>
+    <!-- End Reviews -->
+    <!-- Review Form Block -->
+    <section class="review-form container">
+      <form id="form-review" action="#" method="post">
+        <h2 class="review-form__title">Оставьте свой отзыв о походе к нам</h2>
+
+        <p class="review-form__field">
+          <input class="review-form__input" type="text" name="name" id="form-review-name" placeholder="Ваше имя" required>
+        </p>
+        <p class="review-form__field">
+          <input class="review-form__input" type="tel" name="phone" id="form-review-phone" placeholder="Ваш телефон" required>
+        </p>
+        <p class="review-form__field">
+          <textarea class="review-form__input review-form__input--textarea" name="message" id="form-review-message" placeholder="Ваш отзыв"></textarea>
+        </p>
+        <p class="review-form__field">
+          <input class="review-form__input" type="number" name="rating" id="form-review-rating" placeholder="Ваша оценка" required>
+        </p>
+
+        <p class="review-form__agreement agreement-check">
+          <label class="checkbox agreement-check__checkbox">
+            <input type="checkbox" name="agreement" id="form-review-agreement" required>
+            <svg class="checkbox__check-icon">
+              <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+            </svg>
+          </label>
+          <span class="agreement-check__text">
+
+				Согласен на обработку и передачу
+
+				персональных данных в соответствии с
+
+				<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+
+			</span>
+        </p>
+
+        <button class="review-form__btn button" type="submit">оставить отзыв</button>
+      </form>
+    </section>
+    <!-- End Review Form Block -->
+    <!-- Contacts Block -->
+    <section class="contacts">
+      <!-- 55.825032, 37.643381 -->
+      <div class="contacts__map yaMap" data-center="55.825032, 37.643381" data-zoom="16" data-data="&quot;title&quot;:&quot;Компания ТМ Ростерем&quot;,&quot;body&quot;:&quot;г. Москва, Проспект Мира, д. 123&quot;,&quot;color&quot;:&quot;#fc6500&quot;">
+      </div>
+
+      <div class="container">
+        <div class="contacts__block">
+          <h2 class="contacts__title">Сауны Малибу</h2>
+
+          <p class="contacts__address address">
+            <svg class="address__icon">
+              <use xlink:href="assets/img/sprite/sprite.svg#marker"></use>
+            </svg>
+            <span class="address__text">
+
+					г. Москва, Проспект Мира, д. 123
+
+				</span>
+          </p>
+          <a href="tel:+79253033333" class="contacts__phone phone">
+            <svg class="phone__icon">
+              <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+            </svg>
+            <span class="phone__text">
+
+					+7 (925) 303-33-33
+
+				</span>
+          </a>
+          <p class="contacts__schedule schedule">
+            <svg class="schedule__icon">
+              <use xlink:href="assets/img/sprite/sprite.svg#clock"></use>
+            </svg>
+            <span class="schedule__text">
+
+					Пн-Пт с 8: 00 до 14: 00
+
+				</span>
+          </p>
+
+          <ul class="contacts__socials socials">
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--vk">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--instagram">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--facebook">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+          <a href="#" class="contacts__feedback-btn button">Заказать обратный звонок</a>
+        </div>
+      </div>
+    </section>
+    <!-- End Contacts Block -->
+
+
+  </main>
+
+
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__wrapper">
+      <a class="modal__close-btn" href="#"></a>
+
+      <div class="modal__container" id="modal-question">
+        <h3 class="modal__title">Задать вопрос</h3>
+        <form class="modal__form modal-form" id="form-question" action="#" method="post">
+          <p class="modal-form__field">
+            <label class="modal-form__label" for="question-name">Имя</label>
+            <input class="modal-form__input" id="question-name" type="text" name="name" />
+          </p>
+          <p class="modal-form__field">
+            <label class="modal-form__label" for="question-phone">Телефон *</label>
+            <input class="modal-form__input phoneMask" id="question-phone" type="tel" name="phone" required="required" />
+          </p>
+          <p class="modal-form__field">
+            <label class="modal-form__label" for="question-text">Вопрос *</label>
+            <textarea class="modal-form__input modal-form__input--textarea" id="question-text" name="question" required="required"></textarea>
+          </p>
+          <button class="button modal-form__submit-btn" type="submit">
+            <span class="button__text">Отправить</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=3398ec65-e86b-4576-913c-20b902a73916"></script>
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
