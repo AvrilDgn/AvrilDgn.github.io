@@ -43,13 +43,13 @@
         <div class="header__collapse">
           <nav class="nav header__nav">
             <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link" href="halls.html">Залы</a>
+              <li class="nav__item"><a class="nav__link" href="#halls">Залы</a>
               </li>
-              <li class="nav__item"><a class="nav__link nav__link--active" href="#">О нас</a>
+              <li class="nav__item"><a class="nav__link" href="#about">О нас</a>
               </li>
-              <li class="nav__item"><a class="nav__link" href="#">Отзывы</a>
+              <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a>
               </li>
-              <li class="nav__item"><a class="nav__link" href="#">Контакты</a>
+              <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -115,7 +115,7 @@
               </li>
             </ul>
 
-            <a href="#modal-feedback" class="header__feedback-btn button modal-opener">Заказать обратный звонок</a>
+            <a href="#" class="header__feedback-btn button modal-opener" data-modal="modal-feedback">Заказать обратный звонок</a>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
     <!-- End Header -->
 
     <!-- Hero Block -->
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="container">
         <div class="hero__info">
           <div class="hero__heading">
@@ -132,7 +132,7 @@
               с 8: 00 до 14: 00 - 240р пн-пт
               <span class="hero__schedule-info">(без ограничений по времени посещения)</span>
             </p>
-            <a href="#modal-feedback" class="hero__feedback-btn button modal-opener">Заказать обратный звонок</a>
+            <a href="#" class="hero__feedback-btn button modal-opener" data-modal="modal-feedback">Заказать обратный звонок</a>
           </div>
 
           <div class="hero__contacts">
@@ -209,7 +209,7 @@
     </section>
     <!-- End Hero Block -->
     <!-- Hall Main Block -->
-    <section class="hall-main">
+    <section id="halls" class="hall-main">
       <div class="container">
         <!-- Gallery -->
         <div class="hall-main__gallery-block">
@@ -259,13 +259,17 @@
             <p class="hall-main__value"><b class="hall-main__accent">6-8</b> чел(свыше 8 чел, доплата)</p>
           </div>
 
-          <a class="hall-main__more-btn button button--transparent" href="simple-hall.html">Подробнее</a>
+          <div class="hall-main__discount discount-card">
+            <h3 class="discount-card__title">Не пропустите!</h3>
+            <p class="discount-card__gift">5-й час в подарок!</p>
+            <a class="discount-card__get-btn button modal-opener" href="#" data-modal="modal-promotion">Получите скидку</a>
+          </div>
         </div>
       </div>
     </section>
     <!-- End Hall Main -->
     <!-- Advantages -->
-    <section class="advantages">
+    <section id="advantages" class="advantages">
       <div class="container">
         <h2 class="advantages__title title">Наши преимущества</h2>
 
@@ -327,7 +331,7 @@
     </section>
     <!-- End Advantages -->
     <!-- About Block -->
-    <section class="about">
+    <section id="about" class="about">
       <div class="container">
         <h2 class="about__title title">О нашей бане</h2>
 
@@ -339,7 +343,7 @@
     </section>
     <!-- End About Block -->
     <!-- Reviews -->
-    <section class="reviews">
+    <section id="reviews" class="reviews">
       <div class="container">
         <h2 class="reviews__title title title--white">Отзывы наших клиентов</h2>
 
@@ -527,7 +531,7 @@
     <!-- Review Form Block -->
     <section class="review-form container">
       <form id="form-review" action="#" method="post">
-        <h2 class="review-form__title">Оставьте свой отзыв о походе к нам</h2>
+        <h2 class="review-form__title">Оставьте свой отзыв</h2>
 
         <p class="review-form__field field">
           <input class="review-form__input" type="text" name="name" id="form-review-name" placeholder="Ваше имя" required>
@@ -565,7 +569,7 @@
     </section>
     <!-- End Review Form Block -->
     <!-- Contacts Block -->
-    <section class="contacts">
+    <section id="contacts" class="contacts">
       <!-- 55.825032, 37.643381 -->
       <div class="contacts__map yaMap" data-center="55.825032, 37.643381" data-zoom="16" data-data="&quot;title&quot;:&quot;Компания ТМ Ростерем&quot;,&quot;body&quot;:&quot;г. Москва, Проспект Мира, д. 123&quot;,&quot;color&quot;:&quot;#fc6500&quot;">
       </div>
@@ -629,7 +633,7 @@
             </li>
           </ul>
 
-          <a href="#modal-feedback" class="contacts__feedback-btn button modal-opener">Заказать обратный звонок</a>
+          <a href="#" class="contacts__feedback-btn button modal-opener" data-modal="modal-feedback">>Заказать обратный звонок</a>
         </div>
       </div>
     </section>
@@ -657,7 +661,7 @@
 
           <p class="modal-form__agreement agreement-check">
             <label class="checkbox agreement-check__checkbox">
-              <input type="checkbox" name="agreement" id="form-book-agreement" required>
+              <input type="checkbox" name="agreement" id="modal-form-agreement" required>
               <svg class="checkbox__check-icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
               </svg>
@@ -688,7 +692,7 @@
 
           <p class="modal-form__agreement agreement-check">
             <label class="checkbox agreement-check__checkbox">
-              <input type="checkbox" name="agreement" id="form-book-agreement" required>
+              <input type="checkbox" name="agreement" id="modal-form-agreement" required>
               <svg class="checkbox__check-icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
               </svg>

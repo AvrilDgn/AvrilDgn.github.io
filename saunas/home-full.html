@@ -43,13 +43,13 @@
         <div class="header__collapse">
           <nav class="nav header__nav">
             <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link" href="halls.html">Залы</a>
+              <li class="nav__item"><a class="nav__link" href="#halls">Залы</a>
               </li>
-              <li class="nav__item"><a class="nav__link nav__link--active" href="#">О нас</a>
+              <li class="nav__item"><a class="nav__link" href="#about">О нас</a>
               </li>
-              <li class="nav__item"><a class="nav__link" href="#">Отзывы</a>
+              <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a>
               </li>
-              <li class="nav__item"><a class="nav__link" href="#">Контакты</a>
+              <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -115,7 +115,7 @@
               </li>
             </ul>
 
-            <a href="#modal-feedback" class="header__feedback-btn button modal-opener">Заказать обратный звонок</a>
+            <a href="#" class="header__feedback-btn button modal-opener" data-modal="modal-feedback">Заказать обратный звонок</a>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
     <!-- End Header -->
 
     <!-- Hero Block -->
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="container">
         <div class="hero__info">
           <div class="hero__heading">
@@ -132,7 +132,7 @@
               с 8: 00 до 14: 00 - 240р пн-пт
               <span class="hero__schedule-info">(без ограничений по времени посещения)</span>
             </p>
-            <a href="#modal-feedback" class="hero__feedback-btn button modal-opener">Заказать обратный звонок</a>
+            <a href="#" class="hero__feedback-btn button modal-opener" data-modal="modal-feedback">Заказать обратный звонок</a>
           </div>
 
           <div class="hero__contacts">
@@ -209,7 +209,7 @@
     </section>
     <!-- End Hero Block -->
     <!-- Halls-Short -->
-    <section class="halls-short">
+    <section id="halls" class="halls-short">
       <div class="container">
         <h2 class="halls-short__title title">Наши залы</h2>
 
@@ -389,7 +389,7 @@
     </section>
     <!-- End Halls-Short -->
     <!-- Advantages -->
-    <section class="advantages">
+    <section id="advantages" class="advantages">
       <div class="container">
         <h2 class="advantages__title title">Наши преимущества</h2>
 
@@ -451,7 +451,7 @@
     </section>
     <!-- End Advantages -->
     <!-- Promotions -->
-    <section class="promotions">
+    <section id="promotions" class="promotions">
       <div class="container">
         <h2 class="promotions__title title">актуальные скидки и акции</h2>
 
@@ -463,7 +463,7 @@
                   <h3 class="promotion__title"><span class="promotion__title-desc">Спецпредложение!</span><span class="promotion__title-mob">Акция!</span></h3>
                   <p class="promotion__type">Получите скидку 10%</p>
                   <p class="promotion__value">на сауну “Малибу”</p>
-                  <a href="#modal-promotion" class="promotion__more-btn button modal-opener">Подробнее</a>
+                  <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">Подробнее</a>
                 </div>
               </li>
               <li class="promotions__item">
@@ -471,7 +471,7 @@
                   <h3 class="promotion__title"><span class="promotion__title-desc">Спецпредложение!</span><span class="promotion__title-mob">Акция!</span></h3>
                   <p class="promotion__type">Получите скидку 10%</p>
                   <p class="promotion__value">на сауну “Малибу”</p>
-                  <a href="#modal-promotion" class="promotion__more-btn button modal-opener">Подробнее</a>
+                  <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">Подробнее</a>
                 </div>
               </li>
             </ul>
@@ -485,7 +485,7 @@
     </section>
     <!-- End Promotions -->
     <!-- About Block -->
-    <section class="about">
+    <section id="about" class="about">
       <div class="container">
         <h2 class="about__title title">О нашей бане</h2>
 
@@ -497,7 +497,7 @@
     </section>
     <!-- End About Block -->
     <!-- Reviews -->
-    <section class="reviews">
+    <section id="reviews" class="reviews">
       <div class="container">
         <h2 class="reviews__title title">Отзывы наших клиентов</h2>
 
@@ -685,7 +685,7 @@
     <!-- Review Form Block -->
     <section class="review-form container">
       <form id="form-review" action="#" method="post">
-        <h2 class="review-form__title">Оставьте свой отзыв о походе к нам</h2>
+        <h2 class="review-form__title">Оставьте свой отзыв</h2>
 
         <p class="review-form__field field">
           <input class="review-form__input" type="text" name="name" id="form-review-name" placeholder="Ваше имя" required>
@@ -723,7 +723,7 @@
     </section>
     <!-- End Review Form Block -->
     <!-- Contacts Block -->
-    <section class="contacts">
+    <section id="contacts" class="contacts">
       <!-- 55.825032, 37.643381 -->
       <div class="contacts__map yaMap" data-center="55.825032, 37.643381" data-zoom="16" data-data="&quot;title&quot;:&quot;Компания ТМ Ростерем&quot;,&quot;body&quot;:&quot;г. Москва, Проспект Мира, д. 123&quot;,&quot;color&quot;:&quot;#fc6500&quot;">
       </div>
@@ -787,7 +787,7 @@
             </li>
           </ul>
 
-          <a href="#modal-feedback" class="contacts__feedback-btn button modal-opener">Заказать обратный звонок</a>
+          <a href="#" class="contacts__feedback-btn button modal-opener" data-modal="modal-feedback">>Заказать обратный звонок</a>
         </div>
       </div>
     </section>
@@ -815,7 +815,7 @@
 
           <p class="modal-form__agreement agreement-check">
             <label class="checkbox agreement-check__checkbox">
-              <input type="checkbox" name="agreement" id="form-book-agreement" required>
+              <input type="checkbox" name="agreement" id="modal-form-agreement" required>
               <svg class="checkbox__check-icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
               </svg>
@@ -846,7 +846,7 @@
 
           <p class="modal-form__agreement agreement-check">
             <label class="checkbox agreement-check__checkbox">
-              <input type="checkbox" name="agreement" id="form-book-agreement" required>
+              <input type="checkbox" name="agreement" id="modal-form-agreement" required>
               <svg class="checkbox__check-icon">
                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
               </svg>

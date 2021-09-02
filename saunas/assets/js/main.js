@@ -12631,54 +12631,130 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let headerToggleBtn = document.querySelector('.header__mob-toggle-btn');
 	let headerCollapse = document.querySelector('.header__collapse');
 
+	let hideMobHeader = function () {
+		headerToggleBtn.classList.remove('header__mob-toggle-btn--rotate');
+
+		headerToggleBtn.addEventListener('transitionend', () => {
+			headerToggleBtn.classList.remove('header__mob-toggle-btn--compress');
+
+			headerToggleBtn.addEventListener('transitionend', () => {
+				headerCollapse.style.height = null;
+
+				headerCollapse.addEventListener('transitionend', () => {
+					header.classList.remove('header--showed');
+					// headerCollapse.style.overflow = null;
+					scroll_lock_default.a.enablePageScroll(header);
+				}, { once: true });
+			}, { once: true });
+		}, { once: true });
+	}
+
+	let showMobHeader = function () {
+		scroll_lock_default.a.disablePageScroll(header);
+
+		headerToggleBtn.classList.add('header__mob-toggle-btn--compress');
+
+		headerToggleBtn.addEventListener('transitionend', () => {
+			headerToggleBtn.classList.add('header__mob-toggle-btn--rotate');
+
+			headerToggleBtn.addEventListener('transitionend', () => {
+
+				headerCollapse.style.height = 'auto';
+
+				// let height = (headerCollapse.clientHeight > windowHeight) ? headerCollapse.clientHeight : windowHeight;
+				let height = headerCollapse.clientHeight;
+
+				headerCollapse.style.height = '0px';
+
+				raf(() => {
+					raf(() => {
+						headerCollapse.style.height = height + 'px';
+						header.classList.add('header--showed');
+					});
+				});
+				// headerCollapse.style.overflow = 'auto';
+			}, { once: true });
+		}, { once: true });
+	}
+
 	headerToggleBtn.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		if (!header.classList.contains('header--showed')) {
-			scroll_lock_default.a.disablePageScroll(header);
-
-			headerToggleBtn.classList.add('header__mob-toggle-btn--compress');
-
-			headerToggleBtn.addEventListener('transitionend', () => {
-				headerToggleBtn.classList.add('header__mob-toggle-btn--rotate');
-
-				headerToggleBtn.addEventListener('transitionend', () => {
-
-					headerCollapse.style.height = 'auto';
-
-					// let height = (headerCollapse.clientHeight > windowHeight) ? headerCollapse.clientHeight : windowHeight;
-					let height = headerCollapse.clientHeight;
-
-					headerCollapse.style.height = '0px';
-
-					raf(() => {
-						raf(() => {
-							headerCollapse.style.height = height + 'px';
-							header.classList.add('header--showed');
-						});
-					});
-					// headerCollapse.style.overflow = 'auto';
-				}, { once: true });
-			}, { once: true });
-
+			showMobHeader();
 		} else {
-			headerToggleBtn.classList.remove('header__mob-toggle-btn--rotate');
-
-			headerToggleBtn.addEventListener('transitionend', () => {
-				headerToggleBtn.classList.remove('header__mob-toggle-btn--compress');
-
-				headerToggleBtn.addEventListener('transitionend', () => {
-					headerCollapse.style.height = null;
-
-					headerCollapse.addEventListener('transitionend', () => {
-						header.classList.remove('header--showed');
-						// headerCollapse.style.overflow = null;
-						scroll_lock_default.a.enablePageScroll(header);
-					}, { once: true });
-				}, { once: true });
-			}, { once: true });
+			hideMobHeader();
 		}
 	});
+
+
+	/**
+	 * Anchor smooth scrolling
+	 */
+
+	let anchors = document.querySelectorAll('a[href*="#"]:not([href="#"]):not([href="#0"])');
+	let anchorsFiltered = [];
+	let anchorTargets = [];
+	let activeAnchorLink;
+
+	anchors.forEach(anchor => {
+		if (location.pathname.replace(/^\//, '') == anchor.pathname.replace(/^\//, '')
+			&& location.hostname == anchor.hostname) {
+		}
+
+		let target = document.querySelector(anchor.hash);
+
+		if (target) {
+			anchorTargets.push(target);
+			anchorsFiltered.push(anchor);
+
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+
+				if (header.classList.contains('header--showed')) {
+					hideMobHeader();
+				}
+
+				window.scrollTo({
+					behavior: 'smooth',
+					top: target.getBoundingClientRect().top + pageYOffset - headerHeight,
+				});
+			})
+		}
+	});
+
+	if (anchorTargets.length) {
+
+		let handler = function () {
+			let anchorIndex = 0;
+			let elPos;
+			for (let i = 0; i < anchorTargets.length; i++) {
+				elPos = anchorTargets[i].getBoundingClientRect().top - (windowHeight / 2);
+
+
+				if (elPos <= 0) {
+					anchorIndex++;
+				}
+			}
+
+			anchorIndex = (anchorIndex < 1) ? 1 : anchorIndex;
+
+			if (activeAnchorLink) {
+				if (activeAnchorLink === anchorsFiltered[anchorIndex - 1]) {
+					return;
+				} else {
+					activeAnchorLink.classList.remove('nav__link--active');
+				}
+			}
+
+			activeAnchorLink = anchorsFiltered[anchorIndex - 1];
+			activeAnchorLink.classList.add('nav__link--active');
+		};
+
+		handler();
+
+		window.addEventListener('scroll', handler);
+	}
 
 
 	/**
@@ -12692,7 +12768,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	if (modal) {
 		for (let i = 0; i < modalOpenBtns.length; i++) {
 			const openBtn = modalOpenBtns[i],
-				modalId = openBtn.hash,
+				modalId = "#" + openBtn.dataset.modal,
 				modalEl = document.querySelector(modalId);
 
 			if (!modalEl) {
@@ -12778,6 +12854,25 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	forms.forEach(form => {
 
+		let checkBox = form.querySelector('.agreement-check input');
+		let submitBtn = form.querySelector('button[type="submit"]');
+
+		checkBoxValidation(checkBox, submitBtn);
+
+		checkBox.onchange = function (e) {
+			checkBoxValidation(this, submitBtn);
+		}
+
+		function checkBoxValidation(cBox, submitBtn) {
+			if (cBox.checked) {
+				submitBtn.disabled = false;
+			}
+			else {
+				submitBtn.disabled = true;
+			}
+		}
+
+		//check inputs on submit
 		form.onsubmit = function (e) {
 			e.preventDefault();
 
@@ -12984,7 +13079,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				wrapperClass: 'advantages__list',
 				slideClass: 'advantages__item',
 				slidesPerView: 1,
-		
+
 				navigation: {
 					nextEl: ".advantages__arrow.arrow--next",
 					prevEl: ".advantages__arrow.arrow--prev",
@@ -13111,6 +13206,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		}
 	}
+
+
+	/**
+	 * Move hall-main title
+	 */
+
+	let hallTitle = document.querySelector('.hall-main__title');
+	let titleContainer = document.querySelector('.hall-main .container');
+	let titleCopy = hallTitle.cloneNode(true);
+	titleCopy.classList.add('hall-main__title--mob');
+	titleContainer.appendChild(titleCopy);
 
 
 	/**

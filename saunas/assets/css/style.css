@@ -2427,9 +2427,11 @@ button:focus {
       -ms-flex-align: start;
           align-items: flex-start;
   height: 473px;
-  background-image: url(../img/promotions/card-background.jpg);
-  background-position-x: left;
-  background-size: cover;
+  background-image: url(../img/promotions/front-bg.png), url(../img/promotions/card-bg.jpg);
+  background-position-x: right, center;
+  background-position-y: center, center;
+  background-size: 627px auto, cover;
+  background-repeat: no-repeat;
   border-radius: 40px;
   overflow: hidden;
 }
@@ -3114,7 +3116,7 @@ button:focus {
 
 .hall-main__thumb .hall-main__img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .hall-main__thumb-wrapper {
@@ -3145,6 +3147,10 @@ button:focus {
   line-height: 1.33;
   color: #320c00;
   text-transform: uppercase;
+}
+
+.hall-main__title--mob {
+  display: none;
 }
 
 .hall-main__info-group {
@@ -3204,6 +3210,7 @@ button:focus {
 }
 
 .discount-card__gift {
+  margin-top: 10px;
   font-size: 400px;
   font-size: 20px;
   line-height: 1.8;
@@ -3708,6 +3715,11 @@ button:focus {
     margin-top: 30px;
   }
 
+  .promotion {
+    background-size: 470px auto, cover;
+    background-position-y: 78%, center;
+  }
+
   .about .container {
     width: calc(100% - 30px);
   }
@@ -3715,6 +3727,10 @@ button:focus {
   .review-form {
     margin-top: 20px;
     width: calc(100% - 30px);
+  }
+
+  .hall-main {
+    padding-top: 40px;
   }
 
   .hall-main .container {
@@ -3736,6 +3752,19 @@ button:focus {
 
   .hall-main__title {
     margin-top: 40px;
+    display: none;
+  }
+
+  .hall-main__title--mob {
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
 
   .hall-main__discount {
@@ -3852,6 +3881,11 @@ button:focus {
     margin-right: 0;
   }
 
+  .promotion {
+    background-size: 364px auto, cover;
+    background-position-y: 80%, center;
+  }
+
   .reviews {
     padding-top: 30px;
     padding-bottom: 20px;
@@ -3916,8 +3950,10 @@ button:focus {
   }
 
   .promotion {
+    background-position-y: 62%, top;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 50px;
     border-radius: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -3993,12 +4029,12 @@ button:focus {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    -moz-text-align-last: left;
-         text-align-last: left;
+    text-align: left;
   }
 
   .hall-main__slider {
     height: 390px;
+    border-radius: 10px;
   }
 
   .hall-main__promotion {
@@ -4008,8 +4044,16 @@ button:focus {
     padding-top: 20px;
   }
 
+  .hall-main__item {
+    border-radius: 10px;
+  }
+
   .hall-main__thumb {
     height: 120px;
+  }
+
+  .hall-main__thumb .hall-main__item {
+    border-radius: 10px;
   }
 
   .hall-main__more-btn {
@@ -4168,10 +4212,13 @@ button:focus {
   }
 
   .promotion {
+    background-size: 232px auto, cover;
+    background-position-x: 80%, left;
+    background-position-y: 74%, top;
     padding-top: 34px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 36px;
+    padding-left: 34px;
+    padding-right: 34px;
+    padding-bottom: 34px;
     border-radius: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -4179,6 +4226,10 @@ button:focus {
     text-align: center;
     min-height: 460px;
     height: auto;
+  }
+
+  .promotion__value {
+    width: 260px;
   }
 
   .reviews__slider {
@@ -4209,6 +4260,32 @@ button:focus {
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 40px;
+  }
+
+  .hall-main__promotion {
+    width: 93px;
+    height: 52px;
+    padding: 16px 25px 0 0;
+    background-color: #ff6500;
+    border-radius: 0 0 30px 0;
+    font-size: 16px;
+  }
+
+  .hall-main__info-block {
+    margin-top: 10px;
+  }
+
+  .hall-main__info-group {
+    margin-top: 20px;
+  }
+
+  .hall-main__discount {
+    margin-top: 20px;
+  }
+
+  .discount-card {
+    max-width: 370px;
+    width: 100%;
   }
 }
 
