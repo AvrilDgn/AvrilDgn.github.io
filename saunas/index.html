@@ -25,20 +25,20 @@
     <!-- Header -->
     <header class="header" data-scroll-lock-fill-gap>
       <div class="container">
-        <a href="index.html" class="logo header__logo">
-          <svg class="logo__icon">
-            <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
-          </svg>
-          <span class="logo__description">
+        <div class="header__mob-visible-block">
+          <a href="index.html" class="logo header__logo">
+            <svg class="logo__icon">
+              <use xlink:href="assets/img/sprite/sprite.svg#logo"></use>
+            </svg>
+            <span class="logo__description">
 
-				Сауна в оздоровительном комплексе Paradise
+					Сауна в оздоровительном комплексе Paradise
 
-			</span>
-        </a>
+				</span>
+          </a>
 
-        <a class="header__submenu-open" href="#">
-          <span></span>
-        </a>
+          <a class="header__mob-toggle-btn" href="#toggle-menu"><span></span></a>
+        </div>
 
         <div class="header__collapse">
           <nav class="nav header__nav">
@@ -56,6 +56,66 @@
 
           <div class="header__contacts">
             <a class="header__phone" href="tel:+79253033333">+7 (925) 303-33-33</a>
+          </div>
+
+          <div class="header__mob-contacts">
+
+            <p class="header__address address">
+              <svg class="address__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#marker"></use>
+              </svg>
+              <span class="address__text">
+
+						г. Москва, Проспект Мира, д. 123
+
+					</span>
+            </p>
+            <a href="tel:+79253033333" class="header__mob-phone phone">
+              <svg class="phone__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+              </svg>
+              <span class="phone__text">
+
+						+7 (925) 303-33-33
+
+					</span>
+            </a>
+            <p class="header__schedule schedule">
+              <svg class="schedule__icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#clock"></use>
+              </svg>
+              <span class="schedule__text">
+
+						Пн-Пт с 8: 00 до 14: 00
+
+					</span>
+            </p>
+
+            <ul class="header__socials socials">
+              <li class="socials__item">
+                <a href="#" class="socials__link socials__link--vk">
+                  <svg>
+                    <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link socials__link--instagram">
+                  <svg>
+                    <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="#" class="socials__link socials__link--facebook">
+                  <svg>
+                    <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <a href="#modal-feedback" class="header__feedback-btn button modal-opener">Заказать обратный звонок</a>
           </div>
         </div>
       </div>
@@ -116,13 +176,13 @@
         <div class="hero__book-form book-form">
           <form id="form-book" action="#" method="post">
             <h2 class="book-form__title">Забронировать сауну</h2>
-            <p class="book-form__field">
-              <input class="book-form__input" type="tel" name="phone" id="form-book-phone" placeholder="Ваш телефон" required>
+            <p class="book-form__field field">
+              <input class="book-form__input phoneMask" type="tel" name="phone" id="form-book-phone" placeholder="Ваш телефон" required>
             </p>
-            <p class="book-form__field">
+            <p class="book-form__field field">
               <input class="book-form__input" type="text" name="visiting-time" id="form-book-visiting-time" placeholder="Время посещения сауны" required>
             </p>
-            <p class="book-form__field">
+            <p class="book-form__field field">
               <input class="book-form__input" type="number" name="usage-time" id="form-book-usage-time" placeholder="Введите число часов" required>
             </p>
             <p class="book-form__agreement agreement-check">
@@ -199,11 +259,7 @@
             <p class="hall-main__value"><b class="hall-main__accent">6-8</b> чел(свыше 8 чел, доплата)</p>
           </div>
 
-          <div class="hall-main__discount discount-card">
-            <h3 class="discount-card__title">Не пропустите!</h3>
-            <p class="discount-card__gift">5-й час в подарок!</p>
-            <a class="discount-card__get-btn button" href="#">Получите скидку</a>
-          </div>
+          <a class="hall-main__more-btn button button--transparent" href="simple-hall.html">Подробнее</a>
         </div>
       </div>
     </section>
@@ -213,55 +269,60 @@
       <div class="container">
         <h2 class="advantages__title title">Наши преимущества</h2>
 
-        <ul class="advantages__list">
-          <li class="advantages__item">
-            <div class="advantages__icon advantages__icon--aqua"><i></i>
-            </div>
-            <h3 class="advantages__name">аквазона</h3>
-            <p class="advantages__text">
-              Бассейн,
-              <br>Размеры (Ш x Д x Г),
-              <br>м: 3 x 3 x 1.6,
-              <br>Теплый бассейн, Гидромассаж, Гейзер, Подсветка, Фильтрация, Душ
-            </p>
-          </li>
-          <li class="advantages__item">
-            <div class="advantages__icon advantages__icon--relax"><i></i>
-            </div>
-            <h3 class="advantages__name">Комната отдыха</h3>
-            <p class="advantages__text">
-              С комнатой отдыха
-              <br>S: 4 м2,
-              <br>вместимость: 2 чел.
-            </p>
-          </li>
-          <li class="advantages__item">
-            <div class="advantages__icon advantages__icon--food"><i></i>
-            </div>
-            <h3 class="advantages__name">Питание/Напитки</h3>
-            <p class="advantages__text">
-              Можно со своей едой, Бар, Обеденная зона, Вместимость: 6 чел., Чай
-            </p>
-          </li>
-          <li class="advantages__item">
-            <div class="advantages__icon advantages__icon--entertainment"><i></i>
-            </div>
-            <h3 class="advantages__name">Развлечения</h3>
-            <p class="advantages__text">
-              Кальян (+500 руб.)
-            </p>
-          </li>
-          <li class="advantages__item">
-            <div class="advantages__icon advantages__icon--additionally"><i></i>
-            </div>
-            <h3 class="advantages__name">Дополнительно</h3>
-            <p class="advantages__text">
-              Есть веники, Березовый, Дубовый, Эвкалиптовый, Со своим веником
-              <br>(+200 руб.), Парковка, Тапочки (+60 руб.), Простыни (+60 руб.), Полотенца (+60 руб.), Шампунь (+30 руб.),
-              <br>Мыло (+30 руб.), Посуда
-            </p>
-          </li>
-        </ul>
+        <div class="advantages__wrapper">
+          <ul class="advantages__list">
+            <li class="advantages__item">
+              <div class="advantages__icon advantages__icon--aqua"><i></i>
+              </div>
+              <h3 class="advantages__name">аквазона</h3>
+              <p class="advantages__text">
+                Бассейн,
+                <br>Размеры (Ш x Д x Г),
+                <br>м: 3 x 3 x 1.6,
+                <br>Теплый бассейн, Гидромассаж, Гейзер, Подсветка, Фильтрация, Душ
+              </p>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__icon advantages__icon--relax"><i></i>
+              </div>
+              <h3 class="advantages__name">Комната отдыха</h3>
+              <p class="advantages__text">
+                С комнатой отдыха
+                <br>S: 4 м2,
+                <br>вместимость: 2 чел.
+              </p>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__icon advantages__icon--food"><i></i>
+              </div>
+              <h3 class="advantages__name">Питание/Напитки</h3>
+              <p class="advantages__text">
+                Можно со своей едой, Бар, Обеденная зона, Вместимость: 6 чел., Чай
+              </p>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__icon advantages__icon--entertainment"><i></i>
+              </div>
+              <h3 class="advantages__name">Развлечения</h3>
+              <p class="advantages__text">
+                Кальян (+500 руб.)
+              </p>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__icon advantages__icon--additionally"><i></i>
+              </div>
+              <h3 class="advantages__name">Дополнительно</h3>
+              <p class="advantages__text">
+                Есть веники, Березовый, Дубовый, Эвкалиптовый, Со своим веником
+                <br>(+200 руб.), Парковка, Тапочки (+60 руб.), Простыни (+60 руб.), Полотенца (+60 руб.), Шампунь (+30 руб.),
+                <br>Мыло (+30 руб.), Посуда
+              </p>
+            </li>
+          </ul>
+
+          <button class="advantages__arrow arrow arrow--prev"></button>
+          <button class="advantages__arrow arrow arrow--next"></button>
+        </div>
       </div>
     </section>
     <!-- End Advantages -->
@@ -468,16 +529,16 @@
       <form id="form-review" action="#" method="post">
         <h2 class="review-form__title">Оставьте свой отзыв о походе к нам</h2>
 
-        <p class="review-form__field">
+        <p class="review-form__field field">
           <input class="review-form__input" type="text" name="name" id="form-review-name" placeholder="Ваше имя" required>
         </p>
-        <p class="review-form__field">
-          <input class="review-form__input" type="tel" name="phone" id="form-review-phone" placeholder="Ваш телефон" required>
+        <p class="review-form__field field">
+          <input class="review-form__input phoneMask" type="tel" name="phone" id="form-review-phone" placeholder="Ваш телефон" required>
         </p>
-        <p class="review-form__field">
+        <p class="review-form__field field">
           <textarea class="review-form__input review-form__input--textarea" name="message" id="form-review-message" placeholder="Ваш отзыв"></textarea>
         </p>
-        <p class="review-form__field">
+        <p class="review-form__field field">
           <input class="review-form__input" type="number" name="rating" id="form-review-rating" placeholder="Ваша оценка" required>
         </p>
 
@@ -582,16 +643,16 @@
     <div class="modal__wrapper">
       <a class="modal__close-btn" href="#"></a>
 
-      <div class="modal__container" id="modal-feedback">
+      <div class="modal__container" id="modal-promotion">
         <h3 class="modal__title">Воспользоваться предложением</h3>
         <p class="modal__subtitle">Для того что бы воспользоваться предложением заполните форму:</p>
 
-        <form class="modal__form modal-form" id="form-feedback" action="#" method="post">
-          <p class="modal-form__field">
-            <input class="modal-form__input phoneMask" id="feedback-phone" type="tel" name="phone" placeholder="Ваш телефон" required/>
+        <form class="modal__form modal-form" id="form-promotion" action="#" method="post">
+          <p class="modal-form__field field">
+            <input class="modal-form__input phoneMask" id="promotion-phone" type="tel" name="phone" placeholder="Ваш телефон" required/>
           </p>
-          <p class="modal-form__field">
-            <input class="modal-form__input" id="feedback-name" type="text" name="hall" placeholder="Выберите зал" required/>
+          <p class="modal-form__field field">
+            <input class="modal-form__input" id="promotion-name" type="text" name="hall" placeholder="Выберите зал" required/>
           </p>
 
           <p class="modal-form__agreement agreement-check">
@@ -613,6 +674,37 @@
           </p>
 
           <button class="button modal-form__submit-btn" type="submit">получить код</button>
+        </form>
+      </div>
+
+      <div class="modal__container" id="modal-feedback">
+        <h3 class="modal__title">Заказать обратный звонок</h3>
+
+        <form class="modal__form modal-form" id="form-feedback" action="#" method="post">
+          <p class="modal-form__field field">
+            <input class="modal-form__input phoneMask" id="feedback-phone" type="tel" name="phone" placeholder="Ваш телефон" required/>
+            <!-- <span class="validation-message">Введите правильный номер телефона</span> -->
+          </p>
+
+          <p class="modal-form__agreement agreement-check">
+            <label class="checkbox agreement-check__checkbox">
+              <input type="checkbox" name="agreement" id="form-book-agreement" required>
+              <svg class="checkbox__check-icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+              </svg>
+            </label>
+            <span class="agreement-check__text">
+
+						Согласен на обработку и передачу
+
+						персональных данных в соответствии с
+
+						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+
+					</span>
+          </p>
+
+          <button class="button modal-form__submit-btn" type="submit">Заказать <span class="modal-form__mob-hide-text">обратный</span> звонок</button>
         </form>
       </div>
 

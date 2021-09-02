@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -894,540 +894,6 @@ var scrollLock = _objectSpread({
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
-  if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else { var mod; }
-})(this, function (module, exports) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _class, _temp;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _createClass = function () {
-    function defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-      }
-    }
-
-    return function (Constructor, protoProps, staticProps) {
-      if (protoProps) defineProperties(Constructor.prototype, protoProps);
-      if (staticProps) defineProperties(Constructor, staticProps);
-      return Constructor;
-    };
-  }();
-
-  function isIn(needle, haystack) {
-    return haystack.indexOf(needle) >= 0;
-  }
-
-  function extend(custom, defaults) {
-    for (var key in defaults) {
-      if (custom[key] == null) {
-        var value = defaults[key];
-        custom[key] = value;
-      }
-    }
-    return custom;
-  }
-
-  function isMobile(agent) {
-    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(agent)
-    );
-  }
-
-  function createEvent(event) {
-    var bubble = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
-    var cancel = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
-    var detail = arguments.length <= 3 || arguments[3] === undefined ? null : arguments[3];
-
-    var customEvent = void 0;
-    if (document.createEvent != null) {
-      // W3C DOM
-      customEvent = document.createEvent('CustomEvent');
-      customEvent.initCustomEvent(event, bubble, cancel, detail);
-    } else if (document.createEventObject != null) {
-      // IE DOM < 9
-      customEvent = document.createEventObject();
-      customEvent.eventType = event;
-    } else {
-      customEvent.eventName = event;
-    }
-
-    return customEvent;
-  }
-
-  function emitEvent(elem, event) {
-    if (elem.dispatchEvent != null) {
-      // W3C DOM
-      elem.dispatchEvent(event);
-    } else if (event in (elem != null)) {
-      elem[event]();
-    } else if ('on' + event in (elem != null)) {
-      elem['on' + event]();
-    }
-  }
-
-  function addEvent(elem, event, fn) {
-    if (elem.addEventListener != null) {
-      // W3C DOM
-      elem.addEventListener(event, fn, false);
-    } else if (elem.attachEvent != null) {
-      // IE DOM
-      elem.attachEvent('on' + event, fn);
-    } else {
-      // fallback
-      elem[event] = fn;
-    }
-  }
-
-  function removeEvent(elem, event, fn) {
-    if (elem.removeEventListener != null) {
-      // W3C DOM
-      elem.removeEventListener(event, fn, false);
-    } else if (elem.detachEvent != null) {
-      // IE DOM
-      elem.detachEvent('on' + event, fn);
-    } else {
-      // fallback
-      delete elem[event];
-    }
-  }
-
-  function getInnerHeight() {
-    if ('innerHeight' in window) {
-      return window.innerHeight;
-    }
-
-    return document.documentElement.clientHeight;
-  }
-
-  // Minimalistic WeakMap shim, just in case.
-  var WeakMap = window.WeakMap || window.MozWeakMap || function () {
-    function WeakMap() {
-      _classCallCheck(this, WeakMap);
-
-      this.keys = [];
-      this.values = [];
-    }
-
-    _createClass(WeakMap, [{
-      key: 'get',
-      value: function get(key) {
-        for (var i = 0; i < this.keys.length; i++) {
-          var item = this.keys[i];
-          if (item === key) {
-            return this.values[i];
-          }
-        }
-        return undefined;
-      }
-    }, {
-      key: 'set',
-      value: function set(key, value) {
-        for (var i = 0; i < this.keys.length; i++) {
-          var item = this.keys[i];
-          if (item === key) {
-            this.values[i] = value;
-            return this;
-          }
-        }
-        this.keys.push(key);
-        this.values.push(value);
-        return this;
-      }
-    }]);
-
-    return WeakMap;
-  }();
-
-  // Dummy MutationObserver, to avoid raising exceptions.
-  var MutationObserver = window.MutationObserver || window.WebkitMutationObserver || window.MozMutationObserver || (_temp = _class = function () {
-    function MutationObserver() {
-      _classCallCheck(this, MutationObserver);
-
-      if (typeof console !== 'undefined' && console !== null) {
-        console.warn('MutationObserver is not supported by your browser.');
-        console.warn('WOW.js cannot detect dom mutations, please call .sync() after loading new content.');
-      }
-    }
-
-    _createClass(MutationObserver, [{
-      key: 'observe',
-      value: function observe() {}
-    }]);
-
-    return MutationObserver;
-  }(), _class.notSupported = true, _temp);
-
-  // getComputedStyle shim, from http://stackoverflow.com/a/21797294
-  var getComputedStyle = window.getComputedStyle || function getComputedStyle(el) {
-    var getComputedStyleRX = /(\-([a-z]){1})/g;
-    return {
-      getPropertyValue: function getPropertyValue(prop) {
-        if (prop === 'float') {
-          prop = 'styleFloat';
-        }
-        if (getComputedStyleRX.test(prop)) {
-          prop.replace(getComputedStyleRX, function (_, _char) {
-            return _char.toUpperCase();
-          });
-        }
-        var currentStyle = el.currentStyle;
-
-        return (currentStyle != null ? currentStyle[prop] : void 0) || null;
-      }
-    };
-  };
-
-  var WOW = function () {
-    function WOW() {
-      var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-      _classCallCheck(this, WOW);
-
-      this.defaults = {
-        boxClass: 'wow',
-        animateClass: 'animated',
-        offset: 0,
-        mobile: true,
-        live: true,
-        callback: null,
-        scrollContainer: null
-      };
-
-      this.animate = function animateFactory() {
-        if ('requestAnimationFrame' in window) {
-          return function (callback) {
-            return window.requestAnimationFrame(callback);
-          };
-        }
-        return function (callback) {
-          return callback();
-        };
-      }();
-
-      this.vendors = ['moz', 'webkit'];
-
-      this.start = this.start.bind(this);
-      this.resetAnimation = this.resetAnimation.bind(this);
-      this.scrollHandler = this.scrollHandler.bind(this);
-      this.scrollCallback = this.scrollCallback.bind(this);
-      this.scrolled = true;
-      this.config = extend(options, this.defaults);
-      if (options.scrollContainer != null) {
-        this.config.scrollContainer = document.querySelector(options.scrollContainer);
-      }
-      // Map of elements to animation names:
-      this.animationNameCache = new WeakMap();
-      this.wowEvent = createEvent(this.config.boxClass);
-    }
-
-    _createClass(WOW, [{
-      key: 'init',
-      value: function init() {
-        this.element = window.document.documentElement;
-        if (isIn(document.readyState, ['interactive', 'complete'])) {
-          this.start();
-        } else {
-          addEvent(document, 'DOMContentLoaded', this.start);
-        }
-        this.finished = [];
-      }
-    }, {
-      key: 'start',
-      value: function start() {
-        var _this = this;
-
-        this.stopped = false;
-        this.boxes = [].slice.call(this.element.querySelectorAll('.' + this.config.boxClass));
-        this.all = this.boxes.slice(0);
-        if (this.boxes.length) {
-          if (this.disabled()) {
-            this.resetStyle();
-          } else {
-            for (var i = 0; i < this.boxes.length; i++) {
-              var box = this.boxes[i];
-              this.applyStyle(box, true);
-            }
-          }
-        }
-        if (!this.disabled()) {
-          addEvent(this.config.scrollContainer || window, 'scroll', this.scrollHandler);
-          addEvent(window, 'resize', this.scrollHandler);
-          this.interval = setInterval(this.scrollCallback, 50);
-        }
-        if (this.config.live) {
-          var mut = new MutationObserver(function (records) {
-            for (var j = 0; j < records.length; j++) {
-              var record = records[j];
-              for (var k = 0; k < record.addedNodes.length; k++) {
-                var node = record.addedNodes[k];
-                _this.doSync(node);
-              }
-            }
-            return undefined;
-          });
-          mut.observe(document.body, {
-            childList: true,
-            subtree: true
-          });
-        }
-      }
-    }, {
-      key: 'stop',
-      value: function stop() {
-        this.stopped = true;
-        removeEvent(this.config.scrollContainer || window, 'scroll', this.scrollHandler);
-        removeEvent(window, 'resize', this.scrollHandler);
-        if (this.interval != null) {
-          clearInterval(this.interval);
-        }
-      }
-    }, {
-      key: 'sync',
-      value: function sync() {
-        if (MutationObserver.notSupported) {
-          this.doSync(this.element);
-        }
-      }
-    }, {
-      key: 'doSync',
-      value: function doSync(element) {
-        if (typeof element === 'undefined' || element === null) {
-          element = this.element;
-        }
-        if (element.nodeType !== 1) {
-          return;
-        }
-        element = element.parentNode || element;
-        var iterable = element.querySelectorAll('.' + this.config.boxClass);
-        for (var i = 0; i < iterable.length; i++) {
-          var box = iterable[i];
-          if (!isIn(box, this.all)) {
-            this.boxes.push(box);
-            this.all.push(box);
-            if (this.stopped || this.disabled()) {
-              this.resetStyle();
-            } else {
-              this.applyStyle(box, true);
-            }
-            this.scrolled = true;
-          }
-        }
-      }
-    }, {
-      key: 'show',
-      value: function show(box) {
-        this.applyStyle(box);
-        box.className = box.className + ' ' + this.config.animateClass;
-        if (this.config.callback != null) {
-          this.config.callback(box);
-        }
-        emitEvent(box, this.wowEvent);
-
-        addEvent(box, 'animationend', this.resetAnimation);
-        addEvent(box, 'oanimationend', this.resetAnimation);
-        addEvent(box, 'webkitAnimationEnd', this.resetAnimation);
-        addEvent(box, 'MSAnimationEnd', this.resetAnimation);
-
-        return box;
-      }
-    }, {
-      key: 'applyStyle',
-      value: function applyStyle(box, hidden) {
-        var _this2 = this;
-
-        var duration = box.getAttribute('data-wow-duration');
-        var delay = box.getAttribute('data-wow-delay');
-        var iteration = box.getAttribute('data-wow-iteration');
-
-        return this.animate(function () {
-          return _this2.customStyle(box, hidden, duration, delay, iteration);
-        });
-      }
-    }, {
-      key: 'resetStyle',
-      value: function resetStyle() {
-        for (var i = 0; i < this.boxes.length; i++) {
-          var box = this.boxes[i];
-          box.style.visibility = 'visible';
-        }
-        return undefined;
-      }
-    }, {
-      key: 'resetAnimation',
-      value: function resetAnimation(event) {
-        if (event.type.toLowerCase().indexOf('animationend') >= 0) {
-          var target = event.target || event.srcElement;
-          target.className = target.className.replace(this.config.animateClass, '').trim();
-        }
-      }
-    }, {
-      key: 'customStyle',
-      value: function customStyle(box, hidden, duration, delay, iteration) {
-        if (hidden) {
-          this.cacheAnimationName(box);
-        }
-        box.style.visibility = hidden ? 'hidden' : 'visible';
-
-        if (duration) {
-          this.vendorSet(box.style, { animationDuration: duration });
-        }
-        if (delay) {
-          this.vendorSet(box.style, { animationDelay: delay });
-        }
-        if (iteration) {
-          this.vendorSet(box.style, { animationIterationCount: iteration });
-        }
-        this.vendorSet(box.style, { animationName: hidden ? 'none' : this.cachedAnimationName(box) });
-
-        return box;
-      }
-    }, {
-      key: 'vendorSet',
-      value: function vendorSet(elem, properties) {
-        for (var name in properties) {
-          if (properties.hasOwnProperty(name)) {
-            var value = properties[name];
-            elem['' + name] = value;
-            for (var i = 0; i < this.vendors.length; i++) {
-              var vendor = this.vendors[i];
-              elem['' + vendor + name.charAt(0).toUpperCase() + name.substr(1)] = value;
-            }
-          }
-        }
-      }
-    }, {
-      key: 'vendorCSS',
-      value: function vendorCSS(elem, property) {
-        var style = getComputedStyle(elem);
-        var result = style.getPropertyCSSValue(property);
-        for (var i = 0; i < this.vendors.length; i++) {
-          var vendor = this.vendors[i];
-          result = result || style.getPropertyCSSValue('-' + vendor + '-' + property);
-        }
-        return result;
-      }
-    }, {
-      key: 'animationName',
-      value: function animationName(box) {
-        var aName = void 0;
-        try {
-          aName = this.vendorCSS(box, 'animation-name').cssText;
-        } catch (error) {
-          // Opera, fall back to plain property value
-          aName = getComputedStyle(box).getPropertyValue('animation-name');
-        }
-
-        if (aName === 'none') {
-          return ''; // SVG/Firefox, unable to get animation name?
-        }
-
-        return aName;
-      }
-    }, {
-      key: 'cacheAnimationName',
-      value: function cacheAnimationName(box) {
-        // https://bugzilla.mozilla.org/show_bug.cgi?id=921834
-        // box.dataset is not supported for SVG elements in Firefox
-        return this.animationNameCache.set(box, this.animationName(box));
-      }
-    }, {
-      key: 'cachedAnimationName',
-      value: function cachedAnimationName(box) {
-        return this.animationNameCache.get(box);
-      }
-    }, {
-      key: 'scrollHandler',
-      value: function scrollHandler() {
-        this.scrolled = true;
-      }
-    }, {
-      key: 'scrollCallback',
-      value: function scrollCallback() {
-        if (this.scrolled) {
-          this.scrolled = false;
-          var results = [];
-          for (var i = 0; i < this.boxes.length; i++) {
-            var box = this.boxes[i];
-            if (box) {
-              if (this.isVisible(box)) {
-                this.show(box);
-                continue;
-              }
-              results.push(box);
-            }
-          }
-          this.boxes = results;
-          if (!this.boxes.length && !this.config.live) {
-            this.stop();
-          }
-        }
-      }
-    }, {
-      key: 'offsetTop',
-      value: function offsetTop(element) {
-        // SVG elements don't have an offsetTop in Firefox.
-        // This will use their nearest parent that has an offsetTop.
-        // Also, using ('offsetTop' of element) causes an exception in Firefox.
-        while (element.offsetTop === undefined) {
-          element = element.parentNode;
-        }
-        var top = element.offsetTop;
-        while (element.offsetParent) {
-          element = element.offsetParent;
-          top += element.offsetTop;
-        }
-        return top;
-      }
-    }, {
-      key: 'isVisible',
-      value: function isVisible(box) {
-        var offset = box.getAttribute('data-wow-offset') || this.config.offset;
-        var viewTop = this.config.scrollContainer && this.config.scrollContainer.scrollTop || window.pageYOffset;
-        var viewBottom = viewTop + Math.min(this.element.clientHeight, getInnerHeight()) - offset;
-        var top = this.offsetTop(box);
-        var bottom = top + box.clientHeight;
-
-        return top <= viewBottom && bottom >= viewTop;
-      }
-    }, {
-      key: 'disabled',
-      value: function disabled() {
-        return !this.config.mobile && isMobile(navigator.userAgent);
-      }
-    }]);
-
-    return WOW;
-  }();
-
-  exports.default = WOW;
-  module.exports = exports['default'];
-});
-
-
-/***/ }),
-/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12883,9 +12349,246 @@ var lazyload_min = __webpack_require__(2);
 var scroll_lock = __webpack_require__(0);
 var scroll_lock_default = /*#__PURE__*/__webpack_require__.n(scroll_lock);
 
-// EXTERNAL MODULE: ./node_modules/wow.js/dist/wow.js
-var wow = __webpack_require__(3);
+// CONCATENATED MODULE: ./node_modules/dl-animate/dist/dl-animate-module.js
+class DLAnimate{
+	constructor(){
+		this.raf = window.requestAnimationFrame || 
+				  window.webkitRequestAnimationFrame ||
+				  window.msRequestAnimationFrame;		  
 
+		let divTest = document.createElement("div");
+
+		/* checking browser for necessary opportunities */
+		this.canAnimate = (typeof this.raf === "function") &&
+					  ("classList" in divTest) &&
+					  typeof divTest.style.transition !== undefined;
+
+		if(this.canAnimate){
+			this.raf = this.raf.bind(window);
+		}
+
+		/* requestAnimationFrame queue */
+		this.frames = [];
+		this.framesRun = false;
+	}
+
+	show(el, options = {}){
+		if(!this.canAnimate){
+			this._show(el);
+		}
+
+		if(!this._isHidden(el)){
+			return;
+		}
+
+		/* merge defaults and users options */
+		let settings = this._calcOptions(options);
+
+		/* set handler on animation finish */
+		this._setFinishHandler(el, settings.track, settings.duration, () => {
+			this._removeClasses(el, settings.classNames.enterActive);
+			this._removeClasses(el, settings.classNames.enterTo);
+			settings.afterEnter(el);
+		});
+
+		this._show(el);
+		this._addClasses(el, settings.classNames.enter);
+		settings.beforeEnter(el);
+		
+		this._addFrame(() => {
+			this._addClasses(el, settings.classNames.enterActive);
+		});
+
+		this._addFrame(() => {
+			this._removeClasses(el, settings.classNames.enter);
+			this._addClasses(el, settings.classNames.enterTo);
+		});
+	}
+
+	hide(el, options = {}){
+		if(!this.canAnimate){
+			this._hide(el);
+		}
+
+		if(this._isHidden(el)){
+			return;
+		}
+
+		let settings = this._calcOptions(options);
+
+		this._setFinishHandler(el, settings.track, settings.duration, () => {
+			this._hide(el);
+			this._removeClasses(el, settings.classNames.leaveActive);
+			this._removeClasses(el, settings.classNames.leaveTo);
+			options.systemOnEnd && options.systemOnEnd();
+			settings.afterLeave(el);
+		});
+
+		this._addClasses(el, settings.classNames.leave);
+		
+		settings.beforeLeave(el);
+		
+		this._addFrame(() => {
+			this._addClasses(el, settings.classNames.leaveActive);
+		});
+
+		this._addFrame(() => {
+			this._addClasses(el, settings.classNames.leaveTo);
+			this._removeClasses(el, settings.classNames.leave);
+		});
+	}
+
+	insert(target, el, options = {}, before = null){
+		this._hide(el);
+		target.insertBefore(el, before);
+		this.show(el, options);
+	}
+
+	remove(el, options = {}){
+		options.systemDoneCallback = function(){
+			el.parentNode.removeChild(el);
+		}
+
+		this.hide(el, options);
+	}
+
+	_setFinishHandler(el, track, duration, fn){
+		let eventName;
+		let isCssTrack = true;
+
+		if(track === 'transition'){
+			eventName = 'transitionend';
+		}
+		else if(track === 'animation'){
+			eventName = 'animationend';
+		}
+		else{
+			isCssTrack = false;
+		}
+
+		if(isCssTrack){
+			let handler = function(){
+				el.removeEventListener(eventName, handler);
+				fn();
+			};
+
+			el.addEventListener(eventName, handler);
+		}
+		else{
+			setTimeout(fn, duration);
+		}
+	}
+
+	_calcOptions(options){
+		let name = (options.name !== undefined) ? options.name : 'dl-nothing-doing-class';
+		let classNames = this._mergeSettings(this._classNames(name), options.classNames);
+
+		delete options.classNames;
+
+		let defaults = {
+			name: '',
+			track: 'transition',
+			duration: null,
+			classNames: classNames,
+			beforeEnter(el){},
+			afterEnter(el){},
+			beforeLeave(el){},
+			afterLeave(el){},
+			systemDoneCallback(el){}
+		}
+
+		let norm = this._mergeSettings(defaults, options);
+
+		/* analize track & duration error */
+
+		return norm;
+	}
+
+	_classNames(name){
+		return {
+			enter: name + '-enter',
+			enterActive: name + '-enter-active',
+			enterTo: name + '-enter-to',
+			leave: name + '-leave',
+			leaveActive: name + '-leave-active',
+			leaveTo: name + '-leave-to'
+		}
+	}
+
+	_addFrame(fn){
+		this.frames.push(fn);
+
+		if(!this.framesRun){
+			this._nextFrame();
+		}
+	}
+
+	_nextFrame(){
+		if(this.frames.length === 0){
+			this.framesRun = false;
+			return;
+		}
+
+		let frame = this.frames.shift();
+
+		this.raf(() => {
+			this.raf(() => {
+				frame();
+				this._nextFrame();
+			});
+		});
+	}
+
+	_addClasses(el, str){
+		let arr = str.split(' ');
+
+		for(let i = 0; i < arr.length; i++){
+			el.classList.add(arr[i]);
+		}
+	}
+
+	_removeClasses(el, str){
+		let arr = str.split(' ');
+
+		for(let i = 0; i < arr.length; i++){
+			el.classList.remove(arr[i]);
+		}
+	}
+
+	_mergeSettings(defaults, extra){
+		if(typeof extra !== "object"){
+			return defaults;
+		}
+
+		let res = {};
+
+		for(let k in defaults){
+			res[k] = (extra[k] !== undefined) ? extra[k] : defaults[k];
+		}
+		
+		return res;
+	}
+
+	_hide(el){
+		el.style.display = 'none';
+	}
+
+	_show(el){
+		el.style.removeProperty('display');
+		
+		if(this._isHidden(el)){
+			el.style.display = 'block';
+		}
+	}
+
+	_isHidden(el){
+		return this._getStyle(el, 'display') === 'none';
+	}
+
+	_getStyle(el, prop){
+		return getComputedStyle(el)[prop];
+	}
+}
 // CONCATENATED MODULE: ./app/src/js/main.js
 //Import Libraries';
 
@@ -12894,11 +12597,14 @@ var wow = __webpack_require__(3);
 
 // import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
+// import WOW from 'wow.js';
 
 
 
 /***** Main script *****/
 document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
+
+	// new WOW().init();
 
 	let raf = function (callback) {
 		window.requestAnimationFrame(function () {
@@ -12906,73 +12612,139 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		});
 	};
 
+	let header = document.querySelector('.header');
+	let windowWidth = document.documentElement.clientWidth,
+		windowHeight = document.documentElement.clientHeight,
+		headerHeight = header.offsetHeight;
+
+	window.addEventListener('resize', e => {
+		windowWidth = document.documentElement.clientWidth;
+		windowHeight = document.documentElement.clientHeight;
+		headerHeight = header.offsetHeight;
+	});
+
 
 	/**
 	 * Header
 	 */
 
 	// header toggle menu
-	let header = document.querySelector('.header');
-	let menuOpenBtn = document.querySelector('.header__submenu-open');
-	let menuCloseBtn = document.querySelector('.header__submenu-close');
-	let menuCollapse = document.querySelector('.header__collapse');
-	let menuOverlay = document.querySelector('.header__overlay');
+	// let header = document.querySelector('.header');
+	// let menuOpenBtn = document.querySelector('.header__submenu-open');
+	// let menuCloseBtn = document.querySelector('.header__submenu-close');
+	// let menuCollapse = document.querySelector('.header__collapse');
+	// let menuOverlay = document.querySelector('.header__overlay');
 
-	let menuOpenHandler = function (e) {
-		if (e) {
-			e.preventDefault();
+	// let menuOpenHandler = function (e) {
+	// 	if (e) {
+	// 		e.preventDefault();
+	// 	}
+
+	// 	scrollLock.disablePageScroll(menuCollapse);
+
+	// 	menuCollapse.style.display = 'flex';
+	// 	menuOverlay.style.display = 'block';
+
+	// 	raf(() => {
+	// 		menuCollapse.classList.add('header__collapse--opened');
+	// 		menuOverlay.classList.add('header__overlay--active');
+	// 		menuCollapse.style.display = null;
+	// 		menuOverlay.style.display = null;
+	// 	});
+
+	// 	menuCloseBtn.addEventListener('click', menuCloseHandler);
+	// 	menuOverlay.addEventListener('click', menuCloseHandler);
+	// }
+
+	// let menuCloseHandler = function (e) {
+	// 	if (e) {
+	// 		e.preventDefault();
+	// 	}
+
+	// 	scrollLock.enablePageScroll(menuCollapse);
+
+	// 	menuCollapse.style.transform = 'translateX(100%)';
+	// 	menuOverlay.style.opacity = 0;
+
+	// 	menuCollapse.addEventListener('transitionend', e => {
+	// 		menuCollapse.style.transform = null;
+	// 		menuCollapse.classList.remove('header__collapse--opened');
+	// 	}, { once: true });
+	// 	menuOverlay.addEventListener('transitionend', e => {
+	// 		menuOverlay.style.opacity = null;
+	// 		menuOverlay.classList.remove('header__overlay--active');
+	// 	}, { once: true });
+
+	// 	menuOpenBtn.addEventListener('click', menuOpenHandler);
+	// }
+
+	// if (menuOpenBtn && menuCloseBtn) {
+	// 	menuOpenBtn.addEventListener('click', menuOpenHandler);
+	// }
+
+	// window.onresize = function (e) {
+	// 	if (menuCollapse.classList.contains('header__collapse--opened')) {
+	// 		scrollLock.enablePageScroll(menuCollapse);
+	// 		menuCollapse.classList.remove('header__collapse--opened');
+	// 		menuOverlay.classList.remove('header__overlay--active');
+	// 		menuOpenBtn.addEventListener('click', menuOpenHandler);
+	// 	}
+	// }
+
+
+	/**
+	 *	Header mobile
+	 */
+
+	let headerToggleBtn = document.querySelector('.header__mob-toggle-btn');
+	let headerCollapse = document.querySelector('.header__collapse');
+
+	headerToggleBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		if (!header.classList.contains('header--showed')) {
+			scroll_lock_default.a.disablePageScroll(header);
+
+			headerToggleBtn.classList.add('header__mob-toggle-btn--compress');
+
+			headerToggleBtn.addEventListener('transitionend', () => {
+				headerToggleBtn.classList.add('header__mob-toggle-btn--rotate');
+
+				headerToggleBtn.addEventListener('transitionend', () => {
+
+					headerCollapse.style.height = 'auto';
+
+					// let height = (headerCollapse.clientHeight > windowHeight) ? headerCollapse.clientHeight : windowHeight;
+					let height = headerCollapse.clientHeight;
+
+					headerCollapse.style.height = '0px';
+
+					raf(() => {
+						headerCollapse.style.height = height + 'px';
+						header.classList.add('header--showed');
+					});
+					// headerCollapse.style.overflow = 'auto';
+				}, { once: true });
+			}, { once: true });
+
+		} else {
+			headerToggleBtn.classList.remove('header__mob-toggle-btn--rotate');
+
+			headerToggleBtn.addEventListener('transitionend', () => {
+				headerToggleBtn.classList.remove('header__mob-toggle-btn--compress');
+
+				headerToggleBtn.addEventListener('transitionend', () => {
+					headerCollapse.style.height = null;
+
+					headerCollapse.addEventListener('transitionend', () => {
+						header.classList.remove('header--showed');
+						// headerCollapse.style.overflow = null;
+						scroll_lock_default.a.enablePageScroll(header);
+					}, { once: true });
+				}, { once: true });
+			}, { once: true });
 		}
-
-		scroll_lock_default.a.disablePageScroll(menuCollapse);
-
-		menuCollapse.style.display = 'flex';
-		menuOverlay.style.display = 'block';
-
-		raf(() => {
-			menuCollapse.classList.add('header__collapse--opened');
-			menuOverlay.classList.add('header__overlay--active');
-			menuCollapse.style.display = null;
-			menuOverlay.style.display = null;
-		});
-
-		menuCloseBtn.addEventListener('click', menuCloseHandler);
-		menuOverlay.addEventListener('click', menuCloseHandler);
-	}
-
-	let menuCloseHandler = function (e) {
-		if (e) {
-			e.preventDefault();
-		}
-
-		scroll_lock_default.a.enablePageScroll(menuCollapse);
-
-		menuCollapse.style.transform = 'translateX(100%)';
-		menuOverlay.style.opacity = 0;
-
-		menuCollapse.addEventListener('transitionend', e => {
-			menuCollapse.style.transform = null;
-			menuCollapse.classList.remove('header__collapse--opened');
-		}, { once: true });
-		menuOverlay.addEventListener('transitionend', e => {
-			menuOverlay.style.opacity = null;
-			menuOverlay.classList.remove('header__overlay--active');
-		}, { once: true });
-
-		menuOpenBtn.addEventListener('click', menuOpenHandler);
-	}
-
-	if (menuOpenBtn && menuCloseBtn) {
-		menuOpenBtn.addEventListener('click', menuOpenHandler);
-	}
-
-	window.onresize = function (e) {
-		if (menuCollapse.classList.contains('header__collapse--opened')) {
-			scroll_lock_default.a.enablePageScroll(menuCollapse);
-			menuCollapse.classList.remove('header__collapse--opened');
-			menuOverlay.classList.remove('header__overlay--active');
-			menuOpenBtn.addEventListener('click', menuOpenHandler);
-		}
-	}
+	});
 
 
 	/**
@@ -13037,68 +12809,99 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Form
+	 * Phone mask
 	 */
 
-	let forms = document.forms;
+	let phoneInputs = document.querySelectorAll('.phoneMask');
 
-	for (let i = 0; i < forms.length; i++) {
-		if (forms[i] && window.FormData) {
-			let form = forms[i];
+	for (let i = 0; i < phoneInputs.length; i++) {
+		const el = phoneInputs[i];
 
-			let btn = form.querySelector('button[type="submit"]');
+		let patternMask = new holder(el, {
+			mask: '+{7} (000) 000-00-00',
+			lazy: true,
+			placeholderChar: '_'
+		});
 
-			let message = new Object();
-			message.loading = 'Загрузка...';
-			message.success = 'Спасибо! Отправка прошла успешно!';
-			message.failure = 'Что-то пошло не так...';
+		el.addEventListener('focus', function () {
+			patternMask.updateOptions({ lazy: false });
+		}, true);
 
-			let statusMessage = document.createElement('div');
-			statusMessage.classList.add('form-status');
+		el.addEventListener('blur', function () {
+			patternMask.updateOptions({ lazy: true });
+			if (!patternMask.masked.rawInputValue) {
+				patternMask.value = '';
+			}
+		}, true);
+	}
 
-			let request = new XMLHttpRequest();
-			request.open('POST', 'form.php', true);
-			request.setRequestHeader('accept', 'application/json');
 
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
+	/**
+	 * Form Validation
+	 */
 
-				btn.disabled = true;
+	let forms = document.querySelectorAll('form');
 
-				let formData = new FormData(form);
-				let statusOn = false;
-				statusMessage.classList.remove('form-status--fault');
+	forms.forEach(form => {
 
-				request.send(formData);
+		form.onsubmit = function (e) {
+			e.preventDefault();
 
-				request.onreadystatechange = function () {
-					if (request.readyState < 4) {
-						statusMessage.innerHTML = message.loading;
-					}
-					else if (request.readyState === 4) {
-						if (request.status == 200 && request.status < 300) {
-							statusMessage.innerHTML = message.success;
-							btn.disabled = false;
+			let reqInputs = form.querySelectorAll('[required]');
+
+			reqInputs.forEach(input => {
+				let parent = input.parentNode;
+				let message = parent.querySelector('.validation-message');
+
+				if (input.getAttribute("type") === "tel") {
+
+					if (input.value.length < 18) {
+						if (message) {
+							return;
 						}
-						else {
-							statusMessage.classList.add('form-status--fault');
-							statusMessage.innerHTML = message.failure;
-							btn.disabled = false;
+
+						message = document.createElement('span');
+						message.classList.add('validation-message');
+						message.textContent = "Введите правильный номер телефона";
+						parent.appendChild(message);
+						new DLAnimate().show(message, {
+							name: 'fade',
+							track: 'animation'
+						});
+
+						return;
+					}
+				}
+
+				if (message) {
+					new DLAnimate().hide(message, {
+						name: 'fade',
+						track: 'animation',
+						afterLeave: function (message) {
+							message.remove();
 						}
-					}
-
-					if (request.responseText) {
-						statusMessage.innerHTML = request.responseText;
-					}
-
-					if (!statusOn) {
-						form.appendChild(statusMessage);
-						statusOn = true;
-					}
+					});
 				}
 			});
 		}
-	}
+
+		// let formData = new FormData(form);
+
+		// let xhr = new XMLHttpRequest();
+
+		// xhr.open("POST", url, true);
+		// xhr.send(formData);
+
+		// xhr.onreadystatechange = function () {
+		// 	if (xhr.readyState == 4) {
+		// 		if (xhr.status == 200) {
+		// 			alert("Worked!");
+		// 		} else {
+		// 			alert(xhr.status + ': ' + xhr.statusText + 'Error');
+		// 		}
+		// 	}
+		// };
+	});
 
 
 	/**
@@ -13147,7 +12950,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		},
 	});
 
-	new core_class('.halls-short__slider .halls-short__wrapper', {
+	let hallsSlider = new core_class('.halls-short__slider .halls-short__wrapper', {
 		spaceBetween: 30,
 		wrapperClass: 'halls-short__list',
 		slideClass: 'halls-short__item',
@@ -13162,11 +12965,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		breakpoints: {
 			// 576: {
 			// },
-			768: {
+			// 768: {
+			// 	slidesPerView: 2,
+			// },
+			992: {
 				slidesPerView: 2,
 			},
-			// 992: {
-			// },
 			// 1100: {
 			// },
 			1300: {
@@ -13174,6 +12978,35 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			},
 		},
 	});
+
+	let hallsShowAllBtn = document.querySelectorAll('.halls-short__all-hals-btn');
+
+	hallsShowAllBtn.forEach((el) => {
+		el.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			new DLAnimate().hide(el, {
+				name: 'fade',
+				track: 'animation'
+			});
+
+			let slider = hallsSlider.el;
+			let arrows = slider.parentElement.parentElement.querySelectorAll('.arrow');
+
+			arrows.forEach((arrow) => {
+				new DLAnimate().hide(arrow, {
+					name: 'fade',
+					track: 'animation',
+					afterLeave: function (arrow) {
+						slider.classList.add('no-slider');
+					}
+				});
+			});
+
+			hallsSlider.destroy();
+		})
+	});
+
 
 	new core_class('.promotions__slider .promotions__wrapper', {
 		spaceBetween: 30,
@@ -13201,6 +13034,35 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
+	// Advantages mob slider
+
+	let lg = window.matchMedia("screen and (max-width: 1199px)");
+	let advantagesSlider;
+
+	lgMediaHandler(lg);
+
+	lg.addListener(lgMediaHandler);
+
+	function lgMediaHandler(e) {
+		if (e.matches && !advantagesSlider) {
+			advantagesSlider = new core_class('.advantages__wrapper', {
+				spaceBetween: 30,
+				wrapperClass: 'advantages__list',
+				slideClass: 'advantages__item',
+				slidesPerView: 1,
+		
+				navigation: {
+					nextEl: ".advantages__arrow.arrow--next",
+					prevEl: ".advantages__arrow.arrow--prev",
+					disabledClass: 'arrow--disabled',
+				},
+			});
+		} else if (!e.matches && advantagesSlider) {
+			advantagesSlider.destroy();
+		}
+	}
+
+
 	//Hall slider with thumbnails
 
 	let gallerySlider = document.querySelector('.hall-main__slider');
@@ -13213,13 +13075,22 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	let hallSliderThumb = new core_class('.hall-main__thumb', {
 		loop: true,
-		spaceBetween: 30,
-		slidesPerView: 4,
+		spaceBetween: 15,
+		slidesPerView: 2,
 		// freeMode: true,
 		// watchSlidesProgress: true,
-
 		wrapperClass: 'hall-main__thumb-wrapper',
 		slideClass: 'hall-main__item',
+
+		breakpoints: {
+			576: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+		},
 
 	});
 
