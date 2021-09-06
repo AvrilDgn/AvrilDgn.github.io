@@ -15484,14 +15484,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				headerCollapse.addEventListener('transitionend', () => {
 					header.classList.remove('header--showed');
 					// headerCollapse.style.overflow = null;
-					scroll_lock_default.a.enablePageScroll(headerCollapse);
+					// scrollLock.enablePageScroll(headerCollapse);
 				}, { once: true });
 			}, { once: true });
 		}, { once: true });
 	}
 
 	let showMobHeader = function () {
-		scroll_lock_default.a.disablePageScroll(headerCollapse);
+		// scrollLock.disablePageScroll(headerCollapse);
 
 		headerToggleBtn.classList.add('header__mob-toggle-btn--compress');
 
@@ -15509,8 +15509,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 				raf(() => {
 					raf(() => {
-						headerCollapse.style.height = height + 'px';
+						headerCollapse.style.height = height + 20 + 'px';
 						header.classList.add('header--showed');
+
+						// headerCollapse.addEventListener('transitionend', function() {
+						// 	headerCollapse.style.height = 'auto';
+						// }, {once: true});
 					});
 				});
 				// headerCollapse.style.overflow = 'auto';
@@ -15839,6 +15843,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		wrapperClass: 'halls-short__list',
 		slideClass: 'halls-short__item',
 		slidesPerView: 1,
+		watchSlidesVisibility: true,
 
 		navigation: {
 			nextEl: ".halls-short__arrow.arrow--next",
@@ -15866,33 +15871,55 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	//change slider and show full halls
 
-	let hallsShowAllBtn = document.querySelectorAll('.halls-short__all-hals-btn');
+	let hallsShowAllBtn = document.querySelector('.halls-short__all-hals-btn');
 
-	hallsShowAllBtn.forEach((el) => {
-		el.addEventListener('click', function (e) {
+	if (hallsShowAllBtn) {
+
+		hallsShowAllBtn.addEventListener('click', function (e) {
 			e.preventDefault();
 
-			new DLAnimate().hide(el, {
+			new DLAnimate().hide(this, {
 				name: 'fade',
 				track: 'animation'
 			});
 
 			let slider = hallsSlider.el;
 			let arrows = slider.parentElement.parentElement.querySelectorAll('.arrow');
+			let slides = hallsSlider.slides;
+			let visibleSlides = hallsSlider.visibleSlides;
+			let destroyed = false;
+			let hiddenSlides = diff(slides, visibleSlides);
 
 			arrows.forEach((arrow) => {
 				new DLAnimate().hide(arrow, {
 					name: 'fade',
 					track: 'animation',
 					afterLeave: function (arrow) {
-						slider.classList.add('no-slider');
+						if (!destroyed) {
+
+							destroyed = true;
+							hallsSlider.destroy();
+
+							hiddenSlides.forEach((slide) => {
+								slide.style.display = "none";
+								slider.classList.add('no-slider');
+
+								new DLAnimate().show(slide, {
+									name: 'fade',
+									track: 'animation'
+								});
+							});
+						}
 					}
 				});
 			});
 
-			hallsSlider.destroy();
+			function diff(arr1, arr2) {
+				return arr1.filter(i => arr2.indexOf(i) < 0)
+					.concat(arr2.filter(i => arr1.indexOf(i) < 0))
+			}
 		})
-	});
+	}
 
 
 	/**
@@ -16017,9 +16044,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			spaceBetween: 15,
 			slidesPerView: 2,
 			watchSlidesVisibility: true,
-			// freeMode: true,
-			// watchSlidesProgress: true,
-			wrapperClass: 'hall-main__thumb-wrapper',
+			// wrapperClass: 'hall-main__thumb-wrapper',
 			slideClass: 'hall-main__item',
 
 			// enabled: false,
@@ -16090,7 +16115,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 			addMorePhoto();
 		});
-		
+
 		function addMorePhoto() {
 			//remove event on last elem
 			lastVisSlide.removeEventListener('click', showGallery);
@@ -16160,7 +16185,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let mapCenterPos = mapWrap.dataset.center.split(',');
 
 	ymaps.ready(function () {
-		let housesLocationMap = new ymaps.Map(mapWrap, {
+		let map = new ymaps.Map(mapWrap, {
 			center: mapCenterPos,
 			// format: overlay,
 			zoom: mapWrap.dataset.zoom,
@@ -16171,7 +16196,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		let placemarkData = JSON.parse("{" + mapWrap.dataset.data + "}");
 
-		let housesLocationPlacemark = new ymaps.Placemark(mapCenterPos, {
+		let placemark = new ymaps.Placemark(mapCenterPos, {
 			balloonContentBody: placemarkData.body,
 			balloonContentHeader: placemarkData.title,
 		}, {
@@ -16189,7 +16214,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			hideIconOnBalloonOpen: false
 		});
 
-		housesLocationMap.geoObjects.add(housesLocationPlacemark);
+		map.geoObjects.add(placemark);
 	});
 
 });

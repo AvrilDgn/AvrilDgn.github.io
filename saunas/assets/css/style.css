@@ -3310,9 +3310,9 @@ button:focus {
 .halls-short__wrapper.no-slider .halls-short__list {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: calc(100% + 30px);
 }
 
@@ -3392,6 +3392,7 @@ button:focus {
   min-height: 650px;
   background-image: url(../img/advantages/background.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 .advantages__wrapper {
@@ -3980,12 +3981,11 @@ button:focus {
 }
 
 .contacts__map .map-pin {
-  position: absolute;
-  top: -72px;
-  left: -46px;
   width: 46px;
   height: 72px;
   fill: #fc6500;
+  z-index: 111;
+  pointer-events: visible;
 }
 
 .contacts .container {
