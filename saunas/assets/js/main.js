@@ -15695,27 +15695,26 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	forms.forEach(form => {
 
-		let checkBox = form.querySelector('.agreement-check input');
-		let submitBtn = form.querySelector('button[type="submit"]');
+		// let checkBox = form.querySelector('.agreement-check input');
+		// let submitBtn = form.querySelector('button[type="submit"]');
 
-		checkBoxValidation(checkBox, submitBtn);
+		// checkBoxValidation(checkBox, submitBtn);
 
-		checkBox.onchange = function (e) {
-			checkBoxValidation(this, submitBtn);
-		}
+		// checkBox.onchange = function (e) {
+		// 	checkBoxValidation(this, submitBtn);
+		// }
 
-		function checkBoxValidation(cBox, submitBtn) {
-			if (cBox.checked) {
-				submitBtn.disabled = false;
-			}
-			else {
-				submitBtn.disabled = true;
-			}
-		}
+		// function checkBoxValidation(cBox, submitBtn) {
+		// 	if (cBox.checked) {
+		// 		submitBtn.disabled = false;
+		// 	}
+		// 	else {
+		// 		submitBtn.disabled = true;
+		// 	}
+		// }
 
 		//check inputs before sending form
 		form.onsubmit = function (e) {
-			e.preventDefault();
 
 			let reqInputs = form.querySelectorAll('[required]');
 
@@ -15723,24 +15722,51 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				let parent = input.parentNode;
 				let message = parent.querySelector('.validation-message');
 
-				if (input.getAttribute("type") === "tel") {
+				switch (input.getAttribute("type")) {
+					case "tel":
+						if (input.value.length < 18) {
+							if (message) {
+								e.preventDefault();
+								return;
+							}
 
-					if (input.value.length < 18) {
-						if (message) {
+							message = document.createElement('span');
+							message.classList.add('validation-message');
+							message.textContent = "Введите правильный номер телефона";
+							parent.appendChild(message);
+							new DLAnimate().show(message, {
+								name: 'fade',
+								track: 'animation'
+							});
+
+							e.preventDefault();
 							return;
 						}
+						break;
 
-						message = document.createElement('span');
-						message.classList.add('validation-message');
-						message.textContent = "Введите правильный номер телефона";
-						parent.appendChild(message);
-						new DLAnimate().show(message, {
-							name: 'fade',
-							track: 'animation'
-						});
+					case "checkbox":
+						if (!input.checked) {
+							if (message) {
+								e.preventDefault();
+								return;
+							}
 
-						return;
-					}
+							message = document.createElement('span');
+							message.classList.add('validation-message');
+							message.textContent = "Подтвердите согласие на обработку и передачу персональных данных";
+							parent.appendChild(message);
+							new DLAnimate().show(message, {
+								name: 'fade',
+								track: 'animation'
+							});
+
+							e.preventDefault();
+							return;
+						}
+						break;
+
+					default:
+						break;
 				}
 
 				if (message) {
@@ -15754,23 +15780,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				}
 			});
 		}
-
-		// let formData = new FormData(form);
-
-		// let xhr = new XMLHttpRequest();
-
-		// xhr.open("POST", url, true);
-		// xhr.send(formData);
-
-		// xhr.onreadystatechange = function () {
-		// 	if (xhr.readyState == 4) {
-		// 		if (xhr.status == 200) {
-		// 			alert("Worked!");
-		// 		} else {
-		// 			alert(xhr.status + ': ' + xhr.statusText + 'Error');
-		// 		}
-		// 	}
-		// };
 	});
 
 
@@ -16069,21 +16078,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			hallSliderThumb.update(true);
 			hallSliderThumb.enabled = false;
 
-			//снять событие
-			lastVisSlide.removeEventListener('click', showGallery);
-			lastVisSlide.querySelector('.hall-main__more-photo').remove();
-
-			//повесить событие
-			lastVisSlide = findsLastVisSlide(hallSliderThumb);
-			lastVisSlide.addEventListener('click', showGallery);
-
-			let morePhoto = document.createElement('div');
-			morePhoto.classList.add('hall-main__more-photo');
-			morePhoto.innerHTML =
-				`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
-			<span>еще фото</span>`;
-			lastVisSlide.appendChild(morePhoto);
-
+			addMorePhoto();
 		});
 
 		hallSliderMain.on('slidePrevTransitionStart', function () {
@@ -16093,11 +16088,15 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			hallSliderThumb.update(true);
 			hallSliderThumb.enabled = false;
 
-			//снять событие
+			addMorePhoto();
+		});
+		
+		function addMorePhoto() {
+			//remove event on last elem
 			lastVisSlide.removeEventListener('click', showGallery);
 			lastVisSlide.querySelector('.hall-main__more-photo').remove();
 
-			//повесить событие
+			//add event on current elem
 			lastVisSlide = findsLastVisSlide(hallSliderThumb);
 			lastVisSlide.addEventListener('click', showGallery);
 
@@ -16107,8 +16106,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
 			<span>еще фото</span>`;
 			lastVisSlide.appendChild(morePhoto);
-		});
-
+		}
 
 		function findsLastVisSlide(slider) {
 			let visibleSlides = slider.visibleSlides;
