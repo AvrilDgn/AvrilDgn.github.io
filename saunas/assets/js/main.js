@@ -15713,7 +15713,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		}
 
-		//check inputs on submit
+		//check inputs before sending form
 		form.onsubmit = function (e) {
 			e.preventDefault();
 
@@ -15953,8 +15953,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	let hallSliderWrap = document.querySelector('.hall-main__slider-wrapper');
 	let hallThumbWrap = document.querySelector('.hall-main__thumb-wrapper');
+	let hallMainEl = document.querySelector('.hall-main__slider');
+	let hallThumbEl = document.querySelector('.hall-main__thumb');
 	let galleryEl = document.querySelector('.gallery');
-	
+
 
 	//Copy slides from main to thumb
 	if (hallSliderWrap && hallThumbWrap) {
@@ -15962,7 +15964,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 	//array img links from slider
-	let getLinksToImgs = function() {
+	let getLinksToImgs = function () {
 		let imgs = hallSliderWrap.querySelectorAll('.hall-main__item img');
 		let arr = [];
 
@@ -15998,120 +16000,126 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	//sliders
 
+	if (hallThumbEl && hallMainEl) {
 
-	//thumb slider
-	let hallSliderThumb = new core_class('.hall-main__thumb', {
-		loop: true,
-		spaceBetween: 15,
-		slidesPerView: 2,
-		watchSlidesVisibility: true,
-		// freeMode: true,
-		// watchSlidesProgress: true,
-		wrapperClass: 'hall-main__thumb-wrapper',
-		slideClass: 'hall-main__item',
+		//thumb slider
+		let hallSliderThumb = new core_class('.hall-main__thumb', {
+			loop: true,
+			spaceBetween: 15,
+			slidesPerView: 2,
+			watchSlidesVisibility: true,
+			// freeMode: true,
+			// watchSlidesProgress: true,
+			wrapperClass: 'hall-main__thumb-wrapper',
+			slideClass: 'hall-main__item',
 
-		// enabled: false,
+			// enabled: false,
 
-		breakpoints: {
-			576: {
-				slidesPerView: 3,
+			breakpoints: {
+				576: {
+					slidesPerView: 3,
+				},
+				768: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
 			},
-			768: {
-				slidesPerView: 4,
-				spaceBetween: 30,
+
+		});
+
+		//main slider
+		let hallSliderMain = new core_class('.hall-main__slider', {
+			loop: true,
+			spaceBetween: 10,
+			wrapperClass: 'hall-main__slider-wrapper',
+			slideClass: 'hall-main__item',
+
+			navigation: {
+				nextEl: ".hall-main__arrow.arrow--next",
+				prevEl: ".hall-main__arrow.arrow--prev",
+				disabledClass: 'arrow--disabled',
 			},
-		},
+			// thumbs: {
+			// 	swiper: hallSliderThumb,
+			// },
+		});
 
-	});
+		if (hallSliderThumb) {
+			// console.log(hallSliderThumb)
+		}
 
-	//main slider
-	let hallSliderMain = new core_class('.hall-main__slider', {
-		loop: true,
-		spaceBetween: 10,
-		wrapperClass: 'hall-main__slider-wrapper',
-		slideClass: 'hall-main__item',
-
-		navigation: {
-			nextEl: ".hall-main__arrow.arrow--next",
-			prevEl: ".hall-main__arrow.arrow--prev",
-			disabledClass: 'arrow--disabled',
-		},
-		// thumbs: {
-		// 	swiper: hallSliderThumb,
-		// },
-	});
-
-	hallSliderThumb.slideNext(0);
-	hallSliderThumb.enabled = false;
+		hallSliderThumb.slideNext(0);
+		hallSliderThumb.enabled = false;
 
 
-	let lastVisSlide = findsLastVisSlide(hallSliderThumb);
-	lastVisSlide.addEventListener('click', showGallery);
+		let lastVisSlide = findsLastVisSlide(hallSliderThumb);
+		lastVisSlide.addEventListener('click', showGallery);
 
-	let morePhoto = document.createElement('span');
-	morePhoto.classList.add('hall-main__more-photo');
-	morePhoto.innerHTML =
-		`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
+		let morePhoto = document.createElement('span');
+		morePhoto.classList.add('hall-main__more-photo');
+		morePhoto.innerHTML =
+			`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
 		<span>еще фото</span>`;
-	lastVisSlide.appendChild(morePhoto);
-
-	hallSliderMain.on('slideNextTransitionStart', function () {
-
-		hallSliderThumb.enabled = true;
-		hallSliderThumb.slideNext();
-		hallSliderThumb.update(true);
-		hallSliderThumb.enabled = false;
-
-		//снять событие
-		lastVisSlide.removeEventListener('click', showGallery);
-		lastVisSlide.querySelector('.hall-main__more-photo').remove();
-
-		//повесить событие
-		lastVisSlide = findsLastVisSlide(hallSliderThumb);
-		lastVisSlide.addEventListener('click', showGallery);
-
-		let morePhoto = document.createElement('div');
-		morePhoto.classList.add('hall-main__more-photo');
-		morePhoto.innerHTML =
-			`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
-			<span>еще фото</span>`;
 		lastVisSlide.appendChild(morePhoto);
 
-	});
+		hallSliderMain.on('slideNextTransitionStart', function () {
 
-	hallSliderMain.on('slidePrevTransitionStart', function () {
+			hallSliderThumb.enabled = true;
+			hallSliderThumb.slideNext();
+			hallSliderThumb.update(true);
+			hallSliderThumb.enabled = false;
 
-		hallSliderThumb.enabled = true;
-		hallSliderThumb.slidePrev();
-		hallSliderThumb.update(true);
-		hallSliderThumb.enabled = false;
+			//снять событие
+			lastVisSlide.removeEventListener('click', showGallery);
+			lastVisSlide.querySelector('.hall-main__more-photo').remove();
 
-		//снять событие
-		lastVisSlide.removeEventListener('click', showGallery);
-		lastVisSlide.querySelector('.hall-main__more-photo').remove();
+			//повесить событие
+			lastVisSlide = findsLastVisSlide(hallSliderThumb);
+			lastVisSlide.addEventListener('click', showGallery);
 
-		//повесить событие
-		lastVisSlide = findsLastVisSlide(hallSliderThumb);
-		lastVisSlide.addEventListener('click', showGallery);
-
-		let morePhoto = document.createElement('div');
-		morePhoto.classList.add('hall-main__more-photo');
-		morePhoto.innerHTML =
-			`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
+			let morePhoto = document.createElement('div');
+			morePhoto.classList.add('hall-main__more-photo');
+			morePhoto.innerHTML =
+				`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
 			<span>еще фото</span>`;
-		lastVisSlide.appendChild(morePhoto);
-	});
+			lastVisSlide.appendChild(morePhoto);
+
+		});
+
+		hallSliderMain.on('slidePrevTransitionStart', function () {
+
+			hallSliderThumb.enabled = true;
+			hallSliderThumb.slidePrev();
+			hallSliderThumb.update(true);
+			hallSliderThumb.enabled = false;
+
+			//снять событие
+			lastVisSlide.removeEventListener('click', showGallery);
+			lastVisSlide.querySelector('.hall-main__more-photo').remove();
+
+			//повесить событие
+			lastVisSlide = findsLastVisSlide(hallSliderThumb);
+			lastVisSlide.addEventListener('click', showGallery);
+
+			let morePhoto = document.createElement('div');
+			morePhoto.classList.add('hall-main__more-photo');
+			morePhoto.innerHTML =
+				`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
+			<span>еще фото</span>`;
+			lastVisSlide.appendChild(morePhoto);
+		});
 
 
-	function findsLastVisSlide(slider) {
-		let visibleSlides = slider.visibleSlides;
-		return visibleSlides[visibleSlides.length - 1];
+		function findsLastVisSlide(slider) {
+			let visibleSlides = slider.visibleSlides;
+			return visibleSlides[visibleSlides.length - 1];
+		}
+
+		function showGallery() {
+			gallery();
+		}
+
 	}
-
-	function showGallery() {
-		gallery();
-	}
-
 
 	/**
 	 * Rating
@@ -16138,9 +16146,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	let hallTitle = document.querySelector('.hall-main__title');
 	let titleContainer = document.querySelector('.hall-main .container');
-	let titleCopy = hallTitle.cloneNode(true);
-	titleCopy.classList.add('hall-main__title--mob');
-	titleContainer.appendChild(titleCopy);
+
+	if (hallTitle && titleContainer) {
+		let titleCopy = hallTitle.cloneNode(true);
+		titleCopy.classList.add('hall-main__title--mob');
+		titleContainer.appendChild(titleCopy);
+	}
 
 
 	/**
