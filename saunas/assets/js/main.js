@@ -15484,14 +15484,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				headerCollapse.addEventListener('transitionend', () => {
 					header.classList.remove('header--showed');
 					// headerCollapse.style.overflow = null;
-					scroll_lock_default.a.enablePageScroll(header);
+					scroll_lock_default.a.enablePageScroll(headerCollapse);
 				}, { once: true });
 			}, { once: true });
 		}, { once: true });
 	}
 
 	let showMobHeader = function () {
-		scroll_lock_default.a.disablePageScroll(header);
+		scroll_lock_default.a.disablePageScroll(headerCollapse);
 
 		headerToggleBtn.classList.add('header__mob-toggle-btn--compress');
 
