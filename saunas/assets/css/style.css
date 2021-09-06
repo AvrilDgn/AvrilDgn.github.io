@@ -2544,6 +2544,11 @@ button:focus {
   font-weight: 400;
   text-align: right;
   color: #fff;
+  text-decoration: none;
+}
+
+.hall-card__promotion:hover {
+  color: #fff;
 }
 
 .hall-card__name {
@@ -4188,6 +4193,7 @@ button:focus {
 
 .hall-main__promotion {
   position: absolute;
+  display: block;
   padding-right: 44px;
   padding-top: 30px;
   top: 0;
@@ -4200,7 +4206,12 @@ button:focus {
   font-weight: 400;
   text-align: right;
   color: #fff;
+  text-decoration: none;
   z-index: 2;
+}
+
+.hall-main__promotion:hover {
+  color: #fff;
 }
 
 .hall-main__slider-wrapper {
@@ -4445,11 +4456,11 @@ button:focus {
 }
 
 .check-free-form__title {
-  margin-top: 36px;
-  margin-bottom: 20px;
+  margin-top: 26px;
+  margin-bottom: 16px;
   font-weight: 600;
   font-size: 30px;
-  line-height: 0.8;
+  line-height: 1.4;
   color: #320c00;
   text-transform: uppercase;
   text-align: center;

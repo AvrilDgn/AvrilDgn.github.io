@@ -15920,12 +15920,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Advantages Slider on mobile
 	 */
 
-	let lg = window.matchMedia("screen and (max-width: 1199px)");
+	let lgMedia = window.matchMedia("screen and (max-width: 1199px)");
 	let advantagesSlider;
 
-	lgMediaHandler(lg);
+	lgMediaHandler(lgMedia);
 
-	lg.addListener(lgMediaHandler);
+	lgMedia.addListener(lgMediaHandler);
 
 	function lgMediaHandler(e) {
 		if (e.matches && !advantagesSlider) {
@@ -15951,10 +15951,32 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Main Hall Slider
 	 */
 
-	//gallery
-
+	let hallSliderWrap = document.querySelector('.hall-main__slider-wrapper');
+	let hallThumbWrap = document.querySelector('.hall-main__thumb-wrapper');
 	let galleryEl = document.querySelector('.gallery');
+	
 
+	//Copy slides from main to thumb
+	if (hallSliderWrap && hallThumbWrap) {
+		hallThumbWrap.innerHTML = hallSliderWrap.innerHTML;
+	}
+
+	//array img links from slider
+	let getLinksToImgs = function() {
+		let imgs = hallSliderWrap.querySelectorAll('.hall-main__item img');
+		let arr = [];
+
+		imgs.forEach(img => {
+			arr.push({
+				src: img.getAttribute('src'),
+				thumb: img.getAttribute('src'),
+			});
+		});
+
+		return arr;
+	}
+
+	//gallery
 	let gallery = function () {
 		return window.lightGallery(galleryEl, {
 			container: galleryEl,
@@ -15966,80 +15988,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			plugins: [lg_zoom_default.a, lg_thumbnail_default.a],
 			mode: 'lg-fade',
 			dynamic: true,
-			dynamicEl: [
-				{
-					src:
-						"https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-					responsive:
-						"https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800",
-					thumb:
-						"https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80",
-					subHtml: `<div class="lightGallery-captions">
-								 <h4>Photo by <a href="https://unsplash.com/@dann">Dan</a></h4>
-								 <p>Published on November 13, 2018</p>
-							</div>`
-				},
-				{
-					src:
-						"https://images.unsplash.com/photo-1473876988266-ca0860a443b8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-					responsive:
-						"https://images.unsplash.com/photo-1473876988266-ca0860a443b8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1473876988266-ca0860a443b8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800",
-					thumb:
-						"https://images.unsplash.com/photo-1473876988266-ca0860a443b8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80",
-					subHtml: `<div class="lightGallery-captions">
-								 <h4>Photo by <a href="https://unsplash.com/@kylepyt">Kyle Peyton</a></h4>
-								 <p>Published on September 14, 2016</p>
-							</div>`
-				},
-				{
-					src:
-						"https://images.unsplash.com/photo-1588953936179-d2a4734c5490?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80",
-					responsive:
-						"https://images.unsplash.com/photo-1588953936179-d2a4734c5490?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1588953936179-d2a4734c5490?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80 800",
-					thumb:
-						"https://images.unsplash.com/photo-1588953936179-d2a4734c5490?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80",
-					subHtml: `<div class="lightGallery-captions">
-								 <h4>Photo by <a href="https://unsplash.com/@jxnsartstudio">Garrett Jackson</a></h4>
-								 <p>Published on May 8, 2020</p>
-							</div>`
-				},
-				{
-					src:
-						"https://images.unsplash.com/photo-1591634616938-1dfa7ee2e617?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-					responsive:
-						"https://images.unsplash.com/photo-1591634616938-1dfa7ee2e617?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1591634616938-1dfa7ee2e617?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800",
-					thumb:
-						"https://images.unsplash.com/photo-1591634616938-1dfa7ee2e617?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80",
-					subHtml: `<div class="lightGallery-captions">
-								 <h4>Photo by <a href="https://unsplash.com/@brookecagle">Brooke Cagle</a></h4>
-								 <p>Description of the slide 4</p>
-							</div>`
-				},
-				{
-					src:
-						"https://images.unsplash.com/photo-1543059509-6d53dbee1728?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80",
-					responsive:
-						"https://images.unsplash.com/photo-1543059509-6d53dbee1728?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1543059509-6d53dbee1728?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80 800",
-					thumb:
-						"https://images.unsplash.com/photo-1543059509-6d53dbee1728?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80",
-					subHtml: `<div class="lightGallery-captions">
-								 <h4>Photo by <a href="https://unsplash.com/@charlespostiaux">Charles Postiaux</a></h4>
-								 <p>Published on November 24, 2018</p>
-							</div>`
-				},
-				{
-					src:
-						"https://images.unsplash.com/photo-1609902726285-00668009f004?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80",
-					responsive:
-						"https://images.unsplash.com/photo-1609902726285-00668009f004?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1609902726285-00668009f004?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80 800",
-					thumb:
-						"https://images.unsplash.com/photo-1609902726285-00668009f004?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80",
-					subHtml: `<div class="lightGallery-captions">
-								 <h4>Photo by <a href="https://unsplash.com/@bruno_adam">Bruno Adam</a></h4>
-								 <p>Published on January 6, 2021</p>
-							</div>`
-				},
-			],
+			dynamicEl: getLinksToImgs(),
 
 			thumbWidth: 60,
 			thumbHeight: "40px",
@@ -16049,13 +15998,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	//sliders
 
-	let gallerySlider = document.querySelector('.hall-main__slider');
-	let gallerySliderWrap = document.querySelector('.hall-main__slider-wrapper');
-	let galleryThumbWrap = document.querySelector('.hall-main__thumb-wrapper');
-
-	if (gallerySliderWrap && galleryThumbWrap) {
-		galleryThumbWrap.innerHTML = gallerySliderWrap.innerHTML;
-	}
 
 	//thumb slider
 	let hallSliderThumb = new core_class('.hall-main__thumb', {
@@ -16171,57 +16113,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 
-	/*
-	// fullscreen
-
-	let hallSlides = Array.from(hallSliderMain.slides);
-	let hallOverlay = document.querySelector('.hall-main__overlay');
-	let hallCloseButton = document.querySelector('.hall-main__gallery-close-btn');
-
-	hallSlides.forEach(function (slide) {
-		openFullscreenSliderHandler(slide);
-		closeFullscreenSliderHandler(slide);
-	});
-
-	function openFullscreenSliderHandler(slide) {
-		let slideImage = slide.querySelector('img');
-
-		slideImage.addEventListener('click', function () {
-			let slideNumber = slide.dataset.swiperSlideIndex;
-			openFullscreenSwiper(slideNumber);
-		});
-	}
-
-	function openFullscreenSwiper(slideNumber) {
-		gallerySlider.classList.add('fullscreen');
-		// hallSliderMain.params.slidesPerView = 1;
-		hallSliderMain.update();
-		hallSliderMain.slideToLoop(parseInt(slideNumber, 10), 0);
-		scrollLock.disablePageScroll(gallerySlider);
-	}
-
-	function closeFullscreenSliderHandler(slide) {
-		let slideNumber = slide.dataset.swiperSlideIndex;
-
-		hallOverlay.addEventListener('click', function () {
-			closeFullscreenSwiper(slideNumber);
-		});
-
-		hallCloseButton.addEventListener('click', function (e) {
-			e.preventDefault();
-			closeFullscreenSwiper(slideNumber);
-		});
-	}
-
-	function closeFullscreenSwiper(slideNumber) {
-		gallerySlider.classList.remove('fullscreen');
-		// hallSliderMain.params.slidesPerView = 3;
-		hallSliderMain.update();
-		hallSliderMain.slideToLoop(parseInt(slideNumber, 10), 0);
-		scrollLock.enablePageScroll(gallerySlider);
-	}
-*/
-
 	/**
 	 * Rating
 	 */
@@ -16242,7 +16133,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Move hall-main title
+	 * Move hall-main title (for mobile)
 	 */
 
 	let hallTitle = document.querySelector('.hall-main__title');
