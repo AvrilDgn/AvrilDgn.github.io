@@ -15957,29 +15957,31 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 */
 
 	let discountWrap = document.querySelector('.discount-slider');
-	let arrows = discountWrap.querySelectorAll('.arrow');
+	if (discountWrap) {
+		let arrows = discountWrap.querySelectorAll('.arrow');
 
-	if (discountWrap.querySelectorAll('.discount-card').length > 1) {
+		if (discountWrap.querySelectorAll('.discount-card').length > 1) {
 
-		new core_class(discountWrap, {
-			spaceBetween: 30,
-			wrapperClass: 'discount-slider__list',
-			slideClass: 'discount-slider__item',
-			slidesPerView: 1,
+			new core_class(discountWrap, {
+				spaceBetween: 30,
+				wrapperClass: 'discount-slider__list',
+				slideClass: 'discount-slider__item',
+				slidesPerView: 1,
 
-			navigation: {
-				nextEl: ".discount-slider__arrow.arrow--next",
-				prevEl: ".discount-slider__arrow.arrow--prev",
-				disabledClass: 'arrow--disabled',
-			},
-		});
-
-		arrows.forEach((arrow) => {
-			new DLAnimate().show(arrow, {
-				name: 'fade',
-				track: 'animation',
+				navigation: {
+					nextEl: ".discount-slider__arrow.arrow--next",
+					prevEl: ".discount-slider__arrow.arrow--prev",
+					disabledClass: 'arrow--disabled',
+				},
 			});
-		});
+
+			arrows.forEach((arrow) => {
+				new DLAnimate().show(arrow, {
+					name: 'fade',
+					track: 'animation',
+				});
+			});
+		}
 	}
 
 
