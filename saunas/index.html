@@ -175,7 +175,7 @@
 
         <div class="hero__book-form book-form">
           <form id="form-book" action="#" method="post">
-            <h2 class="book-form__title">Забронировать сауну</h2>
+            <h2 class="book-form__title">Узнать, свободна ли сауна</h2>
             <p class="book-form__field field">
               <input class="book-form__input phoneMask" type="tel" name="phone" id="form-book-phone" placeholder="Ваш телефон" required>
             </p>
@@ -259,7 +259,9 @@
           <h1 class="hall-main__title">Название зала</h1>
           <div class="hall-main__info-group">
             <p class="hall-main__type">Стоимость:</p>
-            <p class="hall-main__value"><b class="hall-main__accent">500-1000</b> руб./час</p>
+            <p class="hall-main__value"><b class="hall-main__accent">500-1000</b> руб./час
+              <a class="hall-main__about-cost tooltip-opener tooltip-opener--dark" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit." href="#">?</a>
+            </p>
           </div>
           <div class="hall-main__info-group">
             <p class="hall-main__type">Тип парной:</p>
@@ -271,10 +273,31 @@
             <p class="hall-main__value"><b class="hall-main__accent">6-8</b> чел(свыше 8 чел, доплата)</p>
           </div>
 
-          <div class="hall-main__discount discount-card">
-            <h3 class="discount-card__title">Не пропустите!</h3>
-            <p class="discount-card__gift">5-й час в подарок!</p>
-            <a class="discount-card__get-btn button modal-opener" href="#" data-modal="modal-promotion">Получите скидку</a>
+          <div class="hall-main__discount discount-slider">
+            <ul class="discount-slider__list">
+              <li class="discount-slider__item discount-card">
+                <h3 class="discount-card__title">Не пропустите!</h3>
+                <p class="discount-card__gift">
+                  <span class="discount-card__gift-text">5-й час в подарок!</span>
+                  <a class="discount-card__about-gift tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit." href="#">?</a>
+                </p>
+                <a class="discount-card__get-btn button modal-opener" href="#" data-modal="modal-promotion">Получите
+
+							скидку</a>
+              </li>
+              <li class="discount-slider__item discount-card">
+                <h3 class="discount-card__title">Не пропустите!</h3>
+                <p class="discount-card__gift">
+                  <span class="discount-card__gift-text">5-й час в подарок!</span>
+                  <a class="discount-card__about-gift tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit." href="#">?</a>
+                </p>
+                <a class="discount-card__get-btn button modal-opener" href="#" data-modal="modal-promotion">Получите
+
+							скидку</a>
+              </li>
+            </ul>
+            <button class="discount-slider__arrow arrow arrow--prev"></button>
+            <button class="discount-slider__arrow arrow arrow--next"></button>
           </div>
         </div>
       </div>

@@ -15953,6 +15953,37 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
+	 * Discount Slider
+	 */
+
+	let discountWrap = document.querySelector('.discount-slider');
+	let arrows = discountWrap.querySelectorAll('.arrow');
+
+	if (discountWrap.querySelectorAll('.discount-card').length > 1) {
+
+		new core_class(discountWrap, {
+			spaceBetween: 30,
+			wrapperClass: 'discount-slider__list',
+			slideClass: 'discount-slider__item',
+			slidesPerView: 1,
+
+			navigation: {
+				nextEl: ".discount-slider__arrow.arrow--next",
+				prevEl: ".discount-slider__arrow.arrow--prev",
+				disabledClass: 'arrow--disabled',
+			},
+		});
+
+		arrows.forEach((arrow) => {
+			new DLAnimate().show(arrow, {
+				name: 'fade',
+				track: 'animation',
+			});
+		});
+	}
+
+
+	/**
 	 * Advantages Slider on mobile
 	 */
 
@@ -16144,6 +16175,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	}
 
+
 	/**
 	 * Rating
 	 */
@@ -16161,6 +16193,64 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		}
 	}
+
+
+	/**
+	 * Tooltip
+	 */
+
+	let tooltipOpeners = document.querySelectorAll('.tooltip-opener');
+
+	tooltipOpeners.forEach((opener) => {
+		opener.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			let rect = opener.getBoundingClientRect();
+			openTooltip(opener.dataset.tooltip, rect.left + pageXOffset + rect.width / 2, rect.top + pageYOffset - rect.height / 2);
+		});
+	});
+
+	function openTooltip(tooltipBody, posX, posY) {
+		let tooltip = document.createElement('div');
+		let tooltipArrow = document.createElement('div');
+
+		tooltip.classList.add('tooltip');
+		tooltipArrow.classList.add('tooltip__arrow');
+		tooltip.textContent = tooltipBody;
+
+		document.body.appendChild(tooltip);
+		tooltip.appendChild(tooltipArrow);
+
+		tooltip.style.top = posY + 'px';
+		tooltip.style.left = posX + 'px';
+		tooltip.style.display = 'none';
+
+		new DLAnimate().show(tooltip, {
+			name: 'fade',
+			track: 'animation',
+			duration: 200,
+			afterEnter: function () {
+				document.addEventListener('click', function (e) {
+					if (e.target !== tooltip && !tooltip.contains(e.target)) {
+						closeTooltip(tooltip);
+					}
+				});
+			},
+		});
+	}
+
+	function closeTooltip(tooltip) {
+
+		new DLAnimate().hide(tooltip, {
+			name: 'fade',
+			track: 'animation',
+			duration: 200,
+			afterLeave: function () {
+				tooltip.remove();
+			},
+		});
+	}
+
 
 
 	/**

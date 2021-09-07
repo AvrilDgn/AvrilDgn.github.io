@@ -3221,11 +3221,11 @@ button:focus {
 }
 
 .book-form__title {
-  margin-top: 26px;
+  margin-top: 28px;
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 24px;
-  line-height: 2;
+  line-height: 1.3;
   text-transform: uppercase;
   text-align: center;
   color: #320c00;
@@ -4386,6 +4386,47 @@ button:focus {
   border-radius: 24px;
 }
 
+.hall-main__about-cost {
+  margin-left: 5px;
+}
+
+.discount-slider {
+  position: relative;
+  overflow: hidden;
+  width: 370px;
+}
+
+.discount-slider__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.discount-slider__item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.discount-slider__arrow {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-width: 3px;
+  border-color: #fff;
+}
+
+.discount-slider__arrow.arrow--disabled {
+  border-color: #d9d8d7;
+}
+
+.discount-slider__arrow.arrow--prev {
+  left: 20px;
+}
+
+.discount-slider__arrow.arrow--next {
+  right: 0px;
+}
+
 .discount-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4398,7 +4439,7 @@ button:focus {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 370px;
-  padding: 31px 19px 26px;
+  padding: 31px 30px 26px;
   border-radius: 20px;
   border: solid 1px white;
   background-color: #fc6500;
@@ -4436,6 +4477,95 @@ button:focus {
   opacity: 0.8;
   background-color: white;
   color: #fc6500;
+}
+
+.discount-card__about-gift {
+  margin-left: 5px;
+}
+
+.tooltip-opener {
+  position: relative;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.tooltip-opener::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px dotted white;
+  -webkit-transition: opacity ease 0.25s;
+  -o-transition: opacity ease 0.25s;
+  transition: opacity ease 0.25s;
+}
+
+.tooltip-opener:hover {
+  color: white;
+}
+
+.tooltip-opener:hover:after {
+  opacity: 0;
+}
+
+.tooltip-opener--dark {
+  color: black;
+}
+
+.tooltip-opener--dark::after {
+  border-color: black;
+}
+
+.tooltip-opener--dark:hover {
+  color: black;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 6px;
+  -webkit-transform: translate(-50%, -100%);
+      -ms-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  max-width: 120px;
+  border-radius: 10px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+  z-index: 20;
+}
+
+.tooltip__arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+  overflow: hidden;
+}
+
+.tooltip__arrow::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: -50%;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .check-free-form {
@@ -5484,6 +5614,7 @@ button:focus {
 
   .hall-main__info-block {
     margin-top: 10px;
+    width: 100%;
   }
 
   .hall-main__info-group {
@@ -5492,6 +5623,11 @@ button:focus {
 
   .hall-main__discount {
     margin-top: 20px;
+  }
+
+  .discount-slider {
+    width: 100%;
+    max-width: 370px;
   }
 
   .discount-card {
