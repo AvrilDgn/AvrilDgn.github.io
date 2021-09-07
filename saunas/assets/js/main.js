@@ -15534,6 +15534,28 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
+	 * Header show phone number
+	 */
+
+	let headerPhone = document.querySelector('.header__phone');
+
+	headerPhone.addEventListener('click', function(e) {
+		e.preventDefault();
+
+		let number = this.dataset.number;
+
+		this.style.opacity = 0;
+
+		this.addEventListener('transitionend', function() {
+			this.innerHTML = number;
+			this.setAttribute('href', 'tel:' + number);
+			this.classList.add('header__phone--full')
+			this.style.opacity = 1;
+		})
+	}, {once: true});
+
+
+	/**
 	 * Anchor smooth scrolling
 	 */
 

@@ -2681,13 +2681,35 @@ button:focus {
 
 .header__phone {
   position: relative;
-  font-weight: 600;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 20px;
   color: #320c00;
   text-decoration: none;
+  text-align: center;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
-.header__phone::before {
+.header__phone svg {
+  width: 15px;
+  height: 16px;
+}
+
+.header__phone:hover {
+  color: #320c00;
+}
+
+.header__phone:hover::before {
+  width: 100%;
+}
+
+.header__phone--full {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header__phone--full::before {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -2699,14 +2721,6 @@ button:focus {
   -webkit-transition: width 0.25s ease;
   -o-transition: width 0.25s ease;
   transition: width 0.25s ease;
-}
-
-.header__phone:hover {
-  color: #320c00;
-}
-
-.header__phone:hover::before {
-  width: 100%;
 }
 
 .header__address {
