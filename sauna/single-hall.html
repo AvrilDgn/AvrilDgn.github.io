@@ -25,9 +25,9 @@
     <header class="header" data-scroll-lock-fill-gap>
       <div class="container">
 
-        <div class="header__mobile-visible-block">
+        <div class="header__menu">
           <a href="index.html" class="logo header__logo">
-            <img src="assets/img/logo.svg" alt="логотип">
+            <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
             <span class="logo__text-block">
 
 					<b class="logo__name">Баня Лукоморье</b>
@@ -39,10 +39,6 @@
 				</span>
           </a>
 
-          <a class="header__mob-toggle-btn" href="#toggle-menu"><span></span></a>
-        </div>
-
-        <div class="header__collapse">
           <nav class="nav header__nav">
             <ul class="nav__list">
               <li class="nav__item"><a class="nav__link" href="#halls">Залы</a>
@@ -57,7 +53,7 @@
           </nav>
 
           <div class="header__contacts-block">
-            <a href="#" data-number="+7 (911) 554-33-44" class="header__phone">
+            <a href="#" data-number="+7 (911) 554-33-44" class="header__phone header__phone--hidden-phone">
               <svg>
                 <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
               </svg>
@@ -71,7 +67,87 @@
 				</a>
           </div>
 
+          <a class="header__mobile-toggle-btn" href="#toggle-menu"><span></span></a>
+        </div>
 
+        <div class="header__mobile-menu">
+
+          <a href="tel:+79253033333" class="header__phone phone-block">
+            <div class="phone-block__icon">
+              <svg>
+                <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+              </svg>
+            </div>
+            <div class="phone-block__text">
+              <span class="phone-block__number">+7 (911) 554-33-44</span>
+              <span class="phone-block__schedule">Круглосуточно</span>
+            </div>
+          </a>
+
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link" href="#halls">Залы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#about">О нас</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__contacts">
+            <p class="header__address">
+              <svg class="header__contacts-icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#pin-marker"></use>
+              </svg>
+              <span class="header__contacts-text">
+
+						г. Архангельск, СНТ Транспортник, стр.11
+
+					</span>
+            </p>
+
+            <p class="header__schedule">
+              <svg class="header__contacts-icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#clock"></use>
+              </svg>
+              <span class="header__contacts-text">
+
+						Круглосуточно
+
+					</span>
+            </p>
+          </div>
+
+          <a href="#" class="header__feedback-btn button modal-opener" data-modal="modal-feedback">
+
+				Забронировать</a>
+
+          <ul class="header__socials socials">
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--whatsapp">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--telegram">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--viber">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#viber"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -137,101 +213,112 @@
       </div>
     </section>
     <!-- End Hero Block -->
-    <!-- Hall Main Block -->
-    <section id="halls" class="hall-main">
+    <!-- Hall Section Block -->
+    <section id="halls" class="hall-section">
       <div class="container">
-        <!-- Gallery -->
-        <div class="hall-main__gallery-block">
-          <div class="hall-main__slider">
-            <a href="#" class="hall-main__promotion modal-opener" data-modal="modal-promotion">Акция</a>
+        <h2 class="hall-section__title title">О зале</h2>
 
-            <ul class="hall-main__slider-wrapper swiper-wrapper">
-              <li class="hall-main__item swiper-slide">
-                <img class="hall-main__img" src="assets/img/halls/image.jpg" />
-              </li>
-              <li class="hall-main__item swiper-slide">
-                <img class="hall-main__img" src="assets/img/halls/image.jpg" />
-              </li>
-              <li class="hall-main__item swiper-slide">
-                <img class="hall-main__img" src="assets/img/halls/image.jpg" />
-              </li>
-              <li class="hall-main__item swiper-slide">
-                <img class="hall-main__img" src="assets/img/halls/image.jpg" />
-              </li>
-              <li class="hall-main__item swiper-slide">
-                <img class="hall-main__img" src="assets/img/halls/image.jpg" />
-              </li>
-              <li class="hall-main__item swiper-slide">
-                <img class="hall-main__img" src="assets/img/halls/image.jpg" />
-              </li>
+        <div class="hall-section__wrap">
+          <!-- Gallery -->
+          <div class="hall-section__gallery-block">
+            <div class="hall-section__slider">
+              <a href="#" class="hall-section__promotion modal-opener" data-modal="modal-promotion">
+                <span class="hall-section__promotion-title">Акция</span>
+                <span class="hall-section__promotion-subtitle">Получите скидку</span>
+              </a>
+
+              <ul class="hall-section__slider-wrapper swiper-wrapper">
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-1.jpg" alt="фото зала" />
+                </li>
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-2.jpg" alt="фото зала" />
+                </li>
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-3.jpg" alt="фото зала" />
+                </li>
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-4.jpg" alt="фото зала" />
+                </li>
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-5.jpg" alt="фото зала" />
+                </li>
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-6.jpg" alt="фото зала" />
+                </li>
+                <li class="hall-section__item swiper-slide">
+                  <img class="hall-section__img" src="assets/img/hall/photo-7.jpg" alt="фото зала" />
+                </li>
+              </ul>
+
+              <div class="hall-section__pagination pagination"></div>
+
+              <div class="hall-section__overlay"></div>
+              <a class="hall-section__gallery-close-btn" href="#">X</a>
+            </div>
+
+            <div class="hall-section__thumb" thumbsslider>
+              <ul class="hall-section__thumb-wrapper swiper-wrapper">
+              </ul>
+            </div>
+
+            <ul class="hall-section__slider-wrapper gallery aniimated-thumbnials">
             </ul>
-
-            <button class="hall-main__arrow arrow arrow--prev"></button>
-            <button class="hall-main__arrow arrow arrow--next"></button>
-
-            <div class="hall-main__overlay"></div>
-            <a class="hall-main__gallery-close-btn" href="#">X</a>
           </div>
 
-          <div class="hall-main__thumb" thumbsslider>
-            <ul class="hall-main__thumb-wrapper swiper-wrapper">
-            </ul>
-          </div>
+          <!-- Info -->
+          <div class="hall-section__info-block">
+            <div class="hall-section__characteristics hall-charx">
+              <div class="hall-charx__item">
+                <h3 class="hall-charx__title">Вместимость</h3>
+                <p class="hall-charx__value">4 чел. (макс. 10 чел., свыше 4 чел. доплата 200 руб за каждый час / за 1 чел.)</p>
+              </div>
+              <div class="hall-charx__item">
+                <h3 class="hall-charx__title">Тип парной</h3>
+                <p class="hall-charx__value">Русская</p>
+              </div>
+              <div class="hall-charx__item">
+                <h3 class="hall-charx__title">Cемейный зал</h3>
+              </div>
+              <div class="hall-charx__item">
+                <h3 class="hall-charx__title">График работы</h3>
+                <p class="hall-charx__value">Круглосуточно</p>
+              </div>
+            </div>
 
-          <ul class="hall-main__slider-wrapper gallery aniimated-thumbnials">
-          </ul>
+            <div class="hall-section__prices hall-prices">
+              <h3 class="hall-prices__title">Цены</h3>
 
-        </div>
-
-        <!-- Info -->
-        <div class="hall-main__info-block">
-          <h1 class="hall-main__title">Название зала</h1>
-          <div class="hall-main__info-group">
-            <p class="hall-main__type">Стоимость:</p>
-            <p class="hall-main__value"><b class="hall-main__accent">500-1000</b> руб./час
-              <a class="hall-main__about-cost tooltip-opener tooltip-opener--dark" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit." href="#">?</a>
-            </p>
-          </div>
-          <div class="hall-main__info-group">
-            <p class="hall-main__type">Тип парной:</p>
-            <p class="hall-main__value"><b class="hall-main__accent">Финская</b>
-            </p>
-          </div>
-          <div class="hall-main__info-group">
-            <p class="hall-main__type">Вместительность:</p>
-            <p class="hall-main__value"><b class="hall-main__accent">6-8</b> чел(свыше 8 чел, доплата)</p>
-          </div>
-
-          <div class="hall-main__discount discount-slider">
-            <ul class="discount-slider__list">
-              <li class="discount-slider__item discount-card">
-                <h3 class="discount-card__title">Не пропустите!</h3>
-                <p class="discount-card__gift">
-                  <span class="discount-card__gift-text">5-й час в подарок!</span>
-                  <a class="discount-card__about-gift tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit." href="#">?</a>
+              <div class="hall-prices__item">
+                <p class="hall-prices__days">Пн-чт</p>
+                <p class="hall-prices__price">
+                  <span class="hall-prices__price-number">900</span> рублей/час
                 </p>
-                <a class="discount-card__get-btn button modal-opener" href="#" data-modal="modal-promotion">Получите
-
-							скидку</a>
-              </li>
-              <li class="discount-slider__item discount-card">
-                <h3 class="discount-card__title">Не пропустите!</h3>
-                <p class="discount-card__gift">
-                  <span class="discount-card__gift-text">5-й час в подарок!</span>
-                  <a class="discount-card__about-gift tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit." href="#">?</a>
+              </div>
+              <div class="hall-prices__item">
+                <p class="hall-prices__days">Пн-чт</p>
+                <p class="hall-prices__price">
+                  <span class="hall-prices__price-number">1800</span> рублей/2 часа
                 </p>
-                <a class="discount-card__get-btn button modal-opener" href="#" data-modal="modal-promotion">Получите
-
-							скидку</a>
-              </li>
-            </ul>
-            <button class="discount-slider__arrow arrow arrow--prev"></button>
-            <button class="discount-slider__arrow arrow arrow--next"></button>
+              </div>
+              <div class="hall-prices__item">
+                <p class="hall-prices__days">Пт-вс</p>
+                <p class="hall-prices__price">
+                  <span class="hall-prices__price-number">1500</span> рублей/час
+                </p>
+              </div>
+              <div class="hall-prices__item">
+                <p class="hall-prices__days">Пт-вс</p>
+                <p class="hall-prices__price">
+                  <span class="hall-prices__price-number">3000</span> рублей/2 часа
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- End Hall Main -->
+    <!-- End Hall Section -->
     <!-- Advantages -->
     <section id="advantages" class="advantages">
       <div class="container">
@@ -284,9 +371,6 @@
               </p>
             </li>
           </ul>
-
-          <button class="advantages__arrow arrow arrow--prev"></button>
-          <button class="advantages__arrow arrow arrow--next"></button>
         </div>
       </div>
     </section>
@@ -372,6 +456,8 @@
 
 					</span>
             </p>
+
+            <button class="button button callback__submit-btn callback__submit-btn--mobile" type="submit">Перезвоните мне</button>
           </form>
         </div>
 
@@ -556,8 +642,11 @@
             </ul>
           </div>
 
-          <button class="reviews__arrow arrow arrow--prev"></button>
-          <button class="reviews__arrow arrow arrow--next"></button>
+          <div class="reviews__slider-navigation">
+            <button class="reviews__arrow arrow arrow--prev"></button>
+            <div class="reviews__pagination pagination"></div>
+            <button class="reviews__arrow arrow arrow--next"></button>
+          </div>
         </div>
 
         <a href="#" class="reviews__add-new-btn button modal-opener" data-modal="modal-review">Оставить отзыв</a>

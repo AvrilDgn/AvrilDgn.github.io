@@ -25,9 +25,9 @@
     <header class="header" data-scroll-lock-fill-gap>
       <div class="container">
 
-        <div class="header__mobile-visible-block">
+        <div class="header__menu">
           <a href="index.html" class="logo header__logo">
-            <img src="assets/img/logo.svg" alt="логотип">
+            <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
             <span class="logo__text-block">
 
 					<b class="logo__name">Баня Лукоморье</b>
@@ -39,10 +39,6 @@
 				</span>
           </a>
 
-          <a class="header__mob-toggle-btn" href="#toggle-menu"><span></span></a>
-        </div>
-
-        <div class="header__collapse">
           <nav class="nav header__nav">
             <ul class="nav__list">
               <li class="nav__item"><a class="nav__link" href="#halls">Залы</a>
@@ -57,7 +53,7 @@
           </nav>
 
           <div class="header__contacts-block">
-            <a href="#" data-number="+7 (911) 554-33-44" class="header__phone">
+            <a href="#" data-number="+7 (911) 554-33-44" class="header__phone header__phone--hidden-phone">
               <svg>
                 <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
               </svg>
@@ -71,7 +67,87 @@
 				</a>
           </div>
 
+          <a class="header__mobile-toggle-btn" href="#toggle-menu"><span></span></a>
+        </div>
 
+        <div class="header__mobile-menu">
+
+          <a href="tel:+79253033333" class="header__phone phone-block">
+            <div class="phone-block__icon">
+              <svg>
+                <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+              </svg>
+            </div>
+            <div class="phone-block__text">
+              <span class="phone-block__number">+7 (911) 554-33-44</span>
+              <span class="phone-block__schedule">Круглосуточно</span>
+            </div>
+          </a>
+
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link" href="#halls">Залы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#about">О нас</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__contacts">
+            <p class="header__address">
+              <svg class="header__contacts-icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#pin-marker"></use>
+              </svg>
+              <span class="header__contacts-text">
+
+						г. Архангельск, СНТ Транспортник, стр.11
+
+					</span>
+            </p>
+
+            <p class="header__schedule">
+              <svg class="header__contacts-icon">
+                <use xlink:href="assets/img/sprite/sprite.svg#clock"></use>
+              </svg>
+              <span class="header__contacts-text">
+
+						Круглосуточно
+
+					</span>
+            </p>
+          </div>
+
+          <a href="#" class="header__feedback-btn button modal-opener" data-modal="modal-feedback">
+
+				Забронировать</a>
+
+          <ul class="header__socials socials">
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--whatsapp">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--telegram">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link socials__link--viber">
+                <svg>
+                  <use xlink:href="assets/img/sprite/sprite.svg#viber"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -163,7 +239,7 @@
                         </p>
                       </div>
 
-                      <div class="hall-card__cost-block charx charx--cost">
+                      <div class="hall-card__charx-item charx charx--cost">
                         <svg class="charx__icon">
                           <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
                         </svg>
@@ -195,16 +271,16 @@
                           <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
                         </svg>
                         <p class="charx__text">
-                          3 человека
+                          2 человека
                         </p>
                       </div>
 
-                      <div class="hall-card__cost-block charx charx--cost">
+                      <div class="hall-card__charx-item charx charx--cost">
                         <svg class="charx__icon">
                           <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
                         </svg>
                         <p class="charx__text">
-                          от 600 руб.
+                          от 800 руб.
                         </p>
                       </div>
                     </div>
@@ -233,12 +309,12 @@
                         </p>
                       </div>
 
-                      <div class="hall-card__cost-block charx charx--cost">
+                      <div class="hall-card__charx-item charx charx--cost">
                         <svg class="charx__icon">
                           <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
                         </svg>
                         <p class="charx__text">
-                          от 600 руб.
+                          от 700 руб.
                         </p>
                       </div>
                     </div>
@@ -267,7 +343,7 @@
                         </p>
                       </div>
 
-                      <div class="hall-card__cost-block charx charx--cost">
+                      <div class="hall-card__charx-item charx charx--cost">
                         <svg class="charx__icon">
                           <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
                         </svg>
@@ -289,8 +365,11 @@
             </ul>
           </div>
 
-          <button class="halls-list__arrow arrow arrow--prev"></button>
-          <button class="halls-list__arrow arrow arrow--next"></button>
+          <div class="halls-list__slider-navigation">
+            <button class="halls-list__arrow arrow arrow--prev"></button>
+            <div class="halls-list__pagination pagination"></div>
+            <button class="halls-list__arrow arrow arrow--next"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -347,9 +426,6 @@
               </p>
             </li>
           </ul>
-
-          <button class="advantages__arrow arrow arrow--prev"></button>
-          <button class="advantages__arrow arrow arrow--next"></button>
         </div>
       </div>
     </section>
@@ -435,6 +511,8 @@
 
 					</span>
             </p>
+
+            <button class="button button callback__submit-btn callback__submit-btn--mobile" type="submit">Перезвоните мне</button>
           </form>
         </div>
 
@@ -619,8 +697,11 @@
             </ul>
           </div>
 
-          <button class="reviews__arrow arrow arrow--prev"></button>
-          <button class="reviews__arrow arrow arrow--next"></button>
+          <div class="reviews__slider-navigation">
+            <button class="reviews__arrow arrow arrow--prev"></button>
+            <div class="reviews__pagination pagination"></div>
+            <button class="reviews__arrow arrow arrow--next"></button>
+          </div>
         </div>
 
         <a href="#" class="reviews__add-new-btn button modal-opener" data-modal="modal-review">Оставить отзыв</a>

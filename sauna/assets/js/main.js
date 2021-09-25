@@ -15463,14 +15463,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 *	Header mobile
 	 */
 
-	let headerToggleBtn = document.querySelector('.header__mob-toggle-btn');
-	let headerCollapse = document.querySelector('.header__collapse');
+	let headerToggleBtn = document.querySelector('.header__mobile-toggle-btn');
+	let headerCollapse = document.querySelector('.header__mobile-menu');
 
 	let hideMobHeader = function () {
-		headerToggleBtn.classList.remove('header__mob-toggle-btn--rotate');
+		headerToggleBtn.classList.remove('header__mobile-toggle-btn--rotate');
 
 		headerToggleBtn.addEventListener('transitionend', () => {
-			headerToggleBtn.classList.remove('header__mob-toggle-btn--compress');
+			headerToggleBtn.classList.remove('header__mobile-toggle-btn--compress');
 
 			headerToggleBtn.addEventListener('transitionend', () => {
 				headerCollapse.style.height = null;
@@ -15487,10 +15487,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let showMobHeader = function () {
 		// scrollLock.disablePageScroll(headerCollapse);
 
-		headerToggleBtn.classList.add('header__mob-toggle-btn--compress');
+		headerToggleBtn.classList.add('header__mobile-toggle-btn--compress');
 
 		headerToggleBtn.addEventListener('transitionend', () => {
-			headerToggleBtn.classList.add('header__mob-toggle-btn--rotate');
+			headerToggleBtn.classList.add('header__mobile-toggle-btn--rotate');
 
 			headerToggleBtn.addEventListener('transitionend', () => {
 
@@ -15531,9 +15531,9 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Header show phone number
 	 */
 
-	let headerPhone = document.querySelector('.header__phone');
+	let headerPhone = document.querySelector('.header__phone.header__phone--hidden-phone');
 
-	headerPhone.addEventListener('click', function(e) {
+	headerPhone.addEventListener('click', function (e) {
 		e.preventDefault();
 
 		let number = this.dataset.number;
@@ -15541,16 +15541,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		let textWrap = this.querySelector('.header__phone-text');
 
 		parent.style.minWidth = parent.clientWidth + 'px';
+		this.classList.remove('header__phone--hidden-phone');
 
 		this.style.opacity = 0;
 
-		this.addEventListener('transitionend', function() {
+		this.addEventListener('transitionend', function () {
 			textWrap.innerHTML = number;
 			this.setAttribute('href', 'tel:' + number);
 			this.classList.add('header__phone--full')
 			this.style.opacity = 1;
 		})
-	}, {once: true});
+	}, { once: true });
 
 
 	/**
@@ -15824,11 +15825,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			bulletClass: "bullet",
 			bulletActiveClass: "bullet--active",
 			clickable: true,
-
-			dynamicBullets: true,
-			renderBullet: function (index, className) {
-				return '<svg class="' + className + '"><use xlink:href="assets/img/sprite/sprite.svg#logo"></use></svg>';
-			},
 		},
 
 		navigation: {
@@ -15869,6 +15865,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			nextEl: ".halls-list__arrow.arrow--next",
 			prevEl: ".halls-list__arrow.arrow--prev",
 			disabledClass: 'arrow--disabled',
+		},
+
+		pagination: {
+			el: ".halls-list__pagination",
+			bulletClass: "bullet",
+			bulletActiveClass: "bullet--active",
+			clickable: true,
 		},
 
 		breakpoints: {
@@ -15957,93 +15960,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			prevEl: ".promotions__arrow.arrow--prev",
 			disabledClass: 'arrow--disabled',
 		},
-
-		pagination: {
-			el: ".promotions__pagination",
-			bulletClass: "bullet",
-			bulletActiveClass: "bullet--active",
-			clickable: true,
-
-			dynamicBullets: true,
-			renderBullet: function (index, className) {
-				return '<svg class="' + className + '"><use xlink:href="assets/img/sprite/sprite.svg#logo"></use></svg>';
-			},
-		},
 	});
 
 
 	/**
-	 * Discount Slider
+	 * Hall Section Slider
 	 */
 
-	let discountWrap = document.querySelector('.discount-slider');
-	if (discountWrap) {
-		let arrows = discountWrap.querySelectorAll('.arrow');
-
-		if (discountWrap.querySelectorAll('.discount-card').length > 1) {
-
-			new core_class(discountWrap, {
-				spaceBetween: 30,
-				wrapperClass: 'discount-slider__list',
-				slideClass: 'discount-slider__item',
-				slidesPerView: 1,
-
-				navigation: {
-					nextEl: ".discount-slider__arrow.arrow--next",
-					prevEl: ".discount-slider__arrow.arrow--prev",
-					disabledClass: 'arrow--disabled',
-				},
-			});
-
-			arrows.forEach((arrow) => {
-				new DLAnimate().show(arrow, {
-					name: 'fade',
-					track: 'animation',
-				});
-			});
-		}
-	}
-
-
-	/**
-	 * Advantages Slider on mobile
-	 */
-
-	let lgMedia = window.matchMedia("screen and (max-width: 1199px)");
-	let advantagesSlider;
-
-	lgMediaHandler(lgMedia);
-
-	lgMedia.addListener(lgMediaHandler);
-
-	function lgMediaHandler(e) {
-		if (e.matches && !advantagesSlider) {
-			advantagesSlider = new core_class('.advantages__wrapper', {
-				spaceBetween: 30,
-				wrapperClass: 'advantages__list',
-				slideClass: 'advantages__item',
-				slidesPerView: 1,
-
-				navigation: {
-					nextEl: ".advantages__arrow.arrow--next",
-					prevEl: ".advantages__arrow.arrow--prev",
-					disabledClass: 'arrow--disabled',
-				},
-			});
-		} else if (!e.matches && advantagesSlider) {
-			advantagesSlider.destroy();
-		}
-	}
-
-
-	/**
-	 * Main Hall Slider
-	 */
-
-	let hallSliderWrap = document.querySelector('.hall-main__slider-wrapper');
-	let hallThumbWrap = document.querySelector('.hall-main__thumb-wrapper');
-	let hallMainEl = document.querySelector('.hall-main__slider');
-	let hallThumbEl = document.querySelector('.hall-main__thumb');
+	let hallSliderWrap = document.querySelector('.hall-section__slider-wrapper');
+	let hallThumbWrap = document.querySelector('.hall-section__thumb-wrapper');
+	let hallMainEl = document.querySelector('.hall-section__slider');
+	let hallThumbEl = document.querySelector('.hall-section__thumb');
 	let galleryEl = document.querySelector('.gallery');
 
 
@@ -16054,7 +15981,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	//array img links from slider
 	let getLinksToImgs = function () {
-		let imgs = hallSliderWrap.querySelectorAll('.hall-main__item img');
+		let imgs = hallSliderWrap.querySelectorAll('.hall-section__item img');
 		let arr = [];
 
 		imgs.forEach(img => {
@@ -16092,13 +16019,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	if (hallThumbEl && hallMainEl) {
 
 		//thumb slider
-		let hallSliderThumb = new core_class('.hall-main__thumb', {
+		let hallSliderThumb = new core_class('.hall-section__thumb', {
 			loop: true,
 			spaceBetween: 15,
 			slidesPerView: 2,
 			watchSlidesVisibility: true,
-			// wrapperClass: 'hall-main__thumb-wrapper',
-			slideClass: 'hall-main__item',
+			// wrapperClass: 'hall-section__thumb-wrapper',
+			slideClass: 'hall-section__item',
 
 			// enabled: false,
 
@@ -16107,24 +16034,25 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 					slidesPerView: 3,
 				},
 				768: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+					slidesPerView: 6,
+					spaceBetween: 10,
 				},
 			},
 
 		});
 
 		//main slider
-		let hallSliderMain = new core_class('.hall-main__slider', {
+		let hallSliderMain = new core_class('.hall-section__slider', {
 			loop: true,
 			spaceBetween: 10,
-			wrapperClass: 'hall-main__slider-wrapper',
-			slideClass: 'hall-main__item',
+			wrapperClass: 'hall-section__slider-wrapper',
+			slideClass: 'hall-section__item',
 
-			navigation: {
-				nextEl: ".hall-main__arrow.arrow--next",
-				prevEl: ".hall-main__arrow.arrow--prev",
-				disabledClass: 'arrow--disabled',
+			pagination: {
+				el: ".hall-section__pagination",
+				bulletClass: "bullet",
+				bulletActiveClass: "bullet--active",
+				clickable: true,
 			},
 			// thumbs: {
 			// 	swiper: hallSliderThumb,
@@ -16143,10 +16071,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		lastVisSlide.addEventListener('click', showGallery);
 
 		let morePhoto = document.createElement('span');
-		morePhoto.classList.add('hall-main__more-photo');
+		morePhoto.classList.add('hall-section__more-photo');
 		morePhoto.innerHTML =
 			`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
-		<span>еще фото</span>`;
+		<span>Еще фото</span>`;
 		lastVisSlide.appendChild(morePhoto);
 
 		hallSliderMain.on('slideNextTransitionStart', function () {
@@ -16172,14 +16100,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		function addMorePhoto() {
 			//remove event on last elem
 			lastVisSlide.removeEventListener('click', showGallery);
-			lastVisSlide.querySelector('.hall-main__more-photo').remove();
+			lastVisSlide.querySelector('.hall-section__more-photo').remove();
 
 			//add event on current elem
 			lastVisSlide = findsLastVisSlide(hallSliderThumb);
 			lastVisSlide.addEventListener('click', showGallery);
 
 			let morePhoto = document.createElement('div');
-			morePhoto.classList.add('hall-main__more-photo');
+			morePhoto.classList.add('hall-section__more-photo');
 			morePhoto.innerHTML =
 				`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
 			<span>еще фото</span>`;
@@ -16199,7 +16127,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Rating
+	 * Rating (Staining stars)
 	 */
 
 	let rating = document.querySelectorAll('.rating');
@@ -16220,73 +16148,59 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	/**
 	 * Tooltip
 	 */
-
-	let tooltipOpeners = document.querySelectorAll('.tooltip-opener');
-
-	tooltipOpeners.forEach((opener) => {
-		opener.addEventListener('click', function (e) {
-			e.preventDefault();
-
-			let rect = opener.getBoundingClientRect();
-			openTooltip(opener.dataset.tooltip, rect.left + pageXOffset + rect.width / 2, rect.top + pageYOffset - rect.height / 2);
+	/*
+		let tooltipOpeners = document.querySelectorAll('.tooltip-opener');
+	
+		tooltipOpeners.forEach((opener) => {
+			opener.addEventListener('click', function (e) {
+				e.preventDefault();
+	
+				let rect = opener.getBoundingClientRect();
+				openTooltip(opener.dataset.tooltip, rect.left + pageXOffset + rect.width / 2, rect.top + pageYOffset - rect.height / 2);
+			});
 		});
-	});
-
-	function openTooltip(tooltipBody, posX, posY) {
-		let tooltip = document.createElement('div');
-		let tooltipArrow = document.createElement('div');
-
-		tooltip.classList.add('tooltip');
-		tooltipArrow.classList.add('tooltip__arrow');
-		tooltip.textContent = tooltipBody;
-
-		document.body.appendChild(tooltip);
-		tooltip.appendChild(tooltipArrow);
-
-		tooltip.style.top = posY + 'px';
-		tooltip.style.left = posX + 'px';
-		tooltip.style.display = 'none';
-
-		new DLAnimate().show(tooltip, {
-			name: 'fade',
-			track: 'animation',
-			duration: 200,
-			afterEnter: function () {
-				document.addEventListener('click', function (e) {
-					if (e.target !== tooltip && !tooltip.contains(e.target)) {
-						closeTooltip(tooltip);
-					}
-				});
-			},
-		});
-	}
-
-	function closeTooltip(tooltip) {
-
-		new DLAnimate().hide(tooltip, {
-			name: 'fade',
-			track: 'animation',
-			duration: 200,
-			afterLeave: function () {
-				tooltip.remove();
-			},
-		});
-	}
-
-
-
-	/**
-	 * Move hall-main title (for mobile)
-	 */
-
-	let hallTitle = document.querySelector('.hall-main__title');
-	let titleContainer = document.querySelector('.hall-main .container');
-
-	if (hallTitle && titleContainer) {
-		let titleCopy = hallTitle.cloneNode(true);
-		titleCopy.classList.add('hall-main__title--mob');
-		titleContainer.appendChild(titleCopy);
-	}
+	
+		function openTooltip(tooltipBody, posX, posY) {
+			let tooltip = document.createElement('div');
+			let tooltipArrow = document.createElement('div');
+	
+			tooltip.classList.add('tooltip');
+			tooltipArrow.classList.add('tooltip__arrow');
+			tooltip.textContent = tooltipBody;
+	
+			document.body.appendChild(tooltip);
+			tooltip.appendChild(tooltipArrow);
+	
+			tooltip.style.top = posY + 'px';
+			tooltip.style.left = posX + 'px';
+			tooltip.style.display = 'none';
+	
+			new DLAnimate().show(tooltip, {
+				name: 'fade',
+				track: 'animation',
+				duration: 200,
+				afterEnter: function () {
+					document.addEventListener('click', function (e) {
+						if (e.target !== tooltip && !tooltip.contains(e.target)) {
+							closeTooltip(tooltip);
+						}
+					});
+				},
+			});
+		}
+	
+		function closeTooltip(tooltip) {
+	
+			new DLAnimate().hide(tooltip, {
+				name: 'fade',
+				track: 'animation',
+				duration: 200,
+				afterLeave: function () {
+					tooltip.remove();
+				},
+			});
+		}
+	*/
 
 
 	/**
