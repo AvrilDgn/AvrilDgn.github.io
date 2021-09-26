@@ -15499,7 +15499,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				// let height = (headerCollapse.clientHeight > windowHeight) ? headerCollapse.clientHeight : windowHeight;
 				let height = headerCollapse.clientHeight;
 
-				headerCollapse.style.height = '0px';
+				headerCollapse.style.height = null;
 
 				raf(() => {
 					raf(() => {

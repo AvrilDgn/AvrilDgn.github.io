@@ -1833,41 +1833,9 @@ button:focus {
   background-image: url(../img/background.jpg);
   background-repeat: repeat;
   z-index: 100;
-  /*&__mobile-contacts {
-		display: none;
+  /*
 
-		@media screen and (max-width: 1199px) {
-			display: block;
-			// margin: 10px 0 20px;
-
-			& > *:first-child {
-				margin-top: 0;
-			}
-			& > *:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	&__address {
-		margin-top: 22px;
-	}
-
-	&__mob-phone {
-		margin-top: 20px;
-		display: inline-block;
-	}
-
-	&__schedule {
-		margin-top: 26px;
-	}
-
-	&__socials {
-		margin-top: 15px;
-		margin-left: -8px;
-		margin-right: -8px;
-	}*/
-  /*&--fixed {
+	/*&--fixed {
 		position: fixed;
 		width: 100%;
 		top: 0;
@@ -1895,6 +1863,7 @@ button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-y: auto;
 }
 
 .header__menu {
@@ -1907,6 +1876,8 @@ button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 100%;
   height: 137px;
 }
@@ -3430,6 +3401,7 @@ button:focus {
 
 .hall-section__gallery-block {
   margin-right: 20px;
+  width: calc(50% - 20px);
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-right: 30px;
@@ -3932,18 +3904,16 @@ button:focus {
   }
 
   .header--showed {
-    height: 100vh;
+    /*
+			.header__mobile-menu {
+				display: none;
+				display: flex;
+				flex-direction: column;
+			}*/
   }
 
-  .header--showed .header__mobile-menu {
-    display: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .header--showed .container {
+    max-height: 100vh;
   }
 
   .hero__title {
