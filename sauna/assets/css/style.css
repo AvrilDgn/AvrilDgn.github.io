@@ -2387,6 +2387,14 @@ button:focus {
   text-transform: uppercase;
 }
 
+.footer__info a {
+  text-decoration: none;
+}
+
+.footer__info a:hover {
+  text-decoration: underline;
+}
+
 .hero {
   padding: 35px 0;
   min-height: 470px;
@@ -3873,6 +3881,7 @@ button:focus {
     height: 110px;
     width: calc(100% + 30px);
     border: none;
+    border-bottom: 1px solid transparent;
   }
 
   .header__mobile-menu {
@@ -3941,7 +3950,7 @@ button:focus {
   }
 
   .header--showed .header__menu {
-    border-bottom: 1px solid #f8f8f8;
+    border-color: #f8f8f8;
   }
 
   .hero__title {
@@ -4531,6 +4540,11 @@ button:focus {
 }
 
 @media screen and (max-width: 576px) {
+  .header {
+    width: calc(100% + 2px);
+    padding: 0 1px;
+  }
+
   .hero__info > *:first-child {
     margin-top: 20px;
     margin-bottom: 10px;
