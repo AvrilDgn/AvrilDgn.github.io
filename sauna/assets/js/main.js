@@ -10457,7 +10457,7 @@ var Pagination = {
     }
   }
 };
-/* harmony default export */ var pagination = ({
+/* harmony default export */ var pagination_pagination = ({
   name: 'pagination',
   params: {
     pagination: {
@@ -15815,7 +15815,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Reviews Slider
 	 */
 
-	core_class.use([navigation, pagination, thumbs]);
+	core_class.use([navigation, pagination_pagination, thumbs]);
 
 	new core_class('.reviews__slider .reviews__wrapper', {
 		spaceBetween: 15,
@@ -15911,6 +15911,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 			let slider = hallsSlider.el;
 			let arrows = slider.parentElement.parentElement.querySelectorAll('.arrow');
+			let pagination = slider.parentElement.parentElement.querySelectorAll('.pagination');
 			let slides = hallsSlider.slides;
 			let visibleSlides = hallsSlider.visibleSlides;
 			let destroyed = false;
@@ -15938,6 +15939,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 						}
 					}
 				});
+			});
+
+			new DLAnimate().hide(pagination, {
+				name: 'fade',
+				track: 'animation',
 			});
 
 			function diff(arr1, arr2) {
@@ -16149,102 +16155,28 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Tooltip
+	 * Review read more button
 	 */
-	/*
-		let tooltipOpeners = document.querySelectorAll('.tooltip-opener');
-	
-		tooltipOpeners.forEach((opener) => {
-			opener.addEventListener('click', function (e) {
-				e.preventDefault();
-	
-				let rect = opener.getBoundingClientRect();
-				openTooltip(opener.dataset.tooltip, rect.left + pageXOffset + rect.width / 2, rect.top + pageYOffset - rect.height / 2);
-			});
-		});
-	
-		function openTooltip(tooltipBody, posX, posY) {
-			let tooltip = document.createElement('div');
-			let tooltipArrow = document.createElement('div');
-	
-			tooltip.classList.add('tooltip');
-			tooltipArrow.classList.add('tooltip__arrow');
-			tooltip.textContent = tooltipBody;
-	
-			document.body.appendChild(tooltip);
-			tooltip.appendChild(tooltipArrow);
-	
-			tooltip.style.top = posY + 'px';
-			tooltip.style.left = posX + 'px';
-			tooltip.style.display = 'none';
-	
-			new DLAnimate().show(tooltip, {
+
+	let readmoreBtns = document.querySelectorAll('.review__readmore');
+
+	readmoreBtns.forEach(btn => {
+		btn.addEventListener('click', function(e) {
+			let moreText = this.parentElement.querySelector('.review__text-more');
+
+			e.preventDefault();
+			
+			this.style.display = 'none';
+			
+			new DLAnimate().show(moreText, {
 				name: 'fade',
 				track: 'animation',
-				duration: 200,
-				afterEnter: function () {
-					document.addEventListener('click', function (e) {
-						if (e.target !== tooltip && !tooltip.contains(e.target)) {
-							closeTooltip(tooltip);
-						}
-					});
-				},
+				beforeEnter: function(el) {
+					el.classList.add('review__text-more--showed');
+				}
 			});
-		}
-	
-		function closeTooltip(tooltip) {
-	
-			new DLAnimate().hide(tooltip, {
-				name: 'fade',
-				track: 'animation',
-				duration: 200,
-				afterLeave: function () {
-					tooltip.remove();
-				},
-			});
-		}
-	*/
-
-
-	/**
-	 * yandex map
-	 *
-
-	let mapWrap = document.querySelector('.yaMap');
-	let mapCenterPos = mapWrap.dataset.center.split(',');
-
-	ymaps.ready(function () {
-		let map = new ymaps.Map(mapWrap, {
-			center: mapCenterPos,
-			// format: overlay,
-			zoom: mapWrap.dataset.zoom,
-			controls: []
 		});
-
-		if (!mapWrap.dataset.data) return;
-
-		let placemarkData = JSON.parse("{" + mapWrap.dataset.data + "}");
-
-		let placemark = new ymaps.Placemark(mapCenterPos, {
-			balloonContentBody: placemarkData.body,
-			balloonContentHeader: placemarkData.title,
-		}, {
-			iconLayout: 'default#imageWithContent',
-			// preset: "twirl#yellowStretchyIcon",
-			iconImageHref: '',
-			iconImageSize: [32, 48],
-			iconContentSize: [32, 48],
-			iconImageOffset: [0, 0],
-			iconContentOffset: [0, 0],
-			iconContentLayout: ymaps.templateLayoutFactory.createClass(
-				'<svg class="map-pin" style="fill:' + placemarkData.color + '"><use xlink:href="assets/img/sprite/sprite.svg#marker"></use></svg>'
-			),
-			balloonCloseButton: true,
-			hideIconOnBalloonOpen: false
-		});
-
-		map.geoObjects.add(placemark);
-	});*/
+	});
 
 });
 
