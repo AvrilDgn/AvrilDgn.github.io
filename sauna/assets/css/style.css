@@ -4032,6 +4032,7 @@ button:focus {
     padding-right: 15px;
     width: calc(100% + 30px);
     background-image: url(../img/hero/background-mobile.jpg);
+    background-size: cover;
   }
 
   .hero__title {
