@@ -1601,8 +1601,20 @@ button:focus {
     display: block;
   }
 
+  .hero {
+    min-height: 600px;
+  }
+
   .hero__first-offer {
     margin-top: -140px;
+  }
+
+  .first-offer__welcome {
+    font-size: 40px;
+  }
+
+  .first-offer__restaurant {
+    font-size: 60px;
   }
 
   .advantage-card {
@@ -1787,6 +1799,10 @@ button:focus {
   .title {
     font-size: 40px;
     line-height: 1.15;
+  }
+
+  .hero {
+    min-height: 500px;
   }
 
   .advantage-card__title {
