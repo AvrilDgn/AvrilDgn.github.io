@@ -735,6 +735,10 @@ button:focus {
   text-align: center;
 }
 
+.first-offer__title > span {
+  display: block;
+}
+
 .first-offer__welcome {
   font-family: tinos, sans-serif;
   font-weight: 400;
