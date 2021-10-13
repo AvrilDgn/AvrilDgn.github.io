@@ -696,6 +696,10 @@ button:focus {
           transform: translateY(-50%) rotate(45deg);
 }
 
+html.webp .hero {
+  background-image: url(../img/hero/background.webp);
+}
+
 .hero {
   min-height: 800px;
   height: 100vh;
@@ -860,6 +864,10 @@ button:focus {
   color: #656363;
 }
 
+html.webp .history .container {
+  background-image: url(../img/history/background.webp);
+}
+
 .history {
   padding-top: 150px;
   padding-bottom: 122px;
@@ -872,6 +880,7 @@ button:focus {
   background-repeat: no-repeat;
   background-position-x: calc(100% - 30px);
   background-position-y: top;
+  background-size: 539px 498px;
 }
 
 .history__content {
@@ -921,6 +930,10 @@ button:focus {
   font-size: 20px;
   line-height: 1.35;
   color: black;
+}
+
+html.webp .offer {
+  background-image: url(../img/offer/background.webp);
 }
 
 .offer {
@@ -1070,6 +1083,10 @@ button:focus {
   background-image: -o-linear-gradient(left, #000, #000 75%, transparent 75%, transparent 100%);
   background-image: linear-gradient(90deg, #000, #000 75%, transparent 75%, transparent 100%);
   background-size: 6px 1px;
+}
+
+html.webp .menu {
+  background-image: url(../img/menu/background.webp);
 }
 
 .menu {
@@ -1355,6 +1372,10 @@ button:focus {
      object-fit: cover;
 }
 
+html.webp .reservation {
+  background-image: url(../img/reservation/background.webp);
+}
+
 .reservation {
   height: 732px;
   background-image: url(../img/reservation/background.jpg);
@@ -1383,7 +1404,7 @@ button:focus {
   }
 
   .history .container {
-    background-size: 40%;
+    background-size: 431px 398px;
   }
 
   .dish {
@@ -1641,7 +1662,6 @@ button:focus {
 
   .history .container {
     padding-bottom: 310px;
-    background-image: url(../img/history/background-mobile.jpg);
     background-size: 290px 257px;
     background-position-x: center;
     background-position-y: 100%;
@@ -2018,5 +2038,89 @@ button:focus {
 
   .food-gallery__list {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+  html.webp .hero {
+    background-image: url(../img/hero/background@2x.webp);
+  }
+
+  .hero {
+    background-image: url(../img/hero/background@2x.jpg);
+  }
+
+  html.webp .history .container {
+    background-image: url(../img/history/background@2x.webp);
+  }
+
+  .history .container {
+    background-image: url(../img/history/background@2x.jpg);
+  }
+
+  html.webp .offer {
+    background-image: url(../img/offer/background@2x.webp);
+  }
+
+  .offer {
+    background-image: url(../img/offer/background@2x.jpg);
+  }
+
+  html.webp .menu {
+    background-image: url(../img/menu/background@2x.webp);
+  }
+
+  .menu {
+    background-image: url(../img/menu/background@2x.jpg);
+  }
+
+  html.webp .reservation {
+    background-image: url(../img/reservation/background@2x.webp);
+  }
+
+  .reservation {
+    background-image: url(../img/reservation/background@2x.jpg);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3), (-webkit-min-device-pixel-ratio: 3), (-o-min-device-pixel-ratio: 3/1), (min-resolution: 3dppx), (min-resolution: 288dpi), only screen and (-webkit-min-device-pixel-ratio: 3.125), only screen and (-o-min-device-pixel-ratio: 25/8), only screen and (min-resolution: 300dpi), only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (-o-min-device-pixel-ratio: 9/4), only screen and (min-resolution: 2.25dppx) {
+  html.webp .hero {
+    background-image: url(../img/hero/background@3x.webp);
+  }
+
+  .hero {
+    background-image: url(../img/hero/background@3x.jpg);
+  }
+
+  html.webp .history .container {
+    background-image: url(../img/history/background@3x.webp);
+  }
+
+  .history .container {
+    background-image: url(../img/history/background@3x.jpg);
+  }
+
+  html.webp .offer {
+    background-image: url(../img/offer/background@3x.webp);
+  }
+
+  .offer {
+    background-image: url(../img/offer/background@3x.jpg);
+  }
+
+  html.webp .menu {
+    background-image: url(../img/menu/background@3x.webp);
+  }
+
+  .menu {
+    background-image: url(../img/menu/background@3x.jpg);
+  }
+
+  html.webp .reservation {
+    background-image: url(../img/reservation/background@3x.webp);
+  }
+
+  .reservation {
+    background-image: url(../img/reservation/background@3x.jpg);
   }
 }
