@@ -16190,22 +16190,37 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		//thumb slider
 		let hallSliderThumb = new core_class('.hall-section__thumb', {
-			loop: true,
-			spaceBetween: 15,
+			// loop: true,
+			spaceBetween: 20,
 			slidesPerView: 2,
 			watchSlidesVisibility: true,
 			// wrapperClass: 'hall-section__thumb-wrapper',
 			slideClass: 'hall-section__item',
+			// onlyExternal: true, 
+			noSwiping: true, 
+			noSwipingClass: 'swiper-slide',
 
-			// enabled: false,
+			enabled: false,
+
+			navigation: {
+				nextEl: ".hall-section__arrow.arrow--next",
+				prevEl: ".hall-section__arrow.arrow--prev",
+				disabledClass: 'arrow--disabled',
+			},
 
 			breakpoints: {
 				576: {
 					slidesPerView: 3,
 				},
 				768: {
-					slidesPerView: 6,
-					spaceBetween: 10,
+					slidesPerView: 3,
+					enabled: true,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+				1200: {
+					spaceBetween: 40,
 				},
 			},
 
@@ -16213,8 +16228,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		//main slider
 		let hallSliderMain = new core_class('.hall-section__slider', {
-			loop: true,
-			spaceBetween: 10,
+			// loop: true,
+			spaceBetween: 40,
 			wrapperClass: 'hall-section__slider-wrapper',
 			slideClass: 'hall-section__item',
 
@@ -16223,6 +16238,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				bulletClass: "bullet",
 				bulletActiveClass: "bullet--active",
 				clickable: true,
+			},
+			
+			navigation: {
+				nextEl: ".hall-section__arrow.arrow--next",
+				prevEl: ".hall-section__arrow.arrow--prev",
+				disabledClass: 'arrow--disabled',
 			},
 			// thumbs: {
 			// 	swiper: hallSliderThumb,
@@ -16234,7 +16255,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		}
 
 		hallSliderThumb.slideNext(0);
-		hallSliderThumb.enabled = false;
+		// hallSliderThumb.enabled = false;
 
 
 		let lastVisSlide = findsLastVisSlide(hallSliderThumb);
@@ -16246,6 +16267,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			`<svg><use xlink:href="assets/img/sprite/sprite.svg#camera"></use></svg>
 		<span>Еще фото</span>`;
 		lastVisSlide.appendChild(morePhoto);
+
+		hallSliderThumb.on('slideNextTransitionStart', function () {
+			addMorePhoto();
+		});
+
+		hallSliderThumb.on('slidePrevTransitionStart', function () {
+			addMorePhoto();
+		});
 
 		hallSliderMain.on('slideNextTransitionStart', function () {
 
@@ -16300,11 +16329,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Advantages tooltips
 	 */
 
-	let advantagesItems = document.querySelectorAll('.advantages__item');
+	let advantagesItems = document.querySelectorAll('.advgs__item');
 
 	advantagesItems.forEach(item => {
 		item.addEventListener('click', e => {
-			item.classList.add('advantages__item--showed');
+			item.classList.add('advgs__item--showed');
 
 			document.addEventListener('click', handler);
 		});
@@ -16312,7 +16341,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		function handler(e) {
 			if (!item.contains(e.target)) {
-				item.classList.remove('advantages__item--showed');
+				item.classList.remove('advgs__item--showed');
 				document.removeEventListener('click', handler);
 			}
 		}

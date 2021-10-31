@@ -394,232 +394,164 @@
             </div>
         </section>
         <!-- End Callback Form Block -->
-        <!-- Halls-List -->
-        <section id="halls" class="halls-list">
-            <div class="halls-list__bg-hat parallax"></div>
-
+        <!-- Hall Section Block -->
+        <section id="halls" class="hall-section">
             <div class="container">
-                <div class="halls-list__head">
-                    <h2 class="halls-list__title title">Наши залы</h2>
-                    <a href="#" class="halls-list__all-halls">Смотреть все залы</a>
-                </div>
+                <h2 class="hall-section__title title">О зале</h2>
 
-                <div class="halls-list__slider">
-                    <div class="halls-list__wrapper">
-                        <ul class="halls-list__list">
-                            <li class="halls-list__item">
-                                <div class="halls-list__card hall-card">
+                <div class="hall-section__wrap">
+                    <!-- Gallery -->
+                    <div class="hall-section__gallery-block">
+                        <div class="hall-section__slider">
+                            <ul class="hall-section__slider-wrapper swiper-wrapper">
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-1.jpg" alt="фото зала" />
+                                </li>
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-2.jpg" alt="фото зала" />
+                                </li>
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-3.jpg" alt="фото зала" />
+                                </li>
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-4.jpg" alt="фото зала" />
+                                </li>
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-1.jpg" alt="фото зала" />
+                                </li>
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-2.jpg" alt="фото зала" />
+                                </li>
+                                <li class="hall-section__item swiper-slide">
+                                    <img class="hall-section__img" src="assets/img/hall/image-3.jpg" alt="фото зала" />
+                                </li>
+                            </ul>
 
-                                    <a href="#" class="hall-card__promotion modal-opener" data-modal="modal-promotion">Акция</a>
+                            <div class="hall-section__overlay"></div>
+                            <a class="hall-section__gallery-close-btn" href="#">X</a>
 
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/halls/image-1.webp 1x, assets/img/halls/image-1@2x.webp 2x, assets/img/halls/image-1@3x.webp 3x">
-                                        <img class="hall-card__image" src="assets/img/halls/image-1.jpg" srcset="assets/img/halls/image-1@2x.jpg 2x, assets/img/halls/image-1@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
+                            <button class="hall-section__arrow arrow arrow--prev"></button>
+                            <button class="hall-section__arrow arrow arrow--next"></button>
+                        </div>
 
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Русская баня</h3>
-                                        <p class="hall-card__type">Русская</p>
-                                    </div>
+                        <div class="hall-section__thumb" thumbsslider>
+                            <ul class="hall-section__thumb-wrapper swiper-wrapper">
+                            </ul>
+                            <button class="hall-section__arrow arrow arrow--prev"></button>
+                            <button class="hall-section__arrow arrow arrow--next"></button>
+                        </div>
 
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
-
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 600 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
-                                </div>
-                            </li>
-                            <li class="halls-list__item">
-                                <div class="halls-list__card hall-card">
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/halls/image-2.webp 1x, assets/img/halls/image-2@2x.webp 2x, assets/img/halls/image-2@3x.webp 3x">
-                                        <img class="hall-card__image" src="assets/img/halls/image-2.jpg" srcset="assets/img/halls/image-2@2x.jpg 2x, assets/img/halls/image-2@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
-
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Турецкий хаммам</h3>
-                                        <p class="hall-card__type">Хаммам</p>
-                                    </div>
-
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
-
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 800 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
-                                </div>
-                            </li>
-                            <li class="halls-list__item">
-                                <div class="halls-list__card hall-card">
-                                    <a href="#" class="hall-card__promotion modal-opener" data-modal="modal-promotion">Спецпредложение</a>
-
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/halls/image-3.webp 1x, assets/img/halls/image-3@2x.webp 2x, assets/img/halls/image-3@3x.webp 3x">
-                                        <img class="hall-card__image" src="assets/img/halls/image-3.jpg" srcset="assets/img/halls/image-3@2x.jpg 2x, assets/img/halls/image-3@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
-
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Финская сауна</h3>
-                                        <p class="hall-card__type">Финская</p>
-                                    </div>
-
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
-
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 700 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
-                                </div>
-                            </li>
-                            <li class="halls-list__item">
-                                <div class="halls-list__card hall-card">
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/halls/image-2.webp 1x, assets/img/halls/image-2@2x.webp 2x, assets/img/halls/image-2@3x.webp 3x">
-                                        <img class="hall-card__image" src="assets/img/halls/image-2.jpg" srcset="assets/img/halls/image-2@2x.jpg 2x, assets/img/halls/image-2@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
-
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Турецкий хаммам</h3>
-                                        <p class="hall-card__type">Хаммам</p>
-                                    </div>
-
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
-
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 800 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
-                                </div>
-                            </li>
+                        <ul class="hall-section__slider-wrapper gallery aniimated-thumbnials">
                         </ul>
                     </div>
 
-                    <div class="halls-list__slider-navigation">
-                        <button class="halls-list__arrow arrow arrow--prev"></button>
-                        <div class="halls-list__pagination pagination"></div>
-                        <button class="halls-list__arrow arrow arrow--next"></button>
+                    <!-- Info -->
+                    <div class="hall-section__info-wrap">
+                        <div class="hall-section__prices hall-prices">
+                            <h3 class="hall-prices__title">Цены</h3>
+
+                            <div class="hall-prices__item">
+                                <p class="hall-prices__days">Пн-чт</p>
+                                <p class="hall-prices__price">
+                                    <span class="hall-prices__price-number">900</span> рублей/час
+                                </p>
+                                <p class="hall-prices__price">
+                                    <span class="hall-prices__price-number">1800</span> рублей/2 часа
+                                </p>
+                            </div>
+                            <div class="hall-prices__item">
+                                <p class="hall-prices__days">Пт-вс</p>
+                                <p class="hall-prices__price">
+                                    <span class="hall-prices__price-number">1500</span> рублей/час
+                                </p>
+                                <p class="hall-prices__price">
+                                    <span class="hall-prices__price-number">3000</span> рублей/2 часа
+                                </p>
+                            </div>
+
+                            <a href="#" class="hall-prices__discount-btn button button--accent modal-opener" data-modal="modal-promotion">Получить
+                                скидку</a>
+                        </div>
+
+                        <div class="hall-section__characteristics hall-charx">
+                            <div class="hall-charx__item">
+                                <h3 class="hall-charx__title">Вместимость</h3>
+                                <p class="hall-charx__value">4 чел. (макс. 10 чел., свыше 4 чел.
+                                    доплата 200 руб за каждый час / за 1 чел.)</p>
+                            </div>
+                            <div class="hall-charx__item">
+                                <h3 class="hall-charx__title">Тип парной</h3>
+                                <p class="hall-charx__value">Русская</p>
+                            </div>
+                            <div class="hall-charx__item">
+                                <h3 class="hall-charx__title">Cемейный зал</h3>
+                            </div>
+                            <div class="hall-charx__item">
+                                <h3 class="hall-charx__title">График работы</h3>
+                                <p class="hall-charx__value">Круглосуточно</p>
+                            </div>
+                        </div>
+
+                        <div class="hall-section__advantages advgs advgs--hidden">
+                            <ul class="advgs__list">
+                                <li class="advgs__item">
+                                    <svg class="advgs__icon advgs__icon--aqua">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#aqua"></use>
+                                    </svg>
+                                    <h3 class="advgs__name">Аквазона</h3>
+                                    <p class="advgs__text">
+                                        Бассейн, Размеры (Ш x Д x Г), м: 2 x 4 x 1.7, Подсветка, Фильтрация, Душ
+                                    </p>
+                                </li>
+                                <li class="advgs__item">
+                                    <svg class="advgs__icon advgs__icon--food">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#eat"></use>
+                                    </svg>
+                                    <h3 class="advgs__name">Питание/Напитки</h3>
+                                    <p class="advgs__text">
+                                        Можно со своей едой , Мангал (+300 руб.), Барбекю зона, Кафе/ресторан, Бар, Обеденная зона,
+                                        Вместимость: 6 чел., Чай, Русская кухня, Европейская кухня
+                                    </p>
+                                </li>
+                                <li class="advgs__item">
+                                    <svg class="advgs__icon advgs__icon--equipment">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#musical-note"></use>
+                                    </svg>
+                                    <h3 class="advgs__name">Оборудование</h3>
+                                    <p class="advgs__text">
+                                        Аудиоцентр, Телевизор
+                                    </p>
+                                </li>
+                                <li class="advgs__item">
+                                    <svg class="advgs__icon advgs__icon--relax">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#sofa"></use>
+                                    </svg>
+                                    <h3 class="advgs__name">Комната отдыха</h3>
+                                    <p class="advgs__text">
+                                        С комнатой отдыха S: 10 м2, вместимость: 2 чел. S: 10 м2, вместимость: 2 чел.
+                                    </p>
+                                </li>
+                                <li class="advgs__item">
+                                    <svg class="advgs__icon advgs__icon--add">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#add"></use>
+                                    </svg>
+                                    <h3 class="advgs__name">Дополнительно</h3>
+                                    <p class="advgs__text">
+                                        Есть веники, Березовый, Дубовый, Парковка, Со своим веником, С коттеджем на сутки (+5000 руб.),
+                                        Банкетный зал (+1500 руб.), Вместимость: 120 чел., Гостиница (+1900 руб.), Беседка (Летняя
+                                        веранда)
+                                        (+1500 руб.), С выходом к реке, Тапочки (+50 руб.), Простыни (+50 руб.), Полотенца (+100 руб.),
+                                        Мыло,
+                                        Посуда
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Halls-List -->
-        <!-- Advantages -->
-        <section id="advantages" class="advantages">
-            <div class="container">
-                <div class="advantages__wrapper advgs">
-                    <ul class="advgs__list">
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--aqua">
-                                <use xlink:href="assets/img/sprite/sprite.svg#aqua"></use>
-                            </svg>
-                            <h3 class="advgs__name">Аквазона</h3>
-                            <p class="advgs__text">
-                                Бассейн, Размеры (Ш x Д x Г), м: 2 x 4 x 1.7, Подсветка, Фильтрация, Душ
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--food">
-                                <use xlink:href="assets/img/sprite/sprite.svg#eat"></use>
-                            </svg>
-                            <h3 class="advgs__name">Питание/Напитки</h3>
-                            <p class="advgs__text">
-                                Можно со своей едой , Мангал (+300 руб.), Барбекю зона, Кафе/ресторан, Бар, Обеденная зона,
-                                Вместимость: 6 чел., Чай, Русская кухня, Европейская кухня
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--equipment">
-                                <use xlink:href="assets/img/sprite/sprite.svg#musical-note"></use>
-                            </svg>
-                            <h3 class="advgs__name">Оборудование</h3>
-                            <p class="advgs__text">
-                                Аудиоцентр, Телевизор
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--relax">
-                                <use xlink:href="assets/img/sprite/sprite.svg#sofa"></use>
-                            </svg>
-                            <h3 class="advgs__name">Комната отдыха</h3>
-                            <p class="advgs__text">
-                                С комнатой отдыха S: 10 м2, вместимость: 2 чел. S: 10 м2, вместимость: 2 чел.
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--add">
-                                <use xlink:href="assets/img/sprite/sprite.svg#add"></use>
-                            </svg>
-                            <h3 class="advgs__name">Дополнительно</h3>
-                            <p class="advgs__text">
-                                Есть веники, Березовый, Дубовый, Парковка, Со своим веником, С коттеджем на сутки (+5000 руб.),
-                                Банкетный зал (+1500 руб.), Вместимость: 120 чел., Гостиница (+1900 руб.), Беседка (Летняя веранда)
-                                (+1500 руб.), С выходом к реке, Тапочки (+50 руб.), Простыни (+50 руб.), Полотенца (+100 руб.), Мыло,
-                                Посуда
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- End Advantages -->
+        <!-- End Hall Section -->
         <!-- About Block -->
         <section id="about" class="about">
             <div class="about__bg-bucket parallax"></div>
