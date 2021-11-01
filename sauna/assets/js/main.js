@@ -15593,12 +15593,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Anchor smooth scrolling
 	 */
 
-	let anchors = document.querySelectorAll('.header__menu a[href*="#"]:not([href="#"]):not([href="#0"])');
+	let anchors = document.querySelectorAll('.header a[href*="#"]:not([href="#"]):not([href="#0"])');
 	let anchorsFiltered = [];
 	let anchorTargets = [];
 	let activeAnchorLink;
 
-	console.log(anchors)
 	anchors.forEach(anchor => {
 		if (location.pathname.replace(/^\//, '') == anchor.pathname.replace(/^\//, '')
 			&& location.hostname == anchor.hostname) {
@@ -15607,8 +15606,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		let target = document.querySelector(anchor.hash);
 
 		if (target) {
-			anchorTargets.push(target);
-			anchorsFiltered.push(anchor);
+			if (document.querySelector('.header__menu').contains(anchor)) {
+
+				anchorTargets.push(target);
+				anchorsFiltered.push(anchor);
+			}
 
 			anchor.addEventListener('click', function (e) {
 				e.preventDefault();
@@ -15626,8 +15628,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 	if (anchorTargets.length) {
-
-		console.log(anchorTargets)
 
 		let handler = function () {
 			let anchorIndex = 0;
@@ -15927,11 +15927,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	//change slider and show full reviews
 
-	let reviewsShowFullBtn = document.querySelector('.reviews__show-full-btn');
+	let reviewsShowFullBtn = document.querySelectorAll('.reviews__show-full-btn');
 
-	if (reviewsShowFullBtn) {
-
-		reviewsShowFullBtn.addEventListener('click', function (e) {
+	reviewsShowFullBtn.forEach(btn => {
+		btn.addEventListener('click', function (e) {
 			e.preventDefault();
 
 			new DLAnimate().hide(this, {
@@ -15981,7 +15980,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 					.concat(arr2.filter(i => arr1.indexOf(i) < 0))
 			}
 		})
-	}
+	});
 
 
 	/**
@@ -16197,7 +16196,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			// wrapperClass: 'hall-section__thumb-wrapper',
 			slideClass: 'hall-section__item',
 			// onlyExternal: true, 
-			noSwiping: true, 
+			noSwiping: true,
 			noSwipingClass: 'swiper-slide',
 
 			enabled: false,
@@ -16218,9 +16217,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				},
 				992: {
 					slidesPerView: 4,
+					enabled: true,
 				},
 				1200: {
+					slidesPerView: 4,
 					spaceBetween: 40,
+					enabled: true,
 				},
 			},
 
@@ -16239,7 +16241,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				bulletActiveClass: "bullet--active",
 				clickable: true,
 			},
-			
+
 			navigation: {
 				nextEl: ".hall-section__arrow.arrow--next",
 				prevEl: ".hall-section__arrow.arrow--prev",
@@ -16332,17 +16334,25 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let advantagesItems = document.querySelectorAll('.advgs__item');
 
 	advantagesItems.forEach(item => {
+		let isShowed = false;
+
 		item.addEventListener('click', e => {
 			item.classList.add('advgs__item--showed');
 
 			document.addEventListener('click', handler);
+
 		});
 
 
 		function handler(e) {
-			if (!item.contains(e.target)) {
+			if (isShowed && !item.querySelector('.advgs__text').contains(e.target)) {
 				item.classList.remove('advgs__item--showed');
 				document.removeEventListener('click', handler);
+
+				isShowed = false;
+			} else {
+
+				isShowed = true;
 			}
 		}
 	});

@@ -405,25 +405,46 @@
                         <div class="hall-section__slider">
                             <ul class="hall-section__slider-wrapper swiper-wrapper">
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-1.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-1.webp 1x, assets/img/hall/image-1@2x.webp 2x, assets/img/hall/image-1@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-1.jpg" srcset="assets/img/hall/image-1@2x.jpg 2x, assets/img/hall/image-1@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-2.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-2.webp 1x, assets/img/hall/image-2@2x.webp 2x, assets/img/hall/image-2@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-2.jpg" srcset="assets/img/hall/image-2@2x.jpg 2x, assets/img/hall/image-2@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-3.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-3.webp 1x, assets/img/hall/image-3@2x.webp 2x, assets/img/hall/image-3@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-3.jpg" srcset="assets/img/hall/image-3@2x.jpg 2x, assets/img/hall/image-3@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-4.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-4.webp 1x, assets/img/hall/image-4@2x.webp 2x, assets/img/hall/image-4@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-4.jpg" srcset="assets/img/hall/image-4@2x.jpg 2x, assets/img/hall/image-4@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-1.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-1.webp 1x, assets/img/hall/image-1@2x.webp 2x, assets/img/hall/image-1@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-1.jpg" srcset="assets/img/hall/image-1@2x.jpg 2x, assets/img/hall/image-1@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-2.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-2.webp 1x, assets/img/hall/image-2@2x.webp 2x, assets/img/hall/image-2@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-2.jpg" srcset="assets/img/hall/image-2@2x.jpg 2x, assets/img/hall/image-2@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                                 <li class="hall-section__item swiper-slide">
-                                    <img class="hall-section__img" src="assets/img/hall/image-3.jpg" alt="фото зала" />
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/hall/image-3.webp 1x, assets/img/hall/image-3@2x.webp 2x, assets/img/hall/image-3@3x.webp 3x">
+                                        <img class="hall-section__img" src="assets/img/hall/image-3.jpg" srcset="assets/img/hall/image-3@2x.jpg 2x, assets/img/hall/image-3@3x.jpg 3x" alt="фото зала">
+                                    </picture>
                                 </li>
                             </ul>
 
@@ -604,7 +625,7 @@
                             <li class="promotions__item">
                                 <div class="promotions__card promotion">
 
-                                    <p class="promotion__type">Акция</p>
+                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Акция</a>
 
                                     <picture>
                                         <source type="image/webp" srcset="assets/img/promotions/image-1.webp 1x, assets/img/promotions/image-1@2x.webp 2x, assets/img/promotions/image-1@3x.webp 3x">
@@ -624,8 +645,9 @@
                             </li>
 
                             <li class="promotions__item">
-                                <div class="promotion">
-                                    <p class="promotions__card promotion__type">Спецпредложение</p>
+                                <div class="promotion promotions__card">
+                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Спецпредложение</a>
+
                                     <picture>
                                         <source type="image/webp" srcset="assets/img/promotions/image-2.webp 1x, assets/img/promotions/image-2@2x.webp 2x, assets/img/promotions/image-2@3x.webp 3x">
                                         <img class="promotion__image" src="assets/img/promotions/image-2.jpg" srcset="assets/img/promotions/image-2@2x.jpg 2x, assets/img/promotions/image-2@3x.jpg 3x" alt="изображение зала">
@@ -643,7 +665,8 @@
 
                             <li class="promotions__item">
                                 <div class="promotions__card promotion">
-                                    <p class="promotion__type">Акция</p>
+                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Акция</a>
+
                                     <picture>
                                         <source type="image/webp" srcset="assets/img/promotions/image-1.webp 1x, assets/img/promotions/image-1@2x.webp 2x, assets/img/promotions/image-1@3x.webp 3x">
                                         <img class="promotion__image" src="assets/img/promotions/image-1.jpg" srcset="assets/img/promotions/image-1@2x.jpg 2x, assets/img/promotions/image-1@3x.jpg 3x" alt="изображение зала">
@@ -661,7 +684,7 @@
 
                             <li class="promotions__item">
                                 <div class="promotion">
-                                    <p class="promotions__card promotion__type">Спецпредложение</p>
+                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Спецпредложение</a>
                                     <picture>
                                         <source type="image/webp" srcset="assets/img/promotions/image-2.webp 1x, assets/img/promotions/image-2@2x.webp 2x, assets/img/promotions/image-2@3x.webp 3x">
                                         <img class="promotion__image" src="assets/img/promotions/image-2.jpg" srcset="assets/img/promotions/image-2@2x.jpg 2x, assets/img/promotions/image-2@3x.jpg 3x" alt="изображение зала">
@@ -742,7 +765,10 @@
             <div class="reviews__bg-broom-2 parallax"></div>
 
             <div class="container">
-                <h2 class="reviews__title title">Отзывы</h2>
+                <div class="reviews__head">
+                    <h2 class="reviews__title title">Отзывы</h2>
+                    <a href="#" class="reviews__show-full-btn reviews__show-full-btn--mobile modal-opener"><span>Смотреть все отзывы</span></a>
+                </div>
 
                 <div class="reviews__slider">
                     <div class="reviews__wrapper">
