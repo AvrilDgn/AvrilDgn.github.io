@@ -3929,7 +3929,7 @@ button:focus {
 }
 
 .hall-section__wrap {
-  margin-top: 52px;
+  margin-top: 25px;
 }
 
 .hall-section__overlay {
@@ -4820,6 +4820,7 @@ button:focus {
   }
 
   .callback {
+    padding-bottom: 0;
     background-color: transparent;
   }
 
