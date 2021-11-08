@@ -1242,6 +1242,11 @@ body {
           box-sizing: border-box;
 }
 
+body {
+  --main-color: #80A529;
+  --accent-color: #FB8E30;
+}
+
 h1,
 h2,
 h3,
@@ -1541,7 +1546,9 @@ button:focus {
   padding-right: 10px;
   width: 100%;
   height: 45px;
-  background-color: rgba(128, 165, 41, 0.1);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(128, 165, 41, 0.1)), to(rgba(128, 165, 41, 0.1)));
+  background-image: -o-linear-gradient(left, rgba(128, 165, 41, 0.1) 0%, rgba(128, 165, 41, 0.1) 100%);
+  background-image: linear-gradient(90deg, rgba(128, 165, 41, 0.1) 0%, rgba(128, 165, 41, 0.1) 100%);
   border-radius: 5px;
   font-weight: 400;
   font-size: 16px;
@@ -1673,7 +1680,9 @@ button:focus {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 5px;
-  background: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   font-family: nunito, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -1760,7 +1769,9 @@ button:focus {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   overflow: hidden;
   z-index: 1;
 }
@@ -1995,7 +2006,9 @@ button:focus {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
-  background-color: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 100;
@@ -2266,7 +2279,9 @@ button:focus {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
 }
 
 .phone-block__icon svg {
@@ -2539,11 +2554,11 @@ button:focus {
 
 .rating-choose:not(:checked) > label:hover svg,
 .rating-choose:not(:checked) > label:hover ~ label svg {
-  fill: #FFDA8F;
+  fill: #FB8E30;
 }
 
 .rating-choose > input:checked ~ label svg {
-  fill: #FFDA8F;
+  fill: #FB8E30;
 }
 
 .rating-choose > input:checked + label:hover svg,
@@ -2551,13 +2566,15 @@ button:focus {
 .rating-choose > input:checked ~ label:hover svg,
 .rating-choose > input:checked ~ label:hover ~ label svg,
 .rating-choose > label:hover ~ input:checked ~ label svg {
-  fill: #FFDA8F;
+  fill: #FB8E30;
 }
 
 .footer {
   padding: 45px 0 46px;
   width: 100%;
-  background: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3232,7 +3249,9 @@ button:focus {
   padding: 10px 26px;
   top: 15px;
   left: 17px;
-  background-color: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   border-radius: 5px;
   font-weight: 600;
   font-size: 16px;
@@ -3240,15 +3259,15 @@ button:focus {
   letter-spacing: 0.02em;
   color: #fff;
   text-decoration: none;
-  -webkit-transition: background-color 0.25s ease;
-  -o-transition: background-color 0.25s ease;
-  transition: background-color 0.25s ease;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
   z-index: 2;
 }
 
 .promotion__type:hover {
   color: #fff;
-  background-color: rgba(128, 165, 41, 0.8);
+  opacity: 0.9;
 }
 
 .promotion__image {
@@ -3414,7 +3433,9 @@ button:focus {
 .callback {
   padding-top: 25px;
   padding-bottom: 19px;
-  background-color: #80A529;
+  background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+  background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+  background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
 }
 
 .callback--free-sauna {
@@ -4310,13 +4331,25 @@ button:focus {
   }
 
   .nav__link {
+    position: relative;
     padding: 20px 0;
     display: block;
     width: 100%;
-    border-bottom: 1px solid rgba(128, 165, 41, 0.6);
     font-size: 20px;
     color: #1E1E1E;
     opacity: 0.6;
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(128, 165, 41, 0.6)), to(rgba(128, 165, 41, 0.6)));
+    background-image: -o-linear-gradient(left, rgba(128, 165, 41, 0.6) 0%, rgba(128, 165, 41, 0.6) 100%);
+    background-image: linear-gradient(90deg, rgba(128, 165, 41, 0.6) 0%, rgba(128, 165, 41, 0.6) 100%);
   }
 
   .nav__link:hover {
@@ -4448,7 +4481,9 @@ button:focus {
     height: 60px;
     max-width: 500px;
     width: 100%;
-    background-color: #80A529;
+    background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+    background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+    background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   }
 
   .header--showed {
@@ -4821,7 +4856,7 @@ button:focus {
 
   .callback {
     padding-bottom: 0;
-    background-color: transparent;
+    background: initial;
   }
 
   .callback--consultation .callback__title {
@@ -4837,7 +4872,9 @@ button:focus {
   }
 
   .callback--consultation .callback__form-wrap {
-    background-color: #80A529;
+    background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+    background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+    background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
   }
 
   .callback--consultation .callback__agreement .agreement-check__text {
@@ -4845,6 +4882,7 @@ button:focus {
   }
 
   .callback--consultation .callback__submit-btn {
+    background-image: initial;
     background-color: white;
     color: #80a529;
   }
@@ -4872,11 +4910,15 @@ button:focus {
   }
 
   .callback__input {
-    background: rgba(128, 165, 41, 0.1);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(128, 165, 41, 0.1)), to(rgba(128, 165, 41, 0.1)));
+    background-image: -o-linear-gradient(left, rgba(128, 165, 41, 0.1) 0%, rgba(128, 165, 41, 0.1) 100%);
+    background-image: linear-gradient(90deg, rgba(128, 165, 41, 0.1) 0%, rgba(128, 165, 41, 0.1) 100%);
   }
 
   .callback__submit-btn {
-    background-color: #80A529;
+    background-image: -webkit-gradient(linear, left top, right top, from(#80A529), to(#80A529));
+    background-image: -o-linear-gradient(left, #80A529 0%, #80A529 100%);
+    background-image: linear-gradient(90deg, #80A529 0%, #80A529 100%);
     color: white;
   }
 
@@ -4898,7 +4940,6 @@ button:focus {
 
   .reviews {
     padding-top: 22px;
-    padding-bottom: 30px;
   }
 
   .reviews__wrapper {
