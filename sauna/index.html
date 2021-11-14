@@ -153,7 +153,6 @@
 
 <body>
 
-
     <!-- Content -->
     <main class="main">
 
@@ -165,16 +164,16 @@
                     <a href="index.html" class="logo header__logo">
                         <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
                         <span class="logo__text-block">
-					<b class="logo__name">Баня Лукоморье</b>
-					<br>
+					<span class="logo__name">Баня Лукоморье</span>
+                        <br>
 					в Архангельске
-				</span>
+                        </span>
                     </a>
 
                     <nav class="nav header__nav">
                         <ul class="nav__list">
-                            <li class="nav__item"><a class="nav__link" href="#halls">Залы</a></li>
                             <li class="nav__item"><a class="nav__link" href="#about">О нас</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#halls">Залы</a></li>
                             <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
                             <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
                         </ul>
@@ -189,7 +188,8 @@
                         </a>
 
                         <a href="#" class="header__feedback-btn button button--accent modal-opener" data-modal="modal-feedback">
-                            Забронировать
+                            <span>Забронировать</span>
+                            <i class="button__arrow"></i>
                         </a>
                     </div>
 
@@ -218,8 +218,8 @@
 
                     <nav class="nav header__nav">
                         <ul class="nav__list">
-                            <li class="nav__item"><a class="nav__link" href="#halls">Залы</a></li>
                             <li class="nav__item"><a class="nav__link" href="#about">О нас</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#halls">Залы</a></li>
                             <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
                             <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
                         </ul>
@@ -231,7 +231,7 @@
                                 <use xlink:href="assets/img/sprite/sprite.svg#mark-pin"></use>
                             </svg>
                             <span class="header__contacts-text">
-						<b>Наш адрес:</b> город Архангельск,
+						<b>Наш адрес:</b> город Архангельск, <br>
 						СНТ Транспортник, стр.11
 					</span>
                         </p>
@@ -247,7 +247,9 @@
                     </div>
 
                     <a href="#" class="header__feedback-btn button button--accent modal-opener" data-modal="modal-feedback">
-                        Забронировать</a>
+                        <span>Забронировать</span>
+                        <i class="button__arrow"></i>
+                    </a>
 
                     <ul class="header__socials socials">
                         <li class="socials__item">
@@ -280,9 +282,6 @@
 
         <!-- Hero Block -->
         <section id="hero" class="hero">
-            <div class="hero__bg-broom parallax"></div>
-            <div class="hero__bg-woods parallax"></div>
-
             <div class="container">
                 <div class="hero__info">
                     <h1 class="hero__title title">Баня Лукоморье <br> в Архангельске</h1>
@@ -302,38 +301,31 @@
                         Цены <b>от 900 рублей</b>
                     </p>
 
-                    <a href="#" class="hero__feedback-btn button modal-opener" data-modal="modal-feedback">Заказать обратный
-                        звонок</a>
+                    <a href="#" class="hero__feedback-btn button modal-opener" data-modal="modal-feedback">
+                        <span>Заказать обратный звонок</span>
+                        <i class="button__arrow"></i>
+                    </a>
                 </div>
 
-                <div class="hero__image">
-                    <!-- <picture>
-				<source type="image/webp"
-					srcset="assets/img/hero/banner.webp 1x, assets/img/hero/banner@2x.webp 2x, assets/img/hero/banner@3x.webp 3x">
-				<img src="assets/img/hero/banner.jpg"
-					srcset="assets/img/hero/banner@2x.jpg 2x, assets/img/hero/banner@3x.jpg 3x" alt="изображение бани">
-			</picture> -->
-                </div>
-
-                <ul class="hero__socials side-socials">
-                    <li class="side-socials__item">
-                        <a class="side-socials__link side-socials__link--instagram" href="#">
+                <ul class="hero__socials socials socials--vertical">
+                    <li class="socials__item">
+                        <a href="#" class="socials__link socials__link--whatsapp">
                             <svg>
-                                <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                                <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
                             </svg>
                         </a>
                     </li>
-                    <li class="side-socials__item">
-                        <a class="side-socials__link side-socials__link--vk" href="#">
+                    <li class="socials__item">
+                        <a href="#" class="socials__link socials__link--telegram">
                             <svg>
-                                <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                                <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
                             </svg>
                         </a>
                     </li>
-                    <li class="side-socials__item">
-                        <a class="side-socials__link side-socials__link--facebook" href="#">
+                    <li class="socials__item">
+                        <a href="#" class="socials__link socials__link--viber">
                             <svg>
-                                <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                                <use xlink:href="assets/img/sprite/sprite.svg#viber"></use>
                             </svg>
                         </a>
                     </li>
@@ -343,62 +335,86 @@
         <!-- End Hero Block -->
         <!-- Callback For Consultation Block -->
         <section id="callback-free-sauna" class="callback callback--free-sauna">
+
             <div class="container">
+                <div class="callback__bg-hat parallax"></div>
+                <div class="callback__bg-broom parallax"></div>
+
                 <div class="callback__image-block">
                     <picture>
-                        <source type="image/webp" srcset="assets/img/callback/bucket-broom.webp 1x, assets/img/callback/bucket-broom@2x.webp 2x, assets/img/callback/bucket-broom@3x.webp 3x">
-                        <img src="assets/img/callback/bucket-broom.png" srcset="assets/img/callback/bucket-broom@2x.png 2x, assets/img/callback/bucket-broom@3x.png 3x" alt="веник в ведерке">
+                        <source type="image/webp" srcset="assets/img/callback/sauna.webp 1x, assets/img/callback/sauna@2x.webp 2x, assets/img/callback/sauna@3x.webp 3x">
+                        <img src="assets/img/callback/sauna.png" srcset="assets/img/callback/sauna@2x.png 2x, assets/img/callback/sauna@3x.png 3x" alt="фото из сауны">
                     </picture>
                 </div>
 
                 <div class="callback__form-wrap">
                     <h2 class="callback__title title">Узнать, свободна ли сауна</h2>
 
-                    <form class="callback__form" id="callback-form" action="#" method="post">
-                        <div class="callback__form-group">
-                            <p class="callback__field">
-                                <input class="callback__input input phoneMask" type="tel" name="phone" placeholder="Ваш телефон" required />
-                            </p>
+                    <form class="callback__form form form--white" id="callback-form" action="#" method="post">
+                        <p class="callback__field">
+                            <input class="callback__input form__input phoneMask" type="tel" name="phone" placeholder="Ваш телефон" required />
+                        </p>
 
-                            <p class="callback__field">
-                                <input class="callback__input input" type="text" name="time-visits" placeholder="Время посещения сауны" required />
-                            </p>
-                        </div>
+                        <p class="callback__field">
+                            <input class="callback__input form__input" type="text" name="time-visits" placeholder="Время посещения сауны" required />
+                        </p>
 
-                        <div class="callback__form-group">
-                            <p class="callback__field">
-                                <input class="callback__input input" type="text" name="number-of-hours" placeholder="Введите количество часов" required />
-                            </p>
+                        <p class="callback__field">
+                            <input class="callback__input form__input" type="text" name="number-of-hours" placeholder="Введите количество часов" required />
+                        </p>
 
-                            <button class="button button--white callback__submit-btn" type="submit"><span>Проверить</span></button>
-                        </div>
-
-                        <p class="callback__agreement agreement-check">
-                            <label class="checkbox agreement-check__checkbox">
+                        <p class="callback__agreement form__agreement">
+                            <label class="checkbox form__checkbox">
                                 <input type="checkbox" name="agreement" required>
-                                <svg class="checkbox__check-icon">
+                                <svg class="checkbox__icon">
                                     <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
                                 </svg>
                             </label>
-                            <span class="agreement-check__text">
-						<b>Согласен</b> на обработку и передачу
+
+                            <span class="form__agreement-text">
+						Согласен на обработку и передачу
 						персональных данных в соответствии с
-						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+						<a class="form__agreement-link" href="#">пользовательсикм соглашением</a>
 					</span>
                         </p>
 
-                        <button class="button button--white callback__submit-btn callback__submit-btn--mobile" type="submit"><span>Проверить</span></button>
+                        <button class="button button--white callback__submit-btn" type="submit"><span>Проверить</span><i class="button__arrow"></i></button>
                     </form>
                 </div>
 
             </div>
         </section>
         <!-- End Callback Form Block -->
+        <!-- About Block -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about__bg-towel parallax"></div>
+                <div class="about__bg-ladle parallax"></div>
+
+                <div class="about__text-block">
+                    <h2 class="about__title title">О нас</h2>
+                    <p class="about__text">Сауна "Лукоморье" приглашает в гости не только гостей, но и жителей города насладиться
+                        парными процедурами финской парной. Мы знает толк в банном отдыхе, поэтому все наши гости останутся
+                        довольны.приглашает в гости всех любителей качественного отдыха, окунуться в мир релакса и тепла в
+                        комфортной уютной обстановке. Наше заведение имеет все необходимое для полноценного отдыха.У нас можно не
+                        только отдохнуть большой компанией, но и организовать любое праздничное событие. Корпоративы и дни рождения,
+                        встречи с деловыми партнерами – у нас задуманное мероприятие пройдет на все 100%.</p>
+                </div>
+
+                <div class="about__image-block">
+                    <picture>
+                        <source type="image/webp" srcset="assets/img/about/bathhouse.webp 1x, assets/img/about/bathhouse@2x.webp 2x, assets/img/about/bathhouse@3x.webp 3x">
+                        <img src="assets/img/about/bathhouse.png" srcset="assets/img/about/bathhouse@2x.png 2x, assets/img/about/bathhouse@3x.png 3x" alt="баня">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <!-- End About Block -->
         <!-- Halls-List -->
         <section id="halls" class="halls-list">
-            <div class="halls-list__bg-hat parallax"></div>
-
             <div class="container">
+                <div class="halls-list__bg-broom parallax"></div>
+
                 <div class="halls-list__head">
                     <h2 class="halls-list__title title">Наши залы</h2>
                     <a href="#" class="halls-list__all-halls">Смотреть все залы</a>
@@ -417,66 +433,28 @@
                                         <img class="hall-card__image" src="assets/img/halls/image-1.jpg" srcset="assets/img/halls/image-1@2x.jpg 2x, assets/img/halls/image-1@3x.jpg 3x" alt="изображение зала">
                                     </picture>
 
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Русская баня</h3>
-                                        <p class="hall-card__type">Русская</p>
-                                    </div>
+                                    <h3 class="hall-card__name">Русская баня</h3>
 
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Цена:</span>
+                                        <span class="hall-card__value">от 600 руб.</span>
+                                    </p>
 
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 600 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Тип парной:</span>
+                                        <span class="hall-card__value">русская</span>
+                                    </p>
 
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
-                                </div>
-                            </li>
-                            <li class="halls-list__item">
-                                <div class="halls-list__card hall-card">
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/halls/image-2.webp 1x, assets/img/halls/image-2@2x.webp 2x, assets/img/halls/image-2@3x.webp 3x">
-                                        <img class="hall-card__image" src="assets/img/halls/image-2.jpg" srcset="assets/img/halls/image-2@2x.jpg 2x, assets/img/halls/image-2@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Вместимость:</span>
+                                        <span class="hall-card__value">3 человека</span>
+                                    </p>
 
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Турецкий хаммам</h3>
-                                        <p class="hall-card__type">Хаммам</p>
-                                    </div>
 
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
-
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 800 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                                    <a href="single-hall.html" class="hall-card__more button button--transparent">
+                                        <span>Подробнее</span>
+                                        <i class="button__arrow"></i>
+                                    </a>
                                 </div>
                             </li>
                             <li class="halls-list__item">
@@ -488,31 +466,28 @@
                                         <img class="hall-card__image" src="assets/img/halls/image-3.jpg" srcset="assets/img/halls/image-3@2x.jpg 2x, assets/img/halls/image-3@3x.jpg 3x" alt="изображение зала">
                                     </picture>
 
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Финская сауна</h3>
-                                        <p class="hall-card__type">Финская</p>
-                                    </div>
+                                    <h3 class="hall-card__name">Финская сауна</h3>
 
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Цена:</span>
+                                        <span class="hall-card__value">от 600 руб.</span>
+                                    </p>
 
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 700 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Тип парной:</span>
+                                        <span class="hall-card__value">финская</span>
+                                    </p>
+
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Вместимость:</span>
+                                        <span class="hall-card__value">3 человека</span>
+                                    </p>
+
+
+                                    <a href="single-hall.html" class="hall-card__more button button--transparent">
+                                        <span>Подробнее</span>
+                                        <i class="button__arrow"></i>
+                                    </a>
                                 </div>
                             </li>
                             <li class="halls-list__item">
@@ -522,40 +497,70 @@
                                         <img class="hall-card__image" src="assets/img/halls/image-2.jpg" srcset="assets/img/halls/image-2@2x.jpg 2x, assets/img/halls/image-2@3x.jpg 3x" alt="изображение зала">
                                     </picture>
 
-                                    <div class="hall-card__title-block">
-                                        <h3 class="hall-card__name">Турецкий хаммам</h3>
-                                        <p class="hall-card__type">Хаммам</p>
-                                    </div>
+                                    <h3 class="hall-card__name">Хаммам</h3>
 
-                                    <ul class="hall-card__charx-list">
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#person"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                3 человека
-                                            </p>
-                                        </li>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Цена:</span>
+                                        <span class="hall-card__value">от 600 руб.</span>
+                                    </p>
 
-                                        <li class="hall-card__charx-item">
-                                            <svg class="hall-card__charx-icon">
-                                                <use xlink:href="assets/img/sprite/sprite.svg#rouble"></use>
-                                            </svg>
-                                            <p class="hall-card__charx-text">
-                                                от 800 руб.
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="single-hall.html" class="hall-card__more button button--transparent">Подробнее</a>
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Тип парной:</span>
+                                        <span class="hall-card__value">хаммам</span>
+                                    </p>
+
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Вместимость:</span>
+                                        <span class="hall-card__value">3 человека</span>
+                                    </p>
+
+
+                                    <a href="single-hall.html" class="hall-card__more button button--transparent">
+                                        <span>Подробнее</span>
+                                        <i class="button__arrow"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="halls-list__item">
+                                <div class="halls-list__card hall-card">
+                                    <a href="#" class="hall-card__promotion modal-opener" data-modal="modal-promotion">Спецпредложение</a>
+
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/halls/image-3.webp 1x, assets/img/halls/image-3@2x.webp 2x, assets/img/halls/image-3@3x.webp 3x">
+                                        <img class="hall-card__image" src="assets/img/halls/image-3.jpg" srcset="assets/img/halls/image-3@2x.jpg 2x, assets/img/halls/image-3@3x.jpg 3x" alt="изображение зала">
+                                    </picture>
+
+                                    <h3 class="hall-card__name">Финская сауна</h3>
+
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Цена:</span>
+                                        <span class="hall-card__value">от 600 руб.</span>
+                                    </p>
+
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Тип парной:</span>
+                                        <span class="hall-card__value">финская</span>
+                                    </p>
+
+                                    <p class="hall-card__charx">
+                                        <span class="hall-card__type">Вместимость:</span>
+                                        <span class="hall-card__value">3 человека</span>
+                                    </p>
+
+
+                                    <a href="single-hall.html" class="hall-card__more button button--transparent">
+                                        <span>Подробнее</span>
+                                        <i class="button__arrow"></i>
+                                    </a>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <div class="halls-list__slider-navigation">
-                        <button class="halls-list__arrow arrow arrow--prev"></button>
+                        <button class="halls-list__arrow arrow arrow--prev"><i></i></button>
                         <div class="halls-list__pagination pagination"></div>
-                        <button class="halls-list__arrow arrow arrow--next"></button>
+                        <button class="halls-list__arrow arrow arrow--next"><i></i></button>
                     </div>
                 </div>
             </div>
@@ -564,149 +569,125 @@
         <!-- Advantages -->
         <section id="advantages" class="advantages">
             <div class="container">
-                <div class="advantages__wrapper advgs">
-                    <ul class="advgs__list">
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--aqua">
-                                <use xlink:href="assets/img/sprite/sprite.svg#aqua"></use>
-                            </svg>
-                            <h3 class="advgs__name">Аквазона</h3>
-                            <p class="advgs__text">
-                                Бассейн, Размеры (Ш x Д x Г), м: 2 x 4 x 1.7, Подсветка, Фильтрация, Душ
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--food">
-                                <use xlink:href="assets/img/sprite/sprite.svg#eat"></use>
-                            </svg>
-                            <h3 class="advgs__name">Питание/Напитки</h3>
-                            <p class="advgs__text">
-                                Можно со своей едой , Мангал (+300 руб.), Барбекю зона, Кафе/ресторан, Бар, Обеденная зона,
-                                Вместимость: 6 чел., Чай, Русская кухня, Европейская кухня
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--equipment">
-                                <use xlink:href="assets/img/sprite/sprite.svg#musical-note"></use>
-                            </svg>
-                            <h3 class="advgs__name">Оборудование</h3>
-                            <p class="advgs__text">
-                                Аудиоцентр, Телевизор
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--relax">
-                                <use xlink:href="assets/img/sprite/sprite.svg#sofa"></use>
-                            </svg>
-                            <h3 class="advgs__name">Комната отдыха</h3>
-                            <p class="advgs__text">
-                                С комнатой отдыха S: 10 м2, вместимость: 2 чел. S: 10 м2, вместимость: 2 чел.
-                            </p>
-                        </li>
-                        <li class="advgs__item">
-                            <svg class="advgs__icon advgs__icon--add">
-                                <use xlink:href="assets/img/sprite/sprite.svg#add"></use>
-                            </svg>
-                            <h3 class="advgs__name">Дополнительно</h3>
-                            <p class="advgs__text">
-                                Есть веники, Березовый, Дубовый, Парковка, Со своим веником, С коттеджем на сутки (+5000 руб.),
-                                Банкетный зал (+1500 руб.), Вместимость: 120 чел., Гостиница (+1900 руб.), Беседка (Летняя веранда)
-                                (+1500 руб.), С выходом к реке, Тапочки (+50 руб.), Простыни (+50 руб.), Полотенца (+100 руб.), Мыло,
-                                Посуда
-                            </p>
-                        </li>
-                    </ul>
-                </div>
+                <div class="advantages__bg-bucket parallax"></div>
+
+                <h2 class="advantages__title">
+                    Преимущества зала
+                </h2>
+
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <div class="advantages__head">
+                            <i class="advantages__icon">
+						<svg>
+							<use xlink:href="assets/img/sprite/sprite.svg#water"></use>
+						</svg>
+					</i>
+                            <h3 class="advantages__name">Аквазона</h3>
+                        </div>
+
+                        <p class="advantages__text">
+                            Бассейн, Размеры (Ш x Д x Г), м: 2 x 4 x 1.7, Подсветка, Фильтрация, Душ
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__head">
+                            <i class="advantages__icon">
+						<svg>
+							<use xlink:href="assets/img/sprite/sprite.svg#pillow"></use>
+						</svg>
+					</i>
+                            <h3 class="advantages__name">Комната отдыха</h3>
+                        </div>
+
+                        <p class="advantages__text">
+                            С комнатой отдыха S: 10 м2, вместимость: 2 чел. S: 10 м2, вместимость: 2 чел.
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__head">
+                            <i class="advantages__icon">
+						<svg>
+							<use xlink:href="assets/img/sprite/sprite.svg#roast-chicken"></use>
+						</svg>
+					</i>
+                            <h3 class="advantages__name">Питание/Напитки</h3>
+                        </div>
+
+                        <p class="advantages__text">
+                            Можно со своей едой , Мангал (+300 руб.), Барбекю зона, Кафе/ресторан, Бар, Обеденная зона,
+                            Вместимость: 6 чел., Чай, Русская кухня, Европейская кухня
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__head">
+                            <i class="advantages__icon">
+						<svg>
+							<use xlink:href="assets/img/sprite/sprite.svg#speaker"></use>
+						</svg>
+					</i>
+                            <h3 class="advantages__name">Оборудование</h3>
+                        </div>
+
+                        <p class="advantages__text">
+                            Аудиоцентр, Телевизор
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__head">
+                            <i class="advantages__icon">
+						<svg>
+							<use xlink:href="assets/img/sprite/sprite.svg#add"></use>
+						</svg>
+					</i>
+                            <h3 class="advantages__name">Дополнительно</h3>
+                        </div>
+
+                        <p class="advantages__text">
+                            Есть веники, Березовый, Дубовый, Парковка, Со своим веником, С коттеджем на сутки (+5000 руб.),
+                            Банкетный зал (+1500 руб.), Вместимость: 120 чел., Гостиница (+1900 руб.), Беседка (Летняя веранда)
+                            (+1500 руб.), С выходом к реке, Тапочки (+50 руб.), Простыни (+50 руб.), Полотенца (+100 руб.), Мыло,
+                            Посуда
+                        </p>
+                    </li>
+                </ul>
             </div>
         </section>
         <!-- End Advantages -->
-        <!-- About Block -->
-        <section id="about" class="about">
-            <div class="about__bg-bucket parallax"></div>
-
-            <div class="container">
-                <div class="about__text-block">
-                    <h2 class="about__title title">О нас</h2>
-                    <p class="about__text">Сауна "Лукоморье" приглашает в гости не только гостей, но и жителей города насладиться
-                        парными процедурами финской парной. Мы знает толк в банном отдыхе, поэтому все наши гости останутся
-                        довольны.приглашает в гости всех любителей качественного отдыха, окунуться в мир релакса и тепла в
-                        комфортной уютной обстановке. Наше заведение имеет все необходимое для полноценного отдыха.У нас можно не
-                        только отдохнуть большой компанией, но и организовать любое праздничное событие. Корпоративы и дни рождения,
-                        встречи с деловыми партнерами – у нас задуманное мероприятие пройдет на все 100%.</p>
-                </div>
-
-                <div class="about__slider">
-                    <div class="about__wrapper">
-                        <ul class="about__list">
-                            <li class="about__item">
-                                <picture>
-                                    <source type="image/webp" srcset="assets/img/about/image-1.webp 1x, assets/img/about/image-1@2x.webp 2x, assets/img/about/image-1@3x.webp 3x">
-                                    <img class="about__image" src="assets/img/about/image-1.jpg" srcset="assets/img/about/image-1@2x.jpg 2x, assets/img/about/image-1@3x.jpg 3x" alt="изображение зала">
-                                </picture>
-                            </li>
-                            <li class="about__item">
-                                <picture>
-                                    <source type="image/webp" srcset="assets/img/hero/banner.webp 1x, assets/img/about/image-1@2x.webp 2x, assets/img/about/image-1@3x.webp 3x">
-                                    <img class="about__image" src="assets/img/about/image-1.jpg" srcset="assets/img/about/image-1@2x.jpg 2x, assets/img/about/image-1@3x.jpg 3x" alt="изображение зала">
-                                </picture>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button class="about__arrow arrow arrow--prev"></button>
-                    <button class="about__arrow arrow arrow--next"></button>
-                </div>
-            </div>
-        </section>
-        <!-- End About Block -->
         <!-- Promotions -->
         <section id="promotions" class="promotions">
-            <div class="promotions__bg-ladle parallax"></div>
-
             <div class="container">
+                <div class="promotions__bg-ladle parallax"></div>
+                <div class="promotions__bg-hat parallax"></div>
+
                 <h2 class="promotions__title title">Актуальные скидки и акции</h2>
 
                 <div class="promotions__slider">
                     <div class="promotions__wrapper">
                         <ul class="promotions__list">
+
                             <li class="promotions__item">
                                 <div class="promotions__card promotion">
-
                                     <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Акция</a>
 
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/promotions/image-1.webp 1x, assets/img/promotions/image-1@2x.webp 2x, assets/img/promotions/image-1@3x.webp 3x">
-                                        <img class="promotion__image" src="assets/img/promotions/image-1.jpg" srcset="assets/img/promotions/image-1@2x.jpg 2x, assets/img/promotions/image-1@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
+                                    <div class="promotion__info-block">
+                                        <h3 class="promotion__title">
+                                            <b>4-й</b> час в подарок
+                                        </h3>
 
-                                    <div class="promotion__desc">
-                                        <p class="promotion__val promotion__val--big">30%</p>
-                                        <div class="promotion__type-block">
-                                            <p class="promotion__type-title">Скидка</p>
-                                            <p class="promotion__type-subtitle">в финскую сауну</p>
-                                        </div>
+                                        <p class="promotion__type-subtitle">с понедельника по четверг</p>
+
+                                        <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">
+                                            <span>Получить скидку</span>
+                                            <i class="button__arrow"></i>
+                                        </a>
                                     </div>
 
-                                    <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">Подробнее</a>
-                                </div>
-                            </li>
-
-                            <li class="promotions__item">
-                                <div class="promotion promotions__card">
-                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Спецпредложение</a>
-
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/promotions/image-2.webp 1x, assets/img/promotions/image-2@2x.webp 2x, assets/img/promotions/image-2@3x.webp 3x">
-                                        <img class="promotion__image" src="assets/img/promotions/image-2.jpg" srcset="assets/img/promotions/image-2@2x.jpg 2x, assets/img/promotions/image-2@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
-                                    <div class="promotion__desc">
-                                        <p class="promotion__val">4-й <br> час</p>
-                                        <div class="promotion__type-block">
-                                            <p class="promotion__type-title">в подарок</p>
-                                            <p class="promotion__type-subtitle">с понедельника по четверг</p>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">Подробнее</a>
+                                    <a href="#" class="promotion__tooltip tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit.">
+                                        <svg>
+                                            <use xlink:href="assets/img/sprite/sprite.svg#question"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </li>
 
@@ -714,45 +695,58 @@
                                 <div class="promotions__card promotion">
                                     <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Акция</a>
 
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/promotions/image-1.webp 1x, assets/img/promotions/image-1@2x.webp 2x, assets/img/promotions/image-1@3x.webp 3x">
-                                        <img class="promotion__image" src="assets/img/promotions/image-1.jpg" srcset="assets/img/promotions/image-1@2x.jpg 2x, assets/img/promotions/image-1@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
-                                    <div class="promotion__desc">
-                                        <p class="promotion__val promotion__val--big">15%</p>
-                                        <div class="promotion__type-block">
-                                            <p class="promotion__type-title">Скидка</p>
-                                            <p class="promotion__type-subtitle">в день рождения</p>
-                                        </div>
+                                    <div class="promotion__info-block">
+                                        <h3 class="promotion__title">
+                                            <b>Скидка</b>
+                                        </h3>
+
+                                        <p class="promotion__type-subtitle">с понедельника по четверг</p>
+
+                                        <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">
+                                            <span>Получить скидку</span>
+                                            <i class="button__arrow"></i>
+                                        </a>
                                     </div>
-                                    <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">Подробнее</a>
+
+                                    <a href="#" class="promotion__tooltip tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit.">
+                                        <svg>
+                                            <use xlink:href="assets/img/sprite/sprite.svg#question"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </li>
 
                             <li class="promotions__item">
-                                <div class="promotion">
-                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Спецпредложение</a>
-                                    <picture>
-                                        <source type="image/webp" srcset="assets/img/promotions/image-2.webp 1x, assets/img/promotions/image-2@2x.webp 2x, assets/img/promotions/image-2@3x.webp 3x">
-                                        <img class="promotion__image" src="assets/img/promotions/image-2.jpg" srcset="assets/img/promotions/image-2@2x.jpg 2x, assets/img/promotions/image-2@3x.jpg 3x" alt="изображение зала">
-                                    </picture>
-                                    <div class="promotion__desc">
-                                        <p class="promotion__val">4-й <br> час</p>
-                                        <div class="promotion__type-block">
-                                            <p class="promotion__type-title">в подарок</p>
-                                            <p class="promotion__type-subtitle">с понедельника по четверг</p>
-                                        </div>
+                                <div class="promotions__card promotion">
+                                    <a href="#" class="promotion__type modal-opener" data-modal="modal-promotion">Акция</a>
+
+                                    <div class="promotion__info-block">
+                                        <h3 class="promotion__title">
+                                            <b>4-й</b> час в подарок
+                                        </h3>
+
+                                        <p class="promotion__type-subtitle">с понедельника по четверг</p>
+
+                                        <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">
+                                            <span>Получить скидку</span>
+                                            <i class="button__arrow"></i>
+                                        </a>
                                     </div>
-                                    <a href="#" class="promotion__more-btn button modal-opener" data-modal="modal-promotion">Подробнее</a>
+
+                                    <a href="#" class="promotion__tooltip tooltip-opener" data-tooltip="Lorem ipsum dolor, sit amet consectetur adipisicing elit.">
+                                        <svg>
+                                            <use xlink:href="assets/img/sprite/sprite.svg#question"></use>
+                                        </svg>
+                                    </a>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <div class="promotions__slider-navigation">
-                        <button class="promotions__arrow arrow arrow--prev"></button>
+                        <button class="promotions__arrow arrow arrow--prev"><i></i></button>
                         <div class="promotions__pagination pagination"></div>
-                        <button class="promotions__arrow arrow arrow--next"></button>
+                        <button class="promotions__arrow arrow arrow--next"><i></i></button>
                     </div>
                 </div>
             </div>
@@ -763,8 +757,8 @@
             <div class="container">
                 <div class="callback__image-block">
                     <picture>
-                        <source type="image/webp" srcset="assets/img/callback/bucket-broom-2.webp 1x, assets/img/callback/bucket-broom-2@2x.webp 2x, assets/img/callback/bucket-broom-2@3x.webp 3x">
-                        <img src="assets/img/callback/bucket-broom-2.png" srcset="assets/img/callback/bucket-broom-2@2x.png 2x, assets/img/callback/bucket-broom-2@3x.png 3x" alt="веник в ведерке">
+                        <source type="image/webp" srcset="assets/img/callback/woman.webp 1x, assets/img/callback/woman@2x.webp 2x, assets/img/callback/woman@3x.webp 3x">
+                        <img src="assets/img/callback/woman.png" srcset="assets/img/callback/woman@2x.png 2x, assets/img/callback/woman@3x.png 3x" alt="девушка с телефоном">
                     </picture>
                 </div>
 
@@ -772,33 +766,34 @@
                     <h2 class="callback__title title">Нужна консультация?</h2>
                     <p class="callback__subtitle">закажите обратный звонок, мы вам перезвоним</p>
 
-                    <form class="callback__form" id="callback-form" action="#" method="post">
+                    <form class="callback__form form form--white" id="callback-form" action="#" method="post">
                         <div class="callback__form-group">
                             <p class="callback__field">
-                                <input class="callback__input input" type="text" name="name" placeholder="Ваше имя" required />
+                                <input class="callback__input form__input" type="text" name="name" placeholder="Ваше имя" required />
                             </p>
 
                             <p class="callback__field">
-                                <input class="callback__input input phoneMask" type="tel" name="phone" placeholder="Ваш телефон" required />
+                                <input class="callback__input form__input phoneMask" type="tel" name="phone" placeholder="Ваш телефон" required />
                             </p>
                         </div>
 
                         <div class="callback__form-group">
-                            <p class="callback__agreement agreement-check">
-                                <label class="checkbox agreement-check__checkbox">
+                            <p class="callback__agreement form__agreement">
+                                <label class="checkbox form__checkbox">
                                     <input type="checkbox" name="agreement" required>
-                                    <svg class="checkbox__check-icon">
+                                    <svg class="checkbox__icon">
                                         <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
                                     </svg>
                                 </label>
-                                <span class="agreement-check__text">
-							<b>Согласен</b> на обработку и передачу
+
+                                <span class="form__agreement-text">
+							Согласен на обработку и передачу
 							персональных данных в соответствии с
-							<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+							<a class="form__agreement-link" href="#">пользовательсикм соглашением</a>
 						</span>
                             </p>
 
-                            <button class="button button--white callback__submit-btn" type="submit"><span>Перезвоните мне</span></button>
+                            <button class="button button--white callback__submit-btn" type="submit"><span>Перезвоните мне</span><i class="button__arrow"></i></button>
                         </div>
                     </form>
                 </div>
@@ -808,217 +803,189 @@
         <!-- End Callback Form Block -->
         <!-- Reviews -->
         <section id="reviews" class="reviews">
-            <div class="reviews__bg-towel parallax"></div>
-            <div class="reviews__bg-broom-2 parallax"></div>
 
             <div class="container">
-                <div class="reviews__head">
-                    <h2 class="reviews__title title">Отзывы</h2>
-                    <a href="#" class="reviews__show-full-btn reviews__show-full-btn--mobile modal-opener"><span>Смотреть все отзывы</span></a>
-                </div>
+                <div class="reviews__bg-bucket parallax"></div>
+                <div class="reviews__bg-towel parallax"></div>
 
-                <div class="reviews__slider">
-                    <div class="reviews__wrapper">
-                        <ul class="reviews__list">
-                            <li class="reviews__item">
-                                <div class="reviews__card review">
-                                    <div class="review__header">
-                                        <h3 class="review__author">Светлана</h3>
+                <h2 class="reviews__title title">Отзывы</h2>
 
-                                        <ul class="review__rating rating" data-rating="4">
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                        </ul>
-                                    </div>
+                <ul class="reviews__list">
+                    <li class="reviews__item review">
+                        <div class="review__header">
+                            <ul class="review__rating rating" data-rating="5">
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                            </ul>
 
-                                    <p class="review__text">
-                                        Сауна реально крутая и цена достаточно приемлимая для заведения такого комфорта
-                                    </p>
+                            <p class="review__date">12.12.2020</p>
+                        </div>
 
-                                    <p class="review__date">12.08.2021</p>
-                                </div>
-                            </li>
-                            <li class="reviews__item">
-                                <div class="reviews__card review">
-                                    <div class="review__header">
-                                        <h3 class="review__author">Александр</h3>
+                        <h3 class="review__author">Владимир</h3>
 
-                                        <ul class="review__rating rating" data-rating="5">
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                        </ul>
-                                    </div>
+                        <p class="review__text">
+                            Сауна реально крутая и цена достаточно приемлимая для заведения такого комфорта
+                        </p>
+                    </li>
+                    <li class="reviews__item review">
+                        <div class="review__header">
+                            <ul class="review__rating rating" data-rating="4">
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                            </ul>
 
-                                    <p class="review__text">
-                                        Были два раза, и оба раза остались очень довольны! Лучше сауны пока не встретили. Во-первых,
-                                        частный дом, там, кроме вашей компании и самого хозяина (который всё объяснил и ушел) никого не
-                                        будет. Во-вторых, просторный стол, караоке, два этажа, две комнаты отдыха,
-                                        <a href="#" class="review__readmore">...читать полностью</a>
-                                        <span class="review__text-more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est hic
-									amet dicta quisquam
-									exercitationem totam labore. Aliquam dolores quia corrupti sunt odio, optio facere expedita
-									nihil veniam, cupiditate, quaerat ipsam.</span>
-                                    </p>
+                            <p class="review__date">12.08.2021</p>
+                        </div>
 
-                                    <p class="review__date">03.05.2021</p>
-                                </div>
-                            </li>
-                            <li class="reviews__item">
-                                <div class="reviews__card review">
-                                    <div class="review__header">
-                                        <h3 class="review__author">Ольга</h3>
+                        <h3 class="review__author">Александра</h3>
 
-                                        <ul class="review__rating rating" data-rating="4">
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                        </ul>
-                                    </div>
+                        <p class="review__text">
+                            Бронировали номер "Гармония" отдыхали с детьми.Все очень понравилось,вежливый персонал.Все что мы хотели
+                            то и получили от отдыха и посещения вашей сауны.Особенно порадовала чистота номеров,теплый и чистый
+                            бассейн!Все остались очень довольны. Так держать ребята! Удачи вам и процветания!!!
+                        </p>
+                    </li>
+                    <li class="reviews__item review">
+                        <div class="review__header">
+                            <ul class="review__rating rating" data-rating="5">
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                            </ul>
 
-                                    <p class="review__text">
-                                        Отдыхали в данной сауне 6.02.2021 , нас было 3 взрослых и 3 детей. Сауна очень понравилась!!!!
-                                        Парилка супер, очень жарко, нагрелись от души!!!! Бассейн не очень большой, но нам
-                                        хватило...ребятишки накупались с удовольствием
-                                        <a href="#" class="review__readmore">...читать полностью</a>
-                                        <span class="review__text-more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est hic
-									amet dicta quisquam
-									exercitationem totam labore. Aliquam dolores quia corrupti sunt odio, optio facere expedita
-									nihil veniam, cupiditate, quaerat ipsam.</span>
-                                    </p>
+                            <p class="review__date">24.10.2020</p>
+                        </div>
 
-                                    <p class="review__date">17.02.2021</p>
-                                </div>
-                            </li>
-                            <li class="reviews__item">
-                                <div class="reviews__card review">
-                                    <div class="review__header">
-                                        <h3 class="review__author">Светлана</h3>
+                        <h3 class="review__author">Ольга</h3>
 
-                                        <ul class="review__rating rating" data-rating="4">
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                            <li class="rating__item">
-                                                <svg>
-                                                    <use xlink:href="assets/img/sprite/sprite.svg#star"></use>
-                                                </svg>
-                                            </li>
-                                        </ul>
-                                    </div>
+                        <p class="review__text">
+                            Отмечали вчера день рождение в этой сауне и остались довольны)Прекрачное обслуживание,вежливый
+                            администратор и что самое главное ЧИСТО.Были в зале "Гармония",в этом зале очень удобное расположение
+                            бассейна и столика,очень удобно следить за детьми.Спасибо большое за этот праздник) Мы остались очень
+                            довольны)
+                        </p>
+                    </li>
 
-                                    <p class="review__text">
-                                        Сауна реально крутая и цена достаточно приемлимая для заведения такого комфорта
-                                    </p>
+                    <!-- <li class="reviews__item review">
+				<div class="review__header">
+					<ul class="review__rating rating" data-rating="4">
+						<li class="rating__item">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+							</svg>
+						</li>
+						<li class="rating__item">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+							</svg>
+						</li>
+						<li class="rating__item">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+							</svg>
+						</li>
+						<li class="rating__item">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+							</svg>
+						</li>
+						<li class="rating__item">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#star"></use>
+							</svg>
+						</li>
+					</ul>
 
-                                    <p class="review__date">12.08.2021</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+					<p class="review__date">12.08.2021</p>
+				</div>
 
-                    <div class="reviews__slider-navigation">
-                        <button class="reviews__arrow arrow arrow--prev"></button>
-                        <div class="reviews__pagination pagination"></div>
-                        <button class="reviews__arrow arrow arrow--next"></button>
-                    </div>
-                </div>
+				<h3 class="review__author">Светлана</h3>
+
+				<p class="review__text">
+					Сауна реально крутая и цена достаточно приемлимая для заведения такого комфорта
+				</p>
+			</li> -->
+                </ul>
 
                 <div class="reviews__buttons-block">
-                    <a href="#" class="reviews__btn reviews__show-full-btn button modal-opener"><span>Смотреть все отзывы</span></a>
-                    <a href="#" class="reviews__btn button button--white button--border modal-opener" data-modal="modal-review"><span>Оставить отзыв</span></a>
+                    <a href="#" class="reviews__btn reviews__show-full-btn button modal-opener"><span>Смотреть еще</span><i class="button__arrow"></i></a>
+                    <a href="#" class="reviews__btn button button--white button--border modal-opener" data-modal="modal-review"><span>Оставить отзыв</span><i class="button__arrow"></i></a>
                 </div>
             </div>
         </section>
         <!-- End Reviews -->
         <!-- Contacts Block -->
-        <section id="contacts" class="contacts">
+        <section id="contacts" aria-label="Контакты" class="contacts">
 
-            <h2 class="contacts__title title">Контакты</h2>
+            <!-- <h2 class="contacts__title title">Контакты</h2> -->
 
             <div class="contacts__map-block">
                 <iframe class="lazy" src="" data-src="https://yandex.ru/map-widget/v1/-/CCUmzEuJ~C" allowfullscreen="true"></iframe>
@@ -1035,6 +1002,7 @@
 				</i>
                         <span class="contact__text">
 					<b>Наш адрес:</b> город Архангельск,
+					<br>
 					СНТ Транспортник, стр.11
 				</span>
                     </p>
@@ -1087,6 +1055,7 @@
 
                     <a href="#" class="contacts__feedback-btn button modal-opener" data-modal="modal-feedback">
                         <span>Заказать обратный звонок</span>
+                        <i class="button__arrow"></i>
                     </a>
                 </div>
             </div>
@@ -1115,26 +1084,30 @@
             <div class="modal__container modal__container--feedback" id="modal-feedback">
                 <h3 class="modal__title">Заказать обратный звонок</h3>
 
-                <form class="modal__form modal-form" id="form-feedback" action="#" method="post">
+                <form class="modal__form modal-form form" id="form-feedback" action="#" method="post">
                     <p class="modal-form__field">
-                        <input class="modal-form__input input phoneMask" id="modal-feedback-phone" type="tel" name="phone" placeholder="Ваш телефон" required />
+                        <input class="modal-form__input form__input phoneMask" id="modal-feedback-phone" type="tel" name="phone" placeholder="Ваш телефон" required />
                     </p>
 
-                    <p class="modal-form__agreement agreement-check">
-                        <label class="checkbox agreement-check__checkbox">
-                            <input type="checkbox" name="agreement" id="modal-feedback-agreement" required>
-                            <svg class="checkbox__check-icon">
+                    <p class="modal-form__agreement form__agreement">
+                        <label class="checkbox form__checkbox">
+                            <input type="checkbox" name="agreement" required>
+                            <svg class="checkbox__icon">
                                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
                             </svg>
                         </label>
-                        <span class="agreement-check__text">
-						<b>Согласен</b> на обработку и передачу
+
+                        <span class="form__agreement-text">
+						Согласен на обработку и передачу
 						персональных данных в соответствии с
-						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+						<a class="form__agreement-link" href="#">пользовательсикм соглашением</a>
 					</span>
                     </p>
 
-                    <button class="button modal-form__submit-btn" type="submit">Перезвоните мне</button>
+                    <button class="button modal-form__submit-btn" type="submit">
+                        <span>Перезвоните мне</span>
+                        <i class="button__arrow"></i>
+                    </button>
                 </form>
             </div>
 
@@ -1142,49 +1115,50 @@
                 <h3 class="modal__title">Воспользоваться предложением</h3>
                 <p class="modal__subtitle">Для того что бы воспользоваться предложением заполните форму</p>
 
-                <form class="modal__form modal-form" id="form-promotion" action="#" method="post">
+                <form class="modal__form modal-form form" id="form-promotion" action="#" method="post">
                     <div class="modal-form__group">
                         <p class="modal-form__field">
-                            <input class="modal-form__input input phoneMask" id="modal-promotion-phone" type="tel" name="phone" placeholder="Ваш телефон" required />
+                            <input class="modal-form__input form__input phoneMask" id="modal-promotion-phone" type="tel" name="phone" placeholder="Ваш телефон" required />
                         </p>
                         <p class="modal-form__field">
-                            <input class="modal-form__input input" id="modal-promotion-name" type="text" name="hall" placeholder="Выберите зал" required />
+                            <input class="modal-form__input form__input" id="modal-promotion-name" type="text" name="hall" placeholder="Выберите зал" required />
                         </p>
                     </div>
 
-                    <p class="modal-form__agreement agreement-check">
-                        <label class="checkbox agreement-check__checkbox">
-                            <input type="checkbox" name="agreement" id="modal-promotion-agreement" required>
-                            <svg class="checkbox__check-icon">
+                    <p class="modal-form__agreement form__agreement">
+                        <label class="checkbox form__checkbox">
+                            <input type="checkbox" name="agreement" required>
+                            <svg class="checkbox__icon">
                                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
                             </svg>
                         </label>
-                        <span class="agreement-check__text">
-						<b>Согласен</b> на обработку и передачу
+
+                        <span class="form__agreement-text">
+						Согласен на обработку и передачу
 						персональных данных в соответствии с
-						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+						<a class="form__agreement-link" href="#">пользовательсикм соглашением</a>
 					</span>
                     </p>
 
-                    <button class="button modal-form__submit-btn" type="submit">Получить код</button>
+                    <button class="button modal-form__submit-btn" type="submit"><span>Получить код</span><i class="button__arrow"></i></button>
                 </form>
             </div>
 
             <div class="modal__container" id="modal-review">
                 <h3 class="modal__title">Оставьте свой отзыв</h3>
 
-                <form class="modal__form modal-form" id="form-review" action="#" method="post">
+                <form class="modal__form modal-form form" id="form-review" action="#" method="post">
                     <div class="modal-form__group">
                         <p class="modal-form__field">
-                            <input class="modal-form__input input" type="text" name="name" id="modal-review-name" placeholder="Ваше имя" required>
+                            <input class="modal-form__input form__input" type="text" name="name" id="modal-review-name" placeholder="Ваше имя" required>
                         </p>
                         <p class="modal-form__field">
-                            <input class="modal-form__input input phoneMask" type="tel" name="phone" id="modal-review-phone" placeholder="Ваш телефон" required>
+                            <input class="modal-form__input form__input phoneMask" type="tel" name="phone" id="modal-review-phone" placeholder="Ваш телефон" required>
                         </p>
                     </div>
 
                     <p class="modal-form__field">
-                        <textarea class="modal-form__input input input--textarea" name="message" id="modal-review-message" placeholder="Ваш отзыв"></textarea>
+                        <textarea class="modal-form__input form__input form__input--textarea" name="message" id="modal-review-message" placeholder="Ваш отзыв"></textarea>
                     </p>
 
                     <fieldset class="modal-form__rating">
@@ -1224,21 +1198,22 @@
                         </div>
                     </fieldset>
 
-                    <p class="modal-form__agreement agreement-check">
-                        <label class="checkbox agreement-check__checkbox">
-                            <input type="checkbox" name="agreement" id="modal-review-agreement" required>
-                            <svg class="checkbox__check-icon">
+                    <p class="modal-form__agreement form__agreement">
+                        <label class="checkbox form__checkbox">
+                            <input type="checkbox" name="agreement" required>
+                            <svg class="checkbox__icon">
                                 <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
                             </svg>
                         </label>
-                        <span class="agreement-check__text">
-						<b>Согласен</b> на обработку и передачу
+
+                        <span class="form__agreement-text">
+						Согласен на обработку и передачу
 						персональных данных в соответствии с
-						<a class="agreement-check__link" href="#">пользовательсикм соглашением</a>
+						<a class="form__agreement-link" href="#">пользовательсикм соглашением</a>
 					</span>
                     </p>
 
-                    <button class="button modal-form__submit-btn" type="submit">Оставить отзыв</button>
+                    <button class="button modal-form__submit-btn" type="submit"><span>Оставить отзыв</span><i class="button__arrow"></i></button>
                 </form>
             </div>
         </div>
@@ -1248,7 +1223,6 @@
 
     <!-- JS -->
 
-    <!-- <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=3398ec65-e86b-4576-913c-20b902a73916"></script> -->
     <script src="assets/js/main.js"></script>
 
     <!-- End JS -->

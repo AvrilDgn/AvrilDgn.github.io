@@ -15672,31 +15672,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		overflow: true,
 	});
 
-	// window.addEventListener("scroll", function (e) { parallaxScroll(e); });
-
-	// function parallaxScroll(e) {
-	// 	//Определяем, в каком направлении была прокрутка
-	// 	let d = 0;
-
-	// 	if (window.pageYOffset > scrollPosition) {
-	// 		d = 1;
-	// 	}
-	// 	else {
-	// 		d = -1;
-	// 	}
-
-	// 	scrollPosition = window.pageYOffset;
-
-	// 	//Двигаем все частицы в заданном направлении
-	// 	for (let i = 0; i < parallaxBGs.length; i++) {
-	// 		parallaxBGs[i].Move(d);
-	// 	}
-
-	// 	//Выводим всё на страницу
-	// 	Fill();
-	// }
-
-
 
 	/**
 	 * modals
@@ -15795,24 +15770,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	forms.forEach(form => {
 
-		// let checkBox = form.querySelector('.agreement-check input');
-		// let submitBtn = form.querySelector('button[type="submit"]');
-
-		// checkBoxValidation(checkBox, submitBtn);
-
-		// checkBox.onchange = function (e) {
-		// 	checkBoxValidation(this, submitBtn);
-		// }
-
-		// function checkBoxValidation(cBox, submitBtn) {
-		// 	if (cBox.checked) {
-		// 		submitBtn.disabled = false;
-		// 	}
-		// 	else {
-		// 		submitBtn.disabled = true;
-		// 	}
-		// }
-
 		//check inputs before sending form
 		form.onsubmit = function (e) {
 
@@ -15820,7 +15777,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 			reqInputs.forEach(input => {
 				let parent = input.parentNode;
-				let message = parent.querySelector('.validation-message');
+				let message = parent.querySelector('.form__validation-message');
 
 				switch (input.getAttribute("type")) {
 					case "tel":
@@ -15831,7 +15788,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 							}
 
 							message = document.createElement('span');
-							message.classList.add('validation-message');
+							message.classList.add('form__validation-message');
 							message.textContent = "Введите правильный номер телефона";
 							parent.appendChild(message);
 							new DLAnimate().show(message, {
@@ -15852,7 +15809,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 							}
 
 							message = document.createElement('span');
-							message.classList.add('validation-message');
+							message.classList.add('form__validation-message');
 							message.textContent = "Подтвердите согласие на обработку и передачу персональных данных";
 							parent.appendChild(message);
 							new DLAnimate().show(message, {
@@ -15883,105 +15840,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	/**
-	 * Reviews Slider
-	 */
-
+	
 	core_class.use([navigation, pagination_pagination, thumbs]);
-
-	let reviewsSlider = new core_class('.reviews__slider .reviews__wrapper', {
-		spaceBetween: 15,
-		wrapperClass: 'reviews__list',
-		slideClass: 'reviews__item',
-		slidesPerView: 1,
-		watchSlidesVisibility: true,
-
-		pagination: {
-			el: ".reviews__pagination",
-			bulletClass: "bullet",
-			bulletActiveClass: "bullet--active",
-			clickable: true,
-		},
-
-		navigation: {
-			nextEl: ".reviews__arrow.arrow--next",
-			prevEl: ".reviews__arrow.arrow--prev",
-			disabledClass: 'arrow--disabled',
-		},
-
-		breakpoints: {
-			// 576: {
-			// },
-			768: {
-				slidesPerView: 2,
-			},
-			// 992: {
-			// },
-			// 1100: {
-			// },
-			1300: {
-				slidesPerView: 3,
-			},
-		},
-	});
-
-	//change slider and show full reviews
-
-	let reviewsShowFullBtn = document.querySelectorAll('.reviews__show-full-btn');
-
-	reviewsShowFullBtn.forEach(btn => {
-		btn.addEventListener('click', function (e) {
-			e.preventDefault();
-
-			new DLAnimate().hide(this, {
-				name: 'fade',
-				track: 'animation'
-			});
-
-			let slider = reviewsSlider.el;
-			let arrows = slider.parentElement.parentElement.querySelectorAll('.arrow');
-			let pagination = slider.parentElement.parentElement.querySelector('.pagination');
-			let slides = reviewsSlider.slides;
-			let visibleSlides = reviewsSlider.visibleSlides;
-			let destroyed = false;
-			let hiddenSlides = diff(slides, visibleSlides);
-
-			arrows.forEach((arrow) => {
-				new DLAnimate().hide(arrow, {
-					name: 'fade',
-					track: 'animation',
-					afterLeave: function (arrow) {
-						if (!destroyed) {
-
-							destroyed = true;
-							reviewsSlider.destroy();
-
-							hiddenSlides.forEach((slide) => {
-								slide.style.display = "none";
-								slider.classList.add('no-slider');
-
-								new DLAnimate().show(slide, {
-									name: 'fade',
-									track: 'animation'
-								});
-							});
-						}
-					}
-				});
-			});
-
-			new DLAnimate().hide(pagination, {
-				name: 'fade',
-				track: 'animation',
-			});
-
-			function diff(arr1, arr2) {
-				return arr1.filter(i => arr2.indexOf(i) < 0)
-					.concat(arr2.filter(i => arr1.indexOf(i) < 0))
-			}
-		})
-	});
-
 
 	/**
 	 * Halls List Slider
@@ -16101,13 +15961,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			bulletActiveClass: "bullet--active",
 			clickable: true,
 		},
-
+		
 		breakpoints: {
 			992: {
 				slidesPerView: 2,
 			},
-			1300: {
-				slidesPerView: 3,
+			1200: {
+				slidesPerView: 1,
 			},
 		},
 	});
@@ -16214,11 +16074,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 					// enabled: true,
 				},
 				992: {
-					slidesPerView: 4,
+					slidesPerView: 3,
 					// enabled: true,
 				},
 				1200: {
-					slidesPerView: 4,
+					slidesPerView: 3,
 					spaceBetween: 40,
 					// enabled: true,
 				},
@@ -16250,17 +16110,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		});
 
 		let mediaQuery = window.matchMedia('screen and (min-width: 769px)');
-		
-		hallSliderThumb.slideNext(0);
-		
+
+
 		function switchingThumb(e) {
 			if (e.matches) {
 				hallSliderThumb.enabled = true;
 			} else {
+				hallSliderThumb.slideNext(0);
 				hallSliderThumb.enabled = false;
 			}
 		}
-	
+
 		mediaQuery.addEventListener("change", switchingThumb);
 		switchingThumb(mediaQuery);
 
@@ -16286,7 +16146,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			hallSliderThumb.slideNext();
 			hallSliderThumb.update(true);
 			hallSliderThumb.enabled = false;
-			
+
 		});
 
 		hallSliderMain.on('slidePrevTransitionStart', function () {
@@ -16295,7 +16155,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			hallSliderThumb.slidePrev();
 			hallSliderThumb.update(true);
 			hallSliderThumb.enabled = false;
-			
+
 		});
 
 		function addMorePhoto() {
@@ -16331,13 +16191,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Advantages tooltips
 	 */
 
-	let advantagesItems = document.querySelectorAll('.advgs__item');
+	let advantagesItems = document.querySelectorAll('.advantages__item');
 
 	advantagesItems.forEach(item => {
 		let isShowed = false;
 
 		item.addEventListener('click', e => {
-			item.classList.add('advgs__item--showed');
+			item.classList.add('advantages__item--showed');
 
 			document.addEventListener('click', handler);
 
@@ -16345,8 +16205,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 		function handler(e) {
-			if (isShowed && !item.querySelector('.advgs__text').contains(e.target)) {
-				item.classList.remove('advgs__item--showed');
+			if (isShowed && !item.querySelector('.advantages__text').contains(e.target)) {
+				item.classList.remove('advantages__item--showed');
 				document.removeEventListener('click', handler);
 
 				isShowed = false;
@@ -16400,6 +16260,70 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			});
 		});
 	});
+
+
+
+	/**
+	 * Tooltip
+	 */
+
+	let tooltipOpeners = document.querySelectorAll('.tooltip-opener');
+
+	tooltipOpeners.forEach((opener) => {
+		opener.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			let rect = opener.getBoundingClientRect();
+			openTooltip(opener.dataset.tooltip, rect.left + pageXOffset + rect.width / 2, rect.top + pageYOffset - rect.height / 2);
+		});
+	});
+
+	function openTooltip(tooltipBody, posX, posY) {
+		let tooltip = document.createElement('div');
+		let tooltipArrow = document.createElement('div');
+
+		tooltip.classList.add('tooltip');
+		tooltipArrow.classList.add('tooltip__arrow');
+
+		if (tooltipBody === undefined || tooltipBody === "") {
+			tooltip.textContent = "Нет информации.";
+		} else {
+			tooltip.textContent = tooltipBody;
+		}
+
+		document.body.appendChild(tooltip);
+		tooltip.appendChild(tooltipArrow);
+
+		tooltip.style.top = posY + 'px';
+		tooltip.style.left = posX + 'px';
+		tooltip.style.display = 'none';
+
+		new DLAnimate().show(tooltip, {
+			name: 'fade',
+			track: 'animation',
+			duration: 200,
+			afterEnter: function () {
+				document.addEventListener('click', function (e) {
+					if (e.target !== tooltip && !tooltip.contains(e.target)) {
+						closeTooltip(tooltip);
+					}
+				});
+			},
+		});
+	}
+
+	function closeTooltip(tooltip) {
+
+		new DLAnimate().hide(tooltip, {
+			name: 'fade',
+			track: 'animation',
+			duration: 200,
+			afterLeave: function () {
+				tooltip.remove();
+			},
+		});
+	}
+
 
 });
 
