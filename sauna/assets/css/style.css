@@ -2124,6 +2124,8 @@ button:focus {
 }
 
 .bullet {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   margin: 0 10px;
   display: block;
   width: 10px;
@@ -3293,10 +3295,6 @@ button:focus {
       flex-shrink: 0;
 }
 
-.promotions__arrow {
-  z-index: 3;
-}
-
 .promotions__pagination {
   display: none;
 }
@@ -4226,17 +4224,17 @@ button:focus {
 }
 
 .hall-section__more-photo svg {
-  width: 24px;
-  height: 24px;
-  fill: white;
+  width: 20px;
+  height: 18px;
+  fill: #b4b4b4;
 }
 
 .hall-section__more-photo span {
-  margin-top: 1px;
+  margin-top: 5px;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.1875;
-  color: white;
+  font-size: 18px;
+  line-height: 1.35714;
+  color: #b4b4b4;
 }
 
 .hall-section__thumb {
@@ -4338,6 +4336,11 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.hall-description__column {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .hall-description__column:first-child {
@@ -4794,6 +4797,15 @@ button:focus {
     width: 209.5px;
     height: 322.5px;
   }
+
+  .hall-section__info-block {
+    padding: 20px 30px;
+  }
+
+  .hall-description__column:first-child {
+    padding-right: 30px;
+    width: 260px;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -4953,17 +4965,6 @@ button:focus {
   .promotions__wrapper {
     margin-left: -10px;
     margin-right: -10px;
-  }
-
-  .promotions__arrow {
-    position: relative;
-    width: 40px;
-    height: 40px;
-  }
-
-  .promotions__arrow::before {
-    width: 8px;
-    height: 8px;
   }
 
   .promotions__slider-navigation {
@@ -5236,8 +5237,12 @@ button:focus {
     display: none;
   }
 
+  .hall-section__thumb-wrapper {
+    height: 190px;
+  }
+
   .hall-section__info-block {
-    padding: 0 40px;
+    padding: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -5245,6 +5250,23 @@ button:focus {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: none;
+  }
+
+  .hall-section__info-block > * {
+    position: relative;
+    width: 100%;
+  }
+
+  .hall-section__info-block > *:not(:first-child) {
+    padding-left: 0;
+  }
+
+  .hall-section__info-block > *:not(:first-child)::before {
+    display: none;
   }
 
   .hall-section__arrow.arrow--next {
@@ -5256,7 +5278,9 @@ button:focus {
   }
 
   .hall-section__slider-navigation {
-    margin-top: 30px;
+    position: relative;
+    top: 0;
+    margin-top: 32px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5279,19 +5303,67 @@ button:focus {
     height: 8px;
   }
 
+  .hall-section__arrow.arrow--prev {
+    margin-right: 50px;
+    left: 0;
+  }
+
+  .hall-section__arrow.arrow--next {
+    margin-left: 50px;
+    right: 0;
+  }
+
   .hall-section__pagination {
     position: relative;
     margin: 0 5px;
+    bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: auto;
   }
 
+  .hall-description__title {
+    margin-bottom: 0;
+  }
+
+  .hall-description__column:first-child {
+    padding-right: 60px;
+    width: 50%;
+  }
+
+  .hall-prices {
+    padding: 20px 10px 0;
+    margin-top: 30px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    background: white;
+    border: 1px solid #70873a;
+    -webkit-box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+            box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .hall-prices__column {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .hall-prices__days {
+    margin-bottom: 15px;
+  }
+
+  .hall-prices__price {
+    margin-top: 10px;
+  }
+
   .hall-prices__discount-btn {
-    margin-left: -15px;
-    margin-right: -15px;
-    width: calc(100% + 30px);
+    margin-top: 30px;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px);
     max-width: initial;
     border-radius: 0;
   }
@@ -5535,17 +5607,6 @@ button:focus {
             order: 6;
   }
 
-  .promotions__arrow {
-    width: 30px;
-    height: 30px;
-    top: calc(50% - 15px);
-  }
-
-  .promotions__arrow::before {
-    width: 9px;
-    height: 9px;
-  }
-
   .about {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
@@ -5655,12 +5716,18 @@ button:focus {
     display: block;
   }
 
-  .hall-section__thumb {
-    height: 86px;
+  .hall-section__more-photo span {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.35714;
   }
 
   .hall-section__thumb .hall-section__arrow {
     display: none;
+  }
+
+  .hall-section__thumb-wrapper {
+    height: 108px;
   }
 
   .hall-section__arrow.arrow--next {
@@ -5718,17 +5785,41 @@ button:focus {
     width: 100%;
   }
 
+  .halls-list__slider-navigation {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .halls-list__arrow.arrow--prev {
+    margin-right: 10px;
+    left: 0;
+  }
+
+  .halls-list__arrow.arrow--next {
+    margin-left: 10px;
+    right: 0;
+  }
+
   .promotions__wrapper {
     margin-left: -15px;
     margin-right: -15px;
     width: calc(100% + 30px);
   }
 
+  .promotions__slider-navigation {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
   .promotions__arrow.arrow--prev {
+    margin-right: 10px;
     left: 0;
   }
 
   .promotions__arrow.arrow--next {
+    margin-left: 10px;
     right: 0;
   }
 
@@ -5757,11 +5848,49 @@ button:focus {
     padding: 0;
   }
 
+  .hall-section__slider-navigation {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
   .hall-section__arrow.arrow--prev {
+    margin-right: 10px;
     left: 0;
   }
 
   .hall-section__arrow.arrow--next {
+    margin-left: 10px;
     right: 0;
+  }
+
+  .hall-description__group {
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 300px;
+  }
+
+  .hall-description__column {
+    margin-top: 20px;
+  }
+
+  .hall-description__column:first-child {
+    padding: 0;
+    width: 100%;
+  }
+
+  .hall-prices__group {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  .hall-prices__column {
+    margin-top: 30px;
+    min-width: 200px;
+    padding-right: 0;
   }
 }

@@ -15840,7 +15840,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	
+
 	core_class.use([navigation, pagination_pagination, thumbs]);
 
 	/**
@@ -15961,7 +15961,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			bulletActiveClass: "bullet--active",
 			clickable: true,
 		},
-		
+
 		breakpoints: {
 			992: {
 				slidesPerView: 2,
@@ -16064,6 +16064,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				prevEl: ".hall-section__arrow.arrow--prev",
 				disabledClass: 'arrow--disabled',
 			},
+			pagination: {
+				el: ".hall-section__pagination",
+				bulletClass: "bullet",
+				bulletActiveClass: "bullet--active",
+				clickable: true,
+			},
 
 			breakpoints: {
 				576: {
@@ -16079,6 +16085,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				},
 				1200: {
 					slidesPerView: 3,
+					spaceBetween: 20,
+					// enabled: true,
+				},
+				1300: {
+					slidesPerView: 3,
 					spaceBetween: 40,
 					// enabled: true,
 				},
@@ -16092,18 +16103,18 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			wrapperClass: 'hall-section__slider-wrapper',
 			slideClass: 'hall-section__item',
 
-			pagination: {
-				el: ".hall-section__pagination",
-				bulletClass: "bullet",
-				bulletActiveClass: "bullet--active",
-				clickable: true,
-			},
+			// pagination: {
+			// 	el: ".hall-section__pagination",
+			// 	bulletClass: "bullet",
+			// 	bulletActiveClass: "bullet--active",
+			// 	clickable: true,
+			// },
 
-			navigation: {
-				nextEl: ".hall-section__arrow.arrow--next",
-				prevEl: ".hall-section__arrow.arrow--prev",
-				disabledClass: 'arrow--disabled',
-			},
+			// navigation: {
+			// 	nextEl: ".hall-section__arrow.arrow--next",
+			// 	prevEl: ".hall-section__arrow.arrow--prev",
+			// 	disabledClass: 'arrow--disabled',
+			// },
 			// thumbs: {
 			// 	swiper: hallSliderThumb,
 			// },
@@ -16261,6 +16272,35 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		});
 	});
 
+
+	/**
+	 * Hide/Show reviews
+	 */
+
+	let reviews = document.querySelectorAll('.review');
+	let reviewsShowBtn = document.querySelector('.reviews__show-full-btn');
+	let hiddenReviews = [];
+
+	if (reviews.length > 3) {
+		for (let i = 3; i < reviews.length; i++) {
+			reviews[i].style.display = 'none';
+			hiddenReviews.push(reviews[i]);
+		}
+	} else {
+		reviewsShowBtn.style.display = 'none';
+	}
+	
+	reviewsShowBtn.addEventListener('click', function(e) {
+		e.preventDefault();
+		
+		for (let i = 0; i < hiddenReviews.length; i++) {
+			new DLAnimate().show(hiddenReviews[i], {
+				name: 'fade',
+				track: 'animation',
+				duration: 200
+			});
+		}
+	});
 
 
 	/**
