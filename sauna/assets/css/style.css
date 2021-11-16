@@ -5510,17 +5510,25 @@ button:focus {
     padding: 20px 0;
   }
 
+  .footer__link {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .footer__link:hover {
+    text-decoration: underline;
+  }
+
+  .footer__link::after {
+    display: none;
+  }
+
   .footer__link:not(:first-child) {
     margin-left: 0;
   }
 
   .footer__link:not(:first-child)::before {
     display: none;
-  }
-
-  .footer__link {
-    font-size: 14px;
-    line-height: 1.35;
   }
 
   .hero__title {
