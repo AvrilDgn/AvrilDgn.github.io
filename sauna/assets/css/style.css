@@ -2164,7 +2164,7 @@ button:focus {
   position: absolute;
   width: 20px;
   height: 20px;
-  bottom: 0;
+  bottom: 1px;
   left: 50%;
   -webkit-transform: translate(-50%, 100%);
       -ms-transform: translate(-50%, 100%);
@@ -3932,6 +3932,11 @@ button:focus {
 
 .contacts__socials {
   margin-top: 37px;
+  width: 100%;
+}
+
+.contacts__socials .socials__item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .contacts__feedback-btn {
@@ -5505,6 +5510,10 @@ button:focus {
     padding: 20px 0;
   }
 
+  .footer__link:not(:first-child) {
+    margin-left: 0;
+  }
+
   .footer__link:not(:first-child)::before {
     display: none;
   }
@@ -5892,5 +5901,12 @@ button:focus {
     margin-top: 30px;
     min-width: 200px;
     padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .tooltip__arrow {
+    left: initial;
+    right: 20px;
   }
 }
