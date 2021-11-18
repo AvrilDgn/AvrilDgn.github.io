@@ -1163,7 +1163,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		headerHeight = header.offsetHeight;
 	});
 
-	
+
 	/**
 	 *	Header
 	 */
@@ -1233,64 +1233,170 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * modals
+	 * Quiz
 	 */
 
-	const modalOpenBtns = document.querySelectorAll('.modal-opener');
-	const modal = document.querySelector('.modal');
-	const modalCloseBtn = modal.querySelector('.modal__close-btn');
+	let gender;
 
-	if (modal) {
-		for (let i = 0; i < modalOpenBtns.length; i++) {
-			const openBtn = modalOpenBtns[i],
-				modalId = "#" + openBtn.dataset.modal,
-				modalEl = document.querySelector(modalId);
+	let genderButtons = document.querySelectorAll('.gender__input');
+	let startBlock = document.querySelector('.quiz__start-block');
+	let nextBtn = document.querySelector('.quiz__next-button');
+	let btnPercent = nextBtn.querySelector('.button__percent');
+	let stageWrapper = document.querySelector('.quiz__stage-wrapper');
+	let stages = stageWrapper.querySelectorAll('.stage');
+	let insertGender = document.querySelector('.quiz__insert-gender');
 
-			if (!modalEl) {
-				continue;
-			}
+	let questionId = 0;
+	let curQuestion = startBlock;
 
-			const overlay = modal.querySelector('.modal__overlay');
+	genderButtons.forEach(btn => {
+		btn.addEventListener('change', function () {
 
-			openBtn.addEventListener("click", openModal);
+			gender = this.value;
 
-			function openModal(e) {
-				e.preventDefault();
-				modal.classList.add('modal--show');
-				modalEl.style.display = 'flex';
-				modalEl.appendChild(modalCloseBtn);
-				scroll_lock_default.a.disablePageScroll(modal);
+			new DLAnimate().hide(curQuestion, {
+				name: 'fade',
+				track: 'animation',
+				afterLeave: function (el) {
 
-				let handler = () => {
-					modalCloseBtn.addEventListener("click", closeModal);
-					overlay.addEventListener("click", closeModal);
-					openBtn.removeEventListener("click", openModal);
+					stages[questionId].classList.add('stage--active');
+
+					questionId++;
+
+					let opt = document.querySelector(`.quiz__question[data-stage="${questionId}"]`);
+
+					curQuestion = opt;
+
+					btnPercent.textContent = curQuestion.dataset.persent;
+
+					switch (gender) {
+						case 'female':
+							insertGender.textContent = 'женщин';
+
+							break;
+
+						case 'male':
+							insertGender.textContent = 'мужчин';
+
+							break;
+
+						default:
+							insertGender.textContent = 'человек';
+
+							break;
+					}
+
+					new DLAnimate().show(curQuestion, {
+						name: 'fade',
+						track: 'animation'
+					});
+					new DLAnimate().show(nextBtn, {
+						name: 'fade',
+						track: 'animation'
+					});
+					new DLAnimate().show(stageWrapper, {
+						name: 'fade',
+						track: 'animation',
+						beforeEnter: function (el) {
+							el.style.display = 'flex';
+						}
+					});
+
 				}
+			});
+		});
+	});
 
-				raf(() => {
-					modal.classList.add('modal--visible');
-					modal.addEventListener('transitionend', handler, { once: true });
+
+	nextBtn.addEventListener('click', function (e) {
+		new DLAnimate().hide(curQuestion, {
+			name: 'fade',
+			track: 'animation',
+			afterLeave: function (el) {
+
+				stages[questionId].classList.add('stage--active');
+
+				questionId++;
+
+				let opt = document.querySelector(`.quiz__question[data-stage="${questionId}"]`);
+
+				curQuestion = opt;
+
+				btnPercent.textContent = curQuestion.dataset.persent;
+
+				new DLAnimate().show(opt, {
+					name: 'fade',
+					track: 'animation'
 				});
+
 			}
+		});
+	})
 
-			function closeModal(e) {
-				e.preventDefault();
-				modal.classList.remove('modal--visible');
-				scroll_lock_default.a.enablePageScroll(modal);
 
-				let handler = () => {
-					modal.classList.remove('modal--show');
-					modalEl.style.display = null;
 
-					openBtn.addEventListener("click", openModal);
-					overlay.removeEventListener("click", closeModal);
-					modalCloseBtn.removeEventListener("click", closeModal);
+
+
+	/**
+	 * modals
+	 */
+	/*
+		const modalOpenBtns = document.querySelectorAll('.modal-opener');
+		const modal = document.querySelector('.modal');
+		const modalCloseBtn = modal.querySelector('.modal__close-btn');
+	
+		if (modal) {
+			for (let i = 0; i < modalOpenBtns.length; i++) {
+				const openBtn = modalOpenBtns[i],
+					modalId = "#" + openBtn.dataset.modal,
+					modalEl = document.querySelector(modalId);
+	
+				if (!modalEl) {
+					continue;
 				}
-
-				modal.addEventListener('transitionend', handler, { once: true });
+	
+				const overlay = modal.querySelector('.modal__overlay');
+	
+				openBtn.addEventListener("click", openModal);
+	
+				function openModal(e) {
+					e.preventDefault();
+					modal.classList.add('modal--show');
+					modalEl.style.display = 'flex';
+					modalEl.appendChild(modalCloseBtn);
+					scrollLock.disablePageScroll(modal);
+	
+					let handler = () => {
+						modalCloseBtn.addEventListener("click", closeModal);
+						overlay.addEventListener("click", closeModal);
+						openBtn.removeEventListener("click", openModal);
+					}
+	
+					raf(() => {
+						modal.classList.add('modal--visible');
+						modal.addEventListener('transitionend', handler, { once: true });
+					});
+				}
+	
+				function closeModal(e) {
+					e.preventDefault();
+					modal.classList.remove('modal--visible');
+					scrollLock.enablePageScroll(modal);
+	
+					let handler = () => {
+						modal.classList.remove('modal--show');
+						modalEl.style.display = null;
+	
+						openBtn.addEventListener("click", openModal);
+						overlay.removeEventListener("click", closeModal);
+						modalCloseBtn.removeEventListener("click", closeModal);
+					}
+	
+					modal.addEventListener('transitionend', handler, { once: true });
+				}
 			}
 		}
-	}
+	*/
 
 });
 

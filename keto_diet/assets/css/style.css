@@ -191,8 +191,7 @@ hr {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
-  min-height: 760px;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -321,6 +320,66 @@ hr {
   resize: none;
 }
 
+.button {
+  position: relative;
+  padding: 14px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  background-image: -o-linear-gradient(311.45deg, #F7ED42 16.77%, #F2A200 107.59%);
+  background-image: linear-gradient(138.55deg, #F7ED42 16.77%, #F2A200 107.59%);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  padding: 14px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.button:hover::before,
+.button:focus::before {
+  opacity: 0.1;
+}
+
+.button[disabled] {
+  cursor: text;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -354,6 +413,7 @@ hr {
 .header__logo {
   margin-right: 20px;
   height: 33px;
+  text-decoration: none;
 }
 
 .header__logo img {
@@ -575,7 +635,6 @@ hr {
 .footer {
   margin-top: auto;
   padding: 26px 0 16px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,6 +691,21 @@ hr {
   position: relative;
   padding-top: 43px;
   padding-bottom: 12px;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.quiz .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
 }
 
 .quiz__background {
@@ -657,12 +731,31 @@ hr {
   background-image: url(../img/man.png);
 }
 
-.quiz__stage {
+.quiz__question {
   display: none;
 }
 
-.quiz__stage--active {
+.quiz__question--active {
   display: block;
+}
+
+.quiz__option-wrapper {
+  margin: 18px -8px -8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+}
+
+.quiz__option-wrapper--column .quiz__option-item {
+  width: 100%;
+}
+
+.quiz__option-item {
+  margin: 8px;
 }
 
 .quiz__subtitle {
@@ -671,6 +764,38 @@ hr {
 
 .quiz__gender {
   margin-top: 30px;
+}
+
+.quiz__next-button {
+  margin-top: 24px;
+  margin-bottom: 26px;
+  display: none;
+  width: 100%;
+}
+
+.quiz__stage-wrapper {
+  margin-top: auto;
+  margin-left: -8px;
+  margin-right: -8px;
+  display: none;
+  width: calc(100% + 16px);
+}
+
+.quiz__stage-item {
+  margin: 0 8px;
+  width: 25%;
+}
+
+.quiz__graph {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 238px;
+}
+
+.quiz__graph img {
+  width: 100%;
+  height: auto;
 }
 
 .gender {
@@ -683,7 +808,7 @@ hr {
           justify-content: space-between;
 }
 
-.gender input {
+.gender__input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -710,6 +835,10 @@ hr {
   height: 115px;
   border-radius: 50%;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   z-index: 2;
 }
 
@@ -792,6 +921,166 @@ hr {
   color: white;
 }
 
+.stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stage__indicator {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+.stage__indicator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: -o-linear-gradient(281.78deg, #62dc42 17.76%, #53db5b 93.11%);
+  background: linear-gradient(168.22deg, #62dc42 17.76%, #53db5b 93.11%);
+  -webkit-box-shadow: 0px 6px 12px -3px rgba(14, 180, 0, 0.7), inset 0px 3px 15px rgba(255, 255, 255, 0.56);
+          box-shadow: 0px 6px 12px -3px rgba(14, 180, 0, 0.7), inset 0px 3px 15px rgba(255, 255, 255, 0.56);
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.stage__icon {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stage__icon--gender {
+  margin-top: 10px;
+  width: 29px;
+  height: 29px;
+  background-image: url(../img/gender.png);
+}
+
+.stage__icon--dumbbell {
+  margin-top: 12px;
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/dumbbell.png);
+}
+
+.stage__icon--meat {
+  margin-top: 12px;
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/meat.png);
+}
+
+.stage__icon--broccoli {
+  margin-top: 4px;
+  width: 40px;
+  height: 39px;
+  background-image: url(../img/broccoli.png);
+}
+
+.stage--active .stage__indicator::after {
+  opacity: 1;
+}
+
+.option {
+  position: relative;
+  padding: 8px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.48);
+  border-radius: 24px;
+  -webkit-box-shadow: 6px 17px 24px rgba(73, 75, 89, 0.04);
+          box-shadow: 6px 17px 24px rgba(73, 75, 89, 0.04);
+  z-index: 1;
+  -webkit-transition: color 0.25s ease;
+  -o-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.option__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: -o-linear-gradient(94.92deg, #545BFF -75.35%, #6ADBFF 171.88%);
+  background-image: linear-gradient(355.08deg, #545BFF -75.35%, #6ADBFF 171.88%);
+  -webkit-box-shadow: 0px 8px 16px rgba(92, 118, 255, 0.16);
+          box-shadow: 0px 8px 16px rgba(92, 118, 255, 0.16);
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  z-index: -1;
+}
+
+.option__name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.029em;
+  color: black;
+  -webkit-transition: color 0.25s ease;
+  -o-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.option__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.option__input:checked + * + .option__background {
+  opacity: 1;
+}
+
+.option__input:checked + .option__name {
+  color: white;
+}
+
+.option--active {
+  color: white;
+}
+
+.option--active::after {
+  opacity: 1;
+}
+
 @media screen and (max-width: 1200px) {
   .quiz__background--woman {
     left: -286px;
@@ -805,7 +1094,6 @@ hr {
 @media screen and (max-width: 992px) {
   .main {
     min-height: 100vh;
-    height: initial;
   }
 
   .quiz__background {
