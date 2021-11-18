@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KETO diet</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header" data-scroll-lock-fill-gap>
+            <div class="container">
+
+                <a href="index.html" class="header__logo">
+                    <img class="logo__icon" src="assets/img/logo.png" alt="логотип">
+                </a>
+
+                <a class="header__menu-open" href="#open-menu">
+                    <span></span>
+                </a>
+
+                <div class="header__overlay"></div>
+
+                <div class="header__menu">
+
+                    <a class="header__menu-close" href="#close-menu"><span></span></a>
+
+                    <nav class="nav header__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Политика обработки данных</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Оферта</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Политика конфиденциальности</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Тарифы</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Quiz Block -->
+        <section id="quiz" class="quiz">
+            <div class="container">
+
+                <div class="quiz__stage quiz__stage--active" data-stage="start">
+                    <h1 class="quiz__title title">Пройдите наш тест за одну минуту и мы рассчитаем ваш индивидуальный план питания</h1>
+                    <h2 class="quiz__subtitle subtitle">Укажите ваш пол</h2>
+
+                    <div class="quiz__gender gender">
+                        <label class="gender__type" data-gender="female">
+                            <input type="radio" name="gender" id="gender" value="female">
+                            <i class="gender__icon"></i>
+                            <span class="gender__name">Женский</span>
+                        </label>
+
+                        <label class="gender__type" data-gender="male">
+                            <input type="radio" name="gender" id="gender" value="male">
+                            <i class="gender__icon"></i>
+                            <span class="gender__name">Мужской</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz__stage" data-stage="1">
+                    <h2 class="quiz__title title">Физическая активность</h2>
+                </div>
+
+                <div class="quiz__stage" data-stage="2">
+                    <h2 class="quiz__title title">Источник белков</h2>
+                    <p class="quiz__subtitle subtitle">Выберите продукты, которые вы хотели ли бы включить в план</p>
+                </div>
+
+
+
+
+                <div class="quiz__background quiz__background--woman"></div>
+                <div class="quiz__background quiz__background--man"></div>
+            </div>
+        </section>
+        <!-- End Quiz Block -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="footer__copy-block">
+                    Продолжая, Вы соглашаетесь с <br>
+                    <a href="#">Политика обработки данных</a>
+                    |
+                    <a href="#">Оферта</a> <br>
+                    <a href="#">Политика конфиденциальности</a>
+                    |
+                    <a href="#">Тарифы</a> <br>
+			Все права защищены
+                </p>
+
+                <p class="footer__contacts-block">
+                    <b>Контактная информация:</b>
+                    <span>ООО «Мелетон» ИНН: 7722480101 ОГРН: 1197746603780</span>
+                    <b>Юридический адрес:</b>
+                    <span>111024 Город Москва, Шоссе Энтузиастов, Дом 9, Кв Эт 3 Пом 1 Ком 21</span>
+                </p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+    <!-- End Content -->
+
+    <!-- Modal -->
+
+    <!-- <div class="modal" data-scroll-lock-fill-gap>
+	<div class="modal__overlay"></div>
+	<div class="modal__wrapper">
+		<a class="modal__close-btn" href="#"></a>
+
+		<div class="modal__container modal__container--feedback" id="modal-feedback">
+			<h3 class="modal__title">Заказать обратный звонок</h3>
+
+			<form class="modal__form modal-form form" id="form-feedback" action="#" method="post">
+				<p class="modal-form__field">
+					<input class="modal-form__input form__input phoneMask" id="modal-feedback-phone" type="tel" name="phone"
+						placeholder="Ваш телефон" required />
+				</p>
+
+				<p class="modal-form__agreement form__agreement">
+					<label class="checkbox form__checkbox">
+						<input type="checkbox" name="agreement" required>
+						<svg class="checkbox__icon">
+							<use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+						</svg>
+					</label>
+
+					<span class="form__agreement-text">
+						Согласен на обработку и передачу
+						персональных данных в соответствии с
+						<a class="form__agreement-link" href="#">пользовательским соглашением</a>
+					</span>
+				</p>
+				
+				<button class="button modal-form__submit-btn" type="submit">
+					<span>Перезвоните мне</span>
+					<i class="button__arrow"></i>
+				</button>
+			</form>
+		</div>
+
+	</div>
+</div> -->
+
+    <!-- End Modal -->
+
+    <!-- JS -->
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- End JS -->
+
+</body>
+
+</html>
