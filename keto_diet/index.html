@@ -55,7 +55,7 @@
         <!-- End Header -->
 
         <!-- Quiz Block -->
-        <section id="quiz" class="quiz">
+        <div id="quiz" class="quiz">
             <div class="container">
 
                 <div class="quiz__start-block">
@@ -438,7 +438,7 @@
                         </li>
                         <li class="quiz__stage-item stage">
                             <div class="stage__indicator"></div>
-                            <i class="stage__icon stage__icon--profile"></i>
+                            <i class="stage__icon stage__icon--form"></i>
                         </li>
                         <li class="quiz__stage-item stage">
                             <div class="stage__indicator"></div>
@@ -447,10 +447,152 @@
                     </ul>
                 </div>
 
+                <div class="quiz__finite-wrap">
+                    <div class="quiz__personal-plan plan">
+                        <h2 class="quiz__title title">Ваш персональный <br> план готов</h2>
+
+                        <ul class="plan__list">
+                            <li class="plan__item">
+                                <i class="plan__icon plan__icon--settings"></i>
+                                <p class="plan__text-block">
+                                    <span class="plan__value">24,31</span>
+                                    <span class="plan__type">Ваш ИМТ</span>
+                                    <span class="plan__meaning">норма</span>
+                                </p>
+                            </li>
+                            <li class="plan__item">
+                                <i class="plan__icon plan__icon--person"></i>
+                                <p class="plan__text-block">
+                                    <span class="plan__value">40 лет</span>
+                                    <span class="plan__type">Метаболический возраст</span>
+                                    <span class="plan__meaning plan__meaning--rose">отклонение</span>
+                                </p>
+                            </li>
+                            <li class="plan__item">
+                                <i class="plan__icon plan__icon--speedometer"></i>
+                                <p class="plan__text-block">
+                                    <span class="plan__value">2480-2580</span>
+                                    <span class="plan__type">Рекомендуемое количество калорий</span>
+                                </p>
+                            </li>
+                            <li class="plan__item">
+                                <i class="plan__icon plan__icon--scales"></i>
+                                <p class="plan__text-block">
+                                    <span class="plan__value plan__value--green">79 кг</span>
+                                    <span class="plan__type">Достижимый вес <br> после 28 дней диеты</span>
+                                </p>
+                            </li>
+                        </ul>
+
+                        <div class="plan__statistics statistics">
+                            <p class="statistics__percent">84%</p>
+                            <p class="statistics__desc">людей с похожими параметрами сбросили вес благодаря кето-диете</p>
+                        </div>
+
+                        <button class="plan__btn button modal-opener" data-modal="modal-trial">Получить личный план</button>
+                    </div>
+
+                    <div class="quiz__reviews reviews">
+                        <h2 class="quiz__title title">Они уже сделали это</h2>
+
+                        <div class="reviews__slider">
+                            <ul class="reviews__list">
+                                <li class="reviews__item review-card">
+                                    <div class="review-card__head">
+                                        <div class="review-card__image">
+                                            <img src="assets/img/reviews/review-1.jpg" alt="фотография автора отзыва">
+                                        </div>
+
+                                        <div class="review-card__block">
+                                            <p class="review-card__name">Мария</p>
+                                            <p class="review-card__age">24 года</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="review-card__text">
+                                        Как же я счастлива, что и в Россию пришла нашумевшая, возродившаяся в Америке кето диета,
+                                        которая многих спасла от ожирения. Этот план питания невероятно разнообразен, сбалансирован и
+                                        рецепты нереально вкусные. Спасибо, ребята! Я хожу в магазин раз в неделю и покупаю все
+                                        продукты. Результат недолго заставлял себя ждать! Планирую и дальше правильно питаться и
+                                        подтянуть на этот индивидуальный план питания своих подруг! Оно того стоит.
+                                    </p>
+                                </li>
+                                <li class="reviews__item review-card">
+                                    <div class="review-card__head">
+                                        <div class="review-card__image">
+                                            <img src="assets/img/reviews/review-2.jpg" alt="фотография автора отзыва">
+                                        </div>
+
+                                        <div class="review-card__block">
+                                            <p class="review-card__name">Людмила</p>
+                                            <p class="review-card__age">35 лет</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="review-card__text">
+                                        Очень эффективная диета! Наконец-то нашла индивидуально разработанный план по кето диете, ведь
+                                        данная система питания очень эффективна! Самый быстрый, простой и вкусный способ сбросить лишние
+                                        килограммы и полностью сменить гардероб! Я влезла в свои старые джинсы. Урааааа! Буду
+                                        рекомендовать план питания подругам, друзьям и родственникам, чтобы закатывать кето ужины и
+                                        семейные кето посиделки. Всем рекомендую!
+                                    </p>
+                                </li>
+                                <li class="reviews__item review-card">
+                                    <div class="review-card__head">
+                                        <div class="review-card__image">
+                                            <img src="assets/img/reviews/review-3.jpg" alt="фотография автора отзыва">
+                                        </div>
+
+                                        <div class="review-card__block">
+                                            <p class="review-card__name">Ульяна</p>
+                                            <p class="review-card__age">32 года</p>
+                                        </div>
+                                    </div>
+
+                                    <p class="review-card__text">
+                                        После родов я испробовала так много разных диет и планов питания, что страшно вспомнить! Вес
+                                        возвращался, преумножался и тем самым портилось здоровье. А этого кето плана так легко
+                                        придерживаться! И результат то на лицо, за месяц я сбросила уже 7 килограмм и не планирую
+                                        останавливаться! Улучшилось самочувствие и пришел прилив энергии. Хочу сказать точно, не
+                                        бойтесь, садитесь на кето диету, ведь с таким подбором рецептов это и вкусно и полезно!
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="reviews__pagination pagination"></div>
+                    </div>
+
+                    <div class="quiz__offer-includes includes">
+                        <h2 class="quiz__title title">Что вы получаете</h2>
+
+                        <ul class="includes__list">
+                            <li class="includes__item">
+                                <i class="includes__icon includes__icon--form"></i>
+                                <p class="includes__text">Индивидуальный план питания на 28 дней</p>
+                            </li>
+                            <li class="includes__item">
+                                <i class="includes__icon includes__icon--dish"></i>
+                                <p class="includes__text">Размеры порций и их КБЖУ рассчитаны специально под вас</p>
+                            </li>
+                            <li class="includes__item">
+                                <i class="includes__icon includes__icon--recipes"></i>
+                                <p class="includes__text">Простые рецепты для приготовления вкусных и сытных блюд</p>
+                            </li>
+                            <li class="includes__item">
+                                <i class="includes__icon includes__icon--dessert"></i>
+                                <p class="includes__text">Советы, как следовать диете и не сорваться</p>
+                            </li>
+                        </ul>
+
+                        <button class="includes__btn button modal-opener" data-modal="modal-trial">Получить личный план</button>
+                    </div>
+                </div>
+
                 <div class="quiz__background quiz__background--woman"></div>
                 <div class="quiz__background quiz__background--man"></div>
             </div>
-        </section>
+        </div>
         <!-- End Quiz Block -->
 
         <!-- Footer -->
@@ -482,7 +624,53 @@
 
     <!-- Modal -->
 
+    <div class="modal" data-scroll-lock-fill-gap>
+        <div class="modal__overlay"></div>
+        <div class="modal__wrapper">
+            <a class="modal__close-btn" href="#"></a>
 
+            <div class="modal__container modal__container--trial" id="modal-trial">
+                <h2 class="modal__title">Специальное <br> предложение только <br> для новых пользователей</h2>
+                <p class="modal__subtitle">Возможность получить доступ к платформе по суперцене</p>
+
+                <ul class="modal__list">
+                    <li class="modal__item">
+                        Доступ к платформе Keto diet
+                    </li>
+                    <li class="modal__item">
+                        Индивидуальный план питания <br> на 28 дней
+                    </li>
+                    <li class="modal__item">
+                        Простые рецепты для приготовления вкусных и сытных блюд
+                    </li>
+                    <li class="modal__item">
+                        Советы, как следовать <br> диете и не сорваться
+                    </li>
+                    <li class="modal__item">
+                        Размеры порций и их КБЖУ рассчитаны специально под вас
+                    </li>
+                </ul>
+
+                <div class="modal__price-block">
+                    <span class="modal__price-text">Тариф:</span>
+                    <span class="modal__price-cur">29 р.</span>
+                    <span class="modal__price-old">899 р.</span>
+                </div>
+
+                <p class="modal__info-text">Доступ к платформе на неделю за 29 р, далее по тарифу</p>
+
+                <button class="modal__button button">
+                    Продолжить
+                </button>
+
+                <p class="modal__copy-block">Нажимая на кнопку, Вы соглашаетесь с условиями <a href="#">оферты</a>, действующими <a href="#">тарифами</a> сервиса, даёте своё согласие на
+                    <a href="#">обработку персональных данных</a> и на получение рекламных материалов, осознаёте возмездный характер оказываемых
+                    услуг
+                </p>
+            </div>
+
+        </div>
+    </div>
 
     <!-- End Modal -->
 
