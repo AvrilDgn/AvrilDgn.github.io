@@ -10125,8 +10125,6 @@ var Pagination = {
   }
 });
 // CONCATENATED MODULE: ./app/src/js/main.js
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //Import Libraries';
 
 
@@ -10136,8 +10134,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /***** Main script *****/
 
 document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
-  var _Swiper;
-
   // new WOW().init();
   var raf = function raf(callback) {
     window.requestAnimationFrame(function () {
@@ -10266,6 +10262,29 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     }
   });
   /**
+   * Review slider
+   */
+
+  core_class.use([pagination]);
+  var reviewsSlider = new core_class('.reviews__slider', {
+    wrapperClass: 'reviews__list',
+    slideClass: 'reviews__item',
+    slidesPerView: 1,
+    spaceBetween: 16,
+    watchSlidesVisibility: true,
+    //  observer: true,
+    pagination: {
+      el: ".pagination",
+      bulletClass: "bullet",
+      bulletActiveClass: "bullet--active",
+      clickable: true
+    } // breakpoints: {
+    // 	992: {
+    // 	},
+    // },
+
+  });
+  /**
    * Quiz
    */
 
@@ -10361,6 +10380,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                       name: 'fade',
                       track: 'animation'
                     });
+                    reviewsSlider.update();
+                    var reviewsSlidesLength = reviewsSlider.slides.length;
+                    var reviewsCenteredSlide = Math.ceil(reviewsSlidesLength / 2);
+                    reviewsSlider.slideTo(reviewsCenteredSlide - 1, 0);
                   }
                 });
               });
@@ -10470,28 +10493,9 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     _loop(_i);
   }
   /**
-   * Review slider
-   */
-
-
-  core_class.use([pagination]);
-  var reviewsSlider = new core_class('.reviews__slider', (_Swiper = {
-    wrapperClass: 'reviews__list',
-    slideClass: 'reviews__item',
-    slidesPerView: 1,
-    spaceBetween: 16
-  }, _defineProperty(_Swiper, "slidesPerView", 'auto'), _defineProperty(_Swiper, "centeredSlides", true), _defineProperty(_Swiper, "watchSlidesVisibility", true), _defineProperty(_Swiper, "pagination", {
-    el: ".pagination",
-    bulletClass: "bullet",
-    bulletActiveClass: "bullet--active",
-    clickable: true
-  }), _Swiper));
-  var reviewsSlidesLength = reviewsSlider.slides.length;
-  var reviewsCenteredSlide = Math.ceil(reviewsSlidesLength / 2);
-  reviewsSlider.slideTo(reviewsCenteredSlide - 1, 0);
-  /**
    * modals
    */
+
 
   var modalOpenBtns = document.querySelectorAll('.modal-opener');
   var modal = document.querySelector('.modal');
