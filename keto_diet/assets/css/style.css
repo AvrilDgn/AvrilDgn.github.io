@@ -280,44 +280,41 @@ hr {
   }
 }
 
-.input {
-  padding-left: 0;
-  padding-right: 0;
+.field {
+  display: block;
+}
+
+.field__input {
+  padding: 0 16px;
   width: 100%;
-  height: 42px;
-  background-color: transparent;
-  border-bottom: 1px solid black;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 20px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.375;
-  letter-spacing: 0.02em;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
   color: black;
 }
 
-.input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.5);
+.field__input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.32);
 }
 
-.input::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.5);
+.field__input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.32);
 }
 
-.input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.5);
+.field__input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.32);
 }
 
-.input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.5);
+.field__input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.32);
 }
 
-.input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.input--textarea {
-  padding-top: 10px;
-  height: 72px;
-  resize: none;
+.field__input::placeholder {
+  color: rgba(0, 0, 0, 0.32);
 }
 
 .button {
@@ -343,6 +340,9 @@ hr {
   text-decoration: none;
   overflow: hidden;
   z-index: 1;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
@@ -378,6 +378,10 @@ hr {
   cursor: text;
   pointer-events: none;
   opacity: 0.8;
+}
+
+.button[disabled]::before {
+  opacity: 0.3;
 }
 
 .header {
@@ -706,6 +710,7 @@ hr {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  overflow: hidden;
 }
 
 .quiz__background {
@@ -779,11 +784,18 @@ hr {
   margin-right: -8px;
   display: none;
   width: calc(100% + 16px);
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  -o-transition: transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 
 .quiz__stage-item {
   margin: 0 8px;
-  width: 25%;
+  width: calc(25% - 16px);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .quiz__graph {
@@ -796,6 +808,14 @@ hr {
 .quiz__graph img {
   width: 100%;
   height: auto;
+}
+
+.quiz__field {
+  margin-top: 16px;
+}
+
+.quiz__field:first-of-type {
+  margin-top: 27px;
 }
 
 .gender {
@@ -880,9 +900,9 @@ hr {
 }
 
 .gender__type[data-gender="female"] .gender__icon {
-  background-image: url(../img/woman-icon.png);
-  background-size: cover;
-  background-position: center;
+  width: 48px;
+  height: 48px;
+  background-position: 0px 0px;
 }
 
 .gender__type[data-gender="male"]::before,
@@ -896,9 +916,9 @@ hr {
 }
 
 .gender__type[data-gender="male"] .gender__icon {
-  background-image: url(../img/man-icon.png);
-  background-size: cover;
-  background-position: center;
+  width: 48px;
+  height: 48px;
+  background-position: -53px 0px;
 }
 
 .gender__type:hover::before {
@@ -909,8 +929,8 @@ hr {
 
 .gender__icon {
   display: block;
-  width: 48px;
-  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(../img/sprite/sprite.png);
 }
 
 .gender__name {
@@ -961,47 +981,123 @@ hr {
 }
 
 .stage__icon {
+  position: relative;
   display: block;
-  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../img/sprite/sprite.png);
+}
+
+.stage__icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/sprite/sprite.png);
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .stage__icon--gender {
   margin-top: 10px;
   width: 29px;
   height: 29px;
-  background-image: url(../img/gender.png);
+  background-position: -70px -97px;
 }
 
 .stage__icon--dumbbell {
   margin-top: 12px;
   width: 25px;
   height: 25px;
-  background-image: url(../img/dumbbell.png);
+  background-position: 0px -132px;
+}
+
+.stage__icon--dumbbell::before {
+  background-position: -150px -93px;
 }
 
 .stage__icon--meat {
   margin-top: 12px;
   width: 25px;
   height: 25px;
-  background-image: url(../img/meat.png);
+  background-position: -60px -132px;
+}
+
+.stage__icon--meat::before {
+  background-position: -30px -132px;
 }
 
 .stage__icon--broccoli {
   margin-top: 4px;
   width: 40px;
   height: 39px;
-  background-image: url(../img/broccoli.png);
+  background-position: -45px -53px;
+}
+
+.stage__icon--broccoli::before {
+  background-position: 0px -53px;
+}
+
+.stage__icon--cheese {
+  margin-top: 4px;
+  width: 39px;
+  height: 39px;
+  background-position: -106px -44px;
+}
+
+.stage__icon--cheese::before {
+  background-position: -106px 0px;
+}
+
+.stage__icon--briefcase {
+  margin-top: 11px;
+  width: 26px;
+  height: 26px;
+  background-position: -150px 0px;
+}
+
+.stage__icon--briefcase::before {
+  background-position: -104px -97px;
+}
+
+.stage__icon--profile {
+  margin-top: 11px;
+  width: 26px;
+  height: 26px;
+  background-position: -150px -62px;
+}
+
+.stage__icon--profile::before {
+  background-position: -150px -31px;
+}
+
+.stage__icon--speedometer {
+  margin-top: 8px;
+  width: 30px;
+  height: 30px;
+  background-position: -35px -97px;
+}
+
+.stage__icon--speedometer::before {
+  background-position: 0px -97px;
 }
 
 .stage--active .stage__indicator::after {
   opacity: 1;
 }
 
+.stage--next .stage__icon::before {
+  opacity: 1;
+}
+
 .option {
   position: relative;
-  padding: 8px 16px;
+  padding: 8px 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1046,6 +1142,362 @@ hr {
   z-index: -1;
 }
 
+.option__icon {
+  position: relative;
+  margin-right: 4px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: -6px;
+}
+
+.option__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/sprite/sprite.png);
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.option__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../img/sprite/sprite.png);
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.option__icon--chicken::before,
+.option__icon--chicken::after {
+  width: 17px;
+  height: 17px;
+}
+
+.option__icon--chicken::before {
+  background-position: -128px -220px;
+}
+
+.option__icon--chicken::after {
+  background-position: -106px -220px;
+}
+
+.option__icon--pork::before,
+.option__icon--pork::after {
+  width: 19px;
+  height: 12px;
+}
+
+.option__icon--pork::before {
+  background-position: -211px -174px;
+}
+
+.option__icon--pork::after {
+  background-position: -240px -203px;
+}
+
+.option__icon--turkey::before,
+.option__icon--turkey::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--turkey::before {
+  background-position: -240px -174px;
+}
+
+.option__icon--turkey::after {
+  background-position: -240px -145px;
+}
+
+.option__icon--bacon::before,
+.option__icon--bacon::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--bacon::before {
+  background-position: -87px -162px;
+}
+
+.option__icon--bacon::after {
+  background-position: -58px -162px;
+}
+
+.option__icon--seafood::before,
+.option__icon--seafood::after {
+  width: 25px;
+  height: 24px;
+}
+
+.option__icon--seafood::before {
+  background-position: -181px -58px;
+}
+
+.option__icon--seafood::after {
+  background-position: -181px -29px;
+}
+
+.option__icon--fish::before,
+.option__icon--fish::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--fish::before {
+  background-position: -240px 0px;
+}
+
+.option__icon--fish::after {
+  background-position: -203px -191px;
+}
+
+.option__icon--beef::before,
+.option__icon--beef::after {
+  width: 25px;
+  height: 24px;
+}
+
+.option__icon--beef::before {
+  background-position: -120px -132px;
+}
+
+.option__icon--beef::after {
+  background-position: -90px -132px;
+}
+
+.option__icon--broccoli::before,
+.option__icon--broccoli::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--broccoli::before {
+  background-position: -145px -162px;
+}
+
+.option__icon--broccoli::after {
+  background-position: -116px -162px;
+}
+
+.option__icon--mushroom::before,
+.option__icon--mushroom::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--mushroom::before {
+  background-position: -240px -58px;
+}
+
+.option__icon--mushroom::after {
+  background-position: -240px -29px;
+}
+
+.option__icon--zucchini::before,
+.option__icon--zucchini::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--zucchini::before {
+  background-position: -29px -220px;
+}
+
+.option__icon--zucchini::after {
+  background-position: 0px -220px;
+}
+
+.option__icon--cauliflower::before,
+.option__icon--cauliflower::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--cauliflower::before {
+  background-position: -211px -116px;
+}
+
+.option__icon--cauliflower::after {
+  background-position: -211px -87px;
+}
+
+.option__icon--asparagus::before,
+.option__icon--asparagus::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--asparagus::before {
+  background-position: -181px -116px;
+}
+
+.option__icon--asparagus::after {
+  background-position: -181px -87px;
+}
+
+.option__icon--avocado::before,
+.option__icon--avocado::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--avocado::before {
+  background-position: -29px -162px;
+}
+
+.option__icon--avocado::after {
+  background-position: 0px -162px;
+}
+
+.option__icon--bulgarian-pepper::before,
+.option__icon--bulgarian-pepper::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--bulgarian-pepper::before {
+  background-position: -211px 0px;
+}
+
+.option__icon--bulgarian-pepper::after {
+  background-position: -174px -162px;
+}
+
+.option__icon--eggplant::before,
+.option__icon--eggplant::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--eggplant::before {
+  background-position: -116px -191px;
+}
+
+.option__icon--eggplant::after {
+  background-position: -87px -191px;
+}
+
+.option__icon--cucumber::before,
+.option__icon--cucumber::after {
+  width: 25px;
+  height: 24px;
+}
+
+.option__icon--cucumber::before {
+  background-position: -181px 0px;
+}
+
+.option__icon--cucumber::after {
+  background-position: -150px -132px;
+}
+
+.option__icon--eggs::before,
+.option__icon--eggs::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--eggs::before {
+  background-position: -174px -191px;
+}
+
+.option__icon--eggs::after {
+  background-position: -145px -191px;
+}
+
+.option__icon--nuts::before,
+.option__icon--nuts::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--nuts::before {
+  background-position: -240px -116px;
+}
+
+.option__icon--nuts::after {
+  background-position: -240px -87px;
+}
+
+.option__icon--cheeze::before,
+.option__icon--cheeze::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--cheeze::before {
+  background-position: 0px -191px;
+}
+
+.option__icon--cheeze::after {
+  background-position: -211px -145px;
+}
+
+.option__icon--curd::before,
+.option__icon--curd::after {
+  width: 19px;
+  height: 18px;
+}
+
+.option__icon--curd::before {
+  background-position: -82px -220px;
+}
+
+.option__icon--curd::after {
+  background-position: -58px -220px;
+}
+
+.option__icon--butter::before,
+.option__icon--butter::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--butter::before {
+  background-position: -211px -58px;
+}
+
+.option__icon--butter::after {
+  background-position: -211px -29px;
+}
+
+.option__icon--coco::before,
+.option__icon--coco::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--coco::before {
+  background-position: -58px -191px;
+}
+
+.option__icon--coco::after {
+  background-position: -29px -191px;
+}
+
 .option__name {
   font-weight: 400;
   font-size: 14px;
@@ -1065,19 +1517,19 @@ hr {
   pointer-events: none;
 }
 
-.option__input:checked + * + .option__background {
+.option--active .option__background {
   opacity: 1;
 }
 
-.option__input:checked + .option__name {
+.option--active .option__name {
   color: white;
 }
 
-.option--active {
-  color: white;
+.option--active .option__icon::before {
+  opacity: 0;
 }
 
-.option--active::after {
+.option--active .option__icon::after {
   opacity: 1;
 }
 
