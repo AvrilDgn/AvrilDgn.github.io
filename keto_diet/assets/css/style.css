@@ -710,7 +710,6 @@ hr {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  overflow: hidden;
 }
 
 .quiz__background {
@@ -783,6 +782,16 @@ hr {
   margin-left: -8px;
   margin-right: -8px;
   display: none;
+  width: calc(100% + 16px);
+  overflow: hidden;
+}
+
+.quiz__stage-list {
+  margin-left: -8px;
+  margin-right: -8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: calc(100% + 16px);
   -webkit-transition: -webkit-transform 0.25s ease;
   transition: -webkit-transform 0.25s ease;

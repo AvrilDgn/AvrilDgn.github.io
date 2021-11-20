@@ -251,7 +251,7 @@
                         </p>
                     </div>
 
-                    <div class="quiz__question" data-stage="5" data-persent="50">
+                    <div class="quiz__question" data-stage="5" data-persent="50" data-stage-pause>
                         <h2 class="quiz__title title">Продукты</h2>
                         <p class="quiz__subtitle subtitle">Выберите продукты, которые вы хотели ли бы включить в план</p>
 
@@ -377,7 +377,7 @@
                         </label>
                     </div>
 
-                    <div class="quiz__question" data-stage="8" data-persent="97">
+                    <div class="quiz__question" data-stage="9" data-persent="97" data-stage-pause>
                         <h2 class="quiz__title title">Параметры</h2>
 
                         <label class="quiz__field field">
@@ -389,7 +389,7 @@
                         </label>
                     </div>
 
-                    <div class="quiz__question" data-stage="9">
+                    <div class="quiz__question" data-stage="10">
                         <h2 class="quiz__title title">Получите на e-mail персональный фитнес-план</h2>
 
                         <label class="quiz__field field">
@@ -405,40 +405,44 @@
                     %)
                 </button>
 
-                <ul class="quiz__stage-wrapper">
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--gender"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--dumbbell"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--meat"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--broccoli"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--cheese"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--briefcase"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--profile"></i>
-                    </li>
-                    <li class="quiz__stage-item stage">
-                        <div class="stage__indicator"></div>
-                        <i class="stage__icon stage__icon--speedometer"></i>
-                    </li>
-                </ul>
+                <div class="quiz__stage-wrapper">
+                    <ul class="quiz__stage-list">
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--gender"></i>
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--dumbbell"></i>
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--meat"></i>
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--broccoli"></i>
+                        </li>
+                        <li class="quiz__stage-item stage" style="display: none;">
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--cheese"></i>
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--briefcase"></i>
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--profile"></i>
+                        </li>
+                        <li class="quiz__stage-item stage">
+                            <div class="stage__indicator"></div>
+                            <i class="stage__icon stage__icon--speedometer"></i>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="quiz__background quiz__background--woman"></div>
                 <div class="quiz__background quiz__background--man"></div>

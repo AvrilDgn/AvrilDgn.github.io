@@ -1704,10 +1704,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
           });
           new DLAnimate().show(stageWrapper, {
             name: 'fade',
-            track: 'animation',
-            beforeEnter: function beforeEnter(el) {
-              el.style.display = 'flex';
-            }
+            track: 'animation'
           });
         }
       });
@@ -1720,7 +1717,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       name: 'fade',
       track: 'animation',
       afterLeave: function afterLeave(el) {
-        if (questionId >= stages.length) {
+        if (questionId > stages.length) {
           new DLAnimate().hide(stageWrapper, {
             name: 'fade',
             track: 'animation'
@@ -1728,20 +1725,23 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         }
 
         if (questionId % 4 === 0) {
-          stageWrapper.style.transform = 'translateX(-100%)';
-        }
-
-        if (questionId > 3) {} else {
-          if (stages[questionId]) {
-            stages[questionId].classList.add('stage--active');
-            stages[questionId].classList.remove('stage--next');
-            stages[questionId + 1].classList.add('stage--next');
-          }
+          stageWrapper.querySelector('.quiz__stage-list').style.transform = 'translateX(-100%)';
         }
 
         questionId++;
         var question = document.querySelector(".quiz__question[data-stage=\"".concat(questionId, "\"]"));
         curQuestion = question;
+
+        if (!curQuestion.hasAttribute('data-stage-pause')) {
+          if (stages[questionId - 1]) {
+            stages[questionId - 1].classList.add('stage--active');
+            stages[questionId - 1].classList.remove('stage--next');
+          }
+
+          if (stages[questionId]) {
+            stages[questionId].classList.add('stage--next');
+          }
+        }
 
         if (curQuestion.querySelectorAll('.option').length <= 0) {
           nextBtn.disabled = false;
