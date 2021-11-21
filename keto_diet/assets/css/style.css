@@ -2018,6 +2018,7 @@ hr {
 
 .reviews__slider {
   margin-top: 34px;
+  padding: 0 26px;
   width: 100%;
   overflow: hidden;
 }

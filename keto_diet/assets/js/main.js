@@ -10220,14 +10220,16 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   var progressWrap = document.querySelector('.quiz__progress-wrap');
   var progressEl = progressWrap.querySelector('.quiz__progressbar');
+  var progressStop = 0;
   var progressBar = new main_default.a.Circle(progressEl, {
     color: '#aaa',
     // This has to be the same size as the maximum width to
     // prevent clipping
     strokeWidth: 3,
     trailWidth: 3,
-    easing: 'easeInOut',
-    duration: 1400,
+    // easing: 'easeInOut',
+    easing: 'linear',
+    duration: 2000,
     text: {
       style: {
         color: '#000',
@@ -10252,13 +10254,42 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     step: function step(state, circle) {
       circle.path.setAttribute('stroke', state.color);
       circle.path.setAttribute('stroke-width', state.width);
-      var value = Math.round(circle.value() * 100);
+      var value = circle.value();
+      var percent = Math.round(value * 100);
 
-      if (value === 0) {
+      if (percent === 0) {
         circle.setText('');
       } else {
-        circle.setText(value + ' %');
-      }
+        circle.setText(percent + ' %');
+      } // console.log(circle);
+      // switch (progressStop) {
+      // 	case 0:
+      // 		if (value >= 0.24) {
+      // 			circle.stop();
+      // 			progressStop++;
+      // 		}
+      // 		break;
+      // 	case 1:
+      // 		if (value >= 0.43) {
+      // 			circle.stop();
+      // 			progressStop++;
+      // 		}
+      // 		break;
+      // 	case 2:
+      // 		if (value >= 0.64) {
+      // 			circle.stop();
+      // 			progressStop++;
+      // 		}
+      // 		break;
+      // 	case 3:
+      // 		if (value >= 0.88) {
+      // 			circle.stop();
+      // 		}
+      // 		break;
+      // 	default:
+      // 		break;
+      // }
+
     }
   });
   /**
@@ -10315,7 +10346,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
           stageId++;
           var opt = document.querySelector(".quiz__question[data-stage=\"".concat(questionId, "\"]"));
           curQuestion = opt;
-          btnPercent.textContent = curQuestion.dataset.persent;
+          btnPercent.textContent = "(" + curQuestion.dataset.persent + "%)";
 
           switch (gender) {
             case 'female':
@@ -10371,21 +10402,47 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
             name: 'fade',
             track: 'animation',
             afterEnter: function afterEnter(el) {
-              progressBar.animate(1.0, function () {
-                new DLAnimate().hide(el, {
-                  name: 'fade',
-                  track: 'animation',
-                  afterLeave: function afterLeave(el) {
-                    new DLAnimate().show(finiteWrap, {
-                      name: 'fade',
-                      track: 'animation'
-                    });
-                    reviewsSlider.update();
-                    var reviewsSlidesLength = reviewsSlider.slides.length;
-                    var reviewsCenteredSlide = Math.ceil(reviewsSlidesLength / 2);
-                    reviewsSlider.slideTo(reviewsCenteredSlide - 1, 0);
-                  }
-                });
+              progressBar.animate(0.2, {
+                duration: 800
+              }, function () {
+                setTimeout(function () {
+                  progressBar.animate(0.5, {
+                    duration: 1400
+                  }, function () {
+                    setTimeout(function () {
+                      progressBar.animate(0.65, {
+                        duration: 2400
+                      }, function () {
+                        setTimeout(function () {
+                          progressBar.animate(0.88, {
+                            duration: 900
+                          }, function () {
+                            setTimeout(function () {
+                              progressBar.animate(1.0, {
+                                duration: 1400
+                              }, function () {
+                                new DLAnimate().hide(el, {
+                                  name: 'fade',
+                                  track: 'animation',
+                                  afterLeave: function afterLeave(el) {
+                                    new DLAnimate().show(finiteWrap, {
+                                      name: 'fade',
+                                      track: 'animation'
+                                    });
+                                    reviewsSlider.update();
+                                    var reviewsSlidesLength = reviewsSlider.slides.length;
+                                    var reviewsCenteredSlide = Math.ceil(reviewsSlidesLength / 2);
+                                    reviewsSlider.slideTo(reviewsCenteredSlide - 1, 0);
+                                  }
+                                });
+                              });
+                            }, 50);
+                          });
+                        }, 100);
+                      });
+                    }, 200);
+                  });
+                }, 100);
               });
             }
           });
