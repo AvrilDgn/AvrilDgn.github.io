@@ -45,6 +45,14 @@ body {
           box-sizing: border-box;
 }
 
+:lang(ru) :lang(en) {
+  display: none;
+}
+
+:lang(en) :lang(ru) {
+  display: none;
+}
+
 h1,
 h2,
 h3,
@@ -1969,11 +1977,15 @@ hr {
   font-size: 14px;
   line-height: 1.42857;
   letter-spacing: 0.005em;
-  color: #f2a200;
+  color: #26c93c;
+}
+
+.plan__meaning--orange {
+  color: #F2A200;
 }
 
 .plan__meaning--rose {
-  color: #ff5d92;
+  color: #FF5D92;
 }
 
 .plan__statistics {

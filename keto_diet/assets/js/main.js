@@ -10134,26 +10134,29 @@ var Pagination = {
 /***** Main script *****/
 
 document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
-  // new WOW().init();
+  var lang = document.documentElement.getAttribute('lang');
+  var langInputs = document.querySelectorAll('input[lang]');
+
+  for (var i = 0; i < langInputs.length; i++) {
+    var input = langInputs[i];
+
+    if (lang === 'ru' && input.getAttribute('lang') === 'en') {
+      input.parentNode.removeChild(input);
+    } else if (lang === 'en' && input.getAttribute('lang') === 'ru') {
+      input.parentNode.removeChild(input);
+    }
+  }
+
   var raf = function raf(callback) {
     window.requestAnimationFrame(function () {
       callback();
     });
   };
-
-  var header = document.querySelector('.header');
-  var windowWidth = document.documentElement.clientWidth,
-      windowHeight = document.documentElement.clientHeight,
-      headerHeight = header.offsetHeight;
-  window.addEventListener('resize', function (e) {
-    windowWidth = document.documentElement.clientWidth;
-    windowHeight = document.documentElement.clientHeight;
-    headerHeight = header.offsetHeight;
-  });
   /**
    *	Header
    */
   //mobile menu
+
 
   var menuOpenBtn = document.querySelector('.header__menu-open');
   var menuCloseBtn = document.querySelector('.header__menu-close');
@@ -10286,21 +10289,20 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
    * Quiz
    */
 
-  var gender, age, weight, height, newWeight, activity;
+  var gender, age, weight, height, newWeight, activity, mail;
   var genderButtons = document.querySelectorAll('.gender__input');
   var startBlock = document.querySelector('.quiz__start-block');
   var nextBtn = document.querySelector('.quiz__next-button');
   var btnPercent = nextBtn.querySelector('.button__percent');
   var stageWrapper = document.querySelector('.quiz__stage-wrapper');
   var stages = stageWrapper.querySelectorAll('.stage');
-  var insertGender = document.querySelector('.quiz__insert-gender');
   var finiteWrap = document.querySelector('.quiz__finite-wrap');
   var questionId = 0;
   var stageId = 0;
   var curQuestion = startBlock;
 
-  for (var i = 0; i < genderButtons.length; i++) {
-    var btn = genderButtons[i];
+  for (var _i = 0; _i < genderButtons.length; _i++) {
+    var btn = genderButtons[_i];
     btn.addEventListener('change', function () {
       gender = this.value;
       new DLAnimate().hide(curQuestion, {
@@ -10317,15 +10319,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
           switch (gender) {
             case 'female':
-              insertGender.textContent = 'женщин';
+              document.querySelector('.gender-male').style.display = 'none';
               break;
 
             case 'male':
-              insertGender.textContent = 'мужчин';
+              document.querySelector('.gender-female').style.display = 'none';
               break;
 
             default:
-              insertGender.textContent = 'человек';
               break;
           }
 
@@ -10398,11 +10399,24 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                                     }); //Метаболический возраст
 
                                     var metaAgeTextContent = document.querySelector('.plan__value--meta-age');
+                                    var metaAgeMeaningTextContent = document.querySelector('.plan__meaning--meta-age');
                                     var metaAge = gender === 'female' ? Math.round(.58 * age + 17.24) : Math.round(.629 * age + 18.56);
                                     var metaAgeCfnt = metaAge % 10;
-                                    var textAge = metaAge > 4 && metaAge < 21 ? "лет" : 1 == metaAgeCfnt ? "год" : 1 < metaAgeCfnt && metaAgeCfnt < 5 ? "года" : "лет";
+                                    var textAge = lang !== "ru" ? "years" : metaAge > 4 && metaAge < 21 ? "лет" : 1 == metaAgeCfnt ? "год" : 1 < metaAgeCfnt && metaAgeCfnt < 5 ? "года" : "лет";
                                     var metaAgeFullText = metaAge + " " + textAge;
-                                    metaAgeTextContent.textContent = metaAgeFullText; //калории
+                                    metaAgeTextContent.textContent = metaAgeFullText;
+                                    var difAge = Math.abs(metaAge - age);
+
+                                    if (difAge > 10) {
+                                      metaAgeMeaningTextContent.textContent = lang == "ru" ? "отклонение" : "deviation";
+                                      metaAgeMeaningTextContent.classList.add('plan__meaning--rose');
+                                    } else if (difAge > 5) {
+                                      metaAgeMeaningTextContent.textContent = lang == "ru" ? "небольшое отклонение" : "little deviation";
+                                      metaAgeMeaningTextContent.classList.add('plan__meaning--orange');
+                                    } else {
+                                      metaAgeMeaningTextContent.textContent = lang == "ru" ? "норма" : "normal";
+                                    } //калории
+
 
                                     var calTextContent = document.querySelector('.plan__value--сalories');
                                     var calCfnt = gender === 'male' ? 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age : 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
@@ -10417,18 +10431,18 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                                         massFullText;
 
                                     if (massIndex <= 16) {
-                                      massFullText = "Выраженный дефицит массы тела";
+                                      massFullText = lang == "ru" ? "Выраженный дефицит массы тела" : "Pronounced body weight";
                                       massIndexMeaningTextContent.classList.add('plan__meaning--rose');
                                     } else if (16 < massIndex && massIndex <= 18.5) {
-                                      massFullText = "Недостаточная (дефицит) масса тела";
+                                      massFullText = lang == "ru" ? "Недостаточная (дефицит) масса тела" : "Insufficient (deficit) body weight";
                                       massIndexMeaningTextContent.classList.add('plan__meaning--orange');
                                     } else if (18.5 < massIndex && massIndex <= 24.99) {
-                                      massFullText = "Норма";
+                                      massFullText = lang == "ru" ? "Норма" : "Normal";
                                     } else if (24.99 < massIndex && massIndex <= 35) {
-                                      massFullText = "Ожирение";
+                                      massFullText = lang == "ru" ? "Ожирение" : "Obesity";
                                       massIndexMeaningTextContent.classList.add('plan__meaning--orange');
                                     } else {
-                                      massFullText = "Ожирение резкое";
+                                      massFullText = lang == "ru" ? "Ожирение резкое" : "Obesity sharp";
                                       massIndexMeaningTextContent.classList.add('plan__meaning--rose');
                                     }
 
@@ -10446,7 +10460,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                                       futureWeight = weightCfnt <= newWeight ? weightCfnt : newWeight;
                                     }
 
-                                    weightFullText = Math.round(futureWeight) + " кг";
+                                    weightFullText = lang == "ru" ? Math.round(futureWeight) + " кг" : Math.round(futureWeight) + " kg";
                                     futureWeightTextContent.textContent = weightFullText; //центрирование слайдера
 
                                     reviewsSlider.update();
@@ -10519,8 +10533,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   var fieldsList = document.querySelectorAll('.field');
 
-  var _loop = function _loop(_i) {
-    var field = fieldsList[_i];
+  var _loop = function _loop(_i2) {
+    var field = fieldsList[_i2];
     var input = field.querySelector('.field__input');
     var group = field.parentElement.querySelectorAll('.field__input');
     input.addEventListener('input', function (e) {
@@ -10564,7 +10578,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
           break;
 
         case 'mail':
-          // mail = Number(input.value);
+          mail = input.value;
           break;
 
         default:
@@ -10573,8 +10587,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     });
   };
 
-  for (var _i = 0; _i < fieldsList.length; _i++) {
-    _loop(_i);
+  for (var _i2 = 0; _i2 < fieldsList.length; _i2++) {
+    _loop(_i2);
   }
   /**
    * Options checked
@@ -10583,8 +10597,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   var optionsList = document.querySelectorAll('.option');
 
-  var _loop2 = function _loop2(_i2) {
-    var option = optionsList[_i2];
+  var _loop2 = function _loop2(_i3) {
+    var option = optionsList[_i3];
     var input = option.querySelector('.option__input');
     var group = option.parentElement.querySelectorAll('.option');
     input.addEventListener('change', function (e) {
@@ -10621,8 +10635,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     });
   };
 
-  for (var _i2 = 0; _i2 < optionsList.length; _i2++) {
-    _loop2(_i2);
+  for (var _i3 = 0; _i3 < optionsList.length; _i3++) {
+    _loop2(_i3);
   }
   /**
    * modals
@@ -10634,8 +10648,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   var modalCloseBtn = modal.querySelector('.modal__close-btn');
 
   if (modal) {
-    var _loop3 = function _loop3(_i3) {
-      var openBtn = modalOpenBtns[_i3],
+    var _loop3 = function _loop3(_i4) {
+      var openBtn = modalOpenBtns[_i4],
           modalId = "#" + openBtn.dataset.modal,
           modalEl = document.querySelector(modalId);
 
@@ -10686,12 +10700,54 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       }
     };
 
-    for (var _i3 = 0; _i3 < modalOpenBtns.length; _i3++) {
-      var _ret = _loop3(_i3);
+    for (var _i4 = 0; _i4 < modalOpenBtns.length; _i4++) {
+      var _ret = _loop3(_i4);
 
       if (_ret === "continue") continue;
     }
   }
+  /**
+   * Pay
+   */
+
+
+  var payOpenBtn = document.querySelector('.button--pay-open');
+  payOpenBtn.addEventListener('click', function (e) {
+    // let widgetContainer = document.createElement('div');
+    var widget = document.createElement('pay-widget'); // widgetContainer.classList.add('modal__container');
+    // this.parentElement.parentElement.appendChild(widgetContainer);
+    // widget.setAttribute('uid', 'QBFs8yi10L3HFLvb');
+    // widget.setAttribute('ymcounter', '85841570');
+    // widget.setAttribute('ymtargetstart', '4');
+    // widget.setAttribute('ymtargetend', '5');
+    // widget.setAttribute('email', mail);
+    // widget.setAttribute('buttonText', "Оплатить");
+    // widgetContainer.appendChild(widget);
+    // widgetContainer.style.display = "none";
+    // new DLAnimate().hide(this.parentElement, {
+    // 	name: 'fade',
+    // 	track: 'animation',
+    // 	afterLeave: function (el) {
+    // 		new DLAnimate().show(widgetContainer, {
+    // 			name: 'fade',
+    // 			track: 'animation'
+    // 		});
+    // 	}
+    // });
+
+    var btnText = lang == "ru" ? "Оплатить" : "Pay";
+    new DLAnimate().hide(this.parentElement, {
+      name: 'fade',
+      track: 'animation',
+      afterLeave: function afterLeave(el) {
+        el.innerHTML = '<pay-widget uid="QBFs8yi10L3HFLvb" ymcounter="85841570" ymtargetstart="4" ymtargetend="5" email="' + mail + '" buttonText="' + btnText + '"/>';
+        new DLAnimate().show(el, {
+          name: 'fade',
+          track: 'animation'
+        });
+      }
+    }); // this.parentElement.innerHTML = '<pay-widget uid="QBFs8yi10L3HFLvb" ymcounter="85841570" ymtargetstart="4" ymtargetend="5" email="' + mail + '" buttonText="Оплатить"/>';
+  });
 });
 
 /***/ })
