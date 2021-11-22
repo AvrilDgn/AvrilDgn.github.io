@@ -10740,7 +10740,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       name: 'fade',
       track: 'animation',
       afterLeave: function afterLeave(el) {
-        el.innerHTML = '<pay-widget uid="QBFs8yi10L3HFLvb" ymcounter="85841570" ymtargetstart="4" ymtargetend="5" email="' + mail + '" buttonText="' + btnText + '"/>';
+        el.innerHTML = '<pay-widget uid="QBFs8yi10L3HFLvb" email="' + mail + '" buttonText="' + btnText + '"/>';
         new DLAnimate().show(el, {
           name: 'fade',
           track: 'animation'
