@@ -10297,6 +10297,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   var stageWrapper = document.querySelector('.quiz__stage-wrapper');
   var stages = stageWrapper.querySelectorAll('.stage');
   var finiteWrap = document.querySelector('.quiz__finite-wrap');
+  var invalidMess;
+  var mailValid = false;
   var questionId = 0;
   var stageId = 0;
   var curQuestion = startBlock;
@@ -10305,6 +10307,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     var btn = genderButtons[_i];
     btn.addEventListener('change', function () {
       gender = this.value;
+      ym(85841570, 'reachGoal', '1');
       new DLAnimate().hide(curQuestion, {
         name: 'fade',
         track: 'animation',
@@ -10352,6 +10355,24 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   nextBtn.addEventListener('click', function (e) {
     this.disabled = true;
+    var mailInput = curQuestion.querySelector('.field__input[name=mail]');
+
+    if (mailInput && !mailValid) {
+      if (!invalidMess) {
+        var invalid = document.createElement('span');
+        invalid.classList.add('field__invalid');
+        invalid.textContent = lang !== "ru" ? "Enter the correct e-mail" : "Введите корректный e-mail";
+        invalid.style.display = 'none';
+        mailInput.parentElement.appendChild(invalid);
+        invalidMess = invalid;
+        new DLAnimate().show(invalid, {
+          name: 'fade',
+          track: 'animation'
+        });
+      }
+
+      return;
+    }
 
     if (stageId >= stages.length) {
       new DLAnimate().hide(nextBtn, {
@@ -10395,7 +10416,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                                   afterLeave: function afterLeave(el) {
                                     new DLAnimate().show(finiteWrap, {
                                       name: 'fade',
-                                      track: 'animation'
+                                      track: 'animation',
+                                      afterEnter: function afterEnter() {
+                                        ym(85841570, 'reachGoal', '2');
+                                      }
                                     }); //Метаболический возраст
 
                                     var metaAgeTextContent = document.querySelector('.plan__value--meta-age');
@@ -10532,6 +10556,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
    */
 
   var fieldsList = document.querySelectorAll('.field');
+  var mailRegChecked = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   var _loop = function _loop(_i2) {
     var field = fieldsList[_i2];
@@ -10546,6 +10571,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         if (_input.value === '') {
           nextBtn.disabled = true;
           break;
+        }
+
+        if (_input.getAttribute('name') === 'mail') {
+          if (mailRegChecked.test(String(_input.value).toLowerCase())) {
+            mailValid = true;
+          } else {
+            mailValid = false;
+          }
         }
       }
     });
@@ -10578,7 +10611,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
           break;
 
         case 'mail':
-          mail = input.value;
+          mail = input.value; // location.href += "?" + mail;
+
           break;
 
         default:
@@ -10713,40 +10747,18 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   var payOpenBtn = document.querySelector('.button--pay-open');
   payOpenBtn.addEventListener('click', function (e) {
-    // let widgetContainer = document.createElement('div');
-    var widget = document.createElement('pay-widget'); // widgetContainer.classList.add('modal__container');
-    // this.parentElement.parentElement.appendChild(widgetContainer);
-    // widget.setAttribute('uid', 'QBFs8yi10L3HFLvb');
-    // widget.setAttribute('ymcounter', '85841570');
-    // widget.setAttribute('ymtargetstart', '4');
-    // widget.setAttribute('ymtargetend', '5');
-    // widget.setAttribute('email', mail);
-    // widget.setAttribute('buttonText', "Оплатить");
-    // widgetContainer.appendChild(widget);
-    // widgetContainer.style.display = "none";
-    // new DLAnimate().hide(this.parentElement, {
-    // 	name: 'fade',
-    // 	track: 'animation',
-    // 	afterLeave: function (el) {
-    // 		new DLAnimate().show(widgetContainer, {
-    // 			name: 'fade',
-    // 			track: 'animation'
-    // 		});
-    // 	}
-    // });
-
     var btnText = lang == "ru" ? "Оплатить" : "Pay";
     new DLAnimate().hide(this.parentElement, {
       name: 'fade',
       track: 'animation',
       afterLeave: function afterLeave(el) {
-        el.innerHTML = '<pay-widget uid="QBFs8yi10L3HFLvb" email="' + mail + '" buttonText="' + btnText + '"/>';
+        el.innerHTML = '<pay-widget uid="ZY3rmX0PWjwAZJym" ymcounter="85841570" ymtargetstart="224924169" ymtargetend="224924192" email="' + mail + '" buttonText="' + btnText + '"/>';
         new DLAnimate().show(el, {
           name: 'fade',
           track: 'animation'
         });
       }
-    }); // this.parentElement.innerHTML = '<pay-widget uid="QBFs8yi10L3HFLvb" ymcounter="85841570" ymtargetstart="4" ymtargetend="5" email="' + mail + '" buttonText="Оплатить"/>';
+    });
   });
 });
 

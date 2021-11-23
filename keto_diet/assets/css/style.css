@@ -325,6 +325,11 @@ hr {
   color: rgba(0, 0, 0, 0.32);
 }
 
+.field__invalid {
+  font-size: 14px;
+  color: #ee3333;
+}
+
 .button {
   position: relative;
   padding: 14px 15px;
