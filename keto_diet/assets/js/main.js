@@ -10375,6 +10375,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     }
 
     if (stageId >= stages.length) {
+      ym(85841570, 'reachGoal', '2');
       new DLAnimate().hide(nextBtn, {
         name: 'fade',
         track: 'animation'
@@ -10416,10 +10417,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                                   afterLeave: function afterLeave(el) {
                                     new DLAnimate().show(finiteWrap, {
                                       name: 'fade',
-                                      track: 'animation',
-                                      afterEnter: function afterEnter() {
-                                        ym(85841570, 'reachGoal', '2');
-                                      }
+                                      track: 'animation'
                                     }); //Метаболический возраст
 
                                     var metaAgeTextContent = document.querySelector('.plan__value--meta-age');
@@ -10756,7 +10754,39 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         new DLAnimate().show(el, {
           name: 'fade',
           track: 'animation'
-        });
+        }); // el.innerHTML = '<pay-widget title="Введите Email" activeclass="pay-widget" uid="ZY3rmX0PWjwAZJym" ymcounter="85841570" ymtargetstart="224924169" ymtargetend="224924192" buttonText="' + btnText + '"/>';
+        // new DLAnimate().show(el, {
+        // 	name: 'fade',
+        // 	track: 'animation',
+        // 	beforeEnter: function() {
+        // 		let mailInput = document.querySelector('.pay-widget-email__field');
+        // 		let btn = document.querySelector('.pay-widget-button');
+        // 		let checkbox = document.querySelector('.pay-widget-email__label input');
+        // 		let invalidMess = false;
+        // 		mailInput.value = mail;
+        // 		checkbox.addEventListener('change', function() {
+        // 			mailInput.value = mail;
+        // 		});
+        // 		btn.addEventListener('click', function(e) {
+        // 			if (!mailRegChecked.test(String(mailInput.value).toLowerCase())) {
+        // 				if (invalidMess) {
+        // 					return;
+        // 				}
+        // 				let invalid = document.createElement('span');
+        // 				invalid.classList.add('field__invalid');
+        // 				invalid.textContent = lang !== "ru" ? "Enter the correct e-mail" : "Введите корректный e-mail";
+        // 				invalid.style.display = 'none';
+        // 				mailInput.parentElement.appendChild(invalid);
+        // 				invalidMess = true;
+        // 				new DLAnimate().show(invalid, {
+        // 					name: 'fade',
+        // 					track: 'animation'
+        // 				});
+        // 				return;
+        // 			}
+        // 		})
+        // 	}
+        // });
       }
     });
   });
