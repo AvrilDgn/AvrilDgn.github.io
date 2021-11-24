@@ -10744,49 +10744,18 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
   var payOpenBtn = document.querySelector('.button--pay-open');
+  var payModalContainer = document.querySelector('.modal__container--pay');
+
   payOpenBtn.addEventListener('click', function (e) {
-    var btnText = lang == "ru" ? "Оплатить" : "Pay";
     new DLAnimate().hide(this.parentElement, {
       name: 'fade',
       track: 'animation',
       afterLeave: function afterLeave(el) {
-        el.innerHTML = '<pay-widget uid="ZY3rmX0PWjwAZJym" ymcounter="85841570" ymtargetstart="224924169" ymtargetend="224924192" email="' + mail + '" buttonText="' + btnText + '"/>';
-        new DLAnimate().show(el, {
-          name: 'fade',
-          track: 'animation'
-        }); // el.innerHTML = '<pay-widget title="Введите Email" activeclass="pay-widget" uid="ZY3rmX0PWjwAZJym" ymcounter="85841570" ymtargetstart="224924169" ymtargetend="224924192" buttonText="' + btnText + '"/>';
-        // new DLAnimate().show(el, {
-        // 	name: 'fade',
-        // 	track: 'animation',
-        // 	beforeEnter: function() {
-        // 		let mailInput = document.querySelector('.pay-widget-email__field');
-        // 		let btn = document.querySelector('.pay-widget-button');
-        // 		let checkbox = document.querySelector('.pay-widget-email__label input');
-        // 		let invalidMess = false;
-        // 		mailInput.value = mail;
-        // 		checkbox.addEventListener('change', function() {
-        // 			mailInput.value = mail;
-        // 		});
-        // 		btn.addEventListener('click', function(e) {
-        // 			if (!mailRegChecked.test(String(mailInput.value).toLowerCase())) {
-        // 				if (invalidMess) {
-        // 					return;
-        // 				}
-        // 				let invalid = document.createElement('span');
-        // 				invalid.classList.add('field__invalid');
-        // 				invalid.textContent = lang !== "ru" ? "Enter the correct e-mail" : "Введите корректный e-mail";
-        // 				invalid.style.display = 'none';
-        // 				mailInput.parentElement.appendChild(invalid);
-        // 				invalidMess = true;
-        // 				new DLAnimate().show(invalid, {
-        // 					name: 'fade',
-        // 					track: 'animation'
-        // 				});
-        // 				return;
-        // 			}
-        // 		})
-        // 	}
-        // });
+        
+        new DLAnimate().show(payModalContainer, {
+        	name: 'fade',
+        	track: 'animation'
+        });
       }
     });
   });
