@@ -10381,7 +10381,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
   function status() {
-    var percent = (stepId + 1) / stepsLength * 100;
+    var percent = Math.ceil((stepId + 1) / stepsLength * 100);
     quizStepsInfo.textContent = stepId + 1 + '/' + stepsLength;
     quizPercent.textContent = percent + '%';
     quizStepsProgress.style.transform = "translateX(".concat(percent, "%)");

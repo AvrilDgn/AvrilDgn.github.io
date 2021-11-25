@@ -830,7 +830,7 @@ hr {
   height: 15px;
   background-repeat: no-repeat;
   background-image: url(../img/sprite/sprite.png);
-  background-position: -269px -155px;
+  background-position: 0px 0px;
 }
 
 .modal__price-block {
@@ -1104,14 +1104,6 @@ hr {
   margin: 8px;
 }
 
-.quiz__subtitle {
-  margin-top: 14px;
-}
-
-.quiz__gender {
-  margin-top: 30px;
-}
-
 .quiz__next-button {
   margin-top: 24px;
   margin-bottom: 26px;
@@ -1147,18 +1139,6 @@ hr {
   width: calc(25% - 16px);
   -ms-flex-negative: 0;
       flex-shrink: 0;
-}
-
-.quiz__graph {
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 238px;
-}
-
-.quiz__graph img {
-  width: 100%;
-  height: auto;
 }
 
 .quiz__field {
@@ -1280,160 +1260,6 @@ hr {
   color: white;
 }
 
-.stage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.stage__indicator {
-  position: relative;
-  width: 100%;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
-}
-
-.stage__indicator::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: -o-linear-gradient(281.78deg, #62dc42 17.76%, #53db5b 93.11%);
-  background: linear-gradient(168.22deg, #62dc42 17.76%, #53db5b 93.11%);
-  -webkit-box-shadow: 0px 6px 12px -3px rgba(14, 180, 0, 0.7), inset 0px 3px 15px rgba(255, 255, 255, 0.56);
-          box-shadow: 0px 6px 12px -3px rgba(14, 180, 0, 0.7), inset 0px 3px 15px rgba(255, 255, 255, 0.56);
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease;
-  -o-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-}
-
-.stage__icon {
-  position: relative;
-  display: block;
-  background-repeat: no-repeat;
-  background-image: url(../img/sprite/sprite.png);
-}
-
-.stage__icon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-image: url(../img/sprite/sprite.png);
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease;
-  -o-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-}
-
-.stage__icon--gender {
-  margin-top: 10px;
-  width: 29px;
-  height: 29px;
-  background-position: -70px -97px;
-}
-
-.stage__icon--dumbbell {
-  margin-top: 12px;
-  width: 25px;
-  height: 25px;
-  background-position: -123px -132px;
-}
-
-.stage__icon--dumbbell::before {
-  background-position: -93px -132px;
-}
-
-.stage__icon--meat {
-  margin-top: 12px;
-  width: 25px;
-  height: 25px;
-  background-position: -181px -30px;
-}
-
-.stage__icon--meat::before {
-  background-position: -181px 0px;
-}
-
-.stage__icon--broccoli {
-  margin-top: 4px;
-  width: 40px;
-  height: 39px;
-  background-position: -45px -53px;
-}
-
-.stage__icon--broccoli::before {
-  background-position: 0px -53px;
-}
-
-.stage__icon--cheese {
-  margin-top: 4px;
-  width: 39px;
-  height: 39px;
-  background-position: -106px -44px;
-}
-
-.stage__icon--cheese::before {
-  background-position: -106px 0px;
-}
-
-.stage__icon--briefcase {
-  margin-top: 11px;
-  width: 26px;
-  height: 26px;
-  background-position: -150px 0px;
-}
-
-.stage__icon--briefcase::before {
-  background-position: -104px -97px;
-}
-
-.stage__icon--form {
-  margin-top: 11px;
-  width: 26px;
-  height: 26px;
-  background-position: -31px -132px;
-}
-
-.stage__icon--form::before {
-  background-position: 0px -132px;
-}
-
-.stage__icon--speedometer {
-  margin-top: 8px;
-  width: 30px;
-  height: 30px;
-  background-position: -35px -97px;
-}
-
-.stage__icon--speedometer::before {
-  background-position: 0px -97px;
-}
-
-.stage--active .stage__indicator::after {
-  opacity: 1;
-}
-
-.stage--next .stage__icon::before {
-  opacity: 1;
-}
-
 .progress {
   display: none;
 }
@@ -1541,30 +1367,6 @@ hr {
   display: block;
   background-repeat: no-repeat;
   background-image: url(../img/sprite/sprite.png);
-}
-
-.result__icon--settings::before {
-  width: 21px;
-  height: 21px;
-  background-position: -230px -221px;
-}
-
-.result__icon--person::before {
-  width: 20px;
-  height: 26px;
-  background-position: -269px 0px;
-}
-
-.result__icon--speedometer::before {
-  width: 26px;
-  height: 26px;
-  background-position: -62px -132px;
-}
-
-.result__icon--scales::before {
-  width: 22px;
-  height: 21px;
-  background-position: -203px -221px;
 }
 
 .result__text-block {
@@ -1805,37 +1607,6 @@ hr {
   -webkit-box-shadow: 0px 8px 28px -8px rgba(73, 75, 89, 0.08);
           box-shadow: 0px 8px 28px -8px rgba(73, 75, 89, 0.08);
   border-radius: 50%;
-}
-
-.includes__icon::before {
-  content: "";
-  display: block;
-  background-repeat: no-repeat;
-  background-image: url(../img/sprite/sprite.png);
-}
-
-.includes__icon--form::before {
-  width: 26px;
-  height: 26px;
-  background-position: -31px -132px;
-}
-
-.includes__icon--dish::before {
-  width: 26px;
-  height: 26px;
-  background-position: -150px -62px;
-}
-
-.includes__icon--recipes::before {
-  width: 22px;
-  height: 22px;
-  background-position: -153px -132px;
-}
-
-.includes__icon--dessert::before {
-  width: 26px;
-  height: 26px;
-  background-position: -150px -31px;
 }
 
 .includes__text {
