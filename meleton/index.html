@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KETO diet</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- lang -->
+    <script>
+        var userLang = navigator.language || navigator.userLanguage;
+
+        if (!userLang.includes('ru') && !userLang.includes("RU") && !userLang.includes("RUS") && !userLang.includes("rus")) {
+            document.documentElement.setAttribute('lang', 'en');
+        }
+    </script>
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header" data-scroll-lock-fill-gap>
+            <div class="container">
+
+                <a href="index.html" class="header__logo">
+                    <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
+                </a>
+
+                <a class="header__menu-open" href="#open-menu">
+                    <span></span>
+                </a>
+
+                <div class="header__overlay"></div>
+
+                <div class="header__menu">
+
+                    <a class="header__menu-close" href="#close-menu"><span></span></a>
+
+                    <nav class="nav header__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a class="nav__link nav__link--active" href="index.html" lang="ru">Главная</a>
+                                <a class="nav__link nav__link--active" href="index.html" lang="en">Home</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="https://keta.1-platforma.com/permission.pdf" lang="ru">Политика обработки данных</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/permission.pdf" lang="en">Data processing policy</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="https://keta.1-platforma.com/offer.pdf" lang="ru">Оферта</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/offer.pdf" lang="en">Offer</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="https://keta.1-platforma.com/policy.pdf" lang="ru">Политика конфиденциальности</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/policy.pdf" lang="en">Privacy Policy</a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="https://keta.1-platforma.com/tariff.pdf" lang="ru">Тарифы</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/tariff.pdf" lang="en">Tariffs</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Start BLock -->
+        <section class="start-block">
+            <div class="container">
+
+                <h1 class="start-block__title title">
+                    <span lang="ru"><span class="text-blue">Узнай, сколько ты можешь</span> заработать на своих знаниях</span>
+                    <span lang="en"><span class="text-blue">Find out how much you can</span> earn money on your knowledge</span>
+                </h1>
+
+                <button class="start-block__button button">
+                    <span lang="ru">Начать тест</span>
+                    <span lang="en">Start test</span>
+                </button>
+            </div>
+        </section>
+        <!-- End Start BLock -->
+
+        <!-- Quiz Block -->
+        <section id="quiz" class="quiz">
+            <div class="container">
+
+                <div class="quiz__head">
+                    <div class="quiz__top-line">
+                        <button class="quiz__prev-button">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#arrow-prev"></use>
+                            </svg>
+                        </button>
+                        <p class="quiz__percent">0%</p>
+                        <p class="quiz__steps-info">1/6</p>
+                    </div>
+
+                    <div class="quiz__steps-progress steps-progress">
+                        <div class="steps-progress__filling"></div>
+                    </div>
+                </div>
+
+                <ul class="quiz__question-list">
+
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Вы хотите работать <br> в онлайн или офлайн?</span>
+                            <span lang="en">Do you want to work online or offline?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="online" value="true">
+                                <span class="option__text">
+							💻
+							<span lang="ru">Онлайн</span>
+                                <span lang="en">Online</span>
+                                </span>
+                            </label>
+
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="online" value="false">
+                                <span class="option__text">
+							📴
+							<span lang="ru">Офлайн</span>
+                                <span lang="en">Offline</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Вам нравится строить планы или создавать идеи?</span>
+                            <span lang="en">Do you like to build plans or create ideas?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="plans-ideas" value="plans">
+                                <span class="option__text">
+							📆
+							<span lang="ru">Люблю планы</span>
+                                <span lang="en">I love plans</span>
+                                </span>
+                            </label>
+
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="plans-ideas" value="ideas">
+                                <span class="option__text">
+							🎁
+							<span lang="ru">Всегда придумываю идеи</span>
+                                <span lang="en">Always invent ideas</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="plans-ideas" value="both">
+                                <span class="option__text">
+							<span lang="ru">И то, и другие</span>
+                                <span lang="en">Both</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Какая у вас сейчас занятость?</span>
+                            <span lang="en">What is your employment now?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="hiring">
+                                <span class="option__text">
+							🏭
+							<span lang="ru">Работаю в найме</span>
+                                <span lang="en">I work in hiring</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="self-employment">
+                                <span class="option__text">
+							‍💻
+							<span lang="ru">Работаю на себя</span>
+                                <span lang="en">Work for myself</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="unemployed">
+                                <span class="option__text">
+							🍃
+							<span lang="ru">Безработный</span>
+                                <span lang="en">Unemployed</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="study">
+                                <span class="option__text">
+							📖
+							<span lang="ru">Учусь</span>
+                                <span lang="en">I study</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="retired">
+                                <span class="option__text">
+							🌴
+							<span lang="ru">На пенсии</span>
+                                <span lang="en">Retired</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">В каких областях у вас есть навыки?</span>
+                            <span lang="en">What areas do you have skills in?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="creation">
+                                <span class="option__text">
+							🖼
+							<span lang="ru">Творчество</span>
+                                <span lang="en">Creation</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="sport">
+                                <span class="option__text">
+							🏈
+							<span lang="ru">Спорт</span>
+                                <span lang="en">Sport</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							💨
+							<span lang="ru">Духовные практики</span>
+                                <span lang="en">Spiritual practices</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="IT">
+                                <span class="option__text">
+							💻 IT
+						</span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							⏫ 
+							<span lang="ru">Личностный рост</span>
+                                <span lang="en">Personal growth</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							🇬🇧 
+							<span lang="ru">Языки</span>
+                                <span lang="en">Languages</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							📚 
+							<span lang="ru">Психология</span>
+                                <span lang="en">Psychology</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							💸 
+							<span lang="ru">Продажи</span>
+                                <span lang="en">Sales</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							💰 
+							<span lang="ru">Маркетинг</span>
+                                <span lang="en">Marketing</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							💅 
+							<span lang="ru">Красота</span>
+                                <span lang="en">Beauty</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							💼 
+							<span lang="ru">Бизнес</span>
+                                <span lang="en">Business</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							👔 
+							<span lang="ru">Менеджмент</span>
+                                <span lang="en">Management</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							‍🏫 
+							<span lang="ru">Педагогика</span>
+                                <span lang="en">Pedagogy</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							🎨 
+							<span lang="ru">Дизайн</span>
+                                <span lang="en">Design</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="skills" value="spiritual">
+                                <span class="option__text">
+							💵 
+							<span lang="ru">Финансы</span>
+                                <span lang="en">Finance</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Какая у вас сейчас занятость?</span>
+                            <span lang="en">What is your employment now?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="hiring">
+                                <span class="option__text">
+							🏭
+							<span lang="ru">Работаю в найме</span>
+                                <span lang="en">I work in hiring</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="self-employment">
+                                <span class="option__text">
+							‍💻
+							<span lang="ru">Работаю на себя</span>
+                                <span lang="en">Work for myself</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Какая у вас сейчас занятость?</span>
+                            <span lang="en">What is your employment now?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="hiring">
+                                <span class="option__text">
+							🏭
+							<span lang="ru">Работаю в найме</span>
+                                <span lang="en">I work in hiring</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="self-employment">
+                                <span class="option__text">
+							‍💻
+							<span lang="ru">Работаю на себя</span>
+                                <span lang="en">Work for myself</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Какая у вас сейчас занятость?</span>
+                            <span lang="en">What is your employment now?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="hiring">
+                                <span class="option__text">
+							🏭
+							<span lang="ru">Работаю в найме</span>
+                                <span lang="en">I work in hiring</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="self-employment">
+                                <span class="option__text">
+							‍💻
+							<span lang="ru">Работаю на себя</span>
+                                <span lang="en">Work for myself</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="quiz__question">
+                        <h2 class="quiz__title title">
+                            <span lang="ru">Какая у вас сейчас занятость?</span>
+                            <span lang="en">What is your employment now?</span>
+                        </h2>
+
+                        <div class="quiz__option-wrapper quiz__option-wrapper--column">
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="hiring">
+                                <span class="option__text">
+							🏭
+							<span lang="ru">Работаю в найме</span>
+                                <span lang="en">I work in hiring</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="radio" name="employment" value="self-employment">
+                                <span class="option__text">
+							‍💻
+							<span lang="ru">Работаю на себя</span>
+                                <span lang="en">Work for myself</span>
+                                </span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="quiz__next-button button">
+                    <span lang="ru">Продолжить</span>
+                    <span lang="en">Continue</span>
+                </button>
+            </div>
+        </section>
+        <!-- End Quiz Block -->
+
+        <!-- Progress Bar -->
+        <section class="progress">
+            <div class="container">
+                <h2 class="progress__title title">
+                    <span lang="ru">Нейросеть анализует ваши ответы, чтобы понять, сколько вы можете заработать на ваших
+				знаниях</span>
+                    <span lang="en">neural network analyzes your answers to understand how much you can make money on your
+				knowledge</span>
+                </h2>
+
+                <div class="progress__bar"></div>
+            </div>
+        </section>
+        <!-- End Progress Bar -->
+
+        <!-- Final -->
+        <div class="final-wrap">
+            <section class="final-wrap__result result">
+                <div class="container">
+                    <div class="result__info-text">
+                        <span lang="ru">Нейросеть завершила анализ ваших ответов</span>
+                        <span lang="en">Neuraleta completed the analysis of your answers</span>
+                    </div>
+
+                    <h2 class="result__title title">
+                        <span lang="ru">Твоя сфера - <span class="text-blue">создание онлайн-курсов</span></span>
+                        <span lang="en">Your sphere - <span class="text-blue">creating online-courses</span></span>
+                    </h2>
+
+                    <ul class="result__list">
+                        <li class="result__item">
+                            <i class="result__icon result__icon--settings"></i>
+                            <p class="result__text-block">
+                            <h3>
+                                <span lang="ru">Уровень конкуренции среди онлайн курсов в ваших темах:</span>
+                                <span lang="en">Competition level among online courses in your topics:</span>
+                            </h3>
+                            <p>
+                                <span lang="ru">3/10 - невысокий</span>
+                                <span lang="en">3/10 - low</span>
+                            </p>
+                            <!-- <span class="result__value result__value--mass-index">24,31</span>
+						<span class="result__type">
+							<span lang="ru">Ваш ИМТ</span>
+							<span lang="en">Your body mass index</span>
+						</span>
+						<span class="result__meaning result__meaning--mass-index">норма</span> -->
+                            </p>
+                        </li>
+                        <li class="result__item">
+                            <i class="result__icon result__icon--person"></i>
+                            <p class="result__text-block">
+                            <h3>
+                                <span lang="ru">Возможность заработка в этой сфере:</span>
+                                <span lang="en">The possibility of earning in this area:</span>
+                            </h3>
+                            <p>
+                                <span lang="ru">25 000$ - 50 000$ в год</span>
+                                <span lang="en">25 000$ - 50 000$ per year</span>
+                            </p>
+                            <!-- <span class="result__value result__value--meta-age">40 лет</span>
+						<span class="result__type">
+							<span lang="ru">Метаболический возраст</span>
+							<span lang="en">Metabolic age</span>
+						</span>
+						<span class="result__meaning result__meaning--meta-age">отклонение</span> -->
+                            </p>
+                        </li>
+                        <li class="result__item">
+                            <i class="result__icon result__icon--speedometer"></i>
+                            <p class="result__text-block">
+                            <h3>
+                                <span lang="ru">Требуемое время для создания онлайн-курса:</span>
+                                <span lang="en">The required time to create an online course:</span>
+                            </h3>
+                            <p>
+                                <span lang="ru">4-5 часов в день</span>
+                                <span lang="en">4-5 hours a day</span>
+                            </p>
+                            <!-- <span class="result__value result__value--сalories">2480-2580</span>
+						<span class="result__type">
+							<span lang="ru">Рекомендуемое количество калорий</span>
+							<span lang="en">Recommended calorie number</span>
+						</span> -->
+                            </p>
+                        </li>
+                        <li class="result__item">
+                            <i class="result__icon result__icon--scales"></i>
+                            <p class="result__text-block">
+                            <h3>
+                                <span lang="ru">94% вероятность успеха.</span>
+                                <span lang="en">94% Probability of success.</span>
+                            </h3>
+                            <p>
+                                <span lang="ru">Так нейросеть оценивает вашу возможность заработать на онлайн-курсах</span>
+                                <span lang="en">So neuralitus estimates your opportunity to earn on online courses</span>
+                            </p>
+                            <!-- <span class="result__value result__value--future-weight result__value--green">79 кг</span>
+						<span class="result__type">
+							<span lang="ru">Достижимый вес <br> после 28 дней диеты</span>
+							<span lang="en">Achievable weight after 28 days diet</span>
+						</span> -->
+                            </p>
+                        </li>
+                    </ul>
+
+                    <p>
+                        <span lang="ru">Ваша вероятность выше на 23%, чем у остальных пользователей</span>
+                        <span lang="en">Your probability is higher by 23% than the other users</span>
+                    </p>
+
+                    <h2>
+                        <span lang="ru">Прямо сейчас</span>
+                        <span lang="en">Right now</span>
+                    </h2>
+
+                    <p>
+                        <span lang="ru">Попробуйте создать свой онлайн курс с помощью нашего обучения</span>
+                        <span lang="en">Try creating your online course using our learning</span>
+                    </p>
+
+                    <button class="result__btn button modal-opener" data-modal="modal-trial">
+                        <span lang="ru">Получить обучение</span>
+                        <span lang="en">Get learning</span>
+                    </button>
+
+                    <div class="result__statistics statistics">
+                        <p class="statistics__percent">84%</p>
+                        <p class="statistics__desc">
+                            <span lang="ru">людей, которые прошли обучение, <b>заработали минимум 1000$</b> на продаже своих
+						знаний</span>
+                            <span lang="en">people who have been trained, <b>earned a minimum of 1000$</b> on selling their
+						knowledge</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="final-wrap__reviews reviews">
+                <h2 class="reviews__title title">
+                    <span lang="ru">Они уже сделали это</span>
+                    <span lang="en">They have already done it</span>
+                </h2>
+
+                <div class="reviews__slider">
+                    <ul class="reviews__list">
+                        <li class="reviews__item review-card">
+                            <div class="review-card__head">
+                                <div class="review-card__image">
+                                    <img src="assets/img/reviews/review-1.jpg" alt="фотография автора отзыва">
+                                </div>
+
+                                <div class="review-card__block">
+                                    <p class="review-card__name">
+                                        <span lang="ru">Мария</span>
+                                        <span lang="en">Maria</span>
+                                    </p>
+                                    <p class="review-card__age">
+                                        <span lang="ru">24 года</span>
+                                        <span lang="en">24 years</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="review-card__text">
+                                <span lang="ru">Как же я счастлива, что и в Россию пришла нашумевшая, возродившаяся в Америке
+							кето диета,
+							которая многих спасла от ожирения. Этот план питания невероятно разнообразен, сбалансирован и
+							рецепты нереально вкусные. Спасибо, ребята! Я хожу в магазин раз в неделю и покупаю все
+							продукты. Результат недолго заставлял себя ждать! Планирую и дальше правильно питаться и
+							подтянуть на этот индивидуальный план питания своих подруг! Оно того стоит.</span>
+                                <span lang="en">How is I happy that the sensational, revived in America, a diet revived in
+							America, came to Russia,
+							which many saved from obesity. This power result is incredibly diverse, balanced and
+							Recipes are unreal delicious. Thanks guys! I go to the store once a week and buy everything
+							products. The result was not long forced to wait! I result and then eat right and
+							Tighten your girlfriends to this individual nutrition result! It's worth it.</span>
+                            </p>
+                        </li>
+                        <li class="reviews__item review-card">
+                            <div class="review-card__head">
+                                <div class="review-card__image">
+                                    <img src="assets/img/reviews/review-2.jpg" alt="фотография автора отзыва">
+                                </div>
+
+                                <div class="review-card__block">
+                                    <p class="review-card__name">
+                                        <span lang="ru">Людмила</span>
+                                        <span lang="en">Lyudmila</span>
+                                    </p>
+                                    <p class="review-card__age">
+                                        <span lang="ru">35 лет</span>
+                                        <span lang="en">35 years</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="review-card__text">
+                                <span lang="ru">Очень эффективная диета! Наконец-то нашла индивидуально разработанный план по
+							кето диете, ведь
+							данная система питания очень эффективна! Самый быстрый, простой и вкусный способ сбросить
+							лишние
+							килограммы и полностью сменить гардероб! Я влезла в свои старые джинсы. Урааааа! Буду
+							рекомендовать план питания подругам, друзьям и родственникам, чтобы закатывать кето ужины и
+							семейные кето посиделки. Всем рекомендую!</span>
+                                <span lang="en">Very effective diet! Finally found an individually designed result for keto diet,
+							because
+							This nutrition system is very effective! The fastest, simple and delicious way to lose extra
+							Kilograms and completely change the wardrobe! I got into my old jeans. URAAAAA! Will
+							Recommend the nutrition result, friends and relatives to roll the keto dinner and
+							Family Keto Sowing. I recommend to everyone!</span>
+                            </p>
+                        </li>
+                        <li class="reviews__item review-card">
+                            <div class="review-card__head">
+                                <div class="review-card__image">
+                                    <img src="assets/img/reviews/review-3.jpg" alt="фотография автора отзыва">
+                                </div>
+
+                                <div class="review-card__block">
+                                    <p class="review-card__name">
+                                        <span lang="ru">Ульяна</span>
+                                        <span lang="en">Ulyana</span>
+                                    </p>
+                                    <p class="review-card__age">
+                                        <span lang="ru">32 года</span>
+                                        <span lang="en">32 years</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="review-card__text">
+                                <span lang="ru">После родов я испробовала так много разных диет и планов питания, что страшно
+							вспомнить! Вес
+							возвращался, преумножался и тем самым портилось здоровье. А этого кето плана так легко
+							придерживаться! И результат то на лицо, за месяц я сбросила уже 7 килограмм и не планирую
+							останавливаться! Улучшилось самочувствие и пришел прилив энергии. Хочу сказать точно, не
+							бойтесь, садитесь на кето диету, ведь с таким подбором рецептов это и вкусно и
+							полезно!</span>
+                                <span lang="en">After giving birth, I tried so many different diets and food results, which is
+							scary to remember! The weight
+							Returned, multiplied and thereby spoiled health. And this keto result so easy
+							stick to! And the result is on the face, for the month I dropped 7 kilograms already and do
+							not result
+							stop! It improved well-being and a tide of energy came. I want to say for sure
+							Fear, sit on the keto diet, because with such a selection of recipes it is delicious and
+							useful!</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reviews__pagination pagination"></div>
+            </section>
+
+            <section class="final-wrap__includes includes">
+                <h2 class="includes__title title">
+                    <span lang="ru">Что вы получаете</span>
+                    <span lang="en">What are you getting</span>
+                </h2>
+
+                <ul class="includes__list">
+                    <li class="includes__item">
+                        <i class="includes__icon includes__icon--form"></i>
+                        <p class="includes__text">
+                            <span lang="ru">Персональный 10-ти дневный курс обучения, на котором вы создатите свой онлайн курс и
+						получите первые продажи</span>
+                            <span lang="en">Personal 10-day training course on which you create your online course and get the first
+						sales</span>
+                        </p>
+                    </li>
+                    <li class="includes__item">
+                        <i class="includes__icon includes__icon--dish"></i>
+                        <p class="includes__text">
+                            <span lang="ru">Практические задания в конце каждого дня, которые помогут вам заработать на своих
+						знаниях</span>
+                            <span lang="en">Practical tasks at the end of every day that will help you earn on your knowledge</span>
+                        </p>
+                    </li>
+                    <li class="includes__item">
+                        <i class="includes__icon includes__icon--recipes"></i>
+                        <p class="includes__text">
+                            <span lang="ru">Доступ к платформе и мобильным приложениям IOS и Android по созданию онлайн курсов
+						Meleton на 14 дней</span>
+                            <span lang="en">Access to the platform and mobile iOS and Android applications on creating online meleton
+						courses for 14 days</span>
+                        </p>
+                    </li>
+                    <li class="includes__item">
+                        <i class="includes__icon includes__icon--dessert"></i>
+                        <p class="includes__text">
+                            <span lang="ru">Индивидуальная поддержка 24/7
+						(Проверка заданий кураторами)</span>
+                            <span lang="en">Individual support 24/7
+						(Job check by curators)</span>
+                        </p>
+                    </li>
+                </ul>
+
+                <button class="includes__btn button modal-opener" data-modal="modal-trial">
+                    <span lang="ru">Получить обучение</span>
+                    <span lang="en">Get learning</span>
+                </button>
+            </section>
+        </div>
+        <!-- End Final -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="footer__copy-block">
+                    <span lang="ru">Продолжая, Вы соглашаетесь с</span>
+                    <span lang="en">Continuing you agree with</span>
+                    <br>
+                    <a href="https://keta.1-platforma.com/permission.pdf">
+                        <span lang="ru">Политика обработки данных</span>
+                        <span lang="en">Data processing policy</span>
+                    </a>
+                    |
+                    <a href="https://keta.1-platforma.com/offer.pdf">
+                        <span lang="ru">Оферта</span>
+                        <span lang="en">Offer</span>
+                    </a> <br>
+                    <a href="https://keta.1-platforma.com/policy.pdf">
+                        <span lang="ru">Политика конфиденциальности</span>
+                        <span lang="en">Privacy Policy</span>
+                    </a>
+                    |
+                    <a href="https://keta.1-platforma.com/tariff.pdf">
+                        <span lang="ru">Тарифы</span>
+                        <span lang="en">Tariffs</span>
+                    </a> <br>
+                    <span lang="ru">Все права защищены</span>
+                    <span lang="en">All rights reserved</span>
+                </p>
+
+                <p class="footer__contacts-block">
+                    <b lang="ru">Контактная информация:</b>
+                    <span lang="ru">ООО «Мелетон» ИНН: 7722480101 ОГРН: 1197746603780</span>
+                    <b lang="ru">Юридический адрес:</b>
+                    <span lang="ru">111024 Город Москва, Шоссе Энтузиастов, Дом 9, Кв Эт 3 Пом 1 Ком 21</span>
+                    <b lang="en">Contact information:</b>
+                    <span lang="en">Meleton LLC Inn: 7722480101 OGRN: 1197746603780</span>
+                    <b lang="en">Legal address:</b>
+                    <span lang="en">111024 City Moscow, Highway Enthusiasts, House 9, KV Th 3 Pom 1 com 21</span>
+                </p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+    <!-- End Content -->
+
+    <!-- Modal -->
+
+    <div class="modal" data-scroll-lock-fill-gap>
+        <div class="modal__overlay"></div>
+        <div class="modal__wrapper">
+            <a class="modal__close-btn" href="#"></a>
+
+            <div class="modal__container modal__container--trial" id="modal-trial">
+                <h2 class="modal__title">
+                    <span lang="ru">Специальное <br> предложение только <br> для новых пользователей</span>
+                    <span lang="en">Special offer only for new users</span>
+                </h2>
+                <p class="modal__subtitle">
+                    <span lang="ru">Возможность получить доступ к платформе по суперцене</span>
+                    <span lang="en">Ability to access the supercase platform</span>
+                </p>
+
+                <ul class="modal__list">
+                    <li class="modal__item">
+                        <span lang="ru">Персональный 10-ти дневный курс обучения, на котором вы создатите свой онлайн курс и получите первые продажи</span>
+                        <span lang="en">Personal 10-day learning course on which you create your online course and get the first sales</span>
+                    </li>
+                    <li class="modal__item">
+                        <span lang="ru">Доступ к платформе и мобильным приложениям IOS и Android по созданию онлайн курсов Meleton на 14 дней</span>
+                        <span lang="en">Access to the platform and mobile iOS and Android applications on creating online meleton courses for 14 days</span>
+                    </li>
+                    <li class="modal__item">
+                        <span lang="ru">Практические задания в конце каждого дня, которые помогут вам заработать на своих знаниях</span>
+                        <span lang="en">Practical tasks at the end of every day that will help you earn on your knowledge</span>
+                    </li>
+                    <li class="modal__item">
+                        <span lang="ru">+14 дней в подарок доступа к платформе, на которой ты сможешь создать свой курс</span>
+                        <span lang="en">+14 days as a gift to access the platform on which you can create your course</span>
+                    </li>
+                    <li class="modal__item">
+                        <span lang="ru">Индивидуальная поддержка 24/7 (Проверка заданий кураторами)</span>
+                        <span lang="en">Individual support 24/7 (job verification by curators)</span>
+                    </li>
+                </ul>
+
+                <div class="modal__price-block">
+                    <span class="modal__price-text" lang="ru">Тариф:</span>
+                    <span class="modal__price-text" lang="en">Tariff:</span>
+                    <span class="modal__price-cur">$9.90</span>
+                    <span class="modal__price-old">$89.90</span>
+                </div>
+
+                <p class="modal__info-text">
+                    <span lang="ru">Доступ к платформе на неделю за $9.90, далее по тарифу</span>
+                    <span lang="en">Access to the platform for a week for $9.90, then at the rate</span>
+                </p>
+
+                <button class="modal__button button button--pay-open">
+                    <span lang="ru">Продолжить</span>
+                    <span lang="en">Continue</span>
+                </button>
+
+                <p class="modal__copy-block">
+                    <span lang="ru">Нажимая на кнопку, Вы соглашаетесь с условиями</span>
+                    <span lang="en">Pressing the button, you agree to the terms</span>
+                    <a href="https://keta.1-platforma.com/offer.pdf">
+                        <span lang="ru">оферты</span>
+                        <span lang="en">offer</span>
+                    </a>
+                    <span lang="ru">, действующими </span>
+                    <span lang="en">, acting</span>
+                    <a href="https://keta.1-platforma.com/tariff.pdf">
+                        <span lang="ru">тарифами</span>
+                        <span lang="en">tariffs</span>
+                    </a>
+                    <span lang="ru">сервиса, даёте своё согласие на</span>
+                    <span lang="en">service, give your consent to</span>
+                    <a href="https://keta.1-platforma.com/permission.pdf">
+                        <span lang="ru">обработку персональных данных</span>
+                        <span lang="en">processing personal data</span>
+                    </a>
+                    <span lang="ru">и на получение рекламных материалов, осознаёте возмездный характер оказываемых услуг</span>
+                    <span lang="en">and to receive promotional materials, aware of the compensated nature of the services
+					provided</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Modal -->
+
+    <!-- JS -->
+
+    <script src="https://pay.meleton.com/js/app.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- End JS -->
+</body>
+
+</html>
