@@ -11630,6 +11630,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   var progressWrap = document.querySelector('.progress');
   var progressBarEl = progressWrap.querySelector('.progress__bar');
+  var progressTextAnimList = document.querySelector('.progress__standby');
   var progressBar = new main_default.a.Circle(progressBarEl, {
     color: '#aaa',
     // This has to be the same size as the maximum width to
@@ -11710,7 +11711,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   var stepsLength = quizSteps.length;
   var stepId = 0;
   startBtn.addEventListener('click', function (e) {
-    // ym(85841570,'reachGoal','1');
+    ym(56477446, 'reachGoal', 'start');
     new DLAnimate().hide(startBlock, {
       name: 'fade',
       track: 'animation',
@@ -11733,8 +11734,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         name: 'fade',
         track: 'animation',
         afterLeave: function afterLeave(el) {
-          quizBlock.style.pointerEvents = null; // ym(85841570, 'reachGoal', '2');
-
+          quizBlock.style.pointerEvents = null;
+          ym(56477446, 'reachGoal', 'finish');
           runProgress();
         }
       });
@@ -11806,6 +11807,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
   function runProgress() {
+    progressTextAnim();
     new DLAnimate().show(progressWrap, {
       name: 'fade',
       track: 'animation',
@@ -11847,6 +11849,23 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         });
       }
     });
+  }
+
+  function progressTextAnim() {
+    setInterval(function () {
+      new DLAnimate().hide(progressTextAnimList, {
+        name: 'fade',
+        track: 'animation',
+        afterLeave: function afterLeave(el) {
+          var li = progressTextAnimList.querySelector('li');
+          progressTextAnimList.appendChild(li);
+          new DLAnimate().show(progressTextAnimList, {
+            name: 'fade',
+            track: 'animation'
+          });
+        }
+      });
+    }, 2000);
   } //show final block
 
 
@@ -11866,13 +11885,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
               }
             },
             "color": {
-              "value": "#ffffff"
+              "value": "#D4D4D4"
             },
             "shape": {
               "type": "circle",
               "stroke": {
                 "width": 0,
-                "color": "#000000"
+                "color": "#D4D4D4"
               },
               "polygon": {
                 "nb_sides": 5
@@ -11884,17 +11903,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
               }
             },
             "opacity": {
-              "value": 0.5,
+              "value": 1,
               "random": false,
               "anim": {
                 "enable": false,
                 "speed": 1,
-                "opacity_min": 0.15,
+                "opacity_min": 0.9,
                 "sync": false
               }
             },
             "size": {
-              "value": 2,
+              "value": 5,
               "random": true,
               "anim": {
                 "enable": false,
@@ -11906,8 +11925,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
             "line_linked": {
               "enable": true,
               "distance": 150,
-              "color": "#000",
-              "opacity": 0.15,
+              "color": "#D4D4D4",
+              "opacity": 1,
               "width": 1
             },
             "move": {
@@ -11965,8 +11984,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     var earning = document.querySelector('.result-card__earning');
     var requiredTime = document.querySelector('.result-card__required-time');
     var percentSuccess = document.querySelector('.result-card__percent-success');
-    var rivalryPoint = 0,
-        earningPoint = 0,
+    var earningPoint = 0,
         timePoint = 0,
         successPoints = 0;
     var skillsMaxPoint = 0,
@@ -12214,6 +12232,19 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       }
     }
 
+    var sphereList = document.querySelector('.result-card__sphere-list');
+    var choosedSkills = document.querySelectorAll('.option--active input[name=skills]');
+    sphereList.innerHTML = null;
+
+    for (var _i3 = 0; _i3 < choosedSkills.length; _i3++) {
+      var el = choosedSkills[_i3].parentElement.querySelector('.option__text');
+
+      var li = document.createElement('li');
+      li.classList.add('result-card__sphere-item');
+      li.innerHTML = el.innerHTML;
+      sphereList.appendChild(li);
+    }
+
     var resRivalry = skillsMaxPoint + languagesMaxPoint;
     rivalryGrade.textContent = resRivalry + '/10';
     rivalryLevel.textContent = resRivalry < 5 ? lang == 'ru' ? 'невысокий' : 'low' : (rivalryLevel.classList.add('result-card__rivalry-level--orange'), lang == 'ru' ? 'средний' : 'middle');
@@ -12232,8 +12263,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   var optionsList = document.querySelectorAll('.option');
 
-  var _loop = function _loop(_i3) {
-    var option = optionsList[_i3];
+  var _loop = function _loop(_i4) {
+    var option = optionsList[_i4];
     var input = option.querySelector('.option__input');
     var group = option.parentElement.querySelectorAll('.option');
     input.addEventListener('change', function (e) {
@@ -12270,8 +12301,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     });
   };
 
-  for (var _i3 = 0; _i3 < optionsList.length; _i3++) {
-    _loop(_i3);
+  for (var _i4 = 0; _i4 < optionsList.length; _i4++) {
+    _loop(_i4);
   } //show/hide next-button
 
 
@@ -12280,8 +12311,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     var optGroup = quizSteps[stepId].querySelectorAll('.option__input[type=checkbox]');
 
     if (optGroup.length > 0) {
-      for (var _i4 = 0; _i4 < optGroup.length; _i4++) {
-        if (optGroup[_i4].parentElement.classList.contains('option--active')) {
+      for (var _i5 = 0; _i5 < optGroup.length; _i5++) {
+        if (optGroup[_i5].parentElement.classList.contains('option--active')) {
           btnDisabled = false;
           break;
         }
@@ -12314,8 +12345,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   var modalCloseBtn = modal.querySelector('.modal__close-btn');
 
   if (modal) {
-    var _loop2 = function _loop2(_i5) {
-      var openBtn = modalOpenBtns[_i5],
+    var _loop2 = function _loop2(_i6) {
+      var openBtn = modalOpenBtns[_i6],
           modalId = "#" + openBtn.dataset.modal,
           modalEl = document.querySelector(modalId);
 
@@ -12366,8 +12397,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       }
     };
 
-    for (var _i5 = 0; _i5 < modalOpenBtns.length; _i5++) {
-      var _ret = _loop2(_i5);
+    for (var _i6 = 0; _i6 < modalOpenBtns.length; _i6++) {
+      var _ret = _loop2(_i6);
 
       if (_ret === "continue") continue;
     }

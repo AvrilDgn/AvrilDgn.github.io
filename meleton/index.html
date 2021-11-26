@@ -25,7 +25,29 @@
         }
     </script>
 
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+        ym(56477446, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer"
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/56477446" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <!-- CSS -->
 
@@ -882,24 +904,26 @@
 
                 <div class="progress__bar"></div>
 
-                <p class="progress__standby-text-main">
-                    <span lang="ru">Учитывается ваш личный опыт…</span>
-                    <span lang="en">Your personal experience is taken into account...</span>
-                </p>
-                <p class="progress__standby-text-sub">
-                    <span lang="ru">Идет аналитика по всем созданным темам…</span>
-                    <span lang="en">There is an analyst for all the topics created...</span>
-                </p>
+                <ul class="progress__standby standby">
+                    <li class="standby__item">
+                        <span lang="ru">Учитывается ваш <br> личный опыт…</span>
+                        <span lang="en">Your personal experience <br> is taken into account...</span>
+                    </li>
+                    <li class="standby__item">
+                        <span lang="ru">Идет аналитика по всем <br> созданным темам…</span>
+                        <span lang="en">There is an analyst for all <br> the topics created...</span>
+                    </li>
+                </ul>
             </div>
         </section>
         <!-- End Progress Bar -->
-
-        <div id="particles-js" class="particles"></div>
 
         <!-- Final -->
         <div class="final-wrap">
             <section class="final-wrap__result result">
                 <div class="container">
+                    <div id="particles-js" class="particles"></div>
+
                     <div class="result__info-text">
                         <span lang="ru">Нейросеть завершила анализ ваших ответов</span>
                         <span lang="en">Neuraleta completed the analysis of your answers</span>
