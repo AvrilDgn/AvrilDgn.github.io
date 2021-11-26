@@ -10245,11 +10245,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       autoStyleContainer: false
     },
     from: {
-      color: 'rgba(247, 237, 66, 1)',
+      color: '#8383FF',
       width: 3
     },
     to: {
-      color: 'rgba(243, 176, 13, 1)',
+      color: '#6666FE',
       width: 3
     },
     // Set default step function for all animate calls
@@ -10319,14 +10319,15 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   }); //show next step
 
   function nextStep() {
-    nextBtn.disabled = true;
+    quizBlock.style.pointerEvents = 'none';
 
     if (stepId + 1 >= stepsLength) {
       new DLAnimate().hide(quizBlock, {
         name: 'fade',
         track: 'animation',
         afterLeave: function afterLeave(el) {
-          // ym(85841570, 'reachGoal', '2');
+          quizBlock.style.pointerEvents = null; // ym(85841570, 'reachGoal', '2');
+
           runProgress();
         }
       });
@@ -10337,10 +10338,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         afterLeave: function afterLeave(el) {
           stepId++;
           status();
+          showBtn();
           new DLAnimate().show(quizSteps[stepId], {
             name: 'fade',
             track: 'animation',
-            afterEnter: function afterEnter(el) {}
+            afterEnter: function afterEnter(el) {
+              quizBlock.style.pointerEvents = null;
+            }
           });
         }
       });
@@ -10349,7 +10353,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
   function prevStep() {
-    nextBtn.disabled = true;
+    quizBlock.style.pointerEvents = 'none';
 
     if (stepId >= 1) {
       new DLAnimate().hide(quizSteps[stepId], {
@@ -10358,9 +10362,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         afterLeave: function afterLeave(el) {
           stepId--;
           status();
+          showBtn();
           new DLAnimate().show(quizSteps[stepId], {
             name: 'fade',
-            track: 'animation'
+            track: 'animation',
+            afterEnter: function afterEnter(el) {
+              quizBlock.style.pointerEvents = null;
+            }
           });
         }
       });
@@ -10372,7 +10380,9 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
           new DLAnimate().show(startBlock, {
             name: 'fade',
             track: 'animation',
-            afterEnter: function afterEnter(el) {}
+            afterEnter: function afterEnter(el) {
+              quizBlock.style.pointerEvents = null;
+            }
           });
         }
       });
@@ -10478,31 +10488,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         nextStep();
       } else {
         option.classList.toggle('option--active');
-        var disabled = true;
-        nextBtn.disabled = true;
-
-        for (var _j = 0; _j < group.length; _j++) {
-          var _opt = group[_j];
-
-          if (_opt.classList.contains('option--active')) {
-            disabled = false;
-            break;
-          }
-        } // if (disabled) {
-        // 	new DLAnimate().hide(nextBtn, {
-        // 		name: 'fade',
-        // 		track: 'animation'
-        // 	});
-        // } else {
-        // 	new DLAnimate().show(nextBtn, {
-        // 		name: 'fade',
-        // 		track: 'animation',
-        // 		afterEnter: function (el) {
-        // 			el.disabled = false;
-        // 		}
-        // 	});
-        // }
-
+        showBtn();
       }
 
       switch (input.getAttribute('name')) {
@@ -10518,6 +10504,37 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   for (var _i = 0; _i < optionsList.length; _i++) {
     _loop(_i);
+  } //show/hide next-button
+
+
+  function showBtn() {
+    var btnDisabled = true;
+    var optGroup = quizSteps[stepId].querySelectorAll('.option__input[type=checkbox]');
+
+    if (optGroup.length > 0) {
+      for (var _i2 = 0; _i2 < optGroup.length; _i2++) {
+        if (optGroup[_i2].parentElement.classList.contains('option--active')) {
+          btnDisabled = false;
+          break;
+        }
+      }
+
+      if (btnDisabled) {
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.disabled = false;
+        new DLAnimate().show(nextBtn, {
+          name: 'fade',
+          track: 'animation'
+        });
+      }
+    } else {
+      nextBtn.disabled = true;
+      new DLAnimate().hide(nextBtn, {
+        name: 'fade',
+        track: 'animation'
+      });
+    }
   }
   /**
    * modals
@@ -10529,8 +10546,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   var modalCloseBtn = modal.querySelector('.modal__close-btn');
 
   if (modal) {
-    var _loop2 = function _loop2(_i2) {
-      var openBtn = modalOpenBtns[_i2],
+    var _loop2 = function _loop2(_i3) {
+      var openBtn = modalOpenBtns[_i3],
           modalId = "#" + openBtn.dataset.modal,
           modalEl = document.querySelector(modalId);
 
@@ -10581,8 +10598,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       }
     };
 
-    for (var _i2 = 0; _i2 < modalOpenBtns.length; _i2++) {
-      var _ret = _loop2(_i2);
+    for (var _i3 = 0; _i3 < modalOpenBtns.length; _i3++) {
+      var _ret = _loop2(_i3);
 
       if (_ret === "continue") continue;
     }
