@@ -972,7 +972,6 @@ hr {
 }
 
 .start-block {
-  display: none;
   width: 100%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -1360,6 +1359,7 @@ hr {
 
 .final-wrap {
   padding-top: 21px;
+  display: none;
 }
 
 .final-wrap__reviews {
