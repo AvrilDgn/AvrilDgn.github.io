@@ -11851,6 +11851,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
   function showFinal() {
+    countingResults();
     new DLAnimate().show(finalBlock, {
       name: 'fade',
       track: 'animation',
@@ -11956,15 +11957,283 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
   prevBtn.addEventListener('click', function (e) {
     prevStep();
-  });
+  }); //Counting results
+
+  function countingResults() {
+    var rivalryGrade = document.querySelector('.result-card__rivalry-grade');
+    var rivalryLevel = document.querySelector('.result-card__rivalry-level');
+    var earning = document.querySelector('.result-card__earning');
+    var requiredTime = document.querySelector('.result-card__required-time');
+    var percentSuccess = document.querySelector('.result-card__percent-success');
+    var rivalryPoint = 0,
+        earningPoint = 0,
+        timePoint = 0,
+        successPoints = 0;
+    var skillsMaxPoint = 0,
+        languagesMaxPoint = 0;
+
+    for (var key in quizData) {
+      if (Object.hasOwnProperty.call(quizData, key)) {
+        var element = quizData[key];
+
+        switch (key) {
+          case 'employment':
+            switch (element) {
+              case 'hiring':
+                successPoints += 1;
+                break;
+
+              case 'self-employment':
+              case 'unemployed':
+                successPoints += 2;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'skills':
+            for (var _i = 0; _i < element.length; _i++) {
+              var skill = element[_i];
+              var point = void 0;
+
+              switch (skill) {
+                case "pedagogy":
+                  point = -1;
+                  break;
+
+                case "creation":
+                case "psychology":
+                case "IT":
+                case "beauty":
+                case "management":
+                  point = 1;
+                  break;
+
+                case "marketing":
+                case "design":
+                case "finance":
+                  point = 2;
+                  break;
+
+                case "personal-growth":
+                case "business":
+                  point = 3;
+                  break;
+
+                case "sport":
+                case "spiritual":
+                case "languages":
+                  point = 4;
+                  break;
+
+                case "sales":
+                default:
+                  break;
+              }
+
+              if (point > skillsMaxPoint) {
+                skillsMaxPoint = point;
+              }
+            }
+
+            break;
+
+          case 'languages':
+            for (var _i2 = 0; _i2 < element.length; _i2++) {
+              var language = element[_i2];
+
+              var _point = void 0;
+
+              switch (language) {
+                case 'english':
+                  _point = 2;
+                  break;
+
+                case 'spanish':
+                case 'german':
+                  _point = 1;
+                  break;
+
+                case 'french':
+                case 'chinese':
+                case 'arab':
+                case 'russian':
+                case 'other':
+                default:
+                  break;
+              }
+
+              if (_point > languagesMaxPoint) {
+                languagesMaxPoint = _point;
+              }
+            }
+
+            break;
+
+          case 'expected-earnings':
+            switch (element) {
+              case 'little':
+                earningPoint += 1;
+                break;
+
+              case 'middle':
+                earningPoint += 2;
+                break;
+
+              case 'above-average':
+                earningPoint += 3;
+                break;
+
+              case 'lot':
+              case 'very-lot':
+                earningPoint += 4;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'user':
+            switch (element) {
+              case 'very-bad':
+                earningPoint += -2;
+                break;
+
+              case 'bad':
+                earningPoint += -1;
+                break;
+
+              case 'normal':
+                timePoint += 1;
+                break;
+
+              case 'good':
+                timePoint += 1;
+                break;
+
+              case 'very-good':
+                earningPoint += 1;
+                timePoint += 2;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'social-networks':
+            switch (element) {
+              case 'none':
+                earningPoint += -1;
+                break;
+
+              case 'many':
+              case 'very-many':
+                earningPoint += 1;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'time':
+            switch (element) {
+              case 'none':
+                timePoint += 3;
+                break;
+
+              case 'few-a-week':
+                timePoint += 2;
+                break;
+
+              case 'few-a-day':
+                timePoint += 1;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'manage':
+            switch (element) {
+              case 'manage':
+                successPoints += 2;
+                break;
+
+              case 'no-experience':
+                successPoints += 1;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'business':
+            switch (element) {
+              case 'unsuccessful':
+              case 'successful':
+                successPoints++;
+                earningPoint++;
+                timePoint++;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          case 'risk':
+            switch (element) {
+              case 'sometimes':
+              case 'often':
+                successPoints += 2;
+                break;
+
+              default:
+                break;
+            }
+
+            break;
+
+          default:
+            break;
+        }
+      }
+    }
+
+    var resRivalry = skillsMaxPoint + languagesMaxPoint;
+    rivalryGrade.textContent = resRivalry + '/10';
+    rivalryLevel.textContent = resRivalry < 5 ? lang == 'ru' ? 'невысокий' : 'low' : (rivalryLevel.classList.add('result-card__rivalry-level--orange'), lang == 'ru' ? 'средний' : 'middle');
+    var resEarning = earningPoint > -3 && earningPoint < 0 ? '$0 - $1000' : earningPoint == 0 ? '$2 000 - $8 000' : earningPoint == 1 ? '$12 000 - $25 000' : earningPoint == 2 ? '$23 000 - $37 000' : earningPoint == 3 ? '$30 000 - $55 000' : earningPoint > 3 ? '$65 000 - $90 000' : '$0 - $500';
+    earning.textContent = resEarning;
+    var resTime = timePoint < 3 ? '1-2' : timePoint < 6 ? '3-4' : '4-5';
+    var timeText = lang == 'ru' && timePoint < 6 ? 'часа в день' : lang == 'ru' ? 'часов в день' : 'hours a day';
+    requiredTime.textContent = resTime + ' ' + timeText;
+    var resSuccess = successPoints == 1 ? 89 : successPoints == 2 ? 90 : successPoints == 3 ? 92 : successPoints == 4 ? 94 : successPoints > 4 ? 96 : 88;
+    percentSuccess.textContent = resSuccess + '%';
+  }
   /**
    * Options checked
    */
 
+
   var optionsList = document.querySelectorAll('.option');
 
-  var _loop = function _loop(_i) {
-    var option = optionsList[_i];
+  var _loop = function _loop(_i3) {
+    var option = optionsList[_i3];
     var input = option.querySelector('.option__input');
     var group = option.parentElement.querySelectorAll('.option');
     input.addEventListener('change', function (e) {
@@ -11972,32 +12241,37 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       var value = input.getAttribute('value');
 
       if (input.getAttribute('type') === 'radio') {
+        quizData[type] = null;
+
         for (var j = 0; j < group.length; j++) {
           var opt = group[j];
           opt.classList.remove('option--active');
         }
 
-        option.classList.add('option--active'); // quizData[type] = value;
-
+        option.classList.add('option--active');
+        quizData[type] = value;
         nextStep();
       } else {
+        quizData[type] = [];
         option.classList.toggle('option--active');
+
+        for (var _j = 0; _j < group.length; _j++) {
+          var _input = group[_j].querySelector('.option__input');
+
+          value = _input.getAttribute('value');
+
+          if (group[_j].classList.contains('option--active')) {
+            quizData[type].push(value);
+          }
+        }
+
         showBtn();
-      }
-
-      switch (input.getAttribute('name')) {
-        case 'activity':
-          activity = input.value;
-          break;
-
-        default:
-          break;
       }
     });
   };
 
-  for (var _i = 0; _i < optionsList.length; _i++) {
-    _loop(_i);
+  for (var _i3 = 0; _i3 < optionsList.length; _i3++) {
+    _loop(_i3);
   } //show/hide next-button
 
 
@@ -12006,8 +12280,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     var optGroup = quizSteps[stepId].querySelectorAll('.option__input[type=checkbox]');
 
     if (optGroup.length > 0) {
-      for (var _i2 = 0; _i2 < optGroup.length; _i2++) {
-        if (optGroup[_i2].parentElement.classList.contains('option--active')) {
+      for (var _i4 = 0; _i4 < optGroup.length; _i4++) {
+        if (optGroup[_i4].parentElement.classList.contains('option--active')) {
           btnDisabled = false;
           break;
         }
@@ -12040,8 +12314,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   var modalCloseBtn = modal.querySelector('.modal__close-btn');
 
   if (modal) {
-    var _loop2 = function _loop2(_i3) {
-      var openBtn = modalOpenBtns[_i3],
+    var _loop2 = function _loop2(_i5) {
+      var openBtn = modalOpenBtns[_i5],
           modalId = "#" + openBtn.dataset.modal,
           modalEl = document.querySelector(modalId);
 
@@ -12092,8 +12366,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       }
     };
 
-    for (var _i3 = 0; _i3 < modalOpenBtns.length; _i3++) {
-      var _ret = _loop2(_i3);
+    for (var _i5 = 0; _i5 < modalOpenBtns.length; _i5++) {
+      var _ret = _loop2(_i5);
 
       if (_ret === "continue") continue;
     }
@@ -12104,11 +12378,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
   var payOpenBtn = document.querySelector('.button--pay-open');
+  var payModal = document.querySelector('.modal__container--pay');
   payOpenBtn.addEventListener('click', function (e) {
     new DLAnimate().hide(this.parentElement, {
       name: 'fade',
       track: 'animation',
-      afterLeave: function afterLeave(el) {//появляется форма оплаты
+      afterLeave: function afterLeave(el) {
+        new DLAnimate().show(payModal, {
+          name: 'fade',
+          track: 'animation',
+          afterLeave: function afterLeave(el) {}
+        });
       }
     });
   });

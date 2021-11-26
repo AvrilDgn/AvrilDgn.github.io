@@ -1516,6 +1516,14 @@ hr {
   color: #282d37;
 }
 
+.result-card__rivalry-level {
+  color: #26C93C;
+}
+
+.result-card__rivalry-level--orange {
+  color: #F2A200;
+}
+
 .result-card__sphere-list {
   margin-top: 12px;
   margin-bottom: 8px;
