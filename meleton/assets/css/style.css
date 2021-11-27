@@ -202,6 +202,25 @@ hr {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  z-index: 1;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 991px;
+  height: 788px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-image: url(../img/bg-circles.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 
 .container {
@@ -241,7 +260,7 @@ hr {
           transform: translateX(-50%);
   width: 100vw;
   height: 190px;
-  z-index: -1;
+  z-index: -2;
 }
 
 .fade-leave-active {
@@ -1381,7 +1400,7 @@ hr {
 .final-wrap {
   padding-top: 21px;
   display: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .final-wrap__reviews {
@@ -1394,6 +1413,28 @@ hr {
 
 .result {
   position: relative;
+}
+
+.result .container {
+  position: relative;
+}
+
+.result .container::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: block;
+  width: 181px;
+  height: 165px;
+  z-index: -1;
+  background-image: url(../img/result-bg-circle.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .result__info-text {
@@ -1526,7 +1567,7 @@ hr {
 }
 
 .result-card__rivalry-level {
-  color: #26C93C;
+  color: #26c93c;
 }
 
 .result-card__rivalry-level--orange {
