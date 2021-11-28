@@ -1019,13 +1019,13 @@ hr {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   display: block;
-  width: 1020px;
-  height: 575px;
+  width: 642px;
+  height: 405px;
   background-image: url(../img/background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: -130px;
-  background-position-y: -40px;
+  background-position-x: 50px;
+  background-position-y: -55px;
 }
 
 .start-block__title {
