@@ -227,7 +227,7 @@ hr {
   position: relative;
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 320px;
+  max-width: 490px;
   width: 100%;
   z-index: 1;
 }
@@ -1047,6 +1047,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  max-width: 380px;
 }
 
 .quiz {
@@ -2034,6 +2035,10 @@ hr {
   .start-block__title {
     margin-top: 90px;
     font-size: 25px;
+  }
+
+  .start-block__button {
+    max-width: 380px;
   }
 
   .quiz {
