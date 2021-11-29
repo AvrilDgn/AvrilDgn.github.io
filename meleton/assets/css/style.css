@@ -185,7 +185,7 @@ hr {
   position: relative;
   margin: 0 auto;
   padding-top: 49px;
-  padding-bottom: 175px;
+  padding-bottom: 190px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1178,7 +1178,6 @@ hr {
 
 .quiz__next-button {
   margin-top: 24px;
-  margin-bottom: 26px;
   display: none;
   width: 100%;
 }
@@ -2155,10 +2154,6 @@ hr {
 }
 
 @media screen and (min-width: 992px) {
-  .main {
-    padding-bottom: 190px;
-  }
-
   .container {
     max-width: 600px;
   }
