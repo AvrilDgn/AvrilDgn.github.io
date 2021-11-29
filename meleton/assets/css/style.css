@@ -380,7 +380,6 @@ hr {
   letter-spacing: -0.025em;
   color: white;
   text-decoration: none;
-  overflow: hidden;
   z-index: 1;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
@@ -392,6 +391,71 @@ hr {
           user-select: none;
 }
 
+.button--pulse {
+  -webkit-box-shadow: 0 0 0 0 rgba(90, 153, 220, 0.7), inset 0 1px 0 #abcbe9;
+          box-shadow: 0 0 0 0 rgba(90, 153, 220, 0.7), inset 0 1px 0 #abcbe9;
+  -webkit-animation: pulse 1.5s infinite cubic-bezier(0.6, 0, 0, 1);
+          animation: pulse 1.5s infinite cubic-bezier(0.6, 0, 0, 1);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+
+  25% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  75% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 20px rgba(90, 153, 220, 0), inset 0 1px 0 #abcbe9;
+            box-shadow: 0 0 0 20px rgba(90, 153, 220, 0), inset 0 1px 0 #abcbe9;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+
+  25% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  75% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 20px rgba(90, 153, 220, 0), inset 0 1px 0 #abcbe9;
+            box-shadow: 0 0 0 20px rgba(90, 153, 220, 0), inset 0 1px 0 #abcbe9;
+  }
+}
+
 .button::before {
   content: "";
   position: absolute;
@@ -401,6 +465,7 @@ hr {
   width: 100%;
   height: 100%;
   background-color: black;
+  border-radius: 8px;
   opacity: 0;
   z-index: -1;
   -webkit-transition: opacity 0.3s ease;
@@ -1047,7 +1112,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 380px;
+  max-width: 320px;
 }
 
 .quiz {
