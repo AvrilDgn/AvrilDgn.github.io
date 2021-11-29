@@ -1174,7 +1174,7 @@ hr {
 
 .quiz__option-item {
   margin: 6px;
-  width: 100%;
+  width: calc(100 - 12px);
 }
 
 .quiz__next-button {
@@ -1372,6 +1372,7 @@ hr {
 .final-wrap {
   padding-top: 21px;
   display: none;
+  width: 100%;
   z-index: 2;
 }
 
@@ -2071,6 +2072,7 @@ hr {
 
   .quiz__option-item {
     margin: 8px;
+    width: calc(100 - 16px);
   }
 
   .steps-progress {
