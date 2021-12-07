@@ -10383,7 +10383,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     this.disabled = true;
 
     if (stageId >= stages.length) {
-      // ym(85841570, 'reachGoal', '2');
+      ym(85841570, 'reachGoal', '2');
       new DLAnimate().hide(quizBlock, {
         name: 'fade',
         track: 'animation',
@@ -10683,8 +10683,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         afterLeave: function afterLeave(el) {
           new DLAnimate().show(order, {
             name: 'fade',
-            track: 'animation',
-            afterLeave: function afterLeave(el) {}
+            track: 'animation'
           });
         }
       });
@@ -10693,22 +10692,22 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
   /**
    * Pay
    */
-  // let payOpenBtn = document.querySelector('.button--pay-open');
-  // payOpenBtn.addEventListener('click', function (e) {
-  // 	let btnText = lang == "ru" ? "Оплатить" : "Pay";
-  // 	new DLAnimate().hide(this.parentElement, {
-  // 		name: 'fade',
-  // 		track: 'animation',
-  // 		afterLeave: function (el) {
-  // 			el.innerHTML = '<pay-widget uid="ZY3rmX0PWjwAZJym" ymcounter="85841570" ymtargetstart="224924169" ymtargetend="224924192" email="' + mail + '" buttonText="' + btnText + '"/>';
-  // 			new DLAnimate().show(el, {
-  // 				name: 'fade',
-  // 				track: 'animation'
-  // 			});
-  // 		}
-  // 	});
-  // });
 
+
+  var payOpenBtn = document.querySelector('.button--pay-open');
+  var pay = document.querySelector('.pay');
+  payOpenBtn.addEventListener('click', function (e) {
+    new DLAnimate().hide(order, {
+      name: 'fade',
+      track: 'animation',
+      afterLeave: function afterLeave(el) {
+        new DLAnimate().show(pay, {
+          name: 'fade',
+          track: 'animation'
+        });
+      }
+    });
+  });
 });
 
 /***/ })

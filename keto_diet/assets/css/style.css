@@ -1007,6 +1007,21 @@ hr {
   text-decoration: none;
 }
 
+.pay {
+  padding-top: 20px;
+  display: none;
+  width: 100%;
+}
+
+.pay .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .main--start .footer {
   display: block;
   text-align: left;
@@ -2302,7 +2317,7 @@ hr {
 }
 
 .plan__btn {
-  margin-top: 18px;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -2517,7 +2532,7 @@ hr {
 }
 
 .includes__btn {
-  margin-top: 16px;
+  margin-top: 18px;
   width: 100%;
 }
 
