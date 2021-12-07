@@ -231,355 +231,6 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Base object for different progress bar shapes
-var Path = __webpack_require__(4);
-
-var utils = __webpack_require__(0);
-
-var DESTROYED_ERROR = 'Object is destroyed';
-
-var Shape = function Shape(container, opts) {
-  // Throw a better error if progress bars are not initialized with `new`
-  // keyword
-  if (!(this instanceof Shape)) {
-    throw new Error('Constructor was called without new keyword');
-  } // Prevent calling constructor without parameters so inheritance
-  // works correctly. To understand, this is how Shape is inherited:
-  //
-  //   Line.prototype = new Shape();
-  //
-  // We just want to set the prototype for Line.
-
-
-  if (arguments.length === 0) {
-    return;
-  } // Default parameters for progress bar creation
-
-
-  this._opts = utils.extend({
-    color: '#555',
-    strokeWidth: 1.0,
-    trailColor: null,
-    trailWidth: null,
-    fill: null,
-    text: {
-      style: {
-        color: null,
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        padding: 0,
-        margin: 0,
-        transform: {
-          prefix: true,
-          value: 'translate(-50%, -50%)'
-        }
-      },
-      autoStyleContainer: true,
-      alignToBottom: true,
-      value: null,
-      className: 'progressbar-text'
-    },
-    svgStyle: {
-      display: 'block',
-      width: '100%'
-    },
-    warnings: false
-  }, opts, true); // Use recursive extend
-  // If user specifies e.g. svgStyle or text style, the whole object
-  // should replace the defaults to make working with styles easier
-
-  if (utils.isObject(opts) && opts.svgStyle !== undefined) {
-    this._opts.svgStyle = opts.svgStyle;
-  }
-
-  if (utils.isObject(opts) && utils.isObject(opts.text) && opts.text.style !== undefined) {
-    this._opts.text.style = opts.text.style;
-  }
-
-  var svgView = this._createSvgView(this._opts);
-
-  var element;
-
-  if (utils.isString(container)) {
-    element = document.querySelector(container);
-  } else {
-    element = container;
-  }
-
-  if (!element) {
-    throw new Error('Container does not exist: ' + container);
-  }
-
-  this._container = element;
-
-  this._container.appendChild(svgView.svg);
-
-  if (this._opts.warnings) {
-    this._warnContainerAspectRatio(this._container);
-  }
-
-  if (this._opts.svgStyle) {
-    utils.setStyles(svgView.svg, this._opts.svgStyle);
-  } // Expose public attributes before Path initialization
-
-
-  this.svg = svgView.svg;
-  this.path = svgView.path;
-  this.trail = svgView.trail;
-  this.text = null;
-  var newOpts = utils.extend({
-    attachment: undefined,
-    shape: this
-  }, this._opts);
-  this._progressPath = new Path(svgView.path, newOpts);
-
-  if (utils.isObject(this._opts.text) && this._opts.text.value !== null) {
-    this.setText(this._opts.text.value);
-  }
-};
-
-Shape.prototype.animate = function animate(progress, opts, cb) {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  this._progressPath.animate(progress, opts, cb);
-};
-
-Shape.prototype.stop = function stop() {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  } // Don't crash if stop is called inside step function
-
-
-  if (this._progressPath === undefined) {
-    return;
-  }
-
-  this._progressPath.stop();
-};
-
-Shape.prototype.pause = function pause() {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  if (this._progressPath === undefined) {
-    return;
-  }
-
-  if (!this._progressPath._tweenable) {
-    // It seems that we can't pause this
-    return;
-  }
-
-  this._progressPath._tweenable.pause();
-};
-
-Shape.prototype.resume = function resume() {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  if (this._progressPath === undefined) {
-    return;
-  }
-
-  if (!this._progressPath._tweenable) {
-    // It seems that we can't resume this
-    return;
-  }
-
-  this._progressPath._tweenable.resume();
-};
-
-Shape.prototype.destroy = function destroy() {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  this.stop();
-  this.svg.parentNode.removeChild(this.svg);
-  this.svg = null;
-  this.path = null;
-  this.trail = null;
-  this._progressPath = null;
-
-  if (this.text !== null) {
-    this.text.parentNode.removeChild(this.text);
-    this.text = null;
-  }
-};
-
-Shape.prototype.set = function set(progress) {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  this._progressPath.set(progress);
-};
-
-Shape.prototype.value = function value() {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  if (this._progressPath === undefined) {
-    return 0;
-  }
-
-  return this._progressPath.value();
-};
-
-Shape.prototype.setText = function setText(newText) {
-  if (this._progressPath === null) {
-    throw new Error(DESTROYED_ERROR);
-  }
-
-  if (this.text === null) {
-    // Create new text node
-    this.text = this._createTextContainer(this._opts, this._container);
-
-    this._container.appendChild(this.text);
-  } // Remove previous text and add new
-
-
-  if (utils.isObject(newText)) {
-    utils.removeChildren(this.text);
-    this.text.appendChild(newText);
-  } else {
-    this.text.innerHTML = newText;
-  }
-};
-
-Shape.prototype._createSvgView = function _createSvgView(opts) {
-  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-
-  this._initializeSvg(svg, opts);
-
-  var trailPath = null; // Each option listed in the if condition are 'triggers' for creating
-  // the trail path
-
-  if (opts.trailColor || opts.trailWidth) {
-    trailPath = this._createTrail(opts);
-    svg.appendChild(trailPath);
-  }
-
-  var path = this._createPath(opts);
-
-  svg.appendChild(path);
-  return {
-    svg: svg,
-    path: path,
-    trail: trailPath
-  };
-};
-
-Shape.prototype._initializeSvg = function _initializeSvg(svg, opts) {
-  svg.setAttribute('viewBox', '0 0 100 100');
-};
-
-Shape.prototype._createPath = function _createPath(opts) {
-  var pathString = this._pathString(opts);
-
-  return this._createPathElement(pathString, opts);
-};
-
-Shape.prototype._createTrail = function _createTrail(opts) {
-  // Create path string with original passed options
-  var pathString = this._trailString(opts); // Prevent modifying original
-
-
-  var newOpts = utils.extend({}, opts); // Defaults for parameters which modify trail path
-
-  if (!newOpts.trailColor) {
-    newOpts.trailColor = '#eee';
-  }
-
-  if (!newOpts.trailWidth) {
-    newOpts.trailWidth = newOpts.strokeWidth;
-  }
-
-  newOpts.color = newOpts.trailColor;
-  newOpts.strokeWidth = newOpts.trailWidth; // When trail path is set, fill must be set for it instead of the
-  // actual path to prevent trail stroke from clipping
-
-  newOpts.fill = null;
-  return this._createPathElement(pathString, newOpts);
-};
-
-Shape.prototype._createPathElement = function _createPathElement(pathString, opts) {
-  var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  path.setAttribute('d', pathString);
-  path.setAttribute('stroke', opts.color);
-  path.setAttribute('stroke-width', opts.strokeWidth);
-
-  if (opts.fill) {
-    path.setAttribute('fill', opts.fill);
-  } else {
-    path.setAttribute('fill-opacity', '0');
-  }
-
-  return path;
-};
-
-Shape.prototype._createTextContainer = function _createTextContainer(opts, container) {
-  var textContainer = document.createElement('div');
-  textContainer.className = opts.text.className;
-  var textStyle = opts.text.style;
-
-  if (textStyle) {
-    if (opts.text.autoStyleContainer) {
-      container.style.position = 'relative';
-    }
-
-    utils.setStyles(textContainer, textStyle); // Default text color to progress bar's color
-
-    if (!textStyle.color) {
-      textContainer.style.color = opts.color;
-    }
-  }
-
-  this._initializeTextContainer(opts, container, textContainer);
-
-  return textContainer;
-}; // Give custom shapes possibility to modify text element
-
-
-Shape.prototype._initializeTextContainer = function (opts, container, element) {// By default, no-op
-  // Custom shapes should respect API options, such as text.style
-};
-
-Shape.prototype._pathString = function _pathString(opts) {
-  throw new Error('Override this function for each progress bar');
-};
-
-Shape.prototype._trailString = function _trailString(opts) {
-  throw new Error('Override this function for each progress bar');
-};
-
-Shape.prototype._warnContainerAspectRatio = function _warnContainerAspectRatio(container) {
-  if (!this.containerAspectRatio) {
-    return;
-  }
-
-  var computedStyle = window.getComputedStyle(container, null);
-  var width = parseFloat(computedStyle.getPropertyValue('width'), 10);
-  var height = parseFloat(computedStyle.getPropertyValue('height'), 10);
-
-  if (!utils.floatEquals(this.containerAspectRatio, width / height)) {
-    console.warn('Incorrect aspect ratio of container', '#' + container.id, 'detected:', computedStyle.getPropertyValue('width') + '(width)', '/', computedStyle.getPropertyValue('height') + '(height)', '=', width / height);
-    console.warn('Aspect ratio of should be', this.containerAspectRatio);
-  }
-};
-
-module.exports = Shape;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
 /* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -1720,6 +1371,355 @@ module.exports = Shape;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(3)(module)))
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Base object for different progress bar shapes
+var Path = __webpack_require__(4);
+
+var utils = __webpack_require__(0);
+
+var DESTROYED_ERROR = 'Object is destroyed';
+
+var Shape = function Shape(container, opts) {
+  // Throw a better error if progress bars are not initialized with `new`
+  // keyword
+  if (!(this instanceof Shape)) {
+    throw new Error('Constructor was called without new keyword');
+  } // Prevent calling constructor without parameters so inheritance
+  // works correctly. To understand, this is how Shape is inherited:
+  //
+  //   Line.prototype = new Shape();
+  //
+  // We just want to set the prototype for Line.
+
+
+  if (arguments.length === 0) {
+    return;
+  } // Default parameters for progress bar creation
+
+
+  this._opts = utils.extend({
+    color: '#555',
+    strokeWidth: 1.0,
+    trailColor: null,
+    trailWidth: null,
+    fill: null,
+    text: {
+      style: {
+        color: null,
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        padding: 0,
+        margin: 0,
+        transform: {
+          prefix: true,
+          value: 'translate(-50%, -50%)'
+        }
+      },
+      autoStyleContainer: true,
+      alignToBottom: true,
+      value: null,
+      className: 'progressbar-text'
+    },
+    svgStyle: {
+      display: 'block',
+      width: '100%'
+    },
+    warnings: false
+  }, opts, true); // Use recursive extend
+  // If user specifies e.g. svgStyle or text style, the whole object
+  // should replace the defaults to make working with styles easier
+
+  if (utils.isObject(opts) && opts.svgStyle !== undefined) {
+    this._opts.svgStyle = opts.svgStyle;
+  }
+
+  if (utils.isObject(opts) && utils.isObject(opts.text) && opts.text.style !== undefined) {
+    this._opts.text.style = opts.text.style;
+  }
+
+  var svgView = this._createSvgView(this._opts);
+
+  var element;
+
+  if (utils.isString(container)) {
+    element = document.querySelector(container);
+  } else {
+    element = container;
+  }
+
+  if (!element) {
+    throw new Error('Container does not exist: ' + container);
+  }
+
+  this._container = element;
+
+  this._container.appendChild(svgView.svg);
+
+  if (this._opts.warnings) {
+    this._warnContainerAspectRatio(this._container);
+  }
+
+  if (this._opts.svgStyle) {
+    utils.setStyles(svgView.svg, this._opts.svgStyle);
+  } // Expose public attributes before Path initialization
+
+
+  this.svg = svgView.svg;
+  this.path = svgView.path;
+  this.trail = svgView.trail;
+  this.text = null;
+  var newOpts = utils.extend({
+    attachment: undefined,
+    shape: this
+  }, this._opts);
+  this._progressPath = new Path(svgView.path, newOpts);
+
+  if (utils.isObject(this._opts.text) && this._opts.text.value !== null) {
+    this.setText(this._opts.text.value);
+  }
+};
+
+Shape.prototype.animate = function animate(progress, opts, cb) {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  this._progressPath.animate(progress, opts, cb);
+};
+
+Shape.prototype.stop = function stop() {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  } // Don't crash if stop is called inside step function
+
+
+  if (this._progressPath === undefined) {
+    return;
+  }
+
+  this._progressPath.stop();
+};
+
+Shape.prototype.pause = function pause() {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  if (this._progressPath === undefined) {
+    return;
+  }
+
+  if (!this._progressPath._tweenable) {
+    // It seems that we can't pause this
+    return;
+  }
+
+  this._progressPath._tweenable.pause();
+};
+
+Shape.prototype.resume = function resume() {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  if (this._progressPath === undefined) {
+    return;
+  }
+
+  if (!this._progressPath._tweenable) {
+    // It seems that we can't resume this
+    return;
+  }
+
+  this._progressPath._tweenable.resume();
+};
+
+Shape.prototype.destroy = function destroy() {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  this.stop();
+  this.svg.parentNode.removeChild(this.svg);
+  this.svg = null;
+  this.path = null;
+  this.trail = null;
+  this._progressPath = null;
+
+  if (this.text !== null) {
+    this.text.parentNode.removeChild(this.text);
+    this.text = null;
+  }
+};
+
+Shape.prototype.set = function set(progress) {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  this._progressPath.set(progress);
+};
+
+Shape.prototype.value = function value() {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  if (this._progressPath === undefined) {
+    return 0;
+  }
+
+  return this._progressPath.value();
+};
+
+Shape.prototype.setText = function setText(newText) {
+  if (this._progressPath === null) {
+    throw new Error(DESTROYED_ERROR);
+  }
+
+  if (this.text === null) {
+    // Create new text node
+    this.text = this._createTextContainer(this._opts, this._container);
+
+    this._container.appendChild(this.text);
+  } // Remove previous text and add new
+
+
+  if (utils.isObject(newText)) {
+    utils.removeChildren(this.text);
+    this.text.appendChild(newText);
+  } else {
+    this.text.innerHTML = newText;
+  }
+};
+
+Shape.prototype._createSvgView = function _createSvgView(opts) {
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+
+  this._initializeSvg(svg, opts);
+
+  var trailPath = null; // Each option listed in the if condition are 'triggers' for creating
+  // the trail path
+
+  if (opts.trailColor || opts.trailWidth) {
+    trailPath = this._createTrail(opts);
+    svg.appendChild(trailPath);
+  }
+
+  var path = this._createPath(opts);
+
+  svg.appendChild(path);
+  return {
+    svg: svg,
+    path: path,
+    trail: trailPath
+  };
+};
+
+Shape.prototype._initializeSvg = function _initializeSvg(svg, opts) {
+  svg.setAttribute('viewBox', '0 0 100 100');
+};
+
+Shape.prototype._createPath = function _createPath(opts) {
+  var pathString = this._pathString(opts);
+
+  return this._createPathElement(pathString, opts);
+};
+
+Shape.prototype._createTrail = function _createTrail(opts) {
+  // Create path string with original passed options
+  var pathString = this._trailString(opts); // Prevent modifying original
+
+
+  var newOpts = utils.extend({}, opts); // Defaults for parameters which modify trail path
+
+  if (!newOpts.trailColor) {
+    newOpts.trailColor = '#eee';
+  }
+
+  if (!newOpts.trailWidth) {
+    newOpts.trailWidth = newOpts.strokeWidth;
+  }
+
+  newOpts.color = newOpts.trailColor;
+  newOpts.strokeWidth = newOpts.trailWidth; // When trail path is set, fill must be set for it instead of the
+  // actual path to prevent trail stroke from clipping
+
+  newOpts.fill = null;
+  return this._createPathElement(pathString, newOpts);
+};
+
+Shape.prototype._createPathElement = function _createPathElement(pathString, opts) {
+  var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', pathString);
+  path.setAttribute('stroke', opts.color);
+  path.setAttribute('stroke-width', opts.strokeWidth);
+
+  if (opts.fill) {
+    path.setAttribute('fill', opts.fill);
+  } else {
+    path.setAttribute('fill-opacity', '0');
+  }
+
+  return path;
+};
+
+Shape.prototype._createTextContainer = function _createTextContainer(opts, container) {
+  var textContainer = document.createElement('div');
+  textContainer.className = opts.text.className;
+  var textStyle = opts.text.style;
+
+  if (textStyle) {
+    if (opts.text.autoStyleContainer) {
+      container.style.position = 'relative';
+    }
+
+    utils.setStyles(textContainer, textStyle); // Default text color to progress bar's color
+
+    if (!textStyle.color) {
+      textContainer.style.color = opts.color;
+    }
+  }
+
+  this._initializeTextContainer(opts, container, textContainer);
+
+  return textContainer;
+}; // Give custom shapes possibility to modify text element
+
+
+Shape.prototype._initializeTextContainer = function (opts, container, element) {// By default, no-op
+  // Custom shapes should respect API options, such as text.style
+};
+
+Shape.prototype._pathString = function _pathString(opts) {
+  throw new Error('Override this function for each progress bar');
+};
+
+Shape.prototype._trailString = function _trailString(opts) {
+  throw new Error('Override this function for each progress bar');
+};
+
+Shape.prototype._warnContainerAspectRatio = function _warnContainerAspectRatio(container) {
+  if (!this.containerAspectRatio) {
+    return;
+  }
+
+  var computedStyle = window.getComputedStyle(container, null);
+  var width = parseFloat(computedStyle.getPropertyValue('width'), 10);
+  var height = parseFloat(computedStyle.getPropertyValue('height'), 10);
+
+  if (!utils.floatEquals(this.containerAspectRatio, width / height)) {
+    console.warn('Incorrect aspect ratio of container', '#' + container.id, 'detected:', computedStyle.getPropertyValue('width') + '(width)', '/', computedStyle.getPropertyValue('height') + '(height)', '=', width / height);
+    console.warn('Aspect ratio of should be', this.containerAspectRatio);
+  }
+};
+
+module.exports = Shape;
+
+/***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
@@ -1939,7 +1939,7 @@ module.exports = Path;
 /***/ (function(module, exports, __webpack_require__) {
 
 // Circle shaped progress bar
-var Shape = __webpack_require__(1);
+var Shape = __webpack_require__(2);
 
 var utils = __webpack_require__(0);
 
@@ -1989,7 +1989,7 @@ module.exports = {
   // Base-class for creating new custom shapes
   // to be in line with the API of built-in shapes
   // Undocumented.
-  Shape: __webpack_require__(1),
+  Shape: __webpack_require__(2),
   // Internal utils, undocumented.
   utils: __webpack_require__(0)
 };
@@ -2000,7 +2000,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Line shaped progress bar
-var Shape = __webpack_require__(1);
+var Shape = __webpack_require__(2);
 
 var utils = __webpack_require__(0);
 
@@ -2085,7 +2085,7 @@ module.exports = Line;
             return Q;
           },
           easeInBack: function easeInBack() {
-            return E;
+            return T;
           },
           easeInCirc: function easeInCirc() {
             return j;
@@ -2094,7 +2094,7 @@ module.exports = Line;
             return c;
           },
           easeInExpo: function easeInExpo() {
-            return b;
+            return w;
           },
           easeInOutBack: function easeInOutBack() {
             return F;
@@ -2118,7 +2118,7 @@ module.exports = Line;
             return d;
           },
           easeInOutSine: function easeInOutSine() {
-            return w;
+            return b;
           },
           easeInQuad: function easeInQuad() {
             return o;
@@ -2130,10 +2130,10 @@ module.exports = Line;
             return _;
           },
           easeInSine: function easeInSine() {
-            return g;
+            return m;
           },
           easeOutBack: function easeOutBack() {
-            return T;
+            return E;
           },
           easeOutBounce: function easeOutBounce() {
             return M;
@@ -2157,22 +2157,22 @@ module.exports = Line;
             return y;
           },
           easeOutSine: function easeOutSine() {
-            return m;
+            return g;
           },
           easeTo: function easeTo() {
             return N;
           },
           elastic: function elastic() {
-            return I;
+            return x;
           },
           linear: function linear() {
             return u;
           },
           swingFrom: function swingFrom() {
-            return A;
+            return I;
           },
           swingFromTo: function swingFromTo() {
-            return x;
+            return A;
           },
           swingTo: function swingTo() {
             return C;
@@ -2233,16 +2233,16 @@ module.exports = Line;
             d = function d(t) {
           return (t /= .5) < 1 ? .5 * Math.pow(t, 5) : .5 * (Math.pow(t - 2, 5) + 2);
         },
-            g = function g(t) {
+            m = function m(t) {
           return 1 - Math.cos(t * (Math.PI / 2));
         },
-            m = function m(t) {
+            g = function g(t) {
           return Math.sin(t * (Math.PI / 2));
         },
-            w = function w(t) {
+            b = function b(t) {
           return -.5 * (Math.cos(Math.PI * t) - 1);
         },
-            b = function b(t) {
+            w = function w(t) {
           return 0 === t ? 0 : Math.pow(2, 10 * (t - 1));
         },
             O = function O(t) {
@@ -2263,11 +2263,11 @@ module.exports = Line;
             M = function M(t) {
           return t < 1 / 2.75 ? 7.5625 * t * t : t < 2 / 2.75 ? 7.5625 * (t -= 1.5 / 2.75) * t + .75 : t < 2.5 / 2.75 ? 7.5625 * (t -= 2.25 / 2.75) * t + .9375 : 7.5625 * (t -= 2.625 / 2.75) * t + .984375;
         },
-            E = function E(t) {
+            T = function T(t) {
           var n = 1.70158;
           return t * t * ((n + 1) * t - n);
         },
-            T = function T(t) {
+            E = function E(t) {
           var n = 1.70158;
           return (t -= 1) * t * ((n + 1) * t + n) + 1;
         },
@@ -2275,14 +2275,14 @@ module.exports = Line;
           var n = 1.70158;
           return (t /= .5) < 1 ? t * t * ((1 + (n *= 1.525)) * t - n) * .5 : .5 * ((t -= 2) * t * ((1 + (n *= 1.525)) * t + n) + 2);
         },
-            I = function I(t) {
+            x = function x(t) {
           return -1 * Math.pow(4, -8 * t) * Math.sin((6 * t - 1) * (2 * Math.PI) / 2) + 1;
         },
-            x = function x(t) {
+            A = function A(t) {
           var n = 1.70158;
           return (t /= .5) < 1 ? t * t * ((1 + (n *= 1.525)) * t - n) * .5 : .5 * ((t -= 2) * t * ((1 + (n *= 1.525)) * t + n) + 2);
         },
-            A = function A(t) {
+            I = function I(t) {
           var n = 1.70158;
           return t * t * ((n + 1) * t - n);
         },
@@ -2478,20 +2478,20 @@ module.exports = Line;
                   _ = void 0 === v ? {} : v,
                   y = this._currentState,
                   d = this._originalState,
-                  g = this._targetState;
+                  m = this._targetState;
 
-              for (var m in p) {
-                y[m] = p[m];
+              for (var g in p) {
+                y[g] = p[g];
               }
 
-              var w = !1;
+              var b = !1;
 
-              for (var b in y) {
-                var O = y[b];
-                w || L(O) !== et || (w = !0), d[b] = O, g[b] = _.hasOwnProperty(b) ? _[b] : O;
+              for (var w in y) {
+                var O = y[w];
+                b || L(O) !== et || (b = !0), d[w] = O, m[w] = _.hasOwnProperty(w) ? _[w] : O;
               }
 
-              if (this._easing = ht(this._currentState, e.easing, this._easing), this._filters.length = 0, w) {
+              if (this._easing = ht(this._currentState, e.easing, this._easing), this._filters.length = 0, b) {
                 for (var S in t.filters) {
                   t.filters[S].doesApply(this) && this._filters.push(t.filters[S]);
                 }
@@ -2614,11 +2614,11 @@ module.exports = Line;
         }();
 
         var dt,
-            gt,
-            mt = /(\d|-|\.)/,
-            wt = /([^\-0-9.]+)/g,
-            bt = /[0-9.-]+/g,
-            Ot = (dt = bt.source, gt = /,\s*/.source, new RegExp("rgba?\\(".concat(dt).concat(gt).concat(dt).concat(gt).concat(dt, "(").concat(gt).concat(dt, ")?\\)"), "g")),
+            mt,
+            gt = /(\d|-|\.)/,
+            bt = /([^\-0-9.]+)/g,
+            wt = /[0-9.-]+/g,
+            Ot = (dt = wt.source, mt = /,\s*/.source, new RegExp("rgb\\(".concat(dt).concat(mt).concat(dt).concat(mt).concat(dt, "\\)"), "g")),
             St = /^.*\(/,
             jt = /#([0-9]|[a-f]){3,6}/gi,
             kt = "VAL",
@@ -2632,11 +2632,11 @@ module.exports = Line;
           return parseInt(t, 16);
         }
 
-        var Et = function Et(t) {
+        var Tt = function Tt(t) {
           return "rgb(".concat((n = t, 3 === (n = n.replace(/#/, "")).length && (n = (n = n.split(""))[0] + n[0] + n[1] + n[1] + n[2] + n[2]), [Mt(n.substr(0, 2)), Mt(n.substr(2, 2)), Mt(n.substr(4, 2))]).join(","), ")");
           var n;
         },
-            Tt = function Tt(t, n, e) {
+            Et = function Et(t, n, e) {
           var r = n.match(t),
               i = n.replace(t, kt);
           return r && r.forEach(function (t) {
@@ -2646,21 +2646,18 @@ module.exports = Line;
             Ft = function Ft(t) {
           for (var n in t) {
             var e = t[n];
-            "string" == typeof e && e.match(jt) && (t[n] = Tt(jt, e, Et));
+            "string" == typeof e && e.match(jt) && (t[n] = Et(jt, e, Tt));
           }
         },
-            It = function It(t) {
-          var n = t.match(bt),
-              e = n.slice(0, 3).map(Math.floor),
-              r = t.match(St)[0];
-          if (3 === n.length) return "".concat(r).concat(e.join(","), ")");
-          if (4 === n.length) return "".concat(r).concat(e.join(","), ",").concat(n[3], ")");
-          throw new Error("Invalid rgbChunk: ".concat(t));
-        },
             xt = function xt(t) {
-          return t.match(bt);
+          var n = t.match(wt).map(Math.floor),
+              e = t.match(St)[0];
+          return "".concat(e).concat(n.join(","), ")");
         },
-            At = function At(t, n) {
+            At = function At(t) {
+          return t.match(wt);
+        },
+            It = function It(t, n) {
           var e = {};
           return n.forEach(function (n) {
             e[n] = t[n], delete t[n];
@@ -2694,8 +2691,8 @@ module.exports = Line;
             for (var i in t) {
               var u = t[i];
               "string" == typeof u && (r[i] = {
-                formatString: (n = u, e = void 0, e = n.match(wt), e ? (1 === e.length || n.charAt(0).match(mt)) && e.unshift("") : e = ["", ""], e.join(kt)),
-                chunkNames: Pt(xt(u), i)
+                formatString: (n = u, e = void 0, e = n.match(bt), e ? (1 === e.length || n.charAt(0).match(gt)) && e.unshift("") : e = ["", ""], e.join(kt)),
+                chunkNames: Pt(At(u), i)
               });
             }
 
@@ -2733,7 +2730,7 @@ module.exports = Line;
           }(i, u), [n, e, r].forEach(function (t) {
             return function (t, n) {
               var e = function e(_e2) {
-                xt(t[_e2]).forEach(function (r, i) {
+                At(t[_e2]).forEach(function (r, i) {
                   return t[n[_e2].chunkNames[i]] = +r;
                 }), delete t[_e2];
               };
@@ -2757,8 +2754,8 @@ module.exports = Line;
                 var r = n[e],
                     i = r.chunkNames,
                     u = r.formatString,
-                    o = Dt(u, Ct(At(t, i), i));
-                t[e] = Tt(Ot, o, It);
+                    o = Dt(u, Ct(It(t, i), i));
+                t[e] = Et(Ot, o, xt);
               }
             }(t, u);
           }), function (t, n) {
@@ -3035,7 +3032,7 @@ module.exports = Line;
 /***/ (function(module, exports, __webpack_require__) {
 
 // Semi-SemiCircle shaped progress bar
-var Shape = __webpack_require__(1);
+var Shape = __webpack_require__(2);
 
 var Circle = __webpack_require__(5);
 
@@ -3083,7 +3080,7 @@ module.exports = SemiCircle;
 // Note: Square is not core part of API anymore. It's left here
 //       for reference. square is not included to the progressbar
 //       build anymore
-var Shape = __webpack_require__(1);
+var Shape = __webpack_require__(2);
 
 var utils = __webpack_require__(0);
 
@@ -3126,7 +3123,7 @@ module.exports = Square;
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/scroll-lock/dist/scroll-lock.js
-var scroll_lock = __webpack_require__(2);
+var scroll_lock = __webpack_require__(1);
 var scroll_lock_default = /*#__PURE__*/__webpack_require__.n(scroll_lock);
 
 // CONCATENATED MODULE: ./node_modules/dl-animate/dist/dl-animate-module.js
@@ -10224,8 +10221,9 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
    */
 
 
-  var progressWrap = document.querySelector('.progress');
-  var progressEl = progressWrap.querySelector('.progress__bar');
+  var progressWrap = document.querySelector('.quiz__progress-wrap');
+  var progressEl = progressWrap.querySelector('.quiz__progressbar');
+  var progressStop = 0;
   var progressBar = new main_default.a.Circle(progressEl, {
     color: '#aaa',
     // This has to be the same size as the maximum width to
@@ -10292,99 +10290,101 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
    */
 
   var gender, age, weight, height, newWeight, activity, mail;
-  var mainBlock = document.querySelector('.main');
-  var genderButtons = document.querySelectorAll('.gender__type');
-  var startBlock = document.querySelector('.start-block');
-  var quizBlock = document.querySelector('.quiz');
+  var genderButtons = document.querySelectorAll('.gender__input');
+  var startBlock = document.querySelector('.quiz__start-block');
   var nextBtn = document.querySelector('.quiz__next-button');
   var btnPercent = nextBtn.querySelector('.button__percent');
   var stageWrapper = document.querySelector('.quiz__stage-wrapper');
   var stages = stageWrapper.querySelectorAll('.stage');
-  var result = document.querySelector('.final-wrap');
-  var footer = document.querySelector('.footer');
+  var finiteWrap = document.querySelector('.quiz__finite-wrap');
+  var invalidMess;
+  var mailValid = false;
   var questionId = 0;
   var stageId = 0;
-  var curQuestion = startBlock; //start quiz, choose gender
+  var curQuestion = startBlock;
 
   for (var _i = 0; _i < genderButtons.length; _i++) {
     var btn = genderButtons[_i];
-    btn.addEventListener('mouseup', function (e) {
-      if (e.button === 0) {
-        startQuiz(this);
-      }
-    }); // btn.addEventListener('touchend', function (e) {
-    // 	startQuiz(this);
-    // });
+    btn.addEventListener('change', function () {
+      gender = this.value;
+      ym(85841570, 'reachGoal', '1');
+      new DLAnimate().hide(curQuestion, {
+        name: 'fade',
+        track: 'animation',
+        afterLeave: function afterLeave(el) {
+          stages[stageId].classList.add('stage--active');
+          stages[stageId + 1].classList.add('stage--next');
+          questionId++;
+          stageId++;
+          var opt = document.querySelector(".quiz__question[data-stage=\"".concat(questionId, "\"]"));
+          curQuestion = opt;
+          btnPercent.textContent = "(" + curQuestion.dataset.persent + "%)";
 
-    btn.addEventListener('keydown', function (e) {
-      if (e.code === 'Enter' || e.code === 'Space') {
-        startQuiz(this);
-      }
-    });
-  }
+          switch (gender) {
+            case 'female':
+              document.querySelector('.gender-male').style.display = 'none';
+              break;
 
-  function startQuiz(btn) {
-    gender = btn.dataset.gender;
-    ym(85841570, 'reachGoal', '1');
-    var mainBG = document.querySelector('.main__background');
-    new DLAnimate().hide(mainBG, {
-      name: 'fade',
-      track: 'animation',
-      afterLeave: function afterLeave(el) {}
-    });
-    new DLAnimate().hide(footer, {
-      name: 'fade',
-      track: 'animation',
-      afterLeave: function afterLeave(el) {
-        new DLAnimate().show(footer, {
-          name: 'fade',
-          track: 'animation'
-        });
-      }
-    });
-    new DLAnimate().hide(startBlock, {
-      name: 'fade',
-      track: 'animation',
-      afterLeave: function afterLeave(el) {
-        mainBlock.opacity = 0;
-        stages[stageId].classList.add('stage--active');
-        stages[stageId + 1].classList.add('stage--next');
-        mainBlock.classList.remove('main--start');
-        questionId++;
-        stageId++;
-        var opt = document.querySelector(".quiz__question[data-stage=\"".concat(questionId, "\"]"));
-        curQuestion = opt;
-        btnPercent.textContent = "(" + curQuestion.dataset.persent + "%)";
+            case 'male':
+              document.querySelector('.gender-female').style.display = 'none';
+              break;
 
-        switch (gender) {
-          case 'female':
-            document.querySelector('.gender-male').style.display = 'none';
-            break;
+            default:
+              break;
+          }
 
-          case 'male':
-            document.querySelector('.gender-female').style.display = 'none';
-            break;
-
-          default:
-            break;
+          new DLAnimate().show(curQuestion, {
+            name: 'fade',
+            track: 'animation'
+          });
+          new DLAnimate().show(nextBtn, {
+            name: 'fade',
+            track: 'animation',
+            beforeEnter: function beforeEnter(el) {
+              el.disabled = true;
+            }
+          });
+          new DLAnimate().show(stageWrapper, {
+            name: 'fade',
+            track: 'animation'
+          });
         }
-
-        new DLAnimate().show(quizBlock, {
-          name: 'fade',
-          track: 'animation'
-        });
-      }
+      });
     });
   }
-
-  ; //change steps
 
   nextBtn.addEventListener('click', function (e) {
     this.disabled = true;
+    var mailInput = curQuestion.querySelector('.field__input[name=mail]');
+
+    if (mailInput && !mailValid) {
+      if (!invalidMess) {
+        var invalid = document.createElement('span');
+        invalid.classList.add('field__invalid');
+        invalid.textContent = lang !== "ru" ? "Enter the correct e-mail" : "Введите корректный e-mail";
+        invalid.style.display = 'none';
+        mailInput.parentElement.appendChild(invalid);
+        invalidMess = invalid;
+        new DLAnimate().show(invalid, {
+          name: 'fade',
+          track: 'animation'
+        });
+      }
+
+      return;
+    }
 
     if (stageId >= stages.length) {
-      // ym(85841570, 'reachGoal', '2');
-      new DLAnimate().hide(quizBlock, {
+      ym(85841570, 'reachGoal', '2');
+      new DLAnimate().hide(nextBtn, {
+        name: 'fade',
+        track: 'animation'
+      });
+      new DLAnimate().hide(curQuestion, {
+        name: 'fade',
+        track: 'animation'
+      });
+      new DLAnimate().hide(stageWrapper, {
         name: 'fade',
         track: 'animation',
         afterLeave: function afterLeave(el) {
@@ -10415,7 +10415,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
                                   name: 'fade',
                                   track: 'animation',
                                   afterLeave: function afterLeave(el) {
-                                    new DLAnimate().show(result, {
+                                    new DLAnimate().show(finiteWrap, {
                                       name: 'fade',
                                       track: 'animation'
                                     }); //Метаболический возраст
@@ -10511,7 +10511,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       name: 'fade',
       track: 'animation',
       afterLeave: function afterLeave(el) {
-        if (stageId === 3) {
+        if (stageId % 4 === 0) {
           stageWrapper.querySelector('.quiz__stage-list').style.transform = 'translateX(-100%)';
         }
 
@@ -10554,6 +10554,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
    */
 
   var fieldsList = document.querySelectorAll('.field');
+  var mailRegChecked = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   var _loop = function _loop(_i2) {
     var field = fieldsList[_i2];
@@ -10569,6 +10570,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
           nextBtn.disabled = true;
           break;
         }
+
+        if (_input.getAttribute('name') === 'mail') {
+          if (mailRegChecked.test(String(_input.value).toLowerCase())) {
+            mailValid = true;
+          } else {
+            mailValid = false;
+          }
+        }
       }
     });
     input.addEventListener('change', function (e) {
@@ -10579,10 +10588,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
       }
 
       switch (input.getAttribute('name')) {
-        case 'name':
-          name = input.value;
-          break;
-
         case 'age':
           input.value = value < 10 ? 10 : value > 100 ? 100 : input.value;
           age = Number(input.value);
@@ -10601,6 +10606,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
         case 'desired-weight':
           input.value = value < 35 ? 35 : value > 200 ? 200 : input.value;
           newWeight = Number(input.value);
+          break;
+
+        case 'mail':
+          mail = input.value; // location.href += "?" + mail;
+
           break;
 
         default:
@@ -10661,54 +10671,94 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
     _loop2(_i3);
   }
   /**
-   * Open order block
+   * modals
    */
 
 
-  var orderOpenBtn = document.querySelectorAll('.button-new');
-  var order = document.querySelector('.order');
+  var modalOpenBtns = document.querySelectorAll('.modal-opener');
+  var modal = document.querySelector('.modal');
+  var modalCloseBtn = modal.querySelector('.modal__close-btn');
 
-  for (var _i4 = 0; _i4 < orderOpenBtn.length; _i4++) {
-    var _btn = orderOpenBtn[_i4];
+  if (modal) {
+    var _loop3 = function _loop3(_i4) {
+      var openBtn = modalOpenBtns[_i4],
+          modalId = "#" + openBtn.dataset.modal,
+          modalEl = document.querySelector(modalId);
 
-    _btn.addEventListener('click', function (e) {
-      new DLAnimate().hide(footer, {
-        name: 'fade',
-        track: 'animation',
-        afterLeave: function afterLeave(el) {}
-      });
-      new DLAnimate().hide(result, {
-        name: 'fade',
-        track: 'animation',
-        afterLeave: function afterLeave(el) {
-          new DLAnimate().show(order, {
-            name: 'fade',
-            track: 'animation',
-            afterLeave: function afterLeave(el) {}
+      if (!modalEl) {
+        return "continue";
+      }
+
+      var overlay = modal.querySelector('.modal__overlay');
+      openBtn.addEventListener("click", openModal);
+
+      function openModal(e) {
+        e.preventDefault();
+        modal.classList.add('modal--show');
+        modalEl.style.display = 'flex';
+        modalEl.appendChild(modalCloseBtn);
+        scroll_lock_default.a.disablePageScroll(modal);
+
+        var handler = function handler() {
+          modalCloseBtn.addEventListener("click", closeModal);
+          overlay.addEventListener("click", closeModal);
+          openBtn.removeEventListener("click", openModal);
+        };
+
+        raf(function () {
+          modal.classList.add('modal--visible');
+          modal.addEventListener('transitionend', handler, {
+            once: true
           });
-        }
-      });
-    });
+        });
+      }
+
+      function closeModal(e) {
+        e.preventDefault();
+        modal.classList.remove('modal--visible');
+        scroll_lock_default.a.enablePageScroll(modal);
+
+        var handler = function handler() {
+          modal.classList.remove('modal--show');
+          modalEl.style.display = null;
+          openBtn.addEventListener("click", openModal);
+          overlay.removeEventListener("click", closeModal);
+          modalCloseBtn.removeEventListener("click", closeModal);
+        };
+
+        modal.addEventListener('transitionend', handler, {
+          once: true
+        });
+      }
+    };
+
+    for (var _i4 = 0; _i4 < modalOpenBtns.length; _i4++) {
+      var _ret = _loop3(_i4);
+
+      if (_ret === "continue") continue;
+    }
   }
   /**
    * Pay
    */
-  // let payOpenBtn = document.querySelector('.button--pay-open');
-  // payOpenBtn.addEventListener('click', function (e) {
-  // 	let btnText = lang == "ru" ? "Оплатить" : "Pay";
-  // 	new DLAnimate().hide(this.parentElement, {
-  // 		name: 'fade',
-  // 		track: 'animation',
-  // 		afterLeave: function (el) {
-  // 			el.innerHTML = '<pay-widget uid="ZY3rmX0PWjwAZJym" ymcounter="85841570" ymtargetstart="224924169" ymtargetend="224924192" email="' + mail + '" buttonText="' + btnText + '"/>';
-  // 			new DLAnimate().show(el, {
-  // 				name: 'fade',
-  // 				track: 'animation'
-  // 			});
-  // 		}
-  // 	});
-  // });
 
+
+  var payOpenBtn = document.querySelector('.button--pay-open');
+  var payModalContainer = document.querySelector('.modal__container--pay');
+
+  payOpenBtn.addEventListener('click', function (e) {
+    new DLAnimate().hide(this.parentElement, {
+      name: 'fade',
+      track: 'animation',
+      afterLeave: function afterLeave(el) {
+        
+        new DLAnimate().show(payModalContainer, {
+        	name: 'fade',
+        	track: 'animation'
+        });
+      }
+    });
+  });
 });
 
 /***/ })

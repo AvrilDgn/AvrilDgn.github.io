@@ -21,14 +21,14 @@
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () {
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
                 (m[i].a = m[i].a || []).push(arguments)
             };
             m[i].l = 1 * new Date();
             k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
         })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(85841570, "init", {
             clickmap: true,
@@ -51,7 +51,8 @@
 <body>
 
     <!-- Content -->
-    <main class="main">
+    <main class="main main--start">
+        <div class="main__background"></div>
 
         <!-- Header -->
         <header class="header" data-scroll-lock-fill-gap>
@@ -78,25 +79,20 @@
                                 <a class="nav__link nav__link--active" href="index.html" lang="en">Home</a>
                             </li>
                             <li class="nav__item">
-                                <a class="nav__link" href="https://keta.1-platforma.com/permission.pdf"
-                                    lang="ru">Политика обработки данных</a>
-                                <a class="nav__link" href="https://keta.1-platforma.com/permission.pdf" lang="en">Data
-                                    processing policy</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/permission.pdf" lang="ru">Политика обработки данных</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/permission.pdf" lang="en">Data processing policy</a>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link" href="https://keta.1-platforma.com/offer.pdf" lang="ru">Оферта</a>
                                 <a class="nav__link" href="https://keta.1-platforma.com/offer.pdf" lang="en">Offer</a>
                             </li>
                             <li class="nav__item">
-                                <a class="nav__link" href="https://keta.1-platforma.com/policy.pdf" lang="ru">Политика
-                                    конфиденциальности</a>
-                                <a class="nav__link" href="https://keta.1-platforma.com/policy.pdf" lang="en">Privacy
-                                    Policy</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/policy.pdf" lang="ru">Политика конфиденциальности</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/policy.pdf" lang="en">Privacy Policy</a>
                             </li>
                             <li class="nav__item">
                                 <a class="nav__link" href="https://keta.1-platforma.com/tariff.pdf" lang="ru">Тарифы</a>
-                                <a class="nav__link" href="https://keta.1-platforma.com/tariff.pdf"
-                                    lang="en">Tariffs</a>
+                                <a class="nav__link" href="https://keta.1-platforma.com/tariff.pdf" lang="en">Tariffs</a>
                             </li>
                         </ul>
                     </nav>
@@ -106,42 +102,59 @@
         </header>
         <!-- End Header -->
 
-        <!-- Quiz Block -->
-        <div id="quiz" class="quiz">
+        <!-- Start Block -->
+        <section class="start-block">
             <div class="container">
+                <div class="start-block__content">
 
-                <div class="quiz__start-block">
-                    <h1 class="quiz__title title">
-                        <span lang="ru">Пройдите наш тест за одну минуту и мы рассчитаем ваш индивидуальный план
-                            питания</span>
-                        <span lang="en">Complete our test for one minute and we will calculate your individual power
-                            plan</span>
+                    <h1 class="start-block__title title">
+                        <span lang="ru">
+					<span class="start-block__title--main">Пройдите тест за одну минуту и мы рассчитаем ваш</span>
+                        <span class="start-block__title--accent">индивидуальный <br> план питания</span>
+                        </span>
+                        <span lang="en">
+					<span class="start-block__title--main">Complete test for one minute and we will calculate</span>
+                        <span class="start-block__title--accent">your individual <br> power plan</span>
+                        </span>
                     </h1>
-                    <h2 class="quiz__subtitle subtitle">
-                        <span lang="ru">Укажите ваш пол</span>
-                        <span lang="en">Specify your gender</span>
-                    </h2>
 
-                    <div class="quiz__gender gender">
+                    <div class="start-block__gender gender">
+                        <h2 class="gender__title">
+                            <span lang="ru">Укажите ваш пол:</span>
+                            <span lang="en">Specify your gender:</span>
+                        </h2>
+
                         <label class="gender__type" data-gender="female">
                             <input class="gender__input" type="radio" name="gender" value="female">
-                            <i class="gender__icon"></i>
-                            <span class="gender__name" lang="ru">Женский</span>
+                            <span class="gender__content">
+						<i class="gender__icon"></i>
+						<span class="gender__name" lang="ru">Женский</span>
                             <span class="gender__name" lang="en">Female</span>
+                            </span>
                         </label>
 
                         <label class="gender__type" data-gender="male">
                             <input class="gender__input" type="radio" name="gender" value="male">
-                            <i class="gender__icon"></i>
-                            <span class="gender__name" lang="ru">Мужской</span>
+                            <span class="gender__content">
+						<i class="gender__icon"></i>
+						<span class="gender__name" lang="ru">Мужской</span>
                             <span class="gender__name" lang="en">Male</span>
+                            </span>
                         </label>
                     </div>
                 </div>
 
-                <div class="quiz__question-wrapper">
+                <div class="start-block__background"></div>
+            </div>
+        </section>
+        <!-- End Start Block -->
 
-                    <div class="quiz__question" data-stage="1" data-persent="12">
+        <!-- Quiz Block -->
+        <div id="quiz" class="quiz">
+            <div class="container">
+                <ul class="quiz__question-wrapper">
+
+                    <li class="quiz__question quiz__question--active" data-stage="1" data-persent="12">
                         <h2 class="quiz__title title">
                             <span lang="ru">Физическая активность</span>
                             <span lang="en">Physical activity</span>
@@ -151,57 +164,57 @@
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="activity" value="min">
                                 <span class="option__name" lang="ru">
-                                    Минимальная физическая активность
-                                </span>
+							Минимальная физическая активность
+						</span>
                                 <span class="option__name" lang="en">
-                                    Minimum physical activity
-                                </span>
+							Minimum physical activity
+						</span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="activity" value="pre-mid">
                                 <span class="option__name" lang="ru">
-                                    Я часто хожу пешком
-                                </span>
+							Я часто хожу пешком
+						</span>
                                 <span class="option__name" lang="en">
-                                    I often go on foot
-                                </span>
+							I often go on foot
+						</span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="activity" value="mid">
                                 <span class="option__name" lang="ru">
-                                    Я занимаюсь 1-2 раза в неделю
-                                </span>
+							Я занимаюсь 1-2 раза в неделю
+						</span>
                                 <span class="option__name" lang="en">
-                                    I do exercise 1-2 times a week
-                                </span>
+							I do exercise 1-2 times a week
+						</span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="activity" value="post-mid">
                                 <span class="option__name" lang="ru">
-                                    Я занимаюсь 3-5 раз в неделю
-                                </span>
+							Я занимаюсь 3-5 раз в неделю
+						</span>
                                 <span class="option__name" lang="en">
-                                    I do exercise 3-5 times a week
-                                </span>
+							I do exercise 3-5 times a week
+						</span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="activity" value="max">
                                 <span class="option__name" lang="ru">
-                                    Я занимаюсь 5-7 раз в неделю
-                                </span>
+							Я занимаюсь 5-7 раз в неделю
+						</span>
                                 <span class="option__name" lang="en">
-                                    I do exercise 5-7 times a week
-                                </span>
+							I do exercise 5-7 times a week
+						</span>
                                 <i class="option__background"></i>
                             </label>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="quiz__question" data-stage="2" data-persent="24">
+                    <li class="quiz__question" data-stage="2" data-persent="24">
                         <h2 class="quiz__title title">
                             <span lang="ru">Источник белков</span>
                             <span lang="en">Source of proteins</span>
@@ -216,16 +229,16 @@
                                 <input class="option__input" type="checkbox" name="protein" value="chicken">
                                 <i class="option__icon option__icon--chicken"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Курица</span>
-                                    <span lang="en">Chicken</span>
+							<span lang="ru">Курица</span>
+                                <span lang="en">Chicken</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="protein" value="without-meat">
                                 <span class="option__name">
-                                    <span lang="ru">Без мяса</span>
-                                    <span lang="en">Without meat</span>
+							<span lang="ru">Без мяса</span>
+                                <span lang="en">Without meat</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -233,8 +246,8 @@
                                 <input class="option__input" type="checkbox" name="protein" value="pork">
                                 <i class="option__icon option__icon--pork"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Свинина</span>
-                                    <span lang="en">Pork</span>
+							<span lang="ru">Свинина</span>
+                                <span lang="en">Pork</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -242,8 +255,8 @@
                                 <input class="option__input" type="checkbox" name="protein" value="turkey">
                                 <i class="option__icon option__icon--turkey"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Индейка</span>
-                                    <span lang="en">Turkey</span>
+							<span lang="ru">Индейка</span>
+                                <span lang="en">Turkey</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -251,8 +264,8 @@
                                 <input class="option__input" type="checkbox" name="protein" value="bacon">
                                 <i class="option__icon option__icon--bacon"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Бекон</span>
-                                    <span lang="en">Bacon</span>
+							<span lang="ru">Бекон</span>
+                                <span lang="en">Bacon</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -260,8 +273,8 @@
                                 <input class="option__input" type="checkbox" name="protein" value="seafood">
                                 <i class="option__icon option__icon--seafood"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Морепродукты</span>
-                                    <span lang="en">Seafood</span>
+							<span lang="ru">Морепродукты</span>
+                                <span lang="en">Seafood</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -269,16 +282,16 @@
                                 <input class="option__input" type="checkbox" name="protein" value="fish">
                                 <i class="option__icon option__icon--fish"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Рыба</span>
-                                    <span lang="en">Fish</span>
+							<span lang="ru">Рыба</span>
+                                <span lang="en">Fish</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="protein" value="without-fish">
                                 <span class="option__name">
-                                    <span lang="ru">Без рыбы</span>
-                                    <span lang="en">Without fish</span>
+							<span lang="ru">Без рыбы</span>
+                                <span lang="en">Without fish</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -286,15 +299,15 @@
                                 <input class="option__input" type="checkbox" name="protein" value="beef">
                                 <i class="option__icon option__icon--beef"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Говядина</span>
-                                    <span lang="en">Beef</span>
+							<span lang="ru">Говядина</span>
+                                <span lang="en">Beef</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="quiz__question" data-stage="3" data-persent="37">
+                    <li class="quiz__question" data-stage="3" data-persent="37">
                         <h2 class="quiz__title title">
                             <span lang="ru">Овощи</span>
                             <span lang="en">Vegetables</span>
@@ -306,29 +319,29 @@
 
                         <div class="quiz__option-wrapper">
                             <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="vegetables" value="broccoli">
-                                <i class="option__icon option__icon--broccoli"></i>
+                                <input class="option__input" type="checkbox" name="vegetables" value="cucumber">
+                                <i class="option__icon option__icon--cucumber"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Брокколи</span>
-                                    <span lang="en">Broccoli</span>
+							<span lang="ru">Огурцы</span>
+                                <span lang="en">Cucumber</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="vegetables" value="mushroom">
-                                <i class="option__icon option__icon--mushroom"></i>
+                                <input class="option__input" type="checkbox" name="vegetables" value="tomatoes">
+                                <i class="option__icon option__icon--tomatoes"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Грибы</span>
-                                    <span lang="en">Mushroom</span>
+							<span lang="ru">Помидоры</span>
+                                <span lang="en">Tomatoes</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="vegetables" value="zucchini">
-                                <i class="option__icon option__icon--zucchini"></i>
+                                <input class="option__input" type="checkbox" name="vegetables" value="carrot">
+                                <i class="option__icon option__icon--carrot"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Цуккини</span>
-                                    <span lang="en">Zucchini</span>
+							<span lang="ru">Морковь</span>
+                                <span lang="en">Carrot</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -336,8 +349,8 @@
                                 <input class="option__input" type="checkbox" name="vegetables" value="cauliflower">
                                 <i class="option__icon option__icon--cauliflower"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Цв.капуста</span>
-                                    <span lang="en">Cauliflower</span>
+							<span lang="ru">Цв.капуста</span>
+                                <span lang="en">Cauliflower</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -345,8 +358,8 @@
                                 <input class="option__input" type="checkbox" name="vegetables" value="asparagus">
                                 <i class="option__icon option__icon--asparagus"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Спаржа</span>
-                                    <span lang="en">Asparagus</span>
+							<span lang="ru">Спаржа</span>
+                                <span lang="en">Asparagus</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -354,8 +367,8 @@
                                 <input class="option__input" type="checkbox" name="vegetables" value="avocado">
                                 <i class="option__icon option__icon--avocado"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Авокадо</span>
-                                    <span lang="en">Avocado</span>
+							<span lang="ru">Авокадо</span>
+                                <span lang="en">Avocado</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -363,8 +376,8 @@
                                 <input class="option__input" type="checkbox" name="vegetables" value="bulgarian-pepper">
                                 <i class="option__icon option__icon--bulgarian-pepper"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Болг.перец</span>
-                                    <span lang="en">Bulgarian pepper</span>
+							<span lang="ru">Болг.перец</span>
+                                <span lang="en">Bulgarian pepper</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -372,61 +385,42 @@
                                 <input class="option__input" type="checkbox" name="vegetables" value="eggplant">
                                 <i class="option__icon option__icon--eggplant"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Баклажан</span>
-                                    <span lang="en">Eggplant</span>
+							<span lang="ru">Баклажан</span>
+                                <span lang="en">Eggplant</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="vegetables" value="cucumber">
-                                <i class="option__icon option__icon--cucumber"></i>
+                                <input class="option__input" type="checkbox" name="vegetables" value="broccoli">
+                                <i class="option__icon option__icon--broccoli"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Огурцы</span>
-                                    <span lang="en">Cucumber</span>
+							<span lang="ru">Брокколи</span>
+                                <span lang="en">Broccoli</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="vegetables" value="mushroom">
+                                <i class="option__icon option__icon--mushroom"></i>
+                                <span class="option__name">
+							<span lang="ru">Грибы</span>
+                                <span lang="en">Mushroom</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="vegetables" value="zucchini">
+                                <i class="option__icon option__icon--zucchini"></i>
+                                <span class="option__name">
+							<span lang="ru">Цуккини</span>
+                                <span lang="en">Zucchini</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="quiz__question" data-stage="4" data-persent="50">
-                        <h2 class="quiz__title title">
-                            <span lang="ru">Изменение привычек вместо жёстких диет</span>
-                            <span lang="en">Changing habits instead of hard diets</span>
-                        </h2>
-
-                        <p class="quiz__subtitle subtitle">
-                            <span lang="ru">Мы смогли помочь 13 тысячам </span>
-                            <span lang="en">We were able to help 13 thousand </span>
-                            <span class="gender-female">
-                                <span lang="ru">женщин</span>
-                                <span lang="en">women</span>
-                            </span>
-                            <span class="gender-male">
-                                <span lang="ru">мужчин</span>
-                                <span lang="en">men</span>
-                            </span>
-                            <span lang="ru">в Вашем возрасте похудеть</span>
-                            <span lang="en">at your age to lose weight</span>
-                        </p>
-
-                        <div class="quiz__graph">
-                            <img src="assets/img/graph.png" alt="график сравнения жесткой диеты и Кето-диеты">
-                        </div>
-
-                        <p class="quiz__subtitle subtitle">
-                            <span lang="ru">Наша система основана
-                                на формировании новых привычек.
-                                Это долгий результат, в отличии
-                                от строгих диет.</span>
-                            <span lang="en">Our system is based
-                                on the formation of new habits.
-                                this is a long result, in contrast
-                                from strict diets.</span>
-                        </p>
-                    </div>
-
-                    <div class="quiz__question" data-stage="5" data-persent="50" data-stage-pause>
+                    <li class="quiz__question" data-stage="4" data-persent="50">
                         <h2 class="quiz__title title">
                             <span lang="ru">Продукты</span>
                             <span lang="en">Products</span>
@@ -441,26 +435,8 @@
                                 <input class="option__input" type="checkbox" name="products" value="eggs">
                                 <i class="option__icon option__icon--eggs"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Яйца</span>
-                                    <span lang="en">Eggs</span>
-                                </span>
-                                <i class="option__background"></i>
-                            </label>
-                            <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="products" value="nuts">
-                                <i class="option__icon option__icon--nuts"></i>
-                                <span class="option__name">
-                                    <span lang="ru">Орехи</span>
-                                    <span lang="en">Nuts</span>
-                                </span>
-                                <i class="option__background"></i>
-                            </label>
-                            <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="products" value="cheeze">
-                                <i class="option__icon option__icon--cheeze"></i>
-                                <span class="option__name">
-                                    <span lang="ru">Сыр</span>
-                                    <span lang="en">Cheeze</span>
+							<span lang="ru">Яйца</span>
+                                <span lang="en">Eggs</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
@@ -468,33 +444,97 @@
                                 <input class="option__input" type="checkbox" name="products" value="curd">
                                 <i class="option__icon option__icon--curd"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Творог</span>
-                                    <span lang="en">Curd</span>
+							<span lang="ru">Творог</span>
+                                <span lang="en">Curd</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="cheeze">
+                                <i class="option__icon option__icon--cheeze"></i>
+                                <span class="option__name">
+							<span lang="ru">Сыр</span>
+                                <span lang="en">Cheeze</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="milk">
+                                <i class="option__icon option__icon--milk"></i>
+                                <span class="option__name">
+							<span lang="ru">Молоко</span>
+                                <span lang="en">Milk</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="nuts">
+                                <i class="option__icon option__icon--nuts"></i>
+                                <span class="option__name">
+							<span lang="ru">Орехи</span>
+                                <span lang="en">Nuts</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="beans">
+                                <i class="option__icon option__icon--beans"></i>
+                                <span class="option__name">
+							<span lang="ru">Бобовые</span>
+                                <span lang="en">Beans</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="lemon">
+                                <i class="option__icon option__icon--lemon"></i>
+                                <span class="option__name">
+							<span lang="ru">Лимон</span>
+                                <span lang="en">Lemon</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="raspberry">
+                                <i class="option__icon option__icon--raspberry"></i>
+                                <span class="option__name">
+							<span lang="ru">Малина</span>
+                                <span lang="en">Raspberry </span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="melon">
+                                <i class="option__icon option__icon--melon"></i>
+                                <span class="option__name">
+							<span lang="ru">Дыня</span>
+                                <span lang="en">Melon</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+                            <label class="quiz__option-item option">
+                                <input class="option__input" type="checkbox" name="products" value="strawberry">
+                                <i class="option__icon option__icon--strawberry"></i>
+                                <span class="option__name">
+							<span lang="ru">Клубника</span>
+                                <span lang="en">Strawberry</span>
+                                </span>
+                                <i class="option__background"></i>
+                            </label>
+
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="products" value="butter">
                                 <i class="option__icon option__icon--butter"></i>
                                 <span class="option__name">
-                                    <span lang="ru">Слив.масло</span>
-                                    <span lang="en">Butter</span>
-                                </span>
-                                <i class="option__background"></i>
-                            </label>
-                            <label class="quiz__option-item option">
-                                <input class="option__input" type="checkbox" name="products" value="coco">
-                                <i class="option__icon option__icon--coco"></i>
-                                <span class="option__name">
-                                    <span lang="ru">Кокос</span>
-                                    <span lang="en">Coco</span>
+							<span lang="ru">Слив.масло</span>
+                                <span lang="en">Butter</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="quiz__question" data-stage="6" data-persent="62">
+                    <li class="quiz__question" data-stage="5" data-persent="62">
                         <h2 class="quiz__title title">
                             <span lang="ru">Ваш типичный день</span>
                             <span lang="en">Your typical day</span>
@@ -504,47 +544,47 @@
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="typical-day" value="min">
                                 <span class="option__name">
-                                    <span lang="ru">В офисе</span>
-                                    <span lang="en">In the office</span>
+							<span lang="ru">В офисе</span>
+                                <span lang="en">In the office</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="typical-day" value="pre-mid">
                                 <span class="option__name">
-                                    <span lang="ru">В офисе, но регулярно выхожу</span>
-                                    <span lang="en">In the office, but regularly go out</span>
+							<span lang="ru">В офисе, но регулярно выхожу</span>
+                                <span lang="en">In the office, but regularly go out</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="typical-day" value="mid">
                                 <span class="option__name">
-                                    <span lang="ru">Большую часть дня провожу на ногах</span>
-                                    <span lang="en">Most of the day I spend on my feet</span>
+							<span lang="ru">Большую часть дня провожу на ногах</span>
+                                <span lang="en">Most of the day I spend on my feet</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="typical-day" value="post-mid">
                                 <span class="option__name">
-                                    <span lang="ru">Ручной труд</span>
-                                    <span lang="en">Manual labor</span>
+							<span lang="ru">Ручной труд</span>
+                                <span lang="en">Manual labor</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="radio" name="typical-day" value="max">
                                 <span class="option__name">
-                                    <span lang="ru">Большую часть дня провожу дома</span>
-                                    <span lang="en">Most of the day I spend at home</span>
+							<span lang="ru">Большую часть дня провожу дома</span>
+                                <span lang="en">Most of the day I spend at home</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="quiz__question" data-stage="7" data-persent="75">
+                    <li class="quiz__question" data-stage="6" data-persent="75">
                         <h2 class="quiz__title title">
                             <span lang="ru">Плохие привычки</span>
                             <span lang="en">Bad habits</span>
@@ -558,122 +598,134 @@
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="bad-habits" value="bad-sleep">
                                 <span class="option__name">
-                                    <span lang="ru">Я часто не высыпаюсь</span>
-                                    <span lang="en">I often do not fall out</span>
+							<span lang="ru">Я часто не высыпаюсь</span>
+                                <span lang="en">I often do not fall out</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="bad-habits" value="eat-night">
                                 <span class="option__name">
-                                    <span lang="ru">Я ем поздно ночью</span>
-                                    <span lang="en">I eat late at night</span>
+							<span lang="ru">Я ем поздно ночью</span>
+                                <span lang="en">I eat late at night</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="bad-habits" value="salt">
                                 <span class="option__name">
-                                    <span lang="ru">Я употребляю много соли</span>
-                                    <span lang="en">I use a lot of salt</span>
+							<span lang="ru">Я употребляю много соли</span>
+                                <span lang="en">I use a lot of salt</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="bad-habits" value="sweet">
                                 <span class="option__name">
-                                    <span lang="ru">Я часто ем сладкое</span>
-                                    <span lang="en">I often eat sweet</span>
+							<span lang="ru">Я часто ем сладкое</span>
+                                <span lang="en">I often eat sweet</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="bad-habits" value="soda">
                                 <span class="option__name">
-                                    <span lang="ru">Я люблю газировки</span>
-                                    <span lang="en">I love soda</span>
+							<span lang="ru">Я люблю газировки</span>
+                                <span lang="en">I love soda</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                             <label class="quiz__option-item option">
                                 <input class="option__input" type="checkbox" name="bad-habits" value="nothing">
                                 <span class="option__name">
-                                    <span lang="ru">Ничего из перечисленного</span>
-                                    <span lang="en">Nothing listed</span>
+							<span lang="ru">Ничего из перечисленного</span>
+                                <span lang="en">Nothing listed</span>
                                 </span>
                                 <i class="option__background"></i>
                             </label>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="quiz__question" data-stage="8" data-persent="87">
+                    <li class="quiz__question" data-stage="7" data-persent="87">
                         <h2 class="quiz__title title">
                             <span lang="ru">Параметры</span>
                             <span lang="en">Options</span>
                         </h2>
 
                         <label class="quiz__field field">
-                            <input lang="ru" class="field__input" type="number" min="10" max="100" name="age"
-                                placeholder="Введите ваш возраст">
-                            <input lang="en" class="field__input" type="number" min="10" max="100" name="age"
-                                placeholder="Enter your age">
+                            <input lang="ru" class="field__input" type="text" name="name" placeholder="Введите ваше имя">
+                            <input lang="en" class="field__input" type="number" name="name" placeholder="Enter your name">
                         </label>
 
                         <label class="quiz__field field">
-                            <input lang="ru" class="field__input" type="number" min="140" max="220" name="height"
-                                placeholder="Введите ваш рост (см)">
-                            <input lang="en" class="field__input" type="number" min="140" max="220" name="height"
-                                placeholder="Enter your height (cm)">
+                            <input lang="ru" class="field__input" type="number" min="10" max="100" name="age" placeholder="Введите ваш возраст">
+                            <input lang="en" class="field__input" type="number" min="10" max="100" name="age" placeholder="Enter your age">
                         </label>
-                    </div>
 
-                    <div class="quiz__question" data-stage="9" data-persent="97" data-stage-pause>
+                    </li>
+
+                    <li class="quiz__question" data-stage="8" data-persent="97" data-stage-pause>
                         <h2 class="quiz__title title">
                             <span lang="ru">Параметры</span>
                             <span lang="en">Options</span>
                         </h2>
 
                         <label class="quiz__field field">
-                            <input lang="ru" class="field__input" type="number" min="40" max="150" name="current-weight"
-                                placeholder="Введите ваш вес (кг)">
-                            <input lang="en" class="field__input" type="number" min="40" max="150" name="current-weight"
-                                placeholder="Enter your weight (kg)">
+                            <input lang="ru" class="field__input" type="number" min="140" max="220" name="height" placeholder="Введите ваш рост (см)">
+                            <input lang="en" class="field__input" type="number" min="140" max="220" name="height" placeholder="Enter your height (cm)">
                         </label>
 
                         <label class="quiz__field field">
-                            <input lang="ru" class="field__input" type="number" min="40" max="150" name="desired-weight"
-                                placeholder="Желаемый вес (кг)">
-                            <input lang="en" class="field__input" type="number" min="40" max="150" name="desired-weight"
-                                placeholder="Wishful weight (kg)">
+                            <input lang="ru" class="field__input" type="number" min="40" max="150" name="current-weight" placeholder="Введите ваш вес (кг)">
+                            <input lang="en" class="field__input" type="number" min="40" max="150" name="current-weight" placeholder="Enter your weight (kg)">
                         </label>
-                    </div>
 
-                    <div class="quiz__question" data-stage="10">
+                        <label class="quiz__field field">
+                            <input lang="ru" class="field__input" type="number" min="40" max="150" name="desired-weight" placeholder="Желаемый вес (кг)">
+                            <input lang="en" class="field__input" type="number" min="40" max="150" name="desired-weight" placeholder="Wishful weight (kg)">
+                        </label>
+                    </li>
+
+                    <li class="quiz__question" data-stage="9" data-persent="97">
                         <h2 class="quiz__title title">
-                            <span lang="ru">Получите на e-mail персональный фитнес-план</span>
-                            <span lang="en">Get a personal fitness plan on e-mail</span>
+                            <span lang="ru">Изменение привычек вместо жёстких диет</span>
+                            <span lang="en">Changing habits instead of hard diets</span>
                         </h2>
 
-                        <label class="quiz__field field">
-                            <input lang="ru" class="field__input" type="email" name="mail"
-                                placeholder="Введите свой e-mail">
-                            <input lang="en" class="field__input" type="email" name="mail"
-                                placeholder="Enter your e-mail">
-                        </label>
-                    </div>
+                        <p class="quiz__subtitle subtitle">
+                            <span lang="ru">Мы смогли помочь 13 тысячам </span>
+                            <span lang="en">We were able to help 13 thousand </span>
+                            <span class="gender-female">
+						<span lang="ru">женщин</span>
+                            <span lang="en">women</span>
+                            </span>
+                            <span class="gender-male">
+						<span lang="ru">мужчин</span>
+                            <span lang="en">men</span>
+                            </span>
+                            <span lang="ru">в Вашем возрасте похудеть</span>
+                            <span lang="en">at your age to lose weight</span>
+                        </p>
 
-                </div>
+                        <div class="quiz__graph">
+                            <img src="assets/img/graph.png" alt="график сравнения жесткой диеты и Кето-диеты">
+                        </div>
 
-                <div class="quiz__progress-wrap">
-                    <h2 class="quiz__title title">
-                        <span lang="ru">Ваш персональный <br> план загружается</span>
-                        <span lang="en">Your personal plan is loaded</span>
-                    </h2>
+                        <p class="quiz__subtitle subtitle">
+                            <span lang="ru">Наша система основана
+						на формировании новых привычек.
+						Это долгий результат, в отличии
+						от строгих диет.</span>
+                            <span lang="en">Our system is based
+						on the formation of new habits.
+						this is a long result, in contrast
+						from strict diets.</span>
+                        </p>
+                    </li>
 
-                    <div class="quiz__progressbar"></div>
-                </div>
+                </ul>
 
-                <button class="quiz__next-button button">
+                <button class="quiz__next-button button" disabled>
                     <span lang="ru">Продолжить</span>
                     <span lang="en">Proceed</span>
                     <span class="button__percent">(0%)</span>
@@ -681,7 +733,7 @@
 
                 <div class="quiz__stage-wrapper">
                     <ul class="quiz__stage-list">
-                        <li class="quiz__stage-item stage">
+                        <li class="quiz__stage-item stage stage--active">
                             <div class="stage__indicator"></div>
                             <i class="stage__icon stage__icon--gender"></i>
                         </li>
@@ -715,276 +767,349 @@
                         </li>
                     </ul>
                 </div>
-
-                <div class="quiz__finite-wrap">
-                    <div class="quiz__personal-plan plan">
-                        <h2 class="quiz__title title">
-                            <span lang="ru">Ваш персональный <br> план готов</span>
-                            <span lang="en">Your personal plan is ready</span>
-                        </h2>
-
-                        <ul class="plan__list">
-                            <li class="plan__item">
-                                <i class="plan__icon plan__icon--settings"></i>
-                                <p class="plan__text-block">
-                                    <span class="plan__value plan__value--mass-index">24,31</span>
-                                    <span class="plan__type">
-                                        <span lang="ru">Ваш ИМТ</span>
-                                        <span lang="en">Your body mass index</span>
-                                    </span>
-                                    <span class="plan__meaning plan__meaning--mass-index">норма</span>
-                                </p>
-                            </li>
-                            <li class="plan__item">
-                                <i class="plan__icon plan__icon--person"></i>
-                                <p class="plan__text-block">
-                                    <span class="plan__value plan__value--meta-age">40 лет</span>
-                                    <span class="plan__type">
-                                        <span lang="ru">Метаболический возраст</span>
-                                        <span lang="en">Metabolic age</span>
-                                    </span>
-                                    <span class="plan__meaning plan__meaning--meta-age">отклонение</span>
-                                </p>
-                            </li>
-                            <li class="plan__item">
-                                <i class="plan__icon plan__icon--speedometer"></i>
-                                <p class="plan__text-block">
-                                    <span class="plan__value plan__value--сalories">2480-2580</span>
-                                    <span class="plan__type">
-                                        <span lang="ru">Рекомендуемое количество калорий</span>
-                                        <span lang="en">Recommended calorie number</span>
-                                    </span>
-                                </p>
-                            </li>
-                            <li class="plan__item">
-                                <i class="plan__icon plan__icon--scales"></i>
-                                <p class="plan__text-block">
-                                    <span class="plan__value plan__value--future-weight plan__value--green">79 кг</span>
-                                    <span class="plan__type">
-                                        <span lang="ru">Достижимый вес <br> после 28 дней диеты</span>
-                                        <span lang="en">Achievable weight after 28 days diet</span>
-                                    </span>
-                                </p>
-                            </li>
-                        </ul>
-
-                        <div class="plan__statistics statistics">
-                            <p class="statistics__percent">84%</p>
-                            <p class="statistics__desc">
-                                <span lang="ru">людей с похожими параметрами сбросили вес благодаря кето-диете</span>
-                                <span lang="en">people with similar parameters dropped weight thanks to a keto
-                                    diet</span>
-                            </p>
-                        </div>
-
-                        <button class="plan__btn button modal-opener" data-modal="modal-trial">
-                            <span lang="ru">Получить личный план</span>
-                            <span lang="en">Get personal plan</span>
-                        </button>
-                    </div>
-
-                    <div class="quiz__reviews reviews">
-                        <h2 class="quiz__title title">
-                            <span lang="ru">Они уже сделали это</span>
-                            <span lang="en">They have already done it</span>
-                        </h2>
-
-                        <div class="reviews__slider">
-                            <ul class="reviews__list">
-                                <li class="reviews__item review-card">
-                                    <div class="review-card__head">
-                                        <div class="review-card__image">
-                                            <img src="assets/img/reviews/review-1.jpg" alt="фотография автора отзыва">
-                                        </div>
-
-                                        <div class="review-card__block">
-                                            <p class="review-card__name">
-                                                <span lang="ru">Мария</span>
-                                                <span lang="en">Maria</span>
-                                            </p>
-                                            <p class="review-card__age">
-                                                <span lang="ru">24 года</span>
-                                                <span lang="en">24 years</span>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="review-card__text">
-                                        <span lang="ru">Как же я счастлива, что и в Россию пришла нашумевшая,
-                                            возродившаяся в Америке
-                                            кето диета,
-                                            которая многих спасла от ожирения. Этот план питания невероятно
-                                            разнообразен, сбалансирован и
-                                            рецепты нереально вкусные. Спасибо, ребята! Я хожу в магазин раз в неделю и
-                                            покупаю все
-                                            продукты. Результат недолго заставлял себя ждать! Планирую и дальше
-                                            правильно питаться и
-                                            подтянуть на этот индивидуальный план питания своих подруг! Оно того
-                                            стоит.</span>
-                                        <span lang="en">How is I happy that the sensational, revived in America, a diet
-                                            revived in
-                                            America, came to Russia,
-                                            which many saved from obesity. This power plan is incredibly diverse,
-                                            balanced and
-                                            Recipes are unreal delicious. Thanks guys! I go to the store once a week and
-                                            buy everything
-                                            products. The result was not long forced to wait! I plan and then eat right
-                                            and
-                                            Tighten your girlfriends to this individual nutrition plan! It's worth
-                                            it.</span>
-                                    </p>
-                                </li>
-                                <li class="reviews__item review-card">
-                                    <div class="review-card__head">
-                                        <div class="review-card__image">
-                                            <img src="assets/img/reviews/review-2.jpg" alt="фотография автора отзыва">
-                                        </div>
-
-                                        <div class="review-card__block">
-                                            <p class="review-card__name">
-                                                <span lang="ru">Людмила</span>
-                                                <span lang="en">Lyudmila</span>
-                                            </p>
-                                            <p class="review-card__age">
-                                                <span lang="ru">35 лет</span>
-                                                <span lang="en">35 years</span>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="review-card__text">
-                                        <span lang="ru">Очень эффективная диета! Наконец-то нашла индивидуально
-                                            разработанный план по
-                                            кето диете, ведь
-                                            данная система питания очень эффективна! Самый быстрый, простой и вкусный
-                                            способ сбросить
-                                            лишние
-                                            килограммы и полностью сменить гардероб! Я влезла в свои старые джинсы.
-                                            Урааааа! Буду
-                                            рекомендовать план питания подругам, друзьям и родственникам, чтобы
-                                            закатывать кето ужины и
-                                            семейные кето посиделки. Всем рекомендую!</span>
-                                        <span lang="en">Very effective diet! Finally found an individually designed plan
-                                            for keto diet,
-                                            because
-                                            This nutrition system is very effective! The fastest, simple and delicious
-                                            way to lose extra
-                                            Kilograms and completely change the wardrobe! I got into my old jeans.
-                                            URAAAAA! Will
-                                            Recommend the nutrition plan, friends and relatives to roll the keto dinner
-                                            and
-                                            Family Keto Sowing. I recommend to everyone!</span>
-                                    </p>
-                                </li>
-                                <li class="reviews__item review-card">
-                                    <div class="review-card__head">
-                                        <div class="review-card__image">
-                                            <img src="assets/img/reviews/review-3.jpg" alt="фотография автора отзыва">
-                                        </div>
-
-                                        <div class="review-card__block">
-                                            <p class="review-card__name">
-                                                <span lang="ru">Ульяна</span>
-                                                <span lang="en">Ulyana</span>
-                                            </p>
-                                            <p class="review-card__age">
-                                                <span lang="ru">32 года</span>
-                                                <span lang="en">32 years</span>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="review-card__text">
-                                        <span lang="ru">После родов я испробовала так много разных диет и планов
-                                            питания, что страшно
-                                            вспомнить! Вес
-                                            возвращался, преумножался и тем самым портилось здоровье. А этого кето плана
-                                            так легко
-                                            придерживаться! И результат то на лицо, за месяц я сбросила уже 7 килограмм
-                                            и не планирую
-                                            останавливаться! Улучшилось самочувствие и пришел прилив энергии. Хочу
-                                            сказать точно, не
-                                            бойтесь, садитесь на кето диету, ведь с таким подбором рецептов это и вкусно
-                                            и
-                                            полезно!</span>
-                                        <span lang="en">After giving birth, I tried so many different diets and food
-                                            plans, which is
-                                            scary to remember! The weight
-                                            Returned, multiplied and thereby spoiled health. And this keto plan so easy
-                                            stick to! And the result is on the face, for the month I dropped 7 kilograms
-                                            already and do
-                                            not plan
-                                            stop! It improved well-being and a tide of energy came. I want to say for
-                                            sure
-                                            Fear, sit on the keto diet, because with such a selection of recipes it is
-                                            delicious and
-                                            useful!</span>
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="reviews__pagination pagination"></div>
-                    </div>
-
-                    <div class="quiz__offer-includes includes">
-                        <h2 class="quiz__title title">
-                            <span lang="ru">Что вы получаете</span>
-                            <span lang="en">What are you getting</span>
-                        </h2>
-
-                        <ul class="includes__list">
-                            <li class="includes__item">
-                                <i class="includes__icon includes__icon--form"></i>
-                                <p class="includes__text">
-                                    <span lang="ru">Индивидуальный план питания на 28 дней</span>
-                                    <span lang="en">Individual power plan for 28 days</span>
-                                </p>
-                            </li>
-                            <li class="includes__item">
-                                <i class="includes__icon includes__icon--dish"></i>
-                                <p class="includes__text">
-                                    <span lang="ru">Размеры порций и их КБЖУ рассчитаны специально под вас</span>
-                                    <span lang="en">Sizes of servings and their KBJA are designed specifically for
-                                        you</span>
-                                </p>
-                            </li>
-                            <li class="includes__item">
-                                <i class="includes__icon includes__icon--recipes"></i>
-                                <p class="includes__text">
-                                    <span lang="ru">Простые рецепты для приготовления вкусных и сытных блюд</span>
-                                    <span lang="en">Simple recipes for the preparation of delicious and rich
-                                        dishes</span>
-                                </p>
-                            </li>
-                            <li class="includes__item">
-                                <i class="includes__icon includes__icon--dessert"></i>
-                                <p class="includes__text">
-                                    <span lang="ru">Советы, как следовать диете и не сорваться</span>
-                                    <span lang="en">Tips how to follow diet and not break</span>
-                                </p>
-                            </li>
-                        </ul>
-
-                        <button class="includes__btn button modal-opener" data-modal="modal-trial">
-                            <span lang="ru">Получить личный план</span>
-                            <span lang="en">Get personal plan</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="quiz__background quiz__background--woman"></div>
-                <div class="quiz__background quiz__background--man"></div>
             </div>
         </div>
         <!-- End Quiz Block -->
+
+
+        <!-- Progress Bar -->
+        <section class="progress">
+            <div class="container">
+                <h2 class="progress__title title">
+                    <span lang="ru">Ваш персональный <br> план формируется</span>
+                    <span lang="en">Your personal <br> plan is forming</span>
+                </h2>
+
+                <div class="progress__bar"></div>
+            </div>
+        </section>
+
+        <!-- Final -->
+        <div class="final-wrap">
+            <section class="final-wrap__result plan">
+                <div class="container">
+                    <h2 class="plan__title title">
+                        <span lang="ru">Ваш персональный <br> план готов</span>
+                        <span lang="en">Your personal plan is ready</span>
+                    </h2>
+
+                    <button class="final-wrap__btn plan__btn button-new">
+                        <span class="button-new__content">
+					<span lang="ru">Получить личный план</span>
+                        <span lang="en">Get personal plan</span>
+                        </span>
+                    </button>
+
+                    <ul class="plan__list">
+                        <li class="plan__item">
+                            <i class="plan__icon plan__icon--settings"></i>
+                            <span class="plan__value plan__value--mass-index">24,31</span>
+                            <span class="plan__type">
+						<span lang="ru">Ваш ИМТ</span>
+                            <span lang="en">Your body mass index</span>
+                            </span>
+                            <span class="plan__meaning plan__meaning--mass-index">норма</span>
+                        </li>
+                        <li class="plan__item">
+                            <i class="plan__icon plan__icon--person"></i>
+                            <span class="plan__value plan__value--meta-age">40 лет</span>
+                            <span class="plan__type">
+						<span lang="ru">Метаболический возраст</span>
+                            <span lang="en">Metabolic age</span>
+                            </span>
+                            <span class="plan__meaning plan__meaning--meta-age">отклонение</span>
+                        </li>
+                        <li class="plan__item">
+                            <i class="plan__icon plan__icon--speedometer"></i>
+                            <span class="plan__value plan__value--сalories">2480-2580</span>
+                            <span class="plan__type">
+						<span lang="ru">Рекомендуемое количество калорий</span>
+                            <span lang="en">Recommended calorie number</span>
+                            </span>
+                        </li>
+                        <li class="plan__item">
+                            <i class="plan__icon plan__icon--scales"></i>
+                            <span class="plan__value plan__value--future-weight plan__value--green">79 кг</span>
+                            <span class="plan__type">
+						<span lang="ru">Достижимый вес <br> после 28 дней диеты</span>
+                            <span lang="en">Achievable weight after 28 days diet</span>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="plan__statistics statistics">
+                        <p class="statistics__percent">84%</p>
+                        <p class="statistics__desc">
+                            <span lang="ru">людей с похожими параметрами сбросили вес благодаря кето-диете</span>
+                            <span lang="en">people with similar parameters dropped weight thanks to a keto diet</span>
+                        </p>
+                    </div>
+
+                    <button class="final-wrap__btn plan__btn button button-new">
+                        <span class="button-new__content">
+					<span lang="ru">Получить личный план</span>
+                        <span lang="en">Get personal plan</span>
+                        </span>
+                    </button>
+
+                </div>
+            </section>
+
+            <section class="final-wrap__reviews reviews">
+                <div class="container">
+                    <h2 class="reviews__title title">
+                        <span lang="ru">Они уже сделали это</span>
+                        <span lang="en">They have already done it</span>
+                    </h2>
+
+                    <div class="reviews__slider">
+                        <ul class="reviews__list">
+                            <li class="reviews__item review-card">
+                                <div class="review-card__head">
+                                    <div class="review-card__image">
+                                        <img src="assets/img/reviews/review-1.jpg" alt="фотография автора отзыва">
+                                    </div>
+
+                                    <div class="review-card__block">
+                                        <p class="review-card__name">
+                                            <span lang="ru">Мария</span>
+                                            <span lang="en">Maria</span>
+                                        </p>
+                                        <p class="review-card__age">
+                                            <span lang="ru">24 года</span>
+                                            <span lang="en">24 years</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="review-card__text">
+                                    <span lang="ru">Как же я счастлива, что и в Россию пришла нашумевшая, возродившаяся в Америке
+								кето диета,
+								которая многих спасла от ожирения. Этот план питания невероятно разнообразен, сбалансирован и
+								рецепты нереально вкусные. Спасибо, ребята! Я хожу в магазин раз в неделю и покупаю все
+								продукты. Результат недолго заставлял себя ждать! Планирую и дальше правильно питаться и
+								подтянуть на этот индивидуальный план питания своих подруг! Оно того стоит.</span>
+                                    <span lang="en">How is I happy that the sensational, revived in America, a diet revived in
+								America, came to Russia,
+								which many saved from obesity. This power plan is incredibly diverse, balanced and
+								Recipes are unreal delicious. Thanks guys! I go to the store once a week and buy everything
+								products. The result was not long forced to wait! I plan and then eat right and
+								Tighten your girlfriends to this individual nutrition plan! It's worth it.</span>
+                                </p>
+                            </li>
+                            <li class="reviews__item review-card">
+                                <div class="review-card__head">
+                                    <div class="review-card__image">
+                                        <img src="assets/img/reviews/review-2.jpg" alt="фотография автора отзыва">
+                                    </div>
+
+                                    <div class="review-card__block">
+                                        <p class="review-card__name">
+                                            <span lang="ru">Людмила</span>
+                                            <span lang="en">Lyudmila</span>
+                                        </p>
+                                        <p class="review-card__age">
+                                            <span lang="ru">35 лет</span>
+                                            <span lang="en">35 years</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="review-card__text">
+                                    <span lang="ru">Очень эффективная диета! Наконец-то нашла индивидуально разработанный план по
+								кето диете, ведь
+								данная система питания очень эффективна! Самый быстрый, простой и вкусный способ сбросить
+								лишние
+								килограммы и полностью сменить гардероб! Я влезла в свои старые джинсы. Урааааа! Буду
+								рекомендовать план питания подругам, друзьям и родственникам, чтобы закатывать кето ужины и
+								семейные кето посиделки. Всем рекомендую!</span>
+                                    <span lang="en">Very effective diet! Finally found an individually designed plan for keto diet,
+								because
+								This nutrition system is very effective! The fastest, simple and delicious way to lose extra
+								Kilograms and completely change the wardrobe! I got into my old jeans. URAAAAA! Will
+								Recommend the nutrition plan, friends and relatives to roll the keto dinner and
+								Family Keto Sowing. I recommend to everyone!</span>
+                                </p>
+                            </li>
+                            <li class="reviews__item review-card">
+                                <div class="review-card__head">
+                                    <div class="review-card__image">
+                                        <img src="assets/img/reviews/review-3.jpg" alt="фотография автора отзыва">
+                                    </div>
+
+                                    <div class="review-card__block">
+                                        <p class="review-card__name">
+                                            <span lang="ru">Ульяна</span>
+                                            <span lang="en">Ulyana</span>
+                                        </p>
+                                        <p class="review-card__age">
+                                            <span lang="ru">32 года</span>
+                                            <span lang="en">32 years</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class="review-card__text">
+                                    <span lang="ru">После родов я испробовала так много разных диет и планов питания, что страшно
+								вспомнить! Вес
+								возвращался, преумножался и тем самым портилось здоровье. А этого кето плана так легко
+								придерживаться! И результат то на лицо, за месяц я сбросила уже 7 килограмм и не планирую
+								останавливаться! Улучшилось самочувствие и пришел прилив энергии. Хочу сказать точно, не
+								бойтесь, садитесь на кето диету, ведь с таким подбором рецептов это и вкусно и
+								полезно!</span>
+                                    <span lang="en">After giving birth, I tried so many different diets and food plans, which is
+								scary to remember! The weight
+								Returned, multiplied and thereby spoiled health. And this keto plan so easy
+								stick to! And the result is on the face, for the month I dropped 7 kilograms already and do
+								not plan
+								stop! It improved well-being and a tide of energy came. I want to say for sure
+								Fear, sit on the keto diet, because with such a selection of recipes it is delicious and
+								useful!</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="reviews__pagination pagination"></div>
+                </div>
+            </section>
+
+            <section class="final-wrap__includes includes">
+                <div class="container">
+                    <h2 class="includes__title title">
+                        <span lang="ru">Что вы получаете</span>
+                        <span lang="en">What are you getting</span>
+                    </h2>
+
+                    <ul class="includes__list">
+                        <li class="includes__item">
+                            <i class="includes__icon includes__icon--form"></i>
+                            <p class="includes__text">
+                                <span lang="ru">Индивидуальный план питания на 28 дней</span>
+                                <span lang="en">Individual power plan for 28 days</span>
+                            </p>
+                        </li>
+                        <li class="includes__item">
+                            <i class="includes__icon includes__icon--dish"></i>
+                            <p class="includes__text">
+                                <span lang="ru">Размеры порций и их КБЖУ рассчитаны специально под вас</span>
+                                <span lang="en">Sizes of servings and their KBJA are designed specifically for you</span>
+                            </p>
+                        </li>
+                        <li class="includes__item">
+                            <i class="includes__icon includes__icon--recipes"></i>
+                            <p class="includes__text">
+                                <span lang="ru">Простые рецепты для приготовления вкусных и сытных блюд</span>
+                                <span lang="en">Simple recipes for the preparation of delicious and rich dishes</span>
+                            </p>
+                        </li>
+                        <li class="includes__item">
+                            <i class="includes__icon includes__icon--dessert"></i>
+                            <p class="includes__text">
+                                <span lang="ru">Советы, как следовать диете и не сорваться</span>
+                                <span lang="en">Tips how to follow diet and not break</span>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <button class="final-wrap__btn includes__btn button button-new">
+                        <span class="button-new__content">
+					<span lang="ru">Получить личный план</span>
+                        <span lang="en">Get personal plan</span>
+                        </span>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- Order Block -->
+        <section id="order" class="order">
+            <div class="container">
+                <h2 class="order__title">
+                    <span lang="ru">Специальное <br> предложение только <br> для новых пользователей</span>
+                    <span lang="en">Special offer only for new users</span>
+                </h2>
+                <p class="order__subtitle">
+                    <span lang="ru">Возможность получить доступ к платформе по суперцене</span>
+                    <span lang="en">Ability to access the supercase platform</span>
+                </p>
+
+                <ul class="order__list">
+                    <li class="order__item">
+                        <span lang="ru">Доступ к платформе Keto diet</span>
+                        <span lang="en">Access to the Keto Diet Platform</span>
+                    </li>
+                    <li class="order__item">
+                        <span lang="ru">Индивидуальный план питания <br> на 28 дней</span>
+                        <span lang="en">Individual power plan on 28 days</span>
+                    </li>
+                    <li class="order__item">
+                        <span lang="ru">Простые рецепты для приготовления вкусных и сытных блюд</span>
+                        <span lang="en">Simple recipes for the preparation of delicious and rich dishes</span>
+                    </li>
+                    <li class="order__item">
+                        <span lang="ru">Советы, как следовать <br> диете и не сорваться</span>
+                        <span lang="en">Tips, how to follow diet and not break</span>
+                    </li>
+                    <li class="order__item">
+                        <span lang="ru">Размеры порций и их КБЖУ рассчитаны специально под вас</span>
+                        <span lang="en">Sizes of servings and their KBJA are designed specifically for you</span>
+                    </li>
+                </ul>
+
+                <div class="order__price-block">
+                    <span class="order__price-text" lang="ru">Тариф:</span>
+                    <span class="order__price-text" lang="en">Tariff:</span>
+                    <span class="order__price-cur">29 р.</span>
+                    <span class="order__price-old">899 р.</span>
+                </div>
+
+                <p class="order__info-text">
+                    <span lang="ru">Доступ к платформе на неделю за 29 р, далее по тарифу</span>
+                    <span lang="en">Access to the platform for a week for 29 p, then at the rate</span>
+                </p>
+
+                <button class="order__button button button--pay-open">
+                    <span lang="ru">Продолжить</span>
+                    <span lang="en">Continue</span>
+                </button>
+
+                <p class="order__copy-block">
+                    <span lang="ru">Нажимая на кнопку, Вы соглашаетесь с условиями</span>
+                    <span lang="en">Pressing the button, you agree to the terms</span>
+                    <a href="https://keta.1-platforma.com/offer.pdf">
+                        <span lang="ru">оферты</span>
+                        <span lang="en">offer</span>
+                    </a>
+                    <span lang="ru">, действующими </span>
+                    <span lang="en">, acting</span>
+                    <a href="https://keta.1-platforma.com/tariff.pdf">
+                        <span lang="ru">тарифами</span>
+                        <span lang="en">tariffs</span>
+                    </a>
+                    <span lang="ru">сервиса, даёте своё согласие на</span>
+                    <span lang="en">service, give your consent to</span>
+                    <a href="https://keta.1-platforma.com/permission.pdf">
+                        <span lang="ru">обработку персональных данных</span>
+                        <span lang="en">processing personal data</span>
+                    </a>
+                    <span lang="ru">и на получение рекламных материалов, осознаёте возмездный характер оказываемых услуг</span>
+                    <span lang="en">and to receive promotional materials, aware of the compensated nature of the services
+				provided</span>
+                </p>
+            </div>
+        </section>
+        <!-- End Order Block -->
 
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
                 <p class="footer__copy-block">
-                    <span lang="ru">Продолжая, Вы соглашаетесь с</span>
+                    <span class="footer__start-only">
+				<span lang="ru">Продолжая, Вы соглашаетесь с</span>
                     <span lang="en">Continuing you agree with</span>
+                    </span>
                     <br>
                     <a href="https://keta.1-platforma.com/permission.pdf">
                         <span lang="ru">Политика обработки данных</span>
@@ -1027,95 +1152,7 @@
 
     <!-- Modal -->
 
-    <div class="modal" data-scroll-lock-fill-gap>
-        <div class="modal__overlay"></div>
-        <div class="modal__wrapper">
-            <a class="modal__close-btn" href="#"></a>
 
-            <div class="modal__container modal__container--trial" id="modal-trial">
-                <h2 class="modal__title">
-                    <span lang="ru">Специальное <br> предложение только <br> для новых пользователей</span>
-                    <span lang="en">Special offer only for new users</span>
-                </h2>
-                <p class="modal__subtitle">
-                    <span lang="ru">Возможность получить доступ к платформе по суперцене</span>
-                    <span lang="en">Ability to access the supercase platform</span>
-                </p>
-
-                <ul class="modal__list">
-                    <li class="modal__item">
-                        <span lang="ru">Доступ к платформе Keto diet</span>
-                        <span lang="en">Access to the Keto Diet Platform</span>
-                    </li>
-                    <li class="modal__item">
-                        <span lang="ru">Индивидуальный план питания <br> на 28 дней</span>
-                        <span lang="en">Individual power plan on 28 days</span>
-                    </li>
-                    <li class="modal__item">
-                        <span lang="ru">Простые рецепты для приготовления вкусных и сытных блюд</span>
-                        <span lang="en">Simple recipes for the preparation of delicious and rich dishes</span>
-                    </li>
-                    <li class="modal__item">
-                        <span lang="ru">Советы, как следовать <br> диете и не сорваться</span>
-                        <span lang="en">Tips, how to follow diet and not break</span>
-                    </li>
-                    <li class="modal__item">
-                        <span lang="ru">Размеры порций и их КБЖУ рассчитаны специально под вас</span>
-                        <span lang="en">Sizes of servings and their KBJA are designed specifically for you</span>
-                    </li>
-                </ul>
-
-                <div class="modal__price-block">
-                    <span class="modal__price-text" lang="ru">Тариф:</span>
-                    <span class="modal__price-text" lang="en">Tariff:</span>
-                    <span class="modal__price-cur">29 р.</span>
-                    <span class="modal__price-old">899 р.</span>
-                </div>
-
-                <p class="modal__info-text">
-                    <span lang="ru">Доступ к платформе на неделю за 29 р, далее по тарифу</span>
-                    <span lang="en">Access to the platform for a week for 29 p, then at the rate</span>
-                </p>
-
-                <button class="modal__button button button--pay-open">
-                    <span lang="ru">Продолжить</span>
-                    <span lang="en">Continue</span>
-                </button>
-
-                <p class="modal__copy-block">
-                    <span lang="ru">Нажимая на кнопку, Вы соглашаетесь с условиями</span>
-                    <span lang="en">Pressing the button, you agree to the terms</span>
-                    <a href="https://keta.1-platforma.com/offer.pdf">
-                        <span lang="ru">оферты</span>
-                        <span lang="en">offer</span>
-                    </a>
-                    <span lang="ru">, действующими </span>
-                    <span lang="en">, acting</span>
-                    <a href="https://keta.1-platforma.com/tariff.pdf">
-                        <span lang="ru">тарифами</span>
-                        <span lang="en">tariffs</span>
-                    </a>
-                    <span lang="ru">сервиса, даёте своё согласие на</span>
-                    <span lang="en">service, give your consent to</span>
-                    <a href="https://keta.1-platforma.com/permission.pdf">
-                        <span lang="ru">обработку персональных данных</span>
-                        <span lang="en">processing personal data</span>
-                    </a>
-                    <span lang="ru">и на получение рекламных материалов, осознаёте возмездный характер оказываемых
-                        услуг</span>
-                    <span lang="en">and to receive promotional materials, aware of the compensated nature of the
-                        services
-                        provided</span>
-                </p>
-            </div>
-
-            <div class="modal__container modal__container--pay">
-                <pay-widget title="Введите Email" activeclass="pay-widget" uid="ZY3rmX0PWjwAZJym" ymcounter="85841570"
-                    ymtargetstart="224924169" ymtargetend="224924192" buttonText="Оплатить" />
-            </div>
-
-        </div>
-    </div>
 
     <!-- End Modal -->
 
