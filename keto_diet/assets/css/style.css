@@ -440,6 +440,22 @@ hr {
   background-image: -o-linear-gradient(#f5cd26, #f2a200);
   background-image: linear-gradient(#f5cd26, #f2a200);
   opacity: 0;
+  z-index: -2;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #c7c9cc;
+  opacity: 0;
   z-index: -1;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
@@ -464,9 +480,7 @@ hr {
   pointer-events: none;
 }
 
-.button[disabled]::before {
-  background-image: none;
-  background-color: #c7c9cc;
+.button[disabled]::after {
   opacity: 1;
 }
 
@@ -495,7 +509,6 @@ hr {
   letter-spacing: -0.025em;
   color: white;
   text-decoration: none;
-  overflow: hidden;
   z-index: 1;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
@@ -1939,6 +1952,20 @@ hr {
 
 .option__icon--cucumber::after {
   background-position: 0px -154px;
+}
+
+.option__icon--carrot::before,
+.option__icon--carrot::after {
+  width: 24px;
+  height: 24px;
+}
+
+.option__icon--carrot::before {
+  background-position: -174px -183px;
+}
+
+.option__icon--carrot::after {
+  background-position: -145px -183px;
 }
 
 .option__icon--tomatoes::before,
