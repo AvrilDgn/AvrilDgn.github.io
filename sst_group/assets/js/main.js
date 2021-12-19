@@ -12811,7 +12811,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				e.preventDefault();
 				modal.classList.add('modal--show');
 				modalEl.style.display = 'flex';
-				modalEl.appendChild(modalCloseBtn);
+				// modalEl.appendChild(modalCloseBtn);
 				scroll_lock_default.a.disablePageScroll(modal);
 
 				let handler = () => {
@@ -12874,98 +12874,102 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 
-	/**
-	 * Form Validation
-	 */
+	// /**
+	//  * Form Validation
+	//  */
 
-	let forms = document.querySelectorAll('form');
+	// let forms = document.querySelectorAll('form');
 
-	forms.forEach(form => {
+	// forms.forEach(form => {
 
-		//check inputs before sending form
-		form.onsubmit = function (e) {
+	// 	//check inputs before sending form
+	// 	form.onsubmit = function (e) {
 
-			let reqInputs = form.querySelectorAll('[required]');
+	// 		let reqInputs = form.querySelectorAll('[required]');
 
-			reqInputs.forEach(input => {
-				let parent = input.parentNode;
-				let message = parent.querySelector('.form__validation-message');
+	// 		reqInputs.forEach(input => {
+	// 			let parent = input.parentNode;
+	// 			let message = parent.querySelector('.form__validation-message');
 
-				switch (input.getAttribute("type")) {
-					case "tel":
-						if (input.value.length < 18) {
-							if (message) {
-								e.preventDefault();
-								return;
-							}
+	// 			switch (input.getAttribute("type")) {
+	// 				case "tel":
+	// 					if (input.value.length < 18) {
+	// 						if (message) {
+	// 							e.preventDefault();
+	// 							return;
+	// 						}
 
-							message = document.createElement('span');
-							message.classList.add('form__validation-message');
-							message.textContent = "Введите правильный номер телефона";
-							parent.appendChild(message);
-							new DLAnimate().show(message, {
-								name: 'fade',
-								track: 'animation'
-							});
+	// 						message = document.createElement('span');
+	// 						message.classList.add('form__validation-message');
+	// 						message.textContent = "Введите правильный номер телефона";
+	// 						parent.appendChild(message);
+	// 						new DLAnimate().show(message, {
+	// 							name: 'fade',
+	// 							track: 'animation'
+	// 						});
 
-							e.preventDefault();
-							return;
-						}
-						break;
+	// 						e.preventDefault();
+	// 						return;
+	// 					}
+	// 					break;
 
-					case "checkbox":
-						if (!input.checked) {
-							if (message) {
-								e.preventDefault();
-								return;
-							}
+	// 				case "checkbox":
+	// 					if (!input.checked) {
+	// 						if (message) {
+	// 							e.preventDefault();
+	// 							return;
+	// 						}
 
-							message = document.createElement('span');
-							message.classList.add('form__validation-message');
-							message.textContent = "Подтвердите согласие на обработку и передачу персональных данных";
-							parent.appendChild(message);
-							new DLAnimate().show(message, {
-								name: 'fade',
-								track: 'animation'
-							});
+	// 						message = document.createElement('span');
+	// 						message.classList.add('form__validation-message');
+	// 						message.textContent = "Подтвердите согласие на обработку и передачу персональных данных";
+	// 						parent.appendChild(message);
+	// 						new DLAnimate().show(message, {
+	// 							name: 'fade',
+	// 							track: 'animation'
+	// 						});
 
-							e.preventDefault();
-							return;
-						}
-						break;
+	// 						e.preventDefault();
+	// 						return;
+	// 					}
+	// 					break;
 
-					default:
-						break;
-				}
+	// 				default:
+	// 					break;
+	// 			}
 
-				if (message) {
-					new DLAnimate().hide(message, {
-						name: 'fade',
-						track: 'animation',
-						afterLeave: function (message) {
-							message.remove();
-						}
-					});
-				}
-			});
-		}
-	});
+	// 			if (message) {
+	// 				new DLAnimate().hide(message, {
+	// 					name: 'fade',
+	// 					track: 'animation',
+	// 					afterLeave: function (message) {
+	// 						message.remove();
+	// 					}
+	// 				});
+	// 			}
+	// 		});
+	// 	}
+	// });
 
 
 	/**
 	 * Sliders
 	 */
 
-	core_class.use([navigation, pagination, lazy, effect_fade ]);
+	core_class.use([navigation, pagination, lazy, effect_fade]);
 
 	//portfolio
 	new core_class('.portfolio__wrapper', {
 		lazy: true,
 		spaceBetween: 30,
 		wrapperClass: 'portfolio__list',
-		slideClass: 'portfolio__item',
+		slideClass: 'portfolio__slide',
 		slidesPerView: 1,
 		watchOverflow: true,
+
+		lazy: {
+			loadedClass: 'entered',
+		},
 
 		pagination: {
 			el: ".portfolio__pagination",
@@ -12985,7 +12989,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		fadeEffect: { crossFade: false },
 		spaceBetween: 120,
 		wrapperClass: 'stages__list',
-		slideClass: 'stages__item',
+		slideClass: 'stages__slide',
 		slidesPerView: 1,
 		watchOverflow: true,
 
@@ -12993,15 +12997,15 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			el: ".stages__tabs",
 			clickable: true,
 			renderBullet: function (index, className) {
-				// console.log(document.querySelectorAll('.stages__item')[index]);
-				
-				return '<li class="' + className + '">' + document.querySelectorAll('.stages__item')[index].dataset.name + "</li>";
+				// console.log(document.querySelectorAll('.stages__slide')[index]);
+
+				return '<li class="' + className + '">' + document.querySelectorAll('.stages__slide')[index].dataset.name + "</li>";
 			},
-		}, 
-		
+		},
+
 		on: {
 			activeIndexChange: function () {
-				let slides = document.querySelectorAll('.stages__item');
+				let slides = document.querySelectorAll('.stages__slide');
 				slides.forEach(slide => {
 					slide.style.opacity = 0;
 				});
@@ -13012,10 +13016,282 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				slides.forEach(slide => {
 					slide.style.opacity = 1;
 				});
-				
+
 			},
-		 },
+		},
 	});
+
+
+	/**
+	 * Upload file btn
+	 */
+
+	let uploaders = document.querySelectorAll('.uload-file');
+
+	uploaders.forEach(uploader => {
+		let input = uploader.querySelector('.uload-file__input'),
+			textBlock = uploader.querySelector('.uload-file__message'),
+			value = textBlock.innerText;
+
+		input.addEventListener('change', function (e) {
+			let countFiles = '';
+
+			if (this.files && this.files.length >= 1) {
+				countFiles = this.files.length;
+			}
+
+			if (countFiles) {
+				textBlock.innerText = 'Выбрано файлов: ' + countFiles;
+			}
+			else {
+				textBlock.innerText = value;
+			}
+		});
+	});
+
+
+	/**
+	 * Form
+	 */
+
+	let forms = document.forms;
+
+	for (let i = 0; i < forms.length; i++) {
+		if (forms[i] && window.FormData) {
+
+			let form = forms[i];
+			let btn = form.querySelector('button[type="submit"]');
+
+			let message = new Object();
+			message.loading = 'Загрузка...';
+			message.success = 'Спасибо! Отправка прошла успешно!';
+			message.failure = 'Что-то пошло не так...';
+
+			let statusMessage = document.createElement('div');
+			statusMessage.classList.add('form-status');
+
+			let request = new XMLHttpRequest();
+			request.open('POST', 'form.php', true);
+			request.setRequestHeader('accept', 'application/json');
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				let reqInputs = form.querySelectorAll('[required]');
+				let reqFault = false;
+
+				reqInputs.forEach(input => {
+					let parent = input.parentNode;
+					let reqMessage = parent.querySelector('.form-status');
+
+					switch (input.getAttribute("name")) {
+						case "phone":
+							if (input.value.length < 18) {
+
+								reqFault = true;
+
+								if (reqMessage) {
+									return;
+								}
+
+								reqMessage = document.createElement('span');
+								reqMessage.classList.add('form-status');
+								reqMessage.classList.add('form-status--fault');
+								reqMessage.textContent = "Введите правильный номер телефона!";
+								parent.appendChild(reqMessage);
+
+								new DLAnimate().show(reqMessage, {
+									name: 'fade',
+									track: 'animation'
+								});
+
+								return;
+							}
+							break;
+
+						case "name":
+							if (input.value.length < 2) {
+
+								reqFault = true;
+
+								if (reqMessage) {
+									return;
+								}
+
+								reqMessage = document.createElement('span');
+								reqMessage.classList.add('form-status');
+								reqMessage.classList.add('form-status--fault');
+								reqMessage.textContent = "Введите правильное имя!";
+								parent.appendChild(reqMessage);
+
+								new DLAnimate().show(reqMessage, {
+									name: 'fade',
+									track: 'animation'
+								});
+
+								return;
+							}
+							break;
+
+						default:
+							break;
+					}
+
+					if (reqMessage) {
+						new DLAnimate().hide(reqMessage, {
+							name: 'fade',
+							track: 'animation',
+							afterLeave: function (reqMessage) {
+								reqMessage.remove();
+							}
+						});
+					}
+				});
+
+
+				if (reqFault) {
+					return;
+				} else {
+
+					success(form.parentElement);
+					return;
+
+					// !!!
+
+					let formData = new FormData(form);
+					let statusOn = false;
+					statusMessage.classList.remove('form-status--fault');
+
+					request.send(formData);
+
+					request.onreadystatechange = function () {
+						if (request.readyState < 4) {
+							statusMessage.innerHTML = message.loading;
+						}
+						else if (request.readyState === 4) {
+							if (request.status == 200 && request.status < 300) {
+								if (request.responseText === '') {
+
+									success(form.parentElement);
+
+								} else {
+									statusMessage.innerHTML = request.responseText;
+								}
+							}
+							else {
+								statusMessage.classList.add('form-status--fault');
+								statusMessage.innerHTML = message.failure;
+								btn.disabled = false;
+							}
+						}
+
+						if (request.responseText) {
+							statusMessage.innerHTML = request.responseText;
+						}
+
+						if (!statusOn) {
+							form.appendChild(statusMessage);
+							new DLAnimate().show(statusMessage, {
+								name: 'fade',
+								track: 'animation'
+							});
+							statusOn = true;
+						}
+					}
+				}
+			});
+		}
+	}
+
+	let formSuccess = document.querySelector('.modal__success');
+
+	function success(form) {
+		new DLAnimate().hide(form, {
+			name: 'fade',
+			track: 'animation',
+			afterLeave: function (el) {
+				new DLAnimate().show(formSuccess, {
+					name: 'fade',
+					track: 'animation',
+					beforeEnter: function (el) {
+						el.style.display = 'flex';
+					}
+				});
+				new DLAnimate().show(modalCloseBtn, {
+					name: 'fade',
+					track: 'animation'
+				});
+			}
+		});
+
+	}
+
+
+	/**
+	 * yandex map
+	 */
+
+	let maps = document.querySelectorAll('.yaMap');
+	let yaApiLoad = false;
+	let yaApiLoaded = false;
+
+	maps.forEach(map => {
+		let mapShown = false;
+
+		window.addEventListener('scroll', function (e) {
+			if (mapShown) return;
+
+			if (!map.classList.contains("entered")) return;
+
+			if (!yaApiLoad) {
+				let script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3398ec65-e86b-4576-913c-20b902a73916";
+				document.body.appendChild(script);
+				yaApiLoad = true;
+				script.onload = () => {
+					yaApiLoaded = true;
+					mapShown = true;
+					ymaps.ready(init(map));
+				};
+				return;
+			}
+
+			if (!yaApiLoaded) return;
+
+			mapShown = true;
+			ymaps.ready(init(map));
+		})
+	});
+
+	function init(el) {
+		return function () {
+			let mapCenterPos = el.dataset.center.split(',');
+			let mapPinSize = el.dataset.pinSize.split(',');
+
+			console.log(mapPinSize);
+
+			let map = new ymaps.Map(el, {
+				center: mapCenterPos,
+				zoom: el.dataset.zoom,
+				controls: []
+			});
+
+			if (!el.dataset.data) return;
+
+			let placemarkData = JSON.parse("{" + el.dataset.data + "}");
+
+			let placemark = new ymaps.Placemark(mapCenterPos, null, {
+
+				iconLayout: 'default#image',
+				iconImageHref: "assets/img/map-pin.png",
+				iconImageSize: mapPinSize,
+				iconImageOffset: [-Math.floor(mapPinSize[0] / 2), -mapPinSize[1]],
+			});
+
+			map.geoObjects.add(placemark);
+		};
+	};
 
 });
 

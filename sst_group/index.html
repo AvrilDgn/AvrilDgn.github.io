@@ -30,27 +30,30 @@
                 </a>
 
                 <div class="header__contacts-block">
-                    <a href="tel:+375(29)123-45-67" class="header__phone">
-                        +375 (29) 123-45-67
+                    <a href="tel:+79110292005" class="header__phone">
+                        +7 911 029 20 05
+                    </a>
+                    <a href="tel:+88124413527" class="header__phone">
+                        +8 812 441 35 27
                     </a>
 
                     <ul class="header__socials socials">
                         <li class="socials__item">
-                            <a href="#" class="socials__link socials__link--blue">
+                            <a href="tg://resolve?domain=+79110292005" target="_blank" class="socials__link socials__link--blue">
                                 <svg class="socials__icon socials__icon--telegram">
                                     <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="socials__item">
-                            <a href="#" class="socials__link socials__link--green">
+                            <a href="whatsapp://send?phone=+79110292005" target="_blank" class="socials__link socials__link--green">
                                 <svg class="socials__icon socials__icon--whatsapp">
                                     <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="socials__item">
-                            <a href="#" class="socials__link socials__link--purple">
+                            <a href="viber://chat?number=%2B79110292005" target="_blank" class="socials__link socials__link--purple">
                                 <svg class="socials__icon socials__icon--viber">
                                     <use xlink:href="assets/img/sprite/sprite.svg#viber"></use>
                                 </svg>
@@ -76,10 +79,11 @@
 
                     <div class="hero__we-work">
                         <div class="hero__we-work-image"></div>
-                        <p class="hero__we-work-text">Мы работаем без предоплаты по факту выполненных работ</p>
+                        <p class="hero__we-work-text"><span class="hero__we-work-star">*</span>Мы работаем без предоплаты по факту выполненных работ</p>
                     </div>
 
-                    <a href="#" class="hero__feedback-btn button button--green" data-modal="modal-feedback">
+                    <!-- <a href="#" class="hero__feedback-btn button button--green" data-modal="modal-feedback"> -->
+                    <a href="#" class="hero__feedback-btn button button--green" data-modal="modal-upload">
                         <span>Обратный звонок</span>
                     </a>
 
@@ -148,88 +152,90 @@
                 <div class="portfolio__slider">
                     <div class="portfolio__wrapper">
                         <ul class="portfolio__list">
-                            <li class="portfolio__item portfolio-card swiper-slide-active">
-                                <div class="portfolio-card__image-block">
-                                    <img src="assets/img/portfolio/house.jpg" alt="Изображение дома">
-                                </div>
-                                <div class="portfolio-card__content">
-                                    <h3 class="portfolio-card__title">Дом на Петербургской набережной</h3>
-                                    <p class="portfolio-card__description">Проект выполнен в современном стиле с применеием арматуры ,
-                                        бетона, стекла. В доме 10 окон, 5 дверей, 7 комнаты радичного назначения</p>
-                                    <ul class="portfolio-card__features-list">
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Площадь:</p>
-                                            <p class="portfolio-card__features-value">150 м</p>
-                                        </li>
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Сроки:</p>
-                                            <p class="portfolio-card__features-value">180 дней</p>
-                                        </li>
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Стоимость:</p>
-                                            <p class="portfolio-card__features-value">8 000 000 руб</p>
-                                        </li>
-                                    </ul>
+                            <li class="portfolio__slide swiper-slide-active">
+                                <div class="portfolio__item portfolio-card">
+                                    <div class="portfolio-card__image-block">
+                                        <img src="assets/img/portfolio/house.jpg" alt="Изображение дома">
+                                    </div>
+                                    <div class="portfolio-card__content">
+                                        <h3 class="portfolio-card__title">Дом на Петербургской набережной</h3>
+                                        <p class="portfolio-card__description">Проект выполнен в современном стиле с применеием арматуры
+                                            ,
+                                            бетона, стекла. В доме 10 окон, 5 дверей, 7 комнаты радичного назначения</p>
+                                        <ul class="portfolio-card__features-list">
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Площадь:</p>
+                                                <p class="portfolio-card__features-value">150 м</p>
+                                            </li>
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Сроки:</p>
+                                                <p class="portfolio-card__features-value">180 дней</p>
+                                            </li>
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Стоимость:</p>
+                                                <p class="portfolio-card__features-value">8 000 000 руб</p>
+                                            </li>
+                                        </ul>
 
-                                    <div class="portfolio-card__map">
-                                        <iframe class="swiper-lazy" src="" data-src="https://yandex.ru/map-widget/v1/-/CCUyQHcchD" frameborder="0" allowfullscreen="true"></iframe>
+                                        <div class="portfolio-card__map swiper-lazy yaMap" data-center="59.821649, 30.358780" data-pin-size="47, 47" data-zoom="16"></div>
                                     </div>
                                 </div>
                             </li>
+                            <li class="portfolio__slide ">
+                                <div class="portfolio__item portfolio-card">
+                                    <div class="portfolio-card__image-block">
+                                        <img src="assets/img/portfolio/house.jpg" alt="Изображение дома">
+                                    </div>
+                                    <div class="portfolio-card__content">
+                                        <h3 class="portfolio-card__title">Дом на Петербургской набережной</h3>
+                                        <p class="portfolio-card__description">Проект выполнен в современном стиле с применеием арматуры
+                                            ,
+                                            бетона, стекла. В доме 10 окон, 5 дверей, 7 комнаты радичного назначения</p>
+                                        <ul class="portfolio-card__features-list">
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Площадь:</p>
+                                                <p class="portfolio-card__features-value">150 м</p>
+                                            </li>
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Сроки:</p>
+                                                <p class="portfolio-card__features-value">180 дней</p>
+                                            </li>
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Стоимость:</p>
+                                                <p class="portfolio-card__features-value">8 000 000 руб</p>
+                                            </li>
+                                        </ul>
 
-                            <li class="portfolio__item portfolio-card">
-                                <div class="portfolio-card__image-block">
-                                    <img src="assets/img/portfolio/house.jpg" alt="Изображение дома">
-                                </div>
-                                <div class="portfolio-card__content">
-                                    <h3 class="portfolio-card__title">Дом на Петербургской набережной</h3>
-                                    <p class="portfolio-card__description">Проект выполнен в современном стиле с применеием арматуры ,
-                                        бетона, стекла. В доме 10 окон, 5 дверей, 7 комнаты радичного назначения</p>
-                                    <ul class="portfolio-card__features-list">
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Площадь:</p>
-                                            <p class="portfolio-card__features-value">150 м</p>
-                                        </li>
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Сроки:</p>
-                                            <p class="portfolio-card__features-value">180 дней</p>
-                                        </li>
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Стоимость:</p>
-                                            <p class="portfolio-card__features-value">8 000 000 руб</p>
-                                        </li>
-                                    </ul>
-
-                                    <div class="portfolio-card__map">
-                                        <iframe class="swiper-lazy" src="" data-src="https://yandex.ru/map-widget/v1/-/CCUyQHcchD" frameborder="0" allowfullscreen="true"></iframe>
+                                        <div class="portfolio-card__map swiper-lazy yaMap" data-center="59.821649, 30.358780" data-pin-size="47, 47" data-zoom="16"></div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="portfolio__item portfolio-card">
-                                <div class="portfolio-card__image-block">
-                                    <img src="assets/img/portfolio/house.jpg" alt="Изображение дома">
-                                </div>
-                                <div class="portfolio-card__content">
-                                    <h3 class="portfolio-card__title">Дом на Петербургской набережной</h3>
-                                    <p class="portfolio-card__description">Проект выполнен в современном стиле с применеием арматуры ,
-                                        бетона, стекла. В доме 10 окон, 5 дверей, 7 комнаты радичного назначения</p>
-                                    <ul class="portfolio-card__features-list">
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Площадь:</p>
-                                            <p class="portfolio-card__features-value">150 м</p>
-                                        </li>
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Сроки:</p>
-                                            <p class="portfolio-card__features-value">180 дней</p>
-                                        </li>
-                                        <li class="portfolio-card__features-item">
-                                            <p class="portfolio-card__features-type">Стоимость:</p>
-                                            <p class="portfolio-card__features-value">8 000 000 руб</p>
-                                        </li>
-                                    </ul>
+                            <li class="portfolio__slide ">
+                                <div class="portfolio__item portfolio-card">
+                                    <div class="portfolio-card__image-block">
+                                        <img src="assets/img/portfolio/house.jpg" alt="Изображение дома">
+                                    </div>
+                                    <div class="portfolio-card__content">
+                                        <h3 class="portfolio-card__title">Дом на Петербургской набережной</h3>
+                                        <p class="portfolio-card__description">Проект выполнен в современном стиле с применеием арматуры
+                                            ,
+                                            бетона, стекла. В доме 10 окон, 5 дверей, 7 комнаты радичного назначения</p>
+                                        <ul class="portfolio-card__features-list">
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Площадь:</p>
+                                                <p class="portfolio-card__features-value">150 м</p>
+                                            </li>
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Сроки:</p>
+                                                <p class="portfolio-card__features-value">180 дней</p>
+                                            </li>
+                                            <li class="portfolio-card__features-item">
+                                                <p class="portfolio-card__features-type">Стоимость:</p>
+                                                <p class="portfolio-card__features-value">8 000 000 руб</p>
+                                            </li>
+                                        </ul>
 
-                                    <div class="portfolio-card__map">
-                                        <iframe class="swiper-lazy" src="" data-src="https://yandex.ru/map-widget/v1/-/CCUyQHcchD" frameborder="0" allowfullscreen="true"></iframe>
+                                        <div class="portfolio-card__map swiper-lazy yaMap" data-center="59.821649, 30.358780" data-pin-size="47, 47" data-zoom="16"></div>
                                     </div>
                                 </div>
                             </li>
@@ -262,243 +268,257 @@
 
                     <div class="stages__wrapper">
                         <ul class="stages__list">
-                            <li class="stages__item stages-card" data-name="Земляные работы">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 1</p>
-                                    <h3 class="stages-card__title">Земляные работы</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Земляные работы">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 1</p>
+                                        <h3 class="stages-card__title">Земляные работы</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
 
-                            <li class="stages__item stages-card" data-name="Фундамент">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 2</p>
-                                    <h3 class="stages-card__title">Фундамент</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Фундамент">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 2</p>
+                                        <h3 class="stages-card__title">Фундамент</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
-                            <li class="stages__item stages-card" data-name="Стены">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 3</p>
-                                    <h3 class="stages-card__title">Стены</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Стены">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 3</p>
+                                        <h3 class="stages-card__title">Стены</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
-                            <li class="stages__item stages-card" data-name="Кровля">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 4</p>
-                                    <h3 class="stages-card__title">Кровля</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Кровля">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 4</p>
+                                        <h3 class="stages-card__title">Кровля</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
-                            <li class="stages__item stages-card" data-name="Монтаж окон и дверей">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 5</p>
-                                    <h3 class="stages-card__title">Монтаж окон и дверей</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Монтаж окон и дверей">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 5</p>
+                                        <h3 class="stages-card__title">Монтаж окон и дверей</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
-                            <li class="stages__item stages-card" data-name="Внешняя отделка">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 6</p>
-                                    <h3 class="stages-card__title">Внешняя отделка</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Внешняя отделка">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 6</p>
+                                        <h3 class="stages-card__title">Внешняя отделка</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
-                            <li class="stages__item stages-card" data-name="Внутренняя отделка">
-                                <div class="stages-card__image-block">
-                                    <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
-                                </div>
-
-                                <div class="stages-card__content">
-                                    <p class="stages-card__stage-value">Этап 7</p>
-                                    <h3 class="stages-card__title">Внутренняя отделка</h3>
-
-                                    <div class="stages-card__info-block">
-                                        <div class="stages-card__time">
-                                            3 - 5 дней
-                                        </div>
-                                        <div class="stages-card__price">
-                                            От 90 000 RUB
-                                        </div>
+                            <li class="stages__slide" data-name="Внутренняя отделка">
+                                <div class="stages__item stages-card">
+                                    <div class="stages-card__image-block">
+                                        <img src="assets/img/stages/excavator.jpg" alt="Изображение экскаватора">
                                     </div>
 
-                                    <ul class="stages-card__functions-list">
-                                        <li class="stages-card__functions-item">
-                                            Выемка грунта
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Дренирование
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Отсыпка песком и щебнем
-                                        </li>
-                                        <li class="stages-card__functions-item">
-                                            Выравнивание
-                                        </li>
-                                    </ul>
+                                    <div class="stages-card__content">
+                                        <p class="stages-card__stage-value">Этап 7</p>
+                                        <h3 class="stages-card__title">Внутренняя отделка</h3>
+
+                                        <div class="stages-card__info-block">
+                                            <div class="stages-card__time">
+                                                3 - 5 дней
+                                            </div>
+                                            <div class="stages-card__price">
+                                                От 90 000 RUB
+                                            </div>
+                                        </div>
+
+                                        <ul class="stages-card__functions-list">
+                                            <li class="stages-card__functions-item">
+                                                Выемка грунта
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Дренирование
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Отсыпка песком и щебнем
+                                            </li>
+                                            <li class="stages-card__functions-item">
+                                                Выравнивание
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -520,8 +540,10 @@
                         Загрузите проект и получите расчет с подробной сметой, спецификацией и визуализацией объекта
                     </p>
 
+                    <div class="upload-project__image-block upload-project__image-block--mobile"></div>
+
                     <a href="#" class="upload-project__upload-btn button button--black" data-modal="modal-upload">
-                        <span>Обратный звонок</span>
+                        <span>ЗАГРУЗИТЬ ПРОЕКТ</span>
                     </a>
                 </div>
 
@@ -659,8 +681,8 @@
         <!-- End Contacts Block -->
 
         <!-- Map Block -->
-        <section id="map" class="map">
-            <iframe class="lazy" src="" data-src="https://yandex.ru/map-widget/v1/-/CCUyQHcchD" frameborder="0" allowfullscreen="true"></iframe>
+        <section id="map" class="map lazy yaMap" data-center="59.821649, 30.358780" data-pin-size="60, 60" data-zoom="16" data-data="&quot;title&quot;:&quot;Сауны Малибу&quot;,&quot;body&quot;:&quot;г. Москва, Проспект Мира, д. 123&quot;,&quot;color&quot;:&quot;#fc6500&quot;">
+            <!-- <iframe class="lazy" src="" data-src="https://yandex.ru/map-widget/v1/-/CCUyQHcchD" frameborder="0" allowfullscreen="true"></iframe> -->
         </section>
         <!-- End Map Block -->
 
@@ -679,40 +701,57 @@
 
     <div class="modal" data-scroll-lock-fill-gap>
         <div class="modal__overlay"></div>
-        <!-- <div class="modal__wrapper">
-		<a class="modal__close-btn" href="#"></a>
+        <div class="modal__wrapper">
+            <div class="modal__container modal__container--upload" id="modal-upload">
+                <h3 class="modal__title title"><span class="title__accent">Загрузите проект</span> и получите расчет с
+                    подробной сметой, спецификацией и визуализацией объекта</h3>
 
-		<div class="modal__container modal__container--upload" id="modal-upload">
-			<h3 class="modal__title title"><span class="title__accent">Загрузите проект</span> и получите расчет с
-				подробной сметой, спецификацией и визуализацией объекта</h3>
+                <form class="modal__form modal-form form" id="form-upload" action="#" method="post">
+                    <label class="modal-form__field">
+                        <input class="modal-form__input form__input" id="modal-upload-name" type="text" name="name" placeholder="Ваше имя" required />
+                    </label>
 
-			<form class="modal__form modal-form form" id="form-upload" action="#" method="post">
-				<p class="modal-form__field">
-					<input class="modal-form__input form__input" id="modal-upload-name" type="text" name="name"
-						placeholder="Ваше имя" required />
-				</p>
+                    <label class="modal-form__field modal-form__field--phone">
+                        <input class="modal-form__input form__input phoneMask" id="modal-upload-phone" type="tel" name="phone" placeholder="+7 (999) 999-99-99" required />
 
-				<p class="modal-form__field">
-					<input class="modal-form__input form__input phoneMask" id="modal-upload-phone" type="tel" name="phone"
-						placeholder="+7 (999) 999-99-99" required />
-				</p>
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#flag"></use>
+                        </svg>
+                    </label>
 
-				<p>
-					<h3>Прикрепите проект</h3>
-					<input type="file" name="" id="" placeholder="Загрузить файлы">
-				</p>
+                    <h3 class="modal-form__uload-file-title">Прикрепите проект</h3>
 
-				<p class="form__agreement">
-					Отправляя свои данные, вы соглашаетесь с политикой конфиденциальности
-				</p>
+                    <p class="modal-form__uload-file uload-file">
+                        <label class="uload-file__label">
+                            <input class="uload-file__input" type="file" id="modal-upload-file" name="file" multiple>
 
-				<button class="button modal-form__submit-btn" type="submit">
-					<span>Обсудить проект</span>
-				</button>
-			</form>
-		</div>
+                            <span class="uload-file__btn">Загрузить файлы</span>
+                        </label>
 
-	</div> -->
+                        <span class="uload-file__message"></span>
+                    </p>
+
+                    <p class="modal-form__agreement">
+                        Отправляя свои данные, вы соглашаетесь с политикой конфиденциальности
+                    </p>
+
+                    <button class="button modal-form__submit-btn" type="submit">
+                        <span>Обсудить проект</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="modal__success">
+                <a class="modal__close-btn" href="#"></a>
+
+                <svg class="modal__success-icon">
+                    <use xlink:href="assets/img/sprite/sprite.svg#success"></use>
+                </svg>
+
+                <p class="modal__success-text">Спасибо! Данные успешно отправены.</p>
+            </div>
+
+        </div>
     </div>
 
     <!-- End Modal -->
