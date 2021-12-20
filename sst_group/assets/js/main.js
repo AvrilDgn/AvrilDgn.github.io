@@ -12959,7 +12959,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	core_class.use([navigation, pagination, lazy, effect_fade]);
 
 	//portfolio
-	new core_class('.portfolio__wrapper', {
+	let portfolioSlider = new core_class('.portfolio__wrapper', {
 		lazy: true,
 		spaceBetween: 30,
 		wrapperClass: 'portfolio__list',
@@ -12983,6 +12983,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		},
 	});
 
+	portfolioSlider.on('lazyImageLoad', function (slider, el, map) {
+		mapShow(map);
+	});
+
 	//stages
 	new core_class('.stages__wrapper', {
 		effect: "fade",
@@ -12997,7 +13001,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			el: ".stages__tabs",
 			clickable: true,
 			renderBullet: function (index, className) {
-				// console.log(document.querySelectorAll('.stages__slide')[index]);
 
 				return '<li class="' + className + '">' + document.querySelectorAll('.stages__slide')[index].dataset.name + "</li>";
 			},
@@ -13011,7 +13014,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				});
 			},
 			slideChangeTransitionEnd: function (swiper) {
-				console.log(swiper);
 				let slides = document.querySelectorAll('.swiper-slide-active');
 				slides.forEach(slide => {
 					slide.style.opacity = 1;
@@ -13236,40 +13238,42 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let yaApiLoaded = false;
 
 	maps.forEach(map => {
-		let mapShown = false;
-
-		window.addEventListener('scroll', function (e) {
-			if (mapShown) return;
-
-			if (!map.classList.contains("entered")) return;
-
-			if (!yaApiLoad) {
-				let script = document.createElement("script");
-				script.type = "text/javascript";
-				script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3398ec65-e86b-4576-913c-20b902a73916";
-				document.body.appendChild(script);
-				yaApiLoad = true;
-				script.onload = () => {
-					yaApiLoaded = true;
-					mapShown = true;
-					ymaps.ready(init(map));
-				};
-				return;
-			}
-
-			if (!yaApiLoaded) return;
-
-			mapShown = true;
-			ymaps.ready(init(map));
-		})
+		window.addEventListener('scroll', function() {
+			mapShow(map);
+		});
 	});
+
+	function mapShow(map) {
+		let mapShown = map.dataset.shown;
+
+		if (mapShown) return;
+
+		if (!map.classList.contains("entered")) return;
+
+		if (!yaApiLoad) {
+			let script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3398ec65-e86b-4576-913c-20b902a73916";
+			document.body.appendChild(script);
+			yaApiLoad = true;
+			script.onload = () => {
+				yaApiLoaded = true;
+				map.dataset.shown = true;
+				ymaps.ready(init(map));
+			};
+			return;
+		}
+
+		if (!yaApiLoaded) return false;
+
+		map.dataset.shown = true;
+		ymaps.ready(init(map));
+	}
 
 	function init(el) {
 		return function () {
 			let mapCenterPos = el.dataset.center.split(',');
 			let mapPinSize = el.dataset.pinSize.split(',');
-
-			console.log(mapPinSize);
 
 			let map = new ymaps.Map(el, {
 				center: mapCenterPos,
@@ -13277,9 +13281,9 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				controls: []
 			});
 
-			if (!el.dataset.data) return;
+			// if (!el.dataset.data) return;
 
-			let placemarkData = JSON.parse("{" + el.dataset.data + "}");
+			// let placemarkData = JSON.parse("{" + el.dataset.data + "}");
 
 			let placemark = new ymaps.Placemark(mapCenterPos, null, {
 
