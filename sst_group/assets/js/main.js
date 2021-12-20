@@ -13238,7 +13238,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let yaApiLoaded = false;
 
 	maps.forEach(map => {
-		window.addEventListener('scroll', function() {
+		window.addEventListener('scroll', function () {
 			mapShow(map);
 		});
 	});
@@ -13296,6 +13296,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			map.geoObjects.add(placemark);
 		};
 	};
+
 
 });
 

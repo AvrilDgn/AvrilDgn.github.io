@@ -2432,6 +2432,14 @@ button:focus {
     height: 130px;
   }
 
+  .portfolio-card__map [class*="ymaps-2"][class*="-image"] {
+    left: -46px !important;
+    left: -23px !important;
+    width: 46px !important;
+    height: 46px !important;
+    background-size: 46px 46px !important;
+  }
+
   .stages {
     padding: 35px 0 40px;
   }
@@ -2534,6 +2542,14 @@ button:focus {
     font-weight: 500;
     font-size: 15px;
     line-height: 1.2;
+  }
+
+  .map [class*="ymaps-2"][class*="-image"] {
+    left: -50px !important;
+    left: -25px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-size: 50px 50px !important;
   }
 }
 
