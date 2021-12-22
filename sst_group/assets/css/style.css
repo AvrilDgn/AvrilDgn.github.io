@@ -407,7 +407,7 @@ button:focus {
 }
 
 .header--not-top {
-  padding: 18px 0 11px;
+  padding: 11px 0 11px;
   background-color: rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -473,7 +473,7 @@ button:focus {
 }
 
 .header__socials {
-  margin-top: -8px;
+  margin-top: -7px;
   margin-bottom: -8px;
   margin-right: -8px;
   margin-left: 13px;
@@ -507,55 +507,16 @@ button:focus {
   z-index: 1;
 }
 
-.socials__link::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease;
-  -o-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
-  z-index: -1;
-}
-
-.socials__link--blue {
-  background-color: #2F89CE;
-}
-
-.socials__link--green {
-  background-color: #48C95F;
-}
-
-.socials__link--purple {
-  background-color: #7C509A;
-}
-
-.socials__link:hover::after {
-  opacity: 0.2;
+.socials__link:hover .socials__icon {
+  opacity: 0.9;
 }
 
 .socials__icon {
-  fill: white;
-}
-
-.socials__icon--telegram {
-  width: 14.2px;
-  height: 12.38px;
-}
-
-.socials__icon--whatsapp {
-  width: 14.91px;
-  height: 14.91px;
-}
-
-.socials__icon--viber {
-  width: 14.41px;
-  height: 16.33px;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .modal {
@@ -1526,6 +1487,9 @@ button:focus {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   opacity: 0;
+  -webkit-transition: all 0.3s ease !important;
+  -o-transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .stages__slide.swiper-slide-active {
@@ -2054,6 +2018,10 @@ button:focus {
 
   .header {
     padding: 18px 0 9px;
+  }
+
+  .header--not-top {
+    padding: 9px 0 9px;
   }
 
   .about {

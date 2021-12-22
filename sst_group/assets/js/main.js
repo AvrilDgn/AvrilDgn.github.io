@@ -12811,7 +12811,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				e.preventDefault();
 				modal.classList.add('modal--show');
 				modalEl.style.display = 'flex';
-				// modalEl.appendChild(modalCloseBtn);
 				scroll_lock_default.a.disablePageScroll(modal);
 
 				let handler = () => {
@@ -13101,11 +13100,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 					return;
 				} else {
 
-					success(form.parentElement);
-					return;
-
-					// !!!
-
 					let formData = new FormData(form);
 					let statusOn = false;
 					statusMessage.classList.remove('form-status--fault');
@@ -13226,10 +13220,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				zoom: el.dataset.zoom,
 				controls: []
 			});
-
-			// if (!el.dataset.data) return;
-
-			// let placemarkData = JSON.parse("{" + el.dataset.data + "}");
 
 			let placemark = new ymaps.Placemark(mapCenterPos, null, {
 
