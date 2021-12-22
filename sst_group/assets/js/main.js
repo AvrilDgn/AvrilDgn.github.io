@@ -12874,84 +12874,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 
-	// /**
-	//  * Form Validation
-	//  */
-
-	// let forms = document.querySelectorAll('form');
-
-	// forms.forEach(form => {
-
-	// 	//check inputs before sending form
-	// 	form.onsubmit = function (e) {
-
-	// 		let reqInputs = form.querySelectorAll('[required]');
-
-	// 		reqInputs.forEach(input => {
-	// 			let parent = input.parentNode;
-	// 			let message = parent.querySelector('.form__validation-message');
-
-	// 			switch (input.getAttribute("type")) {
-	// 				case "tel":
-	// 					if (input.value.length < 18) {
-	// 						if (message) {
-	// 							e.preventDefault();
-	// 							return;
-	// 						}
-
-	// 						message = document.createElement('span');
-	// 						message.classList.add('form__validation-message');
-	// 						message.textContent = "Введите правильный номер телефона";
-	// 						parent.appendChild(message);
-	// 						new DLAnimate().show(message, {
-	// 							name: 'fade',
-	// 							track: 'animation'
-	// 						});
-
-	// 						e.preventDefault();
-	// 						return;
-	// 					}
-	// 					break;
-
-	// 				case "checkbox":
-	// 					if (!input.checked) {
-	// 						if (message) {
-	// 							e.preventDefault();
-	// 							return;
-	// 						}
-
-	// 						message = document.createElement('span');
-	// 						message.classList.add('form__validation-message');
-	// 						message.textContent = "Подтвердите согласие на обработку и передачу персональных данных";
-	// 						parent.appendChild(message);
-	// 						new DLAnimate().show(message, {
-	// 							name: 'fade',
-	// 							track: 'animation'
-	// 						});
-
-	// 						e.preventDefault();
-	// 						return;
-	// 					}
-	// 					break;
-
-	// 				default:
-	// 					break;
-	// 			}
-
-	// 			if (message) {
-	// 				new DLAnimate().hide(message, {
-	// 					name: 'fade',
-	// 					track: 'animation',
-	// 					afterLeave: function (message) {
-	// 						message.remove();
-	// 					}
-	// 				});
-	// 			}
-	// 		});
-	// 	}
-	// });
-
-
 	/**
 	 * Sliders
 	 */
@@ -13124,6 +13046,30 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 								reqMessage.classList.add('form-status');
 								reqMessage.classList.add('form-status--fault');
 								reqMessage.textContent = "Введите правильное имя!";
+								parent.appendChild(reqMessage);
+
+								new DLAnimate().show(reqMessage, {
+									name: 'fade',
+									track: 'animation'
+								});
+
+								return;
+							}
+							break;
+
+						case "agreement":
+							if (!input.checked) {
+
+								reqFault = true;
+
+								if (reqMessage) {
+									return;
+								}
+
+								reqMessage = document.createElement('span');
+								reqMessage.classList.add('form-status');
+								reqMessage.classList.add('form-status--fault');
+								reqMessage.textContent = "Подтвердите согласие c политикой конфиденциальности";
 								parent.appendChild(reqMessage);
 
 								new DLAnimate().show(reqMessage, {

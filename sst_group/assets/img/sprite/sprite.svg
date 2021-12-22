@@ -29,7 +29,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_21_2"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_21_2" result="shape"/>
 </filter>
-</defs><symbol id="flag" viewBox="0 0 26 20">
+</defs><symbol id="check" viewBox="0 0 9.48 8.12"><polygon points="3.77 8.12 0 4.35 1.41 2.93 3.64 5.16 7.94 0 9.48 1.28 3.77 8.12"/></symbol><symbol id="flag" viewBox="0 0 26 20">
 <g filter="url(#filter0_d_21_2)">
 <rect x="4" y="4" width="18" height="4" fill="white"/>
 </g>
