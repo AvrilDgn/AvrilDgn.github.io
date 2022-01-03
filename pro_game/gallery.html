@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProGame - Галерея</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Checking webp image format support -->
+    <script>
+        ! function(e, n, A) {
+            function o(e, n) {
+                return typeof e === n
+            }
+
+            function t() {
+                var e, n, A, t, a, i, l;
+                for (var f in r)
+                    if (r.hasOwnProperty(f)) {
+                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+                    }
+            }
+
+            function a(e) {
+                var n = u.className,
+                    A = Modernizr._config.classPrefix || "";
+                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+                    n = n.replace(o, "$1" + A + "js$2")
+                }
+                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+            }
+
+            function i(e, n) {
+                if ("object" == typeof e)
+                    for (var A in e) f(e, A) && i(A, e[A]);
+                else {
+                    e = e.toLowerCase();
+                    var o = e.split("."),
+                        t = Modernizr[o[0]];
+                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+                }
+                return Modernizr
+            }
+            var s = [],
+                r = [],
+                l = {
+                    _version: "3.6.0",
+                    _config: {
+                        classPrefix: "",
+                        enableClasses: !0,
+                        enableJSClass: !0,
+                        usePrefixes: !0
+                    },
+                    _q: [],
+                    on: function(e, n) {
+                        var A = this;
+                        setTimeout(function() {
+                            n(A[e])
+                        }, 0)
+                    },
+                    addTest: function(e, n, A) {
+                        r.push({
+                            name: e,
+                            fn: n,
+                            options: A
+                        })
+                    },
+                    addAsyncTest: function(e) {
+                        r.push({
+                            name: null,
+                            fn: e
+                        })
+                    }
+                },
+                Modernizr = function() {};
+            Modernizr.prototype = l, Modernizr = new Modernizr;
+            var f, u = n.documentElement,
+                c = "svg" === u.nodeName.toLowerCase();
+            ! function() {
+                var e = {}.hasOwnProperty;
+                f = o(e, "undefined") || o(e.call, "undefined") ? function(e, n) {
+                    return n in e && o(e.constructor.prototype[n], "undefined")
+                } : function(n, A) {
+                    return e.call(n, A)
+                }
+            }(), l._l = {}, l.on = function(e, n) {
+                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function() {
+                    Modernizr._trigger(e, Modernizr[e])
+                }, 0)
+            }, l._trigger = function(e, n) {
+                if (this._l[e]) {
+                    var A = this._l[e];
+                    setTimeout(function() {
+                        var e, o;
+                        for (e = 0; e < A.length; e++)(o = A[e])(n)
+                    }, 0), delete this._l[e]
+                }
+            }, Modernizr._q.push(function() {
+                l.addTest = i
+            }), Modernizr.addAsyncTest(function() {
+                function e(e, n, A) {
+                    function o(n) {
+                        var o = n && "load" === n.type ? 1 == t.width : !1,
+                            a = "webp" === e;
+                        i(e, a && o ? new Boolean(o) : o), A && A(n)
+                    }
+                    var t = new Image;
+                    t.onerror = o, t.onload = o, t.src = n
+                }
+                var n = [{
+                        uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                        name: "webp"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                        name: "webp.alpha"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                        name: "webp.animation"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                        name: "webp.lossless"
+                    }],
+                    A = n.shift();
+                e(A.name, A.uri, function(A) {
+                    if (A && "load" === A.type)
+                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+                })
+            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+            e.Modernizr = Modernizr
+        }(window, document);
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header" data-scroll-lock-fill-gap>
+            <div class="container">
+
+                <div class="header__menu">
+                    <div class="header__main-group">
+                        <a href="index.html" class="logo header__logo">
+                            <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
+                        </a>
+
+                        <ul class="header__socials socials-short">
+                            <li class="socials-short__item socials-short__item--instagram">
+                                <a class="socials-short__link" href="#instagram">
+                                    <svg class="socials-short__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials-short__item socials-short__item--facebook">
+                                <a class="socials-short__link" href="#facebook">
+                                    <svg class="socials-short__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials-short__item socials-short__item--vk">
+                                <a class="socials-short__link" href="#vk">
+                                    <svg class="socials-short__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <a class="header__toggle-btn" href="#"><span></span></a>
+                    </div>
+
+                    <div class="header__sub-group">
+                        <div class="header__contacts-group">
+                            <a href="tel:+79998887766" class="header__phone">+7 (999) 888 – 77 – 66</a>
+
+                            <ul class="header__socials socials-short">
+                                <li class="socials-short__item socials-short__item--telegram">
+                                    <a class="socials-short__link" href="#telegram">
+                                        <svg class="socials-short__icon">
+                                            <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials-short__item socials-short__item--mail">
+                                    <a class="socials-short__link" href="mailto:admin@tat-progame.ru">
+                                        <svg class="socials-short__icon">
+                                            <use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials-short__item socials-short__item--whatsapp">
+                                    <a class="socials-short__link" href="#whatsapp">
+                                        <svg class="socials-short__icon">
+                                            <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="header__feedback-btn button button--short modal-opener" data-modal="modal-feedback">
+                                <span>¿ Задать вопрос ?</span>
+                            </a>
+                        </div>
+
+                        <nav class="nav header__nav">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+                                <li class="nav__item"><a class="nav__link" href="courses.html">Курсы</a></li>
+                                <li class="nav__item"><a class="nav__link" href="gallery.html">Галерея</a></li>
+                                <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
+                                <li class="nav__item"><a class="nav__link" href="about.html">О центре</a></li>
+                                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+
+        <!-- Application Block -->
+        <section id="application" class="application">
+            <div class="container">
+                <h2 class="application__title title">
+                    Записаться на
+                    <b>бесплатный урок</b>
+                </h2>
+
+                <form class="application__form form" action="#" method="post">
+                    <p class="application__field form__field">
+                        <input class="form__input" id="application-name" placeholder="Ваше имя" type="text" name="name">
+                    </p>
+                    <p class="application__field form__field">
+                        <input class="form__input phoneMask" id="application-phone" type="tel" name="phone" placeholder="Номер телефона" required="required">
+                    </p>
+                    <p class="application__privacy-policy form__privacy-policy">
+                        Нажимая кнопку отправить вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                        и с <a href="#">согласием</a> на обработку персональной информацией
+                    </p>
+                    <button class="application__submit-btn form__submit-btn button button--light-border" type="submit">Отправить</button>
+                </form>
+
+                <ul class="application__background-figures background-figures">
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-1"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-2"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-3"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-3"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-2"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-1"></use>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Application Block -->
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__info">
+                    <a href="index.html" class="logo footer__logo">
+                        <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
+                    </a>
+
+                    <div class="footer__requisites">
+                        <p>ИП Кунафин Ильсур Рашитович, ОГРНИП 320169000149581, ИНН 161604914426</p>
+                        <p>422701, Р. Татарстан, Высокогорский р-н, с. В. Гора, ул. Колхозная, д.76А</p>
+                        <p>р/с 40802810829370001517</p>
+                        <p>к/с 30101810200000000824</p>
+                        <p>ФИЛИАЛ "НИЖЕГОРОДСКИЙ" АО "АЛЬФА-БАНК</p>
+                        <p>БИК 042202824</p>
+                        <p>м.т. 8 (937) 7719102</p>
+                        <p>e-mail: ilsurka13@yandex.ru</p>
+                    </div>
+                </div>
+
+                <div class="footer__nav">
+                    <h3 class="footer__title">Меню</h3>
+
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="index.html">Главная</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="courses.html">Курсы</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="gallery.html">Галерея</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="news.html">Новости</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="about.html">О центре</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__socials">
+                    <h3 class="footer__title">Социальные сети</h3>
+
+                    <ul class="footer__socials-list">
+                        <li class="footer__socials-item footer__socials-item--instagram">
+                            <a class="footer__socials-link" href="#instagram">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--facebook">
+                            <a class="footer__socials-link" href="#facebook">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--vk">
+                            <a class="footer__socials-link" href="#vk">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Vkontakte</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--telegram">
+                            <a class="footer__socials-link" href="#telegram">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Telegram</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--mail">
+                            <a class="footer__socials-link" href="#mail">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Email почта</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--whatsapp">
+                            <a class="footer__socials-link" href="#whatsapp">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Whatsapp</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="footer__contacts">
+                    <h3 class="footer__title">Служба заботы</h3>
+
+                    <a href="tel:+88005553355" class="footer__phone">8 800 555 33 55</a>
+
+                    <a href="mailto:admin@tat-progame.ru" class="footer__mail">admin@tat-progame.ru</a>
+                </div>
+
+                <ul class="footer__background-figures background-figures">
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-1"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-2"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-3"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-4"></use>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+    <!-- End Content -->
+
+    <!-- Modal -->
+
+    <div class="modal" data-scroll-lock-fill-gap>
+        <div class="modal__overlay"></div>
+        <div class="modal__wrapper">
+            <div class="modal__container modal__container--upload" id="modal-upload">
+                <h3 class="modal__title title"><span class="title__accent">Загрузите проект</span> и получите расчет с
+                    подробной сметой, спецификацией и визуализацией объекта</h3>
+
+                <form class="modal__form modal-form form" id="form-upload" action="#" method="post">
+                    <label class="modal-form__field">
+                        <input class="modal-form__input form__input" id="modal-upload-name" type="text" name="name" placeholder="Ваше имя" required />
+                    </label>
+
+                    <label class="modal-form__field modal-form__field--phone">
+                        <input class="modal-form__input form__input phoneMask" id="modal-upload-phone" type="tel" name="phone" placeholder="+7 (999) 999-99-99" required />
+
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#flag"></use>
+                        </svg>
+                    </label>
+
+                    <h3 class="modal-form__uload-file-title">Прикрепите проект</h3>
+
+                    <p class="modal-form__uload-file uload-file">
+                        <label class="uload-file__label">
+                            <input class="uload-file__input" type="file" id="modal-upload-file" name="file" multiple>
+
+                            <span class="uload-file__btn">Загрузить файлы</span>
+                        </label>
+
+                        <span class="uload-file__message"></span>
+                    </p>
+
+                    <p class="modal-form__agreement">
+                        <label class="checkbox modal-form__agreement-checkbox">
+                            <input type="checkbox" name="agreement" required>
+                            <svg class="checkbox__icon">
+                                <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                            </svg>
+                        </label>
+
+                        <span class="modal-form__agreement-text">
+						Отправляя свои данные, вы соглашаетесь с политикой конфиденциальности
+					</span>
+                    </p>
+
+                    <button class="button modal-form__submit-btn" type="submit">
+                        <span>Обсудить проект</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="modal__success">
+                <a class="modal__close-btn" href="#"></a>
+
+                <svg class="modal__success-icon">
+                    <use xlink:href="assets/img/sprite/sprite.svg#success"></use>
+                </svg>
+
+                <p class="modal__success-text">Спасибо! Данные успешно отправены.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Modal -->
+
+    <!-- JS -->
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- End JS -->
+
+</body>
+
+</html>

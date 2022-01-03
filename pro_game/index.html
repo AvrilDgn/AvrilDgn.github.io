@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProGame - Главная</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Checking webp image format support -->
+    <script>
+        ! function(e, n, A) {
+            function o(e, n) {
+                return typeof e === n
+            }
+
+            function t() {
+                var e, n, A, t, a, i, l;
+                for (var f in r)
+                    if (r.hasOwnProperty(f)) {
+                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+                    }
+            }
+
+            function a(e) {
+                var n = u.className,
+                    A = Modernizr._config.classPrefix || "";
+                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+                    n = n.replace(o, "$1" + A + "js$2")
+                }
+                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+            }
+
+            function i(e, n) {
+                if ("object" == typeof e)
+                    for (var A in e) f(e, A) && i(A, e[A]);
+                else {
+                    e = e.toLowerCase();
+                    var o = e.split("."),
+                        t = Modernizr[o[0]];
+                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+                }
+                return Modernizr
+            }
+            var s = [],
+                r = [],
+                l = {
+                    _version: "3.6.0",
+                    _config: {
+                        classPrefix: "",
+                        enableClasses: !0,
+                        enableJSClass: !0,
+                        usePrefixes: !0
+                    },
+                    _q: [],
+                    on: function(e, n) {
+                        var A = this;
+                        setTimeout(function() {
+                            n(A[e])
+                        }, 0)
+                    },
+                    addTest: function(e, n, A) {
+                        r.push({
+                            name: e,
+                            fn: n,
+                            options: A
+                        })
+                    },
+                    addAsyncTest: function(e) {
+                        r.push({
+                            name: null,
+                            fn: e
+                        })
+                    }
+                },
+                Modernizr = function() {};
+            Modernizr.prototype = l, Modernizr = new Modernizr;
+            var f, u = n.documentElement,
+                c = "svg" === u.nodeName.toLowerCase();
+            ! function() {
+                var e = {}.hasOwnProperty;
+                f = o(e, "undefined") || o(e.call, "undefined") ? function(e, n) {
+                    return n in e && o(e.constructor.prototype[n], "undefined")
+                } : function(n, A) {
+                    return e.call(n, A)
+                }
+            }(), l._l = {}, l.on = function(e, n) {
+                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function() {
+                    Modernizr._trigger(e, Modernizr[e])
+                }, 0)
+            }, l._trigger = function(e, n) {
+                if (this._l[e]) {
+                    var A = this._l[e];
+                    setTimeout(function() {
+                        var e, o;
+                        for (e = 0; e < A.length; e++)(o = A[e])(n)
+                    }, 0), delete this._l[e]
+                }
+            }, Modernizr._q.push(function() {
+                l.addTest = i
+            }), Modernizr.addAsyncTest(function() {
+                function e(e, n, A) {
+                    function o(n) {
+                        var o = n && "load" === n.type ? 1 == t.width : !1,
+                            a = "webp" === e;
+                        i(e, a && o ? new Boolean(o) : o), A && A(n)
+                    }
+                    var t = new Image;
+                    t.onerror = o, t.onload = o, t.src = n
+                }
+                var n = [{
+                        uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                        name: "webp"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                        name: "webp.alpha"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                        name: "webp.animation"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                        name: "webp.lossless"
+                    }],
+                    A = n.shift();
+                e(A.name, A.uri, function(A) {
+                    if (A && "load" === A.type)
+                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+                })
+            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+            e.Modernizr = Modernizr
+        }(window, document);
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header" data-scroll-lock-fill-gap>
+            <div class="container">
+
+                <div class="header__menu">
+                    <div class="header__main-group">
+                        <a href="index.html" class="logo header__logo">
+                            <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
+                        </a>
+
+                        <ul class="header__socials socials-short">
+                            <li class="socials-short__item socials-short__item--instagram">
+                                <a class="socials-short__link" href="#instagram">
+                                    <svg class="socials-short__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials-short__item socials-short__item--facebook">
+                                <a class="socials-short__link" href="#facebook">
+                                    <svg class="socials-short__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials-short__item socials-short__item--vk">
+                                <a class="socials-short__link" href="#vk">
+                                    <svg class="socials-short__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <a class="header__toggle-btn" href="#"><span></span></a>
+                    </div>
+
+                    <div class="header__sub-group">
+                        <div class="header__contacts-group">
+                            <a href="tel:+79998887766" class="header__phone">+7 (999) 888 – 77 – 66</a>
+
+                            <ul class="header__socials socials-short">
+                                <li class="socials-short__item socials-short__item--telegram">
+                                    <a class="socials-short__link" href="#telegram">
+                                        <svg class="socials-short__icon">
+                                            <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials-short__item socials-short__item--mail">
+                                    <a class="socials-short__link" href="mailto:admin@tat-progame.ru">
+                                        <svg class="socials-short__icon">
+                                            <use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="socials-short__item socials-short__item--whatsapp">
+                                    <a class="socials-short__link" href="#whatsapp">
+                                        <svg class="socials-short__icon">
+                                            <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="header__feedback-btn button button--short modal-opener" data-modal="modal-feedback">
+                                <span>¿ Задать вопрос ?</span>
+                            </a>
+                        </div>
+
+                        <nav class="nav header__nav">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+                                <li class="nav__item"><a class="nav__link" href="courses.html">Курсы</a></li>
+                                <li class="nav__item"><a class="nav__link" href="gallery.html">Галерея</a></li>
+                                <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
+                                <li class="nav__item"><a class="nav__link" href="about.html">О центре</a></li>
+                                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Hero Block -->
+        <section id="hero" class="hero" aria-label="Центр программирования - ProGame">
+            <div class="hero__cover">
+                <div class="container">
+                    <div class="hero__foreground"></div>
+                    <ul class="hero__courses courses-short">
+                        <li class="courses-short__item">
+                            <div class="courses-short__image-wrap">
+                                <picture>
+                                    <img src="assets/img/hero/roblox.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="courses-short__text-block">
+                                <p class="courses-short__name">Roblox</p>
+                                <p class="courses-short__type">Разработка игр</p>
+                            </div>
+                            <a class="courses-short__link" href="#"></a>
+                        </li>
+                        <li class="courses-short__item">
+                            <div class="courses-short__image-wrap">
+                                <picture>
+                                    <img src="assets/img/hero/minecraft.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="courses-short__text-block">
+                                <p class="courses-short__name">Minecraft</p>
+                                <p class="courses-short__type">Игровое программирование</p>
+                            </div>
+                            <a class="courses-short__link" href="#"></a>
+                        </li>
+                        <li class="courses-short__item">
+                            <div class="courses-short__image-wrap">
+                                <picture>
+                                    <img src="assets/img/hero/figma.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="courses-short__text-block">
+                                <p class="courses-short__name">Дизайн</p>
+                                <p class="courses-short__type">Веб-сайты, приложения</p>
+                            </div>
+                            <a class="courses-short__link" href="#"></a>
+                        </li>
+                        <li class="courses-short__item">
+                            <div class="courses-short__image-wrap">
+                                <picture>
+                                    <img src="assets/img/hero/scratch.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="courses-short__text-block">
+                                <p class="courses-short__name">Scratch</p>
+                                <p class="courses-short__type">Разработка игр</p>
+                            </div>
+                            <a class="courses-short__link" href="#"></a>
+                        </li>
+                        <li class="courses-short__item">
+                            <div class="courses-short__arrows">
+                                <svg>
+                                    <use xlink:href="assets/img/sprite/sprite.svg#double-arrows"></use>
+                                </svg>
+                            </div>
+                            <p class="courses-short__text">Все курсы</p>
+                            <div class="courses-short__arrows">
+                                <svg>
+                                    <use xlink:href="assets/img/sprite/sprite.svg#double-arrows"></use>
+                                </svg>
+                            </div>
+                            <a class="courses-short__link" href="courses.html"></a>
+                        </li>
+                    </ul>
+
+                    <ul class="hero__background-figures background-figures">
+                        <li class="background-figures__item background-figures__item--blot">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#blot-1"></use>
+                            </svg>
+                        </li>
+                        <li class="background-figures__item background-figures__item--blot">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#blot-2"></use>
+                            </svg>
+                        </li>
+                        <li class="background-figures__item background-figures__item--blot">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#blot-3"></use>
+                            </svg>
+                        </li>
+                        <li class="background-figures__item background-figures__item--blot">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#blot-4"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hero__offer offer">
+                <div class="container">
+                    <svg class="offer__arrow offer__arrow--to-right">
+                        <use xlink:href="assets/img/sprite/sprite.svg#arrow-curve"></use>
+                    </svg>
+                    <div class="offer__content">
+                        <h2 class="offer__title">
+                            Программируем будущее вместе!
+                        </h2>
+                        <a href="#application" class="offer__btn button button--green-border">
+                            <span>Записаться на бесплатный урок</span>
+                        </a>
+                    </div>
+                    <svg class="offer__arrow offer__arrow--to-left">
+                        <use xlink:href="assets/img/sprite/sprite.svg#arrow-curve"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="hero__achievements achievements">
+                <div class="container">
+                    <ul class="achievements__list">
+                        <li class="achievements__item">
+                            <p class="achievements__value">3</p>
+                            <p class="achievements__type">страны</p>
+                        </li>
+                        <li class="achievements__item">
+                            <p class="achievements__value">30</p>
+                            <p class="achievements__type">школ</p>
+                        </li>
+                        <li class="achievements__item">
+                            <p class="achievements__value">300 000</p>
+                            <p class="achievements__type">учеников</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Hero Block -->
+        <!-- Classes Block -->
+        <section id="classes" class="classes" aria-label="Скидки и акции">
+            <div class="container">
+                <h2 class="classes__title title block-with-substrate">Наши занятия</h2>
+
+                <div class="classes__content">
+                    <div class="classes__slider gallery-slider">
+                        <div class="gallery-slider__header">
+                            <ul class="gallery-slider__circles">
+                                <li class="gallery-slider__circle gallery-slider__circle--red"></li>
+                                <li class="gallery-slider__circle gallery-slider__circle--yellow"></li>
+                                <li class="gallery-slider__circle gallery-slider__circle--green"></li>
+                            </ul>
+                            <h3 class="gallery-slider__title">progame programming</h3>
+                        </div>
+
+                        <div class="gallery-slider__wrapper">
+                            <ul class="gallery-slider__list">
+                                <li class="gallery-slider__item">
+                                    <picture>
+                                        <img src="assets/img/classes/image.jpg" alt="">
+                                    </picture>
+                                </li>
+                                <li class="gallery-slider__item">
+                                    <picture>
+                                        <img src="assets/img/classes/image.jpg" alt="">
+                                    </picture>
+                                </li>
+                            </ul>
+
+                            <div class="gallery-slider__arrow slider-arrow slider-arrow--prev">
+                                <svg>
+                                    <use xlink:href="assets/img/sprite/sprite.svg#slider-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="gallery-slider__arrow slider-arrow slider-arrow--next">
+                                <svg>
+                                    <use xlink:href="assets/img/sprite/sprite.svg#slider-arrow"></use>
+                                </svg>
+                            </div>
+                            <ul class="gallery-slider__pagination slider-pagination"></ul>
+                        </div>
+                    </div>
+
+                    <div class="classes__stages classes-stages">
+                        <h3 class="classes-stages__title">Как проходят занятия</h3>
+                        <ul class="classes-stages__list">
+                            <li class="classes-stages__item">
+                                Вспоминаем тему прошлого урока.
+                                Разбираем домашнее задание.
+                            </li>
+                            <li class="classes-stages__item">
+                                Изучаем тему нового урока.
+                                Один преподаватель рассказывает и
+                                объясняет, второй помогает в случае
+                                возникновения проблем
+                            </li>
+                            <li class="classes-stages__item">
+                                Ученики самостоятельно выполняют
+                                задание по пройденной теме. Задают
+                                уточняющие вопросы.
+                            </li>
+                            <li class="classes-stages__item">
+                                В конце урока подводим итоги,
+                                пробегаемся по пройденному материалу,
+                                выдаем домашнее задание.
+                            </li>
+                            <li class="classes-stages__item">
+                                Если остается свободное время, ученики,
+                                используя весь полученный материал, в
+                                игровой форме самостоятельно тренируются
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Classes Block -->
+        <!-- Promotions Block -->
+        <section id="promotions" class="promotions">
+            <div class="container">
+                <ul class="promotions__list">
+                    <li class="promotions__item block-with-substrate">
+                        <h3 class="promotions__title title">Бесплатно</h3>
+                        <p class="promotions__description">
+                            Первый урок в ProGame абсолютно бесплатный.
+                            За 60 мин родители смогут узнать насколько подходят
+                            курсы ребенку и какое направление выбрать с:
+                        </p>
+                    </li>
+                    <li class="promotions__item block-with-substrate">
+                        <h3 class="promotions__title title">Скидки ProGame</h3>
+                        <p class="promotions__description">
+                            У нас есть 10% скидки за приведенного друга или
+                            за 2 и более детей, учащихся в ProGame!
+                        </p>
+                    </li>
+                </ul>
+
+                <a href="#application" class="promotions__btn button">
+                    <span>Записаться на бесплатный урок</span>
+                </a>
+            </div>
+        </section>
+        <!-- End Promotions Block -->
+        <!-- Courses Block -->
+        <section id="courses" class="courses courses--short">
+            <div class="container">
+                <h2 class="courses__title title block-with-substrate">Наши курсы</h2>
+
+                <div class="courses__slider">
+
+                    <div class="courses__wrapper">
+                        <ul class="courses__list">
+                            <li class="courses__item">
+                                <div class="courses__card courses-card courses-card--scratch">
+                                    <picture>
+                                        <img class="courses-card__front-image" src="assets/img/courses/scratch-front.png" alt="">
+                                    </picture>
+
+                                    <picture>
+                                        <img class="courses-card__image" src="assets/img/courses/scratch.jpg" alt="">
+                                    </picture>
+
+                                    <div class="courses-card__head">
+                                        <h3 class="courses-card__title">Scratch</h3>
+                                        <p class="courses-card__years">6-7 лет</p>
+                                    </div>
+
+                                    <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+                                    <div class="courses-card__btns">
+                                        <a href="#" class="courses-card__btn button button--dark">
+                                            <span>Подробнее</span>
+                                        </a>
+                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                            <span>Записаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="courses__item">
+                                <div class="courses__card courses-card courses-card--minecraft">
+                                    <picture>
+                                        <img class="courses-card__front-image" src="assets/img/courses/minecraft-front.png" alt="">
+                                    </picture>
+
+                                    <picture>
+                                        <img class="courses-card__image" src="assets/img/courses/minecraft.jpg" alt="">
+                                    </picture>
+
+                                    <div class="courses-card__head">
+                                        <h3 class="courses-card__title">Minecraft Blocks</h3>
+                                        <p class="courses-card__years">8-9 лет</p>
+                                    </div>
+
+                                    <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+                                    <div class="courses-card__btns">
+                                        <a href="#" class="courses-card__btn button button--dark">
+                                            <span>Подробнее</span>
+                                        </a>
+                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                            <span>Записаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="courses__item">
+                                <div class="courses__card courses-card courses-card--kodu">
+                                    <picture>
+                                        <img class="courses-card__front-image" src="assets/img/courses/kodu-front.png" alt="">
+                                    </picture>
+
+                                    <picture>
+                                        <img class="courses-card__image" src="assets/img/courses/kodu.jpg" alt="">
+                                    </picture>
+
+                                    <div class="courses-card__head">
+                                        <h3 class="courses-card__title">Kodu game lab</h3>
+                                        <p class="courses-card__years">10-12 лет</p>
+                                    </div>
+
+                                    <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+                                    <div class="courses-card__btns">
+                                        <a href="#" class="courses-card__btn button button--dark">
+                                            <span>Подробнее</span>
+                                        </a>
+                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                            <span>Записаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="courses__item">
+                                <div class="courses__card courses-card courses-card--roblox">
+                                    <picture>
+                                        <img class="courses-card__front-image" src="assets/img/courses/roblox-front.png" alt="">
+                                    </picture>
+
+                                    <picture>
+                                        <img class="courses-card__image" src="assets/img/courses/roblox.jpg" alt="">
+                                    </picture>
+
+                                    <div class="courses-card__head">
+                                        <h3 class="courses-card__title">Roblox</h3>
+                                        <p class="courses-card__years">10-12 лет</p>
+                                    </div>
+
+                                    <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+                                    <div class="courses-card__btns">
+                                        <a href="#" class="courses-card__btn button button--dark">
+                                            <span>Подробнее</span>
+                                        </a>
+                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                            <span>Записаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="courses__item">
+                                <div class="courses__card courses-card courses-card--unity">
+                                    <picture>
+                                        <img class="courses-card__front-image" src="assets/img/courses/unity-front.png" alt="">
+                                    </picture>
+
+                                    <picture>
+                                        <img class="courses-card__image" src="assets/img/courses/unity.jpg" alt="">
+                                    </picture>
+
+                                    <div class="courses-card__head">
+                                        <h3 class="courses-card__title">Unity</h3>
+                                        <p class="courses-card__years">12-17 лет</p>
+                                    </div>
+
+                                    <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+                                    <div class="courses-card__btns">
+                                        <a href="#" class="courses-card__btn button button--dark">
+                                            <span>Подробнее</span>
+                                        </a>
+                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                            <span>Записаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="courses__item">
+                                <div class="courses__card courses-card courses-card--web">
+                                    <picture>
+                                        <img class="courses-card__front-image" src="assets/img/courses/web-front.png" alt="">
+                                    </picture>
+
+                                    <picture>
+                                        <img class="courses-card__image" src="assets/img/courses/web.jpg" alt="">
+                                    </picture>
+
+                                    <div class="courses-card__head">
+                                        <h3 class="courses-card__title">WEB</h3>
+                                        <p class="courses-card__years">12-17 лет</p>
+                                    </div>
+
+                                    <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+                                    <div class="courses-card__btns">
+                                        <a href="#" class="courses-card__btn button button--dark">
+                                            <span>Подробнее</span>
+                                        </a>
+                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                            <span>Записаться</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="courses__arrow slider-arrow slider-arrow--prev">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#slider-arrow"></use>
+                            </svg>
+                        </div>
+                        <div class="courses__arrow slider-arrow slider-arrow--next">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#slider-arrow"></use>
+                            </svg>
+                        </div>
+                        <ul class="courses__pagination slider-pagination"></ul>
+                    </div>
+                </div>
+
+                <a href="courses.html" class="courses__btn button">
+                    <span>Посмотреть все курсы ProGame</span>
+                </a>
+            </div>
+        </section>
+        <!-- End Courses Block -->
+        <!-- Advantages Block -->
+        <section id="advantages" class="advantages">
+            <div class="container">
+                <h2 class="advantages__title title block-with-substrate">Преимущества ProGame</h2>
+
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <div class="advantages__image advantages__image--family">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#family"></use>
+                            </svg>
+                        </div>
+                        <h3 class="advantages__name">Скидки семьям</h3>
+                        <p class="advantages__text">Если 2 и более ребенка из вашей семьи ходят в наш центр, то мы предоставляем 10%
+                            скидку на каждого
+                        </p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__image advantages__image--people">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#people"></use>
+                            </svg>
+                        </div>
+                        <h3 class="advantages__name">2 преподавателя</h3>
+                        <p class="advantages__text">На каждом уроке у нас присутствуют 2 преподавателя для более продуктивного
+                            освоения материала</p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__image advantages__image--clock">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#clock"></use>
+                            </svg>
+                        </div>
+                        <h3 class="advantages__name">2 часа урока</h3>
+                        <p class="advantages__text">для охвата максимального объема материала каждый урок длиться 2 часа с перерывом
+                            на перекус (15 мин) </p>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__image advantages__image--machine-learning">
+                            <svg>
+                                <use xlink:href="assets/img/sprite/sprite.svg#machine-learning"></use>
+                            </svg>
+                        </div>
+                        <h3 class="advantages__name">Только нужные курсы</h3>
+                        <p class="advantages__text">Если 2 и более ребенка из вашей семьи ходят в наш центр, то мы предоставляем 10%
+                            скидку на каждого
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Advantages Block -->
+        <!-- Reviews Block -->
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2 class="reviews__title title block-with-substrate">Отзывы о Progame</h2>
+
+                <div class="reviews__slider">
+                    <div class="reviews__wrapper">
+                        <ul class="reviews__list">
+                            <li class="reviews__item">
+                                <div class="reviews__card reviews-card">
+                                    <picture>
+                                        <img class="reviews-card__image" src="assets/img/reviews/image-1.jpg" alt="">
+                                    </picture>
+                                    <div class="reviews-card__head">
+                                        <h3 class="reviews-card__name">Гаврилов Александр</h3>
+                                        <p class="reviews-card__date">08.11.2021</p>
+                                    </div>
+                                    <div class="reviews-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum.</div>
+                                </div>
+                            </li>
+                            <li class="reviews__item">
+                                <div class="reviews__card reviews-card">
+                                    <picture>
+                                        <img class="reviews-card__image" src="assets/img/reviews/image-2.jpg" alt="">
+                                    </picture>
+                                    <div class="reviews-card__head">
+                                        <h3 class="reviews-card__name">Сушкова Валерия</h3>
+                                        <p class="reviews-card__date">08.11.2021</p>
+                                    </div>
+                                    <div class="reviews-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum.</div>
+                                </div>
+                            </li>
+                            <li class="reviews__item">
+                                <div class="reviews__card reviews-card">
+                                    <picture>
+                                        <img class="reviews-card__image" src="assets/img/reviews/image-3.jpg" alt="">
+                                    </picture>
+                                    <div class="reviews-card__head">
+                                        <h3 class="reviews-card__name">Андропова Катерина</h3>
+                                        <p class="reviews-card__date">08.11.2021</p>
+                                    </div>
+                                    <div class="reviews-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum.</div>
+                                </div>
+                            </li>
+                            <li class="reviews__item">
+                                <div class="reviews__card reviews-card">
+                                    <picture>
+                                        <img class="reviews-card__image" src="assets/img/reviews/image-1.jpg" alt="">
+                                    </picture>
+                                    <div class="reviews-card__head">
+                                        <h3 class="reviews-card__name">Гаврилов Александр</h3>
+                                        <p class="reviews-card__date">08.11.2021</p>
+                                    </div>
+                                    <div class="reviews-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum.</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="reviews__arrow slider-arrow slider-arrow--prev">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#slider-arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="reviews__arrow slider-arrow slider-arrow--next">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#slider-arrow"></use>
+                        </svg>
+                    </div>
+                    <ul class="reviews__pagination slider-pagination"></ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Reviews Block -->
+        <!-- Application Block -->
+        <section id="application" class="application">
+            <div class="container">
+                <h2 class="application__title title">
+                    Записаться на
+                    <b>бесплатный урок</b>
+                </h2>
+
+                <form class="application__form form" action="#" method="post">
+                    <p class="application__field form__field">
+                        <input class="form__input" id="application-name" placeholder="Ваше имя" type="text" name="name">
+                    </p>
+                    <p class="application__field form__field">
+                        <input class="form__input phoneMask" id="application-phone" type="tel" name="phone" placeholder="Номер телефона" required="required">
+                    </p>
+                    <p class="application__privacy-policy form__privacy-policy">
+                        Нажимая кнопку отправить вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                        и с <a href="#">согласием</a> на обработку персональной информацией
+                    </p>
+                    <button class="application__submit-btn form__submit-btn button button--light-border" type="submit">Отправить</button>
+                </form>
+
+                <ul class="application__background-figures background-figures">
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-1"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-2"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-3"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-3"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-2"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--figure">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#figure-1"></use>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Application Block -->
+        <!-- FAQ Block -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="faq__title title block-with-substrate">Часто задаваемые вопросы</h2>
+
+                <ul class="faq__list">
+                    <li class="faq__item">
+                        <div class="faq__head">
+                            <h3 class="faq__question">С какого возраста можно записать ребенка на курсы?</h3>
+                            <div class="faq__btn"></div>
+                        </div>
+                        <div class="faq__body">
+                            <p class="faq__text">
+                                В нашем центре программирования можно начинать учиться с 7 лет. В некоторых случаях с
+                                6 лет, если ребенок уже умеет читать, писать и значчет числа. Максимальный возраст ребенка 17 - 18
+                                лет.
+                                Группы в нашем центре формируются не по возрасту, а по способностям ребенка, чтобы каждый из них сумел
+                                кофортно изучать материал.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <div class="faq__head">
+                            <h3 class="faq__question">Есть ли скидки на ваши курсы?</h3>
+                            <div class="faq__btn"></div>
+                        </div>
+                        <div class="faq__body">
+                            <p class="faq__text">
+                                В нашем центре программирования можно начинать учиться с 7 лет. В некоторых случаях с
+                                6 лет, если ребенок уже умеет читать, писать и значчет числа. Максимальный возраст ребенка 17 - 18
+                                лет.
+                                Группы в нашем центре формируются не по возрасту, а по способностям ребенка, чтобы каждый из них сумел
+                                кофортно изучать материал.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <div class="faq__head">
+                            <h3 class="faq__question">Как совершить покупку курса на сайте?</h3>
+                            <div class="faq__btn"></div>
+                        </div>
+                        <div class="faq__body">
+                            <p class="faq__text">
+                                В нашем центре программирования можно начинать учиться с 7 лет. В некоторых случаях с
+                                6 лет, если ребенок уже умеет читать, писать и значчет числа. Максимальный возраст ребенка 17 - 18
+                                лет.
+                                Группы в нашем центре формируются не по возрасту, а по способностям ребенка, чтобы каждый из них сумел
+                                кофортно изучать материал.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <div class="faq__head">
+                            <h3 class="faq__question">Как часто набираются группы?</h3>
+                            <div class="faq__btn"></div>
+                        </div>
+                        <div class="faq__body">
+                            <p class="faq__text">
+                                В нашем центре программирования можно начинать учиться с 7 лет. В некоторых случаях с
+                                6 лет, если ребенок уже умеет читать, писать и значчет числа. Максимальный возраст ребенка 17 - 18
+                                лет.
+                                Группы в нашем центре формируются не по возрасту, а по способностям ребенка, чтобы каждый из них сумел
+                                кофортно изучать материал.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End FAQ Block -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__info">
+                    <a href="index.html" class="logo footer__logo">
+                        <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
+                    </a>
+
+                    <div class="footer__requisites">
+                        <p>ИП Кунафин Ильсур Рашитович, ОГРНИП 320169000149581, ИНН 161604914426</p>
+                        <p>422701, Р. Татарстан, Высокогорский р-н, с. В. Гора, ул. Колхозная, д.76А</p>
+                        <p>р/с 40802810829370001517</p>
+                        <p>к/с 30101810200000000824</p>
+                        <p>ФИЛИАЛ "НИЖЕГОРОДСКИЙ" АО "АЛЬФА-БАНК</p>
+                        <p>БИК 042202824</p>
+                        <p>м.т. 8 (937) 7719102</p>
+                        <p>e-mail: ilsurka13@yandex.ru</p>
+                    </div>
+                </div>
+
+                <div class="footer__nav">
+                    <h3 class="footer__title">Меню</h3>
+
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="index.html">Главная</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="courses.html">Курсы</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="gallery.html">Галерея</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="news.html">Новости</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="about.html">О центре</a></li>
+                        <li class="footer__nav-item"><a class="footer__nav-link" href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__socials">
+                    <h3 class="footer__title">Социальные сети</h3>
+
+                    <ul class="footer__socials-list">
+                        <li class="footer__socials-item footer__socials-item--instagram">
+                            <a class="footer__socials-link" href="#instagram">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--facebook">
+                            <a class="footer__socials-link" href="#facebook">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--vk">
+                            <a class="footer__socials-link" href="#vk">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Vkontakte</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--telegram">
+                            <a class="footer__socials-link" href="#telegram">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Telegram</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--mail">
+                            <a class="footer__socials-link" href="#mail">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Email почта</span>
+                            </a>
+                        </li>
+                        <li class="footer__socials-item footer__socials-item--whatsapp">
+                            <a class="footer__socials-link" href="#whatsapp">
+                                <i class="footer__socials-icon">
+							<svg>
+								<use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
+							</svg>
+						</i>
+                                <span class="footer__socials-text">Whatsapp</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="footer__contacts">
+                    <h3 class="footer__title">Служба заботы</h3>
+
+                    <a href="tel:+88005553355" class="footer__phone">8 800 555 33 55</a>
+
+                    <a href="mailto:admin@tat-progame.ru" class="footer__mail">admin@tat-progame.ru</a>
+                </div>
+
+                <ul class="footer__background-figures background-figures">
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-1"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-2"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-3"></use>
+                        </svg>
+                    </li>
+                    <li class="background-figures__item background-figures__item--blot">
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#blot-4"></use>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+    <!-- End Content -->
+
+    <!-- Modal -->
+
+    <div class="modal" data-scroll-lock-fill-gap>
+        <div class="modal__overlay"></div>
+        <div class="modal__wrapper">
+            <div class="modal__container modal__container--upload" id="modal-upload">
+                <h3 class="modal__title title"><span class="title__accent">Загрузите проект</span> и получите расчет с
+                    подробной сметой, спецификацией и визуализацией объекта</h3>
+
+                <form class="modal__form modal-form form" id="form-upload" action="#" method="post">
+                    <label class="modal-form__field">
+                        <input class="modal-form__input form__input" id="modal-upload-name" type="text" name="name" placeholder="Ваше имя" required />
+                    </label>
+
+                    <label class="modal-form__field modal-form__field--phone">
+                        <input class="modal-form__input form__input phoneMask" id="modal-upload-phone" type="tel" name="phone" placeholder="+7 (999) 999-99-99" required />
+
+                        <svg>
+                            <use xlink:href="assets/img/sprite/sprite.svg#flag"></use>
+                        </svg>
+                    </label>
+
+                    <h3 class="modal-form__uload-file-title">Прикрепите проект</h3>
+
+                    <p class="modal-form__uload-file uload-file">
+                        <label class="uload-file__label">
+                            <input class="uload-file__input" type="file" id="modal-upload-file" name="file" multiple>
+
+                            <span class="uload-file__btn">Загрузить файлы</span>
+                        </label>
+
+                        <span class="uload-file__message"></span>
+                    </p>
+
+                    <p class="modal-form__agreement">
+                        <label class="checkbox modal-form__agreement-checkbox">
+                            <input type="checkbox" name="agreement" required>
+                            <svg class="checkbox__icon">
+                                <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
+                            </svg>
+                        </label>
+
+                        <span class="modal-form__agreement-text">
+						Отправляя свои данные, вы соглашаетесь с политикой конфиденциальности
+					</span>
+                    </p>
+
+                    <button class="button modal-form__submit-btn" type="submit">
+                        <span>Обсудить проект</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="modal__success">
+                <a class="modal__close-btn" href="#"></a>
+
+                <svg class="modal__success-icon">
+                    <use xlink:href="assets/img/sprite/sprite.svg#success"></use>
+                </svg>
+
+                <p class="modal__success-text">Спасибо! Данные успешно отправены.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Modal -->
+
+    <!-- JS -->
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- End JS -->
+
+</body>
+
+</html>
