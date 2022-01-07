@@ -159,84 +159,128 @@
         <header class="header" data-scroll-lock-fill-gap>
             <div class="container">
 
-                <div class="header__menu">
-                    <div class="header__main-group">
-                        <a href="index.html" class="logo header__logo">
-                            <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
-                        </a>
+                <!-- <div class="header__menu"> -->
+                <div class="header__main-group">
+                    <a href="index.html" class="logo header__logo">
+                        <img class="logo__icon" src="assets/img/logo.svg" alt="логотип">
+                    </a>
+
+                    <ul class="header__socials socials-short">
+                        <li class="socials-short__item socials-short__item--instagram">
+                            <a class="socials-short__link" href="#instagram">
+                                <svg class="socials-short__icon">
+                                    <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials-short__item socials-short__item--facebook">
+                            <a class="socials-short__link" href="#facebook">
+                                <svg class="socials-short__icon">
+                                    <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials-short__item socials-short__item--vk">
+                            <a class="socials-short__link" href="#vk">
+                                <svg class="socials-short__icon">
+                                    <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <a class="header__toggle-btn" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="header__sub-group">
+                    <div class="header__contacts-group">
+                        <a href="tel:+79998887766" class="header__phone">+7 (999) 888 – 77 – 66</a>
 
                         <ul class="header__socials socials-short">
-                            <li class="socials-short__item socials-short__item--instagram">
-                                <a class="socials-short__link" href="#instagram">
+                            <li class="socials-short__item socials-short__item--telegram">
+                                <a class="socials-short__link" href="#telegram">
                                     <svg class="socials-short__icon">
-                                        <use xlink:href="assets/img/sprite/sprite.svg#instagram"></use>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
                                     </svg>
                                 </a>
                             </li>
-                            <li class="socials-short__item socials-short__item--facebook">
-                                <a class="socials-short__link" href="#facebook">
+                            <li class="socials-short__item socials-short__item--mail">
+                                <a class="socials-short__link" href="mailto:admin@tat-progame.ru">
                                     <svg class="socials-short__icon">
-                                        <use xlink:href="assets/img/sprite/sprite.svg#facebook"></use>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
                                     </svg>
                                 </a>
                             </li>
-                            <li class="socials-short__item socials-short__item--vk">
-                                <a class="socials-short__link" href="#vk">
+                            <li class="socials-short__item socials-short__item--whatsapp">
+                                <a class="socials-short__link" href="#whatsapp">
                                     <svg class="socials-short__icon">
-                                        <use xlink:href="assets/img/sprite/sprite.svg#vk"></use>
+                                        <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
                                     </svg>
                                 </a>
                             </li>
                         </ul>
 
-                        <a class="header__toggle-btn" href="#"><span></span></a>
+                        <a href="tel:+79998887766" class="header__phone-mobile button button--short">
+                            <svg class="socials-short__icon">
+                                <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                            </svg>
+                            <span>Позвонить</span>
+                            <svg class="socials-short__icon">
+                                <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="header__feedback-btn button button--short modal-opener" data-modal="modal-feedback">
+                            <span>¿ Задать вопрос ?</span>
+                        </a>
                     </div>
 
-                    <div class="header__sub-group">
-                        <div class="header__contacts-group">
-                            <a href="tel:+79998887766" class="header__phone">+7 (999) 888 – 77 – 66</a>
-
-                            <ul class="header__socials socials-short">
-                                <li class="socials-short__item socials-short__item--telegram">
-                                    <a class="socials-short__link" href="#telegram">
-                                        <svg class="socials-short__icon">
-                                            <use xlink:href="assets/img/sprite/sprite.svg#telegram"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="socials-short__item socials-short__item--mail">
-                                    <a class="socials-short__link" href="mailto:admin@tat-progame.ru">
-                                        <svg class="socials-short__icon">
-                                            <use xlink:href="assets/img/sprite/sprite.svg#mail"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="socials-short__item socials-short__item--whatsapp">
-                                    <a class="socials-short__link" href="#whatsapp">
-                                        <svg class="socials-short__icon">
-                                            <use xlink:href="assets/img/sprite/sprite.svg#whatsapp"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <a href="#" class="header__feedback-btn button button--short modal-opener" data-modal="modal-feedback">
-                                <span>¿ Задать вопрос ?</span>
-                            </a>
-                        </div>
-
-                        <nav class="nav header__nav">
-                            <ul class="nav__list">
-                                <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
-                                <li class="nav__item"><a class="nav__link" href="courses.html">Курсы</a></li>
-                                <li class="nav__item"><a class="nav__link" href="gallery.html">Галерея</a></li>
-                                <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
-                                <li class="nav__item"><a class="nav__link" href="about.html">О центре</a></li>
-                                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <nav class="nav header__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">
+                                    Главная
+                                    <svg class="nav__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
+                                    </svg>
+                                </a></li>
+                            <li class="nav__item"><a class="nav__link" href="courses.html">
+                                    Курсы
+                                    <svg class="nav__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
+                                    </svg>
+                                </a></li>
+                            <li class="nav__item"><a class="nav__link" href="gallery.html">
+                                    Галерея
+                                    <svg class="nav__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
+                                    </svg>
+                                </a></li>
+                            <li class="nav__item"><a class="nav__link" href="shop.html">
+                                    Магазин
+                                    <svg class="nav__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
+                                    </svg>
+                                </a></li>
+                            <li class="nav__item"><a class="nav__link" href="about.html">
+                                    О центре
+                                    <svg class="nav__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
+                                    </svg>
+                                </a></li>
+                            <li class="nav__item"><a class="nav__link" href="contacts.html">
+                                    Контакты
+                                    <svg class="nav__icon">
+                                        <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
+                                    </svg>
+                                </a></li>
+                        </ul>
+                    </nav>
                 </div>
+                <!-- </div> -->
             </div>
         </header>
         <!-- End Header -->
@@ -1048,64 +1092,33 @@
     <div class="modal" data-scroll-lock-fill-gap>
         <div class="modal__overlay"></div>
         <div class="modal__wrapper">
-            <div class="modal__container modal__container--upload" id="modal-upload">
-                <h3 class="modal__title title"><span class="title__accent">Загрузите проект</span> и получите расчет с
-                    подробной сметой, спецификацией и визуализацией объекта</h3>
+            <div class="modal__container modal__container--signup" id="modal-signup">
 
-                <form class="modal__form modal-form form" id="form-upload" action="#" method="post">
-                    <label class="modal-form__field">
-                        <input class="modal-form__input form__input" id="modal-upload-name" type="text" name="name" placeholder="Ваше имя" required />
-                    </label>
+                <h2 class="modal__title">
+                    Записаться на бесплатный урок
+                </h2>
 
-                    <label class="modal-form__field modal-form__field--phone">
-                        <input class="modal-form__input form__input phoneMask" id="modal-upload-phone" type="tel" name="phone" placeholder="+7 (999) 999-99-99" required />
-
-                        <svg>
-                            <use xlink:href="assets/img/sprite/sprite.svg#flag"></use>
-                        </svg>
-                    </label>
-
-                    <h3 class="modal-form__uload-file-title">Прикрепите проект</h3>
-
-                    <p class="modal-form__uload-file uload-file">
-                        <label class="uload-file__label">
-                            <input class="uload-file__input" type="file" id="modal-upload-file" name="file" multiple>
-
-                            <span class="uload-file__btn">Загрузить файлы</span>
-                        </label>
-
-                        <span class="uload-file__message"></span>
+                <form class="modal__form modal-form" id="form-signup" action="#" method="post">
+                    <p class="modal-form__field form__field">
+                        <input class="modal-form__input" id="modal-form-name" placeholder="Ваше имя" type="text" name="name">
                     </p>
 
-                    <p class="modal-form__agreement">
-                        <label class="checkbox modal-form__agreement-checkbox">
-                            <input type="checkbox" name="agreement" required>
-                            <svg class="checkbox__icon">
-                                <use xlink:href="assets/img/sprite/sprite.svg#check"></use>
-                            </svg>
-                        </label>
-
-                        <span class="modal-form__agreement-text">
-						Отправляя свои данные, вы соглашаетесь с политикой конфиденциальности
-					</span>
+                    <p class="modal-form__field form__field">
+                        <input class="modal-form__input phoneMask" id="modal-form-phone" type="tel" name="phone" placeholder="Номер телефона" required>
                     </p>
 
-                    <button class="button modal-form__submit-btn" type="submit">
-                        <span>Обсудить проект</span>
+                    <p class="modal-form__privacy-policy">
+                        Нажимая кнопку отправить вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                        и с <a href="#">согласием</a> на обработку персональной информацией
+                    </p>
+
+                    <button class="modal-form__submit-btn form__submit-btn button button--light-border" type="submit">
+                        Отправить
                     </button>
                 </form>
+
+                <a href="#" class="modal__close-btn"></a>
             </div>
-
-            <div class="modal__success">
-                <a class="modal__close-btn" href="#"></a>
-
-                <svg class="modal__success-icon">
-                    <use xlink:href="assets/img/sprite/sprite.svg#success"></use>
-                </svg>
-
-                <p class="modal__success-text">Спасибо! Данные успешно отправены.</p>
-            </div>
-
         </div>
     </div>
 
