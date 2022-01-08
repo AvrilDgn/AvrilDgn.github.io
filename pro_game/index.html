@@ -234,7 +234,7 @@
                                 <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
                             </svg>
                         </a>
-                        <a href="#" class="header__feedback-btn button button--short modal-opener" data-modal="modal-feedback">
+                        <a href="#" class="header__feedback-btn button button--short" data-modal="modal-question">
                             <span>¿ Задать вопрос ?</span>
                         </a>
                     </div>
@@ -522,7 +522,7 @@
                     </li>
                 </ul>
 
-                <a href="#application" class="promotions__btn button">
+                <a href="#" class="promotions__btn button" data-modal="modal-signup">
                     <span>Записаться на бесплатный урок</span>
                 </a>
             </div>
@@ -557,7 +557,7 @@
                                         <a href="#" class="courses-card__btn button button--dark">
                                             <span>Подробнее</span>
                                         </a>
-                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                        <a href="#" class="courses-card__btn button" data-modal="modal-signup">
                                             <span>Записаться</span>
                                         </a>
                                     </div>
@@ -583,7 +583,7 @@
                                         <a href="#" class="courses-card__btn button button--dark">
                                             <span>Подробнее</span>
                                         </a>
-                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                        <a href="#" class="courses-card__btn button" data-modal="modal-signup">
                                             <span>Записаться</span>
                                         </a>
                                     </div>
@@ -609,7 +609,7 @@
                                         <a href="#" class="courses-card__btn button button--dark">
                                             <span>Подробнее</span>
                                         </a>
-                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                        <a href="#" class="courses-card__btn button" data-modal="modal-signup">
                                             <span>Записаться</span>
                                         </a>
                                     </div>
@@ -635,7 +635,7 @@
                                         <a href="#" class="courses-card__btn button button--dark">
                                             <span>Подробнее</span>
                                         </a>
-                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                        <a href="#" class="courses-card__btn button" data-modal="modal-signup">
                                             <span>Записаться</span>
                                         </a>
                                     </div>
@@ -661,7 +661,7 @@
                                         <a href="#" class="courses-card__btn button button--dark">
                                             <span>Подробнее</span>
                                         </a>
-                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                        <a href="#" class="courses-card__btn button" data-modal="modal-signup">
                                             <span>Записаться</span>
                                         </a>
                                     </div>
@@ -687,7 +687,7 @@
                                         <a href="#" class="courses-card__btn button button--dark">
                                             <span>Подробнее</span>
                                         </a>
-                                        <a href="#" class="courses-card__btn button modal-opener" data-modal="modal-feedback">
+                                        <a href="#" class="courses-card__btn button" data-modal="modal-signup">
                                             <span>Записаться</span>
                                         </a>
                                     </div>
@@ -709,7 +709,7 @@
                     <ul class="courses__pagination slider-pagination"></ul>
                 </div>
 
-                <a href="courses.html" class="courses__btn button">
+                <a href="#" class="courses__btn button" data-modal="modal-signup">
                     <span>Посмотреть все курсы ProGame</span>
                 </a>
             </div>
@@ -1136,6 +1136,9 @@
     <div class="modal" data-scroll-lock-fill-gap>
         <div class="modal__overlay"></div>
         <div class="modal__wrapper">
+
+            <a href="#" class="modal__close-btn"></a>
+
             <div class="modal__container modal__container--signup" id="modal-signup">
 
                 <h2 class="modal__title">
@@ -1144,11 +1147,11 @@
 
                 <form class="modal__form modal-form" id="form-signup" action="#" method="post">
                     <p class="modal-form__field form__field">
-                        <input class="modal-form__input" id="modal-form-name" placeholder="Ваше имя" type="text" name="name">
+                        <input class="modal-form__input" id="modal-signup-name" placeholder="Ваше имя" type="text" name="name" required>
                     </p>
 
                     <p class="modal-form__field form__field">
-                        <input class="modal-form__input phoneMask" id="modal-form-phone" type="tel" name="phone" placeholder="Номер телефона" required>
+                        <input class="modal-form__input phoneMask" id="modal-signup-phone" type="tel" name="phone" placeholder="Номер телефона" required>
                     </p>
 
                     <p class="modal-form__privacy-policy">
@@ -1160,8 +1163,36 @@
                         Отправить
                     </button>
                 </form>
+            </div>
 
-                <a href="#" class="modal__close-btn"></a>
+            <div class="modal__container modal__container--question" id="modal-question">
+
+                <h2 class="modal__title">
+                    Задать вопрос
+                </h2>
+
+                <form class="modal__form modal-form" id="modal-question" action="#" method="post">
+                    <p class="modal-form__field form__field">
+                        <input class="modal-form__input" id="modal-question-name" placeholder="Ваше имя" type="text" name="name" required>
+                    </p>
+
+                    <p class="modal-form__field form__field">
+                        <input class="modal-form__input phoneMask" id="modal-question-phone" type="tel" name="phone" placeholder="Номер телефона" required>
+                    </p>
+
+                    <p class="modal-form__field form__field">
+                        <textarea class="modal-form__input modal-form__input--textarea" name="message" placeholder="Сообщение" id="modal-question-message"></textarea>
+                    </p>
+
+                    <p class="modal-form__privacy-policy">
+                        Нажимая кнопку отправить вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                        и с <a href="#">согласием</a> на обработку персональной информацией
+                    </p>
+
+                    <button class="modal-form__submit-btn form__submit-btn button button--light-border" type="submit">
+                        Отправить
+                    </button>
+                </form>
             </div>
         </div>
     </div>
