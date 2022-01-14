@@ -1800,97 +1800,6 @@ button:focus {
   pointer-events: none;
 }
 
-.slide-full {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-  opacity: 0;
-  -webkit-transition: opacity 0.25s ease, -webkit-transform 0.2s ease;
-  transition: opacity 0.25s ease, -webkit-transform 0.2s ease;
-  -o-transition: transform 0.2s ease, opacity 0.25s ease;
-  transition: transform 0.2s ease, opacity 0.25s ease;
-  transition: transform 0.2s ease, opacity 0.25s ease, -webkit-transform 0.2s ease;
-  z-index: 500;
-}
-
-.slide-full--shown {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
-}
-
-.slide-full img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-.slide-full__close-btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: block;
-  width: 50px;
-  height: 50px;
-  -webkit-transition: opacity ease 0.25s;
-  -o-transition: opacity ease 0.25s;
-  transition: opacity ease 0.25s;
-  opacity: 1;
-  z-index: 1;
-  pointer-events: visible;
-}
-
-.slide-full__close-btn::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 3px;
-  height: 68%;
-  top: 8px;
-  left: 24px;
-  background-color: white;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.slide-full__close-btn::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 68%;
-  height: 3px;
-  top: 23px;
-  left: 9px;
-  background-color: white;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.slide-full__close-btn:hover {
-  opacity: 0.65;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -2339,11 +2248,14 @@ button:focus {
   border-radius: 4px;
   background: white;
   pointer-events: visible;
+  padding: 30px 60px 50px;
+  max-width: 600px;
 }
 
 .modal__close-btn {
   position: absolute;
   top: 16px;
+  top: 20px;
   right: 16px;
   display: block;
   width: 50px;
@@ -2399,15 +2311,18 @@ button:focus {
 }
 
 .modal__title {
+  padding: 0 15px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.47222;
+  line-height: 1.2;
   text-align: center;
   color: #0F7F8A;
 }
 
 .modal__form {
   margin-top: 47px;
+  margin-top: 30px;
 }
 
 .form--modal .form__field {
@@ -2418,6 +2333,7 @@ button:focus {
 
 .form--modal .form__field:not(:first-child) {
   margin-top: 50px;
+  margin-top: 30px;
 }
 
 .form--modal .form__status {
@@ -2469,6 +2385,7 @@ button:focus {
 .form--modal .form__privacy-policy {
   position: relative;
   margin-top: 50px;
+  margin-top: 30px;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.22222;
@@ -2486,6 +2403,7 @@ button:focus {
   margin-top: 31px;
   width: 100%;
   height: 83px;
+  height: 70px;
   border-radius: 4px;
   border: 4px solid #0f7f8a;
   background-color: transparent;
@@ -2513,7 +2431,9 @@ button:focus {
 .modal-course-more {
   position: relative;
   padding: 0 16px 30px;
+  padding: 0 30px 30px;
   max-width: 1446px;
+  max-width: 800px;
   width: 100%;
   border-radius: 50px 50px 4px 4px;
   -webkit-box-shadow: -4px 4px 4px 4px rgba(51, 51, 51, 0.25);
@@ -2522,10 +2442,11 @@ button:focus {
 }
 
 .modal-course-more__image {
-  margin-left: -16px;
-  margin-right: -16px;
-  width: calc(100% + 32px);
+  margin-left: -30px;
+  margin-right: -30px;
+  width: calc(100% + 60px);
   height: 459px;
+  height: 260px;
 }
 
 .modal-course-more__image img {
@@ -2588,7 +2509,6 @@ button:focus {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 708px;
   min-height: 60px;
 }
 
@@ -3238,6 +3158,10 @@ button:focus {
   width: calc(33.33% - 30px);
 }
 
+.courses__card {
+  height: 100%;
+}
+
 .courses__arrow {
   display: none;
 }
@@ -3261,6 +3185,13 @@ button:focus {
   padding-left: 15px;
   padding-bottom: 15px;
   padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-width: 462px;
   width: 100%;
   background: white;
@@ -3294,9 +3225,9 @@ button:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .courses-card__title {
@@ -3307,6 +3238,9 @@ button:focus {
 }
 
 .courses-card__years {
+  margin-top: 18px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.22222;
@@ -3316,6 +3250,7 @@ button:focus {
 
 .courses-card__desc {
   margin-top: 15px;
+  margin-bottom: 19px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -3323,7 +3258,7 @@ button:focus {
 }
 
 .courses-card__btns {
-  margin-top: 19px;
+  margin-top: auto;
   margin-left: -7px;
   margin-right: -7px;
   display: -webkit-box;
@@ -4208,7 +4143,7 @@ button:focus {
 
 .shop-card__name {
   margin-top: 29px;
-  margin-bottom: 29px;
+  margin-bottom: 19px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.22222;
@@ -4219,16 +4154,23 @@ button:focus {
 
 .shop-card__payment-group {
   margin-top: auto;
+  margin-left: -7px;
+  margin-right: -7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% + 14px);
 }
 
 .shop-card__price {
-  margin-right: 15px;
+  margin-top: 10px;
+  margin-right: 7px;
+  margin-left: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4241,6 +4183,8 @@ button:focus {
   width: 44px;
   height: 44px;
   fill: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .shop-card__price-value {
@@ -4255,6 +4199,9 @@ button:focus {
 }
 
 .shop-card__btn {
+  margin-top: 10px;
+  margin-right: 7px;
+  margin-left: 7px;
   height: 44px;
   max-width: 220px;
   font-weight: 700;
@@ -4592,6 +4539,10 @@ button:focus {
 }
 
 @media screen and (max-width: 1600px) {
+  .container {
+    padding: 0 30px;
+  }
+
   .footer__info {
     padding-top: 72.34px;
     width: 326px;
@@ -4650,17 +4601,18 @@ button:focus {
     padding-right: 75px;
   }
 
-  .courses__item {
-    width: calc(50% - 30px);
-  }
-
   .courses__card {
     margin-left: auto;
     margin-right: auto;
   }
 
+  .reviews__wrapper {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
   .reviews__arrow {
-    left: -90px;
+    left: -25px;
     width: 70px;
     height: 70px;
   }
@@ -4671,7 +4623,7 @@ button:focus {
   }
 
   .reviews__arrow.slider-arrow--next {
-    right: -90px;
+    right: -25px;
   }
 
   .screen__arrow {
@@ -4682,10 +4634,6 @@ button:focus {
   .screen__arrow svg {
     width: 17.65px;
     height: 35.08px;
-  }
-
-  .shop__card {
-    width: calc(50% - 30px);
   }
 
   .way__screen {
@@ -5095,6 +5043,10 @@ button:focus {
     height: 14px;
   }
 
+  .shop__card {
+    width: calc(50% - 30px);
+  }
+
   .way__screen {
     width: 450px;
   }
@@ -5454,6 +5406,8 @@ button:focus {
   .courses--short .courses__slider {
     position: relative;
     margin-top: 0;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   .courses--short .courses__wrapper {
@@ -5474,6 +5428,10 @@ button:focus {
         flex-shrink: 0;
   }
 
+  .courses__item {
+    width: calc(50% - 30px);
+  }
+
   .courses__arrow {
     position: absolute;
     display: -webkit-box;
@@ -5483,7 +5441,7 @@ button:focus {
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: -80px;
+    left: -65px;
     width: 60px;
     height: 60px;
   }
@@ -5495,7 +5453,7 @@ button:focus {
 
   .courses__arrow.slider-arrow--next {
     left: initial;
-    right: -80px;
+    right: -65px;
   }
 
   .courses__pagination {
@@ -5523,6 +5481,10 @@ button:focus {
   .courses-card__title {
     font-size: 24px;
     line-height: 1.5;
+  }
+
+  .courses-card__years {
+    margin-top: 8px;
   }
 
   .courses-card__btns {
@@ -5840,7 +5802,7 @@ button:focus {
 
   .shop__card {
     margin: 30px auto;
-    max-width: 400px;
+    max-width: 480px;
     width: 100%;
   }
 
@@ -5869,11 +5831,6 @@ button:focus {
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 12px;
-  }
-
-  .slide-full__close-btn {
-    top: 8px;
-    right: 8px;
   }
 
   .modal__container {
@@ -6088,6 +6045,8 @@ button:focus {
   .courses--short .courses__slider {
     padding-left: 0;
     padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .courses__arrow {
@@ -6240,11 +6199,6 @@ button:focus {
 }
 
 @media screen and (max-width: 576px) {
-  .slide-full__close-btn {
-    top: 0;
-    right: 15px;
-  }
-
   .modal__wrapper {
     margin: 0;
     min-height: 100vh;
