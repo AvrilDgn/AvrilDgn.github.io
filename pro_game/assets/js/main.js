@@ -15391,7 +15391,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 					modalWrap.style.display = 'flex';
 					scroll_lock_default.a.disablePageScroll(modalWrap);
 					modalEl = modalWrap;
-	
+
 					raf(() => {
 						modal.classList.add('modal--visible');
 						modal.addEventListener('transitionend', handler, { once: true });
@@ -15402,7 +15402,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				if (modal.classList.contains('modal--show')) {
 					modal.classList.remove('modal--visible');
 
-					modal.addEventListener('transitionend', function() {
+					modal.addEventListener('transitionend', function () {
 						modalEl.style.display = null;
 						shown();
 
@@ -15479,6 +15479,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			slidesPerView: 1,
 			watchOverflow: true,
 			loop: true,
+
 			autoplay: {
 				delay: 3000,
 			},
@@ -15497,53 +15498,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		});
 
 
-		let links = slider.querySelectorAll('a');
-
-		// links.forEach(link => {
-		// 	link.addEventListener('click', function (e) {
-		// 		e.preventDefault();
-
-		// 		let alt = link.querySelector('img').getAttribute('alt');
-
-		// 		let img = document.createElement('img');
-		// 		let wrap = document.createElement('div');
-		// 		let closeBtn = document.createElement('a');
-
-		// 		wrap.classList.add('slide-full');
-		// 		img.setAttribute('src', this.href);
-		// 		img.setAttribute('alt', alt);
-		// 		closeBtn.href = '#';
-		// 		closeBtn.classList.add('slide-full__close-btn');
-
-		// 		wrap.appendChild(img);
-		// 		wrap.appendChild(closeBtn);
-		// 		document.body.appendChild(wrap);
-
-				
-		// 		raf(() => {
-		// 			raf(() => {
-		// 				wrap.classList.add('slide-full--shown');
-		// 			});
-		// 		});
-
-				
-		// 		closeBtn.addEventListener('click', function(e) {
-		// 			e.preventDefault();
-					
-		// 			wrap.classList.remove('slide-full--shown');
-
-		// 			wrap.addEventListener('transitionend', function(e) {
-		// 				this.remove();
-		// 			});
-		// 		});
-
-		// 	});
-		// });
-
+		let links = slider.querySelectorAll('.screen__item a');
 
 		//array img links from slider
 		let getLinksToImgs = function () {
-			let imgs = slider.querySelectorAll('img');
+			let links = slider.querySelectorAll('.screen__item:not(.swiper-slide-duplicate) a');
 			let arr = [];
 
 			links.forEach(link => {
@@ -15559,10 +15518,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		links.forEach(link => {
 			link.addEventListener('click', function (e) {
-				e.preventDefault();
-
+				e.preventDefault();		
+				
+				let id = this.parentElement.getAttribute('data-swiper-slide-index');
+				// console.log(id);
+				
 				window.lightGallery(link, {
 					// container: slider,
+					index: id,
 					hash: false,
 					closable: false,
 					showMaximizeIcon: true,
@@ -15573,7 +15536,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 					dynamic: true,
 					dynamicEl: getLinksToImgs(),
-		
+
 					thumbWidth: 60,
 					thumbHeight: "40px",
 					thumbMargin: 4
@@ -15857,8 +15820,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			});
 		}
 	}
-	
-	if(classStages) {
+
+	if (classStages) {
 		showClassStages(smMedia);
 		smMedia.addListener(showClassStages);
 	}
