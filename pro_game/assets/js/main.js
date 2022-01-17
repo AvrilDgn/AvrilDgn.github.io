@@ -15612,18 +15612,22 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		},
 	});
 
-	// function changeArrows(sm) {
-	// 	if (sm.matches) {
-	// 		reviewsSlider.navigation.nextEl = ".reviews__arrows-mobile-group .reviews__arrow.slider-arrow--next";
-	// 		reviewsSlider.navigation.prevEl = ".reviews__arrows-mobile-group .reviews__arrow.slider-arrow--prev";
-	// 	} else {
-	// 		reviewsSlider.navigation.nextEl = ".reviews__slider > .reviews__arrow.slider-arrow--next";
-	// 		reviewsSlider.navigation.prevEl = ".reviews__slider > .reviews__arrow.slider-arrow--prev";
-	// 	}
-	// }
+	function changeArrows(sm) {
+		reviewsSlider.navigation.destroy();
+		
+		if (sm.matches) {
+			reviewsSlider.navigation.nextEl = ".reviews__arrows-mobile-group .reviews__arrow.slider-arrow--next";
+			reviewsSlider.navigation.prevEl = ".reviews__arrows-mobile-group .reviews__arrow.slider-arrow--prev";
+		} else {
+			reviewsSlider.navigation.nextEl = ".reviews__slider > .reviews__arrow.slider-arrow--next";
+			reviewsSlider.navigation.prevEl = ".reviews__slider > .reviews__arrow.slider-arrow--prev";
+		}
 
-	// changeArrows(smMedia);
-	// smMedia.addListener(changeArrows);
+		reviewsSlider.navigation.init();
+	}
+
+	changeArrows(smMedia);
+	smMedia.addListener(changeArrows);
 
 
 	//courses slider
