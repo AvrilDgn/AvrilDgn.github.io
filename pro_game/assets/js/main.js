@@ -15389,7 +15389,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				let shown = () => {
 					modal.classList.add('modal--show');
 					modalWrap.style.display = 'flex';
-					scroll_lock_default.a.disablePageScroll(modalWrap);
+					scroll_lock_default.a.disablePageScroll(modal);
 					modalEl = modalWrap;
 
 					raf(() => {
@@ -15417,7 +15417,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			function closeModal(e) {
 				e.preventDefault();
 				modal.classList.remove('modal--visible');
-				scroll_lock_default.a.enablePageScroll(modalWrap);
+				scroll_lock_default.a.enablePageScroll(modal);
 
 				let handler = () => {
 					modal.classList.remove('modal--show');
@@ -15964,7 +15964,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 					let formData = new FormData(form);
 					let statusOn = false;
-					// statusMessage.classList.remove('form__status--fault');
 
 					request.send(formData);
 
@@ -15983,7 +15982,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 								}
 							}
 							else {
-								// statusMessage.classList.add('form-status--fault');
 								statusMessage.innerHTML = message.failure;
 								btn.disabled = false;
 							}
@@ -16006,199 +16004,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			});
 		}
 	}
-
-	/*
-		let forms = document.forms;
-	
-		for (let i = 0; i < forms.length; i++) {
-			if (forms[i] && window.FormData) {
-	
-				let form = forms[i];
-				let btn = form.querySelector('button[type="submit"]');
-	
-				let message = new Object();
-				message.loading = 'Загрузка...';
-				message.success = 'Спасибо! Отправка прошла успешно!';
-				message.failure = 'Что-то пошло не так...';
-	
-				let statusMessage = document.createElement('div');
-				statusMessage.classList.add('form-status');
-	
-				let request = new XMLHttpRequest();
-				request.open('POST', 'form.php', true);
-				request.setRequestHeader('accept', 'application/json');
-	
-				form.addEventListener('submit', function (e) {
-					e.preventDefault();
-	
-					let reqInputs = form.querySelectorAll('[required]');
-					let reqFault = false;
-	
-					reqInputs.forEach(input => {
-						let parent = input.parentNode;
-						let reqMessage = parent.querySelector('.form-status');
-	
-						switch (input.getAttribute("name")) {
-							case "phone":
-								if (input.value.length < 18) {
-	
-									reqFault = true;
-	
-									if (reqMessage) {
-										return;
-									}
-	
-									reqMessage = document.createElement('span');
-									reqMessage.classList.add('form-status');
-									reqMessage.classList.add('form-status--fault');
-									reqMessage.textContent = "Введите правильный номер телефона!";
-									parent.appendChild(reqMessage);
-	
-									new DLAnimate().show(reqMessage, {
-										name: 'fade',
-										track: 'animation'
-									});
-	
-									return;
-								}
-								break;
-	
-							case "name":
-								if (input.value.length < 2) {
-	
-									reqFault = true;
-	
-									if (reqMessage) {
-										return;
-									}
-	
-									reqMessage = document.createElement('span');
-									reqMessage.classList.add('form-status');
-									reqMessage.classList.add('form-status--fault');
-									reqMessage.textContent = "Введите правильное имя!";
-									parent.appendChild(reqMessage);
-	
-									new DLAnimate().show(reqMessage, {
-										name: 'fade',
-										track: 'animation'
-									});
-	
-									return;
-								}
-								break;
-	
-							case "agreement":
-								if (!input.checked) {
-	
-									reqFault = true;
-	
-									if (reqMessage) {
-										return;
-									}
-	
-									reqMessage = document.createElement('span');
-									reqMessage.classList.add('form-status');
-									reqMessage.classList.add('form-status--fault');
-									reqMessage.textContent = "Подтвердите согласие c политикой конфиденциальности";
-									parent.appendChild(reqMessage);
-	
-									new DLAnimate().show(reqMessage, {
-										name: 'fade',
-										track: 'animation'
-									});
-	
-									return;
-								}
-								break;
-	
-							default:
-								break;
-						}
-	
-						if (reqMessage) {
-							new DLAnimate().hide(reqMessage, {
-								name: 'fade',
-								track: 'animation',
-								afterLeave: function (reqMessage) {
-									reqMessage.remove();
-								}
-							});
-						}
-					});
-	
-	
-					if (reqFault) {
-						return;
-					} else {
-	
-						let formData = new FormData(form);
-						let statusOn = false;
-						statusMessage.classList.remove('form-status--fault');
-	
-						request.send(formData);
-	
-						request.onreadystatechange = function () {
-							if (request.readyState < 4) {
-								statusMessage.innerHTML = message.loading;
-							}
-							else if (request.readyState === 4) {
-								if (request.status == 200 && request.status < 300) {
-									if (request.responseText === '') {
-	
-										success(form.parentElement);
-	
-									} else {
-										statusMessage.innerHTML = request.responseText;
-									}
-								}
-								else {
-									statusMessage.classList.add('form-status--fault');
-									statusMessage.innerHTML = message.failure;
-									btn.disabled = false;
-								}
-							}
-	
-							if (request.responseText) {
-								statusMessage.innerHTML = request.responseText;
-							}
-	
-							if (!statusOn) {
-								form.appendChild(statusMessage);
-								new DLAnimate().show(statusMessage, {
-									name: 'fade',
-									track: 'animation'
-								});
-								statusOn = true;
-							}
-						}
-					}
-				});
-			}
-		}
-	
-		let formSuccess = document.querySelector('.modal__success');
-	
-		function success(form) {
-			new DLAnimate().hide(form, {
-				name: 'fade',
-				track: 'animation',
-				afterLeave: function (el) {
-					new DLAnimate().show(formSuccess, {
-						name: 'fade',
-						track: 'animation',
-						beforeEnter: function (el) {
-							el.style.display = 'flex';
-						}
-					});
-					new DLAnimate().show(modalCloseBtn, {
-						name: 'fade',
-						track: 'animation'
-					});
-				}
-			});
-	
-		}*/
-
 });
 
 
