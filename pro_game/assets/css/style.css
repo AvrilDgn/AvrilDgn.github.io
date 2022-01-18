@@ -2547,7 +2547,7 @@ button:focus {
 
 .footer__info {
   position: relative;
-  margin-right: 32px;
+  margin-right: 30px;
   padding-top: 77.34px;
   width: 462px;
 }
@@ -2571,7 +2571,8 @@ button:focus {
 }
 
 .footer__nav {
-  margin: 0 15px;
+  margin-left: auto;
+  margin-right: 30px;
 }
 
 .footer__title {
@@ -2623,7 +2624,7 @@ button:focus {
 
 .footer__socials {
   margin-left: auto;
-  margin-right: 39px;
+  margin-right: 30px;
 }
 
 .footer__socials-list {
@@ -2731,6 +2732,10 @@ button:focus {
   -webkit-transition: width 0.25s ease;
   -o-transition: width 0.25s ease;
   transition: width 0.25s ease;
+}
+
+.footer__contacts {
+  margin-left: auto;
 }
 
 .footer__phone {
@@ -4761,10 +4766,6 @@ button:focus {
     margin-top: 15px;
   }
 
-  .footer__socials {
-    margin-right: auto;
-  }
-
   .footer__socials-list {
     margin-top: 15px;
   }
@@ -5620,6 +5621,7 @@ button:focus {
 
   .footer__socials {
     margin-top: 30px;
+    margin-right: auto;
   }
 
   .footer__contacts {
