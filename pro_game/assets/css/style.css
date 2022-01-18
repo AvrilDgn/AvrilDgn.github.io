@@ -5849,7 +5849,12 @@ button:focus {
   }
 
   .socials__icon {
-    width: 80px;
+    width: 60px;
+    height: 80px;
+  }
+
+  .socials__name {
+    margin-top: 10px;
   }
 }
 
