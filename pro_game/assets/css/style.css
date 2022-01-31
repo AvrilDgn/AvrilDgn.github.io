@@ -2085,6 +2085,41 @@ button:focus {
   margin-left: 10px;
 }
 
+.nav__item--active .nav__link {
+  z-index: 5;
+}
+
+.nav__item--active .nav__link::before,
+.nav__item--active .nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+}
+
+.nav__item--active .nav__link::before {
+  width: 1px;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#39AC56), to(white));
+  background-image: -o-linear-gradient(bottom, #39AC56 0%, white 100%);
+  background-image: linear-gradient(0deg, #39AC56 0%, white 100%);
+  -webkit-transition: height 0.25s ease;
+  -o-transition: height 0.25s ease;
+  transition: height 0.25s ease;
+}
+
+.nav__item--active .nav__link::after {
+  height: 1px;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#39AC56), to(white));
+  background-image: -o-linear-gradient(left, #39AC56 0%, white 100%);
+  background-image: linear-gradient(90deg, #39AC56 0%, white 100%);
+  -webkit-transition: width 0.25s ease;
+  -o-transition: width 0.25s ease;
+  transition: width 0.25s ease;
+}
+
 .nav__link {
   position: relative;
   padding: 3px 12px;
@@ -2139,41 +2174,6 @@ button:focus {
 
 .nav__link:hover::after {
   width: 100%;
-}
-
-.nav__link--active {
-  z-index: 5;
-}
-
-.nav__link--active::before,
-.nav__link--active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-}
-
-.nav__link--active::before {
-  width: 1px;
-  height: 100%;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#39AC56), to(white));
-  background-image: -o-linear-gradient(bottom, #39AC56 0%, white 100%);
-  background-image: linear-gradient(0deg, #39AC56 0%, white 100%);
-  -webkit-transition: height 0.25s ease;
-  -o-transition: height 0.25s ease;
-  transition: height 0.25s ease;
-}
-
-.nav__link--active::after {
-  height: 1px;
-  width: 100%;
-  background-image: -webkit-gradient(linear, left top, right top, from(#39AC56), to(white));
-  background-image: -o-linear-gradient(left, #39AC56 0%, white 100%);
-  background-image: linear-gradient(90deg, #39AC56 0%, white 100%);
-  -webkit-transition: width 0.25s ease;
-  -o-transition: width 0.25s ease;
-  transition: width 0.25s ease;
 }
 
 .nav__icon {
@@ -3273,6 +3273,10 @@ button:focus {
   font-size: 18px;
   line-height: 1.5;
   color: #333333;
+}
+
+.courses-card__content-hidden {
+  display: none;
 }
 
 .courses-card__btns {
@@ -5236,6 +5240,22 @@ button:focus {
     margin-left: 0;
   }
 
+  .nav__item--active .nav__link {
+    color: #39AC56;
+  }
+
+  .nav__item--active .nav__link::before,
+  .nav__item--active .nav__link::after {
+    background-color: #39AC56;
+  }
+
+  .nav__item--active .nav__link .nav__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+  }
+
   .nav__link {
     padding: 15px;
     display: -webkit-box;
@@ -5279,22 +5299,6 @@ button:focus {
 
   .nav__link:hover::before {
     height: 1px;
-  }
-
-  .nav__link--active {
-    color: #39AC56;
-  }
-
-  .nav__link--active::before,
-  .nav__link--active::after {
-    background-color: #39AC56;
-  }
-
-  .nav__link--active .nav__icon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    fill: transparent;
   }
 
   .hero__cover .container {

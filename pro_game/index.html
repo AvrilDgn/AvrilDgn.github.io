@@ -15,134 +15,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Checking webp image format support -->
-    <script>
-        ! function(e, n, A) {
-            function o(e, n) {
-                return typeof e === n
-            }
 
-            function t() {
-                var e, n, A, t, a, i, l;
-                for (var f in r)
-                    if (r.hasOwnProperty(f)) {
-                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
-                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
-                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
-                    }
-            }
-
-            function a(e) {
-                var n = u.className,
-                    A = Modernizr._config.classPrefix || "";
-                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
-                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
-                    n = n.replace(o, "$1" + A + "js$2")
-                }
-                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
-            }
-
-            function i(e, n) {
-                if ("object" == typeof e)
-                    for (var A in e) f(e, A) && i(A, e[A]);
-                else {
-                    e = e.toLowerCase();
-                    var o = e.split("."),
-                        t = Modernizr[o[0]];
-                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
-                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
-                }
-                return Modernizr
-            }
-            var s = [],
-                r = [],
-                l = {
-                    _version: "3.6.0",
-                    _config: {
-                        classPrefix: "",
-                        enableClasses: !0,
-                        enableJSClass: !0,
-                        usePrefixes: !0
-                    },
-                    _q: [],
-                    on: function(e, n) {
-                        var A = this;
-                        setTimeout(function() {
-                            n(A[e])
-                        }, 0)
-                    },
-                    addTest: function(e, n, A) {
-                        r.push({
-                            name: e,
-                            fn: n,
-                            options: A
-                        })
-                    },
-                    addAsyncTest: function(e) {
-                        r.push({
-                            name: null,
-                            fn: e
-                        })
-                    }
-                },
-                Modernizr = function() {};
-            Modernizr.prototype = l, Modernizr = new Modernizr;
-            var f, u = n.documentElement,
-                c = "svg" === u.nodeName.toLowerCase();
-            ! function() {
-                var e = {}.hasOwnProperty;
-                f = o(e, "undefined") || o(e.call, "undefined") ? function(e, n) {
-                    return n in e && o(e.constructor.prototype[n], "undefined")
-                } : function(n, A) {
-                    return e.call(n, A)
-                }
-            }(), l._l = {}, l.on = function(e, n) {
-                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function() {
-                    Modernizr._trigger(e, Modernizr[e])
-                }, 0)
-            }, l._trigger = function(e, n) {
-                if (this._l[e]) {
-                    var A = this._l[e];
-                    setTimeout(function() {
-                        var e, o;
-                        for (e = 0; e < A.length; e++)(o = A[e])(n)
-                    }, 0), delete this._l[e]
-                }
-            }, Modernizr._q.push(function() {
-                l.addTest = i
-            }), Modernizr.addAsyncTest(function() {
-                function e(e, n, A) {
-                    function o(n) {
-                        var o = n && "load" === n.type ? 1 == t.width : !1,
-                            a = "webp" === e;
-                        i(e, a && o ? new Boolean(o) : o), A && A(n)
-                    }
-                    var t = new Image;
-                    t.onerror = o, t.onload = o, t.src = n
-                }
-                var n = [{
-                        uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
-                        name: "webp"
-                    }, {
-                        uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
-                        name: "webp.alpha"
-                    }, {
-                        uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
-                        name: "webp.animation"
-                    }, {
-                        uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
-                        name: "webp.lossless"
-                    }],
-                    A = n.shift();
-                e(A.name, A.uri, function(A) {
-                    if (A && "load" === A.type)
-                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
-                })
-            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
-            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
-            e.Modernizr = Modernizr
-        }(window, document);
-    </script>
 
     <!-- CSS -->
 
@@ -241,7 +114,7 @@
 
                     <nav class="nav header__nav">
                         <ul class="nav__list">
-                            <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">
+                            <li class="nav__item nav__item--active"><a class="nav__link" href="index.html">
                                     Главная
                                     <svg class="nav__icon">
                                         <use xlink:href="assets/img/sprite/sprite.svg#cursor"></use>
@@ -557,6 +430,10 @@
                                     </div>
 
                                     <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+
+                                    <p class="courses-card__content-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cumque.</p>
+                                    <input class='courses-card__input-hidden' type="hidden" value="assets/img/modal/scratch.jpg">
+
                                     <div class="courses-card__btns">
                                         <a href="#" class="courses-card__btn button button--dark" data-modal="modal-course-more">
                                             <span>Подробнее</span>
@@ -583,6 +460,10 @@
                                     </div>
 
                                     <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+
+                                    <p class="courses-card__content-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cumque.</p>
+                                    <input class='courses-card__input-hidden' type="hidden" value="assets/img/modal/scratch.jpg">
+
                                     <div class="courses-card__btns">
                                         <a href="#" class="courses-card__btn button button--dark" data-modal="modal-course-more">
                                             <span>Подробнее</span>
@@ -609,6 +490,10 @@
                                     </div>
 
                                     <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+
+                                    <p class="courses-card__content-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cumque.</p>
+                                    <input class='courses-card__input-hidden' type="hidden" value="assets/img/modal/scratch.jpg">
+
                                     <div class="courses-card__btns">
                                         <a href="#" class="courses-card__btn button button--dark" data-modal="modal-course-more">
                                             <span>Подробнее</span>
@@ -635,6 +520,10 @@
                                     </div>
 
                                     <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+
+                                    <p class="courses-card__content-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cumque.</p>
+                                    <input class='courses-card__input-hidden' type="hidden" value="assets/img/modal/scratch.jpg">
+
                                     <div class="courses-card__btns">
                                         <a href="#" class="courses-card__btn button button--dark" data-modal="modal-course-more">
                                             <span>Подробнее</span>
@@ -661,6 +550,10 @@
                                     </div>
 
                                     <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+
+                                    <p class="courses-card__content-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cumque.</p>
+                                    <input class='courses-card__input-hidden' type="hidden" value="assets/img/modal/scratch.jpg">
+
                                     <div class="courses-card__btns">
                                         <a href="#" class="courses-card__btn button button--dark" data-modal="modal-course-more">
                                             <span>Подробнее</span>
@@ -687,6 +580,10 @@
                                     </div>
 
                                     <p class="courses-card__desc">Простой и доступный язык программирования для создания мультфильмов и игр</p>
+
+                                    <p class="courses-card__content-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cumque.</p>
+                                    <input class='courses-card__input-hidden' type="hidden" value="assets/img/modal/scratch.jpg">
+
                                     <div class="courses-card__btns">
                                         <a href="#" class="courses-card__btn button button--dark" data-modal="modal-course-more">
                                             <span>Подробнее</span>
@@ -1203,65 +1100,6 @@
                 <a href="#" class="modal__close-btn"></a>
             </div>
 
-
-            <!-- <div class="modal__container modal__container--buy" id="modal-buy">
-
-			<h2 class="modal__title">
-				Свитшот ProG
-			</h2>
-
-			<form class="modal__form form form--modal" id="form-buy" action="#" method="post">
-				<p class="form__field form__field">
-					<input class="form__input" id="modal-buy-name" placeholder="Ваше имя" type="text" name="name" required>
-				</p>
-
-				<p class="form__field form__field">
-					<input class="form__input phoneMask" id="modal-buy-phone" type="tel" name="phone"
-						placeholder="Номер телефона" required>
-				</p>
-
-				<p class="form__privacy-policy">
-					Нажимая кнопку отправить вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
-					и с <a href="#">согласием</a> на обработку персональной информацией
-				</p>
-
-				<button class="form__submit-btn form__submit-btn button button--light-border" type="submit">
-					Отправить
-				</button>
-			</form>
-
-			<a href="#" class="modal__close-btn"></a>
-		</div>
-
-		<div class="modal__container modal__container--signup-course" id="modal-signup-course">
-
-			<h2 class="modal__title">
-				Записаться на Scratch
-			</h2>
-
-			<form class="modal__form form form--modal" id="form-signup-course" action="#" method="post">
-				<p class="form__field form__field">
-					<input class="form__input" id="modal-signup-course-name" placeholder="Ваше имя" type="text" name="name"
-						required>
-				</p>
-
-				<p class="form__field form__field">
-					<input class="form__input phoneMask" id="modal-signup-course-phone" type="tel" name="phone"
-						placeholder="Номер телефона" required>
-				</p>
-
-				<p class="form__privacy-policy">
-					Нажимая кнопку отправить вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
-					и с <a href="#">согласием</a> на обработку персональной информацией
-				</p>
-
-				<button class="form__submit-btn form__submit-btn button button--light-border" type="submit">
-					Отправить
-				</button>
-			</form>
-
-			<a href="#" class="modal__close-btn"></a>
-		</div> -->
 
             <div class="modal__container modal__container--course-more modal-course-more" id="modal-course-more">
 
