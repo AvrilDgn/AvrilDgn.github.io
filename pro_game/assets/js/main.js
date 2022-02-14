@@ -15416,29 +15416,29 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 						if (this.closest('.courses-card') || this.closest('.modal-course-more') || this.closest('.courses-short__item')) {
 							let parent = this.closest('.courses-card') || this.closest('.modal-course-more') || this.closest('.courses-short__item');
 
-							let value = parent.querySelector('.courses-card__title, .modal-course-more__title, .courses-short__type').textContent;
-							let age = parent.querySelector('.courses-card__years, .modal-course-more__age').textContent;
+							let value = parent.querySelector('.courses-card__title, .modal-course-more__title, .courses-short__type');
+							let age = parent.querySelector('.courses-card__years, .modal-course-more__age');
 
 							if (value) {
 								if (modalForm.querySelector('input[name = course]')) {
-									modalForm.querySelector('input[name = course]').value = value;
+									modalForm.querySelector('input[name = course]').value = value.textContent;
 								} else {
 									let input = document.createElement('input');
 									input.type = 'hidden';
 									input.name = 'course';
-									input.value = value;
+									input.value = value.textContent;
 									modalForm.appendChild(input);
 								}
 							}
 
 							if (age) {
 								if (modalForm.querySelector('input[name = age]')) {
-									modalForm.querySelector('input[name = age]').value = age;
+									modalForm.querySelector('input[name = age]').value = age.textContent;
 								} else {
 									let input = document.createElement('input');
 									input.type = 'hidden';
 									input.name = 'age';
-									input.value = age;
+									input.value = age.textContent;
 									modalForm.appendChild(input);
 								}
 							}
@@ -15446,42 +15446,42 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 						} else if (this.closest('.shop-card')) {
 							let parent = this.closest('.shop-card');
 
-							let value = parent.querySelector('.shop-card__name').textContent;
-							let type = parent.querySelector('.shop-card__type').textContent;
-							let price = parent.querySelector('.shop-card__price-value').textContent;
+							let value = parent.querySelector('.shop-card__name');
+							let type = parent.querySelector('.shop-card__type');
+							let price = parent.querySelector('.shop-card__price-value');
 
 							if (value) {
 								if (modalForm.querySelector('input[name = product-name]')) {
-									modalForm.querySelector('input[name = product-name]').value = value;
+									modalForm.querySelector('input[name = product-name]').value = value.textContent;
 								} else {
 									let input = document.createElement('input');
 									input.type = 'hidden';
 									input.name = 'product-name';
-									input.value = value;
+									input.value = value.textContent;
 									modalForm.appendChild(input);
 								}
 							}
 
 							if (type) {
 								if (modalForm.querySelector('input[name = category]')) {
-									modalForm.querySelector('input[name = category]').value = type;
+									modalForm.querySelector('input[name = category]').value = type.textContent;
 								} else {
 									let input = document.createElement('input');
 									input.type = 'hidden';
 									input.name = 'category';
-									input.value = type;
+									input.value = type.textContent;
 									modalForm.appendChild(input);
 								}
 							}
 
 							if (price) {
 								if (modalForm.querySelector('input[name = price]')) {
-									modalForm.querySelector('input[name = price]').value = price;
+									modalForm.querySelector('input[name = price]').value = price.textContent;
 								} else {
 									let input = document.createElement('input');
 									input.type = 'hidden';
 									input.name = 'price';
-									input.value = price;
+									input.value = price.textContent;
 									modalForm.appendChild(input);
 								}
 							}
