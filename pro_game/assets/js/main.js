@@ -15369,6 +15369,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 
 			const overlay = modal.querySelector('.modal__overlay');
+			overlay.addEventListener("click", closeModal);
 
 			openBtn.addEventListener("click", openModal);
 
@@ -15380,8 +15381,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				e.preventDefault();
 
 				let handler = () => {
-					overlay.addEventListener("click", closeModal);
-					openBtn.removeEventListener("click", openModal);
+					// overlay.addEventListener("click", closeModal);
+					// openBtn.removeEventListener("click", openModal);
 				}
 
 				let shown = () => {
@@ -15412,24 +15413,83 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 						break;
 					case '#modal-signup':
 
-						let value;
-						parent = this.closest('.courses-card') || this.closest('.modal-course-more');
+						if (this.closest('.courses-card') || this.closest('.modal-course-more') || this.closest('.courses-short__item')) {
+							let parent = this.closest('.courses-card') || this.closest('.modal-course-more') || this.closest('.courses-short__item');
 
-						if (!parent) {
-							value = 'free';
+							let value = parent.querySelector('.courses-card__title, .modal-course-more__title, .courses-short__type').textContent;
+							let age = parent.querySelector('.courses-card__years, .modal-course-more__age').textContent;
+
+							if (value) {
+								if (modalForm.querySelector('input[name = course]')) {
+									modalForm.querySelector('input[name = course]').value = value;
+								} else {
+									let input = document.createElement('input');
+									input.type = 'hidden';
+									input.name = 'course';
+									input.value = value;
+									modalForm.appendChild(input);
+								}
+							}
+
+							if (age) {
+								if (modalForm.querySelector('input[name = age]')) {
+									modalForm.querySelector('input[name = age]').value = age;
+								} else {
+									let input = document.createElement('input');
+									input.type = 'hidden';
+									input.name = 'age';
+									input.value = age;
+									modalForm.appendChild(input);
+								}
+							}
+
+						} else if (this.closest('.shop-card')) {
+							let parent = this.closest('.shop-card');
+
+							let value = parent.querySelector('.shop-card__name').textContent;
+							let type = parent.querySelector('.shop-card__type').textContent;
+							let price = parent.querySelector('.shop-card__price-value').textContent;
+
+							if (value) {
+								if (modalForm.querySelector('input[name = product-name]')) {
+									modalForm.querySelector('input[name = product-name]').value = value;
+								} else {
+									let input = document.createElement('input');
+									input.type = 'hidden';
+									input.name = 'product-name';
+									input.value = value;
+									modalForm.appendChild(input);
+								}
+							}
+
+							if (type) {
+								if (modalForm.querySelector('input[name = category]')) {
+									modalForm.querySelector('input[name = category]').value = type;
+								} else {
+									let input = document.createElement('input');
+									input.type = 'hidden';
+									input.name = 'category';
+									input.value = type;
+									modalForm.appendChild(input);
+								}
+							}
+
+							if (price) {
+								if (modalForm.querySelector('input[name = price]')) {
+									modalForm.querySelector('input[name = price]').value = price;
+								} else {
+									let input = document.createElement('input');
+									input.type = 'hidden';
+									input.name = 'price';
+									input.value = price;
+									modalForm.appendChild(input);
+								}
+							}
+
 						} else {
-							value = parent.querySelector('.courses-card__title, .modal-course-more__title').textContent;
+							// let value = 'free';
 						}
 
-						if (modalForm.querySelector('input[name = course]')) {
-							modalForm.querySelector('input[name = course]').value = value;
-						} else {
-							let input = document.createElement('input');
-							input.type = 'hidden';
-							input.name = 'course';
-							input.value = value;
-							modalForm.appendChild(input);
-						}
 
 						break;
 					default:
@@ -15461,8 +15521,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 					modal.classList.remove('modal--show');
 					modalWrap.style.display = null;
 
-					openBtn.addEventListener("click", openModal);
-					overlay.removeEventListener("click", closeModal);
+					// openBtn.addEventListener("click", openModal);
+					// overlay.removeEventListener("click", closeModal);
 				}
 
 				modal.addEventListener('transitionend', handler, { once: true });
@@ -15883,6 +15943,20 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		if (forms[i] && window.FormData) {
 
 			let form = forms[i];
+			let btn = form.querySelector('button[type="submit"]');
+
+			let message = new Object();
+			message.loading = 'Загрузка...';
+			message.success = 'Спасибо! Отправка прошла успешно!';
+			message.failure = 'Что-то пошло не так...';
+
+			let statusMessage = document.createElement('div');
+			statusMessage.classList.add('form__status');
+
+			let request = new XMLHttpRequest();
+			request.open('POST', 'form.php', true);
+			request.setRequestHeader('accept', 'application/json');
+
 
 			form.addEventListener('submit', function (e) {
 				e.preventDefault();
@@ -15990,6 +16064,54 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				//response
 				if (reqFault) {
 					return;
+				} else {
+
+					let formData = new FormData(form);
+					let statusOn = false;
+
+					request.send(formData);
+
+					request.onreadystatechange = function () {
+						if (request.readyState === 4) {
+							if (request.status === 200) {
+								let reqJSON = JSON.parse(request.responseText);
+
+								if (reqJSON.success) {
+									let modal = form.closest('.modal');
+
+									if (modal) {
+										modal.classList.remove('modal--visible');
+										scroll_lock_default.a.enablePageScroll(modal);
+
+										let handler = () => {
+											modal.classList.remove('modal--show');
+											modal.querySelector('.modal__container').style.display = null;
+										}
+
+										modal.addEventListener('transitionend', handler, { once: true });
+									}
+								}
+							}
+							else {
+								statusMessage.innerHTML = message.failure;
+								btn.disabled = false;
+							}
+						}
+
+						// if (request.responseText) {
+						// 	statusMessage.innerHTML = request.responseText;
+						// }
+
+						if (!statusOn) {
+							statusMessage.style.display = 'none';
+							form.appendChild(statusMessage);
+							new DLAnimate().show(statusMessage, {
+								name: 'fade',
+								track: 'animation'
+							});
+							statusOn = true;
+						}
+					}
 				}
 			});
 		}
