@@ -5979,15 +5979,15 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		}, { once: true });
 	}
 
-	headerToggleBtn.addEventListener('click', (e) => {
-		e.preventDefault();
+	// headerToggleBtn.addEventListener('click', (e) => {
+	// 	e.preventDefault();
 
-		if (!header.classList.contains('header--showed')) {
-			showMobHeader();
-		} else {
-			hideMobHeader();
-		}
-	});
+	// 	if (!header.classList.contains('header--showed')) {
+	// 		showMobHeader();
+	// 	} else {
+	// 		hideMobHeader();
+	// 	}
+	// });
 
 	window.addEventListener('resize', function () {
 		if (windowWidth > 1200 && headerShown) {
@@ -5997,6 +5997,41 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			headerToggleBtn.classList.remove('header__toggle-btn--compress');
 			headerShown = false;
 		}
+	});
+
+
+
+	/**
+	 * Outstaff more
+	 */
+
+	let outstaffCards = document.querySelectorAll('.outstaff-card');
+
+	outstaffCards.forEach(card => {
+		let hiddenBlock = card.querySelector('.outstaff-card__hidden-block');
+		let btn = card.querySelector('.outstaff-card__more-btn');
+
+		btn.addEventListener('click', function (e) {
+
+			hiddenBlock.style.height = 'initial'; 
+			let height = hiddenBlock.clientHeight;
+
+			hiddenBlock.style.height = null;
+
+			raf(() => {
+				raf(() => {
+					hiddenBlock.style.height = height + 'px';
+				});
+			});
+
+			new DLAnimate().hide(this, {
+				name: 'fade',
+				track: 'animation',
+				afterLeave: function (el) {
+
+				}
+			});
+		})
 	});
 
 
