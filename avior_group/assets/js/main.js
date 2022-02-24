@@ -5991,6 +5991,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 */
 
 	let outstaffCards = document.querySelectorAll('.outstaff-card');
+	let isOutstaffShown = false;
 
 	outstaffCards.forEach(card => {
 		let hiddenBlock = card.querySelector('.outstaff-card__hidden-block');
@@ -5998,27 +5999,148 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		btn.addEventListener('click', function (e) {
 
-			hiddenBlock.style.height = 'initial';
-			let height = hiddenBlock.clientHeight;
+			if (!isOutstaffShown) {
+				hiddenBlock.style.height = 'initial';
+				let height = hiddenBlock.clientHeight;
 
-			hiddenBlock.style.height = null;
+				hiddenBlock.style.height = null;
 
-			raf(() => {
 				raf(() => {
-					hiddenBlock.style.height = height + 'px';
+					raf(() => {
+						hiddenBlock.style.height = height + 'px';
+					});
 				});
-			});
 
-			new DLAnimate().hide(this, {
-				name: 'fade',
-				track: 'animation',
-				afterLeave: function (el) {
+				new DLAnimate().hide(this, {
+					name: 'fade',
+					track: 'animation',
+					afterLeave: function (el) {
+						el.querySelector('span').textContent = 'Скрыть';
+						el.classList.add('outstaff-card__more-btn--hide');
+						isOutstaffShown = true;
 
-				}
-			});
+						new DLAnimate().show(el, {
+							name: 'fade',
+							track: 'animation',
+						});
+					}
+				});
+
+			} else {
+				hiddenBlock.style.height = '0px';
+
+				new DLAnimate().hide(this, {
+					name: 'fade',
+					track: 'animation',
+					afterLeave: function (el) {
+						el.querySelector('span').textContent = 'Подробнее';
+						el.classList.remove('outstaff-card__more-btn--hide');
+						isOutstaffShown = false;
+
+						new DLAnimate().show(el, {
+							name: 'fade',
+							track: 'animation',
+						});
+					}
+				});
+
+			}
+
 		})
 	});
 
+
+	/**
+	 * yandex map
+	 */
+
+
+	let map = document.querySelector('.yaMap');
+
+	ymaps.ready(init(map));
+
+	function init(el) {
+		return function () {
+			let mapCenterPos = el.dataset.center.split(',');
+			let mapPinSize = el.dataset.pinSize.split(',');
+
+			let map = new ymaps.Map(el, {
+				center: mapCenterPos,
+				zoom: el.dataset.zoom,
+				controls: []
+			});
+
+			let placemark = new ymaps.Placemark(mapCenterPos, null, {
+
+				iconLayout: 'default#image',
+				iconImageHref: "assets/img/map-pin.svg",
+				iconImageSize: mapPinSize,
+				iconImageOffset: [-Math.floor(mapPinSize[0] / 2), -mapPinSize[1]],
+			});
+
+			map.geoObjects.add(placemark);
+		};
+	};
+
+	// let maps = document.querySelectorAll('.yaMap');
+	// let yaApiLoad = false;
+	// let yaApiLoaded = false;
+
+	// maps.forEach(map => {
+	// 	window.addEventListener('scroll', function () {
+	// 		mapShow(map);
+	// 	});
+	// });
+
+	// function mapShow(map) {
+	// 	let mapShown = map.dataset.shown;
+
+	// 	if (mapShown) return;
+
+	// 	if (!map.classList.contains("entered")) return;
+
+	// 	if (!yaApiLoad) {
+	// 		let script = document.createElement("script");
+	// 		script.type = "text/javascript";
+	// 		script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3398ec65-e86b-4576-913c-20b902a73916";
+	// 		document.body.appendChild(script);
+	// 		yaApiLoad = true;
+	// 		script.onload = () => {
+	// 			yaApiLoaded = true;
+	// 			map.dataset.shown = true;
+	// 			ymaps.ready(init(map));
+	// 		};
+	// 		return;
+	// 	}
+
+	// 	if (!yaApiLoaded) return false;
+
+	// 	map.dataset.shown = true;
+	// 	ymaps.ready(init(map));
+	// }
+
+	// function init(el) {
+	// 	return function () {
+	// 		let mapCenterPos = el.dataset.center.split(',');
+	// 		let mapPinSize = el.dataset.pinSize.split(',');
+
+	// 		let map = new ymaps.Map(el, {
+	// 			center: mapCenterPos,
+	// 			zoom: el.dataset.zoom,
+	// 			controls: []
+	// 		});
+
+	// 		let placemark = new ymaps.Placemark(mapCenterPos, null, {
+
+	// 			iconLayout: 'default#image',
+	// 			iconImageHref: "assets/img/map-pin.png",
+	// 			iconImageSize: mapPinSize,
+	// 			iconImageOffset: [-Math.floor(mapPinSize[0] / 2), -mapPinSize[1]],
+	// 		});
+
+	// 		map.geoObjects.add(placemark);
+	// 	};
+	// };
 
 });
 
