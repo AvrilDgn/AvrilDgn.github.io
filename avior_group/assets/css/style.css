@@ -451,12 +451,6 @@ button:focus {
   display: flex;
 }
 
-.header__nav:not(:first-child) {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 0;
-}
-
 .header__submenu-open {
   position: relative;
   margin-left: 20px;
@@ -1432,6 +1426,11 @@ button:focus {
     margin-top: 46px;
   }
 
+  .outstaff__item {
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+
   .outstaff-card {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -1545,12 +1544,11 @@ button:focus {
 
   .footer__copy {
     margin-top: 96px;
-    text-align: left;
   }
 
   .hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 45px;
+    padding-bottom: 52px;
   }
 
   .hero__title {
@@ -1608,12 +1606,37 @@ button:focus {
     margin-bottom: 10px;
   }
 
+  .outstaff {
+    padding-top: 50px;
+    padding-bottom: 85px;
+  }
+
   .outstaff-card {
-    padding: 15px;
+    padding: 27px 14px;
   }
 
   .outstaff-card__title {
     font-size: 22px;
+  }
+
+  .outstaff-card__description {
+    margin-top: 23px;
+  }
+
+  .outstaff-card__charx-list {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .outstaff-card__charx-item {
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .outstaff-card__footer {
+    margin-top: 30px;
+    padding-top: 25px;
   }
 
   .outstaff-card__salary {
@@ -1621,6 +1644,7 @@ button:focus {
   }
 
   .outstaff-card__more-btn {
+    margin-top: 40px;
     font-size: 18px;
   }
 
