@@ -91,7 +91,55 @@
 $(document).ready(function () {
 
 	//masked input phone
-	$(".phone").mask("+7 (999) 999-99-99", { placeholder: "_" });
+	$("input[type='tel']").mask("+7 (999) 999-99-99", { placeholder: "_" });
+
+	// menufixed
+	$(window).on("scroll", function () {
+		let header = $(".header"),
+			main = $(".main");
+
+		if ($(window).scrollTop() > 10) {
+			header.addClass("header--fixed");
+			main.css("padding-top", header.height());
+		} else {
+			header.removeClass("header--fixed");
+			main.css("padding-top", '');
+		}
+	});
+
+	//scroll
+	$(document).on("click", 'a[href^="#"]', function (t) { t.preventDefault(), $("html, body").animate({ scrollTop: $($.attr(this, "href")).offset().top }, 500) });
+
+
+	//tabs
+	$(".portfolio__tabs .portfolio__tab").on("click", function (a) {
+		a.preventDefault(),
+			$(".portfolio__tabs .portfolio__tab").removeClass("portfolio__tab--active"),
+			$(this).addClass("portfolio__tab--active"),
+			$(".portfolio__tab-content-wrapper .portfolio__tab-content").removeClass("portfolio__tab-content--active");
+		let href = $(this).attr("data-href");
+		$(".portfolio__tab-content-wrapper #" + href).addClass("portfolio__tab-content--active");
+	});
+
+	$(".portfolio__tab-content").each(function () {
+		let id = $(this).attr("id");
+
+		$("#" + id + " .thumbs__img").on("click", function () {
+			$("#" + id + " .thumbs__img--active").removeClass("thumbs__img--active"),
+				$(this).addClass("thumbs__img--active");
+
+			let src = $(this).find("img").attr("src");
+			$("#" + id + " .portfolio__big-img").find("img").attr("src", src)
+		})
+	});
+
+	//карта
+	function init() {
+		(myMap = new ymaps.Map("map", { center: [55.71231956901403, 37.66280249999997], behaviors: ["default"], zoom: 16, controls: ["zoomControl", "fullscreenControl"] })).behaviors.disable(["rightMouseButtonMagnifier", "scrollZoom"]);
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { myMap.behaviors.disable('drag'); }; myPlacemark1 = new ymaps.Placemark([55.71231956901403, 37.66280249999997], {}, { iconLayout: "default#image", iconImageHref: "assets/img/map-pin.png", iconImageSize: [73, 97], iconImageOffset: [-36.5, -97] }), myMap.geoObjects.add(myPlacemark1); 2
+	} ymaps.ready(init); var myMap;
+
+
 
 	//menu
 	$(".menudef").click(function (e) { $(".head_menu").toggleClass("activemenu"), $("#mysidenav").toggleClass("width250"), e.preventDefault() }), $(".closebtn, section, .alinks").click(function () { $(".head_menu").removeClass("activemenu"), $("#mysidenav").removeClass("width250") });
@@ -99,14 +147,8 @@ $(document).ready(function () {
 	//paralax 
 	if (window.innerWidth > 800) { var lFollowX = 0, lFollowY = 0, x = 0, y = 0, friction = .02; function paralaxbg() { translate = "translate(" + .5 * (x += (lFollowX - x) * friction) + "px, " + .5 * (y += (lFollowY - y) * friction) + "px) scale(1.1)", translate2 = "translate(" + 2 * x + "px, " + 2 * y + "px) scale(1.1)", translate3 = "translate(" + 2 * x + "px, " + 2 * y + "px) scale(1.1)", $(".parbg").css({ "-webit-transform": translate, "-moz-transform": translate, transform: translate }), $(".parbg2").css({ "-webit-transform": translate2, "-moz-transform": translate2, transform: translate2 }), $(".parbg3").css({ "-webit-transform": translate3, "-moz-transform": translate3, transform: translate3 }), window.requestAnimationFrame(paralaxbg) } $(window).on("mousemove", function (a) { var t = Math.max(-100, Math.min(100, $(window).width() / 2 - a.clientX)), r = Math.max(-100, Math.min(100, $(window).height() / 2 - a.clientY)); lFollowX = 25 * t / 100, lFollowY = 25 * r / 100 }), paralaxbg(); };
 
-	// menufixed
-	$(window).on("scroll", function () { var o = $("#header"); 10 < $(window).scrollTop() ? o.addClass("header--fixed") : o.removeClass("header--fixed") });
-
 	//moreless
 	var prmCount = 3, toggleCount = 3, totalCnt = $("#block_otziv .col3").length; $(".morelink").click(function (o) { o.preventDefault(), $("#block_otziv .lesslink").removeClass("hiddeni"); for (var l = prmCount + $("#block_otziv .col3.active").length, t = l + toggleCount, i = l; i < t; i++)$("#block_otziv").find(".col3").eq(i).addClass("active"); (l = prmCount + $("#block_otziv .col3.active").length) == totalCnt && $(this).addClass("hiddeni") }), $(".lesslink").click(function (o) { o.preventDefault(), $("#block_otziv .morelink").removeClass("hiddeni"), $("#block_otziv").find(".col3").removeClass("active"), $(this).addClass("hiddeni") });
-
-	//scroll
-	$(document).on("click", 'a[href^="#"]', function (t) { t.preventDefault(), $("html, body").animate({ scrollTop: $($.attr(this, "href")).offset().top }, 500) });
 
 	//перенос данных в форму с первой формы
 	$(".radio2").on("change", function (a) { var n = $(this).val(); $("#popup_main input[name='kolvo1']").val(n) }), $(".radio1").on("change", function (a) { var n = $(this).val(); $("#popup_main input[name='type1']").val(n) });
@@ -114,23 +156,6 @@ $(document).ready(function () {
 
 //Проверка формы
 $("form .btn_or").click(function (e) { var t = $(this).closest("form"), i = !0; t.find(".required").each(function () { var e = $(this).val(); e && "" != e || ($(this).addClass("error"), i = !1) }), i || e.preventDefault() }), $(".required").focus(function () { var e = $(this); e.removeClass("error"), $("span.error", e).fadeOut() }), $(document).on("change", "input[name='checkbox']", function (e) { var t = $(this).closest("form"); $(this).is(":checked") ? t.find('button[type="submit"]').removeClass("disabled") : (t.find('button[type="submit"]').addClass("disabled"), t.find('button[type="submit"]').off("click")) }), $(".metrreq").keypress(function (e) { if (8 != e.which && 0 != e.which && (e.which < 48 || 57 < e.which)) return !1 });
-
-//tabs
-$(".portfolio__tabs .portfolio__tab").on("click", function (a) { 
-	a.preventDefault(), 
-	$(".portfolio__tabs .portfolio__tab").removeClass("portfolio__tab--active"),
-	$(this).addClass("portfolio__tab--active"), 
-	$(".portfolio__tab-content-wrapper .portfolio__tab-content").removeClass("portfolio__tab-content--active"); 
-	let href = $(this).attr("data-href"); 
-	$(".portfolio__tab-content-wrapper #" + href).addClass("portfolio__tab-content--active") ;
-});
-
-//карта
-function init() {
-	(myMap = new ymaps.Map("map", { center: [55.71231956901403, 37.66280249999997], behaviors: ["default"], zoom: 16, controls: ["zoomControl", "fullscreenControl"] })).behaviors.disable(["rightMouseButtonMagnifier", "scrollZoom"]);
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { myMap.behaviors.disable('drag'); }; myPlacemark1 = new ymaps.Placemark([55.71231956901403, 37.66280249999997], {}, { iconLayout: "default#image", iconImageHref: "assets/img/map-pin.png", iconImageSize: [73, 97], iconImageOffset: [-36.5, -97] }), myMap.geoObjects.add(myPlacemark1); 2
-} ymaps.ready(init); var myMap;
-
 
 
 /***/ })
