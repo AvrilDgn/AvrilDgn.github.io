@@ -94,10 +94,10 @@ $(document).ready(function () {
 	$("input[type='tel']").mask("+7 (999) 999-99-99", { placeholder: "_" });
 
 	// menufixed
-	$(window).on("scroll", function () {
-		let header = $(".header"),
-			main = $(".main");
+	let header = $(".header"),
+		main = $(".main");
 
+	let headerFixation = function () {
 		if ($(window).scrollTop() > 10) {
 			header.addClass("header--fixed");
 			main.css("padding-top", header.height());
@@ -105,11 +105,41 @@ $(document).ready(function () {
 			header.removeClass("header--fixed");
 			main.css("padding-top", '');
 		}
-	});
+	}
+
+	headerFixation();
+	$(window).on("scroll", headerFixation);
 
 	//scroll
 	$(document).on("click", 'a[href^="#"]', function (t) { t.preventDefault(), $("html, body").animate({ scrollTop: $($.attr(this, "href")).offset().top }, 500) });
 
+	//paralax 
+	if (window.innerWidth > 800) {
+		var lFollowX = 0,
+			lFollowY = 0,
+			x = 0,
+			y = 0,
+			friction = .02;
+
+		function paralaxbg() {
+			translate = "translate(" + .5 * (x += (lFollowX - x) * friction) + "px, " + .5 * (y += (lFollowY - y) * friction) + "px) scale(1.1)",
+				translate2 = "translate(" + 2 * x + "px, " + 2 * y + "px) scale(1.1)",
+				translate3 = "translate(" + 2 * x + "px, " + 2 * y + "px) scale(1.1)",
+				$(".parbg").css({ "-webit-transform": translate, "-moz-transform": translate, transform: translate }),
+				$(".parbg2").css({ "-webit-transform": translate2, "-moz-transform": translate2, transform: translate2 }),
+				$(".parbg3").css({ "-webit-transform": translate3, "-moz-transform": translate3, transform: translate3 }),
+				window.requestAnimationFrame(paralaxbg)
+		}
+
+		$(window).on("mousemove", function (a) {
+			var xPos = Math.max(-100, Math.min(100, $(window).width() / 2 - a.clientX)),
+				yPos = Math.max(-100, Math.min(100, $(window).height() / 2 - a.clientY));
+			lFollowX = 25 * xPos / 100,
+				lFollowY = 25 * yPos / 100
+		}),
+
+			paralaxbg();
+	};
 
 	//tabs
 	$(".portfolio__tabs .portfolio__tab").on("click", function (a) {
@@ -142,21 +172,70 @@ $(document).ready(function () {
 
 
 	//menu
-	$(".menudef").click(function (e) { $(".head_menu").toggleClass("activemenu"), $("#mysidenav").toggleClass("width250"), e.preventDefault() }), $(".closebtn, section, .alinks").click(function () { $(".head_menu").removeClass("activemenu"), $("#mysidenav").removeClass("width250") });
+	$(".header__toggle-btn").click(function (e) {
+		$(".header__mobile-menu").toggleClass(".header__mobile-menu--active"),
+			e.preventDefault()
+	}),
+		$(".header__toggle-btn, section, .alinks").click(function () {
+			$(".header__mobile-menu").removeClass(".header__mobile-menu--active")
+		});
 
-	//paralax 
-	if (window.innerWidth > 800) { var lFollowX = 0, lFollowY = 0, x = 0, y = 0, friction = .02; function paralaxbg() { translate = "translate(" + .5 * (x += (lFollowX - x) * friction) + "px, " + .5 * (y += (lFollowY - y) * friction) + "px) scale(1.1)", translate2 = "translate(" + 2 * x + "px, " + 2 * y + "px) scale(1.1)", translate3 = "translate(" + 2 * x + "px, " + 2 * y + "px) scale(1.1)", $(".parbg").css({ "-webit-transform": translate, "-moz-transform": translate, transform: translate }), $(".parbg2").css({ "-webit-transform": translate2, "-moz-transform": translate2, transform: translate2 }), $(".parbg3").css({ "-webit-transform": translate3, "-moz-transform": translate3, transform: translate3 }), window.requestAnimationFrame(paralaxbg) } $(window).on("mousemove", function (a) { var t = Math.max(-100, Math.min(100, $(window).width() / 2 - a.clientX)), r = Math.max(-100, Math.min(100, $(window).height() / 2 - a.clientY)); lFollowX = 25 * t / 100, lFollowY = 25 * r / 100 }), paralaxbg(); };
 
-	//moreless
-	var prmCount = 3, toggleCount = 3, totalCnt = $("#block_otziv .col3").length; $(".morelink").click(function (o) { o.preventDefault(), $("#block_otziv .lesslink").removeClass("hiddeni"); for (var l = prmCount + $("#block_otziv .col3.active").length, t = l + toggleCount, i = l; i < t; i++)$("#block_otziv").find(".col3").eq(i).addClass("active"); (l = prmCount + $("#block_otziv .col3.active").length) == totalCnt && $(this).addClass("hiddeni") }), $(".lesslink").click(function (o) { o.preventDefault(), $("#block_otziv .morelink").removeClass("hiddeni"), $("#block_otziv").find(".col3").removeClass("active"), $(this).addClass("hiddeni") });
+	//more reviews
+	let reviewsCount = $(".reviews__item").length,
+		reviewsToggleCount = Math.ceil(reviewsCount / 3),
+		reviewsToggleCur = reviewsToggleCount - 1;
 
-	//перенос данных в форму с первой формы
-	$(".radio2").on("change", function (a) { var n = $(this).val(); $("#popup_main input[name='kolvo1']").val(n) }), $(".radio1").on("change", function (a) { var n = $(this).val(); $("#popup_main input[name='type1']").val(n) });
+	if (reviewsToggleCur < 1) $('.reviews__btn').css('display', 'none');
+
+	$(".reviews__btn").click(function (e) {
+		e.preventDefault();
+
+		$(".reviews__list").css('transform', 'translateX(-' + 100 * (reviewsToggleCount - reviewsToggleCur) + '%)'),
+
+			(--reviewsToggleCur < 1) ? $(this).stop().animate({
+				opacity: 0,
+			}, 800, function () {
+				$(this).remove();
+			}
+			) : null;
+	});
+
+
+	//fancybox change close btn
+	$('.modal-close').click(function (e) {
+		e.preventDefault();
+		$.fancybox.close();
+	});
+
+
+	//Проверка формы
+	$("form .button").click(function (e) {
+		let t = $(this).closest("form"),
+			i = !0;
+
+		t.find("input[required]").each(function () {
+			let e = $(this).val();
+			e && "" != e || ($(this).addClass("error"), i = !1)
+		}),
+			i || e.preventDefault()
+	}),
+		$(".required").focus(function () {
+			var e = $(this);
+			e.removeClass("error"),
+				$("span.error", e).fadeOut()
+		}),
+		$(document).on("change", "input[name='checkbox']", function (e) {
+			var t = $(this).closest("form");
+			$(this).is(":checked") ? t.find('button[type="submit"]').removeClass("disabled") : (t.find('button[type="submit"]').addClass("disabled"),
+				t.find('button[type="submit"]').off("click"))
+		}),
+		$(".metrreq").keypress(function (e) {
+			if (8 != e.which && 0 != e.which && (e.which < 48 || 57 < e.which)) return !1
+		});
+
+
 });
-
-//Проверка формы
-$("form .btn_or").click(function (e) { var t = $(this).closest("form"), i = !0; t.find(".required").each(function () { var e = $(this).val(); e && "" != e || ($(this).addClass("error"), i = !1) }), i || e.preventDefault() }), $(".required").focus(function () { var e = $(this); e.removeClass("error"), $("span.error", e).fadeOut() }), $(document).on("change", "input[name='checkbox']", function (e) { var t = $(this).closest("form"); $(this).is(":checked") ? t.find('button[type="submit"]').removeClass("disabled") : (t.find('button[type="submit"]').addClass("disabled"), t.find('button[type="submit"]').off("click")) }), $(".metrreq").keypress(function (e) { if (8 != e.which && 0 != e.which && (e.which < 48 || 57 < e.which)) return !1 });
-
 
 /***/ })
 /******/ ]);
