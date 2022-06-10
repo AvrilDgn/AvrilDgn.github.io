@@ -609,6 +609,39 @@ button:focus {
   padding: 0;
 }
 
+.header__menu-close-btn {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  width: 42px;
+  height: 42px;
+}
+
+.header__menu-close-btn::after,
+.header__menu-close-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 32px;
+  height: 5px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.header__menu-close-btn::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.header__menu-close-btn::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .header__phone {
   font-size: 20px;
   font-weight: 700;
@@ -1073,7 +1106,14 @@ button:focus {
 
 .facilities__image {
   width: 100%;
+  text-align: center;
   height: 160px;
+}
+
+.facilities__image img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .facilities__item-title {
@@ -1624,6 +1664,12 @@ button:focus {
   border-radius: 8px;
 }
 
+.equipment__image img {
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .equipment__text {
   margin-top: 30px;
   padding: 0 22px;
@@ -1669,6 +1715,8 @@ button:focus {
 .equipment__sand-image {
   width: 100%;
   height: 100%;
+  background-image: url(../img/sand.jpg);
+  background-size: cover;
 }
 
 .portfolio {
@@ -1676,7 +1724,8 @@ button:focus {
 }
 
 .portfolio__tabs {
-  margin-top: 58px;
+  margin-top: 38px;
+  margin-bottom: -5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1691,15 +1740,14 @@ button:focus {
 }
 
 .portfolio__tab {
-  margin: 0 8px;
-  padding: 14px 32px;
+  margin: 20px 8px 0;
+  padding: 14px 32px 16px;
   display: inline-block;
   font-size: 20px;
   font-weight: 900;
   color: black;
   background-color: #e5e5e5;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   text-decoration: underline;
   -webkit-transition: background-color 0.3s ease, color 0.3s ease;
   -o-transition: background-color 0.3s ease, color 0.3s ease;
@@ -1719,6 +1767,7 @@ button:focus {
 }
 
 .portfolio__tab-content-wrapper {
+  position: relative;
   padding: 82px 0;
   background-color: grey;
   background-image: url(../img/background.jpg);
@@ -1926,9 +1975,19 @@ button:focus {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+.reviews__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .reviews__item {
   margin: 0 15px;
-  width: calc(33.3333% - 30px);
+  width: 360px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -2005,15 +2064,17 @@ button:focus {
 }
 
 .review__screens {
-  margin: 37px -6px 0;
+  margin: 25px -6px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: calc(100% + 12px);
 }
 
 .review__screen {
-  margin: 0 6px;
+  margin: 12px 6px 0;
   width: calc(33.3333% - 12px);
   height: 111px;
   border-radius: 5px;
@@ -2196,6 +2257,15 @@ button:focus {
         flex-wrap: wrap;
   }
 
+  .reviews__group {
+    width: 100vw;
+  }
+
+  .reviews__item {
+    margin: 30px 15px;
+    width: 300px;
+  }
+
   .map {
     height: 300px;
   }
@@ -2204,6 +2274,24 @@ button:focus {
 @media screen and (max-width: 992px) {
   .container {
     padding: 0 15px;
+  }
+
+  .par1 {
+    left: -13%;
+    top: 44%;
+  }
+
+  .par2 {
+    display: none;
+  }
+
+  .par3 {
+    display: none;
+  }
+
+  .par4 {
+    top: 42%;
+    right: -64%;
   }
 
   .header {
@@ -2286,6 +2374,11 @@ button:focus {
     max-width: 520px;
   }
 
+  .calculation__form .field,
+  .calculation__form .button {
+    max-width: initial;
+  }
+
   .available__list {
     padding: 15px 15px 35px;
   }
@@ -2349,7 +2442,9 @@ button:focus {
     padding-bottom: 76px;
   }
 
+  .modal--right .modal__wrapper,
   .modal--right .callback__wrapper,
+  .callback--right .modal__wrapper,
   .callback--right .callback__wrapper {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -2375,6 +2470,7 @@ button:focus {
   }
 
   .prices__wrapper {
+    margin-top: 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2413,7 +2509,28 @@ button:focus {
 
   .payment-options__list {
     margin: 30px 0 0;
+    padding: 36px 47px 43px 33px;
     width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .payment-options__item {
+    margin: 20px 10px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: initial;
+    min-width: 120px;
+  }
+
+  .payment-options__text {
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
   }
 
   .equipment__item {
@@ -2431,7 +2548,7 @@ button:focus {
 
   .portfolio__tab-content {
     margin: 0px;
-    padding: 30px;
+    padding: 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2439,6 +2556,10 @@ button:focus {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    width: 100%;
+  }
+
+  .portfolio__big-img {
     width: 100%;
   }
 
@@ -2450,6 +2571,8 @@ button:focus {
   .portfolio__info {
     margin-top: 50px;
     margin-left: 0;
+    max-width: 350px;
+    width: 100%;
   }
 
   .portfolio__tab-title {
@@ -2457,7 +2580,7 @@ button:focus {
   }
 
   .portfolio__address {
-    padding-top: 25px;
+    margin-top: 25px;
     padding-left: 0;
   }
 
@@ -2470,6 +2593,8 @@ button:focus {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2480,6 +2605,19 @@ button:focus {
 
   .thumbs__img {
     width: 200px;
+  }
+
+  .characteristics__item {
+    padding: 10px 0;
+  }
+
+  .review__avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .review__screen {
+    width: calc(50% - 12px);
   }
 
   .contacts__list {
@@ -2499,6 +2637,64 @@ button:focus {
 }
 
 @media screen and (max-width: 768px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .subtitle {
+    font-size: 30px;
+  }
+
+  .hero__background {
+    -webkit-transform: translate(0%, 0);
+        -ms-transform: translate(0%, 0);
+            transform: translate(0%, 0);
+    top: 0;
+    right: 0;
+    left: initial;
+    width: 415px;
+    height: 568px;
+    background-image: url(../img/hero-background-mobile.png);
+  }
+
+  .hero__desc {
+    max-width: 420px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+  }
+
+  .hero__slogans {
+    padding-left: 0;
+  }
+
+  .hero__calculation {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slogan__icon {
+    width: 87px;
+    height: 87px;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .slogan__text {
+    font-size: 20px;
+  }
+
+  .calculation__title {
+    font-size: 30px;
+  }
+
+  .calculation__form {
+    margin-top: 40px;
+  }
+
   .available__list {
     padding: 0px 0px 15px;
   }
@@ -2507,17 +2703,63 @@ button:focus {
     height: 180px;
   }
 
+  .facilities__list {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+
+  .facilities__item {
+    margin: 50px 0 0;
+    width: 100%;
+  }
+
   .services__item::before {
     top: -4vw;
     font-size: 7vw;
   }
 
+  .prices__title {
+    line-height: 0.76;
+  }
+
+  .prices__note {
+    padding: 16px;
+  }
+
+  .equipment__wrapper {
+    margin-top: 30px;
+  }
+
+  .equipment__item-name {
+    font-size: 16px;
+  }
+
+  .portfolio__tab-content-wrapper {
+    padding: 30px 0;
+  }
+
+  .portfolio__tab-content {
+    padding: 30px;
+  }
+
+  .portfolio__address {
+    margin-top: 10px;
+  }
+
+  .thumbs__img {
+    width: calc(33.3333%);
+  }
+
+  .reviews {
+    padding-top: 80px;
+  }
+
   .reviews__wrapper {
-    margin: 50px 0 0;
+    margin: 30px 0 0;
     width: 100%;
   }
 
-  .reviews__list {
+  .reviews__group {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2525,15 +2767,46 @@ button:focus {
   }
 
   .reviews__item {
-    margin: 30px 0;
     width: 100%;
+    max-width: 320px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .available__item {
-    width: 100%;
-    height: 170px;
+  .par7 {
+    display: none;
+  }
+
+  .modal-close {
+    right: 8px;
+  }
+
+  .modal-close::before,
+  .modal-close::after {
+    width: 32px;
+    height: 6px;
+    background-color: white;
+  }
+
+  .fancybox-slide--html {
+    padding: 50px 15px;
+  }
+
+  .modal--policy .modal__wrapper {
+    padding: 45px 15px 50px;
+  }
+
+  .modal--policy .modal__title {
+    font-size: 22px;
+  }
+
+  .available__list {
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
   }
 
   .available__image {
@@ -2541,17 +2814,141 @@ button:focus {
   }
 
   .services__list {
-    margin: 0;
-    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .services__item {
-    margin: 52px 0 0;
+    margin: 52px 15px 0;
+    min-width: 210px;
+  }
+
+  .modal__wrapper-background,
+  .callback__wrapper-background {
+    background-image: url(../img/builder-1-mobile.png);
     width: 100%;
   }
 
-  .services__item::before {
-    top: -6vw;
-    font-size: 12vw;
+  .modal__desc,
+  .callback__desc {
+    margin-bottom: 30px;
+  }
+
+  .modal__title,
+  .callback__title {
+    font-size: 30px;
+  }
+
+  .modal__subtitle,
+  .callback__subtitle {
+    margin-top: 18px;
+  }
+
+  .modal--right .callback__form,
+  .modal--right .modal__form,
+  .modal--right .callback__form,
+  .modal--right .modal__form,
+  .callback--right .callback__form,
+  .callback--right .modal__form,
+  .callback--right .callback__form,
+  .callback--right .modal__form {
+    margin-left: 0;
+  }
+
+  .prices__table {
+    font-size: 16px;
+  }
+
+  .prices__table td {
+    padding: 12px 14px 12px 18px;
+  }
+
+  .prices__table td:nth-child(even) {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: initial;
+  }
+
+  .payment-options__list {
+    padding: 16px 20px 36px;
+  }
+
+  .equipment__item--min {
+    margin-left: 15px;
+    max-width: calc(50% - 30px);
+  }
+
+  .equipment__image {
+    height: 220px;
+  }
+
+  .equipment__sand {
+    width: 424px;
+    height: 452px;
+    bottom: -10%;
+    right: 0;
+  }
+
+  .equipment__sand-name {
+    font-size: 15px;
+    line-height: 1.67;
+    bottom: 34px;
+    left: initial;
+    right: 15px;
+  }
+
+  .equipment__red-text {
+    padding: 8px 12px 6px 17px;
+  }
+
+  .equipment__black-text {
+    padding: 10px 13px 6px 14px;
+  }
+
+  .equipment__sand-image {
+    font-size: 15px;
+    line-height: 1.67;
+    background-image: url(../img/sand-mobile.jpg);
+  }
+
+  .portfolio__tabs {
+    margin-bottom: 30px;
+  }
+
+  .portfolio__tab {
+    margin: 6px 6px;
+    padding: 15px 24px 15px;
+    font-size: 16px;
+  }
+
+  .thumbs__img {
+    height: 87px;
+  }
+
+  .contacts__icon {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .modal__wrapper,
+  .callback__wrapper {
+    padding: 45px;
+  }
+
+  .modal--right .modal__wrapper,
+  .modal--right .callback__wrapper,
+  .callback--right .modal__wrapper,
+  .callback--right .callback__wrapper {
+    padding: 45px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .available__item {
+    width: 100%;
   }
 }

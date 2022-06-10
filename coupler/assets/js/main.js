@@ -182,18 +182,17 @@ $(document).ready(function () {
 
 
 	//more reviews
-	let reviewsCount = $(".reviews__item").length,
-		reviewsToggleCount = Math.ceil(reviewsCount / 3),
-		reviewsToggleCur = reviewsToggleCount - 1;
+	let reviewsCount = $(".reviews__group").length,
+		reviewsCur = reviewsCount - 1;
 
-	if (reviewsToggleCur < 1) $('.reviews__btn').css('display', 'none');
+	if (reviewsCur < 1) $('.reviews__btn').css('display', 'none');
 
 	$(".reviews__btn").click(function (e) {
 		e.preventDefault();
 
-		$(".reviews__list").css('transform', 'translateX(-' + 100 * (reviewsToggleCount - reviewsToggleCur) + '%)'),
+		$(".reviews__list").css('transform', 'translateX(-' + 100 * (reviewsCount - reviewsCur) + '%)'),
 
-			(--reviewsToggleCur < 1) ? $(this).stop().animate({
+			(--reviewsCur < 1) ? $(this).stop().animate({
 				opacity: 0,
 			}, 800, function () {
 				$(this).remove();
