@@ -172,13 +172,13 @@ $(document).ready(function () {
 
 
 	//menu
-	$(".header__toggle-btn").click(function (e) {
-		$(".header__mobile-menu").toggleClass(".header__mobile-menu--active"),
-			e.preventDefault()
-	}),
-		$(".header__toggle-btn, section, .alinks").click(function () {
-			$(".header__mobile-menu").removeClass(".header__mobile-menu--active")
-		});
+	$(".header__menu-open-btn").click(function (e) {
+		$(".header__mobile-menu").toggleClass("header__mobile-menu--active"),
+			e.preventDefault();
+	});
+	$(".header__menu-close-btn, section, .nav__link").click(function () {
+		$(".header__mobile-menu").removeClass("header__mobile-menu--active");
+	});
 
 
 	//more reviews
