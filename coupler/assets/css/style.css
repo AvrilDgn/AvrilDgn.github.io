@@ -2142,21 +2142,21 @@ button:focus {
           align-items: center;
 }
 
-.contacts__item--address .contacts__icon {
+.contacts__item--address .contacts__icon::before {
   width: 54px;
   height: 61px;
   background-position-x: -82px;
   background-position-y: -72px;
 }
 
-.contacts__item--phone .contacts__icon {
+.contacts__item--phone .contacts__icon::before {
   width: 62px;
   height: 62px;
   background-position-x: -151px;
   background-position-y: -70px;
 }
 
-.contacts__item--mail .contacts__icon {
+.contacts__item--mail .contacts__icon::before {
   width: 77px;
   height: 63px;
   background-position-x: 0px;
@@ -2170,6 +2170,11 @@ button:focus {
 .contacts__icon {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+.contacts__icon::before {
+  content: "";
+  display: block;
   background-image: url("../img/sprite/sprite.png");
 }
 
@@ -2222,10 +2227,6 @@ button:focus {
             transform: scale(0.7);
   }
 
-  .footer__logo {
-    margin-left: 10px;
-  }
-
   .footer__privacy {
     margin-right: 0;
     margin-left: 10px;
@@ -2258,7 +2259,7 @@ button:focus {
   }
 
   .reviews__group {
-    width: 100vw;
+    width: calc(100vw - 30px);
   }
 
   .reviews__item {
@@ -2267,7 +2268,7 @@ button:focus {
   }
 
   .map {
-    height: 300px;
+    height: 350px;
   }
 }
 
@@ -2323,6 +2324,10 @@ button:focus {
     display: none;
   }
 
+  .header--fixed {
+    height: 90px;
+  }
+
   .header__mobile-menu {
     display: block;
   }
@@ -2342,13 +2347,20 @@ button:focus {
   }
 
   .nav__item {
-    margin: 20px 0;
+    width: 100%;
+  }
+
+  .nav__item:not(:last-child) .nav__link {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   }
 
   .nav__link {
+    padding: 20px 0;
+    display: block;
     font-size: 20px;
     color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    text-decoration: underline;
+    border: none;
   }
 
   .hero {
@@ -2634,6 +2646,19 @@ button:focus {
   .contacts__item {
     margin-top: 30px;
   }
+
+  .contacts__icon {
+    width: 77px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -2643,6 +2668,10 @@ button:focus {
 
   .subtitle {
     font-size: 30px;
+  }
+
+  .field__input {
+    font-size: 16px;
   }
 
   .hero__background {
@@ -2669,6 +2698,10 @@ button:focus {
     padding-left: 0;
   }
 
+  .hero__slogan:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
   .hero__calculation {
     margin-top: 30px;
     margin-left: auto;
@@ -2681,6 +2714,12 @@ button:focus {
     border: none;
     -webkit-box-shadow: none;
             box-shadow: none;
+  }
+
+  .slogan__icon::before {
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
   }
 
   .slogan__text {
@@ -2777,6 +2816,27 @@ button:focus {
     display: none;
   }
 
+  .button {
+    line-height: 1.5;
+    padding: 8px 10px;
+    min-height: 49px;
+  }
+
+  .button:active,
+  .button:focus {
+    padding: 8px 10px;
+  }
+
+  .header__phone-mobile {
+    line-height: 1;
+    padding: 0;
+    min-height: initial;
+  }
+
+  .header__mobile-menu {
+    width: 100%;
+  }
+
   .modal-close {
     right: 8px;
   }
@@ -2798,6 +2858,10 @@ button:focus {
 
   .modal--policy .modal__title {
     font-size: 22px;
+  }
+
+  .footer__privacy {
+    line-height: 1.1;
   }
 
   .available__list {
@@ -2824,6 +2888,12 @@ button:focus {
     min-width: 210px;
   }
 
+  .modal__wrapper,
+  .callback__wrapper {
+    padding-top: 52px;
+    padding-bottom: 50px;
+  }
+
   .modal__wrapper-background,
   .callback__wrapper-background {
     background-image: url(../img/builder-1-mobile.png);
@@ -2832,7 +2902,7 @@ button:focus {
 
   .modal__desc,
   .callback__desc {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .modal__title,
@@ -2845,6 +2915,17 @@ button:focus {
     margin-top: 18px;
   }
 
+  .modal__form,
+  .callback__form {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .modal__form .personal-data,
+  .callback__form .personal-data {
+    max-width: 220px;
+  }
+
   .modal--right .callback__form,
   .modal--right .modal__form,
   .modal--right .callback__form,
@@ -2854,6 +2935,14 @@ button:focus {
   .callback--right .callback__form,
   .callback--right .modal__form {
     margin-left: 0;
+  }
+
+  .modal--right .modal__wrapper,
+  .modal--right .callback__wrapper,
+  .callback--right .modal__wrapper,
+  .callback--right .callback__wrapper {
+    padding-top: 54px;
+    padding-bottom: 57px;
   }
 
   .prices__table {
@@ -2879,7 +2968,13 @@ button:focus {
     max-width: calc(50% - 30px);
   }
 
+  .equipment__item-name {
+    height: 60px;
+  }
+
   .equipment__image {
+    margin: 0;
+    padding: 15px;
     height: 220px;
   }
 
@@ -2933,7 +3028,83 @@ button:focus {
   }
 }
 
+@media screen and (max-width: 490px) {
+  .hero__background {
+    right: initial;
+    left: 19%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    height: 100px;
+  }
+
+  .header__logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 160px;
+  }
+
+  .header__menu-open-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header__menu-close-btn {
+    top: 30px;
+  }
+
+  .header__phone-mobile {
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .header__phone-mobile span {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+
+  .header--fixed {
+    height: 90px;
+  }
+
+  .header__mobile-menu {
+    padding-top: 120px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+  }
+
+  .equipment__wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .equipment__item {
+    width: 100%;
+    max-width: 210px;
+  }
+}
+
 @media screen and (max-width: 440px) {
+  .footer__logo {
+    max-width: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
   .modal__wrapper,
   .callback__wrapper {
     padding: 45px;

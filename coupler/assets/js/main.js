@@ -165,9 +165,17 @@ $(document).ready(function () {
 
 	//карта
 	function init() {
-		(myMap = new ymaps.Map("map", { center: [55.71231956901403, 37.66280249999997], behaviors: ["default"], zoom: 16, controls: ["zoomControl", "fullscreenControl"] })).behaviors.disable(["rightMouseButtonMagnifier", "scrollZoom"]);
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { myMap.behaviors.disable('drag'); }; myPlacemark1 = new ymaps.Placemark([55.71231956901403, 37.66280249999997], {}, { iconLayout: "default#image", iconImageHref: "assets/img/map-pin.png", iconImageSize: [73, 97], iconImageOffset: [-36.5, -97] }), myMap.geoObjects.add(myPlacemark1); 2
-	} ymaps.ready(init); var myMap;
+		(myMap = new ymaps.Map("map", { center: [55.803479, 37.390514], behaviors: ["default"], zoom: 16, controls: ["zoomControl", "fullscreenControl"] })).behaviors.disable(["rightMouseButtonMagnifier", "scrollZoom"]);
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { 
+			myMap.behaviors.disable('drag'); 
+		};
+		myPlacemark1 = new ymaps.Placemark(
+			[55.803479, 37.390514], {}, { 
+				iconLayout: "default#image", iconImageHref: "assets/img/map-pin.png", iconImageSize: [73, 97], iconImageOffset: [-36.5, -97] 
+			}), myMap.geoObjects.add(myPlacemark1); 2
+	} 
+	ymaps.ready(init); 
+	var myMap;
 
 
 
