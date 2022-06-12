@@ -3028,13 +3028,6 @@ button:focus {
   }
 }
 
-@media screen and (max-width: 490px) {
-  .hero__background {
-    right: initial;
-    left: 19%;
-  }
-}
-
 @media screen and (max-width: 450px) {
   .header {
     height: 100px;
