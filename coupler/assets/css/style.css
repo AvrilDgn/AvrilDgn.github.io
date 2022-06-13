@@ -3029,6 +3029,42 @@ button:focus {
 }
 
 @media screen and (max-width: 480px) {
+  .header__menu-open-btn {
+    width: 45px;
+    height: 45px;
+    min-height: 45px;
+  }
+
+  .header__menu-open-btn span {
+    margin: 3px 0 2px;
+    width: 30px;
+    height: 4px;
+  }
+
+  .header__menu-open-btn span::before,
+  .header__menu-open-btn span::after {
+    margin: -8px 0 0;
+    width: 30px;
+    height: 4px;
+  }
+
+  .header__menu-open-btn span::after {
+    margin: 12px 0 0;
+  }
+
+  .header__phone-mobile {
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+    min-height: 45px;
+  }
+
+  .header__phone-mobile span {
+    -webkit-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+
   .hero__background {
     -webkit-transform: translate(2%, 8%);
         -ms-transform: translate(2%, 8%);
@@ -3077,25 +3113,8 @@ button:focus {
     max-width: 160px;
   }
 
-  .header__menu-open-btn {
-    width: 50px;
-    height: 50px;
-  }
-
   .header__menu-close-btn {
     top: 30px;
-  }
-
-  .header__phone-mobile {
-    margin-right: 15px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .header__phone-mobile span {
-    -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
   }
 
   .header--fixed {
