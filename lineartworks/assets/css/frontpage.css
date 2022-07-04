@@ -831,6 +831,7 @@
 .btn.btn-submit {
 	margin: 0;
 	padding: 16px 20px;
+	max-width: 460px;
 	width: 100%;
 	font-family: unisans;
 	font-weight: 600;

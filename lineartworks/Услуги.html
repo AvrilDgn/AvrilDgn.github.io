@@ -508,7 +508,6 @@
 	</div>
 
 	<section class="frontpage__feedback front-feedback front-feedback_bg">
-
 		<div class="container">
 
 			<h2 class="front-feedback__title">Хотите заказать съемку или услуги дизайна? <br>Напишите нам!</h2>
@@ -516,7 +515,6 @@
 			<div role="form" class="wpcf7" id="wpcf7-f1905-o1" lang="ru-RU" dir="ltr">
 				<div class="screen-reader-response">
 					<p role="status" aria-live="polite" aria-atomic="true"></p>
-					<ul></ul>
 				</div>
 				<form action="https://lineartworks.ru/services/#wpcf7-f1905-o1" method="post" class="wpcf7-form init"
 					novalidate="novalidate" data-status="init">
@@ -554,7 +552,7 @@
 										<option value="Технология дополненной реальности">Технология дополненной реальности
 										</option>
 									</select>
-									<div class="select-styled">Фото</div>
+									<!-- <div class="select-styled">Фото</div> -->
 									<ul class="select-options">
 										<li rel="Фото">Фото</li>
 										<li rel="Видео">Видео</li>
@@ -572,13 +570,25 @@
 					</div>
 					<div class="recaptcha">
 					</div>
-					<p><span class="wpcf7-form-control-wrap confirm"><span
-								class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required feedback-form__checkbox"><span
-									class="wpcf7-list-item first last"><label><input type="checkbox" name="confirm[]"
-											value="Согласен на обработку персональных данных"><span
-											class="wpcf7-list-item-label">Согласен на обработку персональных
-											данных</span></label></span></span></span></p>
-					<div class="submit"><button type="submit" class="btn btn-submit">Отправить</button></div>
+					<div class="frontpage__confim-wrap">
+						<div class="submit"><button type="submit" class="btn btn-submit">Отправить</button></div>
+
+						<p>
+							<span class="wpcf7-form-control-wrap confirm">
+								<span
+									class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required feedback-form__checkbox">
+									<span class="wpcf7-list-item first last">
+										<label><input type="checkbox" name="confirm[]"
+												value="Согласен на обработку персональных данных">
+											<span class="wpcf7-list-item-label">Согласен на обработку персональных
+												данных</span>
+										</label>
+									</span>
+								</span>
+
+							</span>
+						</p>
+					</div>
 					<div class="wpcf7-response-output" aria-hidden="true"></div>
 				</form>
 			</div>
