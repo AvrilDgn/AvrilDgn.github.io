@@ -1146,7 +1146,6 @@ body.overflow_hidden {
 	flex-direction: column;
 	width: 33.3333%;
 	min-height: 224px;
-	text-decoration: none;
 	border: 1px solid #dededf;
 	margin: -1px 0 0 -1px;
 }
@@ -1180,14 +1179,29 @@ body.overflow_hidden {
 }
 
 .service__name {
-	position: relative;
+	/* position: relative; */
 	font-family: unisans;
 	font-size: 18px;
 	font-weight: 700;
 	line-height: 1.22;
 	color: #565655;
 	text-transform: uppercase;
+	text-decoration: none;
 	transition: color 0.2s ease-out;
+	z-index: 1;
+}
+
+.service__name:hover {
+	text-decoration: underline;
+}
+
+.service__name::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .service__item:hover .service__name {
@@ -1199,6 +1213,7 @@ body.overflow_hidden {
 	margin: 10px 0 0;
 	padding: 0;
 	list-style-type: none;
+	z-index: 1;
 }
 
 .service__type {
@@ -1207,7 +1222,15 @@ body.overflow_hidden {
 	font-size: 18px;
 	line-height: 1.16;
 	color: #565655;
+}
+.service__type a {
+	color: inherit;
+	text-decoration: none;
 	transition: color 0.2s ease-out;
+}
+.service__type a:hover {
+	color: inherit;
+	text-decoration: underline;
 }
 
 .service__item:hover .service__type {
@@ -1290,7 +1313,7 @@ body.overflow_hidden {
 	padding: 25px 60px;
 	display: flex;
 	align-items: center;
-	overflow: auto;
+	overflow-x: overlay;
 	background-color: #F2F2F2;
 }
 
@@ -1461,7 +1484,7 @@ body.overflow_hidden {
 
 @media only screen and (max-width : 768px) {
 	.gallery__header {
-		height: 66px;
+		padding: 20px;
 	}
 
 	.gallery__filter-item {
@@ -2069,8 +2092,10 @@ body.overflow_hidden {
 	}
 
 	.service__item {
+		padding: 44px 30px 42px;
 		width: 100%;
-		height: 80px;
+		min-height: initial;
+		/* height: 80px; */
 	}
 
 	.service__text {
@@ -2134,7 +2159,7 @@ body.overflow_hidden {
 
 	.services__item {
 		width: 100%;
-		height: 200px;
+		height: 240px;
 	}
 
 	.services__item:after {
