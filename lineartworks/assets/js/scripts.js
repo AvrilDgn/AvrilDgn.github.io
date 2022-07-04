@@ -51,14 +51,12 @@ jQuery(document).ready(function ($) {
 			slidesToShow: 6,
 			slidesToScroll: 3,
 			variableWidth: true,
-			centerMode: true,
 			responsive: [
 				{
 					breakpoint: 1000,
 					settings: {
 						dots: true,
 						arrows: false,
-						centerMode: false,
 						slidesToShow: 3,
 						slidesToScroll: 1,
 					}
@@ -68,7 +66,6 @@ jQuery(document).ready(function ($) {
 					settings: {
 						dots: true,
 						arrows: false,
-						centerMode: false,
 						slidesToShow: 1,
 						slidesToScroll: 1,
 					}

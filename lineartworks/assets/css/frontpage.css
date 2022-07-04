@@ -842,8 +842,13 @@
 }
 
 .btn.btn-submit:active,
-.btn.btn-submit:focus {
+.btn.btn-submit:focus,
+.btn.btn-submit:hover {
 	padding: 16px 20px;
+}
+
+.wpcf7-form-control-wrap .serviceslist {
+	position: relative;
 }
 
 @media only screen and (max-width: 992px) {
