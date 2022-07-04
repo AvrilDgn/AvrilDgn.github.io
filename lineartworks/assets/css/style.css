@@ -1411,6 +1411,7 @@ body.overflow_hidden {
 	height: 8px;
 	background-color: #D9D9D9;
 	border-radius: 50%;
+	transition: all 0.3s ease-in;
 }
 
 .gallery__slider .slick-dots li button:hover {
@@ -1425,7 +1426,6 @@ body.overflow_hidden {
 	border-radius: 5px;
 	background-color: #2C2C2B;
 	width: 24px;
-	transition: all 0.3s ease-in;
 }
 
 .gallery__image {
