@@ -791,8 +791,9 @@
 	content: '';
 	position: absolute;
 	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
+	top: 0;
+	/* top: 50%; */
+	/* transform: translateY(-50%); */
 	display: block;
 	width: 22px;
 	height: 22px;
@@ -810,9 +811,8 @@
 	height: 7px;
 	border-radius: 50%;
 	position: absolute;
-	top: 50%;
-	left: 12px;
-	transform: translate(-50%, -50%);
+	top: 7px;
+	left: 7px;
 }
 
 .front-feedback__textarea {
