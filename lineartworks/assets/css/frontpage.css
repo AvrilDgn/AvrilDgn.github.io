@@ -648,28 +648,40 @@
 
 .select-styled {
 	position: absolute;
+	padding: 12px 12px;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: $select-background;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
+	background-color: transparent;
+	font-weight: 400;
+	font-size: 20px;
+	color: #757575;
 	text-align: center;
-	color: #555;
-	padding: 12px 12px;
 }
 
 .select-styled:after {
 	content: '';
-	background-image: url('../images/arrow-down.png');
-	background-repeat: no-repeat;
-	-webkit-background-size: contain;
-	background-size: contain;
-	width: 10px;
-	height: 7px;
 	position: absolute;
-	top: 22px;
-	right: 10px;
+	top: 16px;
+	right: 15px;
+	display: block;
+	width: 11px;
+	height: 11px;
+	box-sizing: border-box;
+	border-bottom: 2px solid #CCCCCC;
+	border-right: 2px solid #CCCCCC;
+	transform: rotate(45deg);
+	transition: all 0.3s ease;
+}
+
+.select-styled.active:after {
+	transform: rotate(225deg);
+	top: 21px;
 }
 
 .select-styled:hover {
@@ -718,6 +730,12 @@
 	background-color: #f1f1f1;
 }
 
+.form-control {
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;
+	color: #757575;
+}
 
 .front-feedback__inner {
 	display: -webkit-flex;
@@ -746,8 +764,9 @@
 
 .feedback-form__checkbox .wpcf7-list-item-label {
 	margin-bottom: 30px;
-	font-size: 13px;
-	color: #7c7b7b;
+	font-weight: 400;
+	font-size: 17px;
+	color: #757575;
 	cursor: pointer;
 }
 
@@ -761,7 +780,7 @@
 
 .wpcf7-checkbox .wpcf7-list-item-label {
 	position: relative;
-	padding-left: 30px;
+	padding-left: 38px;
 }
 
 .wpcf7-checkbox .wpcf7-list-item {
@@ -769,18 +788,20 @@
 }
 
 .wpcf7-checkbox .wpcf7-list-item-label::before {
+	content: '';
 	position: absolute;
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
 	display: block;
-	width: 16px;
-	height: 16px;
-	border: 1px solid #969696;
-
+	width: 22px;
+	height: 22px;
+	box-sizing: border-box;
+	border: 1px solid #B0B0B0;
 }
 
 .wpcf7-checkbox input:checked+.wpcf7-list-item-label::after {
+	content: '';
 	background-image: url('../images/checkbox-check.png');
 	background-repeat: no-repeat;
 	-webkit-background-size: contain;
@@ -790,7 +811,7 @@
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
-	left: 9px;
+	left: 12px;
 	transform: translate(-50%, -50%);
 }
 
@@ -800,12 +821,10 @@
 }
 
 .front-feedback__title {
-	font-family: UniSansBold, sans-serif;
-	font-size: 35px;
-	color: #2c2c2b;
-	line-height: 50px;
 	margin-top: 0;
 	margin-bottom: 50px;
+	font-family: unisans, sans-serif;
+	font-weight: 700 !important;
 }
 
 .front-about__mobile-video-block iframe {
@@ -840,12 +859,17 @@
 	color: #fff;
 	border: none;
 	background-color: #565655;
+	transition: opacity 0.3s ease;
 }
 
 .btn.btn-submit:active,
 .btn.btn-submit:focus,
 .btn.btn-submit:hover {
 	padding: 16px 20px;
+}
+
+.btn.btn-submit:hover {
+	opacity: 0.9;
 }
 
 .wpcf7-form-control-wrap .serviceslist {
