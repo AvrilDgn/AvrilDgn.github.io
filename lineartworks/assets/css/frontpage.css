@@ -70,18 +70,6 @@
 	margin: 0 20px;
 }
 
-@media only screen and (max-width: 1130px) {
-	.header-email {
-		display: none;
-	}
-}
-
-@media only screen and (max-width: 992px) {
-	.frontpage-header .header-menu ul {
-		padding-top: 30px;
-	}
-}
-
 .front-main-banner__main-section {
 	margin: 0;
 	display: -webkit-box;
@@ -876,7 +864,16 @@
 	position: relative;
 }
 
+@media only screen and (max-width: 1130px) {
+	.header-email {
+		display: none;
+	}
+}
+
 @media only screen and (max-width: 992px) {
+	.frontpage-header .header-menu ul {
+		padding-top: 30px;
+	}
 	.project-container__overlay {
 		opacity: .8;
 	}

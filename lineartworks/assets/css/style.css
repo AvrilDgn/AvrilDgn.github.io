@@ -147,15 +147,6 @@ Version: 1.0.1
 	padding: 0 10px 60px;
 }
 
-
-@media (max-width: 749px) {
-	.contact-footer-left .phone {
-		text-align: center;
-		padding-right: 0;
-	}
-
-}
-
 .contact-footer-left .email a {
 	font-size: 18px;
 	font-weight: 300;
@@ -326,12 +317,6 @@ body.overflow_hidden {
 	min-height: calc(100vh - 106px);
 }
 
-@media only screen and (min-width: 1024px) {
-	.project .project-top {
-		min-height: calc(100vh - 106px);
-	}
-}
-
 .home-project.parallax {
 	/*height: 100vh;*/
 	background: #c7c7c7;
@@ -370,12 +355,6 @@ body.overflow_hidden {
 	height: auto;
 	vertical-align: middle;
 	vertical-align: -webkit-baseline-middle;
-}
-
-@media (max-width: 1024px) {
-	.sec-projects .sec-projects-bl .hover {
-		opacity: .8;
-	}
 }
 
 @media (max-width: 768px) {
@@ -615,16 +594,6 @@ body.overflow_hidden {
 
 	.sec-projects ul.sub-cats-filter.sec-projects-menu li {
 		margin-bottom: 7px;
-	}
-}
-
-@media only screen and (max-width: 1024px) {
-	.front-why-us__desc:nth-child(3n) {
-		padding-right: 0;
-	}
-
-	.frontpage-header .header-phone-wrapp {
-		display: none;
 	}
 }
 
@@ -1589,6 +1558,11 @@ body.overflow_hidden {
 .owl-carousel .owl-dots {
 	display: none;
 }*/
+.carousel__block {
+	left: 180px;
+	bottom: auto;
+	top: 35%;
+}
 
 /* ==========================================================================
    ADVANTAGES
@@ -2016,6 +1990,22 @@ body.overflow_hidden {
 	}
 }
 
+@media only screen and (max-width: 1024px) {
+	.project .project-top {
+		min-height: calc(100vh - 106px);
+	}
+	.sec-projects .sec-projects-bl .hover {
+		opacity: .8;
+	}
+	.front-why-us__desc:nth-child(3n) {
+		padding-right: 0;
+	}
+
+	.frontpage-header .header-phone-wrapp {
+		display: none;
+	}
+}
+
 @media only screen and (max-width : 999.98px) {
 	.title {
 		font-size: 32px;
@@ -2261,21 +2251,17 @@ body.overflow_hidden {
 	}
 }
 
+@media (max-width: 749px) {
+	.contact-footer-left .phone {
+		text-align: center;
+		padding-right: 0;
+	}
+}
+
 @media only screen and (min-height : 1000px) {
 
 	.service .container {
 		height: calc(100vh - 100px);
 		min-height: 600px;
 	}
-}
-
-/* .owl-carousel.owl-drag .owl-item {
-	height: calc(100vh - 100px);
-	min-height: 600px;
-} */
-
-.carousel__block {
-	left: 180px;
-	bottom: auto;
-	top: 35%;
 }
