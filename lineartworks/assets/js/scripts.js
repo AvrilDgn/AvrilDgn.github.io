@@ -39,7 +39,6 @@
 		prevArrow: $('.gallery__arrow--prev'),
 		nextArrow: $('.gallery__arrow--next'),
 		infinite: true,
-		lazyLoad: 'ondemand',
 		speed: 300,
 		slidesToShow: 6,
 		slidesToScroll: 3,

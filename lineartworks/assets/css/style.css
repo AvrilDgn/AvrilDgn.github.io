@@ -1594,7 +1594,7 @@ body.overflow_hidden {
    ADVANTAGES
    ========================================================================== */
 .advantages {
-	padding: 100px 0;
+	padding: 100px 0 80px;
 }
 
 .advantages__text {
