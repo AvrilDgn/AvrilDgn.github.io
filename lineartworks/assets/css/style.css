@@ -1223,11 +1223,13 @@ body.overflow_hidden {
 	line-height: 1.16;
 	color: #565655;
 }
+
 .service__type a {
 	color: inherit;
 	text-decoration: none;
 	transition: color 0.2s ease-out;
 }
+
 .service__type a:hover {
 	color: inherit;
 	text-decoration: underline;
@@ -1327,8 +1329,8 @@ body.overflow_hidden {
 	list-style-type: none;
 }
 
-.gallery__filter-item {
-}
+.gallery__filter-item {}
+
 .gallery__filter-item a {
 	font-weight: 500;
 	font-size: 18px;
@@ -1994,8 +1996,10 @@ body.overflow_hidden {
 	}
 
 	.frontpage-header.header {
+		padding: 20px 60px 0px;
 		min-height: 85px;
 	}
+
 	.header-menu {
 		top: 85px;
 	}
@@ -2084,8 +2088,13 @@ body.overflow_hidden {
 @media only screen and (max-width : 768px) {
 	.frontpage-header.header {
 		min-height: 60px;
-		padding-top: 12px;
+		padding: 12px 30px 0px;
 	}
+
+	.header-mobile {
+		margin-top: 7px;
+	}
+
 	.header-menu {
 		top: 60px;
 	}
@@ -2150,16 +2159,17 @@ body.overflow_hidden {
 		width: 50%;
 	}
 
-	.services {
-		padding-top: 40px;
-	}
-
 	.slider {
 		padding-top: 40px;
 	}
 }
 
 @media only screen and (max-width : 575px) {
+
+	.frontpage-header.header {
+		padding: 12px 15px 0px;
+	}
+
 	.title {
 		font-size: 24px;
 	}
