@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	// 	console.log(scrollPos);
 	// 	console.log(winPos);
-	
+
 
 	// 	if (scrollPos >= winPos) {
 	// 		block.parentElement.style.paddingBottom = height;
@@ -181,6 +181,56 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	// 		block.classList.remove('fixed');
 	// 	}
 	// })
+
+	let step = 1;
+	let maxStep = 3;
+	let quizPrevBtn = document.querySelector('.quiz__step-btn--prev');
+	let quizNextBtn = document.querySelector('.quiz__step-btn--next');
+	let quizBodies = document.querySelectorAll('.quiz__body');
+	let stepsCount = document.querySelector('.quiz__steps-count b');
+
+	quizNextBtn.addEventListener('click', function (e) {
+		step++;
+
+		if (step >= maxStep) {
+			quizNextBtn.classList.add('disabled');
+		}
+		quizPrevBtn.classList.remove('disabled');
+
+		quizBodies.forEach(body => {
+			if (+body.dataset.quizId === step) {
+				body.classList.add('active');
+
+				console.log(body.dataset.quizId);
+				console.log(step);
+				
+			} else {
+				body.classList.remove('active');
+			}
+
+		});
+
+		stepsCount.textContent = 'шаг ' + step;
+	});
+
+	quizPrevBtn.addEventListener('click', function (e) {
+		step--;
+
+		if (step <= 1) {
+			quizPrevBtn.classList.add('disabled');
+		}
+		quizNextBtn.classList.remove('disabled');
+
+		quizBodies.forEach(body => {
+			body.classList.remove('active');
+
+			if (+body.dataset.quizId === step) {
+				body.classList.add('active');
+			}
+		});
+
+		stepsCount.textContent = 'шаг ' + step;
+	});
 });
 
 /***/ })
