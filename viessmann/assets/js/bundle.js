@@ -89,7 +89,7 @@
 /* 1 */
 /***/ (function(module, exports) {
 
-// import $ from "jquery";
+
 
 /***/ })
 /******/ ]);
