@@ -21,8 +21,8 @@
     <main class="main">
 
         <!-- Header -->
-        <header class="header" data-scroll-lock-fill-gap>
-            <div class="header__top">
+        <header class="header">
+            <div class="header__top" data-scroll-lock-fill-gap>
                 <div class="container">
 
                     <nav class="nav header__nav">
@@ -47,22 +47,39 @@
                                     Контакты
                                 </a>
                             </li>
-                            <li class="nav__item">
+                            <li class="nav__item nav__item--submenu">
                                 <a class="nav__link" href="#repair">
                                     Что ремонтируем
                                 </a>
+                                <ul class="nav__inner-menu">
+                                    <li class="nav__item"><a class="nav__link" href="#">Что ремонтируем</a></li>
+                                    <li class="nav__item"><a class="nav__link" href="#">Что ремонтируем</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
+
+                    <ul class="header__socials-mobile socials">
+                        <li class="socials__item socials__item--whatsapp">
+                            <a href="#whatsapp">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item socials__item--telegram">
+                            <a href="#telegram">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
 
                     <a href="javascript:;" class="header__feedback-btn button button--yellow button--border modal-opener" data-modal="modal-feedback">
                         Заказать звонок
                     </a>
                 </div>
-
-                <!-- <a href="javascript:;" class="header__menu-close-btn">
-			<span></span>
-		</a> -->
             </div>
 
             <div class="header__bottom">
@@ -92,26 +109,30 @@
 
                         <div class="header__phone phone-block">
                             <a href="tel:+74956486361" class="phone-block__link">
-                                +7 (495) 648 63 61
+                                <span>+7 (495) 648 63 61</span>
                             </a>
                             <div class="phone-block__info-text">Принимаем заявки <b>круглосуточно</b></div>
                         </div>
                     </div>
 
+                    <a href="tel:+74956486361" class="header__phone-mobile">
+                        <svg>
+                            <use xlink:href="./assets/img/sprite/sprite.svg#smartphone"></use>
+                        </svg>
+                    </a>
 
-                    <!-- <a href="javascript:;" class="header__menu-open-btn button">
-				<span></span>
-			</a> -->
+
+                    <a href="javascript:;" class="header__menu-open-btn">
+                        <span></span>
+                    </a>
                 </div>
-
-                <!-- <div class="header__mobile-menu">
-		</div> -->
             </div>
         </header>
         <!-- End Header -->
 
         <!-- Hero -->
         <section class="hero">
+            <div class="hero__bg-ribbon"></div>
             <div class="container">
                 <h1 class="hero__title">
                     <b>Вернем тепло в ваш дом: <span class="yellow-text">приедем за 3 часа,</span></b>
@@ -173,9 +194,14 @@
         <section class="departure">
             <div class="container">
                 <div class="departure__top">
-                    <h2 class="departure__title title">
-                        Выезжаем в любой район Москвы и области
-                    </h2>
+                    <div class="departure__head">
+                        <h2 class="departure__title title">
+                            Выезжаем в любой район Москвы и области
+                        </h2>
+
+                        <p class="departure__subtitle">В течение 30 минут. Просто оставьте заявку и ждите приезда мастера. </p>
+                    </div>
+
                     <div class="departure__btns">
                         <a href="javascript:;" class="departure__feedback-btn button button--red" data-src="#modal-feedback">
                             <span>Оставить заявку</span>
@@ -184,8 +210,6 @@
                         <a href="#" class="departure__whatsapp-btn button button--green">WhatsApp</a>
                     </div>
                 </div>
-
-                <p class="departure__subtitle">В течение 30 минут. Просто оставьте заявку и ждите приезда мастера. </p>
 
                 <div class="departure__districts-wrap">
                     <div class="departure__districts-list">
@@ -433,7 +457,7 @@
 
                 <ul class="problems__row">
                     <li class="problems__col">
-                        <div class="problems__item">
+                        <div class="problems__item modal-opener" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#fast-time"></use>
@@ -446,7 +470,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item">
+                        <div class="problems__item modal-opener" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#settings"></use>
@@ -459,7 +483,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item">
+                        <div class="problems__item modal-opener" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#labour-day"></use>
@@ -472,7 +496,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item">
+                        <div class="problems__item modal-opener" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#water-heater"></use>
@@ -485,7 +509,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item">
+                        <div class="problems__item modal-opener" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#boiler"></use>
@@ -498,7 +522,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item">
+                        <div class="problems__item modal-opener" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#contract"></use>
@@ -755,6 +779,7 @@
         <!-- End Differences -->
         <!-- Service -->
         <section class="service">
+            <div class="service__bg-ribbon"></div>
             <div class="container">
                 <div class="service__head">
                     <h2 class="service__title title">Сервисное обслуживание котлов</h2>
@@ -822,7 +847,7 @@
                                 <a href="tel:+74956486361">+7495 648 63 61</a>
                             </div>
                             <div>
-                                Вы также можете написать нам в соцсетях, где мы оперативно отвечаем:
+                                <span>Вы также можете написать нам в соцсетях, где мы оперативно отвечаем:</span>
 
                                 <ul class="order__socials socials">
                                     <li class="socials__item socials__item--whatsapp">
@@ -884,7 +909,7 @@
 
                 <ul class="repair__list">
                     <li class="repair__item">
-                        <div class="repair__card repair__card--active">
+                        <div class="repair__card repair__card--active modal-opener" data-modal="modal-feedback">
                             <div class="repair__icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#labour-day"></use>
@@ -1068,6 +1093,10 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="masters__pagination pagination">
+                    <!-- <li class="pagination__bullet"></li> -->
+                </div>
             </div>
         </section>
         <!-- End Masters -->
@@ -1086,7 +1115,7 @@
                                 <a href="tel:+74956486361">+7495 648 63 61</a>
                             </div>
                             <div>
-                                Вы также можете написать нам в соцсетях, где мы оперативно отвечаем:
+                                <span>Вы также можете написать нам в соцсетях, где мы оперативно отвечаем:</span>
 
                                 <ul class="order__socials socials">
                                     <li class="socials__item socials__item--whatsapp">
@@ -1224,10 +1253,14 @@
                                     Контакты
                                 </a>
                             </li>
-                            <li class="nav__item">
+                            <li class="nav__item nav__item--submenu">
                                 <a class="nav__link" href="#repair">
                                     Что ремонтируем
                                 </a>
+                                <ul class="nav__inner-menu">
+                                    <li class="nav__item"><a class="nav__link" href="#">Что ремонтируем</a></li>
+                                    <li class="nav__item"><a class="nav__link" href="#">Что ремонтируем</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
@@ -1266,11 +1299,11 @@
                             </a>
                             <div class="phone-block__info-text">Принимаем заявки <b>круглосуточно</b></div>
                         </div>
-                    </div>
 
-                    <a href="javascript:;" class="footer__feedback-btn button button--yellow button--border" data-src="#modal-feedback">
-                        Заказать звонок
-                    </a>
+                        <a href="javascript:;" class="footer__feedback-btn button button--yellow button--border modal-opener" data-modal="modal-feedback">
+                            Заказать звонок
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>

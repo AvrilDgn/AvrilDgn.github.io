@@ -17190,6 +17190,49 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		}, true);
 	}
 
+
+
+	//header open menu
+	let header = document.querySelector('.header');
+	let headerOpenBtn = header.querySelector('.header__menu-open-btn');
+	let isHeaderActive = false;
+
+	headerOpenBtn.addEventListener('click', function (e) {
+		isHeaderActive = !isHeaderActive;
+
+		header.classList.toggle('header--active');
+
+		if (isHeaderActive) {
+			scroll_lock_default.a.disablePageScroll(header);
+		} else {
+			scroll_lock_default.a.enablePageScroll(header);
+		}
+	});
+
+
+	//header inner menu hover 
+
+	let innerMenu = document.querySelectorAll('.nav__inner-menu');
+
+	innerMenu.forEach(menu => {
+		let parent = menu.closest('.nav__item');
+
+		parent.addEventListener('mouseenter', function (e) {
+			parent.removeEventListener('mouseleave', hideInnerMenu);
+			
+			menu.classList.add('nav__inner-menu--showed');
+
+			parent.addEventListener('mouseleave', hideInnerMenu);
+		});
+
+		function hideInnerMenu() {
+			setTimeout(function () {
+				menu.classList.remove('nav__inner-menu--showed');
+			}, 500);
+		}
+	});
+
+
 	/*
 	//header fixation
 	let header = document.querySelector('.header');
@@ -17370,20 +17413,20 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			disabledClass: 'arrow-btn--disabled',
 		},
 
-		// pagination: {
-		// 	el: ".menu__slider .slider__pagination",
-		// 	bulletClass: "slider__bullet",
-		// 	bulletActiveClass: "slider__bullet--active",
-		// 	clickable: true,
-		// },
+		pagination: {
+			el: ".masters__pagination",
+			bulletClass: "pagination__bullet",
+			bulletActiveClass: "pagination__bullet--active",
+			clickable: true,
+		},
 
 		breakpoints: {
 			768: {
 				slidesPerView: 2,
 			},
-			992: {
-				slidesPerView: 2,
-			},
+			// 992: {
+			// 	slidesPerView: 2,
+			// },
 			1200: {
 				spaceBetween: 30,
 				slidesPerView: 4,
@@ -17397,7 +17440,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * modals
 	 */
 
-	const modalOpenBtns = document.querySelectorAll('a[data-modal], button[data-modal]');
+	const modalOpenBtns = document.querySelectorAll('.modal-opener');
 	const modal = document.querySelector('.modal');
 	const modalCloseBtns = modal.querySelectorAll('.modal__close-btn');
 	let modalEl;
