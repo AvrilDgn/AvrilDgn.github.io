@@ -17071,7 +17071,6 @@ try {
 
 
 
-// import LazyLoad from "vanilla-lazyload";
 
 
 class Accordion {
@@ -17166,37 +17165,51 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Phone mask
+	 * Input mask
 	 */
 
 	let phoneInputs = document.querySelectorAll('input[name=phone]');
+	let nameInputs = document.querySelectorAll('input[name=name]');
 
-	for (let i = 0; i < phoneInputs.length; i++) {
-		const el = phoneInputs[i];
-
-		let patternMask = new IMask(el, {
+	phoneInputs.forEach(input => {
+		let patternMask = new IMask(input, {
 			mask: '+{7} (000) 000-00-00',
 			lazy: true,
 			placeholderChar: '_'
 		});
 
-		el.addEventListener('focus', function () {
+		input.addEventListener('focus', function () {
 			patternMask.updateOptions({ lazy: false });
 		}, true);
 
-		el.addEventListener('blur', function () {
+		input.addEventListener('blur', function () {
 			patternMask.updateOptions({ lazy: true });
 			if (!patternMask.masked.rawInputValue) {
 				patternMask.value = '';
 			}
 		}, true);
-	}
+	});
+	nameInputs.forEach(input => {
+		let patternMask = new IMask(input, {
+			mask: /^\W+$/,
+			lazy: true
+		});
 
+		input.addEventListener('focus', function () {
+			patternMask.updateOptions({ lazy: false });
+		}, true);
 
+		input.addEventListener('blur', function () {
+			patternMask.updateOptions({ lazy: true });
+			if (!patternMask.masked.rawInputValue) {
+				patternMask.value = '';
+			}
+		}, true);
+	});
 	/**
 	 * Header open mobile menu
 	 */
-	
+
 	let header = document.querySelector('.header');
 	let headerOpenBtn = header.querySelector('.header__menu-open-btn');
 	let isHeaderActive = false;
@@ -17217,32 +17230,66 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	/**
 	 * Inner menu
 	 */
-	
-	let innerMenu = document.querySelectorAll('.nav__inner-menu');
 
-	innerMenu.forEach(menu => {
+	let innerMenues = document.querySelectorAll('.nav__inner-menu');
+
+	innerMenues.forEach(menu => {
 		let parent = menu.closest('.nav__item');
 
-		parent.addEventListener('mouseenter', function (e) {
-			parent.removeEventListener('mouseleave', hideInnerMenu);
-			
+		let showInnerMenu = function () {
 			menu.classList.add('nav__inner-menu--showed');
 
-			parent.addEventListener('mouseleave', hideInnerMenu);
+			raf(() => {
+				menu.style.opacity = 1;
+
+				document.addEventListener('click', (e) => {
+					if (window.innerWidth > 992) {
+						let target = e.target;
+						let itsMenu = target == parent || parent.contains(target);
+
+						if (!itsMenu) {
+							hideInnerMenu();
+						}
+					}
+				}, { once: true });
+			});
+		}
+		let hideInnerMenu = function () {
+			menu.style.opacity = 0;
+
+			menu.addEventListener('transitionend', function () {
+				menu.classList.remove('nav__inner-menu--showed');
+			}, { once: true });
+		}
+
+		parent.addEventListener('click', function (e) {
+			if (menu.classList.contains('nav__inner-menu--showed') && !e.target.contains(menu)) {
+				hideInnerMenu();
+			} else {
+				showInnerMenu();
+			}
 		});
 
-		function hideInnerMenu() {
-			setTimeout(function () {
-				menu.classList.remove('nav__inner-menu--showed');
-			}, 500);
-		}
+		// parent.addEventListener('mouseenter', function (e) {
+		// 	parent.removeEventListener('mouseleave', hideInnerMenu);
+
+		// 	menu.classList.add('nav__inner-menu--showed');
+
+		// 	parent.addEventListener('mouseleave', hideInnerMenu);
+		// });
+
+		// function hideInnerMenu() {
+		// 	setTimeout(function () {
+		// 		menu.classList.remove('nav__inner-menu--showed');
+		// 	}, 500);
+		// }
 	});
 
 
 	/**
 	 * Map
 	 */
-	
+
 	let radioDistricts = document.querySelectorAll('.departure__districts-item input');
 	let mapDistricts = document.querySelectorAll('.departure__map svg path');
 
@@ -17362,7 +17409,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	/**
 	 * Accordion
 	 */
-	
+
 	new Accordion('.reasons__list', {
 		alwaysOpen: false,
 		duration: 350,
@@ -17375,7 +17422,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	/**
 	 * Slider
 	 */
-	
+
 	let mastersSlider = new core('.masters__slider', {
 		modules: [Navigation, Pagination],
 		spaceBetween: 30,
@@ -17594,6 +17641,97 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		}
 	}
+
+
+	/**
+	 * Form
+	 */
+
+	let forms = document.querySelectorAll('.form');
+
+	let showErr = function (input, msg) {
+		let msgEl = document.createElement('div');
+		let parent = input.parentElement;
+
+		input.classList.add('form__input--fault');
+
+		msgEl.textContent = msg;
+		msgEl.classList.add('form__message');
+		parent.appendChild(msgEl);
+		msgEl.style.opacity = 1;
+
+		setTimeout(() => {
+			input.classList.remove('form__input--fault');
+			msgEl.style.opacity = null;
+
+			msgEl.addEventListener('transitionend', function () {
+				parent.removeChild(msgEl);
+			});
+		}, 3000);
+	};
+
+	forms.forEach(form => {
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			let parent = this.parentElement;
+			let inputs = this.querySelectorAll('input');
+			let err = false;
+
+			inputs.forEach(input => {
+				switch (input.getAttribute('name')) {
+					case 'phone':
+						if (input.value.length < 18) {
+							err = true;
+							showErr(input, 'Введите правильный номер телефона!');
+						}
+
+						break;
+
+					case 'name':
+					default:
+						if (input.value.langth < 2) {
+							err = true;
+							showErr(input, 'Имя слишком короткое!');
+						}
+						break;
+				}
+			});
+
+			if (!err) {
+				// send
+
+				let thx = document.createElement('div');
+				let icon = document.createElement('div');
+				let title = document.createElement('div');
+				let subtitle = document.createElement('div');
+
+				thx.classList.add('thx');
+				icon.classList.add('thx__icon');
+				title.classList.add('thx__title', 'title');
+				subtitle.classList.add('thx__subtitle');
+
+				title.textContent = 'Спасибо';
+				subtitle.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit cursus nisi vel fermentum.';
+
+				thx.appendChild(icon);
+				thx.appendChild(title);
+				thx.appendChild(subtitle);
+
+				this.style.opacity = 0;
+				this.addEventListener('transitionend', function () {
+					this.style.display = 'none';
+
+					thx.style.opacity = 0;
+					parent.appendChild(thx);
+
+					raf(() => {
+						thx.style.opacity = 1;
+					});
+				});
+			}
+		});
+	});
 
 });
 

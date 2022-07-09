@@ -177,12 +177,19 @@
                                 </a>
                             </li>
                             <li class="nav__item nav__item--submenu">
-                                <a class="nav__link" href="#repair">
-                                    Что ремонтируем
-                                </a>
+                                <span class="nav__link">
+							Что ремонтируем
+						</span>
                                 <ul class="nav__inner-menu">
-                                    <li class="nav__item"><a class="nav__link" href="./brand.html">Viessmann</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="./brand.html">Viessmann</a></li>
+                                    <li><a href="./brand.html">Viessmann</a></li>
+                                    <li><a href="./brand.html">Buderus</a></li>
+                                    <li><a href="./brand.html">Wolf</a></li>
+                                    <li><a href="./brand.html">De Dietrich</a></li>
+                                    <li><a href="./brand.html">Protherm</a></li>
+                                    <li><a href="./brand.html">Ferroli</a></li>
+                                    <li><a href="./brand.html">Thermona</a></li>
+                                    <li><a href="./brand.html">Baxi</a></li>
+                                    <li><a href="./brand.html">Vaillant</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -838,13 +845,13 @@
                         </div>
 
                         <div class="quiz__step" data-quiz-id="3">
-                            <div class="quiz__question">Оставьте свои контакты</div>
-
                             <form class="quiz__form form" id="quiz-form" action="#" method="post">
+                                <div class="quiz__question">Оставьте свои контакты</div>
+
                                 <div class="form__field">
                                     <div class="form__field-name">Вашe имя</div>
                                     <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="Симонович Елена" required>
+                                        <input class="form__input" type="text" name="name" minlength="2" placeholder="Симонович Елена" required>
                                         <svg>
                                             <use xlink:href="./assets/img/sprite/sprite.svg#user"></use>
                                         </svg>
@@ -854,10 +861,11 @@
                                 <div class="form__field">
                                     <div class="form__field-name">Ваш телефон</div>
                                     <label class="form__label">
-                                        <input class="form__input" type="text" name="name" placeholder="+7 (___) __-__-___" required>
+                                        <input class="form__input" type="text" name="phone" minlength="11" placeholder="+7 (___) ___-__-__" required>
                                         <svg>
                                             <use xlink:href="./assets/img/sprite/sprite.svg#phone-call"></use>
                                         </svg>
+                                        <!-- <div class="form__message">Неверно</div> -->
                                     </label>
                                 </div>
 
@@ -1150,7 +1158,7 @@
                     <div class="payment__description">На нашем сайте предусмотрена функция оплаты онлайн. Для этого нажмите на
                         кнопку ниже и заполните все данные.</div>
 
-                    <a href="javascript:;" class="payment__feedback-btn button button--red" data-src="#modal-feedback">
+                    <a href="#" target="_black" class="payment__payment-btn button button--red">
                         <span>Оплатить вызов мастера</span>
                     </a>
                 </div>
@@ -1184,7 +1192,7 @@
                                     <div class="master__name">Иванов Иван Иванович</div>
                                     <div class="master__position">Должность: <b>Главный инженер</b></div>
                                     <div class="master__experience">Стаж: <b>3 года</b></div>
-                                    <a class="master__certificates" href="#">Смотреть сертификаты</a>
+                                    <a class="master__certificates" href="#" target="_black">Смотреть сертификаты</a>
                                 </div>
                             </div>
                         </li>
@@ -1201,7 +1209,7 @@
                                     <div class="master__name">Иванов Иван Иванович</div>
                                     <div class="master__position">Должность: <b>Главный инженер</b></div>
                                     <div class="master__experience">Стаж: <b>3 года</b></div>
-                                    <a class="master__certificates" href="#">Смотреть сертификаты</a>
+                                    <a class="master__certificates" href="#" target="_black">Смотреть сертификаты</a>
                                 </div>
                             </div>
                         </li>
@@ -1218,7 +1226,7 @@
                                     <div class="master__name">Иванов Иван Иванович</div>
                                     <div class="master__position">Должность: <b>Главный инженер</b></div>
                                     <div class="master__experience">Стаж: <b>3 года</b></div>
-                                    <a class="master__certificates" href="#">Смотреть сертификаты</a>
+                                    <a class="master__certificates" href="#" target="_black">Смотреть сертификаты</a>
                                 </div>
                             </div>
                         </li>
@@ -1235,7 +1243,7 @@
                                     <div class="master__name">Иванов Иван Иванович</div>
                                     <div class="master__position">Должность: <b>Главный инженер</b></div>
                                     <div class="master__experience">Стаж: <b>3 года</b></div>
-                                    <a class="master__certificates" href="#">Смотреть сертификаты</a>
+                                    <a class="master__certificates" href="#" target="_black">Смотреть сертификаты</a>
                                 </div>
                             </div>
                         </li>
@@ -1252,7 +1260,7 @@
                                     <div class="master__name">Иванов Иван Иванович</div>
                                     <div class="master__position">Должность: <b>Главный инженер</b></div>
                                     <div class="master__experience">Стаж: <b>3 года</b></div>
-                                    <a class="master__certificates" href="#">Смотреть сертификаты</a>
+                                    <a class="master__certificates" href="#" target="_black">Смотреть сертификаты</a>
                                 </div>
                             </div>
                         </li>
@@ -1269,7 +1277,7 @@
                                     <div class="master__name">Иванов Иван Иванович</div>
                                     <div class="master__position">Должность: <b>Главный инженер</b></div>
                                     <div class="master__experience">Стаж: <b>3 года</b></div>
-                                    <a class="master__certificates" href="#">Смотреть сертификаты</a>
+                                    <a class="master__certificates" href="#" target="_black">Смотреть сертификаты</a>
                                 </div>
                             </div>
                         </li>
@@ -1438,12 +1446,19 @@
                                 </a>
                             </li>
                             <li class="nav__item nav__item--submenu">
-                                <a class="nav__link" href="#repair">
-                                    Что ремонтируем
-                                </a>
+                                <span class="nav__link">
+							Что ремонтируем
+						</span>
                                 <ul class="nav__inner-menu">
-                                    <li class="nav__item"><a class="nav__link" href="./brand.html">Viessmann</a></li>
-                                    <li class="nav__item"><a class="nav__link" href="./brand.html">Viessmann</a></li>
+                                    <li><a href="./brand.html">Viessmann</a></li>
+                                    <li><a href="./brand.html">Buderus</a></li>
+                                    <li><a href="./brand.html">Wolf</a></li>
+                                    <li><a href="./brand.html">De Dietrich</a></li>
+                                    <li><a href="./brand.html">Protherm</a></li>
+                                    <li><a href="./brand.html">Ferroli</a></li>
+                                    <li><a href="./brand.html">Thermona</a></li>
+                                    <li><a href="./brand.html">Baxi</a></li>
+                                    <li><a href="./brand.html">Vaillant</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -1504,10 +1519,10 @@
         <div class="modal__wrapper">
             <!--feedback-->
             <div id="modal-feedback" class="modal__container">
-                <h3 class="modal__title title">Оставьте заявку</h3>
-                <p class="modal__subtitle">и наш менеджер свяжается с вами в кратчайшие сроки:</p>
-
                 <form class="modal__form form" id="modal-form" action="#" method="post">
+                    <h3 class="modal__title title">Оставьте заявку</h3>
+                    <p class="modal__subtitle">и наш менеджер свяжается с вами в кратчайшие сроки:</p>
+
                     <div class="form__field">
                         <div class="form__field-name">Вашe имя</div>
                         <label class="form__label">
@@ -1525,6 +1540,7 @@
                             <svg>
                                 <use xlink:href="./assets/img/sprite/sprite.svg#phone-call"></use>
                             </svg>
+                            <!-- <div class="form__message">Неверно</div> -->
                         </label>
                     </div>
 
@@ -1540,7 +1556,6 @@
 
     <!-- JS -->
 
-    <script src="assets/js/bundle.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 
     <!-- End JS -->
