@@ -17071,6 +17071,8 @@ try {
 
 
 
+// import LazyLoad from "vanilla-lazyload";
+
 
 class Accordion {
 	constructor(target, config) {
@@ -17167,7 +17169,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Phone mask
 	 */
 
-	let phoneInputs = document.querySelectorAll('input[name=tel]');
+	let phoneInputs = document.querySelectorAll('input[name=phone]');
 
 	for (let i = 0; i < phoneInputs.length; i++) {
 		const el = phoneInputs[i];
@@ -17191,8 +17193,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 
-
-	//header open menu
+	/**
+	 * Header open mobile menu
+	 */
+	
 	let header = document.querySelector('.header');
 	let headerOpenBtn = header.querySelector('.header__menu-open-btn');
 	let isHeaderActive = false;
@@ -17210,8 +17214,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	//header inner menu hover 
-
+	/**
+	 * Inner menu
+	 */
+	
 	let innerMenu = document.querySelectorAll('.nav__inner-menu');
 
 	innerMenu.forEach(menu => {
@@ -17233,25 +17239,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	/*
-	//header fixation
-	let header = document.querySelector('.header');
-
-	function fixationHeader() {
-		if (window.scrollY >= 100) {
-			header.classList.add('header--fixed');
-		} else {
-			header.classList.remove('header--fixed');
-		}
-	}
-
-	fixationHeader();
-	window.addEventListener('scroll', fixationHeader);
-	*/
-
-
-
-	//map
+	/**
+	 * Map
+	 */
+	
 	let radioDistricts = document.querySelectorAll('.departure__districts-item input');
 	let mapDistricts = document.querySelectorAll('.departure__map svg path');
 
@@ -17305,29 +17296,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	// let block = document.querySelector('.departure__districts-wrap');
-	// let winPos = block.getBoundingClientRect().top + window.scrollY;
-	// let height = block.offsetHeight;
-	// let navbar_pb = parseInt(block.parentElement.style.paddingBottom);
+	/**
+	 * Quiz
+	 */
 
-	// window.addEventListener('scroll', function () {
-	// 	let scrollPos = window.scrollY;
-
-	// 	console.log(scrollPos);
-	// 	console.log(winPos);
-
-
-	// 	if (scrollPos >= winPos) {
-	// 		block.parentElement.style.paddingBottom = height;
-	// 		block.classList.add('fixed');
-	// 	} else {
-	// 		block.parentElement.style.paddingBottom = navbar_pb;
-	// 		block.classList.remove('fixed');
-	// 	}
-	// })
-
-
-	//quiz
 	let step = 1;
 	let maxStep = 3;
 	let quizPrevBtn = document.querySelector('.quiz__step-btn.arrow-btn--prev');
@@ -17387,7 +17359,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	//faq
+	/**
+	 * Accordion
+	 */
+	
 	new Accordion('.reasons__list', {
 		alwaysOpen: false,
 		duration: 350,
@@ -17397,8 +17372,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
-	//slider
-
+	/**
+	 * Slider
+	 */
+	
 	let mastersSlider = new core('.masters__slider', {
 		modules: [Navigation, Pagination],
 		spaceBetween: 30,
@@ -17437,7 +17414,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * modals
+	 * Modals
 	 */
 
 	const modalOpenBtns = document.querySelectorAll('.modal-opener');

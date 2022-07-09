@@ -9,6 +9,135 @@
 
 
 
+    <!-- Check support Webp image format -->
+    <script>
+        ! function(e, n, A) {
+            function o(e, n) {
+                return typeof e === n
+            }
+
+            function t() {
+                var e, n, A, t, a, i, l;
+                for (var f in r)
+                    if (r.hasOwnProperty(f)) {
+                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+                    }
+            }
+
+            function a(e) {
+                var n = u.className,
+                    A = Modernizr._config.classPrefix || "";
+                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+                    n = n.replace(o, "$1" + A + "js$2")
+                }
+                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+            }
+
+            function i(e, n) {
+                if ("object" == typeof e)
+                    for (var A in e) f(e, A) && i(A, e[A]);
+                else {
+                    e = e.toLowerCase();
+                    var o = e.split("."),
+                        t = Modernizr[o[0]];
+                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+                }
+                return Modernizr
+            }
+            var s = [],
+                r = [],
+                l = {
+                    _version: "3.6.0",
+                    _config: {
+                        classPrefix: "",
+                        enableClasses: !0,
+                        enableJSClass: !0,
+                        usePrefixes: !0
+                    },
+                    _q: [],
+                    on: function(e, n) {
+                        var A = this;
+                        setTimeout(function() {
+                            n(A[e])
+                        }, 0)
+                    },
+                    addTest: function(e, n, A) {
+                        r.push({
+                            name: e,
+                            fn: n,
+                            options: A
+                        })
+                    },
+                    addAsyncTest: function(e) {
+                        r.push({
+                            name: null,
+                            fn: e
+                        })
+                    }
+                },
+                Modernizr = function() {};
+            Modernizr.prototype = l, Modernizr = new Modernizr;
+            var f, u = n.documentElement,
+                c = "svg" === u.nodeName.toLowerCase();
+            ! function() {
+                var e = {}.hasOwnProperty;
+                f = o(e, "undefined") || o(e.call, "undefined") ? function(e, n) {
+                    return n in e && o(e.constructor.prototype[n], "undefined")
+                } : function(n, A) {
+                    return e.call(n, A)
+                }
+            }(), l._l = {}, l.on = function(e, n) {
+                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function() {
+                    Modernizr._trigger(e, Modernizr[e])
+                }, 0)
+            }, l._trigger = function(e, n) {
+                if (this._l[e]) {
+                    var A = this._l[e];
+                    setTimeout(function() {
+                        var e, o;
+                        for (e = 0; e < A.length; e++)(o = A[e])(n)
+                    }, 0), delete this._l[e]
+                }
+            }, Modernizr._q.push(function() {
+                l.addTest = i
+            }), Modernizr.addAsyncTest(function() {
+                function e(e, n, A) {
+                    function o(n) {
+                        var o = n && "load" === n.type ? 1 == t.width : !1,
+                            a = "webp" === e;
+                        i(e, a && o ? new Boolean(o) : o), A && A(n)
+                    }
+                    var t = new Image;
+                    t.onerror = o, t.onload = o, t.src = n
+                }
+                var n = [{
+                        uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                        name: "webp"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                        name: "webp.alpha"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                        name: "webp.animation"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                        name: "webp.lossless"
+                    }],
+                    A = n.shift();
+                e(A.name, A.uri, function(A) {
+                    if (A && "load" === A.type)
+                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+                })
+            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+            e.Modernizr = Modernizr
+        }(window, document);
+    </script>
+
     <!-- CSS -->
 
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -61,14 +190,14 @@
 
                     <ul class="header__socials-mobile socials">
                         <li class="socials__item socials__item--whatsapp">
-                            <a href="#whatsapp">
+                            <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="socials__item socials__item--telegram">
-                            <a href="#telegram">
+                            <a href="tg://resolve?domain=###" target="_blank">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
                                 </svg>
@@ -92,14 +221,14 @@
                     <div class="header__contacts">
                         <ul class="header__socials socials">
                             <li class="socials__item socials__item--whatsapp">
-                                <a href="#whatsapp">
+                                <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank">
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                     </svg>
                                 </a>
                             </li>
                             <li class="socials__item socials__item--telegram">
-                                <a href="#telegram">
+                                <a href="tg://resolve?domain=###" target="_blank">
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
                                     </svg>
@@ -395,55 +524,82 @@
                 <ul class="brands__row">
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/viessman.png" alt="Viessman">
+                            <picture>
+                                <source srcset="./assets/img/brands/viessman.webp" type="image/webp">
+                                <img src="./assets/img/brands/viessman.png" alt="Viessman" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/buderus.png" alt="Buderus">
+                            <picture>
+                                <source srcset="./assets/img/brands/buderus.webp" type="image/webp">
+                                <img src="./assets/img/brands/buderus.png" alt="Buderus" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/wolf.png" alt="Wolf">
+                            <picture>
+                                <source srcset="./assets/img/brands/wolf.webp" type="image/webp">
+                                <img src="./assets/img/brands/wolf.png" alt="Wolf" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/de-dietrich.png" alt="De Dietrich">
+                            <picture>
+                                <source srcset="./assets/img/brands/de-dietrich.webp" type="image/webp">
+                                <img src="./assets/img/brands/de-dietrich.png" alt="De Dietrich" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/protherm.png" alt="Protherm">
+                            <picture>
+                                <source srcset="./assets/img/brands/protherm.webp" type="image/webp">
+                                <img src="./assets/img/brands/protherm.png" alt="Protherm" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/ferroli.png" alt="Ferroli">
+                            <picture>
+                                <source srcset="./assets/img/brands/ferroli.webp" type="image/webp">
+                                <img src="./assets/img/brands/ferroli.png" alt="Ferroli" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/thermona.png" alt="Thermona">
+                            <picture>
+                                <source srcset="./assets/img/brands/thermona.webp" type="image/webp">
+                                <img src="./assets/img/brands/thermona.png" alt="Thermona" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/baxi.png" alt="Baxi">
+                            <picture>
+                                <source srcset="./assets/img/brands/baxi.webp" type="image/webp">
+                                <img src="./assets/img/brands/baxi.png" alt="Baxi" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
                     <li class="brands__col">
                         <a href="./brand.html" class="brands__item">
-                            <img src="./assets/img/brands/vaillant.png" alt="Vaillant">
+                            <picture>
+                                <source srcset="./assets/img/brands/vaillant.webp" type="image/webp">
+                                <img src="./assets/img/brands/vaillant.png" alt="Vaillant" loading="lazy">
+                            </picture>
                             <span>Подробнее</span>
                         </a>
                     </li>
@@ -664,7 +820,7 @@
                                     <span>De Dietrich</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="Ferroli" name="problem" value="ferroli">
+                                    <input type="radio" name="problem" value="ferroli">
                                     <i></i>
                                     <span>Шумит</span>
                                 </label>
@@ -728,14 +884,14 @@
                 <div class="response__contacts">
                     <ul class="response__socials socials">
                         <li class="socials__item socials__item--whatsapp">
-                            <a href="#whatsapp">
+                            <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="socials__item socials__item--telegram">
-                            <a href="#telegram">
+                            <a href="tg://resolve?domain=###" target="_blank">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
                                 </svg>
@@ -859,14 +1015,14 @@
 
                                 <ul class="order__socials socials">
                                     <li class="socials__item socials__item--whatsapp">
-                                        <a href="#whatsapp">
+                                        <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank">
                                             <svg>
                                                 <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="socials__item socials__item--telegram">
-                                        <a href="#telegram">
+                                        <a href="tg://resolve?domain=###" target="_blank">
                                             <svg>
                                                 <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
                                             </svg>
@@ -886,7 +1042,7 @@
                             <div class="form__field">
                                 <div class="form__field-name">Вашe имя</div>
                                 <label class="form__label">
-                                    <input class="form__input" type="text" name="name" placeholder="Симонович Елена" required>
+                                    <input class="form__input" type="text" name="name" minlength="2" placeholder="Симонович Елена" required>
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#user"></use>
                                     </svg>
@@ -896,7 +1052,7 @@
                             <div class="form__field">
                                 <div class="form__field-name">Ваш телефон</div>
                                 <label class="form__label">
-                                    <input class="form__input" type="text" name="name" placeholder="+7 (___) __-__-___" required>
+                                    <input class="form__input" type="text" name="phone" minlength="11" placeholder="+7 (___) ___-__-__" required>
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#phone-call"></use>
                                     </svg>
@@ -1018,7 +1174,10 @@
                         <li class="masters__item swiper-slide">
                             <div class="masters__card master">
                                 <div class="master__photo">
-                                    <img src="./assets/img/master.jpg" alt="Фото мастера">
+                                    <picture>
+                                        <source srcset="./assets/img/master.webp" type="image/webp">
+                                        <img src="./assets/img/master.jpg" alt="Фото мастера" loading="lazy">
+                                    </picture>
                                 </div>
 
                                 <div class="master__info-wrap">
@@ -1032,7 +1191,10 @@
                         <li class="masters__item swiper-slide">
                             <div class="masters__card master">
                                 <div class="master__photo">
-                                    <img src="./assets/img/master.jpg" alt="Фото мастера">
+                                    <picture>
+                                        <source srcset="./assets/img/master.webp" type="image/webp">
+                                        <img src="./assets/img/master.jpg" alt="Фото мастера" loading="lazy">
+                                    </picture>
                                 </div>
 
                                 <div class="master__info-wrap">
@@ -1046,7 +1208,10 @@
                         <li class="masters__item swiper-slide">
                             <div class="masters__card master">
                                 <div class="master__photo">
-                                    <img src="./assets/img/master.jpg" alt="Фото мастера">
+                                    <picture>
+                                        <source srcset="./assets/img/master.webp" type="image/webp">
+                                        <img src="./assets/img/master.jpg" alt="Фото мастера" loading="lazy">
+                                    </picture>
                                 </div>
 
                                 <div class="master__info-wrap">
@@ -1060,7 +1225,10 @@
                         <li class="masters__item swiper-slide">
                             <div class="masters__card master">
                                 <div class="master__photo">
-                                    <img src="./assets/img/master.jpg" alt="Фото мастера">
+                                    <picture>
+                                        <source srcset="./assets/img/master.webp" type="image/webp">
+                                        <img src="./assets/img/master.jpg" alt="Фото мастера" loading="lazy">
+                                    </picture>
                                 </div>
 
                                 <div class="master__info-wrap">
@@ -1074,7 +1242,10 @@
                         <li class="masters__item swiper-slide">
                             <div class="masters__card master">
                                 <div class="master__photo">
-                                    <img src="./assets/img/master.jpg" alt="Фото мастера">
+                                    <picture>
+                                        <source srcset="./assets/img/master.webp" type="image/webp">
+                                        <img src="./assets/img/master.jpg" alt="Фото мастера" loading="lazy">
+                                    </picture>
                                 </div>
 
                                 <div class="master__info-wrap">
@@ -1088,7 +1259,10 @@
                         <li class="masters__item swiper-slide">
                             <div class="masters__card master">
                                 <div class="master__photo">
-                                    <img src="./assets/img/master.jpg" alt="Фото мастера">
+                                    <picture>
+                                        <source srcset="./assets/img/master.webp" type="image/webp">
+                                        <img src="./assets/img/master.jpg" alt="Фото мастера" loading="lazy">
+                                    </picture>
                                 </div>
 
                                 <div class="master__info-wrap">
@@ -1129,14 +1303,14 @@
 
                                 <ul class="order__socials socials">
                                     <li class="socials__item socials__item--whatsapp">
-                                        <a href="#whatsapp">
+                                        <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank">
                                             <svg>
                                                 <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                             </svg>
                                         </a>
                                     </li>
                                     <li class="socials__item socials__item--telegram">
-                                        <a href="#telegram">
+                                        <a href="tg://resolve?domain=###" target="_blank">
                                             <svg>
                                                 <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
                                             </svg>
@@ -1149,14 +1323,14 @@
                     </div>
 
                     <div class="order__body">
-                        <form class="order__form form" id="order-form" action="#" method="post">
+                        <form class="order__form form" id="order-form-2" action="#" method="post">
                             <div class="form__subtitle">Либо оставьте свои данные ниже и менеджер свяжается с вами в кратчайшие
                                 сроки:</div>
 
                             <div class="form__field">
                                 <div class="form__field-name">Вашe имя</div>
                                 <label class="form__label">
-                                    <input class="form__input" type="text" name="name" placeholder="Симонович Елена" required>
+                                    <input class="form__input" type="text" name="name" minlength="2" placeholder="Симонович Елена" required>
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#user"></use>
                                     </svg>
@@ -1166,7 +1340,7 @@
                             <div class="form__field">
                                 <div class="form__field-name">Ваш телефон</div>
                                 <label class="form__label">
-                                    <input class="form__input" type="text" name="name" placeholder="+7 (___) __-__-___" required>
+                                    <input class="form__input" type="text" name="phone" minlength="11" placeholder="+7 (___) ___-__-__" required>
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#phone-call"></use>
                                     </svg>
@@ -1288,14 +1462,14 @@
                     <div class="footer__contacts">
                         <ul class="footer__socials socials">
                             <li class="socials__item socials__item--whatsapp">
-                                <a href="#whatsapp">
+                                <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank">
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                     </svg>
                                 </a>
                             </li>
                             <li class="socials__item socials__item--telegram">
-                                <a href="#telegram">
+                                <a href="tg://resolve?domain=###" target="_blank">
                                     <svg>
                                         <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
                                     </svg>
@@ -1333,11 +1507,11 @@
                 <h3 class="modal__title title">Оставьте заявку</h3>
                 <p class="modal__subtitle">и наш менеджер свяжается с вами в кратчайшие сроки:</p>
 
-                <form class="modal__form form" id="order-form" action="#" method="post">
+                <form class="modal__form form" id="modal-form" action="#" method="post">
                     <div class="form__field">
                         <div class="form__field-name">Вашe имя</div>
                         <label class="form__label">
-                            <input class="form__input" type="text" name="name" placeholder="Симонович Елена" required>
+                            <input class="form__input" type="text" name="name" minlength="2" placeholder="Симонович Елена" required>
                             <svg>
                                 <use xlink:href="./assets/img/sprite/sprite.svg#user"></use>
                             </svg>
@@ -1347,7 +1521,7 @@
                     <div class="form__field">
                         <div class="form__field-name">Ваш телефон</div>
                         <label class="form__label">
-                            <input class="form__input" type="text" name="name" placeholder="+7 (___) __-__-___" required>
+                            <input class="form__input" type="text" name="phone" minlength="11" placeholder="+7 (___) ___-__-__" required>
                             <svg>
                                 <use xlink:href="./assets/img/sprite/sprite.svg#phone-call"></use>
                             </svg>

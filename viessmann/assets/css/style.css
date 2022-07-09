@@ -1429,7 +1429,7 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   padding: 0;
   margin: 0;
   top: calc(100% + 9px);
-  left: -50px;
+  left: -10px;
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1462,6 +1462,10 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   color: inherit;
   text-decoration: none;
   border-color: white;
+}
+
+.webp .logo::after {
+  background-image: url(../img/van.webp);
 }
 
 .logo {
@@ -2091,6 +2095,18 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
       align-self: center;
 }
 
+.webp .hero__bg {
+  background-image: url(../img/hero-bg.webp);
+}
+
+.webp .hero__bg-ribbon {
+  background-image: url(../img/ribbon.webp);
+}
+
+.webp .hero__bg-smoke {
+  background-image: url(../img/smoke.webp);
+}
+
 .hero {
   position: relative;
   padding: 278px 0 282px;
@@ -2554,6 +2570,14 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   border-color: #100f0f;
 }
 
+.webp .problems__background {
+  background-image: url(../img/problems.webp);
+}
+
+.webp .brand .problems__background {
+  background-image: url(../img/brand/problems.webp);
+}
+
 .problems {
   padding: 150px 0;
 }
@@ -2702,6 +2726,14 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
 .brand .poblems__background {
   background-image: url(../img/brand/problems.jpg);
+}
+
+.webp .quiz__bg {
+  background-image: url(../img/quiz-bg.webp);
+}
+
+.webp .brand .quiz__bg {
+  background-image: url(../img/brand/quiz-bg.webp);
 }
 
 .quiz__bg {
@@ -3014,6 +3046,14 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   border-color: #100f0f;
 }
 
+.webp .differences__bg {
+  background-image: url(../img/differences-bg.webp);
+}
+
+.webp .brand .differences__bg {
+  background-image: url(../img/brand/differences-bg.webp);
+}
+
 .differences {
   padding: 90px 0 120px;
 }
@@ -3101,6 +3141,22 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
 .brand .differences__bg {
   background-image: url(../img/brand/differences-bg.jpg);
+}
+
+.webp .service__bg-ribbon {
+  background-image: url(../img/ribbon.webp);
+}
+
+.webp .service__bg-smoke {
+  background-image: url(../img/smoke.webp);
+}
+
+.webp .service__background {
+  background-image: url(../img/service.webp);
+}
+
+.webp .brand .service__background {
+  background-image: url(../img/brand/service.webp);
 }
 
 .service {
@@ -3238,6 +3294,10 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
 .brand .service__background {
   background-image: url(../img/brand/service.jpg);
+}
+
+.webp .order__bg-smoke {
+  background-image: url(../img/smoke.webp);
 }
 
 .order__bg-smoke {
@@ -3490,6 +3550,14 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   line-height: 1.5;
   text-align: center;
   color: white;
+}
+
+.webp .payment {
+  background-image: url(../img/payment-bg.webp);
+}
+
+.webp .payment .container::after {
+  background-image: url(../img/payment.webp);
 }
 
 .payment {
