@@ -2094,10 +2094,21 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 .hero {
   position: relative;
   padding: 278px 0 282px;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+  width: 100%;
+  height: 1181px;
   background-image: url(../img/hero-bg.jpg);
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .hero__bg-ribbon {
@@ -2677,6 +2688,18 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   padding: 25px 24px;
 }
 
+.quiz__bg {
+  position: absolute;
+  top: 95%;
+  right: 0;
+  width: 80%;
+  height: 679px;
+  background-image: url(../img/quiz-bg.jpg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .quiz__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2899,10 +2922,6 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
 .response {
   padding: 150px 0 92px;
-  background-image: url(../img/response-bg.jpg);
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .response .container {
@@ -2969,6 +2988,14 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
 .differences {
   padding: 90px 0 120px;
+}
+
+.differences__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 1181px;
   background-image: url(../img/differences-bg.jpg);
   background-position: left top;
   background-repeat: no-repeat;
@@ -3787,6 +3814,11 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
     width: 50%;
   }
 
+  .differences__bg {
+    top: 10%;
+    width: 70%;
+  }
+
   .order__answer {
     width: 50%;
   }
@@ -3971,10 +4003,6 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
     margin-right: 0;
   }
 
-  .hero {
-    padding: 170px 0 282px;
-  }
-
   .hero__title {
     font-size: 30px;
   }
@@ -3985,6 +4013,25 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
   .hero__subtitle {
     font-size: 20px;
+  }
+
+  .hero {
+    padding: 170px 0 180px;
+  }
+
+  .hero__bg {
+    left: initial;
+    right: 0;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    width: 150%;
+    background-position: right top;
+  }
+
+  .hero__bg-ribbon {
+    bottom: -120px;
+    height: 472px;
   }
 
   .capabilities__item {
@@ -4090,6 +4137,11 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
     width: initial;
   }
 
+  .differences__bg {
+    top: 8%;
+    width: 90%;
+  }
+
   .differences__title {
     max-width: 280px;
   }
@@ -4105,6 +4157,15 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
   .differences__feedback-btn:active,
   .differences__feedback-btn:focus {
     padding: 10px 14px;
+  }
+
+  .service__background {
+    height: 320px;
+  }
+
+  .service__bg-ribbon {
+    bottom: -60px;
+    height: 472px;
   }
 
   .service__head {
@@ -4123,10 +4184,6 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
     margin-top: 40px;
     margin-left: 0;
     width: 100%;
-  }
-
-  __background {
-    height: 320px;
   }
 
   .order__head {
@@ -4232,6 +4289,11 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
   .hero__subtitle {
     font-size: 16px;
+  }
+
+  .hero__bg-ribbon {
+    bottom: -170px;
+    height: 394px;
   }
 
   .hero__feedback-btn {
@@ -4378,12 +4440,30 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
     padding: 8px;
   }
 
+  .quiz__bg {
+    top: 92%;
+  }
+
+  .differences__bg {
+    top: 1%;
+    width: 100%;
+  }
+
   .differences__title {
     max-width: initial;
   }
 
   .differences__col {
     max-width: initial;
+  }
+
+  .service {
+    padding: 30px 0 290px;
+  }
+
+  .service__bg-ribbon {
+    bottom: -32px;
+    height: 394px;
   }
 
   .service__description {
@@ -4568,6 +4648,11 @@ button:not(:disabled):not(.disabled):not([class*=“--disabled”]) {
 
   .problems__background {
     height: 190px;
+  }
+
+  .quiz__bg {
+    top: 84%;
+    width: 106%;
   }
 
   .quiz__head,
