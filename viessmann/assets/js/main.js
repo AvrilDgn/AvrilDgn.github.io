@@ -17155,6 +17155,223 @@ class Accordion {
 	}
 }
 
+class Modal {
+	constructor(props) {
+		const defaultConfig = {
+			backscroll: true,
+			linkAttrName: 'data-modal',
+			closeOnOverlay: true,
+			closeOnEsc: true,
+			closeBtnAttrName: 'data-modal-close',
+			catchFocus: true,
+			fixedSelectors: '*[data-fixed]',
+			beforeOpen: () => { },
+			afterClose: () => { },
+		};
+		this.config = Object.assign(defaultConfig, props);
+		if (this.config.linkAttrName) {
+			this.init();
+		}
+		this._closeAfterTransition = this._closeAfterTransition.bind(this);
+	}
+
+	init() {
+		this.isOpened = false;
+		this.openedWindow = false;
+		this.starter = false;
+		this._nextWindows = false;
+		this._scrollPosition = 0;
+		this._reopenTrigger = false;
+		this._overlayChecker = false;
+		this._isMoved = false;
+		this._focusElements = [
+			'a[href]',
+			'area[href]',
+			'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
+			'select:not([disabled]):not([aria-hidden])',
+			'textarea:not([disabled]):not([aria-hidden])',
+			'button:not([disabled]):not([aria-hidden])',
+			'iframe',
+			'object',
+			'embed',
+			'[contenteditable]',
+			'[tabindex]:not([tabindex^="-"])',
+		];
+		// this._modalBlock = false;
+
+		//тень
+		// const existingShadow = document.querySelector('.modal__overlay');
+		// if (existingShadow) {
+		// 	this.shadow = existingShadow;
+		// } else {
+		// 	this.shadow = document.createElement('div');
+		// 	this.shadow.classList.add('modal__overlay');
+		// 	document.body.appendChild(this.shadow);
+		// }
+		this.eventsFeeler();
+	}
+
+	eventsFeeler() {
+		document.addEventListener('click', (e) => {
+			const clickedlink = e.target.closest(`[${this.config.linkAttrName}]`);
+			if (!this._isMoved && clickedlink) {
+				e.preventDefault();
+				this.starter = clickedlink;
+				const targetSelector = this.starter.getAttribute(this.config.linkAttrName);
+				this._nextWindows = document.querySelector("#" + targetSelector);
+				this.open();
+				return;
+			}
+			if (e.target.closest(`[${this.config.closeBtnAttrName}]`)) {
+				this.close();
+			}
+		});
+
+		if (this.config.closeOnOverlay) {
+			document.addEventListener('mousedown', (e) => {
+				if (!this._isMoved && (e.target instanceof Element) && !e.target.classList.contains('modal__wrapper')) return;
+				this._overlayChecker = true;
+			});
+
+			document.addEventListener('mouseup', (e) => {
+				if (!this._isMoved && (e.target instanceof Element) && this._overlayChecker && e.target.classList.contains('modal__wrapper')) {
+					e.preventDefault();
+					this._overlayChecker = !this._overlayChecker;
+					this.close();
+					return;
+				}
+				this._overlayChecker = false;
+			});
+		}
+
+		window.addEventListener('keydown', (e) => {
+			if (!this._isMoved && this.config.closeOnEsc && e.which === 27 && this.isOpened) {
+				e.preventDefault();
+				this.close();
+				return;
+			}
+			if (!this._isMoved && this.config.catchFocus && e.which === 9 && this.isOpened) {
+				this.focusCatcher(e);
+			}
+		});
+	}
+
+	open(selector) {
+		if (selector) {
+			if (typeof (selector) === 'string') {
+				this._nextWindows = document.querySelector(selector);
+			} else {
+				this._nextWindows = selector;
+			}
+		}
+		if (!this._nextWindows) {
+			console.log('Warning: Modal selector is not found');
+			return;
+		}
+		if (this.isOpened) {
+			this._reopenTrigger = true;
+			this.close();
+			return;
+		}
+		this.openedWindow = this._nextWindows;
+		// this._modalBlock = this.openedWindow.querySelector('.modal__container');
+		this.config.beforeOpen(this);
+		this._bodyScrollControl();
+		// this.shadow.classList.add('modal__overlay--show');
+		this.openedWindow.classList.add('modal--active');
+		this.openedWindow.setAttribute('aria-hidden', 'false');
+		if (this.config.catchFocus) this.focusControl();
+		this.isOpened = true;
+	}
+
+	close() {
+		if (!this.isOpened) {
+			return;
+		}
+
+		this.openedWindow.classList.add('modal--moved');
+		this._isMoved = true;
+		this.openedWindow.addEventListener('transitionend', this._closeAfterTransition);
+		this.openedWindow.classList.remove('modal--active');
+	}
+
+	_closeAfterTransition() {
+		this.openedWindow.classList.remove('modal--moved');
+		this.openedWindow.removeEventListener('transitionend', this._closeAfterTransition);
+		this._isMoved = false;
+		// this.shadow.classList.remove('modal__overlay--show');
+		this.openedWindow.setAttribute('aria-hidden', 'true');
+
+		if (this.config.catchFocus) this.focusControl();
+		this._bodyScrollControl();
+		this.isOpened = false;
+		this.openedWindow.scrollTop = 0;
+		this.config.afterClose(this);
+
+		if (this._reopenTrigger) {
+			this._reopenTrigger = false;
+			this.open();
+		}
+	}
+
+	focusControl() {
+		const nodes = this.openedWindow.querySelectorAll(this._focusElements);
+		if (this.isOpened && this.starter) {
+			this.starter.focus();
+		} else if (nodes.length) nodes[0].focus();
+	}
+
+	focusCatcher(e) {
+		const nodes = this.openedWindow.querySelectorAll(this._focusElements);
+		const nodesArray = Array.prototype.slice.call(nodes);
+		if (!this.openedWindow.contains(document.activeElement)) {
+			nodesArray[0].focus();
+			e.preventDefault();
+		} else {
+			const focusedItemIndex = nodesArray.indexOf(document.activeElement);
+			if (e.shiftKey && focusedItemIndex === 0) {
+				nodesArray[nodesArray.length - 1].focus();
+				e.preventDefault();
+			}
+			if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+				nodesArray[0].focus();
+				e.preventDefault();
+			}
+		}
+	}
+
+	_bodyScrollControl() {
+		if (!this.config.backscroll) return;
+
+		// collect fixed selectors to array
+		const fixedSelectorsElems = document.querySelectorAll(this.config.fixedSelectors);
+		const fixedSelectors = Array.prototype.slice.call(fixedSelectorsElems);
+
+		const html = document.documentElement;
+		if (this.isOpened === true) {
+			html.classList.remove('modal-opened');
+			html.style.marginRight = '';
+			fixedSelectors.forEach((el) => {
+				el.style.paddingRight = '';
+			});
+			window.scrollTo(0, this._scrollPosition);
+			html.style.top = '';
+			return;
+		}
+		this._scrollPosition = window.pageYOffset;
+		const marginSize = window.innerWidth - html.clientWidth;
+		html.style.top = `${-this._scrollPosition}px`;
+
+		if (marginSize) {
+			html.style.marginRight = `${marginSize}px`;
+			fixedSelectors.forEach((el) => {
+				el.style.paddingRight = `${parseInt(getComputedStyle(el).paddingRight, 10) + marginSize}px`;
+			});
+		}
+		html.classList.add('modal-opened');
+	}
+}
+
 document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	let raf = function (callback) {
@@ -17162,6 +17379,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			callback();
 		});
 	};
+
+
+	/**
+	 * Modals
+	 */
+
+	let modals = new Modal();
 
 
 	/**
@@ -17293,6 +17517,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let radioDistricts = document.querySelectorAll('.departure__districts-item input');
 	let mapDistricts = document.querySelectorAll('.departure__map svg path');
 
+	let changeDistrict = function (district) {
+		document.querySelector('.departure__map svg path.active').classList.remove('active');
+		district.classList.add('active');
+
+		modals.open('#modal-feedback');
+	};
+
 	mapDistricts.forEach(district => {
 		let id = district.id;
 
@@ -17311,8 +17542,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 				district.addEventListener('click', function (e) {
 					radio.checked = true;
-					document.querySelector('.departure__map svg path.active').classList.remove('active');
-					district.classList.add('active');
+
+					changeDistrict(district);
 				});
 			}
 		}
@@ -17335,8 +17566,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				});
 
 				district.addEventListener('click', function (e) {
-					document.querySelector('.departure__map svg path.active').classList.remove('active');
-					target.classList.add('active');
+					changeDistrict(target);
 				});
 			}
 		}
@@ -17369,9 +17599,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		quizBodies.forEach(body => {
 			if (+body.dataset.quizId === step) {
 				body.classList.add('active');
-
-				console.log(body.dataset.quizId);
-				console.log(step);
 
 			} else {
 				body.classList.remove('active');
@@ -17461,189 +17688,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Modals
-	 */
-
-	const modalOpenBtns = document.querySelectorAll('.modal-opener');
-	const modal = document.querySelector('.modal');
-	const modalCloseBtns = modal.querySelectorAll('.modal__close-btn');
-	let modalEl;
-
-	if (modal) {
-		for (let i = 0; i < modalOpenBtns.length; i++) {
-			const openBtn = modalOpenBtns[i],
-				modalId = "#" + openBtn.dataset.modal,
-				modalWrap = document.querySelector(modalId),
-				modalForm = modalWrap.querySelector('form');
-
-			if (!modalWrap) {
-				continue;
-			}
-
-			const overlay = modal.querySelector('.modal__overlay');
-			overlay.addEventListener("click", closeModal);
-
-			openBtn.addEventListener("click", openModal);
-
-			modalCloseBtns.forEach(btn => {
-				btn.addEventListener("click", closeModal);
-			});
-
-			function openModal(e) {
-				e.preventDefault();
-
-				let handler = () => {
-					// overlay.addEventListener("click", closeModal);
-					// openBtn.removeEventListener("click", openModal);
-				}
-
-				let shown = () => {
-					modal.classList.add('modal--show');
-					modalWrap.style.display = 'flex';
-					scroll_lock_default.a.disablePageScroll(modal);
-					modalEl = modalWrap;
-
-					raf(() => {
-						modal.classList.add('modal--visible');
-						modal.addEventListener('transitionend', handler, { once: true });
-					});
-				}
-
-
-				let parent;
-
-				switch (modalId) {
-					case '#modal-course-more':
-
-						parent = this.closest('.courses-card');
-
-						modalWrap.querySelector('.modal-course-more__image img').src = parent.querySelector('.courses-card__input-hidden').value;
-						modalWrap.querySelector('.modal-course-more__title').textContent = parent.querySelector('.courses-card__title').textContent;
-						modalWrap.querySelector('.modal-course-more__age').textContent = parent.querySelector('.courses-card__years').textContent;
-						modalWrap.querySelector('.modal-course-more__description-text').textContent = parent.querySelector('.courses-card__content-hidden').textContent;
-
-						break;
-					case '#modal-signup':
-
-						if (this.closest('.courses-card') || this.closest('.modal-course-more') || this.closest('.courses-short__item')) {
-							let parent = this.closest('.courses-card') || this.closest('.modal-course-more') || this.closest('.courses-short__item');
-
-							let value = parent.querySelector('.courses-card__title, .modal-course-more__title, .courses-short__title');
-							let age = parent.querySelector('.courses-card__years, .modal-course-more__age');
-
-							if (value) {
-								if (modalForm.querySelector('input[name = course]')) {
-									modalForm.querySelector('input[name = course]').value = value.textContent;
-								} else {
-									let input = document.createElement('input');
-									input.type = 'hidden';
-									input.name = 'course';
-									input.value = value.textContent;
-									modalForm.appendChild(input);
-								}
-							}
-
-							if (age) {
-								if (modalForm.querySelector('input[name = age]')) {
-									modalForm.querySelector('input[name = age]').value = age.textContent;
-								} else {
-									let input = document.createElement('input');
-									input.type = 'hidden';
-									input.name = 'age';
-									input.value = age.textContent;
-									modalForm.appendChild(input);
-								}
-							}
-
-						} else if (this.closest('.shop-card')) {
-							let parent = this.closest('.shop-card');
-
-							let value = parent.querySelector('.shop-card__name');
-							let type = parent.querySelector('.shop-card__type');
-							let price = parent.querySelector('.shop-card__price-value');
-
-							if (value) {
-								if (modalForm.querySelector('input[name = product-name]')) {
-									modalForm.querySelector('input[name = product-name]').value = value.textContent;
-								} else {
-									let input = document.createElement('input');
-									input.type = 'hidden';
-									input.name = 'product-name';
-									input.value = value.textContent;
-									modalForm.appendChild(input);
-								}
-							}
-
-							if (type) {
-								if (modalForm.querySelector('input[name = category]')) {
-									modalForm.querySelector('input[name = category]').value = type.textContent;
-								} else {
-									let input = document.createElement('input');
-									input.type = 'hidden';
-									input.name = 'category';
-									input.value = type.textContent;
-									modalForm.appendChild(input);
-								}
-							}
-
-							if (price) {
-								if (modalForm.querySelector('input[name = price]')) {
-									modalForm.querySelector('input[name = price]').value = price.textContent;
-								} else {
-									let input = document.createElement('input');
-									input.type = 'hidden';
-									input.name = 'price';
-									input.value = price.textContent;
-									modalForm.appendChild(input);
-								}
-							}
-
-						} else {
-							// let value = 'free';
-						}
-
-
-						break;
-					default:
-						break;
-				}
-
-				//is shown
-				if (modal.classList.contains('modal--show')) {
-					modal.classList.remove('modal--visible');
-
-					modal.addEventListener('transitionend', function () {
-						modalEl.style.display = null;
-						shown();
-
-					}, { once: true });
-
-				} else {
-					shown();
-				}
-
-			}
-
-			function closeModal(e) {
-				e.preventDefault();
-				modal.classList.remove('modal--visible');
-				scroll_lock_default.a.enablePageScroll(modal);
-
-				let handler = () => {
-					modal.classList.remove('modal--show');
-					modalWrap.style.display = null;
-
-					// openBtn.addEventListener("click", openModal);
-					// overlay.removeEventListener("click", closeModal);
-				}
-
-				modal.addEventListener('transitionend', handler, { once: true });
-			}
-		}
-	}
-
-
-	/**
 	 * Form
 	 */
 
@@ -17668,6 +17712,94 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				parent.removeChild(msgEl);
 			});
 		}, 3000);
+	};
+
+	let createThxPage = function (form) {
+		let thx = document.createElement('div');
+		let icon = document.createElement('div');
+		let title = document.createElement('div');
+		let subtitle = document.createElement('div');
+
+		thx.classList.add('thx');
+		icon.classList.add('thx__icon');
+		title.classList.add('thx__title', 'title');
+		subtitle.classList.add('thx__subtitle');
+
+		title.textContent = 'Спасибо';
+		subtitle.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit cursus nisi vel fermentum.';
+
+		thx.appendChild(icon);
+		thx.appendChild(title);
+		thx.appendChild(subtitle);
+
+		form.style.opacity = 0;
+		form.addEventListener('transitionend', function () {
+			this.style.display = 'none';
+
+			thx.style.opacity = 0;
+			this.parentElement.appendChild(thx);
+
+			raf(() => {
+				thx.style.opacity = 1;
+			});
+		});
+	}
+
+	let send = function (form) {
+		let formData = new FormData(form);
+		let request = new XMLHttpRequest();
+		let btn = form.querySelector('[type="submit"]');
+		request.open('POST', 'form.php', true);
+		request.setRequestHeader('accept', 'application/json');
+
+		let statusMessage = form.querySelector('.form__status');
+
+		if (!statusMessage) {
+			statusMessage = document.createElement('div');
+			statusMessage.classList.add('form__status');
+			form.appendChild(statusMessage);
+		}
+
+		formData.append('page', document.title);
+
+		btn.disabled = true;
+
+		request.send(formData);
+
+		request.onreadystatechange = function () {
+			if (request.readyState === 4) {
+				switch (request.status) {
+					case 200:
+						let reqJSON = JSON.parse(request.responseText);
+
+						if (reqJSON.success) {
+							createThxPage(form);
+						}
+
+						break;
+
+					case 404:
+						statusMessage.innerHTML = "Сервер недоступен";
+						btn.disabled = false;
+
+						raf(() => {
+							statusMessage.classList.add('form__status--showed');
+						});
+
+						break;
+
+					default:
+						statusMessage.innerHTML = request.responseText;
+						btn.disabled = false;
+
+						raf(() => {
+							statusMessage.classList.add('form__status--showed');
+						});
+
+						break;
+				}
+			}
+		}
 	};
 
 	forms.forEach(form => {
@@ -17700,35 +17832,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 			if (!err) {
 				// send
-
-				let thx = document.createElement('div');
-				let icon = document.createElement('div');
-				let title = document.createElement('div');
-				let subtitle = document.createElement('div');
-
-				thx.classList.add('thx');
-				icon.classList.add('thx__icon');
-				title.classList.add('thx__title', 'title');
-				subtitle.classList.add('thx__subtitle');
-
-				title.textContent = 'Спасибо';
-				subtitle.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit cursus nisi vel fermentum.';
-
-				thx.appendChild(icon);
-				thx.appendChild(title);
-				thx.appendChild(subtitle);
-
-				this.style.opacity = 0;
-				this.addEventListener('transitionend', function () {
-					this.style.display = 'none';
-
-					thx.style.opacity = 0;
-					parent.appendChild(thx);
-
-					raf(() => {
-						thx.style.opacity = 1;
-					});
-				});
+				send(e.target);
 			}
 		});
 	});

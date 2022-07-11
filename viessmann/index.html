@@ -151,7 +151,7 @@
 
         <!-- Header -->
         <header class="header">
-            <div class="header__top" data-scroll-lock-fill-gap>
+            <div class="header__top" data-scroll-lock-fill-gap data-fixed>
                 <div class="container">
 
                     <nav class="nav header__nav">
@@ -212,7 +212,7 @@
                         </li>
                     </ul>
 
-                    <a href="javascript:;" class="header__feedback-btn button button--yellow button--border modal-opener" data-modal="modal-feedback">
+                    <a href="javascript:;" class="header__feedback-btn button button--yellow button--border" data-modal="modal-feedback">
                         Заказать звонок
                     </a>
                 </div>
@@ -282,11 +282,11 @@
                 <p class="hero__subtitle">Авторизованный сервисный центр по ремонту котлов фирмы <b>Viessmann</b></p>
 
                 <div class="hero__btns">
-                    <a href="javascript:;" class="hero__feedback-btn button button--red" data-src="#modal-feedback">
+                    <a href="javascript:;" class="hero__feedback-btn button button--red" data-modal="modal-feedback">
                         <span>Оставить заявку</span>
                     </a>
 
-                    <a href="#" class="hero__whatsapp-btn button button--green">WhatsApp</a>
+                    <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank" class="hero__whatsapp-btn button button--green">WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -342,11 +342,11 @@
                     </div>
 
                     <div class="departure__btns">
-                        <a href="javascript:;" class="departure__feedback-btn button button--red" data-src="#modal-feedback">
+                        <a href="javascript:;" class="departure__feedback-btn button button--red" data-modal="modal-feedback">
                             <span>Оставить заявку</span>
                         </a>
 
-                        <a href="#" class="departure__whatsapp-btn button button--green">WhatsApp</a>
+                        <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank" class="departure__whatsapp-btn button button--green">WhatsApp</a>
                     </div>
                 </div>
 
@@ -522,7 +522,6 @@
             </div>
         </section>
         <!-- End Departure -->
-
         <!-- Brands -->
         <section class="brands">
             <div class="container">
@@ -623,7 +622,7 @@
 
                 <ul class="problems__row">
                     <li class="problems__col">
-                        <div class="problems__item modal-opener" data-modal="modal-feedback">
+                        <div class="problems__item" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#fast-time"></use>
@@ -636,7 +635,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item modal-opener" data-modal="modal-feedback">
+                        <div class="problems__item" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#settings"></use>
@@ -649,7 +648,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item modal-opener" data-modal="modal-feedback">
+                        <div class="problems__item" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#labour-day"></use>
@@ -662,7 +661,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item modal-opener" data-modal="modal-feedback">
+                        <div class="problems__item" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#water-heater"></use>
@@ -675,7 +674,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item modal-opener" data-modal="modal-feedback">
+                        <div class="problems__item" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#boiler"></use>
@@ -688,7 +687,7 @@
                         </div>
                     </li>
                     <li class="problems__col">
-                        <div class="problems__item modal-opener" data-modal="modal-feedback">
+                        <div class="problems__item" data-modal="modal-feedback">
                             <div class="problems__item-icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#contract"></use>
@@ -710,11 +709,11 @@
                     </p>
 
                     <div class="problems__btns">
-                        <a href="javascript:;" class="problems__feedback-btn button button--red" data-src="#modal-feedback">
+                        <a href="javascript:;" class="problems__feedback-btn button button--red" data-modal="modal-feedback">
                             <span>Вызввать мастера</span>
                         </a>
 
-                        <a href="#" class="problems__whatsapp-btn button button--green">WhatsApp</a>
+                        <a href="https://api.whatsapp.com/send?phone=+74956486361" target="_blank" class="problems__whatsapp-btn button button--green">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -750,37 +749,37 @@
 
                             <div class="quiz__answers">
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="not-warm-wather" checked>
+                                    <input form="quiz-form" type="radio" name="problem" value="not-warm-wather" checked>
                                     <i></i>
                                     <span>Не греет воду</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="leaking">
+                                    <input form="quiz-form" type="radio" name="problem" value="leaking">
                                     <i></i>
                                     <span>Капает/течет</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="noisy">
+                                    <input form="quiz-form" type="radio" name="problem" value="noisy">
                                     <i></i>
                                     <span>Шумит</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="does-not-turn-on">
+                                    <input form="quiz-form" type="radio" name="problem" value="does-not-turn-on">
                                     <i></i>
                                     <span>Не включается</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="not-warm-room">
+                                    <input form="quiz-form" type="radio" name="problem" value="not-warm-room">
                                     <i></i>
                                     <span>Не греет помещение</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="error">
+                                    <input form="quiz-form" type="radio" name="problem" value="error">
                                     <i></i>
                                     <span>Выдает какую-то ошибку</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="other">
+                                    <input form="quiz-form" type="radio" name="problem" value="other">
                                     <i></i>
                                     <span>Другое/не знаю причины</span>
                                 </label>
@@ -788,56 +787,56 @@
                         </div>
 
                         <div class="quiz__step" data-quiz-id="2">
-                            <div class="quiz__question">Что произошло с котлом?</div>
+                            <div class="quiz__question">Какой производитель котла?</div>
 
                             <div class="quiz__answers">
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="viessman">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="viessman" checked>
                                     <i></i>
                                     <span>Viessman</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="wolf">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="wolf">
                                     <i></i>
                                     <span>Wolf</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="protherm">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="protherm">
                                     <i></i>
                                     <span>Protherm</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="thermona">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="thermona">
                                     <i></i>
                                     <span>Thermona</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="vaillant">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="vaillant">
                                     <i></i>
                                     <span>Vaillant</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="buderus">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="buderus">
                                     <i></i>
                                     <span>Buderus</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="de-dietrich">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="de-dietrich">
                                     <i></i>
                                     <span>De Dietrich</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="ferroli">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="ferroli">
                                     <i></i>
                                     <span>Шумит</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="Baxi" value="baxi">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="baxi">
                                     <i></i>
                                     <span>Шумит</span>
                                 </label>
                                 <label class="quiz__answer">
-                                    <input type="radio" name="problem" value="other">
+                                    <input form="quiz-form" type="radio" name="manufacturer" value="other">
                                     <i></i>
                                     <span>Другое/не знаю причины</span>
                                 </label>
@@ -939,7 +938,7 @@
                         </li>
                     </ul>
 
-                    <a href="javascript:;" class="differences__feedback-btn button button--red" data-src="#modal-feedback">
+                    <a href="javascript:;" class="differences__feedback-btn button button--red" data-modal="modal-feedback">
                         <span>Оставить заявку</span>
                     </a>
                 </div>
@@ -1081,7 +1080,7 @@
 
                 <ul class="repair__list">
                     <li class="repair__item">
-                        <div class="repair__card repair__card--active modal-opener" data-modal="modal-feedback">
+                        <div class="repair__card repair__card--active" data-modal="modal-feedback">
                             <div class="repair__icon">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite/sprite.svg#labour-day"></use>
@@ -1158,7 +1157,7 @@
                     <div class="payment__description">На нашем сайте предусмотрена функция оплаты онлайн. Для этого нажмите на
                         кнопку ниже и заполните все данные.</div>
 
-                    <a href="#" target="_black" class="payment__payment-btn button button--red">
+                    <a href="#" target="_black" class="payment__btn button button--red">
                         <span>Оплатить вызов мастера</span>
                     </a>
                 </div>
@@ -1499,7 +1498,7 @@
                             <div class="phone-block__info-text">Принимаем заявки <b>круглосуточно</b></div>
                         </div>
 
-                        <a href="javascript:;" class="footer__feedback-btn button button--yellow button--border modal-opener" data-modal="modal-feedback">
+                        <a href="javascript:;" class="footer__feedback-btn button button--yellow button--border" data-modal="modal-feedback">
                             Заказать звонок
                         </a>
                     </div>
@@ -1513,13 +1512,13 @@
 
     <!-- Modal -->
 
-    <div class="modal">
-        <div class="modal__overlay"></div>
+    <div class="modal" id="modal-feedback">
+        <!-- <div class="modal__overlay"></div> -->
 
         <div class="modal__wrapper">
             <!--feedback-->
-            <div id="modal-feedback" class="modal__container">
-                <form class="modal__form form" id="modal-form" action="#" method="post">
+            <div class="modal__container">
+                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
                     <h3 class="modal__title title">Оставьте заявку</h3>
                     <p class="modal__subtitle">и наш менеджер свяжается с вами в кратчайшие сроки:</p>
 
@@ -1546,7 +1545,7 @@
 
                     <button class="form__send-btn button button--red" type="submit">Оставить заявку</button>
                 </form>
-                <button class="modal__close-btn" aria-label="Close modal"></button>
+                <button class="modal__close-btn" data-modal-close aria-label="Close modal"></button>
             </div>
 
         </div>
