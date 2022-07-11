@@ -715,7 +715,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 */
 
 	let mastersSlider = new Swiper('.masters__slider', {
-		modules: [Navigation, Pagination],
 		spaceBetween: 30,
 		wrapperClass: 'masters__list',
 		slideClass: 'masters__item',
