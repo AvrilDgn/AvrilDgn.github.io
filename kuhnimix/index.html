@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+
+
+
+    <!-- Check support Webp image format -->
+    <script>
+        ! function(e, n, A) {
+            function o(e, n) {
+                return typeof e === n
+            }
+
+            function t() {
+                var e, n, A, t, a, i, l;
+                for (var f in r)
+                    if (r.hasOwnProperty(f)) {
+                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+                    }
+            }
+
+            function a(e) {
+                var n = u.className,
+                    A = Modernizr._config.classPrefix || "";
+                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+                    n = n.replace(o, "$1" + A + "js$2")
+                }
+                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+            }
+
+            function i(e, n) {
+                if ("object" == typeof e)
+                    for (var A in e) f(e, A) && i(A, e[A]);
+                else {
+                    e = e.toLowerCase();
+                    var o = e.split("."),
+                        t = Modernizr[o[0]];
+                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+                }
+                return Modernizr
+            }
+            var s = [],
+                r = [],
+                l = {
+                    _version: "3.6.0",
+                    _config: {
+                        classPrefix: "",
+                        enableClasses: !0,
+                        enableJSClass: !0,
+                        usePrefixes: !0
+                    },
+                    _q: [],
+                    on: function(e, n) {
+                        var A = this;
+                        setTimeout(function() {
+                            n(A[e])
+                        }, 0)
+                    },
+                    addTest: function(e, n, A) {
+                        r.push({
+                            name: e,
+                            fn: n,
+                            options: A
+                        })
+                    },
+                    addAsyncTest: function(e) {
+                        r.push({
+                            name: null,
+                            fn: e
+                        })
+                    }
+                },
+                Modernizr = function() {};
+            Modernizr.prototype = l, Modernizr = new Modernizr;
+            var f, u = n.documentElement,
+                c = "svg" === u.nodeName.toLowerCase();
+            ! function() {
+                var e = {}.hasOwnProperty;
+                f = o(e, "undefined") || o(e.call, "undefined") ? function(e, n) {
+                    return n in e && o(e.constructor.prototype[n], "undefined")
+                } : function(n, A) {
+                    return e.call(n, A)
+                }
+            }(), l._l = {}, l.on = function(e, n) {
+                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function() {
+                    Modernizr._trigger(e, Modernizr[e])
+                }, 0)
+            }, l._trigger = function(e, n) {
+                if (this._l[e]) {
+                    var A = this._l[e];
+                    setTimeout(function() {
+                        var e, o;
+                        for (e = 0; e < A.length; e++)(o = A[e])(n)
+                    }, 0), delete this._l[e]
+                }
+            }, Modernizr._q.push(function() {
+                l.addTest = i
+            }), Modernizr.addAsyncTest(function() {
+                function e(e, n, A) {
+                    function o(n) {
+                        var o = n && "load" === n.type ? 1 == t.width : !1,
+                            a = "webp" === e;
+                        i(e, a && o ? new Boolean(o) : o), A && A(n)
+                    }
+                    var t = new Image;
+                    t.onerror = o, t.onload = o, t.src = n
+                }
+                var n = [{
+                        uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                        name: "webp"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                        name: "webp.alpha"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                        name: "webp.animation"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                        name: "webp.lossless"
+                    }],
+                    A = n.shift();
+                e(A.name, A.uri, function(A) {
+                    if (A && "load" === A.type)
+                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+                })
+            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+            e.Modernizr = Modernizr
+        }(window, document);
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <a href="index.html" class="logo header__logo">
+                    <img src="./assets/img/logo.png" alt="логотип">
+                </a>
+
+                <nav class="nav header__nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#about-us">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#guarantees">
+                                Гарантии
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#advantages">
+                                Преимущества
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contacts">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="tel:8(3466)68-20-15" class="header__phone">8 (3466) 68-20-15</a>
+
+                <a href="javascript:;" class="header__feedback-btn button" data-modal="modal-feedback">
+                    Консультация
+                </a>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+
+                <p class="hero__condition">за 30 дней от 154 000 ₽ </p>
+                <h1 class="hero__title">
+                    Кухни на заказ по вашим размерам
+                </h1>
+                <div class="hero__subtitle">напрямую от фабрики</div>
+
+                <div class="hero__row">
+                    <ul class="hero__services services">
+                        <li class="services__item services__item--froze">
+                            <div class="services__image"></div>
+                            <div class="services__text">Делаем замер</div>
+                        </li>
+                        <li class="services__item services__item--design">
+                            <div class="services__image"></div>
+                            <div class="services__text">Разрабатываем дизайн</div>
+                        </li>
+                        <li class="services__item services__item--headset">
+                            <div class="services__image"></div>
+                            <div class="services__text">Изготавливаем гарнитур</div>
+                        </li>
+                        <li class="services__item services__item--delivery">
+                            <div class="services__image"></div>
+                            <div class="services__text">Доставляем и собираем</div>
+                        </li>
+                    </ul>
+
+                    <a href="javascript:;" class="hero__feedback-btn button" data-modal="modal-feedback">
+                        <span>Получить консультацию</span>
+                        <svg class="button__arrow">
+                            <use xlink:href="assets/img/sprite/sprite.svg#arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__bg-fern"></div>
+        </section>
+        <!-- End Hero -->
+
+        <!-- Order -->
+        <section class="order">
+            <div class="container">
+                <div class="order__content">
+                    <h2 class="order__title title">
+                        Хотите кухню на которой будет удобно готовить
+                    </h2>
+                    <p class="order__subtitle">
+                        И каждая мелочь будет на своем месте?
+                    </p>
+
+                    <ul class="order__steps-list order-steps">
+                        <li class="order-steps__item">
+                            <div class="order-steps__name">Обсудите ваши задумки с проектировщиком</div>
+                            <p class="order-steps__text">По итогу вы узнаете все тонкости правильной кухни. Проектировщик расскажет
+                                как сделать кухню
+                                удобной для пользования, как лучше расположить технику, какими функциями наполнить и на чем можно
+                                сэкономить без потери в качетсве. Подготовит проект, смету отправит на WhatsApp</p>
+                        </li>
+                        <li class="order-steps__item">
+                            <div class="order-steps__name">А так же вы получите:</div>
+                            <ul class="order-steps__obtainings-list">
+                                <div class="order-steps__obtaining-item order-steps__obtaining-item--cost">
+                                    <div class="order-steps__obtaining-icon"></div>
+                                    <div class="order-steps__obtaining-name">Расчет стоимости</div>
+                                </div>
+                                <div class="order-steps__obtaining-item order-steps__obtaining-item--design">
+                                    <div class="order-steps__obtaining-icon"></div>
+                                    <div class="order-steps__obtaining-name">Дизайн проект</div>
+                                </div>
+                                <div class="order-steps__obtaining-item order-steps__obtaining-item--gift">
+                                    <div class="order-steps__obtaining-icon"></div>
+                                    <div class="order-steps__obtaining-name">Подарок при заказе</div>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <form class="order__form form" action="#" method="post">
+                        <div class="form__field">
+                            <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" type="tel" name="name" placeholder="Номер телефона" required>
+                        </div>
+                        <button class="form__send-btn button">Консультация</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="order__bg-kitchen"></div>
+        </section>
+        <!-- End Order -->
+
+        <!-- Formula -->
+        <section class="formula">
+            <div class="container">
+                <h2 class="formula__title title">
+                    Формула качества компании <span class="title--red title--uppercase">КУХНИ МИКС</span>
+                </h2>
+                <p class="formula__subtitle">Мы не просто производим кухни на заказ - мы помогаем найти вам лучшее решение
+                </p>
+                <p class="formula__description">Наш выбор - современный подход к производству кухонной мебели, новейшие
+                    европейские
+                    технологии и уникальные собственные разработки помогают нам производить качественный продукт.</p>
+
+                <div class="formula__indicators indicators">
+                    <div class="indicators__item">
+                        <div class="indicators__value" data-count>500+</div>
+                        <div class="indicators__type">Вариантов цветов и текстур фасадов</div>
+                    </div>
+                    <div class="indicators__item">
+                        <div class="indicators__value" data-count>8+</div>
+                        <div class="indicators__type">Лет на рынке</div>
+                    </div>
+                    <div class="indicators__item">
+                        <div class="indicators__value"><span class="indicators__value--min">без</span>%</div>
+                        <div class="indicators__type">Рассрочка</div>
+                    </div>
+                </div>
+
+                <ul class="formula__list">
+                    <li class="formula__item formula-card">
+                        <div class="formula-card__head">
+                            <div class="formula-card__icon">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#production"></use>
+                                </svg>
+                            </div>
+                            <h3 class="formula-card__name">Технологии</h3>
+                        </div>
+                        <p class="formula-card__description">
+                            Мы реализуем любые ваши идеи и пожелания, используя для этого передовые материалы и технологии
+                            производства
+                        </p>
+                    </li>
+                    <li class="formula__item formula-card">
+                        <div class="formula-card__head">
+                            <div class="formula-card__icon">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#efficiency"></use>
+                                </svg>
+                            </div>
+                            <h3 class="formula-card__name">Сроки изготовления</h3>
+                        </div>
+                        <p class="formula-card__description">
+                            Доставим и соберем точно в срок, изготовим Вашу кухню за 30 дней, срочный заказ выполним всего за
+                            14 дней!
+                        </p>
+                    </li>
+                    <li class="formula__item formula-card">
+                        <div class="formula-card__head">
+                            <div class="formula-card__icon">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#fabric"></use>
+                                </svg>
+                            </div>
+                            <h3 class="formula-card__name">Материалы</h3>
+                        </div>
+                        <p class="formula-card__description">
+                            В нашей студии большой ассортимент
+                            материалов и фурнитуры, работаем
+                            с каждым клментом индивидуально
+                        </p>
+                    </li>
+                    <li class="formula__item formula-card">
+                        <div class="formula-card__head">
+                            <div class="formula-card__icon">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#builder"></use>
+                                </svg>
+                            </div>
+                            <h3 class="formula-card__name">Опытные специалисты</h3>
+                        </div>
+                        <p class="formula-card__description">
+                            На каждом этапе заняты опытные мастера. Поэтому для вас мы гарантируем качество и скорость
+                            выполнения каждого проекта.
+                        </p>
+                    </li>
+                    <li class="formula__item formula-card">
+                        <div class="formula-card__head">
+                            <div class="formula-card__icon">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#sketch"></use>
+                                </svg>
+                            </div>
+                            <h3 class="formula-card__name">Современный дизайн</h3>
+                        </div>
+                        <p class="formula-card__description">
+                            Наши специалисты спроектируют
+                            кухню под ваши нужды, создадут
+                            3D дизайн-проект бесплатно
+                        </p>
+                    </li>
+                    <li class="formula__item formula-card formula-card--cost-calculation">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                            </svg>
+                            <span>Рассчитать стоимость кухни</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Formula -->
+
+        <!-- Cycles -->
+        <section class="cycles">
+            <div class="container">
+                <h2 class="cycles__title title"><span class="title--red">Секрет качества</span> изделей КУХНИ МИКС</h2>
+                <p class="cycles__subtitle">
+                    От телефонного разговора до вашего дома заказ проходит через <b>10 разных цехов 4-х отделов производства</b>
+                </p>
+
+                <ul class="cycles__navigation">
+                    <li class="cycles__navigation-item cycles__navigation-item--active">
+                        <span>Отдел конструкции</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Распиловочный цех</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Кромочный цех</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Присадочный цех</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Фасадный цех</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Фрезировочный цех</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Цех с прессом</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Покрасочный цех</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>ОТК</span>
+                    </li>
+                    <li class="cycles__navigation-item">
+                        <span>Упаковочный цех</span>
+                    </li>
+                </ul>
+
+                <div class="cycles__tab-wrapper">
+                    <div class="cycles__image" style="background-image: url(./assets/img/cycles/stage-1.png);"></div>
+                    <div class="cycles__info-block">
+                        <div class="cycles__stage">Этап 1</div>
+                        <ul class="cycles__list">
+                            <li class="cycles__item cycles__item--active" data-image='./assets/img/cycles/stage-1.png'>
+                                <h3 class="cycles__name">Отдел конструкции</h3>
+                                <p class="cycles__description">На этом этапе конструкторы по документам от дизайнера
+                                    подготавливають все необходимое для
+                                    создания кухни следующими отделами.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-2.png'>
+                                <h3 class="cycles__name">Распиловочный цех</h3>
+                                <p class="cycles__description">На станках обрабатываем листовые материалы. Здесь мы создаем
+                                    аккуратные детали точных размеров.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-3.png'>
+                                <h3 class="cycles__name">Кромочный цех</h3>
+                                <p class="cycles__description">В этом цеху детали обрабатываются кромками. Автоматические станки с
+                                    точно настроенной электронной системой обрезают свесы кромки и полируют стыки материала с
+                                    кромкой.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-4.png'>
+                                <h3 class="cycles__name">Присадочный цех</h3>
+                                <p class="cycles__description">Здесь оператор делает разные отверстия для фурнитуры и крепежей на
+                                    станке высокой точности с числовым программным управлением (ЧПУ).</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-5.png'>
+                                <h3 class="cycles__name">Фасадный цех</h3>
+                                <p class="cycles__description">Цех с пятью подразделениями, которые собирает из заготовок
+                                    заказанную конструкцию.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-6.png'>
+                                <h3 class="cycles__name">Фрезировочный цех</h3>
+                                <p class="cycles__description">Станок с числовым программным упрвалением (ЧПУ) наносит на детали
+                                    простые, экскизные, сложные и 3Д фрезеровки.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-7.png'>
+                                <h3 class="cycles__name">Цех с прессом</h3>
+                                <p class="cycles__description">Мембранно-вакуумным прессом облицовываем плоские и неплоские
+                                    поверхности шпоном и плёнками ПВХ.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-8.png'>
+                                <h3 class="cycles__name">Покрасочный цех</h3>
+                                <p class="cycles__description">Окрашиваем детали итальянской эмаалью разными способами покраски,
+                                    тонируем изделия, патинируем поверхности и покрываем лаками.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-9.png'>
+                                <h3 class="cycles__name">ОТК</h3>
+                                <p class="cycles__description">Проверяем каждую деталь с каждого цеха на соответствие установленным
+                                    в ТЗ требованиям. Все несоответствия отправляют на доработку.</p>
+                            </li>
+                            <li class="cycles__item" data-image='./assets/img/cycles/stage-10.png'>
+                                <h3 class="cycles__name">Упаковочный цех</h3>
+                                <p class="cycles__description">Упаковочные мебельные станки качественно упаковывают готовые
+                                    изделия, чтобы все детали доехали до вашего дома в целости и сохранности.</p>
+                            </li>
+                        </ul>
+                        <div class="cycles__arrows">
+                            <button class="cycles__arrow cycles__arrow--prev" disabled></button>
+                            <div class="cycles__stages"><b>01</b> / 10</div>
+                            <button class="cycles__arrow cycles__arrow--next"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Cycles -->
+
+        <!-- Approach -->
+        <section class="approach">
+            <div class="container">
+                <h2 class="approach__title title">Теперь <span class="title--red">вы знаете наш подход</span> к работе</h2>
+                <p class="approach__subtitle">
+                    и отношение к качеству производства
+                </p>
+                <p class="approach__guarantee">Поэтому мы даем вам гарантию и сервисное обслуживание до 10 лет</p>
+                <!-- <div class="approach__year">10</div> -->
+
+                <div class="approach__bg-printing"></div>
+            </div>
+        </section>
+        <!-- End Approach -->
+
+        <!-- Variants -->
+        <section class="variants">
+            <div class="container">
+                <h2 class="variants__title title">Посмотрите варианты кухонь <span class="title--red">под свой бюджет</span></h2>
+                <p class="variants__subtitle">
+                    Выберите сумму, на которую показать варианты
+                </p>
+
+                <div class="variants__navigation">
+                    <div class="range-slider variants__range">
+                        <div class="range-slider__wrap">
+                            <!-- <div class="range-slider__range"></div>
+					<div class="range-slider__handle"></div> -->
+                        </div>
+                    </div>
+
+                    <ul class="variants__prices">
+                        <li class="variants__prices-item variants__prices-item--active" data-price="50000"><span>50 000 ₽</span></li>
+                        <li class="variants__prices-item" data-price="100000"><span>100 000 ₽</span></li>
+                        <li class="variants__prices-item" data-price="150000"><span>150 000 ₽</span></li>
+                        <li class="variants__prices-item" data-price="200000"><span>200 000 ₽</span></li>
+                        <li class="variants__prices-item" data-price="250000"><span>250 000 ₽</span></li>
+                        <li class="variants__prices-item" data-price="300000"><span>300 000 ₽</span></li>
+                    </ul>
+                </div>
+
+
+                <div class="variants__tab-wrapper">
+                    <ul class="variants__content variants__content--active" data-value="50000">
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="variants__content" data-value="100000">
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="variants__content" data-value="150000">
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="variants__content" data-value="200000">
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="variants__content" data-value="250000">
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="variants__content" data-value="300000">
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                        <li class="variants__content-item variant-card">
+                            <div class="variant-card__image">
+                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                            </div>
+
+                            <div class="variant-card__wrap">
+                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
+                                    набором дополнительных возможностей хранения</p>
+
+                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                    Рассчитать стоимость
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Variants -->
+
+        <!-- Facades -->
+        <section class="facades">
+            <div class="container">
+                <h2 class="facades__title title">Примеры фасадов для вашей кухни</h2>
+
+                <ul class="facades__navigation">
+                    <li class="facades__navigation-item facades__navigation-item--active" data-target="ДСП">
+                        ДСП
+                    </li>
+                    <li class="facades__navigation-item" data-target="МДФ+ПВХ">
+                        МДФ+ПВХ
+                    </li>
+                    <li class="facades__navigation-item" data-target="Пластик">
+                        Пластик
+                    </li>
+                    <li class="facades__navigation-item" data-target="МДФ">
+                        МДФ
+                    </li>
+                    <li class="facades__navigation-item" data-target="Эмаль">
+                        Эмаль
+                    </li>
+                    <li class="facades__navigation-item" data-target="Натуральное дерево">
+                        Натуральное дерево
+                    </li>
+                </ul>
+
+                <div class="facades__tab-wrapper">
+                    <ul class="facades__content facades__content--active" data-id="ДСП">
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-1.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-2.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-3.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-4.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-5.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-6.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="facades__content" data-id="МДФ+ПВХ">
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-1.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-2.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-3.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-4.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-5.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-6.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="facades__content" data-id="Пластик">
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-1.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-2.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-3.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-4.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-5.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-6.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="facades__content" data-id="МДФ">
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-1.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-2.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-3.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-4.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-5.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-6.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="facades__content" data-id="Эмаль">
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-1.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-2.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-3.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-4.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-5.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-6.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="facades__content" data-id="Натуральное дерево">
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-1.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-2.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-3.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-4.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-5.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                        <li class="facades__content-item">
+                            <a href="#">
+                                <img src="./assets/img/facades/item-6.jpg" alt="пример фасада">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Facades -->
+
+        <!-- Estimate -->
+        <section class="estimate">
+            <div class="estimate__cutlery"></div>
+
+            <div class="container">
+                <div class="estimate__wrapper">
+                    <h2 class="estimate__title title">Составление сметы- <span>ответстенный процесс</span></h2>
+                    <p class="estimate__subtitle">
+                        Любая мелкая деталь может повлиять на удобство и практичность кухни
+                    </p>
+                    <div class="estimate__roulette"></div>
+
+                    <p class="estimate__order-text">Заполните форму на бесплатный выезд мастера. Наш специалист
+                        <b>поможет правильно составить смету и рассчитать стоимость</b>
+                    </p>
+
+                    <form class="estimate__form form" action="#" method="post">
+                        <div class="form__field">
+                            <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" type="tel" name="name" placeholder="+7(_ _ _) _ _ _-_ _-_ _" required>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" type="email" name="mail" placeholder="Ваш email" required>
+                        </div>
+                        <button class="form__send-btn button">Заказать выезд мастера</button>
+                    </form>
+
+                    <div class="estimate__brochure"></div>
+                </div>
+            </div>
+        </section>
+        <!-- End Estimate -->
+
+        <!-- Contacts -->
+        <section class="contacts">
+            <div id="map" class="contacts__map"></div>
+
+            <div class="container">
+                <div class="contacts__content">
+                    <h2 class="contacts__title title">Контакты</h2>
+
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <svg class="contacts__icon">
+                                <use xlink:href="./assets/img/sprite/sprite.svg#map-pin"></use>
+                            </svg>
+                            <p class="contacts__text">
+                                г. Нижневартовск,
+                                ул. Индустриальная д. 7 стр. 1 ТЦ "ВДНХ", 2 ЭТАЖ, бутик №20а
+                            </p>
+                        </li>
+                        <li class="contacts__item">
+                            <svg class="contacts__icon">
+                                <use xlink:href="./assets/img/sprite/sprite.svg#timer"></use>
+                            </svg>
+                            <p class="contacts__text">
+                                Пн-Вс: 08:00 - 22:00
+                            </p>
+                        </li>
+                        <li class="contacts__item">
+                            <svg class="contacts__icon">
+                                <use xlink:href="./assets/img/sprite/sprite.svg#smartphone"></use>
+                            </svg>
+                            <p class="contacts__text">
+                                <a href="tel:+73466682015">8 (3466) 68-20-15</a>
+                                <a href="tel:+73466681598">8 (3466) 68-15-98</a>
+                            </p>
+                        </li>
+                        <li class="contacts__item">
+                            <svg class="contacts__icon">
+                                <use xlink:href="./assets/img/sprite/sprite.svg#mail"></use>
+                            </svg>
+                            <p class="contacts__text">
+                                <a href="mailto:kuhninv@mail.ru">kuhninv@mail.ru</a>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <ul class="contacts__socials socials">
+                        <li class="socials__item">
+                            <a href="#vk">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a href="#ok">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#ok"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Contacts -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <a href="index.html" class="logo footer__logo">
+                    <img src="./assets/img/logo.png" alt="логотип">
+                </a>
+
+                <nav class="nav footer__nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#about-us">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#guarantees">
+                                Гарантии
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#advantages">
+                                Преимущества
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contacts">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="tel:8(3466)68-20-15" class="footer__phone">
+                    <svg>
+                        <use xlink:href="./assets/img/sprite/sprite.svg#call"></use>
+                    </svg>
+                    <span>8 (3466) 68-20-15</span>
+                </a>
+
+                <a href="javascript:;" class="footer__feedback-btn button" data-modal="modal-feedback">
+                    Консультация
+                </a>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+    <!-- End Content -->
+
+    <!-- Modal -->
+
+    <div class="modal" id="modal-feedback">
+        <div class="modal__wrapper">
+            <!--feedback-->
+            <div class="modal__container">
+                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
+                    <h3 class="modal__title title">Оставьте заявку</h3>
+                    <p class="modal__subtitle">и наш менеджер свяжается с вами в кратчайшие сроки:</p>
+
+                    <div class="form__field">
+                        <label class="form__label">
+                            <input class="form__input" type="text" name="name" placeholder="Ваше имя">
+                        </label>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label">
+                            <input class="form__input" type="text" name="phone" minlength="11" placeholder="Номер телефона" required>
+                        </label>
+                    </div>
+
+                    <button class="form__send-btn button" type="submit">Оставить заявку</button>
+                </form>
+                <button class="modal__close-btn" data-modal-close aria-label="Close modal"></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Modal -->
+
+    <!-- JS -->
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" defer></script>
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/jquery-ui.min.js" defer></script>
+    <script src="assets/js/jquery.maskedinput.js" defer></script>
+    <script src="assets/js/jquery.fancybox.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+
+    <!-- End JS -->
+
+</body>
+
+</html>
