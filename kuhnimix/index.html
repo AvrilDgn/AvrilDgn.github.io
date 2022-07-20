@@ -302,7 +302,7 @@
                 <div class="formula__indicators indicators">
                     <div class="indicators__item">
                         <div class="indicators__value" data-count>500+</div>
-                        <div class="indicators__type">Вариантов цветов и текстур фасадов</div>
+                        <div class="indicators__type">Вариантов цветов и <br> текстур фасадов</div>
                     </div>
                     <div class="indicators__item">
                         <div class="indicators__value" data-count>8+</div>
@@ -512,6 +512,8 @@
 
         <!-- Approach -->
         <section class="approach">
+            <div class="approach__bg"></div>
+
             <div class="container">
                 <h2 class="approach__title title">Теперь <span class="title--red">вы знаете наш подход</span> к работе</h2>
                 <p class="approach__subtitle">
@@ -542,7 +544,8 @@
                     </div>
 
                     <ul class="variants__prices">
-                        <li class="variants__prices-item variants__prices-item--active" data-price="50000"><span>50 000 ₽</span></li>
+                        <li class="variants__prices-item variants__prices-item--active" data-price="50000"><span>50 000 ₽</span>
+                        </li>
                         <li class="variants__prices-item" data-price="100000"><span>100 000 ₽</span></li>
                         <li class="variants__prices-item" data-price="150000"><span>150 000 ₽</span></li>
                         <li class="variants__prices-item" data-price="200000"><span>200 000 ₽</span></li>
@@ -554,374 +557,446 @@
 
                 <div class="variants__tab-wrapper">
                     <ul class="variants__content variants__content--active" data-value="50000">
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
-                            </div>
-                        </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
-                            </div>
-
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
-
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                                </div>
+
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
+
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
+                        </li>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                     <ul class="variants__content" data-value="100000">
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
-                            </div>
-                        </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
-                            </div>
-
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
-
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                                </div>
+
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
+
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
+                        </li>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                     <ul class="variants__content" data-value="150000">
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
-                            </div>
-                        </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
-                            </div>
-
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
-
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                                </div>
+
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
+
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
+                        </li>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                     <ul class="variants__content" data-value="200000">
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
-                            </div>
-                        </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
-                            </div>
-
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
-
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                                </div>
+
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
+
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
+                        </li>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                     <ul class="variants__content" data-value="250000">
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
-                            </div>
-                        </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
-                            </div>
-
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
-
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                                </div>
+
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
+
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
+                        </li>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                     <ul class="variants__content" data-value="300000">
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-1.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня с фасадами "AGT"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
-                            </div>
-                        </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
-                            </div>
-
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
-
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
-                            </div>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-2.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня "Эмаль"</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня в стиле "хай-тек"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
-                        <li class="variants__content-item variant-card">
-                            <div class="variant-card__image">
-                                <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-3.jpg" alt="изображение кухни">
+                                </div>
+
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня "Эмаль"</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
+
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
+                        </li>
+                        <li class="variants__content-item">
+                            <div class="variants__content-wrap variant-card">
+                                <div class="variant-card__image">
+                                    <img src="./assets/img/variants/item-4.jpg" alt="изображение кухни">
+                                </div>
 
-                            <div class="variant-card__wrap">
-                                <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
-                                <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с большим
-                                    набором дополнительных возможностей хранения</p>
+                                <div class="variant-card__text-block">
+                                    <h3 class="variant-card__name">Кухня «Прованс 1»</h3>
+                                    <p class="variant-card__description">Максимально стильный и надежный кухонный гарнитур “AGT” с
+                                        большим
+                                        набором дополнительных возможностей хранения</p>
 
-                                <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
-                                    Рассчитать стоимость
-                                </a>
+                                    <a href="javascript:;" class="variant-card__price-btn button" data-modal="modal-price">
+                                        Рассчитать стоимость
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
