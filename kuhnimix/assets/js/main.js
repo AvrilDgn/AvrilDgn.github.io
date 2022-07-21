@@ -263,7 +263,15 @@ $(document).ready(function () {
 	$(window).on("scroll", headerFixation);
 
 	//scroll
-	$(document).on("click", 'a[href^="#"]', function (t) { t.preventDefault(), $("html, body").animate({ scrollTop: $($.attr(this, "href")).offset().top }, 500) });
+	$(document).on("click", 'a[href^="#"]', function (e) { 
+		if ($(this).attr('href').length <= 1) return;
+
+		e.preventDefault();
+
+		$("html, body").animate({ 
+			scrollTop: $($.attr(this, "href")).offset().top 
+		}, 500);
+	});
 
 
 	//accrual numbers
@@ -325,6 +333,31 @@ $(document).ready(function () {
 			cycleIndex = i;
 			changeCycle(i);
 		});
+	});
+
+	let touchPos = null;
+
+	$('.cycles__tab-wrapper').on("touchstart", function (e) {
+		touchPos = e.originalEvent.touches[0].pageX;
+	});
+	$('.cycles__tab-wrapper').on("touchmove", function (e) {
+		if (touchPos == null) return;
+
+		let pos = e.originalEvent.touches[0].pageX;
+
+		if (touchPos < pos && cycleIndex > 0) {
+			cycleIndex--;
+			changeCycle(cycleIndex);
+			touchPos = null;
+		}
+		if (touchPos > pos && cycleIndex < cyclesLength - 1) {
+			cycleIndex++;
+			changeCycle(cycleIndex);
+			touchPos = null;
+		}
+	});
+	$('.cycles__tab-wrapper').on("touchend", function () {
+		touchPos = null;
 	});
 
 	$('.cycles__arrow--next').on("click", function () {
@@ -408,7 +441,7 @@ $(document).ready(function () {
 
 		$('.variants__tab-wrapper').fadeOut("fast", function () {
 			$('.variants__content--active').removeClass('variants__content--active'),
-			$(`.variants__content[data-value="${appropriateValue}"]`).addClass('variants__content--active');
+				$(`.variants__content[data-value="${appropriateValue}"]`).addClass('variants__content--active');
 		}).fadeIn('fast');
 	}
 

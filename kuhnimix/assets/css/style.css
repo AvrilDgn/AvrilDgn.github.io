@@ -1028,6 +1028,13 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   max-width: 832px;
 }
 
+.order__title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+  text-transform: initial;
+}
+
 .order__subtitle {
   margin-top: 10px;
   font-weight: 300;
@@ -1194,7 +1201,8 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .formula__title {
-  text-transform: capitalize;
+  font-weight: 700;
+  text-transform: initial;
   color: #21222b;
 }
 
@@ -1630,7 +1638,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .approach__guarantee {
-  margin-top: 15%;
+  margin-top: 13%;
   width: 345px;
   font-weight: 400;
   font-size: 24px;
@@ -2140,7 +2148,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .contacts__title {
-  text-transform: capitalize;
+  text-transform: initial;
 }
 
 .contacts__list {
