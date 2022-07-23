@@ -1,7 +1,3 @@
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// import IMask from 'imask';
-// import $ from "jquery";
-
 class Modal {
 	constructor(props) {
 		const defaultConfig = {
@@ -12,14 +8,10 @@ class Modal {
 			closeBtnAttrName: 'data-modal-close',
 			catchFocus: true,
 			fixedSelectors: '*[data-fixed]',
-			formData: {},
 			beforeOpen: () => { },
 			afterClose: () => { },
 		};
 		this.config = Object.assign(defaultConfig, props);
-		if (defaultConfig.formData instanceof Object && Object.keys(defaultConfig.formData).length > 0) {
-			this.config.formData = Object.assign({}, props.formData);
-		}
 		if (this.config.linkAttrName) {
 			this.init();
 		}
@@ -49,17 +41,7 @@ class Modal {
 			'[contenteditable]',
 			'[tabindex]:not([tabindex^="-"])',
 		];
-		// this._modalBlock = false;
 
-		//тень
-		// const existingShadow = document.querySelector('.modal__overlay');
-		// if (existingShadow) {
-		// 	this.shadow = existingShadow;
-		// } else {
-		// 	this.shadow = document.createElement('div');
-		// 	this.shadow.classList.add('modal__overlay');
-		// 	document.body.appendChild(this.shadow);
-		// }
 		this.eventsFeeler();
 	}
 
@@ -129,21 +111,8 @@ class Modal {
 
 		this._form = this.openedWindow.querySelector('form');
 
-		// this._modalBlock = this.openedWindow.querySelector('.modal__container');
 		this.config.beforeOpen(this);
 		this._bodyScrollControl();
-		// this.shadow.classList.add('modal__overlay--show');
-
-		if (this._form instanceof HTMLElement && Object.keys(this.config.formData).length > 0) {
-			for (const key in this.config.formData) {
-				let input = document.createElement('input');
-				input.type = 'hidden';
-				input.name = key;
-				input.value = this.config.formData[key];
-				input.setAttribute('data-form-data', 'data-form-data');
-				this._form.appendChild(input);
-			}
-		}
 
 		this.openedWindow.classList.add('modal--active');
 		this.openedWindow.setAttribute('aria-hidden', 'false');
@@ -171,7 +140,6 @@ class Modal {
 		this.openedWindow.classList.remove('modal--moved');
 		this.openedWindow.removeEventListener('transitionend', this._closeAfterTransition);
 		this._isMoved = false;
-		// this.shadow.classList.remove('modal__overlay--show');
 		this.openedWindow.setAttribute('aria-hidden', 'true');
 
 		if (this.config.catchFocus) this.focusControl();
@@ -215,7 +183,6 @@ class Modal {
 	_bodyScrollControl() {
 		if (!this.config.backscroll) return;
 
-		// collect fixed selectors to array
 		const fixedSelectorsElems = document.querySelectorAll(this.config.fixedSelectors);
 		const fixedSelectors = Array.prototype.slice.call(fixedSelectorsElems);
 
@@ -245,48 +212,65 @@ class Modal {
 }
 
 $(document).ready(function () {
-	//masked input phone
-	$("input[type='tel']").mask("+7 (999) 999-99-99", { placeholder: "_" });
+	/**
+	 * Input mask
+	 */
 
-	// menufixed
+	$("input[name='phone']").mask("+7 (999) 999-99-99", { placeholder: "_" });
+
+
+	/**
+	 * Menu fixation
+	 */
+
 	let headerFixation = function () {
 		let header = $(".header");
 
 		if ($(window).scrollTop() > 10) {
 			header.addClass("header--fixed");
 		} else {
-			header.removeClass("header--fixed");
+			if (!$('html').hasClass('modal-opened')) {
+				header.removeClass("header--fixed");
+			}
 		}
 	}
 
 	headerFixation();
 	$(window).on("scroll", headerFixation);
 
-	//scroll
-	$(document).on("click", 'a[href^="#"]', function (e) { 
+
+	/**
+	 * Anchor scroll
+	 */
+
+	$(document).on("click", 'a[href^="#"]', function (e) {
 		if ($(this).attr('href').length <= 1) return;
 
 		e.preventDefault();
 
-		$("html, body").animate({ 
-			scrollTop: $($.attr(this, "href")).offset().top 
+		$("html, body").animate({
+			scrollTop: $($.attr(this, "href")).offset().top
 		}, 500);
 	});
 
 
-	//accrual numbers
+	/**
+	 * Accrual numbers
+	 */
+
 	let numbersWrap = $(".indicators");
 	let numbersStatus = true;
 
 	function accrual() {
-		let scrollEvent = ($(window).scrollTop() > (numbersWrap.position().top - $(window).height()));
+		let scrollEvent = ($(window).scrollTop() > (numbersWrap.offset().top - $(window).height())
+			&& $(window).scrollTop() < (numbersWrap.offset().top));
 
 		if (scrollEvent && numbersStatus) {
 			numbersStatus = false;
 
 			$(".indicators__value[data-count]").each(function (i, el) {
 				$({ numberValue: 0 }).animate({ numberValue: parseInt($(this).text(), 10) }, {
-					duration: 2000,
+					duration: 3000,
 					easing: "linear",
 					step: function (val) {
 						$(el).html(Math.ceil(val) + '+');
@@ -299,17 +283,46 @@ $(document).ready(function () {
 	$(window).scroll(accrual);
 
 
-	//cycles tabs
+	/**
+	 * Cycles tabs
+	 */
+
 	let cycleIndex = 0;
 	let cyclesLength = $('.cycles__navigation-item').length;
+	let navPosition = 0;
+	let navWidth = $('.cycles__navigation').width();
+	let navWidthDiff = $('.cycles__navigation-wrap').width() - navWidth;
+
+	$(window).resize(function () {
+		navWidth = $('.cycles__navigation').width();
+		navWidthDiff = $('.cycles__navigation-wrap').width() - navWidth;
+		navPosition = 0;
+		moveNav();
+	});
+
+	function moveNav() {
+		if (navPosition > 0) {
+			navPosition = 0;
+		}
+		if (navPosition < -navWidthDiff) {
+			navPosition = -navWidthDiff;
+		}
+		$('.cycles__navigation-wrap').css('transform', `translateX(${navPosition}px)`);
+	}
 
 	let changeCycle = function (index) {
-		if ($(this).hasClass('cycles__navigation-item--active')) {
+		let tabEl = $('.cycles__navigation-item').eq(index);
+
+		if (tabEl.hasClass('cycles__navigation-item--active')) {
 			return;
 		}
 
 		$('.cycles__navigation-item--active').removeClass('cycles__navigation-item--active');
-		$(this).addClass('cycles__navigation-item--active');
+		tabEl.addClass('cycles__navigation-item--active');
+
+		navPosition = (navWidth / 2) - (tabEl.position().left + tabEl.width() / 2);
+		moveNav();
+
 
 		$('.cycles__tab-wrapper').fadeOut("fast", function () {
 			$('.cycles__stage').html('Этап ' + (index + 1)),
@@ -328,6 +341,7 @@ $(document).ready(function () {
 		}).fadeIn('fast');
 	}
 
+
 	$('.cycles__navigation-item').each(function (i) {
 		$(this).on("click", function () {
 			cycleIndex = i;
@@ -337,10 +351,10 @@ $(document).ready(function () {
 
 	let touchPos = null;
 
-	$('.cycles__tab-wrapper').on("touchstart", function (e) {
+	$('.cycles__image').on("touchstart", function (e) {
 		touchPos = e.originalEvent.touches[0].pageX;
 	});
-	$('.cycles__tab-wrapper').on("touchmove", function (e) {
+	$('.cycles__image').on("touchmove", function (e) {
 		if (touchPos == null) return;
 
 		let pos = e.originalEvent.touches[0].pageX;
@@ -356,7 +370,7 @@ $(document).ready(function () {
 			touchPos = null;
 		}
 	});
-	$('.cycles__tab-wrapper').on("touchend", function () {
+	$('.cycles__image').on("touchend", function () {
 		touchPos = null;
 	});
 
@@ -373,8 +387,53 @@ $(document).ready(function () {
 		}
 	});
 
+	//navigation scroll
 
-	//facades tabs
+	let toutchOldPos = null;
+	let navTransition;
+
+	$('.cycles__navigation').on("mousedown", function (e) {
+		if ($(this).width() < $('.cycles__navigation-wrap').width()) {
+			toutchOldPos = e.pageX;
+			navTransition = $('.cycles__navigation-wrap').css('transition');
+			$('.cycles__navigation-wrap').css('transition', 'initial');
+		}
+	});
+	$('.cycles__navigation').on("touchstart", function (e) {
+		if ($(this).width() < $('.cycles__navigation-wrap').width()) {
+			toutchOldPos = e.touches[0].clientX;
+			navTransition = $('.cycles__navigation-wrap').css('transition');
+			$('.cycles__navigation-wrap').css('transition', 'initial');
+		}
+	});
+	$('.cycles__navigation').on("mousemove", function (e) {
+		if (toutchOldPos === null) return;
+
+		navPosition = navPosition - (toutchOldPos - e.pageX);
+		toutchOldPos = e.pageX;
+		moveNav();
+	});
+	$('.cycles__navigation').on("touchmove", function (e) {
+		if (toutchOldPos == null) return;
+
+		navPosition = navPosition - (toutchOldPos - e.touches[0].clientX);
+		toutchOldPos = e.touches[0].clientX;
+		moveNav();
+	});
+	$('.cycles__navigation').on("mouseup mouseleave touchend", function (e) {
+		if (toutchOldPos == null) return;
+
+		e.stopPropagation();
+		toutchOldPos = null;
+		$('.cycles__navigation-wrap').css('transition', navTransition);
+	});
+
+
+
+	/**
+	 * Facades tabs
+	 */
+
 	$('.facades__navigation-item').on("click", function () {
 		let target = $(this).attr('data-target');
 
@@ -387,7 +446,10 @@ $(document).ready(function () {
 	});
 
 
-	//variants tabs
+	/**
+	 * Variants tabs
+	 */
+
 	let variantsSlider = $(".range-slider__wrap").slider({
 		classes: {
 			"ui-slider": "range-slider__wrap",
@@ -446,8 +508,20 @@ $(document).ready(function () {
 	}
 
 
-	//map
+	/**
+	 * Modal
+	 */
+
+	let modals = new Modal();
+
+
+	/**
+	 * Map
+	 */
+
 	function init() {
+		let logoPath = $('#map').attr('data-logo');
+
 		let myMap = new ymaps.Map("map", { center: [60.929385, 76.528641], behaviors: ["default"], zoom: 17, controls: ["zoomControl", "fullscreenControl"] })
 		myMap.behaviors.disable(["rightMouseButtonMagnifier", "scrollZoom"]);
 
@@ -456,10 +530,10 @@ $(document).ready(function () {
 		};
 
 		myIconLayout = ymaps.templateLayoutFactory.createClass([
-			'<svg width="98" height="106" viewBox="0 0 98 106" style="position: absolute; top: -136px; left: -49px;">',
-			'<path fill-rule="evenodd" clip-rule="evenodd" d="M57.9795 97.1791C80.753 92.9613 98 72.9948 98 49C98 21.938 76.062 0 49 0C21.938 0 0 21.938 0 49C0 73.4008 17.8357 93.6359 41.1813 97.3796L48.4344 105.292C49.2594 106.192 50.6911 106.149 51.461 105.202L57.9795 97.1791Z" fill="#21222B"/>',
-			'<image href="./assets/img/logo.png" height="30" width="77" transform="translate(10 33)"/>',
-			'</svg>'
+			`<svg width="98" height="106" viewBox="0 0 98 106" style="position: absolute; top: -136px; left: -49px;">'
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M57.9795 97.1791C80.753 92.9613 98 72.9948 98 49C98 21.938 76.062 0 49 0C21.938 0 0 21.938 0 49C0 73.4008 17.8357 93.6359 41.1813 97.3796L48.4344 105.292C49.2594 106.192 50.6911 106.149 51.461 105.202L57.9795 97.1791Z" fill="#21222B"/>'
+			<image href="${logoPath}" height="30" width="77" transform="translate(10 33)"/>'
+			</svg>`
 		].join(''));
 
 		myPlacemark = new ymaps.Placemark(
