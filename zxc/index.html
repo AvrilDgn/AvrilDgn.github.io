@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZXC</title>
+    <!-- Check Webp-->
+    <script>
+        ! function(e, n, A) {
+            function o(e, n) {
+                return typeof e === n
+            }
+
+            function t() {
+                var e, n, A, t, a, i, l;
+                for (var f in r)
+                    if (r.hasOwnProperty(f)) {
+                        if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+                            for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                        for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+                    }
+            }
+
+            function a(e) {
+                var n = u.className,
+                    A = Modernizr._config.classPrefix || "";
+                if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                    var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+                    n = n.replace(o, "$1" + A + "js$2")
+                }
+                Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n)
+            }
+
+            function i(e, n) {
+                if ("object" == typeof e)
+                    for (var A in e) f(e, A) && i(A, e[A]);
+                else {
+                    e = e.toLowerCase();
+                    var o = e.split("."),
+                        t = Modernizr[o[0]];
+                    if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+                    n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+                }
+                return Modernizr
+            }
+            var s = [],
+                r = [],
+                l = {
+                    _version: "3.6.0",
+                    _config: {
+                        classPrefix: "",
+                        enableClasses: !0,
+                        enableJSClass: !0,
+                        usePrefixes: !0
+                    },
+                    _q: [],
+                    on: function(e, n) {
+                        var A = this;
+                        setTimeout(function() {
+                            n(A[e])
+                        }, 0)
+                    },
+                    addTest: function(e, n, A) {
+                        r.push({
+                            name: e,
+                            fn: n,
+                            options: A
+                        })
+                    },
+                    addAsyncTest: function(e) {
+                        r.push({
+                            name: null,
+                            fn: e
+                        })
+                    }
+                },
+                Modernizr = function() {};
+            Modernizr.prototype = l, Modernizr = new Modernizr;
+            var f, u = n.documentElement,
+                c = "svg" === u.nodeName.toLowerCase();
+            ! function() {
+                var e = {}.hasOwnProperty;
+                f = o(e, "undefined") || o(e.call, "undefined") ? function(e, n) {
+                    return n in e && o(e.constructor.prototype[n], "undefined")
+                } : function(n, A) {
+                    return e.call(n, A)
+                }
+            }(), l._l = {}, l.on = function(e, n) {
+                this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function() {
+                    Modernizr._trigger(e, Modernizr[e])
+                }, 0)
+            }, l._trigger = function(e, n) {
+                if (this._l[e]) {
+                    var A = this._l[e];
+                    setTimeout(function() {
+                        var e, o;
+                        for (e = 0; e < A.length; e++)(o = A[e])(n)
+                    }, 0), delete this._l[e]
+                }
+            }, Modernizr._q.push(function() {
+                l.addTest = i
+            }), Modernizr.addAsyncTest(function() {
+                function e(e, n, A) {
+                    function o(n) {
+                        var o = n && "load" === n.type ? 1 == t.width : !1,
+                            a = "webp" === e;
+                        i(e, a && o ? new Boolean(o) : o), A && A(n)
+                    }
+                    var t = new Image;
+                    t.onerror = o, t.onload = o, t.src = n
+                }
+                var n = [{
+                        uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                        name: "webp"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                        name: "webp.alpha"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                        name: "webp.animation"
+                    }, {
+                        uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                        name: "webp.lossless"
+                    }],
+                    A = n.shift();
+                e(A.name, A.uri, function(A) {
+                    if (A && "load" === A.type)
+                        for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+                })
+            }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+            for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+            e.Modernizr = Modernizr
+        }(window, document);
+    </script>
+    <!-- CSS-->
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+</head>
+
+<body>
+    <main class="main">
+        <!--*** Header ***-->
+        <header class="header" id="header" data-fixed="data-fixed">
+            <div class="container">
+                <div class="header__top">
+                    <!--header logo--><a class="header__logo logo" href="./index.html"><img src="./assets/img/logo.svg" alt="логотип" /></a>
+                    <div class="header__additional-links"> <a href="#">Помощь</a><a href="#">Новости</a></div>
+                    <div class="header__connect">
+                        <div class="header__connect-text">
+                            Вы можете легко подключиться <br/>к нашему пулу, через Telgram бота</div>
+                        <button class="header__connect-btn button"><span>Подключиться</span>
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#tg"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="header__bottom">
+                    <!--header navigation -->
+                    <nav class="header__nav nav">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#">База знаний</a></li>
+                            <li class="nav__item"><a href="#">Оборудование</a></li>
+                            <li class="nav__item"><a href="#">Новичкам</a></li>
+                            <li class="nav__item"><span tabindex="0">Прочее</span>
+                                <ul class="nav__inner-menu">
+                                    <li class="nav__inner-item"><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <form class="header__search search" method="get" action="#">
+                        <input class="search__input" type="search" name="search" placeholder="Найти статью" required="required" />
+                        <button class="search__btn" type="submit"></button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!--*** End Header ***-->
+        <!--*** Popular Block ***-->
+        <section class="popular">
+            <div class="container">
+                <h2 class="popular__title">Популярное</h2>
+                <ul class="popular__list">
+                    <li class="popular__item">
+                        <div class="popular__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="popular__item">
+                        <div class="popular__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="popular__item">
+                        <div class="popular__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--*** End Popular Block ***-->
+        <!--*** Knowledge Block ***-->
+        <section class="knowledge">
+            <div class="container">
+                <h2 class="knowledge__title">База знаний</h2>
+                <ul class="knowledge__list">
+                    <li class="knowledge__item">
+                        <div class="knowledge__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="knowledge__item">
+                        <div class="knowledge__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="knowledge__item">
+                        <div class="knowledge__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--*** End Knowledge Block ***-->
+        <!--*** Equipment Block ***-->
+        <section class="equipment">
+            <div class="container">
+                <h2 class="equipment__title">Оборудование</h2>
+                <ul class="equipment__list">
+                    <li class="equipment__item">
+                        <div class="equipment__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Оборудование</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="equipment__item">
+                        <div class="equipment__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Оборудование</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="equipment__item">
+                        <div class="equipment__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Оборудование</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--*** End Equipment Block ***-->
+        <!--*** Banner Subscribe Block ***-->
+        <section class="banner-subscribe">
+            <div class="container">
+                <div class="banner-subscribe__wrapper">
+                    <h2 class="banner-subscribe__title">ZXC Pool</h2>
+                    <div class="banner-subscribe__description">Подписывайтесь и узнавайте всё о майнинге в России и мире, а также новости нашего пула и крипто-индустрии в целом.</div>
+                    <button class="banner-subscribe__btn button"><span>Подписаться</span></button>
+                </div>
+            </div>
+        </section>
+        <!--*** End Banner Subscribe Block ***-->
+        <!--*** Update Block ***-->
+        <section class="update">
+            <div class="container">
+                <h2 class="update__title">Обновление</h2>
+                <ul class="update__list">
+                    <li class="update__item">
+                        <div class="update__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Обновление</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="update__item">
+                        <div class="update__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Обновление</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="update__item">
+                        <div class="update__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Обновление</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--*** End Update Block ***-->
+        <!--*** About Mining Block ***-->
+        <section class="about-mining">
+            <div class="container">
+                <div class="about-mining__content">
+                    <h2 class="about-mining__title">Все о майнинге в России и мире</h2>
+                    <div class="about-mining__description">Это определение используется для обозначения вычислительной мощности устройств добычи криптовалюты. По этому показателю можно определить скорость решения криптографической задачи у устройства, соответственно, чем выше хешрейт, тем мощнее оборудование. Цифра хешрейта обозначает количество вычислительных действий в секунду, которое может провести майнинговое устройство.</div>
+                    <div class="about-mining__popular-themes popular-themes">
+                        <h3 class="popular-themes__title">Среди самых популярных тем на сайте:</h3>
+                        <ul class="popular-themes__list">
+                            <li class="popular-themes__item"><a href="#">Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></li>
+                            <li class="popular-themes__item"><a href="#">Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></li>
+                            <li class="popular-themes__item"><a href="#">Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></li>
+                            <li class="popular-themes__item"><a href="#">Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></li>
+                            <li class="popular-themes__item"><a href="#">Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--*** End About Mining Block ***-->
+        <!--*** Footer ***-->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__top">
+                    <!--footer logo--><a class="footer__logo logo" href="./index.html"><img src="./assets/img/logo.svg" alt="логотип" /></a>
+                    <!--footer navigation -->
+                    <nav class="footer__nav nav">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#">База знаний</a></li>
+                            <li class="nav__item"><a href="#">Оборудование</a></li>
+                            <li class="nav__item"><a href="#">Новичкам</a></li>
+                            <li class="nav__item"><span tabindex="0">Прочее</span>
+                                <ul class="nav__inner-menu">
+                                    <li class="nav__inner-item"><a href="#"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__bottom"><a class="footer__privacy" href="#">Политика обработки персональных данных</a>
+                    <ul class="footer__socials socilas">
+                        <li class="socilas__item socilas__item--tg"><a href="#">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#tg"></use>
+                                </svg></a></li>
+                        <li class="socilas__item socilas__item--vk"><a href="#">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#vk"></use>
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!--*** End Footer ***-->
+    </main>
+    <div class="modal" id="modal-feedback">
+        <div class="modal__wrapper">
+            <div class="modal__container">
+                <h3 class="modal__title title">Оставьте заявку</h3>
+                <p class="modal__subtitle">и мы свяжается с вами в кратчайшие сроки:</p>
+                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
+                    <div class="form__field">
+                        <label class="form__label">
+                            <input class="form__input" type="text" name="name" placeholder="Ваше имя" />
+                        </label>
+                    </div>
+                    <button class="form__send-btn button" type="submit">Оставить заявку</button>
+                </form>
+                <button class="modal__close-btn" data-modal-close="data-modal-close" aria-label="Close modal"> </button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery.min.js" defer="defer"></script>
+    <script src="./assets/js/owl.carousel.min.js" defer="defer"></script>
+    <script src="./assets/js/main.js" defer="defer"></script>
+</body>
+
+</html>
