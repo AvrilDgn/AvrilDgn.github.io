@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZXC</title>
+    <title>ZXC - home</title>
     <!-- Check Webp-->
     <script>
         ! function(e, n, A) {
@@ -139,7 +139,9 @@
 </head>
 
 <body>
+    <!--svg-->
     <main class="main">
+        <div class="main__bg"></div>
         <!--*** Header ***-->
         <header class="header" id="header" data-fixed="data-fixed">
             <div class="container">
@@ -149,14 +151,19 @@
                     <div class="header__connect">
                         <div class="header__connect-text">
                             Вы можете легко подключиться <br/>к нашему пулу, через Telgram бота</div>
-                        <button class="header__connect-btn button"><span>Подключиться</span>
-                            <svg>
+                        <button class="header__connect-btn button button--green">
+                            <div class="button__bg"></div><span>Подключиться</span>
+                            <svg class="header__connect-tg">
                                 <use xlink:href="./assets/img/sprite.svg#tg"></use>
                             </svg>
                         </button>
                     </div>
+                    <!--open mobile menu-->
+                    <button class="header__open-menu-btn"></button>
                 </div>
                 <div class="header__bottom">
+                    <!--close mobile menu-->
+                    <button class="header__close-menu-btn"></button>
                     <!--header navigation -->
                     <nav class="header__nav nav">
                         <ul class="nav__list">
@@ -165,7 +172,8 @@
                             <li class="nav__item"><a href="#">Новичкам</a></li>
                             <li class="nav__item"><span tabindex="0">Прочее</span>
                                 <ul class="nav__inner-menu">
-                                    <li class="nav__inner-item"><a href="#"></a></li>
+                                    <li class="nav__inner-item"><a href="#">Оборудование</a></li>
+                                    <li class="nav__inner-item"><a href="#">Полезные советы</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -174,6 +182,16 @@
                         <input class="search__input" type="search" name="search" placeholder="Найти статью" required="required" />
                         <button class="search__btn" type="submit"></button>
                     </form>
+                    <div class="header__connect header__connect--mobile">
+                        <div class="header__connect-text">
+                            Вы можете легко подключиться <br/>к нашему пулу, через Telgram бота</div>
+                        <button class="header__connect-btn button button--green">
+                            <div class="button__bg"></div><span>Подключиться</span>
+                            <svg class="header__connect-tg">
+                                <use xlink:href="./assets/img/sprite.svg#tg"></use>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -257,12 +275,18 @@
         </section>
         <!--*** End Popular Block ***-->
         <!--*** Knowledge Block ***-->
-        <section class="knowledge">
+        <section class="knowledge posts-slider">
             <div class="container">
-                <h2 class="knowledge__title">База знаний</h2>
-                <ul class="knowledge__list">
-                    <li class="knowledge__item">
-                        <div class="knowledge__card post-card">
+                <div class="posts-slider__head">
+                    <h2 class="posts-slider__title">База знаний</h2>
+                    <div class="posts-slider__arrows">
+                        <button class="posts-slider__arrow posts-slider__arrow--prev"><span></span></button>
+                        <button class="posts-slider__arrow posts-slider__arrow--next"><span></span></button>
+                    </div>
+                </div>
+                <div class="posts-slider__list">
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">База знаний</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -283,9 +307,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="knowledge__item">
-                        <div class="knowledge__card post-card">
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">База знаний</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -306,9 +330,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="knowledge__item">
-                        <div class="knowledge__card post-card">
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">База знаний</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -329,18 +353,70 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">База знаний</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!--*** End Knowledge Block ***-->
         <!--*** Equipment Block ***-->
-        <section class="equipment">
+        <section class="equipment posts-slider">
             <div class="container">
-                <h2 class="equipment__title">Оборудование</h2>
-                <ul class="equipment__list">
-                    <li class="equipment__item">
-                        <div class="equipment__card post-card">
+                <div class="posts-slider__head">
+                    <h2 class="posts-slider__title">Оборудование</h2>
+                    <div class="posts-slider__arrows">
+                        <button class="posts-slider__arrow posts-slider__arrow--prev"><span></span></button>
+                        <button class="posts-slider__arrow posts-slider__arrow--next"><span></span></button>
+                    </div>
+                </div>
+                <div class="posts-slider__list">
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">Оборудование</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -361,9 +437,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="equipment__item">
-                        <div class="equipment__card post-card">
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">Оборудование</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -384,9 +460,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="equipment__item">
-                        <div class="equipment__card post-card">
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">Оборудование</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -407,8 +483,54 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Оборудование</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Оборудование</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!--*** End Equipment Block ***-->
@@ -416,20 +538,31 @@
         <section class="banner-subscribe">
             <div class="container">
                 <div class="banner-subscribe__wrapper">
+                    <div class="banner-subscribe__bg"></div>
                     <h2 class="banner-subscribe__title">ZXC Pool</h2>
                     <div class="banner-subscribe__description">Подписывайтесь и узнавайте всё о майнинге в России и мире, а также новости нашего пула и крипто-индустрии в целом.</div>
-                    <button class="banner-subscribe__btn button"><span>Подписаться</span></button>
+                    <button class="banner-subscribe__btn button button--white">
+                        <svg class="button__bg">
+                            <use xlink:href="./assets/img/sprite.svg#btn-white"></use>
+                        </svg><span>Подписаться</span>
+                    </button>
                 </div>
             </div>
         </section>
         <!--*** End Banner Subscribe Block ***-->
         <!--*** Update Block ***-->
-        <section class="update">
+        <section class="update posts-slider">
             <div class="container">
-                <h2 class="update__title">Обновление</h2>
-                <ul class="update__list">
-                    <li class="update__item">
-                        <div class="update__card post-card">
+                <div class="posts-slider__head">
+                    <h2 class="posts-slider__title">Обновление</h2>
+                    <div class="posts-slider__arrows">
+                        <button class="posts-slider__arrow posts-slider__arrow--prev"><span></span></button>
+                        <button class="posts-slider__arrow posts-slider__arrow--next"><span></span></button>
+                    </div>
+                </div>
+                <div class="posts-slider__list">
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">Обновление</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -450,9 +583,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="update__item">
-                        <div class="update__card post-card">
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">Обновление</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -473,9 +606,9 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="update__item">
-                        <div class="update__card post-card">
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
                             <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
                             <div class="post-card__category">Обновление</div>
                             <h3 class="post-card__title"><a href="./single.html">
@@ -496,14 +629,61 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Обновление</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="posts-slider__item">
+                        <div class="posts-slider__card post-card">
+                            <div class="post-card__image"><img src="./assets/img/post-image.jpg" alt="изображение поста" /></div>
+                            <div class="post-card__category">Обновление</div>
+                            <h3 class="post-card__title"><a href="./single.html">
+                                    Что такое хешрейт в майнинге (hashrate) и в чем измеряется?</a></h3>
+                            <div class="post-card__info">
+                                <div class="post-card__date"><a href="#">04.04.2022</a></div>
+                                <div class="post-card__views">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#eye"></use>
+                                    </svg><span>18356</span>
+                                </div>
+                                <div class="post-card__coins">
+                                    <div class="post-card__coin-icon">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#bitcoin"></use>
+                                        </svg>
+                                    </div><span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!--*** End Update Block ***-->
         <!--*** About Mining Block ***-->
         <section class="about-mining">
             <div class="container">
+                <div class="about-mining__bg"></div>
                 <div class="about-mining__content">
                     <h2 class="about-mining__title">Все о майнинге в России и мире</h2>
                     <div class="about-mining__description">Это определение используется для обозначения вычислительной мощности устройств добычи криптовалюты. По этому показателю можно определить скорость решения криптографической задачи у устройства, соответственно, чем выше хешрейт, тем мощнее оборудование. Цифра хешрейта обозначает количество вычислительных действий в секунду, которое может провести майнинговое устройство.</div>
@@ -534,19 +714,20 @@
                             <li class="nav__item"><a href="#">Новичкам</a></li>
                             <li class="nav__item"><span tabindex="0">Прочее</span>
                                 <ul class="nav__inner-menu">
-                                    <li class="nav__inner-item"><a href="#"></a></li>
+                                    <li class="nav__inner-item"><a href="#">Оборудование</a></li>
+                                    <li class="nav__inner-item"><a href="#">Полезные советы</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <div class="footer__bottom"><a class="footer__privacy" href="#">Политика обработки персональных данных</a>
-                    <ul class="footer__socials socilas">
-                        <li class="socilas__item socilas__item--tg"><a href="#">
+                    <ul class="footer__socials socials">
+                        <li class="socials__item socials__item--tg"><a href="#">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#tg"></use>
                                 </svg></a></li>
-                        <li class="socilas__item socilas__item--vk"><a href="#">
+                        <li class="socials__item socials__item--vk"><a href="#">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#vk"></use>
                                 </svg></a></li>
@@ -574,7 +755,7 @@
         </div>
     </div>
     <script src="./assets/js/jquery.min.js" defer="defer"></script>
-    <script src="./assets/js/owl.carousel.min.js" defer="defer"></script>
+    <script src="./assets/js/slick.min.js" defer="defer"></script>
     <script src="./assets/js/main.js" defer="defer"></script>
 </body>
 
