@@ -12,7 +12,6 @@
 
 <body>
     <main class="main">
-        <div class="main__bg"></div>
         <!--*** Header ***-->
         <header class="header" id="header" data-fixed="data-fixed">
             <div class="container">
@@ -368,7 +367,7 @@
         <section class="banner-subscribe">
             <div class="container">
                 <div class="banner-subscribe__wrapper">
-                    <div class="banner-subscribe__bg"></div>
+                    <div class="banner-subscribe__bg" style="background-image: url(./assets/img/banner-subscribe-bg.svg);"></div>
                     <h2 class="banner-subscribe__title">ZXC Pool</h2>
                     <div class="banner-subscribe__description">Подписывайтесь и узнавайте всё о майнинге в России и мире, а также новости нашего пула и крипто-индустрии в целом.</div>
                     <button class="banner-subscribe__btn button button--white">
@@ -498,7 +497,7 @@
         <!--*** About Mining Block ***-->
         <section class="about-mining">
             <div class="container">
-                <div class="about-mining__bg"></div>
+                <div class="about-mining__bg" style="background-image: url(./assets/img/about-mining-bg.png);"></div>
                 <div class="about-mining__content">
                     <h2 class="about-mining__title">Все о майнинге в России и мире</h2>
                     <div class="about-mining__description">Это определение используется для обозначения вычислительной мощности устройств добычи криптовалюты. По этому показателю можно определить скорость решения криптографической задачи у устройства, соответственно, чем выше хешрейт, тем мощнее оборудование. Цифра хешрейта обозначает количество вычислительных действий в секунду, которое может провести майнинговое устройство.</div>
@@ -551,24 +550,8 @@
             </div>
         </footer>
         <!--*** End Footer ***-->
+        <div class="main__bg" style="background-image: linear-gradient(180deg, rgba(251, 253, 251, 0.2) 0%, rgba(111, 177, 80, 0.2) 100%), url(./assets/img/bottom-bg.png);"></div>
     </main>
-    <div class="modal" id="modal-feedback">
-        <div class="modal__wrapper">
-            <div class="modal__container">
-                <h3 class="modal__title title">Оставьте заявку</h3>
-                <p class="modal__subtitle">и мы свяжается с вами в кратчайшие сроки:</p>
-                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
-                    <div class="form__field">
-                        <label class="form__label">
-                            <input class="form__input" type="text" name="name" placeholder="Ваше имя" />
-                        </label>
-                    </div>
-                    <button class="form__send-btn button" type="submit">Оставить заявку</button>
-                </form>
-                <button class="modal__close-btn" data-modal-close="data-modal-close" aria-label="Close modal"> </button>
-            </div>
-        </div>
-    </div>
     <script src="./assets/js/jquery.min.js" defer="defer"></script>
     <script src="./assets/js/slick.min.js" defer="defer"></script>
     <script src="./assets/js/main.js" defer="defer"></script>

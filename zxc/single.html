@@ -12,7 +12,6 @@
 
 <body>
     <main class="main">
-        <div class="main__bg"></div>
         <!--*** Header ***-->
         <header class="header" id="header" data-fixed="data-fixed">
             <div class="container">
@@ -184,7 +183,7 @@
                         </svg><span>Хешрейт зависит от модели видеокарты и вида алгоритма, который используется для хеширования.</span>
                     </div>
                     <p>Порой, видео карта может не соответствовать требуемым параметрам, нужным для успешного майнинга, но с этой проблемой можно справиться, разогнав видеокарту.</p>
-                    <div class="text-on-image">
+                    <div class="text-on-image" style="background-image: url(./assets/img/hashrate.jpg);">
                         <div>Разогнать видеокарту можно через специальные программы, к примеру, MSI Afterburner или другие. Посмотреть, как разогнать видео карту вы можете во многих обзорах, к примеру, на ютубе.</div>
                     </div>
                     <p>Если для майнинга, вы решите использовать мощность процессора, его хешрейт можно будет узнать с помощью специального ПО, например Claymoru CPU. Без открытых поверх окон и программ, дайте возможность данному ПО поработать, потом на специальной вкладке в программе, вы увидите ваш хешрейт.</p>
@@ -492,24 +491,8 @@
             </div>
         </footer>
         <!--*** End Footer ***-->
+        <div class="main__bg" style="background-image: linear-gradient(180deg, rgba(251, 253, 251, 0.2) 0%, rgba(111, 177, 80, 0.2) 100%), url(./assets/img/bottom-bg.png);"></div>
     </main>
-    <div class="modal" id="modal-feedback">
-        <div class="modal__wrapper">
-            <div class="modal__container">
-                <h3 class="modal__title title">Оставьте заявку</h3>
-                <p class="modal__subtitle">и мы свяжается с вами в кратчайшие сроки:</p>
-                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
-                    <div class="form__field">
-                        <label class="form__label">
-                            <input class="form__input" type="text" name="name" placeholder="Ваше имя" />
-                        </label>
-                    </div>
-                    <button class="form__send-btn button" type="submit">Оставить заявку</button>
-                </form>
-                <button class="modal__close-btn" data-modal-close="data-modal-close" aria-label="Close modal"> </button>
-            </div>
-        </div>
-    </div>
     <script src="./assets/js/jquery.min.js" defer="defer"></script>
     <script src="./assets/js/slick.min.js" defer="defer"></script>
     <script src="./assets/js/main.js" defer="defer"></script>
