@@ -1687,7 +1687,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   text-decoration: underline;
 }
 
-.post-title__title {
+.post-title h1 {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.5;
@@ -1708,16 +1708,12 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   margin-left: 30px;
 }
 
-.post-title__description {
-  margin-top: 21px;
+.post-title p {
+  margin: 21px 0 11px;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.5;
   color: #032305;
-}
-
-.post-title__description p {
-  margin: 11px 0;
 }
 
 .post-title__tags-list {
@@ -1825,43 +1821,39 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   color: rgba(8, 44, 9, 0.4);
 }
 
-.about {
+.post-about {
   margin-top: 44px;
 }
 
-.about__title {
+.post-about h2 {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.5;
   color: #032305;
 }
 
-.about__text-block {
-  margin-top: 23px;
+.post-about p {
+  margin: 21px 0;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.5;
   color: #032305;
 }
 
-.about__text-block p {
-  margin: 11px 0;
-}
-
-.about__list {
+.post-about__list {
   margin-top: 28px;
   counter-reset: about;
 }
 
-.about__item {
+.post-about__item {
   margin-top: 8px;
 }
 
-.about__item-text {
+.post-about__item-text {
   position: relative;
 }
 
-.about__item-text::before {
+.post-about__item-text::before {
   counter-increment: about;
   content: counter(about);
   margin-bottom: 16px;
@@ -1884,14 +1876,14 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   color: #4c8436;
 }
 
-.about__item-image {
+.post-about__item-image {
   margin-top: auto;
   background-image: #d9d9d9;
   border-radius: 7px;
   overflow: hidden;
 }
 
-.about__item-image img {
+.post-about__item-image img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
@@ -1902,46 +1894,32 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   margin-top: 64px;
 }
 
-.measurement__title {
+.measurement h2 {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.5;
   color: #032305;
 }
 
-.measurement__text-block {
-  margin-top: 13px;
+.measurement h3 {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.measurement p {
+  margin: 21px 0;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.5;
   color: #032305;
-}
-
-.measurement__text-block p {
-  margin: 21px 0;
 }
 
 .measurement__table {
   margin-top: 23px;
+  margin-bottom: 32px;
   width: 100%;
-}
-
-.measurement__content-block {
-  margin-top: 32px;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #032305;
-}
-
-.measurement__content-block p {
-  margin: 21px 0;
-}
-
-.measurement__content-block h3 {
-  font-weight: 600;
-  font-size: 15px;
-  color: #000000;
 }
 
 .measurement__note {
@@ -1993,7 +1971,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   margin-top: 64px;
 }
 
-.find__title {
+.find h2 {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.5;
@@ -2172,7 +2150,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
           justify-content: center;
 }
 
-.important {
+.important-message {
   position: relative;
   padding: 47px 24px 32px;
   background: #ffd0d0;
@@ -2183,7 +2161,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   color: #4a0b0b;
 }
 
-.important svg {
+.important-message svg {
   position: absolute;
   top: -28px;
   left: 20px;
@@ -2191,7 +2169,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
   height: 63px;
 }
 
-.important h3 {
+.important-message h3 {
   font-weight: 700;
   color: #e83232;
 }
@@ -2961,15 +2939,15 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
     font-size: 24px;
   }
 
-  .post-title__title {
+  .post-title h1 {
     font-size: 24px;
   }
 
-  .about__title {
+  .post-about h2 {
     font-size: 18px;
   }
 
-  .measurement__title {
+  .measurement h2 {
     font-size: 18px;
   }
 
@@ -2978,7 +2956,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
     font-size: 16px;
   }
 
-  .find__title {
+  .find h2 {
     font-size: 18px;
   }
 
@@ -3079,7 +3057,7 @@ button:not(:disabled):not(.disabled):not([class*="--disabled"]):not([class*="-di
 
   .similar__item {
     margin: 10px 5px 0;
-    width: calc(100% - 10px);
+    width: calc(50% - 10px);
   }
 
   .feedback__form {
