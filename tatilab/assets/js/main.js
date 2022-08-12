@@ -285,7 +285,9 @@ $(document).ready(function () {
 	 * Input mask
 	 */
 
-	 $("input[name='phone']").mask("+7 (999) 999-99-99", { placeholder: "_" });
+	$("input[name='phone']").mask("+7 (999) 999-99-99", {placeholder: "+7 (___) ___-__-__"});
+	$("input[name='date']").mask("99/99/9999", {placeholder: "__/__/____"});
+	$("input[name='time']").mask("99:99", {placeholder: "__:__"});
 
 
 	/**

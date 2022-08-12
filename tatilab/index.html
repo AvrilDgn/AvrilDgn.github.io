@@ -487,10 +487,11 @@
                     </div>
 
                     <div class="form__field">
-                        <label class="form__label">
-                            <span class="form__input-name">Выбере дату и время:</span>
-                            <input class="form__input" type="text" name="date" data-picker>
-                        </label>
+                        <span class="form__input-name">Выбере дату и время:</span>
+                        <div class="form__field-group">
+                            <input class="form__input form__input--date" type="text" name="date">
+                            <input class="form__input form__input--time" type="text" name="time">
+                        </div>
                     </div>
 
                     <div class="form__submit">
@@ -512,7 +513,7 @@
     <!-- JS -->
 
     <script src="./assets/js/jquery.min.js" defer></script>
-    <script src="./assets/js/jquery.maskedinput.js" defer></script>
+    <script src="./assets/js/jquery.mask.js" defer></script>
     <script src="./assets/js/slick.min.js" defer></script>
     <script src="./assets/js/pikaday.js" defer></script>
     <script src="./assets/js/main.js" defer></script>
