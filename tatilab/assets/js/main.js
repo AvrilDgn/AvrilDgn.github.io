@@ -268,9 +268,17 @@ $(document).ready(function () {
 	$('.reviews__slider-wrap').slick({
 		infinite: false,
 		speed: 300,
-		slidesToShow: 1,
+		slidesToShow: 2,
 		prevArrow: $('.reviews__slider').find('.slick__arrow--prev'),
 		nextArrow: $('.reviews__slider').find('.slick__arrow--next'),
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 1,
+				}
+			},
+		]
 	});
 
 
@@ -311,5 +319,31 @@ $(document).ready(function () {
 			weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
 		}
 	});
+
+
+	/**
+	 * Map
+	 */
+
+	 function init() {
+		let logoPath = $('#map').attr('data-logo');
+		let coordinates = $('#map').attr('data-coord').split(', ');
+
+		let myMap = new ymaps.Map("map", { center: coordinates, behaviors: ["default"], zoom: 17, controls: ["zoomControl", "fullscreenControl"] })
+		myMap.behaviors.disable(["rightMouseButtonMagnifier", "scrollZoom"]);
+
+		myIconLayout = ymaps.templateLayoutFactory.createClass([
+			`<svg width="60" height="68" viewBox="0 0 60 68" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: -80px; left: -30px;">
+				<path d="M30.7,67.2c0,0.3-0.3,0.6-0.7,0.6c-0.4,0-0.7-0.3-0.7-0.6c-0.2-4.1-2.3-6.8-6.3-8C9.8,56,0,44.2,0,30C0,13.4,13.4,0,30,0s30,13.4,30,30c0,14.2-9.8,26-23,29.2C33,60.4,30.9,63.1,30.7,67.2L30.7,67.2z" fill="#cfadac"/>
+				<image href="${logoPath}" height="40" width="40" transform="translate(10 10)"/>
+			</svg>`
+		].join(''));
+
+		myPlacemark = new ymaps.Placemark(
+			coordinates, {}, {
+			iconLayout: myIconLayout,
+		}), myMap.geoObjects.add(myPlacemark);
+	}
+	ymaps.ready(init);
 
 });
