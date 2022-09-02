@@ -413,13 +413,17 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   border: 1px solid #2D2D3C;
   background-color: transparent;
   color: #2D2D3C;
+  -webkit-transition: border-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: border-color 0.25s ease-out, color 0.25s ease-out;
+  transition: border-color 0.25s ease-out, color 0.25s ease-out;
 }
 
 .button--void:focus,
 .button--void:hover {
   color: #0ABAB5;
   text-decoration: none;
-  background-color: #0ABAB5;
+  background-color: transparent;
+  border-color: #0ABAB5;
 }
 
 .nav__list {
@@ -1186,6 +1190,85 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .advantage:hover .advantage__head {
   color: #0ABAB5;
+}
+
+.vacancies {
+  margin-top: 200px;
+  margin-bottom: 220px;
+}
+
+.vacancies .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.vacancies__list {
+  margin: 32px -15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% + 30px);
+}
+
+.vacancies__item {
+  margin: 32px 15px 0;
+  width: calc(33.3333% - 30px);
+}
+
+.vacancies__more-btn {
+  margin-top: 64px;
+  width: 282px;
+  height: 58px;
+}
+
+.vacancy {
+  padding: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 313px;
+  border: 1px solid #2D2D3C;
+}
+
+.vacancy__title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.45455;
+}
+
+.vacancy__city {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.vacancy__salary {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66667;
+}
+
+.vacancy__more-btn {
+  margin-top: auto;
+  width: 173px;
+  height: 58px;
 }
 
 @media screen and (max-width: 1200px) {
