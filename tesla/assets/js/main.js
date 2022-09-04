@@ -331,47 +331,9 @@ $(document).ready(function () {
 	 * Sliders
 	 */
 
-	// $('.portfolio__slider-wrap').slick({
-	// 	infinite: true,
-	// 	speed: 300,
-	// 	slidesToShow: 1,
-	// 	centerMode: true,
-	// 	variableWidth: true,
-	// 	infinite: true,
-	// 	autoplay: true,
-	// 	autoplaySpeed: 3000,
-	// 	prevArrow: $('.portfolio__slider').find('.slick__arrow--prev'),
-	// 	nextArrow: $('.portfolio__slider').find('.slick__arrow--next'),
-	// });
 
-	// $('.promotions__slider-wrap').slick({
-	// 	infinite: false,
-	// 	speed: 300,
-	// 	slidesToShow: 1,
-	// 	infinite: true,
-	// 	autoplay: true,
-	// 	autoplaySpeed: 3000,
-	// 	prevArrow: $('.promotions__slider').find('.slick__arrow--prev'),
-	// 	nextArrow: $('.promotions__slider').find('.slick__arrow--next'),
-	// });
-
-	// $('.reviews__slider-wrap').slick({
-	// 	infinite: false,
-	// 	speed: 300,
-	// 	slidesToShow: 2,
-	// 	prevArrow: $('.reviews__slider').find('.slick__arrow--prev'),
-	// 	nextArrow: $('.reviews__slider').find('.slick__arrow--next'),
-	// 	responsive: [
-	// 		{
-	// 			breakpoint: 1200,
-	// 			settings: {
-	// 				slidesToShow: 1,
-	// 			}
-	// 		},
-	// 	]
-	// });
-
-	let slider = $('.principles__slider-wrap').slick({
+	//principles slider
+	$('.principles__slider-wrap').slick({
 		// centerMode: true,
 		infinite: true,
 		speed: 300,
@@ -392,7 +354,6 @@ $(document).ready(function () {
 
 		$slider.on('afterChange', function (event, slick, currentSlide) {
 			$progressInput.val(currentSlide);
-			console.log(currentSlide)
 		});
 
 		$($progressInput).mousedown(function () {
@@ -401,12 +362,50 @@ $(document).ready(function () {
 
 		$($progressInput).mouseup(function () {
 			$slider.slick('slickPlay')
-		})
+		});
 
 		$($progressInput).on('input', function () {
 			$slider.slick('slickGoTo', $(this).val());
-		})
-	})
+		});
+	});
+
+
+	//life slider
+	$('.life__images').each(function (i, el) {
+		$(this).slick({
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			// centerMode: true,
+			// variableWidth: true,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			dots: true,
+			appendDots: $(this).parent().find('.slick__dots'),
+			customPaging: function (slider, i) {
+				return "";
+			},
+			prevArrow: $(this).parent().find('.slick__arrow--prev'),
+			nextArrow: $(this).parent().find('.slick__arrow--next'),
+		});
+	});
+
+
+	//partners slider
+	$('.partners__slider-wrap').slick({
+		centerMode: true,
+		// variableWidth: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 5,
+		slidesToScroll: 5,
+		variableWidth: false,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		prevArrow: $('.partners').find('.slick__arrow--prev'),
+		nextArrow: $('.partners').find('.slick__arrow--next'),
+	});
+
 
 
 	/**
@@ -440,6 +439,40 @@ $(document).ready(function () {
 	 */
 
 	$("input[name='phone']").mask("+7 (999) 999-99-99", { placeholder: "+7 (___) ___-__-__" });
+
+
+	/**
+	 * Custom input file
+	 */
+
+
+	let fields = document.querySelectorAll('.field__file');
+	Array.prototype.forEach.call(fields, function (input) {
+		let label = input.nextElementSibling,
+			labelVal = label.querySelector('.field__file-fake').innerText;
+
+		input.addEventListener('change', function (e) {
+			let countFiles = '';
+			if (this.files && this.files.length >= 1)
+				countFiles = this.files.length;
+
+			if (countFiles)
+				label.querySelector('.field__file-fake').innerText = 'Выбрано файлов: ' + countFiles;
+			else
+				label.querySelector('.field__file-fake').innerText = labelVal;
+		});
+	});
+
+
+	$('input[type="file"]').on('change', function (e) {
+		let textBlock = $(this).parent().find('.form__input--file span');
+		let placeholder = textBlock.text();
+
+		if (this.files && this.files.length > 0) {
+			textBlock.text(this.files[0].name);
+			$(this).parent().find('.form__input--file').removeClass('form__input--placeholder');
+		}
+	})
 
 
 	/**

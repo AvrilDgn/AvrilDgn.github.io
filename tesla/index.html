@@ -237,7 +237,7 @@
         <!-- End Mission -->
 
         <!-- Advantages -->
-        <section class="advantages">
+        <section id="advantages" class="advantages">
             <div class="container">
                 <h2 class="advantages__title title">Почему нужно работать с нами?</h2>
 
@@ -315,7 +315,7 @@
         <!-- End Advantages -->
 
         <!-- Vacancies -->
-        <section class="vacancies">
+        <section id="career" class="vacancies">
             <div class="container">
                 <h2 class="vacancies__title title">Вакансии</h2>
 
@@ -324,7 +324,7 @@
                         <h3 class="vacancy__title">Web-дизайнер</h3>
                         <div class="vacancy__city">Москва</div>
                         <div class="vacancy__salary">от 60 000 ₽</div>
-                        <a href="#" class="vacancy__more-btn button button--void">
+                        <a href="vacancy.html" class="vacancy__more-btn button button--void">
                             Подробнее
                         </a>
                     </li>
@@ -332,7 +332,7 @@
                         <h3 class="vacancy__title">Web-дизайнер</h3>
                         <div class="vacancy__city">Москва</div>
                         <div class="vacancy__salary">от 60 000 ₽</div>
-                        <a href="#" class="vacancy__more-btn button button--void">
+                        <a href="vacancy.html" class="vacancy__more-btn button button--void">
                             Подробнее
                         </a>
                     </li>
@@ -340,7 +340,7 @@
                         <h3 class="vacancy__title">Web-дизайнер</h3>
                         <div class="vacancy__city">Москва</div>
                         <div class="vacancy__salary">от 60 000 ₽</div>
-                        <a href="#" class="vacancy__more-btn button button--void">
+                        <a href="vacancy.html" class="vacancy__more-btn button button--void">
                             Подробнее
                         </a>
                     </li>
@@ -348,7 +348,7 @@
                         <h3 class="vacancy__title">Web-дизайнер</h3>
                         <div class="vacancy__city">Москва</div>
                         <div class="vacancy__salary">от 60 000 ₽</div>
-                        <a href="#" class="vacancy__more-btn button button--void">
+                        <a href="vacancy.html" class="vacancy__more-btn button button--void">
                             Подробнее
                         </a>
                     </li>
@@ -356,7 +356,7 @@
                         <h3 class="vacancy__title">Web-дизайнер</h3>
                         <div class="vacancy__city">Москва</div>
                         <div class="vacancy__salary">от 60 000 ₽</div>
-                        <a href="#" class="vacancy__more-btn button button--void">
+                        <a href="vacancy.html" class="vacancy__more-btn button button--void">
                             Подробнее
                         </a>
                     </li>
@@ -364,7 +364,7 @@
                         <h3 class="vacancy__title">Web-дизайнер</h3>
                         <div class="vacancy__city">Москва</div>
                         <div class="vacancy__salary">от 60 000 ₽</div>
-                        <a href="#" class="vacancy__more-btn button button--void">
+                        <a href="vacancy.html" class="vacancy__more-btn button button--void">
                             Подробнее
                         </a>
                     </li>
@@ -377,30 +377,443 @@
         </section>
         <!-- End Vacancies -->
 
+        <!-- Send Resume -->
+        <section class="send-resume send-resume--dark">
+            <div class="container">
+                <div class="send-resume__head">
+                    <h2 class="send-resume__title title">Хотите присоединиться к нашей команде?</h2>
 
+                    <div class="send-resume__description">
+                        Отправляйте свое резюме. <br>
+				Не нашли подходящую вакансию - не страшно! <br>
+				Высылайте ваше резюме, и мы обязательно его рассмотрим.
+                    </div>
+                </div>
 
+                <div class="send-resume__body">
+                    <form class="send-resume__form form" id="send-resume-resume-form" action="#" method="post">
+                        <div class="form__field">
+                            <label class="form__label">
+                                <span class="form__input-name">ФИО*</span>
+                                <input class="form__input" type="text" name="your-name" placeholder="Иванов Иван Иванович" required>
+                            </label>
+                        </div>
 
-        <!-- <section id="promotions" class="promotions main__section main__section--light">
-	<div class="container">
-		<h2 class="promotions__title title">
-			Акции
-		</h2>
+                        <div class="form__field">
+                            <label class="form__label">
+                                <span class="form__input-name">Email*</span>
+                                <input class="form__input" type="email" name="your-mail" placeholder="example@gmail.com" required>
+                            </label>
+                        </div>
 
-		<div class="promotions__slider">
-			<button class="slick__arrow slick__arrow--brown slick__arrow--prev"></button>
-			<button class="slick__arrow slick__arrow--brown slick__arrow--next"></button>
+                        <div class="form__field">
+                            <label class="form__label">
+                                <span class="form__input-name">Телефон</span>
+                                <input class="form__input" type="text" name="your-phone" placeholder="+7 123 456 78 90">
+                            </label>
+                        </div>
 
-			<div class="promotions__slider-wrap">
-				<div class="promotions__item promotions-card">
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
+                        <div class="form__field">
+                            <label class="form__label">
+                                <span class="form__input-name">Сопроводительное письмо*</span>
+                                <textarea class="form__input form__input--textarea" name="your-message" cols="30" rows="2" placeholder="Расскажите нам о себе: какая вакансия вас заинтересовала, почему хотите присоединиться к нашей команде" required></textarea>
+                            </label>
+                        </div>
+
+                        <div class="form__field">
+                            <label class="form__label">
+                                <span class="form__input-name">Резюме*</span>
+                                <input class="form__input form__input--hidden" type="file" name="your-resume" placeholder="Выбрать файл (в формате word, pdf весом не более 20мб)">
+                                <span class="form__input form__input--file form__input--placeholder">
+							<svg>
+								<use xlink:href="./assets/img/sprite/sprite.svg#clip"></use>
+							</svg>
+							<span>Выбрать файл (в формате word, pdf весом не более 20мб)</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <button class="form__send-btn button" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- End Send Resume -->
+
+        <!-- Employees -->
+        <section id="employees" class="employees">
+            <div class="container">
+                <h2 class="employees__title title">Сотрудники</h2>
+
+                <ul class="employees__list">
+                    <li class="employees__item">
+                        <div class="employees__card employee-card">
+                            <div class="employee-card__image">
+                                <img src="./assets/img/employees/image-1.jpg" alt="фотография сотрудника">
+                            </div>
+                            <h3 class="employee-card__name">Иван Морозов</h3>
+                            <div class="employee-card__position">HR, Москва</div>
+                            <div class="employee-card__description">Я выбрала Tesla Management и работаю в удовольствие столько,
+                                сколько
+                                мне удобно, при этом получая достойную оплату труда</div>
+                        </div>
+                    </li>
+                    <li class="employees__item">
+                        <div class="employees__card employee-card">
+                            <div class="employee-card__image">
+                                <img src="./assets/img/employees/image-2.jpg" alt="фотография сотрудника">
+                            </div>
+                            <h3 class="employee-card__name">Иван Морозов</h3>
+                            <div class="employee-card__position">HR, Москва</div>
+                            <div class="employee-card__description">Я выбрала Tesla Management и работаю в удовольствие столько,
+                                сколько
+                                мне удобно, при этом получая достойную оплату труда</div>
+                        </div>
+                    </li>
+                    <li class="employees__item">
+                        <div class="employees__card employee-card">
+                            <div class="employee-card__image">
+                                <img src="./assets/img/employees/image-3.jpg" alt="фотография сотрудника">
+                            </div>
+                            <h3 class="employee-card__name">Иван Морозов</h3>
+                            <div class="employee-card__position">HR, Москва</div>
+                            <div class="employee-card__description">Я выбрала Tesla Management и работаю в удовольствие столько,
+                                сколько
+                                мне удобно, при этом получая достойную оплату труда</div>
+                        </div>
+                    </li>
+                    <li class="employees__item">
+                        <div class="employees__card employee-card">
+                            <div class="employee-card__image">
+                                <img src="./assets/img/employees/image-4.jpg" alt="фотография сотрудника">
+                            </div>
+                            <h3 class="employee-card__name">Иван Морозов</h3>
+                            <div class="employee-card__position">HR, Москва</div>
+                            <div class="employee-card__description">Я выбрала Tesla Management и работаю в удовольствие столько,
+                                сколько
+                                мне удобно, при этом получая достойную оплату труда</div>
+                        </div>
+                    </li>
+                    <li class="employees__item">
+                        <div class="employees__card employee-card">
+                            <div class="employee-card__image">
+                                <img src="./assets/img/employees/image-5.jpg" alt="фотография сотрудника">
+                            </div>
+                            <h3 class="employee-card__name">Иван Морозов</h3>
+                            <div class="employee-card__position">HR, Москва</div>
+                            <div class="employee-card__description">Я выбрала Tesla Management и работаю в удовольствие столько,
+                                сколько
+                                мне удобно, при этом получая достойную оплату труда</div>
+                        </div>
+                    </li>
+                    <li class="employees__item">
+                        <div class="employees__card employee-card">
+                            <div class="employee-card__image">
+                                <img src="./assets/img/employees/image-6.jpg" alt="фотография сотрудника">
+                            </div>
+                            <h3 class="employee-card__name">Иван Морозов</h3>
+                            <div class="employee-card__position">HR, Москва</div>
+                            <div class="employee-card__description">Я выбрала Tesla Management и работаю в удовольствие столько,
+                                сколько
+                                мне удобно, при этом получая достойную оплату труда</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="javascript:;" class="employees__more-btn button button-void">
+                    Загрузить еще
+                </a>
+            </div>
+        </section>
+        <!-- End Employees -->
+
+        <!-- Life -->
+        <section id="life" class="life">
+            <div class="container">
+                <h2 class="life__title title">Корпоративная жизнь</h2>
+
+                <div class="life__row">
+                    <div class="life__images">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                    </div>
+                    <div class="life__content">
+                        <div class="life__text-block">
+                            Ежегодно организовываем масштабные оффлайн и онлайн корпоративные праздники на всю компанию
+                        </div>
+                        <div class="life__nav">
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--prev">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+
+                            <div class="slick__dots">
+                            </div>
+
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--next">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="life__row">
+                    <div class="life__images">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                    </div>
+                    <div class="life__content">
+                        <div class="life__text-block">
+                            Ежегодно организовываем масштабные оффлайн и онлайн корпоративные праздники на всю компанию
+                        </div>
+                        <div class="life__nav">
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--prev">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+
+                            <ul class="slick__dots">
+                            </ul>
+
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--next">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="life__row">
+                    <div class="life__images">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                    </div>
+                    <div class="life__content">
+                        <div class="life__text-block">
+                            Ежегодно организовываем масштабные оффлайн и онлайн корпоративные праздники на всю компанию
+                        </div>
+                        <div class="life__nav">
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--prev">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+
+                            <div class="slick__dots">
+                            </div>
+
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--next">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="life__row">
+                    <div class="life__images">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                        <img src="./assets/img/life/image-1.jpg" alt="фотография">
+                    </div>
+                    <div class="life__content">
+                        <div class="life__text-block">
+                            Ежегодно организовываем масштабные оффлайн и онлайн корпоративные праздники на всю компанию
+                        </div>
+                        <div class="life__nav">
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--prev">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+
+                            <ul class="slick__dots">
+                            </ul>
+
+                            <button class="slick__arrow slick__arrow--simple slick__arrow--next">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Life -->
+
+        <!-- Partners -->
+        <section id="partners" class="partners">
+            <div class="container">
+                <div class="partners__head">
+                    <h2 class="partners__title title">Наши партнеры</h2>
+
+                    <div class="partners__arrows">
+                        <button class="slick__arrow slick__arrow--prev">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                            </svg>
+                        </button>
+                        <button class="slick__arrow slick__arrow--next">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite/sprite.svg#arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="partners__slider">
+                    <div class="partners__slider-wrap">
+                        <div class="partners__item">
+                            <a class="partners__item" href="javascript:;" data-modal="modal-feedback"><img src="./assets/img/partners/zikzak.jpg" alt="ZikZak"></a>
+                        </div>
+                        <div class="partners__item">
+                            <a class="partners__item" href="javascript:;" data-modal="modal-feedback"><img src="./assets/img/partners/reuss.jpg" alt="Reuss"></a>
+                        </div>
+                        <div class="partners__item">
+                            <a class="partners__item" href="javascript:;" data-modal="modal-feedback"><img src="./assets/img/partners/zikzak.jpg" alt="ZikZak"></a>
+                        </div>
+                        <div class="partners__item">
+                            <a class="partners__item" href="javascript:;" data-modal="modal-feedback"><img src="./assets/img/partners/reuss.jpg" alt="Reuss"></a>
+                        </div>
+                        <div class="partners__item">
+                            <a class="partners__item" href="javascript:;" data-modal="modal-feedback"><img src="./assets/img/partners/zikzak.jpg" alt="ZikZak"></a>
+                        </div>
+                        <div class="partners__item">
+                            <a class="partners__item" href="javascript:;" data-modal="modal-feedback"><img src="./assets/img/partners/reuss.jpg" alt="Reuss"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Partners -->
+
+        <!-- Contacts -->
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <div class="contacts__content">
+                    <h2 class="contacts__title title">Контакты</h2>
+
+                    <div class="contacts__item">
+                        <div class="contacts__type">Email:</div>
+                        <a class="contacts__link" href="mailto:info@teslamanegement.ru">info@teslamanegement.ru</a>
+                    </div>
+                    <div class="contacts__item">
+                        <div class="contacts__type">Телефон:</div>
+                        <a class="contacts__link" href="mailto:+71234567890">+7 123 456 78 90</a>
+                    </div>
+                    <div class="contacts__item contacts__item--row">
+                        <div class="contacts__type">Связь с нами в соцсетях:</div>
+                        <ul class="contacts__socials socials">
+                            <li class="socials__item socials__item--whatsapp">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item socials__item--telegram">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contacts__map">
+                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUVaSqzhB" frameborder="0" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </section>
+        <!-- End Contacts -->
 
         <!-- Footer -->
         <footer id="footer" class="footer">
             <div class="container">
+                <div class="footer__top">
+                    <div class="footer__column">
+                        <a href="index.html" class="footer__logo">
+                            <img src="./assets/img/logo.svg" alt="логотип">
+                        </a>
+                    </div>
+                    <nav class="nav footer__nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a class="nav__link" href="#about-us">
+                                    О нас
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#advantages">
+                                    Преимущества
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#career">
+                                    Карьера
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#employees">
+                                    Сотрудники
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#life">
+                                    Корпоративная жизнь
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#partners">
+                                    Партнеры
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a class="nav__link" href="#contacts">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="footer__column">
+                        <a class="footer__link" href="mailto:info@teslamanegement.ru">info@teslamanegement.ru</a>
+                        <a class="footer__link" href="mailto:+71234567890">+7 123 456 78 90</a>
+                        <ul class="footer__socials socials">
+                            <li class="socials__item socials__item--whatsapp">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item socials__item--telegram">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <a href="javascript:;" class="footer__feedback-btn button button--void button--white" data-modal="modal-feedback">
+                            Хочу в команду
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="https://admd.pro/lp2/?utm_campaign=tesla&type=client_landing">Разработка сайта: ADMD</a>
+                </div>
             </div>
         </footer>
         <!-- End Footer -->
@@ -446,12 +859,21 @@
                     <div class="form__field">
                         <label class="form__label">
                             <span class="form__input-name">Сопроводительное письмо*</span>
-                            <textarea class="form__input form__input--textarea" name="your-message" cols="30" rows="10" placeholder="Расскажите нам о себе: какая вакансия вас заинтересовала, почему хотите присоединиться к нашей команде" required></textarea>
+                            <textarea class="form__input form__input--textarea" name="your-message" cols="30" rows="2" placeholder="Расскажите нам о себе: какая вакансия вас заинтересовала, почему хотите присоединиться к нашей команде" required></textarea>
                         </label>
                     </div>
 
                     <div class="form__field">
-
+                        <label class="form__label">
+                            <span class="form__input-name">Резюме*</span>
+                            <input class="form__input form__input--hidden" type="file" name="your-resume" placeholder="Выбрать файл (в формате word, pdf весом не более 20мб)">
+                            <span class="form__input form__input--file form__input--placeholder">
+							<svg>
+								<use xlink:href="./assets/img/sprite/sprite.svg#clip"></use>
+							</svg>
+							<span>Выбрать файл (в формате word, pdf весом не более 20мб)</span>
+                            </span>
+                        </label>
                     </div>
 
                     <button class="form__send-btn button" type="submit">Отправить</button>
