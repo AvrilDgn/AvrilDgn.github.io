@@ -255,6 +255,9 @@ $(document).ready(function () {
 		slidesToShow: 1,
 		centerMode: true,
 		variableWidth: true,
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 3000,
 		prevArrow: $('.portfolio__slider').find('.slick__arrow--prev'),
 		nextArrow: $('.portfolio__slider').find('.slick__arrow--next'),
 	});
@@ -263,6 +266,9 @@ $(document).ready(function () {
 		infinite: false,
 		speed: 300,
 		slidesToShow: 1,
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 3000,
 		prevArrow: $('.promotions__slider').find('.slick__arrow--prev'),
 		nextArrow: $('.promotions__slider').find('.slick__arrow--next'),
 	});
@@ -288,20 +294,20 @@ $(document).ready(function () {
 	 * Services table
 	 */
 
-	let lastRows = 0;
+	// let lastRows = 0;
 
-	$('.services__table tbody').each(function (index, el) {
-		if (lastRows <= 0) {
-			lastRows = $(el).find('tr').length;
-			return;
-		}
+	// $('.services__table tbody').each(function (index, el) {
+	// 	if (lastRows <= 0) {
+	// 		lastRows = $(el).find('tr').length;
+	// 		return;
+	// 	}
 		
-		if (index % 2 > 0 && lastRows % 2 > 0 || index % 2 <= 0 && lastRows % 2 > 0) {
-			$(el).prepend('<tr></tr>');
-		}
+	// 	if (index % 2 > 0 && lastRows % 2 > 0 || index % 2 <= 0 && lastRows % 2 > 0) {
+	// 		$(el).prepend('<tr></tr>');
+	// 	}
 		
-		lastRows = $(el).find('tr').length;
-	});
+	// 	lastRows = $(el).find('tr').length;
+	// });
 
 
 	/**
@@ -309,6 +315,12 @@ $(document).ready(function () {
 	 */
 
 	let modals = new Modal();
+
+	let wpcf7Elm = document.querySelector( '.wpcf7' );
+     
+	wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ) {
+		 modals.close();
+	}, false );
 
 
 	/**
@@ -325,8 +337,9 @@ $(document).ready(function () {
 	 */
 
 	let picker = new Pikaday({
-		field: document.querySelector('input[data-picker]'),
+		field: document.querySelector('input[name="date"]'),
 		format: 'D/MMM/YYYY',
+		minDate: new Date(),
 		toString(date, format) {
 			const day = date.getDate();
 			const month = date.getMonth() + 1;
@@ -369,5 +382,4 @@ $(document).ready(function () {
 		}), myMap.geoObjects.add(myPlacemark);
 	}
 	ymaps.ready(init);
-
 });
