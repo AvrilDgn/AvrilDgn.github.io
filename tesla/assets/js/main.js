@@ -225,20 +225,22 @@ class Accordion {
 		this.addEventListener();
 	}
 	addEventListener() {
-		this._el.addEventListener('click', (e) => {
-			const elHeader = e.target.closest('.' + this._config.headerClass);
+		if (this._el) {
+			this._el.addEventListener('click', (e) => {
+				const elHeader = e.target.closest('.' + this._config.headerClass);
 
-			if (!elHeader) {
-				return;
-			}
-			if (!this._config.alwaysOpen) {
-				const elOpenItem = this._el.querySelector('.show');
-				if (elOpenItem) {
-					elOpenItem !== elHeader.parentElement ? this.toggle(elOpenItem) : null;
+				if (!elHeader) {
+					return;
 				}
-			}
-			this.toggle(elHeader.parentElement);
-		});
+				if (!this._config.alwaysOpen) {
+					const elOpenItem = this._el.querySelector('.show');
+					if (elOpenItem) {
+						elOpenItem !== elHeader.parentElement ? this.toggle(elOpenItem) : null;
+					}
+				}
+				this.toggle(elHeader.parentElement);
+			});
+		}
 	}
 	show(el) {
 		const elBody = el.querySelector('.' + this._config.bodyClass);
@@ -295,19 +297,108 @@ class Accordion {
 
 $(document).ready(function () {
 
+	// new WOW({
+	// 	animateClass: 'animate__animated', // --> WOW default is animated but that does not work anymore
+	// }).init();
+
+
+	var $window = $(window),
+		win_height_padded = $window.height() * 1.1;
+
+	$window.on('scroll', revealOnScroll);
+
+	function revealOnScroll() {
+		var scrolled = $window.scrollTop(),
+			win_height_padded = $window.height() * 1.1;
+
+		// Showed...
+		$(".revealOnScroll:not(.animate__animated)").each(function () {
+			var $this = $(this),
+				offsetTop = $this.offset().top;
+
+			if (scrolled + win_height_padded > offsetTop) {
+				if ($this.data('timeout')) {
+					window.setTimeout(function () {
+						$this.addClass('animate__animated ' + $this.data('animation'));
+					}, parseInt($this.data('timeout'), 10));
+				} else {
+					$this.addClass('animate__animated ' + $this.data('animation'));
+				}
+			}
+		});
+		// Hidden...
+		$(".revealOnScroll.animate__animated").each(function (index) {
+			var $this = $(this),
+				offsetTop = $this.offset().top;
+			if (scrolled + win_height_padded < offsetTop) {
+				$(this).removeClass('animate__animated animate__fadeInDown animate__fadeIn animate__fadeInUp animate__fadeInLeft animate__fadeInRight animate__flipInX animate__lightSpeedIn')
+			}
+		});
+	}
+
+	revealOnScroll();
+
+	/**
+	 * Menu fixation
+	 */
+
+	let headerFixation = function () {
+		let header = $(".header");
+
+		if ($(window).scrollTop() > 100) {
+			header.addClass("header--fixed");
+		} else {
+			if (!$('html').hasClass('modal-opened')) {
+				header.removeClass("header--fixed");
+			}
+		}
+	}
+
+	headerFixation();
+	$(window).on("scroll", headerFixation);
+
+
 	/**
 	 * Open mobile menu
 	 */
 
+	const html = document.documentElement;
+	let _scrollPosition = 0;
+	let isMenuShowed = false;
+
 	$('.header__open-menu-btn').on('click', function () {
-		$('.header__mobile').addClass('header__mobile--showed');
+		$('.header__menu').addClass('header__menu--showed');
+		_scrollPosition = window.pageYOffset;
+		const marginSize = window.innerWidth - html.clientWidth;
+		html.style.top = `${-_scrollPosition}px`;
+
+		if (marginSize) {
+			html.style.marginRight = `${marginSize}px`;
+		}
+		html.classList.add('modal-opened');
+		isMenuShowed = true;
 	});
-	$('.header__close-menu-btn').on('click', function () {
-		$('.header__mobile').removeClass('header__mobile--showed');
+
+	$('.header__close-menu-btn').on('click', closeMenu);
+	$(window).on("resize", closeMenu);
+	$(document).on('keyup', closeMenu);
+	$(document).mouseup(function (e) {
+		var div = $('.header__menu');
+		if (!div.is(e.target) && div.has(e.target).length === 0) {
+			closeMenu();
+		}
 	});
-	$(window).on("resize", function () {
-		$('.header__mobile').removeClass('header__mobile--showed');
-	});
+
+	function closeMenu() {
+		if (!isMenuShowed) return;
+
+		$('.header__menu').removeClass('header__menu--showed');
+		html.classList.remove('modal-opened');
+		html.style.marginRight = '';
+		window.scrollTo(0, _scrollPosition);
+		html.style.top = '';
+		isMenuShowed = false;
+	}
 
 
 	/**
@@ -319,7 +410,7 @@ $(document).ready(function () {
 
 		e.preventDefault();
 
-		$('.header__menu').removeClass('header__menu--showed');
+		closeMenu();
 
 		$("html, body").animate({
 			scrollTop: $($.attr(this, "href")).offset().top
@@ -404,6 +495,32 @@ $(document).ready(function () {
 		autoplaySpeed: 3000,
 		prevArrow: $('.partners').find('.slick__arrow--prev'),
 		nextArrow: $('.partners').find('.slick__arrow--next'),
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+		]
 	});
 
 
