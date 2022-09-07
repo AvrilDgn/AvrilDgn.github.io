@@ -295,48 +295,81 @@ class Accordion {
 	}
 }
 
+class Queue {
+	#items = []
+	enqueue = (item) => this.#items.splice(0, 0, item)
+	dequeue = () => this.#items.pop()
+	isempty = () => this.#items.length === 0
+	empty = () => (this.#items.length = 0)
+	size = () => this.#items.length
+}
+
 $(document).ready(function () {
 
-	// new WOW({
-	// 	animateClass: 'animate__animated', // --> WOW default is animated but that does not work anymore
-	// }).init();
+	let $window = $(window),
+		poolAnim = new Queue(),
+		$animatedBlocks = $('.animated_item'),
+		scrollPos = $window.scrollTop(),
+		winHeight = $window.height(),
+		animPadding = 100;
 
+	function animatesСontent() {
+		let curScrollPos = $window.scrollTop(),
+			isDown = true;
 
-	var $window = $(window),
-		win_height_padded = $window.height() * 1.1;
+		if (curScrollPos < scrollPos) {
+			isDown = false;
+		}
 
-	$window.on('scroll', revealOnScroll);
+		$animatedBlocks.each(function () {
+			if ($(this).hasClass('_animated')) {
+				return;
+			}
 
-	function revealOnScroll() {
-		var scrolled = $window.scrollTop(),
-			win_height_padded = $window.height() * 1.1;
-
-		// Showed...
-		$(".revealOnScroll:not(.animate__animated)").each(function () {
-			var $this = $(this),
-				offsetTop = $this.offset().top;
-
-			if (scrolled + win_height_padded > offsetTop) {
-				if ($this.data('timeout')) {
-					window.setTimeout(function () {
-						$this.addClass('animate__animated ' + $this.data('animation'));
-					}, parseInt($this.data('timeout'), 10));
-				} else {
-					$this.addClass('animate__animated ' + $this.data('animation'));
+			if ($(this).hasClass('animate__animated')) {
+				if (curScrollPos + winHeight + animPadding * 5 >= $(this).offset().top && $(this).offset().top + $(this).height() >= curScrollPos - animPadding * 5) {
+					return;
 				}
+
+				$(this).removeClass('animate__animated ' + $(this).data('animation'));
+			} else {
+				if (curScrollPos + winHeight + animPadding < $(this).offset().top || $(this).offset().top + $(this).height() < curScrollPos - animPadding) {
+					return;
+				}
+
+				if (!isDown && $(this).data('animation') === 'animate__fadeInUp') {
+					$(this).addClass('animate__animated _animated');
+					poolAnim.enqueue([$(this), 'animate__fadeInDown']);
+				} else {
+					$(this).addClass('animate__animated _animated');
+					poolAnim.enqueue([$(this), $(this).data('animation')]);
+				}
+
+
+				$(this).on("animationend", function () {
+					$(this).removeClass('_animated');
+				});
 			}
-		});
-		// Hidden...
-		$(".revealOnScroll.animate__animated").each(function (index) {
-			var $this = $(this),
-				offsetTop = $this.offset().top;
-			if (scrolled + win_height_padded < offsetTop) {
-				$(this).removeClass('animate__animated animate__fadeInDown animate__fadeIn animate__fadeInUp animate__fadeInLeft animate__fadeInRight animate__flipInX animate__lightSpeedIn')
-			}
-		});
+		})
+
+		scrollPos = curScrollPos;
 	}
 
-	revealOnScroll();
+	$window.on('resize', function () {
+		winHeight = $window.height();
+	});
+
+	$window.on('scroll', animatesСontent);
+	animatesСontent();
+
+	setInterval(() => {
+		if (poolAnim.size() > 0) {
+			let item = poolAnim.dequeue();
+
+			$(item[0]).addClass(item[1]);
+		}
+	}, 50);
+
 
 	/**
 	 * Menu fixation
@@ -425,7 +458,6 @@ $(document).ready(function () {
 
 	//principles slider
 	$('.principles__slider-wrap').slick({
-		// centerMode: true,
 		infinite: true,
 		speed: 300,
 		// slidesToShow: 3,
@@ -441,7 +473,7 @@ $(document).ready(function () {
 			$slider = $('#' + sliderId),
 			$progressInput = $(el).find('.slider-progress__input');
 
-		$progressInput.attr('max', $slider[0].slick.slideCount - 1)
+		$progressInput.attr('max', $slider[0].slick.slideCount - 1);
 
 		$slider.on('afterChange', function (event, slick, currentSlide) {
 			$progressInput.val(currentSlide);
@@ -467,8 +499,6 @@ $(document).ready(function () {
 			infinite: true,
 			speed: 300,
 			slidesToShow: 1,
-			// centerMode: true,
-			// variableWidth: true,
 			autoplay: true,
 			autoplaySpeed: 3000,
 			dots: true,
@@ -485,7 +515,6 @@ $(document).ready(function () {
 	//partners slider
 	$('.partners__slider-wrap').slick({
 		centerMode: true,
-		// variableWidth: true,
 		infinite: true,
 		speed: 300,
 		slidesToShow: 5,
@@ -517,9 +546,6 @@ $(document).ready(function () {
 					slidesToScroll: 1
 				}
 			}
-			// You can unslick at a given breakpoint now by adding:
-			// settings: "unslick"
-			// instead of a settings object
 		]
 	});
 
@@ -544,18 +570,20 @@ $(document).ready(function () {
 
 	let modals = new Modal();
 
-	// let wpcf7Elm = document.querySelector( '.wpcf7' );
+	let wpcf7Elm = document.querySelector('.wpcf7');
 
-	// wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ) {
-	// 	 modals.close();
-	// }, false );
+	if (wpcf7Elm) {
+		wpcf7Elm.addEventListener('wpcf7mailsent', function (event) {
+			modals.close();
+		}, false);
+	}
 
 
 	/**
 	 * Input mask
 	 */
 
-	$("input[name='phone']").mask("+7 (999) 999-99-99", { placeholder: "+7 (___) ___-__-__" });
+	$("input[name='your-phone']").mask("+7 (999) 999-99-99", { placeholder: "+7 (___) ___-__-__" });
 
 
 	/**

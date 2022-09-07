@@ -21,7 +21,7 @@
     <main class="main">
 
         <!-- Header -->
-        <header class="header" data-fixed>
+        <header class="header animated_item" data-animation="animate__fadeInDown" data-fixed>
             <div class="container">
                 <a href="index.html" class="header__logo">
                     <img src="./assets/img/logo.svg" alt="логотип">
@@ -171,7 +171,7 @@
                         <div class="form__field">
                             <label class="form__label">
                                 <span class="form__input-name">Резюме*</span>
-                                <input class="form__input form__input--hidden" type="file" name="your-resume" placeholder="Выбрать файл (в формате word, pdf весом не более 20мб)">
+                                <input class="form__input form__input--hidden" type="file" name="your-resume" accept="application/msword, application/pdf" placeholder="Выбрать файл (в формате word, pdf весом не более 20мб)">
                                 <span class="form__input form__input--file form__input--placeholder">
 							<svg>
 								<use xlink:href="./assets/img/sprite/sprite.svg#clip"></use>
@@ -193,43 +193,43 @@
             <div class="container">
                 <div class="footer__top">
                     <div class="footer__logo-wrap">
-                        <a href="index.html" class="footer__logo revealOnScroll" data-animation="animate__fadeInUp">
-                            <img src="./assets/img/logo-light.svg" alt="логотип">
+                        <a href="index.html" class="footer__logo animated_item" data-animation="animate__fadeInUp">
+                            <img src="./assets/img/logo-light.svg" loading="lazy" alt="логотип">
                         </a>
                     </div>
                     <nav class="nav footer__nav">
                         <ul class="nav__list">
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#about-us">
                                     О нас
                                 </a>
                             </li>
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#advantages">
                                     Преимущества
                                 </a>
                             </li>
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#career">
                                     Карьера
                                 </a>
                             </li>
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#employees">
                                     Сотрудники
                                 </a>
                             </li>
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#life">
                                     Корпоративная жизнь
                                 </a>
                             </li>
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#partners">
                                     Партнеры
                                 </a>
                             </li>
-                            <li class="nav__item revealOnScroll" data-animation="animate__fadeInUp">
+                            <li class="nav__item animated_item" data-animation="animate__fadeInUp">
                                 <a class="nav__link" href="#contacts">
                                     Контакты
                                 </a>
@@ -238,17 +238,17 @@
                     </nav>
                     <div class="footer__group">
                         <div class="footer__contacts">
-                            <a class="footer__link revealOnScroll" data-animation="animate__fadeInUp" href="mailto:info@teslamanegement.ru">info@teslamanegement.ru</a>
-                            <a class="footer__link revealOnScroll" data-animation="animate__fadeInUp" href="tel:+71234567890">+7 123 456 78 90</a>
+                            <a class="footer__link animated_item" data-animation="animate__fadeInUp" href="mailto:info@teslamanegement.ru">info@teslamanegement.ru</a>
+                            <a class="footer__link animated_item" data-animation="animate__fadeInUp" href="tel:+71234567890">+7 123 456 78 90</a>
                             <ul class="footer__socials socials">
-                                <li class="socials__item socials__item--whatsapp revealOnScroll" data-animation="animate__rotateIn">
+                                <li class="socials__item socials__item--whatsapp animated_item" data-animation="animate__fadeInUp">
                                     <a href="#">
                                         <svg>
                                             <use xlink:href="./assets/img/sprite/sprite.svg#whatsapp"></use>
                                         </svg>
                                     </a>
                                 </li>
-                                <li class="socials__item socials__item--telegram revealOnScroll" data-animation="animate__rotateIn">
+                                <li class="socials__item socials__item--telegram animated_item" data-animation="animate__fadeInUp">
                                     <a href="#">
                                         <svg>
                                             <use xlink:href="./assets/img/sprite/sprite.svg#telegram"></use>
@@ -257,12 +257,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="javascript:;" class="footer__feedback-btn button button--void button--white revealOnScroll" data-animation="animate__fadeInUp" data-modal="modal-feedback">
+                        <a href="javascript:;" class="footer__feedback-btn button button--void button--white animated_item" data-animation="animate__fadeInUp" data-modal="modal-feedback">
                             Хочу в команду
                         </a>
                     </div>
                 </div>
-                <div class="footer__bottom revealOnScroll" data-animation="animate__fadeInUp">
+                <div class="footer__bottom animated_item" data-animation="animate__fadeInUp">
                     <a href="#">Политика конфиденциальности</a>
                     <a href="https://admd.pro/lp2/?utm_campaign=tesla&type=client_landing">Разработка сайта: ADMD</a>
                 </div>
@@ -318,7 +318,7 @@
                     <div class="form__field">
                         <label class="form__label">
                             <span class="form__input-name">Резюме*</span>
-                            <input class="form__input form__input--hidden" type="file" name="your-resume" placeholder="Выбрать файл (в формате word, pdf весом не более 20мб)">
+                            <input class="form__input form__input--hidden" type="file" name="your-resume" accept="application/msword, application/pdf" placeholder="Выбрать файл (в формате word, pdf весом не более 20мб)">
                             <span class="form__input form__input--file form__input--placeholder">
 							<svg>
 								<use xlink:href="./assets/img/sprite/sprite.svg#clip"></use>
