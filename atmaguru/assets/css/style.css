@@ -1407,8 +1407,29 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: #1D1D1F;
 }
 
-.func-card__desc *:not(:first-child) {
-  margin-top: 20px;
+.func-card__desc > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.func-card__desc > ul:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.func-card__desc li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.func-card__desc li::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2.5px);
+  left: 11.5px;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #1D1D1F;
 }
 
 .func-card.slidedown,
