@@ -335,9 +335,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .form__field textarea:focus,
-.form__field textarea:active,
-.form__field input:focus,
-.form__field input:active {
+.form__field input:focus {
   border-color: #2C56E9;
 }
 
@@ -456,6 +454,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .socials__item a::before {
@@ -466,8 +465,21 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   background-color: #ccd1d9;
+  -webkit-transition: opacity 0.25s ease-out;
+  -o-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+}
+
+.socials__item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   -webkit-transition: opacity 0.25s ease-out;
   -o-transition: opacity 0.25s ease-out;
   transition: opacity 0.25s ease-out;
@@ -476,32 +488,40 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .socials__item a svg {
   position: relative;
   fill: #fff;
+  z-index: 1;
 }
 
 .socials__item a:hover::before {
   opacity: 0;
 }
 
-.socials__item--telegram a {
+.socials__item a:hover::after {
+  opacity: 1;
+}
+
+.socials__item--telegram a::after {
   background: -o-linear-gradient(246.8deg, #37aee2 21.67%, #1e96c8 70%);
   background: linear-gradient(203.2deg, #37aee2 21.67%, #1e96c8 70%);
 }
 
 .socials__item--telegram svg {
-  width: 18.2px;
-  height: 14.68px;
+  margin-top: 1px;
+  margin-right: 3px;
+  width: 21.2px;
+  height: 15.88px;
 }
 
-.socials__item--vkontakte a {
+.socials__item--vkontakte a::after {
   background-color: #4680c2;
 }
 
 .socials__item--vkontakte svg {
-  width: 18px;
-  height: 10.71px;
+  margin-left: 1px;
+  width: 20px;
+  height: 12.01px;
 }
 
-.socials__item--dzen a {
+.socials__item--dzen a::after {
   background-color: #1d1d1f;
 }
 
@@ -510,13 +530,14 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   height: 32.03px;
 }
 
-.socials__item--youtube a {
+.socials__item--youtube a::after {
   background-color: #ff0100;
 }
 
 .socials__item--youtube svg {
-  width: 11.44px;
-  height: 13.21px;
+  margin-left: 2px;
+  width: 13.44px;
+  height: 15.21px;
 }
 
 /* ==========================================================================
@@ -536,6 +557,22 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   -o-transition: height 0.25s ease-out, box-shadow 0.25s ease-out, background-color 0.25s ease-out;
   transition: height 0.25s ease-out, box-shadow 0.25s ease-out, background-color 0.25s ease-out;
   transition: height 0.25s ease-out, box-shadow 0.25s ease-out, background-color 0.25s ease-out, -webkit-box-shadow 0.25s ease-out;
+}
+
+.header__blackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29, 29, 31, 0.5);
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-out;
+  -o-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .header .container {
@@ -568,6 +605,15 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .header__nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 0 15px;
+  width: 100%;
+  max-width: 750px;
   margin: 0 auto;
 }
 
@@ -631,38 +677,44 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
           box-shadow: 0 10px 20px 0 rgba(45, 45, 60, 0.1);
 }
 
+.header--showed .header__menu {
+  opacity: 1;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-box-shadow: 0 10px 40px 0 rgba(45, 45, 60, 0.35);
+          box-shadow: 0 10px 40px 0 rgba(45, 45, 60, 0.35);
+}
+
+.header--showed .header__blackout {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .header__open-menu-btn {
+  position: relative;
   display: none;
-  width: 35px;
-  height: 23px;
+  width: 32px;
+  height: 14px;
   background-color: transparent;
 }
 
-.header__open-menu-btn span {
-  position: relative;
-  display: block;
-  width: 35px;
-  height: 3px;
-  border-radius: 1px;
-  background-color: #1D1D1F;
-}
-
-.header__open-menu-btn span::before,
-.header__open-menu-btn span::after {
+.header__open-menu-btn::before,
+.header__open-menu-btn::after {
   content: "";
   position: absolute;
-  top: 10px;
-  left: 6px;
-  width: 23px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
   height: 3px;
   border-radius: 1px;
   background-color: #1D1D1F;
 }
 
-.header__open-menu-btn span::after {
-  top: 20px;
-  left: 3px;
-  width: 29px;
+.header__open-menu-btn::after {
+  top: initial;
+  bottom: 0;
+  left: 0px;
 }
 
 .header__close-menu-btn {
@@ -987,7 +1039,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .about__image-devices {
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto -10%;
   -webkit-transform: translateY(-10.04%);
       -ms-transform: translateY(-10.04%);
           transform: translateY(-10.04%);
@@ -1001,6 +1053,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   width: 100%;
   padding-top: 78.57%;
   background-image: url(../img/app-on-devices.png);
+  background-size: cover;
 }
 
 .about__title {
@@ -1196,7 +1249,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .scenario__illustration {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  background-size: contain;
+  background-size: cover;
 }
 
 .scenario:nth-child(1) .scenario__illustration {
@@ -1275,6 +1328,12 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   border-radius: 64px;
 }
 
+.functional__title {
+  font-size: 48px;
+  line-height: 1.1875;
+  color: #1D1D1F;
+}
+
 .functional__list {
   margin: 46px -45px 0;
   display: -webkit-box;
@@ -1315,10 +1374,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   content: "";
   position: absolute;
   top: -20px;
-  left: -18px;
+  left: 0;
   display: block;
   height: calc(100% + 44px);
-  width: calc(100% + 60px);
+  width: 100%;
   background-color: #fff;
   border-radius: 24px;
   -webkit-box-shadow: 0px 16px 24px -4px rgba(29, 29, 31, 0.16);
@@ -1469,9 +1528,16 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 @media screen and (max-width: 1200px) {
   .header__menu {
     position: fixed;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     padding: 20px 0;
     top: 0;
-    right: 0;
+    left: 100%;
     width: 100%;
     max-width: 400px;
     display: -webkit-box;
@@ -1486,10 +1552,8 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     height: 100vh;
     overflow-y: auto;
     background-color: #1D1D1F;
-    -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-            transform: translateX(100%);
     opacity: 0;
+    z-index: 1;
     -webkit-transition: opacity 0.25s ease-out, -webkit-transform 0.25s ease-out;
     transition: opacity 0.25s ease-out, -webkit-transform 0.25s ease-out;
     -o-transition: transform 0.25s ease-out, opacity 0.25s ease-out;
@@ -1519,19 +1583,37 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     text-decoration: underline;
   }
 
-  .header__menu--showed {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-box-shadow: 0 10px 40px 0 rgba(45, 45, 60, 0.35);
-            box-shadow: 0 10px 40px 0 rgba(45, 45, 60, 0.35);
+  .header__nav {
+    position: relative;
+    top: initial;
+    left: initial;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  .header__link {
+    margin-top: 40px;
+    color: #fff;
+  }
+
+  .header__link:focus,
+  .header__link:hover {
+    color: #fff;
+  }
+
+  .header__link:focus::before,
+  .header__link:hover::before {
+    background-color: #fff;
+  }
+
+  .header__feedback-btn {
+    margin-top: 15px;
+    margin-left: 0;
   }
 
   .header__open-menu-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
   }
 
   .header__close-menu-btn {
@@ -1565,6 +1647,11 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
         -ms-transform: translate(-50%, -50%) rotate(-45deg);
             transform: translate(-50%, -50%) rotate(-45deg);
   }
+
+  .about__image-devices {
+    margin: 0 15px -10%;
+    width: calc(100% - 30px);
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -1584,19 +1671,19 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 @media screen and (max-width: 768px) {
   .header {
-    height: 76px;
+    height: 152px;
   }
 
   .header__menu {
     max-width: initial;
   }
+
+  .header--fixed {
+    height: 70px;
+  }
 }
 
 @media screen and (max-width: 576px) {
-  .header {
-    height: 56px;
-  }
-
   .header__logo {
     height: 34px;
   }

@@ -357,7 +357,7 @@ $(document).ready(function () {
 	let isMenuShowed = false;
 
 	$('.header__open-menu-btn').on('click', function () {
-		$('.header__menu').addClass('header__menu--showed');
+		$('.header').addClass('header--showed');
 		_scrollPosition = window.pageYOffset;
 		const marginSize = window.innerWidth - html.clientWidth;
 		html.style.top = `${-_scrollPosition}px`;
@@ -382,7 +382,7 @@ $(document).ready(function () {
 	function closeMenu() {
 		if (!isMenuShowed) return;
 
-		$('.header__menu').removeClass('header__menu--showed');
+		$('.header').removeClass('header--showed');
 		html.classList.remove('modal-opened');
 		html.style.paddingRight = '';
 		window.scrollTo(0, _scrollPosition);
