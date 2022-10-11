@@ -277,87 +277,91 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   cursor: pointer;
 }
 
-.form__field {
-  position: relative;
-  width: 100%;
-  max-width: 650px;
-  z-index: 1;
-}
+/*.form {
+	&__field {
+		position: relative;
+		width: 100%;
+		max-width: 650px;
+		z-index: 1;
 
-.form__field:not(:first-of-type) {
-  margin-top: 24px;
-}
+		&:not(:first-of-type) {
+			margin-top: 24px;
+		}
 
-.form__field textarea,
-.form__field input {
-  padding: 0 22px;
-  display: block;
-  height: 83px;
-  width: 100%;
-  border-radius: 12px;
-  border: 2px solid #fff;
-  background-color: #fff;
-  font-family: inter, sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.20833;
-  color: #1D1D1F;
-  -webkit-transition: border-color 0.25s ease-out;
-  -o-transition: border-color 0.25s ease-out;
-  transition: border-color 0.25s ease-out;
-}
+		textarea,
+		input {
+			padding: 0 22px;
+			display: block;
+			height: 83px;
+			width: 100%;
+			border-radius: 12px;
+			border: 2px solid $white;
+			background-color: $white;
+			font-family: $inter;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: (29 / 24);
+			color: $black;
+			transition: border-color 0.25s ease-out;
 
-.form__field textarea::-webkit-input-placeholder, .form__field input::-webkit-input-placeholder {
-  color: #AAB2BD;
-}
+			&--placeholder,
+			&::placeholder {
+				color: $grey;
+			}
 
-.form__field textarea::-moz-placeholder, .form__field input::-moz-placeholder {
-  color: #AAB2BD;
-}
+			&:focus {
+				border-color: $blue;
+			}
 
-.form__field textarea:-ms-input-placeholder, .form__field input:-ms-input-placeholder {
-  color: #AAB2BD;
-}
+			@include media(sm) {
+				height: 72px;
+				font-size: 20px;
+			}
+			@include media(xs) {
+				height: 60px;
+				font-size: 18px;
+			}
+		}
 
-.form__field textarea::-ms-input-placeholder, .form__field input::-ms-input-placeholder {
-  color: #AAB2BD;
-}
+		textarea {
+			padding: 20px 22px;
+		}
 
-.form__field textarea--placeholder,
-.form__field textarea::placeholder,
-.form__field input--placeholder,
-.form__field input::placeholder {
-  color: #AAB2BD;
-}
+		&--fault {
+			input,
+			textarea {
+				border-color: #e03207;
+			}
+		}
+	}
 
-.form__field textarea:focus,
-.form__field input:focus {
-  border-color: #2C56E9;
-}
+	&__agreenment {
+		margin-top: 26px;
+		max-width: 560px;
+		font-size: 12px;
+		line-height: (15 / 12);
+		color: $grey;
+	}
 
-.form__field textarea {
-  padding: 20px 22px;
-}
+	&__submit-btn {
+		margin-top: 21px;
+		width: 208px;
+		height: 88px;
+		font-size: 24px;
 
-.form__field--fault input,
-.form__field--fault textarea {
-  border-color: #e03207;
-}
-
-.form__agreenment {
-  margin-top: 26px;
-  max-width: 560px;
-  font-size: 12px;
-  line-height: 1.25;
-  color: #AAB2BD;
-}
-
-.form__submit-btn {
-  margin-top: 21px;
-  width: 208px;
-  height: 88px;
-  font-size: 24px;
-}
+		@include media(sm) {
+			width: 160px;
+			font-size: 20px;
+			height: 64px;
+		}
+		@include media(xs) {
+			margin-top: 26px;
+			width: 140px;
+			height: 56px;
+			font-size: 16px;
+		}
+	}
+}*/
 
 .b24-form {
   --b24-primary-color: #2c56e9 !important;
@@ -436,6 +440,13 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .b24-form-header-title {
   margin-bottom: 30px !important;
+}
+
+.b24-form-control-string .b24-form-control:focus,
+.b24-form-control-list .b24-form-control:focus,
+.b24-form-control-text .b24-form-control:focus,
+.b24-form-control-select .field-item:focus {
+  border-color: #2C56E9 !important;
 }
 
 .nav__list {
@@ -1634,18 +1645,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 @media screen and (max-width: 768px) {
-  .form__field textarea,
-  .form__field input {
-    height: 72px;
-    font-size: 20px;
-  }
-
-  .form__submit-btn {
-    width: 160px;
-    font-size: 20px;
-    height: 64px;
-  }
-
   .header {
     height: 152px;
   }
@@ -1886,19 +1885,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 @media screen and (max-width: 576px) {
-  .form__field textarea,
-  .form__field input {
-    height: 60px;
-    font-size: 18px;
-  }
-
-  .form__submit-btn {
-    margin-top: 26px;
-    width: 140px;
-    height: 56px;
-    font-size: 16px;
-  }
-
   .cover {
     padding: 154px 0 190px;
   }
