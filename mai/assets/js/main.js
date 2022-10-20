@@ -277,7 +277,7 @@ $(document).ready(function () {
 	let isMenuShowed = false;
 
 	$('.header__open-menu-btn').on('click', function () {
-		$('.header__menu').addClass('header__menu--showed');
+		$('.header__nav').addClass('header__nav--showed');
 		_scrollPosition = window.pageYOffset;
 		const marginSize = window.innerWidth - html.clientWidth;
 		html.style.top = `${-_scrollPosition}px`;
@@ -293,7 +293,7 @@ $(document).ready(function () {
 	$(window).on("resize", closeMenu);
 	$(document).on('keyup', closeMenu);
 	$(document).mouseup(function (e) {
-		var div = $('.header__menu');
+		var div = $('.header__nav');
 		if (!div.is(e.target) && div.has(e.target).length === 0) {
 			closeMenu();
 		}
@@ -302,7 +302,7 @@ $(document).ready(function () {
 	function closeMenu() {
 		if (!isMenuShowed) return;
 
-		$('.header__menu').removeClass('header__menu--showed');
+		$('.header__nav').removeClass('header__nav--showed');
 		html.classList.remove('modal-opened');
 		html.style.paddingRight = '';
 		window.scrollTo(0, _scrollPosition);
@@ -350,9 +350,30 @@ $(document).ready(function () {
 		// autoplaySpeed: 3000,
 		prevArrow: $('.projects__slider-nav').find('.projects__arrow--prev'),
 		nextArrow: $('.projects__slider-nav').find('.projects__arrow--next'),
+
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+				}
+			},
+		]
 	});
 
-	$('.projects__slider-nav .slick-dots button').each(function() {
+	$('.projects__slider-nav .slick-dots button').each(function () {
 		let btnNumber = $(this).text();
 		if (btnNumber.length <= 1) {
 			$(this).text('0' + btnNumber);
