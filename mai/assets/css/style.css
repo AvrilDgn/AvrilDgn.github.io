@@ -754,7 +754,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header__links-list {
@@ -944,6 +944,22 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   display: none;
 }
 
+.header__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 12, 14, 0.5);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .header__cover {
   padding: 40px 0 60px;
   background-image: url(../img/cover-background.jpg);
@@ -1125,7 +1141,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .modal__container {
   position: relative;
   margin: 50px 0;
-  padding: 100px;
+  padding: 30px 60px 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -ms-flex-negative: 0;
@@ -1149,17 +1165,18 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   opacity: 0;
 }
 
+.modal__form {
+  margin-top: 20px;
+}
+
 .modal__close-btn {
   position: absolute;
   top: 32px;
   right: 32px;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: transparent;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
   -webkit-transition: opacity ease-out 0.3s;
   -o-transition: opacity ease-out 0.3s;
   transition: opacity ease-out 0.3s;
@@ -1168,32 +1185,25 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   z-index: 10;
 }
 
+.modal__close-btn::before,
 .modal__close-btn::after {
   content: "";
   position: absolute;
-  display: block;
-  width: 3px;
-  height: 100%;
-  top: 0;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  display: block;
+  width: 32px;
+  height: 2px;
   background-color: #0B0C0E;
 }
 
-.modal__close-btn::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 3px;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: #0B0C0E;
+.modal__close-btn::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .modal__close-btn:hover,
@@ -2668,6 +2678,18 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 @media screen and (max-width: 1200px) {
+  .header--showed .header__nav {
+    opacity: 1;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+
+  .header--showed .header__overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+
   .header__menu .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2703,13 +2725,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     -o-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  }
-
-  .header__nav--showed {
-    opacity: 1;
-    -webkit-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-            transform: translateX(-100%);
   }
 
   .header__links-list {
@@ -2797,6 +2812,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg);
         -ms-transform: translate(-50%, -50%) rotate(-45deg);
             transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .header__cover {
+    padding: 70px 0 80px;
   }
 
   .header__cover .container {
@@ -2931,8 +2950,12 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     font-size: 28px;
   }
 
+  .page-info__title {
+    font-size: 32px;
+  }
+
   .modal__container {
-    max-width: 520px;
+    max-width: 670px;
     margin: 30px 0;
     padding: 50px 30px 50px;
   }
@@ -3014,6 +3037,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     font-size: 24px;
   }
 
+  .page-info__title {
+    font-size: 28px;
+  }
+
   .form__fields-group {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3040,15 +3067,15 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     font-size: 22px;
   }
 
+  .page-info__title {
+    font-size: 24px;
+  }
+
   .form__send-group {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .form__policy-checkbox {
-    margin-right: 0;
   }
 
   .form__send-btn {

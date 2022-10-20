@@ -54,38 +54,6 @@ class Modal {
 				const targetSelector = this.starter.getAttribute(this.config.linkAttrName);
 				this._nextWindows = document.querySelector("#" + targetSelector);
 
-				//feedback
-				let locationInput = this._nextWindows.querySelector('input[name="location"]');
-				if (locationInput) {
-					let location = this.starter.getAttribute("data-location");
-					locationInput.value = location;
-				}
-
-				//employee
-				let employeeName = this._nextWindows.querySelector('.modal__name');
-				let employeePosition = this._nextWindows.querySelector('.modal__position');
-				let employeeDescription = this._nextWindows.querySelector('.modal__description');
-
-				if (employeeName && employeePosition && employeeDescription) {
-					let name = this.starter.querySelector(".employee-card__name");
-					let position = this.starter.querySelector(".employee-card__position");
-					let description = this.starter.querySelector(".employee-card__description");
-					employeeName.innerHTML = name.innerHTML;
-					employeePosition.innerHTML = position.innerHTML;
-					employeeDescription.innerHTML = description.innerHTML;
-				}
-
-				//life
-				let lifeTitle = this._nextWindows.querySelector('.modal__life-title');
-				let lifeText = this._nextWindows.querySelector('.modal__life-text');
-
-				if (lifeText && lifeTitle) {
-					let title = this.starter.parentElement.querySelector(".life__block-title");
-					let text = this.starter.parentElement.querySelector(".life__text-block");
-					lifeTitle.innerHTML = title.innerHTML;
-					lifeText.innerHTML = text.innerHTML;
-				}
-
 				this.open();
 				return;
 			}
@@ -277,7 +245,7 @@ $(document).ready(function () {
 	let isMenuShowed = false;
 
 	$('.header__open-menu-btn').on('click', function () {
-		$('.header__nav').addClass('header__nav--showed');
+		$('.header').addClass('header--showed');
 		_scrollPosition = window.pageYOffset;
 		const marginSize = window.innerWidth - html.clientWidth;
 		html.style.top = `${-_scrollPosition}px`;
@@ -302,7 +270,7 @@ $(document).ready(function () {
 	function closeMenu() {
 		if (!isMenuShowed) return;
 
-		$('.header__nav').removeClass('header__nav--showed');
+		$('.header').removeClass('header--showed');
 		html.classList.remove('modal-opened');
 		html.style.paddingRight = '';
 		window.scrollTo(0, _scrollPosition);

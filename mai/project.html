@@ -74,6 +74,7 @@
                     </nav>
 
                     <button class="header__open-menu-btn"><span></span></button>
+                    <div class="header__overlay"></div>
                 </div>
             </div>
 
@@ -299,7 +300,55 @@
     </main>
     <!-- End Content -->
 
+    <!-- Modal -->
 
+    <!--feedback-->
+    <div class="modal" id="modal-feedback">
+        <div class="modal__wrapper">
+            <div class="modal__container">
+                <h2 class="modal__title title">Обратная связь</h2>
+
+                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
+                    <div class="form__fields-group">
+                        <div class="form__field">
+                            <input class="form__input" type="text" name="your-name" placeholder="Как к вам обращаться?">
+                        </div>
+
+                        <div class="form__field">
+                            <input class="form__input" type="tel" name="your-phone" placeholder="Контактный телефон">
+                        </div>
+
+                        <div class="form__field">
+                            <input class="form__input" type="email" name="your-mail" placeholder="Ваш e-mail" required>
+                        </div>
+                    </div>
+
+                    <div class="form__field">
+                        <textarea class="form__input form__input--textarea" name="your-message" cols="30" rows="4" placeholder="Ваш вопрос"></textarea>
+                    </div>
+
+                    <div class="form__send-group">
+                        <div class="form__policy">
+                            <label class="form__policy-checkbox checkbox">
+                                <input type="checkbox" name="privacy-policy" required value="true" checked>
+                                <svg class="checkbox__icon">
+                                    <use xlink:href="./assets/img/sprite.svg#check"></use>
+                                </svg>
+                            </label>
+                            <p class="form__policy-msg">Я согласен с <a href="#">политикой конфиденциальности</a></p>
+                        </div>
+
+                        <button class="form__send-btn button" type="submit">Отправить</button>
+                    </div>
+                </form>
+
+                <button class="modal__close-btn" data-modal-close aria-label="Close modal"></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Modal -->
 
     <!-- JS -->
 
