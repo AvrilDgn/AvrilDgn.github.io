@@ -2676,10 +2676,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   cursor: pointer;
 }
 
-.specs__image img {
-  width: 100%;
-}
-
 .specs__image:hover .img-full-btn {
   opacity: 1;
 }
@@ -3036,8 +3032,57 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     height: 30px;
   }
 
+  .services__head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .services__title {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
   .services__item {
     width: calc(50% - 6px);
+  }
+
+  .service-card {
+    padding: 35px;
+  }
+
+  .projects__head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .projects__title {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .news__head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .news__title {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
   .feedback__wrapper {
@@ -3170,6 +3215,21 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     max-width: initial;
   }
 
+  .header__logo .logo__image {
+    margin-right: 15px;
+    width: 60px;
+    height: auto;
+  }
+
+  .header__logo .logo__title {
+    font-size: 32px;
+  }
+
+  .header__about {
+    margin-left: 0;
+    font-size: 16px;
+  }
+
   .partners__item {
     width: 50%;
   }
@@ -3195,6 +3255,33 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     margin-top: 20px;
   }
 
+  .header__logo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+
+  .header__logo .logo__image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .header__about {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer__logo .logo__image {
+    width: 56.75px;
+    height: auto;
+  }
+
+  .footer__logo .logo__title {
+    font-size: 22px;
+  }
+
   .services__item {
     width: calc(100% - 6px);
   }
@@ -3205,5 +3292,27 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .services-second__item {
     width: calc(100% - 30px);
+  }
+
+  .product-about__info-text {
+    padding: 35px 30px;
+  }
+
+  .specs__content-block td {
+    padding: 14px;
+    line-height: 1.2;
+  }
+
+  .specs__info-block {
+    padding: 35px 30px;
+  }
+
+  .specs__info-block h3 {
+    font-size: 22px;
+  }
+
+  .specs__info-block p {
+    margin-top: 16px;
+    font-size: 16px;
   }
 }
