@@ -412,6 +412,75 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: #0B0C0E;
 }
 
+.scroll-up {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.scroll-up__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #0095DA;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out, background-color 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out, background-color 0.3s ease-out;
+  transition: opacity 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.scroll-up__btn:hover {
+  background-color: rgba(0, 149, 218, 0.8);
+}
+
+.scroll-up__arrow {
+  position: relative;
+  width: 2px;
+  height: 15px;
+  background-color: white;
+}
+
+.scroll-up__arrow::before,
+.scroll-up__arrow::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 1px;
+  width: 9px;
+  height: 2px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+
+.scroll-up__arrow::after {
+  left: initial;
+  right: -1px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.scroll-up.show .scroll-up__btn {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .button {
   position: relative;
   padding: 8px 12px;
@@ -2338,7 +2407,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .service-second-card {
   position: relative;
-  padding: 27px 36px;
+  padding: 27px 36px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3039,6 +3108,50 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .page-info__title {
     font-size: 28px;
+  }
+
+  .scroll-up {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .scroll-up__btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .scroll-up__btn__arrow {
+    height: 13px;
+  }
+
+  .scroll-up__btn__arrow::before,
+  .scroll-up__btn__arrow::after {
+    left: -1px;
+    top: 1px;
+    width: 8px;
+    height: 2px;
+  }
+
+  .scroll-up__btn__arrow::after {
+    left: initial;
+    right: -1px;
+  }
+
+  .scroll-up__arrow {
+    height: 13px;
+  }
+
+  .scroll-up__arrow::before,
+  .scroll-up__arrow::after {
+    left: -1px;
+    top: 1px;
+    width: 8px;
+    height: 2px;
+  }
+
+  .scroll-up__arrow::after {
+    left: initial;
+    right: -1px;
   }
 
   .form__fields-group {
