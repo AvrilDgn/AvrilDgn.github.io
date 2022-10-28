@@ -598,37 +598,44 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Slider
 	 */
 
-	// let mastersSlider = new Swiper('.masters__slider', {
-	// 	spaceBetween: 30,
-	// 	wrapperClass: 'masters__list',
-	// 	slideClass: 'masters__item',
-	// 	loop: true,
-	// 	slidesPerView: 1,
+	let sliders = document.querySelectorAll('.slider');
 
-	// 	navigation: {
-	// 		nextEl: ".masters__arrows .arrow-btn--next",
-	// 		prevEl: ".masters__arrows .arrow-btn--prev",
-	// 		disabledClass: 'arrow-btn--disabled',
-	// 	},
-
-	// 	pagination: {
-	// 		el: ".masters__pagination",
-	// 		bulletClass: "pagination__bullet",
-	// 		bulletActiveClass: "pagination__bullet--active",
-	// 		clickable: true,
-	// 	},
-
-	// 	breakpoints: {
-	// 		768: {
-	// 			slidesPerView: 2,
-	// 		},
-	// 		1200: {
-	// 			spaceBetween: 30,
-	// 			slidesPerView: 4,
-	// 		},
-	// 	},
-	// });
-
+	sliders.forEach(slider => {
+		new Swiper(slider.querySelector(".slider__wrap"), {
+			spaceBetween: 14,
+			wrapperClass: 'slider__list',
+			slideClass: 'slider__slide',
+			// loop: true,
+			slidesPerView: 1,
+	
+			navigation: {
+				nextEl: slider.querySelector(".slider__arrow--next"),
+				prevEl: slider.querySelector(".slider__arrow--prev"),
+				disabledClass: 'disabled',
+			},
+	
+			pagination: {
+				el: slider.querySelector(".slider__pagination"),
+				bulletClass: "slider__bullet",
+				bulletActiveClass: "active",
+				clickable: true,
+			},
+	
+			breakpoints: {
+				768: {
+					spaceBetween: 20,
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 3,
+				},
+				1200: {
+					spaceBetween: 30,
+					slidesPerView: 5,
+				},
+			},
+		});
+	});
 
 
 	/**
