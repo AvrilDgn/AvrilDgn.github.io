@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис ДОМОСБОР</title>
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+
+</head>
+
+<body>
+
+    <!-- Content -->
+    <main class="main main--home">
+
+        <!-- Header -->
+        <header class="header" data-fixed>
+            <div class="container">
+                <div class="header__left">
+                    <a href="javascript:void(0)" class="header__open-menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </a>
+
+                    <div class="header__search search">
+                        <button class="search__open-btn">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#magnifier"></use>
+                            </svg>
+                        </button>
+                        <label>
+                            <input type="search" name="search" placeholder="Поиск...">
+                        </label>
+                    </div>
+
+                    <div class="header__lang-switch">
+                        <a href="#" class="active">RU</a>
+                        <a href="#">EN</a>
+                    </div>
+                </div>
+
+                <a href="index.html" class="header__logo">
+                    <img src="./assets/img/logo.svg" alt="логотип">
+                </a>
+
+                <div class="header__right">
+                    <a href="#" class="header__link">
+                        <svg>
+                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="header__link">
+                        <svg>
+                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="header__link">
+                        <svg>
+                            <use xlink:href="./assets/img/sprite.svg#login"></use>
+                        </svg>
+                    </a>
+
+                    <div class="header__call">
+                        <a href="tel:+88003015051" class="header__phone">8 (800) 301-50-51</a>
+                        <a href="javascript:void(0)" class="header__feedback-link" data-modal="modal-feedback">
+                            Заказать обратный звонок
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Cover -->
+        <section id="cover" class="cover">
+            <div class="container">
+                <h1 class="cover__title">Построй свою мечту</h1>
+                <div class="cover__subtitle">Наш сервис каждый день помогает купить минимум один домокомплект!</div>
+
+                <div class="filter">
+                    <div class="filter__head">
+                        <div class="filter__usage-types">
+                            <a href="javascript:void(0)" class="button active">Построить</a>
+                            <a href="javascript:void(0)" class="button ">Купить</a>
+                            <a href="javascript:void(0)" class="button ">Арендовать</a>
+                        </div>
+                        <a href="javascript:void(0)" class="filter__open-advanced">
+                            <div class="icon">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <span>Расширенный поиск</span>
+                        </a>
+                    </div>
+                    <div class="filter__body">
+                        <div class="filter__col">
+                            <div class="filter__type">Тип строения</div>
+                            <select class="filter__value select" name="Тип строения">
+                                <option value="Дом">Дом</option>
+                                <option value="Баня">Баня</option>
+                                <option value="Гараж">Гараж</option>
+                                <option value="Навес">Навес</option>
+                                <option value="Коммерческий объект">Коммерческий объект</option>
+                            </select>
+                        </div>
+                        <div class="filter__col">
+                            <div class="filter__type">Габариты, м</div>
+                            <select class="filter__value select" name="Габариты">
+                                <option value="10x10">10x10</option>
+                                <option value="15x15">15x15</option>
+                                <option value="20x20">20x20</option>
+                                <option value="25x25">25x25</option>
+                                <option value="30x30">30x30</option>
+                            </select>
+                        </div>
+
+                        <div class="filter__col">
+                            <div class="filter__type">Общая площадь, м²</div>
+
+                            <div class="filter__value range-slider" data-min="100" data-max="1000">
+                                <div class="range-slider__values">
+                                    <label class="range-slider__value">
+                                        <span>От</span>
+                                        <input type="text" name="min" placeholder="100" style="width: 44px;">
+                                    </label>
+                                    <label class="range-slider__value">
+                                        <span>До</span>
+                                        <input type="text" name="max" placeholder="1 000" style="width: 57px;">
+                                    </label>
+                                </div>
+                                <div class="range-slider__range"></div>
+                            </div>
+                        </div>
+
+                        <div class="filter__col">
+                            <div class="filter__type">Стоимость, ₽</div>
+
+                            <div class="filter__value range-slider" data-min="100000" data-max="1000000">
+                                <div class="range-slider__values">
+                                    <label class="range-slider__value">
+                                        <span>От</span>
+                                        <input type="text" name="min" placeholder="100 000" style="width: 76px;">
+                                    </label>
+                                    <label class="range-slider__value">
+                                        <span>До</span>
+                                        <input type="text" name="max" placeholder="1 000 000" style="width: 89px;">
+                                    </label>
+                                </div>
+                                <div class="range-slider__range"></div>
+                            </div>
+                        </div>
+
+                        <div class="filter__col">
+                            <button class="filter__button button">Подобрать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Cover -->
+        <!-- Types -->
+        <section id="types" class="types sec">
+            <div class="container">
+                <h2 class="sec__title">Типы строений</h2>
+                <ul class="types__list">
+                    <li class="types__item">
+                        <a href="#" class="type-card">
+                            <div class="type-card__background" style="background-image: url(./assets/img/types/image-1.jpg);"></div>
+                            <div class="type-card__count">358</div>
+                            <div class="type-card__name">Дома</div>
+                        </a>
+                    </li>
+                    <li class="types__item">
+                        <a href="#" class="type-card">
+                            <div class="type-card__background" style="background-image: url(./assets/img/types/image-2.jpg);"></div>
+                            <div class="type-card__count">178</div>
+                            <div class="type-card__name">Бани</div>
+                        </a>
+                    </li>
+                    <li class="types__item">
+                        <a href="#" class="type-card">
+                            <div class="type-card__background" style="background-image: url(./assets/img/types/image-3.jpg);"></div>
+                            <div class="type-card__count">152</div>
+                            <div class="type-card__name">Гаражи</div>
+                        </a>
+                    </li>
+                    <li class="types__item">
+                        <a href="#" class="type-card">
+                            <div class="type-card__background" style="background-image: url(./assets/img/types/image-4.jpg);"></div>
+                            <div class="type-card__count">152</div>
+                            <div class="type-card__name">Навесы</div>
+                        </a>
+                    </li>
+                    <li class="types__item">
+                        <a href="#" class="type-card">
+                            <div class="type-card__background" style="background-image: url(./assets/img/types/image-5.jpg);"></div>
+                            <div class="type-card__count">205</div>
+                            <div class="type-card__name">Комм. объекты</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Types -->
+        <!-- Techs -->
+        <section id="techs" class="techs sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Techs -->
+        <!-- Useful Links -->
+        <section id="useful-links" class="useful-links sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Useful Links -->
+        <!-- Projects -->
+        <section id="projects" class="projects sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Projects -->
+        <!-- Advantages -->
+        <section id="advantages" class="advantages sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Advantages -->
+        <!-- cost-form -->
+        <section id="cost-form" class="cost-form">
+        </section>
+        <!-- End cost-form -->
+        <!-- About Us -->
+        <section id="about-us" class="about-us sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End About Us -->
+        <!-- Partners -->
+        <section id="partners" class="partners sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Partners -->
+        <!-- Store -->
+        <section id="store" class="store sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Store -->
+        <!-- Blog -->
+        <section id="blog" class="blog sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Blog -->
+        <!-- Reviews -->
+        <section id="reviews" class="reviews sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Reviews -->
+        <!-- Faq -->
+        <section id="faq" class="faq sec">
+            <h2 class="sec__title"></h2>
+        </section>
+        <!-- End Faq -->
+
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="footer__wrap">
+                    <div class="footer__info">
+                        <a href="index.html" class="footer__logo">
+                            <img src="./assets/img/logo-footer.svg" alt="логотип">
+                        </a>
+
+                        <ul class="footer__legal">
+                            <li>ООО «Основа»</li>
+                            <li>ИНН: 7814791026</li>
+                            <li>ОГРН: 1217800076240</li>
+                            <li>Сервис DOMOSBOR</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-links">
+                        <h3 class="footer__links-title">Типы строений</h3>
+                        <a href="#" class="footer__link">Дома</a>
+                        <a href="#" class="footer__link">Бани</a>
+                        <a href="#" class="footer__link">Гаражи</a>
+                        <a href="#" class="footer__link">Навесы</a>
+                        <a href="#" class="footer__link">Коммерческие объекты</a>
+                    </div>
+
+                    <div class="footer__nav-links">
+                        <h3 class="footer__links-title">Сервис</h3>
+                        <a href="#" class="footer__link">О сервисе</a>
+                        <a href="#" class="footer__link">Галерея</a>
+                        <a href="#" class="footer__link">Блог</a>
+                        <a href="#" class="footer__link">Отзывы</a>
+                        <a href="#" class="footer__link">Услуги</a>
+                    </div>
+
+                    <div class="footer__nav-links">
+                        <h3 class="footer__links-title">Информация</h3>
+                        <a href="#" class="footer__link">Оплата</a>
+                        <a href="#" class="footer__link">Документы</a>
+                        <a href="#" class="footer__link">Контакты</a>
+                        <a href="#" class="footer__link">Сотрудничество</a>
+                    </div>
+
+                    <div class="footer__nav-links">
+                        <h3 class="footer__links-title">Партнеры сервиса</h3>
+                        <a href="#" class="footer__link">Архитекторы</a>
+                        <a href="#" class="footer__link">Дизайнеры</a>
+                        <a href="#" class="footer__link">Заводы</a>
+                    </div>
+
+                    <div class="footer__contacts">
+                        <div class="footer__accent-links">
+                            <a href="#">DOMOSBOR - Магазин</a>
+                            <a href="#">DOMOSBOR - Форум</a>
+                        </div>
+
+                        <div class="footer__call">
+                            <a href="tel:+88003015051" class="footer__phone">8 (800) 301-50-51</a>
+                            <a href="#" class="footer__feedback-link" data-modal="modal-feedback">
+                                Заказать обратный звонок
+                            </a>
+                        </div>
+
+                        <a href="mailto:info@domosbor.ru" class="footer__contact-link">info@domosbor.ru</a>
+
+                        <p class="footer__address">
+                            Санкт-Петербург, <br>
+					Московский пр. 212, <br>
+					офис 3035
+                        </p>
+                    </div>
+                </div>
+
+                <ul class="footer__socials-list">
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-ok"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-dzen"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-pinterest"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-rutube"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-youtube"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-tiktok"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__socials-item">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#f-twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="footer__policy">
+                    <a href="#">Политика конфиденциальности</a>
+                    <p>© 2022 «DOMOSBOR». Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </main>
+    <!-- End Content -->
+
+    <!-- Modal -->
+
+    <!--feedback-->
+    <div class="modal" id="modal-feedback">
+        <div class="modal__wrapper">
+            <div class="modal__container">
+                <h2 class="modal__title title">Обратная связь</h2>
+
+                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
+                    <div class="form__fields-group">
+                        <div class="form__field">
+                            <input class="form__input" type="text" name="your-name" placeholder="Как к вам обращаться?">
+                        </div>
+
+                        <div class="form__field">
+                            <input class="form__input" type="tel" name="your-phone" placeholder="Контактный телефон">
+                        </div>
+
+                        <div class="form__field">
+                            <input class="form__input" type="email" name="your-mail" placeholder="Ваш e-mail" required>
+                        </div>
+                    </div>
+
+                    <div class="form__field">
+                        <textarea class="form__input form__input--textarea" name="your-message" cols="30" rows="4" placeholder="Ваш вопрос"></textarea>
+                    </div>
+
+                    <div class="form__send-group">
+                        <div class="form__policy">
+                            <label class="form__policy-checkbox checkbox">
+                                <input type="checkbox" name="privacy-policy" required value="true" checked>
+                                <svg class="checkbox__icon">
+                                    <use xlink:href="./assets/img/sprite.svg#check"></use>
+                                </svg>
+                            </label>
+                            <p class="form__policy-msg">Я согласен с <a href="#">политикой конфиденциальности</a></p>
+                        </div>
+
+                        <button class="form__send-btn button" type="submit">Отправить</button>
+                    </div>
+                </form>
+
+                <button class="modal__close-btn" data-modal-close aria-label="Close modal"></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Modal -->
+
+    <!-- JS -->
+
+    <script src="./assets/js/nouislider.min.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+
+    <!-- End JS -->
+
+</body>
+
+</html>
