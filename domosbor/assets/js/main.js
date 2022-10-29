@@ -390,29 +390,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 			html.classList.add('modal-opened');
 		}
-	}); (function aaa() {
-		isHeaderActive = !isHeaderActive;
-
-		header.classList.toggle('header--menu-opened');
-
-		if (!isHeaderActive) {
-			html.classList.remove('modal-opened');
-			html.style.marginRight = '';
-			header.style.paddingRight = '';
-			window.scrollTo(0, _scrollPosition);
-			html.style.top = '';
-		} else {
-			_scrollPosition = window.pageYOffset;
-			const marginSize = window.innerWidth - html.clientWidth;
-			html.style.top = `${-_scrollPosition}px`;
-
-			if (marginSize) {
-				html.style.marginRight = `${marginSize}px`;
-				header.style.paddingRight = `${parseInt(getComputedStyle(header).paddingRight, 10) + marginSize}px`;
-			}
-			html.classList.add('modal-opened');
-		}
-	})();
+	});
 
 
 	/**
