@@ -585,13 +585,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Accordion
 	 */
 
-	// new Accordion('.reasons__list', {
-	// 	alwaysOpen: false,
-	// 	duration: 350,
-	// 	itemClass: 'reason',
-	// 	headerClass: 'reason__head',
-	// 	bodyClass: 'reason__body',
-	// });
+	new Accordion('.faq__list', {
+		alwaysOpen: false,
+		duration: 350,
+		itemClass: 'faq__item',
+		headerClass: 'faq__head',
+		bodyClass: 'faq__body',
+	});
 
 
 	/**
