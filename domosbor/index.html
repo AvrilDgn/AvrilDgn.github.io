@@ -22,60 +22,223 @@
 
         <!-- Header -->
         <header class="header" data-fixed>
-            <div class="container">
-                <div class="header__left">
-                    <a href="javascript:void(0)" class="header__open-menu">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </a>
-
-                    <div class="header__search search">
-                        <button class="search__open-btn">
-                            <svg>
-                                <use xlink:href="./assets/img/sprite.svg#magnifier"></use>
-                            </svg>
-                        </button>
-                        <label>
-                            <input type="search" name="search" placeholder="Поиск...">
-                        </label>
-                    </div>
-
-                    <div class="header__lang-switch">
-                        <a href="#" class="active">RU</a>
-                        <a href="#">EN</a>
-                    </div>
-                </div>
-
-                <a href="index.html" class="header__logo">
-                    <img src="./assets/img/logo.svg" alt="логотип">
-                </a>
-
-                <div class="header__right">
-                    <a href="#" class="header__link">
-                        <svg>
-                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                        </svg>
-                    </a>
-                    <a href="#" class="header__link">
-                        <svg>
-                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                        </svg>
-                    </a>
-                    <a href="javascript:void(0)" class="header__link">
-                        <svg>
-                            <use xlink:href="./assets/img/sprite.svg#login"></use>
-                        </svg>
-                    </a>
-
-                    <div class="header__call">
-                        <a href="tel:+88003015051" class="header__phone">8 (800) 301-50-51</a>
-                        <a href="javascript:void(0)" class="header__feedback-link" data-modal="modal-feedback">
-                            Заказать обратный звонок
+            <div class="header__main">
+                <div class="container">
+                    <div class="header__left">
+                        <a href="javascript:void(0)" class="header__open-menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </a>
+
+                        <div class="header__search search">
+                            <button class="search__open-btn">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#magnifier"></use>
+                                </svg>
+                            </button>
+                            <label>
+                                <input type="search" name="search" placeholder="Поиск...">
+                            </label>
+                        </div>
+
+                        <div class="header__lang-switch">
+                            <a href="#" class="active">RU</a>
+                            <a href="#">EN</a>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="header__logo">
+                        <img src="./assets/img/logo.svg" alt="логотип">
+                    </a>
+
+                    <div class="header__right">
+                        <a href="#" class="header__link">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="header__link">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="header__link">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#login"></use>
+                            </svg>
+                        </a>
+
+                        <div class="header__call">
+                            <a href="tel:+88003015051" class="header__phone">8 (800) 301-50-51</a>
+                            <a href="javascript:void(0)" class="header__feedback-link" data-modal="modal-feedback">
+                                Заказать обратный звонок
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <nav class="header__menu h-menu">
+                <div class="container">
+                    <div class="h-menu__tab-btns">
+                        <a href="javascript:void(0)" class="button active" data-target="build">Построить</a>
+                        <a href="javascript:void(0)" class="button" data-target="buy">Купить</a>
+                        <a href="javascript:void(0)" class="button" data-target="rent">Арендовать</a>
+                    </div>
+
+                    <div class="h-menu__content-list">
+                        <div class="h-menu__content active" data-id="build">
+                            <div class="h-menu__column">
+                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
+                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
+
+                                <h3 class="h-menu__links-title">Типы строений</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Дома</a>
+                                    <a href="#" class="h-menu__link">Бани</a>
+                                    <a href="#" class="h-menu__link">Гаражи</a>
+                                    <a href="#" class="h-menu__link">Навесы</a>
+                                    <a href="#" class="h-menu__link">Коммерческие объекты</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-menu__content" data-id="buy">
+                            <div class="h-menu__column">
+                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
+                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
+
+                                <h3 class="h-menu__links-title">Типы строений</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Дома</a>
+                                    <a href="#" class="h-menu__link">Бани</a>
+                                    <a href="#" class="h-menu__link">Гаражи</a>
+                                    <a href="#" class="h-menu__link">Навесы</a>
+                                    <a href="#" class="h-menu__link">Коммерческие объекты</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-menu__content" data-id="rent">
+                            <div class="h-menu__column">
+                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
+                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
+
+                                <h3 class="h-menu__links-title">Типы строений</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Дома</a>
+                                    <a href="#" class="h-menu__link">Бани</a>
+                                    <a href="#" class="h-menu__link">Гаражи</a>
+                                    <a href="#" class="h-menu__link">Навесы</a>
+                                    <a href="#" class="h-menu__link">Коммерческие объекты</a>
+                                </div>
+                            </div>
+                            <div class="h-menu__column">
+                                <h3 class="h-menu__links-title">Технологии</h3>
+
+                                <div class="h-menu__links-list">
+                                    <a href="#" class="h-menu__link">Клееный брус</a>
+                                    <a href="#" class="h-menu__link">Лафет</a>
+                                    <a href="#" class="h-menu__link">Фахверковые</a>
+                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
+                                    <a href="#" class="h-menu__link">Каркасные</a>
+                                    <a href="#" class="h-menu__link">CLT панели</a>
+                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
+                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </header>
         <!-- End Header -->
 

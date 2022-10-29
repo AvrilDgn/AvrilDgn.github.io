@@ -1920,13 +1920,20 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   left: 0;
   height: 80px;
   width: 100%;
-  background-color: white;
-  -webkit-box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
   z-index: 100;
 }
 
-.header .container {
+.header__main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.header__main .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: center;
@@ -2092,6 +2099,179 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .header__feedback-link:hover {
   text-decoration: none;
   color: #49423D;
+}
+
+.header__menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 0;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  overflow-y: auto;
+  background-color: white;
+  z-index: 0;
+  -webkit-transition: height 0.25s ease;
+  -o-transition: height 0.25s ease;
+  transition: height 0.25s ease;
+}
+
+.header--menu-opened .header__menu {
+  height: calc(100vh - 100%);
+}
+
+.h-menu .container {
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.h-menu__tab-btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.h-menu__tab-btns .button {
+  width: 100%;
+  height: 48px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.h-menu__tab-btns .button.active {
+  pointer-events: none;
+  cursor: default;
+}
+
+.h-menu__tab-btns .button:not(.active) {
+  background-color: #F5F5F6;
+  color: #919191;
+}
+
+.h-menu__tab-btns .button:not(.active):focus,
+.h-menu__tab-btns .button:not(.active):hover {
+  color: #919191;
+  text-decoration: none;
+  background-color: #e5e5e6;
+}
+
+.h-menu__content-list {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.h-menu__content {
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 30px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.h-menu__content:not(.active) {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.h-menu__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.h-menu__column > *:not(:first-child) {
+  margin-top: 24px;
+}
+
+.h-menu__link {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #49423D;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+
+.h-menu__link::before {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #49423D;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out, background-color 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out, background-color 0.3s ease-out;
+  transition: opacity 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.h-menu__link:hover {
+  color: #8DB338;
+}
+
+.h-menu__link:hover::before {
+  opacity: 1;
+  background-color: #8DB338;
+}
+
+.h-menu__link--main {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #8DB338;
+}
+
+.h-menu__link--main::before {
+  background-color: #8DB338;
+}
+
+.h-menu__link--main:hover {
+  color: #8DB338;
+}
+
+.h-menu__links-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #8DB338;
+}
+
+.h-menu__links-list {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.h-menu__links-list > *:not(:first-child) {
+  margin-top: 12px;
 }
 
 .search {

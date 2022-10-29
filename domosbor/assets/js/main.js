@@ -362,37 +362,57 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Header open mobile menu
 	 */
 
-	// let header = document.querySelector('.header');
-	// let headerTop = document.querySelector('.header__top');
-	// let headerOpenBtn = header.querySelector('.header__menu-open-btn');
-	// let isHeaderActive = false;
-	// const html = document.documentElement;
-	// let _scrollPosition = 0;
+	let header = document.querySelector('.header');
+	let headerOpenBtn = header.querySelector('.header__open-menu');
+	let isHeaderActive = false;
+	const html = document.documentElement;
+	let _scrollPosition = 0;
 
-	// headerOpenBtn.addEventListener('click', function (e) {
-	// 	isHeaderActive = !isHeaderActive;
+	headerOpenBtn.addEventListener('click', function (e) {
+		isHeaderActive = !isHeaderActive;
 
-	// 	header.classList.toggle('header--active');
+		header.classList.toggle('header--menu-opened');
 
-	// 	if (!isHeaderActive) {
+		if (!isHeaderActive) {
+			html.classList.remove('modal-opened');
+			html.style.marginRight = '';
+			header.style.paddingRight = '';
+			window.scrollTo(0, _scrollPosition);
+			html.style.top = '';
+		} else {
+			_scrollPosition = window.pageYOffset;
+			const marginSize = window.innerWidth - html.clientWidth;
+			html.style.top = `${-_scrollPosition}px`;
 
-	// 		html.classList.remove('modal-opened');
-	// 		html.style.marginRight = '';
-	// 		headerTop.style.paddingRight = '';
-	// 		window.scrollTo(0, _scrollPosition);
-	// 		html.style.top = '';
-	// 	} else {
-	// 		_scrollPosition = window.pageYOffset;
-	// 		const marginSize = window.innerWidth - html.clientWidth;
-	// 		html.style.top = `${-_scrollPosition}px`;
+			if (marginSize) {
+				html.style.marginRight = `${marginSize}px`;
+				header.style.paddingRight = `${parseInt(getComputedStyle(header).paddingRight, 10) + marginSize}px`;
+			}
+			html.classList.add('modal-opened');
+		}
+	}); (function aaa() {
+		isHeaderActive = !isHeaderActive;
 
-	// 		if (marginSize) {
-	// 			html.style.marginRight = `${marginSize}px`;
-	// 			headerTop.style.paddingRight = `${parseInt(getComputedStyle(el).paddingRight, 10) + marginSize}px`;
-	// 		}
-	// 		html.classList.add('modal-opened');
-	// 	}
-	// });
+		header.classList.toggle('header--menu-opened');
+
+		if (!isHeaderActive) {
+			html.classList.remove('modal-opened');
+			html.style.marginRight = '';
+			header.style.paddingRight = '';
+			window.scrollTo(0, _scrollPosition);
+			html.style.top = '';
+		} else {
+			_scrollPosition = window.pageYOffset;
+			const marginSize = window.innerWidth - html.clientWidth;
+			html.style.top = `${-_scrollPosition}px`;
+
+			if (marginSize) {
+				html.style.marginRight = `${marginSize}px`;
+				header.style.paddingRight = `${parseInt(getComputedStyle(header).paddingRight, 10) + marginSize}px`;
+			}
+			html.classList.add('modal-opened');
+		}
+	})();
 
 
 	/**
@@ -454,6 +474,27 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		// 		val.value = val.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 		// 	});
 		// });
+	});
+
+
+	/**
+	 * Menu tabs
+	 */
+
+	let tabBtns = document.querySelectorAll('.h-menu__tab-btns .button');
+
+	tabBtns.forEach(btn => {
+		btn.addEventListener('click', function (e) {
+			if (btn.classList.contains('active')) {
+				return;
+			}
+
+			document.querySelector('.h-menu__tab-btns .button.active').classList.remove('active');
+			document.querySelector('.h-menu__content.active').classList.remove('active');
+
+			btn.classList.add('active');
+			document.querySelector(`.h-menu__content[data-id="${btn.dataset.target}"]`).classList.add('active');
+		})
 	});
 
 
@@ -607,20 +648,20 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			slideClass: 'slider__slide',
 			// loop: true,
 			slidesPerView: 1,
-	
+
 			navigation: {
 				nextEl: slider.querySelector(".slider__arrow--next"),
 				prevEl: slider.querySelector(".slider__arrow--prev"),
 				disabledClass: 'disabled',
 			},
-	
+
 			pagination: {
 				el: slider.querySelector(".slider__pagination"),
 				bulletClass: "slider__bullet",
 				bulletActiveClass: "active",
 				clickable: true,
 			},
-	
+
 			breakpoints: {
 				768: {
 					spaceBetween: 20,
