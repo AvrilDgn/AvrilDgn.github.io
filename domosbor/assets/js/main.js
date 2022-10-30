@@ -230,6 +230,10 @@ class Accordion {
 		this.addEventListener();
 	}
 	addEventListener() {
+		if (this._el == null) {
+			return;
+		}
+
 		this._el.addEventListener('click', (e) => {
 			const elHeader = e.target.closest('.' + this._config.headerClass);
 
@@ -459,20 +463,26 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Menu tabs
 	 */
 
-	let tabBtns = document.querySelectorAll('.h-menu__tab-btns .button');
+	let tabs = document.querySelectorAll('.tabs');
 
-	tabBtns.forEach(btn => {
-		btn.addEventListener('click', function (e) {
-			if (btn.classList.contains('active')) {
-				return;
-			}
+	tabs.forEach(tab => {
+		let tabBtns = tab.querySelectorAll('.tabs__buttons .button');
+		// let tabConts = tab.querySelectorAll('.tabs__content');
 
-			document.querySelector('.h-menu__tab-btns .button.active').classList.remove('active');
-			document.querySelector('.h-menu__content.active').classList.remove('active');
+		tabBtns.forEach(btn => {
+			btn.addEventListener('click', function (e) {
+				if (btn.classList.contains('active')) {
+					return;
+				}
 
-			btn.classList.add('active');
-			document.querySelector(`.h-menu__content[data-id="${btn.dataset.target}"]`).classList.add('active');
-		})
+				tab.querySelectorAll('.active').forEach(activeEl => {
+					activeEl.classList.remove('active');
+				});
+
+				btn.classList.add('active');
+				document.querySelector(`.tabs__content[data-tab-id="${btn.dataset.tabTarget}"]`).classList.add('active');
+			})
+		});
 	});
 
 
@@ -614,13 +624,14 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Slider
+	 * Sliders
 	 */
 
-	let sliders = document.querySelectorAll('.slider');
+	//projects
+	let projectsSlider = document.querySelector('.projects__slider.slider');
 
-	sliders.forEach(slider => {
-		new Swiper(slider.querySelector(".slider__wrap"), {
+	if (projectsSlider !== null) {
+		new Swiper(projectsSlider.querySelector(".slider__wrap"), {
 			spaceBetween: 14,
 			wrapperClass: 'slider__list',
 			slideClass: 'slider__slide',
@@ -628,13 +639,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			slidesPerView: 1,
 
 			navigation: {
-				nextEl: slider.querySelector(".slider__arrow--next"),
-				prevEl: slider.querySelector(".slider__arrow--prev"),
+				nextEl: projectsSlider.querySelector(".slider__arrow--next"),
+				prevEl: projectsSlider.querySelector(".slider__arrow--prev"),
 				disabledClass: 'disabled',
 			},
 
 			pagination: {
-				el: slider.querySelector(".slider__pagination"),
+				el: projectsSlider.querySelector(".slider__pagination"),
 				bulletClass: "slider__bullet",
 				bulletActiveClass: "active",
 				clickable: true,
@@ -654,7 +665,42 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				},
 			},
 		});
-	});
+	}
+
+	//project card images
+	let projCardMainSlider = document.querySelector('.proj-card-full__main-slider.slider');
+	let projCardThumbSlider = document.querySelector('.proj-card-full__thumb-slider.slider');
+
+	if (projCardMainSlider !== null && projCardThumbSlider !== null) {
+		//thumb
+		let thumb = new Swiper(projCardThumbSlider.querySelector(".slider__wrap"), {
+			spaceBetween: 30,
+			wrapperClass: 'slider__list',
+			slideClass: 'slider__slide',
+			slidesPerView: 3,
+
+			freeMode: true,
+			watchSlidesProgress: true,
+			
+			navigation: {
+				nextEl: projCardThumbSlider.querySelector(".slider__arrow--next"),
+				prevEl: projCardThumbSlider.querySelector(".slider__arrow--prev"),
+				disabledClass: 'disabled',
+			},
+		});
+
+		//main
+		let main = new Swiper(projCardMainSlider.querySelector(".slider__wrap"), {
+			spaceBetween: 10,
+			wrapperClass: 'slider__list',
+			slideClass: 'slider__slide',
+			slidesPerView: 1,
+
+			thumbs: {
+				swiper: thumb,
+			},
+		});
+	}
 
 
 	/**

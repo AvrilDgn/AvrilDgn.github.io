@@ -80,15 +80,15 @@
             </div>
 
             <nav class="header__menu h-menu">
-                <div class="container">
-                    <div class="h-menu__tab-btns">
-                        <a href="javascript:void(0)" class="button active" data-target="build">Построить</a>
-                        <a href="javascript:void(0)" class="button" data-target="buy">Купить</a>
-                        <a href="javascript:void(0)" class="button" data-target="rent">Арендовать</a>
+                <div class="container tabs">
+                    <div class="h-menu__tab-btns tabs__buttons">
+                        <a href="javascript:void(0)" class="button active" data-tab-target="build">Построить</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="buy">Купить</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="rent">Арендовать</a>
                     </div>
 
                     <div class="h-menu__content-list">
-                        <div class="h-menu__content active" data-id="build">
+                        <div class="h-menu__content tabs__content active" data-tab-id="build">
                             <div class="h-menu__column">
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
@@ -175,7 +175,7 @@
                             </div>
                         </div>
 
-                        <div class="h-menu__content" data-id="buy">
+                        <div class="h-menu__content tabs__content" data-tab-id="buy">
                             <div class="h-menu__column">
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
@@ -206,7 +206,7 @@
                             </div>
                         </div>
 
-                        <div class="h-menu__content" data-id="rent">
+                        <div class="h-menu__content tabs__content" data-tab-id="rent">
                             <div class="h-menu__column">
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
@@ -242,73 +242,350 @@
         </header>
         <!-- End Header -->
 
-        <!-- cost-form -->
-        <section id="cost-form" class="cost-form">
+        <!-- Project Card Full -->
+        <section id="proj-card-full" class="proj-card-full sec">
             <div class="container">
-                <div class="cost-form__body">
-                    <form class="cost-form__form form" action="#" method="post">
-                        <div class="form__field">
-                            <input class="form__input form__input--grey" type="text" name="your-name" placeholder="Имя">
-                        </div>
-
-                        <div class="form__field">
-                            <input class="form__input form__input--grey" type="tel" name="your-phone" placeholder="Электронная почта">
-                        </div>
-
-                        <div class="form__field">
-                            <input class="form__input form__input--grey" type="email" name="your-mail" placeholder="Телефон" required>
-                        </div>
-
-                        <div class="form__field">
-                            <textarea class="form__input form__input--grey form__input--textarea" name="your-message" placeholder="Сообщение"></textarea>
-                        </div>
-
-                        <label class="form__file">
-                            <input type="file" name="your-files" placeholder="Прикрепить файлы">
-                            <span class="icon"></span>
-                            <span class="text">Прикрепить файлы</span>
-                        </label>
-
-                        <button class="form__send-btn button" type="submit">Отправить</button>
-                    </form>
-
-                    <ul class="form__socials-list">
-                        <li class="form__socials-item">
-                            <a href="#">
-                                <svg>
-                                    <use xlink:href="./assets/img/sprite.svg#telegram"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="form__socials-item">
-                            <a href="#">
-                                <svg>
-                                    <use xlink:href="./assets/img/sprite.svg#whatsapp"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="form__socials-item">
-                            <a href="#">
-                                <svg>
-                                    <use xlink:href="./assets/img/sprite.svg#viber"></use>
-                                </svg>
-                            </a>
-                        </li>
+                <div class="main__page-info">
+                    <ul class="main__breadcrumb">
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Дома</a></li>
+                        <li>Kontio Laaksolahti</li>
                     </ul>
+                    <h1 class="main__page-title">Kontio Laaksolahti</h1>
                 </div>
 
-                <div class="cost-form__head">
-                    <h2 class="cost-form__title">Расчёт стоимости по вашему проекту</h2>
-                    <div class="cost-form__desc">
-                        <p>Мы считаем большим заблуждением, когда клиенты выбирают архитектурную студию по стоимости проектирования.
-                            В частном жилом строительстве есть правило: стоимость проекта составляет 5-10% от стоимости его
-                            реализации.</p>
-                        <p>Не откладывайте с реализацией своих задумок, обращайтесь прямо сейчас!</p>
+                <div class="proj-card-full__wrap">
+                    <div class="proj-card-full__images-block">
+                        <div class="proj-card-full__tab-btns">
+                            <a href="javascript:void(0)" class="button active" data-tab-target="build">Фасады</a>
+                            <a href="javascript:void(0)" class="button" data-tab-target="buy">Планировки</a>
+                            <a href="javascript:void(0)" class="button" data-tab-target="rent">Интерьер</a>
+                        </div>
+
+                        <div class="proj-card-full__main-slider slider">
+                            <div class="slider__wrap">
+                                <ul class="slider__list">
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-full-1.jpg" alt="">
+                                    </li>
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-full-2.jpg" alt="">
+                                    </li>
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-full-3.jpg" alt="">
+                                    </li>
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-full-4.jpg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="proj-card-full__thumb-slider slider">
+                            <div class="slider__wrap">
+                                <ul class="slider__list">
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-1.jpg" alt="">
+                                    </li>
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-2.jpg" alt="">
+                                    </li>
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-3.jpg" alt="">
+                                    </li>
+                                    <li class="slider__slide">
+                                        <img src="./assets/img/project-card/image-4.jpg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slider__arrows">
+                                <div class="slider__arrow slider__arrow--prev"></div>
+                                <div class="slider__arrow slider__arrow--next"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proj-card-full__info-block">
+                        <div class="proj-card-full__info-head">
+                            <div class="proj-card-full__article">Артикул: 611HSK22F</div>
+                            <div class="proj-card-full__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#print"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#back"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="proj-card-full__name">Kontio Laaksolahti</div>
+                        <ul class="proj-card-full__info-list">
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Тип строения</div>
+                                <div class="proj-card-full__info-value">Дом</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Стиль</div>
+                                <div class="proj-card-full__info-value">Скандинавский</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Технология</div>
+                                <div class="proj-card-full__info-value">Клееный брус</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Габаритные размеры</div>
+                                <div class="proj-card-full__info-value">100х100х100</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Общая площадь</div>
+                                <div class="proj-card-full__info-value">150 м2</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Этажность</div>
+                                <div class="proj-card-full__info-value">Двухэтажный</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Количество комнат</div>
+                                <div class="proj-card-full__info-value">4</div>
+                            </li>
+                            <li class="proj-card-full__info-item">
+                                <div class="proj-card-full__info-type">Количество санузлов</div>
+                                <div class="proj-card-full__info-value">2</div>
+                            </li>
+                        </ul>
+                        <div class="proj-card-full__price">от 5 800 000 ₽</div>
+                        <a href="#" class="proj-card-full__btn button">Получить консультацию</a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End cost-form -->
+        <!-- End Project Card Full -->
+        <!-- Project Description -->
+        <section id="proj-desc" class="proj-desc sec">
+            <div class="container">
+                <h2 class="sec__title">Описание проекта</h2>
+
+                <div class="proj-desc__desc">
+                    <p><strong>Собственный деревянный дом</strong> — это жильё, в котором всё сделано с учётом личных потребностей и предпочтений.
+                        Чистый воздух, возможность самостоятельного планирования участка (при желании можно дополнительно возвести
+                        баню, гараж, навес и иное необходимое сооружение) и возможность выращивания овощей и фруктов — всё это вы
+                        получаете в частном доме.</p>
+                    <p><strong>А ещё дом из дерева — это экологическая безопасность,</strong> долговечность, неповторимый внешний
+                        вид и необыкновенные впечатления. Только представьте, как приятно отдыхать на собственной территории! Можно
+                        приготовить мясо, поиграть в активные игры, позагорать или просто почитать книгу в гамаке.</p>
+                </div>
+
+                <div class="proj-desc-gen">
+                    <h3 class="proj-desc-gen__title">Общая информация</h3>
+                    <div class="proj-desc-gen__list">
+                        <ul class="proj-desc-gen__col">
+                            <li class="proj-desc-gen__item">
+                                <div class="proj-desc-gen__type">Страна</div>
+                                <div class="proj-desc-gen__value">Россия</div>
+                            </li>
+                            <li class="proj-desc-gen__item">
+                                <div class="proj-desc-gen__type">Производитель</div>
+                                <div class="proj-desc-gen__value">Skobex Technologies</div>
+                            </li>
+                            <li class="proj-desc-gen__item">
+                                <div class="proj-desc-gen__type">Сезонность</div>
+                                <div class="proj-desc-gen__value">Постоянное проживание</div>
+                            </li>
+                        </ul>
+                        <ul class="proj-desc-gen__col">
+                            <li class="proj-desc-gen__item">
+                                <div class="proj-desc-gen__type">Форма здания</div>
+                                <div class="proj-desc-gen__value">Квадрат</div>
+                            </li>
+                            <li class="proj-desc-gen__item">
+                                <div class="proj-desc-gen__type">Форма кровли</div>
+                                <div class="proj-desc-gen__value">Односкатная</div>
+                            </li>
+                            <li class="proj-desc-gen__item">
+                                <div class="proj-desc-gen__type">Жилая площадь</div>
+                                <div class="proj-desc-gen__value">100 м2</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="proj-desc-additional">
+                    <h3 class="proj-desc-additional__title">Дополнительная информация</h3>
+                    <div class="proj-desc-additional__list">
+                        <ul class="proj-desc-additional__col">
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#checkmark"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                                <div class="proj-desc-additional__info">
+                                    <p>Количество: 2</p>
+                                    <p>Площадь: 12 м2</p>
+                                </div>
+                            </li>
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#cross"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                            </li>
+                        </ul>
+                        <ul class="proj-desc-additional__col">
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#checkmark"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                            </li>
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#checkmark"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                            </li>
+                        </ul>
+                        <ul class="proj-desc-additional__col">
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#cross"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                                <div class="proj-desc-additional__info">
+                                    <p>Количество: 2</p>
+                                    <p>Площадь: 12 м2</p>
+                                </div>
+                            </li>
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#cross"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                            </li>
+                        </ul>
+                        <ul class="proj-desc-additional__col">
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#cross"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                            </li>
+                            <li class="proj-desc-additional__item">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#cross"></use>
+                                </svg>
+                                <div class="proj-desc-additional__type">Спальня</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Project Description -->
+        <!-- Configs -->
+        <section id="configs" class="configs sec">
+            <div class="container">
+                <h2 class="sec__title">Комплектации</h2>
+
+                <div class="configs__wrap tabs">
+                    <div class="configs__tab-btns tabs__buttons">
+                        <a href="javascript:void(0)" class="button active" data-tab-target="config-1">Комплектация 1</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="config-2">Комплектация 2</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="config-3">Комплектация 3</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="config-4">Комплектация 4</a>
+                    </div>
+
+                    <div class="configs__list">
+                        <div class="config tabs__content active" data-tab-id="config-1">
+                            <div class="config__wrap">
+                                <h3 class="config__title">Название комлектации</h3>
+                                <div class="config__desc">
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                </div>
+                                <div class="config__price">5 800 000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="config tabs__content " data-tab-id="config-2">
+                            <div class="config__wrap">
+                                <h3 class="config__title">Название комлектации 2</h3>
+                                <div class="config__desc">
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                </div>
+                                <div class="config__price">2 800 000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="config tabs__content " data-tab-id="config-3">
+                            <div class="config__wrap">
+                                <h3 class="config__title">Название комлектации 3</h3>
+                                <div class="config__desc">
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                </div>
+                                <div class="config__price">3 800 000 ₽</div>
+                            </div>
+                        </div>
+                        <div class="config tabs__content " data-tab-id="config-4">
+                            <div class="config__wrap">
+                                <h3 class="config__title">Название комлектации 4</h3>
+                                <div class="config__desc">
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                    <p>
+                                        Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        овощей и фруктов — всё это вы получаете в частном доме.
+                                    </p>
+                                </div>
+                                <div class="config__price">4 800 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Configs -->
         <!-- Projects -->
         <section id="projects" class="projects sec">
             <div class="container">
@@ -511,6 +788,73 @@
             </div>
         </section>
         <!-- End Projects -->
+        <!-- cost-form -->
+        <section id="cost-form" class="cost-form">
+            <div class="container">
+                <div class="cost-form__body">
+                    <form class="cost-form__form form" action="#" method="post">
+                        <div class="form__field">
+                            <input class="form__input form__input--grey" type="text" name="your-name" placeholder="Имя">
+                        </div>
+
+                        <div class="form__field">
+                            <input class="form__input form__input--grey" type="tel" name="your-phone" placeholder="Электронная почта">
+                        </div>
+
+                        <div class="form__field">
+                            <input class="form__input form__input--grey" type="email" name="your-mail" placeholder="Телефон" required>
+                        </div>
+
+                        <div class="form__field">
+                            <textarea class="form__input form__input--grey form__input--textarea" name="your-message" placeholder="Сообщение"></textarea>
+                        </div>
+
+                        <label class="form__file">
+                            <input type="file" name="your-files" placeholder="Прикрепить файлы">
+                            <span class="icon"></span>
+                            <span class="text">Прикрепить файлы</span>
+                        </label>
+
+                        <button class="form__send-btn button" type="submit">Отправить</button>
+                    </form>
+
+                    <ul class="form__socials-list">
+                        <li class="form__socials-item">
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="form__socials-item">
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#whatsapp"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="form__socials-item">
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href="./assets/img/sprite.svg#viber"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cost-form__head">
+                    <h2 class="cost-form__title">Расчёт стоимости по вашему проекту</h2>
+                    <div class="cost-form__desc">
+                        <p>Мы считаем большим заблуждением, когда клиенты выбирают архитектурную студию по стоимости проектирования.
+                            В частном жилом строительстве есть правило: стоимость проекта составляет 5-10% от стоимости его
+                            реализации.</p>
+                        <p>Не откладывайте с реализацией своих задумок, обращайтесь прямо сейчас!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End cost-form -->
 
         <!-- Footer -->
         <footer id="footer" class="footer">
