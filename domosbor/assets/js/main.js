@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let search = document.querySelectorAll('.search');
 
 	search.forEach(el => {
-		let openBtn = el.querySelector('.search__open-btn');
+		let openBtn = el.querySelector('.search__btn');
 
 		openBtn.addEventListener('click', function () {
 			el.classList.toggle('active');
