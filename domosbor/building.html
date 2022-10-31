@@ -242,335 +242,477 @@
         </header>
         <!-- End Header -->
 
-
-        <!-- Search Result -->
-        <section id="search-result" class="search-result sec">
+        <!-- Building Main -->
+        <section id="building" class="building sec">
             <div class="container">
                 <div class="main__page-info">
                     <ul class="main__breadcrumb">
                         <li><a href="#">Главная</a></li>
-                        <li><a href="#">Дома</a></li>
-                        <li>Расширенный поиск</li>
+                        <li>Построить дом</li>
                     </ul>
-                    <div class="main__page-head">
-                        <h1 class="main__page-title">Дом, 2 этажа, 6 комнат, 150 м2, кирпич </h1>
-                        <div class="main__find-count">Найдено 234 дома</div>
+                    <h1 class="main__page-title">Построить дом</h1>
+                </div>
+
+                <div class="building__desc">
+                    <div class="building__desc-text">
+                        <p><strong>Собственный деревянный дом</strong> — это жильё, в котором всё сделано с учётом личных
+                            потребностей
+                            и предпочтений.
+                            Чистый воздух, возможность самостоятельного планирования участка (при желании можно дополнительно
+                            возвести
+                            баню, гараж, навес и иное необходимое сооружение) и возможность выращивания овощей и фруктов — всё это вы
+                            получаете в частном доме.</p>
+                        <p><strong>А ещё дом из дерева — это экологическая безопасность,</strong> долговечность, неповторимый
+                            внешний
+                            вид и необыкновенные впечатления. Только представьте, как приятно отдыхать на собственной территории!
+                            Можно
+                            приготовить мясо, поиграть в активные игры, позагорать или просто почитать книгу в гамаке.</p>
+                    </div>
+                    <div class="building__desc-image">
+                        <img src="./assets/img/building/desc.jpg" alt="">
                     </div>
                 </div>
 
-                <div class="search-result__wrap">
-                    <ul class="search-result__list">
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
+                <div class="building__filter">
+                    <div class="building__filter-wrap">
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Общая площадь, м²</div>
 
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
+                            <div class="building__filter-value range-slider" data-min="100" data-max="1000">
+                                <div class="range-slider__values">
+                                    <label class="range-slider__value">
+                                        <span>От</span>
+                                        <input type="text" name="min" placeholder="100" style="width: 44px;">
+                                    </label>
+                                    <label class="range-slider__value">
+                                        <span>До</span>
+                                        <input type="text" name="max" placeholder="1 000" style="width: 57px;">
+                                    </label>
                                 </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
+                                <div class="range-slider__range"></div>
                             </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-2.jpg" alt="">
+                        </div>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Стоимость, ₽</div>
 
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
+                            <div class="building__filter-value range-slider" data-min="100000" data-max="1000000">
+                                <div class="range-slider__values">
+                                    <label class="range-slider__value">
+                                        <span>От</span>
+                                        <input type="text" name="min" placeholder="100 000" style="width: 76px;">
+                                    </label>
+                                    <label class="range-slider__value">
+                                        <span>До</span>
+                                        <input type="text" name="max" placeholder="1 000 000" style="width: 89px;">
+                                    </label>
                                 </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
+                                <div class="range-slider__range"></div>
                             </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-3.jpg" alt="">
+                        </div>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Общая площадь, м²</div>
 
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
+                            <div class="building__filter-value range-slider" data-min="100" data-max="1000">
+                                <div class="range-slider__values">
+                                    <label class="range-slider__value">
+                                        <span>От</span>
+                                        <input type="text" name="min" placeholder="100" style="width: 44px;">
+                                    </label>
+                                    <label class="range-slider__value">
+                                        <span>До</span>
+                                        <input type="text" name="max" placeholder="1 000" style="width: 57px;">
+                                    </label>
                                 </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
+                                <div class="range-slider__range"></div>
                             </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
+                        </div>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Стоимость, ₽</div>
 
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
+                            <div class="building__filter-value range-slider" data-min="100000" data-max="1000000">
+                                <div class="range-slider__values">
+                                    <label class="range-slider__value">
+                                        <span>От</span>
+                                        <input type="text" name="min" placeholder="100 000" style="width: 76px;">
+                                    </label>
+                                    <label class="range-slider__value">
+                                        <span>До</span>
+                                        <input type="text" name="max" placeholder="1 000 000" style="width: 89px;">
+                                    </label>
                                 </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
+                                <div class="range-slider__range"></div>
                             </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
-
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
-                            </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
-
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
-                            </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
-
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
-                            </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
-
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
-                            </div>
-                        </li>
-                        <li class="search-result__item">
-                            <div class="project-card project-card--second-type">
-                                <img src="./assets/img/gallery/item-1.jpg" alt="">
-
-                                <div class="project-card__controls">
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#arrows"></use>
-                                        </svg>
-                                    </a>
-                                    <a href="#">
-                                        <svg>
-                                            <use xlink:href="./assets/img/sprite.svg#heart"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-
-                                <div class="project-card__wrap">
-                                    <h3 class="project-card__name">Kontio Laaksolahti</h3>
-                                    <div class="project-card__content">
-                                        <div class="project-card__info">
-                                            <p>Тип: дом</p>
-                                            <p>Технология: Клееный брус</p>
-                                            <p>Габариты: 100х100х100 </p>
-                                        </div>
-                                        <div class="project-card__price">1 000 000 ₽</div>
-                                    </div>
-                                </div>
-
-                                <a href="product-card.html" class="project-card__link"></a>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="search-result__footer">
-                        <div class="pagination">
-                            <a href="#" class="pagination__arrow pagination__arrow--prev disabled"></a>
-                            <ul class="pagination__list">
-                                <li class="pagination__item active">1</li>
-                                <li class="pagination__item"><a href="#">2</a></li>
-                                <li class="pagination__item"><a href="#">3</a></li>
-                                <li class="pagination__item"><a href="#">4</a></li>
-                                <li class="pagination__item"><a href="#">5</a></li>
-                                <li class="pagination__item">...</li>
-                                <li class="pagination__item"><a href="#">15</a></li>
-                            </ul>
-                            <a href="#" class="pagination__arrow pagination__arrow--next"></a>
                         </div>
 
-                        <a href="#" class="search-result__btn button">Расширенный фильтр</a>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Тип строения</div>
+                            <select class="building__filter-value select" name="Тип строения">
+                                <option value="Дом">Дом</option>
+                                <option value="Баня">Баня</option>
+                                <option value="Гараж">Гараж</option>
+                                <option value="Навес">Навес</option>
+                                <option value="Коммерческий объект">Коммерческий объект</option>
+                            </select>
+                        </div>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Габариты, м</div>
+                            <select class="building__filter-value select" name="Габариты">
+                                <option value="10x10">10x10</option>
+                                <option value="15x15">15x15</option>
+                                <option value="20x20">20x20</option>
+                                <option value="25x25">25x25</option>
+                                <option value="30x30">30x30</option>
+                            </select>
+                        </div>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Тип строения</div>
+                            <select class="building__filter-value select" name="Тип строения">
+                                <option value="Дом">Дом</option>
+                                <option value="Баня">Баня</option>
+                                <option value="Гараж">Гараж</option>
+                                <option value="Навес">Навес</option>
+                                <option value="Коммерческий объект">Коммерческий объект</option>
+                            </select>
+                        </div>
+                        <div class="building__filter-col">
+                            <div class="building__filter-type">Габариты, м</div>
+                            <select class="building__filter-value select" name="Габариты">
+                                <option value="10x10">10x10</option>
+                                <option value="15x15">15x15</option>
+                                <option value="20x20">20x20</option>
+                                <option value="25x25">25x25</option>
+                                <option value="30x30">30x30</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="building__filter-footer">
+                        <button class="button">Подобрать</button>
+
+                        <a href="javascript:void(0)" class="open-advanced">
+                            <div class="icon">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <span>Расширенный поиск</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Search Result -->
+        <!-- End Building Main -->
+
+        <!-- Building Cards -->
+        <section class="building-cards">
+            <div class="container">
+                <ul class="building-cards__list">
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                    <li class="building-cards__item">
+                        <div class="project-card project-card--second-type">
+                            <img src="./assets/img/gallery/item-1.jpg" alt="">
+
+                            <div class="project-card__controls">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="project-card__wrap">
+                                <h3 class="project-card__name">Kontio Laaksolahti</h3>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>Тип: дом</p>
+                                        <p>Технология: Клееный брус</p>
+                                        <p>Габариты: 100х100х100 </p>
+                                    </div>
+                                    <div class="project-card__price">1 000 000 ₽</div>
+                                </div>
+                            </div>
+
+                            <a href="product-card.html" class="project-card__link"></a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="pagination">
+                    <a href="#" class="pagination__arrow pagination__arrow--prev disabled"></a>
+                    <ul class="pagination__list">
+                        <li class="pagination__item active">1</li>
+                        <li class="pagination__item"><a href="#">2</a></li>
+                        <li class="pagination__item"><a href="#">3</a></li>
+                        <li class="pagination__item"><a href="#">4</a></li>
+                        <li class="pagination__item"><a href="#">5</a></li>
+                        <li class="pagination__item">...</li>
+                        <li class="pagination__item"><a href="#">15</a></li>
+                    </ul>
+                    <a href="#" class="pagination__arrow pagination__arrow--next"></a>
+                </div>
+            </div>
+        </section>
+        <!-- End Building Cards -->
         <!-- cost-form -->
         <section id="cost-form" class="cost-form">
             <div class="container">
