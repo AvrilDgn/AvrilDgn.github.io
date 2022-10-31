@@ -5447,6 +5447,98 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: #49423D;
 }
 
+.userful-links-main {
+  padding-bottom: 70px;
+}
+
+.userful-links-main__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 30px;
+}
+
+.userful-links-main__footer {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.userful-links-main__btn {
+  width: 300px;
+  height: 40px;
+}
+
+.recommend {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.recommend__list {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.recommend-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.recommend-card:hover .recommend-card__wrap {
+  border-color: #8DB338;
+}
+
+.recommend-card img {
+  display: block;
+  width: 100%;
+  height: 234px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recommend-card__wrap {
+  padding: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-left: 2px solid #F5F5F6;
+  border-right: 2px solid #F5F5F6;
+  border-bottom: 2px solid #F5F5F6;
+  -webkit-transition: border-color 0.3s ease-out;
+  -o-transition: border-color 0.3s ease-out;
+  transition: border-color 0.3s ease-out;
+}
+
+.recommend-card__name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #49423D;
+}
+
+.recommend-card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0 15px;
