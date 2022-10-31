@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Сервис ДОМОСБОР</title>
 
 
@@ -82,13 +82,13 @@
             <nav class="header__menu h-menu">
                 <div class="container tabs">
                     <div class="h-menu__tab-btns tabs__buttons">
-                        <a href="javascript:void(0)" class="button active" data-tab-target="build">Построить</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="buy">Купить</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="rent">Арендовать</a>
+                        <a href="javascript:void(0)" class="button active" data-tab-target="menu-build">Построить</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="menu-buy">Купить</a>
+                        <a href="javascript:void(0)" class="button" data-tab-target="menu-rent">Арендовать</a>
                     </div>
 
                     <div class="h-menu__content-list">
-                        <div class="h-menu__content tabs__content active" data-tab-id="build">
+                        <div class="h-menu__content tabs__content active" data-tab-id="menu-build">
                             <div class="h-menu__column">
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
@@ -175,7 +175,7 @@
                             </div>
                         </div>
 
-                        <div class="h-menu__content tabs__content" data-tab-id="buy">
+                        <div class="h-menu__content tabs__content" data-tab-id="menu-buy">
                             <div class="h-menu__column">
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
@@ -206,7 +206,7 @@
                             </div>
                         </div>
 
-                        <div class="h-menu__content tabs__content" data-tab-id="rent">
+                        <div class="h-menu__content tabs__content" data-tab-id="menu-rent">
                             <div class="h-menu__column">
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
                                 <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
@@ -255,52 +255,142 @@
                 </div>
 
                 <div class="proj-card-full__wrap">
-                    <div class="proj-card-full__images-block">
-                        <div class="proj-card-full__tab-btns">
-                            <a href="javascript:void(0)" class="button active" data-tab-target="build">Фасады</a>
-                            <a href="javascript:void(0)" class="button" data-tab-target="buy">Планировки</a>
-                            <a href="javascript:void(0)" class="button" data-tab-target="rent">Интерьер</a>
+                    <div class="proj-card-full__images-block tabs">
+                        <div class="proj-card-full__tab-btns tabs__buttons">
+                            <a href="javascript:void(0)" class="button active" data-tab-target="proj-build">Фасады</a>
+                            <a href="javascript:void(0)" class="button" data-tab-target="proj-buy">Планировки</a>
+                            <a href="javascript:void(0)" class="button" data-tab-target="proj-rent">Интерьер</a>
                         </div>
 
-                        <div class="proj-card-full__main-slider slider">
-                            <div class="slider__wrap">
-                                <ul class="slider__list">
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-full-1.jpg" alt="">
-                                    </li>
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-full-2.jpg" alt="">
-                                    </li>
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-full-3.jpg" alt="">
-                                    </li>
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-full-4.jpg" alt="">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div class="proj-card-full__images-list">
+                            <div class="proj-card-full__images-item tabs__content active" data-tab-id="proj-build">
+                                <div class="proj-card-full__main-slider slider">
+                                    <div class="slider__wrap">
+                                        <ul class="slider__list">
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-1.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-2.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-3.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                        <div class="proj-card-full__thumb-slider slider">
-                            <div class="slider__wrap">
-                                <ul class="slider__list">
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-1.jpg" alt="">
-                                    </li>
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-2.jpg" alt="">
-                                    </li>
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-3.jpg" alt="">
-                                    </li>
-                                    <li class="slider__slide">
-                                        <img src="./assets/img/project-card/image-4.jpg" alt="">
-                                    </li>
-                                </ul>
+                                <div class="proj-card-full__thumb-slider slider">
+                                    <div class="slider__wrap">
+                                        <ul class="slider__list">
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-1.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-2.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-3.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="slider__arrows">
+                                        <div class="slider__arrow slider__arrow--prev"></div>
+                                        <div class="slider__arrow slider__arrow--next"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="slider__arrows">
-                                <div class="slider__arrow slider__arrow--prev"></div>
-                                <div class="slider__arrow slider__arrow--next"></div>
+                            <div class="proj-card-full__images-item tabs__content" data-tab-id="proj-buy">
+                                <div class="proj-card-full__main-slider slider">
+                                    <div class="slider__wrap">
+                                        <ul class="slider__list">
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-1.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-2.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-3.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="proj-card-full__thumb-slider slider">
+                                    <div class="slider__wrap">
+                                        <ul class="slider__list">
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-1.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-2.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-3.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="slider__arrows">
+                                        <div class="slider__arrow slider__arrow--prev"></div>
+                                        <div class="slider__arrow slider__arrow--next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proj-card-full__images-item tabs__content" data-tab-id="proj-rent">
+                                <div class="proj-card-full__main-slider slider">
+                                    <div class="slider__wrap">
+                                        <ul class="slider__list">
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-1.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-2.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-3.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-full-4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="proj-card-full__thumb-slider slider">
+                                    <div class="slider__wrap">
+                                        <ul class="slider__list">
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-1.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-2.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-3.jpg" alt="">
+                                            </li>
+                                            <li class="slider__slide">
+                                                <img src="./assets/img/project-card/image-4.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="slider__arrows">
+                                        <div class="slider__arrow slider__arrow--prev"></div>
+                                        <div class="slider__arrow slider__arrow--next"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

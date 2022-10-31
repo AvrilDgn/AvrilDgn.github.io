@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Menu tabs
+	 * Tabs
 	 */
 
 	let tabs = document.querySelectorAll('.tabs');
@@ -668,10 +668,16 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	}
 
 	//project card images
-	let projCardMainSlider = document.querySelector('.proj-card-full__main-slider.slider');
-	let projCardThumbSlider = document.querySelector('.proj-card-full__thumb-slider.slider');
+	let projCardSlidersWraps = document.querySelectorAll('.proj-card-full__images-item');
 
-	if (projCardMainSlider !== null && projCardThumbSlider !== null) {
+	projCardSlidersWraps.forEach(slidersWrap => {
+		let projCardMainSlider = slidersWrap.querySelector('.proj-card-full__main-slider.slider');
+		let projCardThumbSlider = slidersWrap.querySelector('.proj-card-full__thumb-slider.slider');
+
+		if (projCardMainSlider == null || projCardThumbSlider == null) {
+			return;
+		}
+
 		//thumb
 		let thumb = new Swiper(projCardThumbSlider.querySelector(".slider__wrap"), {
 			spaceBetween: 30,
@@ -700,7 +706,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				swiper: thumb,
 			},
 		});
-	}
+	});
 
 
 
