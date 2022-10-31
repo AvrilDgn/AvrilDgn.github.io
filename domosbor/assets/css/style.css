@@ -1930,6 +1930,187 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   background-color: rgba(141, 179, 56, 0.8);
 }
 
+.project-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project-card:hover .project-card__controls {
+  opacity: 1;
+}
+
+.project-card:hover .project-card__wrap {
+  border-color: #8DB338;
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-card__controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.project-card__controls a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  -webkit-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+
+.project-card__controls a:hover {
+  background-color: #8DB338;
+  text-decoration: none;
+}
+
+.project-card__controls a:hover svg {
+  fill: white;
+}
+
+.project-card__controls svg {
+  width: 24px;
+  height: 24px;
+  fill: #8DB338;
+  -webkit-transition: fill 0.3s ease-out;
+  -o-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+.project-card__wrap {
+  padding: 30px 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-left: 2px solid #F5F5F6;
+  border-right: 2px solid #F5F5F6;
+  border-bottom: 2px solid #F5F5F6;
+  -webkit-transition: border-color 0.3s ease-out;
+  -o-transition: border-color 0.3s ease-out;
+  transition: border-color 0.3s ease-out;
+}
+
+.project-card__name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #49423D;
+}
+
+.project-card__info {
+  margin-top: 20px;
+}
+
+.project-card__info p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21429;
+  color: #919191;
+}
+
+.project-card__info p:not(:first-child) {
+  margin-top: 8px;
+}
+
+.project-card__price {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #8DB338;
+}
+
+.project-card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-card--second-type {
+  border: none;
+  -webkit-box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.05);
+}
+
+.project-card--second-type:hover .project-card__wrap {
+  border-color: transparent;
+}
+
+.project-card--second-type img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.project-card--second-type .project-card__controls {
+  opacity: 1;
+}
+
+.project-card--second-type .project-card__wrap {
+  position: absolute;
+  padding: 0 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.project-card--second-type .project-card__name {
+  padding: 20px 0;
+}
+
+.project-card--second-type .project-card__content {
+  height: 0;
+  -webkit-transition: height 0.3s ease-out;
+  -o-transition: height 0.3s ease-out;
+  transition: height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.project-card--second-type .project-card__info {
+  margin-top: 0;
+}
+
+.project-card--second-type .project-card__price {
+  padding-bottom: 20px;
+}
+
 /* ==========================================================================
    HEADER
    ========================================================================== */
@@ -3322,138 +3503,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   width: calc(100% + 140px);
 }
 
-.project-card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.project-card:hover .project-card__controls {
-  opacity: 1;
-}
-
-.project-card:hover .project-card__wrap {
-  border-color: #8DB338;
-}
-
-.project-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.project-card__controls {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  opacity: 0;
-  z-index: 1;
-  -webkit-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out;
-}
-
-.project-card__controls a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 32px;
-  height: 32px;
-  background-color: white;
-  -webkit-transition: background-color 0.3s ease-out;
-  -o-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
-}
-
-.project-card__controls a:hover {
-  background-color: #8DB338;
-  text-decoration: none;
-}
-
-.project-card__controls a:hover svg {
-  fill: white;
-}
-
-.project-card__controls svg {
-  width: 24px;
-  height: 24px;
-  fill: #8DB338;
-  -webkit-transition: fill 0.3s ease-out;
-  -o-transition: fill 0.3s ease-out;
-  transition: fill 0.3s ease-out;
-}
-
-.project-card__wrap {
-  padding: 30px 20px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  border-left: 2px solid #F5F5F6;
-  border-right: 2px solid #F5F5F6;
-  border-bottom: 2px solid #F5F5F6;
-  -webkit-transition: border-color 0.3s ease-out;
-  -o-transition: border-color 0.3s ease-out;
-  transition: border-color 0.3s ease-out;
-}
-
-.project-card__name {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #49423D;
-}
-
-.project-card__info {
-  margin-top: 20px;
-}
-
-.project-card__info p {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.21429;
-  color: #919191;
-}
-
-.project-card__info p:not(:first-child) {
-  margin-top: 8px;
-}
-
-.project-card__price {
-  margin-top: 20px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.4;
-  color: #8DB338;
-}
-
-.project-card__link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .advantages {
   padding-top: 80px;
 }
@@ -4744,6 +4793,170 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   font-size: 30px;
   line-height: 1.27;
   color: #8DB338;
+}
+
+.search-result__wrap {
+  padding-top: 50px;
+}
+
+.search-result__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 30px;
+}
+
+.search-result__item {
+  height: 410px;
+}
+
+.search-result__footer {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-result__btn {
+  width: 300px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination__arrow {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  pointer-events: visible;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+  cursor: pointer;
+}
+
+.pagination__arrow::before {
+  content: "";
+  margin-left: 4px;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-bottom: 2px solid #8DB338;
+  border-left: 2px solid #8DB338;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: border-color 0.3s ease-out;
+  -o-transition: border-color 0.3s ease-out;
+  transition: border-color 0.3s ease-out;
+}
+
+.pagination__arrow.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.pagination__arrow.disabled::before {
+  opacity: 0.5;
+}
+
+.pagination__arrow:not(.disabled):hover {
+  background-color: #8DB338;
+}
+
+.pagination__arrow:not(.disabled):hover::before {
+  border-color: white;
+}
+
+.pagination__arrow--next {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.pagination__list {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  color: #49423D;
+}
+
+.pagination__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.pagination__item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.pagination__item.active {
+  background-color: #8DB338;
+  color: white;
+}
+
+.pagination__item:not(.active) a:hover {
+  background-color: #8DB338;
+  color: white;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1200px) {

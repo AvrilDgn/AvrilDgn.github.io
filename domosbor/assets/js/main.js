@@ -681,7 +681,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 			freeMode: true,
 			watchSlidesProgress: true,
-			
+
 			navigation: {
 				nextEl: projCardThumbSlider.querySelector(".slider__arrow--next"),
 				prevEl: projCardThumbSlider.querySelector(".slider__arrow--prev"),
@@ -701,6 +701,40 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			},
 		});
 	}
+
+
+
+	/**
+	 * Project card anim
+	 */
+
+	let projCards = document.querySelectorAll('.project-card--second-type');
+
+	projCards.forEach(card => {
+		let cardContent = card.querySelector('.project-card__content');
+
+		let showCardContent = function () {
+			cardContent.style.height = 'auto';
+			let height = cardContent.offsetHeight;
+			cardContent.style.height = '0';
+
+			window.requestAnimationFrame(function () {
+				window.requestAnimationFrame(function () {
+					cardContent.style.height = height + 'px';
+				});
+			});
+		}
+		let hideCardContent = function () {
+			cardContent.style.height = null;
+		}
+
+		card.addEventListener('mouseenter', function (e) {
+			showCardContent();
+		});
+		card.addEventListener('mouseleave', function (e) {
+			hideCardContent();
+		});
+	});
 
 
 	/**
