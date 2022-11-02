@@ -1,5 +1,3 @@
-// import noUiSlider from 'nouislider';
-
 class Modal {
 	constructor(props) {
 		const defaultConfig = {
@@ -304,11 +302,11 @@ class Accordion {
 
 document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
-	let raf = function (callback) {
-		window.requestAnimationFrame(function () {
-			callback();
-		});
-	};
+	// let raf = function (callback) {
+	// 	window.requestAnimationFrame(function () {
+	// 		callback();
+	// 	});
+	// };
 
 
 	/**
@@ -322,44 +320,26 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Input mask
 	 */
 
-	// let phoneInputs = document.querySelectorAll('input[name=phone]');
-	// let nameInputs = document.querySelectorAll('input[name=name]');
+	let phoneInputs = document.querySelectorAll('input[type=tel]');
 
-	// phoneInputs.forEach(input => {
-	// 	let patternMask = new IMask(input, {
-	// 		mask: '+{7} (000) 000-00-00',
-	// 		lazy: true,
-	// 		placeholderChar: '_'
-	// 	});
+	phoneInputs.forEach(input => {
+		let patternMask = new IMask(input, {
+			mask: '+{7} (000) 000-00-00',
+			lazy: true,
+			placeholderChar: '_'
+		});
 
-	// 	input.addEventListener('focus', function () {
-	// 		patternMask.updateOptions({ lazy: false });
-	// 	}, true);
+		input.addEventListener('focus', function () {
+			patternMask.updateOptions({ lazy: false });
+		}, true);
 
-	// 	input.addEventListener('blur', function () {
-	// 		patternMask.updateOptions({ lazy: true });
-	// 		if (!patternMask.masked.rawInputValue) {
-	// 			patternMask.value = '';
-	// 		}
-	// 	}, true);
-	// });
-	// nameInputs.forEach(input => {
-	// 	let patternMask = new IMask(input, {
-	// 		mask: /^\W+$/,
-	// 		lazy: true
-	// 	});
-
-	// 	input.addEventListener('focus', function () {
-	// 		patternMask.updateOptions({ lazy: false });
-	// 	}, true);
-
-	// 	input.addEventListener('blur', function () {
-	// 		patternMask.updateOptions({ lazy: true });
-	// 		if (!patternMask.masked.rawInputValue) {
-	// 			patternMask.value = '';
-	// 		}
-	// 	}, true);
-	// });
+		input.addEventListener('blur', function () {
+			patternMask.updateOptions({ lazy: true });
+			if (!patternMask.masked.rawInputValue) {
+				patternMask.value = '';
+			}
+		}, true);
+	});
 
 
 	/**
@@ -371,8 +351,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let isHeaderActive = false;
 	const html = document.documentElement;
 	let _scrollPosition = 0;
+	// let isHeaderAnim = false;
 
-	headerOpenBtn.addEventListener('click', function (e) {
+	headerOpenBtn.addEventListener('click', openMenu, { once: true });
+
+	function openMenu() {
 		isHeaderActive = !isHeaderActive;
 
 		header.classList.toggle('header--menu-opened');
@@ -394,7 +377,30 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 			html.classList.add('modal-opened');
 		}
-	});
+
+		changeMenuBtn();
+		// isHeaderAnim = true;
+	}
+
+	function changeMenuBtn() {
+		if (!headerOpenBtn.classList.contains('cross')) {
+			headerOpenBtn.classList.add('collapse');
+			headerOpenBtn.addEventListener('transitionend', function () {
+				headerOpenBtn.classList.add('cross');
+				headerOpenBtn.addEventListener('transitionend', function () {
+					headerOpenBtn.addEventListener('click', openMenu, { once: true });
+				}, { once: true });
+			}, { once: true });
+		} else {
+			headerOpenBtn.classList.remove('cross');
+			headerOpenBtn.addEventListener('transitionend', function () {
+				headerOpenBtn.classList.remove('collapse');
+				headerOpenBtn.addEventListener('transitionend', function () {
+					headerOpenBtn.addEventListener('click', openMenu, { once: true });
+				}, { once: true });
+			}, { once: true });
+		}
+	}
 
 
 	/**
@@ -456,6 +462,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		// 		val.value = val.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 		// 	});
 		// });
+
+		snapValues[0].addEventListener('change', function () {
+			sliderRange.noUiSlider.set([this.value, null]);
+		});
+		snapValues[1].addEventListener('change', function () {
+			sliderRange.noUiSlider.set([null, this.value]);
+		});
 	});
 
 
@@ -484,130 +497,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			})
 		});
 	});
-
-
-	/**
-	 * Inner menu
-	 */
-
-	// let innerMenues = document.querySelectorAll('.nav__inner-menu');
-
-	// innerMenues.forEach(menu => {
-	// 	let parent = menu.closest('.nav__item');
-
-	// 	let showInnerMenu = function () {
-	// 		menu.classList.add('nav__inner-menu--showed');
-
-	// 		raf(() => {
-	// 			menu.style.opacity = 1;
-
-	// 			document.addEventListener('click', (e) => {
-	// 				if (window.innerWidth > 992) {
-	// 					let target = e.target;
-	// 					let itsMenu = target == parent || parent.contains(target);
-
-	// 					if (!itsMenu) {
-	// 						hideInnerMenu();
-	// 					}
-	// 				}
-	// 			}, { once: true });
-	// 		});
-	// 	}
-	// 	let hideInnerMenu = function () {
-	// 		menu.style.opacity = 0;
-
-	// 		menu.addEventListener('transitionend', function () {
-	// 			menu.classList.remove('nav__inner-menu--showed');
-	// 		}, { once: true });
-	// 	}
-
-	// 	parent.addEventListener('click', function (e) {
-	// 		if (menu.classList.contains('nav__inner-menu--showed') && !e.target.contains(menu)) {
-	// 			hideInnerMenu();
-	// 		} else {
-	// 			showInnerMenu();
-	// 		}
-	// 	});
-	// });
-
-
-	/**
-	 * Map
-	 */
-
-	// let radioDistricts = document.querySelectorAll('.departure__districts-item input');
-	// let mapDistricts = document.querySelectorAll('.departure__map svg path');
-
-	// let changeDistrict = function (radio) {
-	// 	let district = document.querySelector(`.departure__map [data-id="${radio.value}"]`);
-
-	// 	document.querySelector('.departure__map svg path.active').classList.remove('active');
-	// 	district.classList.add('active');
-
-	// 	let modal = new Modal({
-	// 		formData: {
-	// 			[radio.name]: radio.value,
-	// 		}
-	// 	});
-	// 	modal.open('#modal-feedback');
-	// };
-
-	// mapDistricts.forEach(district => {
-	// 	let id = district.dataset.id;
-
-	// 	if (id && id !== '') {
-	// 		let radio = document.querySelector('.departure__districts-item input[value="' + id + '"]');
-
-	// 		if (radio && radio !== '') {
-
-	// 			district.addEventListener('mouseenter', function (e) {
-	// 				radio.classList.add('hover');
-	// 			});
-
-	// 			district.addEventListener('mouseleave', function (e) {
-	// 				radio.classList.remove('hover');
-	// 			});
-
-	// 			district.addEventListener('click', function (e) {
-	// 				radio.checked = true;
-
-	// 				changeDistrict(radio);
-	// 			});
-	// 		}
-	// 	}
-	// });
-
-	// radioDistricts.forEach(radio => {
-	// 	let value = radio.value;
-
-	// 	if (value && value !== '') {
-	// 		let target = document.querySelector(`.departure__map [data-id="${value}"]`);
-
-	// 		if (target && target !== '') {
-
-	// 			radio.parentElement.addEventListener('mouseenter', function (e) {
-	// 				target.classList.add('hover');
-	// 			});
-
-	// 			radio.parentElement.addEventListener('mouseleave', function (e) {
-	// 				target.classList.remove('hover');
-	// 			});
-
-	// 			radio.addEventListener('click', function (e) {
-	// 				changeDistrict(radio);
-	// 			});
-	// 		} else {
-	// 			radio.addEventListener('click', function (e) {
-	// 				let modal = new Modal({
-	// 					formData: {
-	// 						[radio.name]: radio.value,
-	// 					}
-	// 				});
-	// 				modal.open('#modal-feedback');
-	// 			});
-	// 		}
-	// 	}
-	// });
 
 
 	/**
