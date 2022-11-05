@@ -25,7 +25,7 @@
             <div class="header__main">
                 <div class="container">
                     <div class="header__left">
-                        <a href="javascript:void(0)" class="header__open-menu">
+                        <a href="javascript:void(0)" class="header__menu-btn open-popup-btn" data-popup-target="nav-menu">
                             <div></div>
                             <div></div>
                             <div></div>
@@ -63,7 +63,7 @@
                                 <use xlink:href="./assets/img/sprite.svg#heart"></use>
                             </svg>
                         </a>
-                        <a href="javascript:void(0)" class="header__link">
+                        <a href="javascript:void(0)" class="header__link open-popup-btn" data-popup-target="login">
                             <svg>
                                 <use xlink:href="./assets/img/sprite.svg#login"></use>
                             </svg>
@@ -71,7 +71,7 @@
 
                         <div class="header__call">
                             <a href="tel:+88003015051" class="header__phone">8 (800) 301-50-51</a>
-                            <a href="javascript:void(0)" class="header__feedback-link" data-modal="modal-feedback">
+                            <a href="javascript:void(0)" class="header__feedback-link open-popup-btn" data-popup-target="feedback">
                                 Заказать обратный звонок
                             </a>
                         </div>
@@ -79,166 +79,299 @@
                 </div>
             </div>
 
-            <nav class="header__menu h-menu">
-                <div class="container tabs">
-                    <div class="h-menu__tab-btns tabs__buttons">
-                        <a href="javascript:void(0)" class="button active" data-tab-target="menu-build">Построить</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="menu-buy">Купить</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="menu-rent">Арендовать</a>
+            <div class="header__popup-wrap">
+                <div class="container">
+                    <nav class="header__popup-item nav-menu tabs active">
+                        <div class="nav-menu__tab-btns tabs__buttons">
+                            <a href="javascript:void(0)" class="button active" data-tab-target="menu-build">Построить</a>
+                            <a href="javascript:void(0)" class="button" data-tab-target="menu-buy">Купить</a>
+                            <a href="javascript:void(0)" class="button" data-tab-target="menu-rent">Арендовать</a>
+                        </div>
+
+                        <div class="nav-menu__content-list">
+                            <div class="nav-menu__content tabs__content active" data-tab-id="menu-build">
+                                <div class="nav-menu__column">
+                                    <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Магазин</a>
+                                    <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Форум</a>
+
+                                    <h3 class="nav-menu__links-title">Типы строений</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Дома</a>
+                                        <a href="#" class="nav-menu__link">Бани</a>
+                                        <a href="#" class="nav-menu__link">Гаражи</a>
+                                        <a href="#" class="nav-menu__link">Навесы</a>
+                                        <a href="#" class="nav-menu__link">Коммерческие объекты</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nav-menu__content tabs__content" data-tab-id="menu-buy">
+                                <div class="nav-menu__column">
+                                    <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Магазин</a>
+                                    <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Форум</a>
+
+                                    <h3 class="nav-menu__links-title">Типы строений</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Дома</a>
+                                        <a href="#" class="nav-menu__link">Бани</a>
+                                        <a href="#" class="nav-menu__link">Гаражи</a>
+                                        <a href="#" class="nav-menu__link">Навесы</a>
+                                        <a href="#" class="nav-menu__link">Коммерческие объекты</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="nav-menu__content tabs__content" data-tab-id="menu-rent">
+                                <div class="nav-menu__column">
+                                    <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Магазин</a>
+                                    <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Форум</a>
+
+                                    <h3 class="nav-menu__links-title">Типы строений</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Дома</a>
+                                        <a href="#" class="nav-menu__link">Бани</a>
+                                        <a href="#" class="nav-menu__link">Гаражи</a>
+                                        <a href="#" class="nav-menu__link">Навесы</a>
+                                        <a href="#" class="nav-menu__link">Коммерческие объекты</a>
+                                    </div>
+                                </div>
+                                <div class="nav-menu__column">
+                                    <h3 class="nav-menu__links-title">Технологии</h3>
+
+                                    <div class="nav-menu__links-list">
+                                        <a href="#" class="nav-menu__link">Клееный брус</a>
+                                        <a href="#" class="nav-menu__link">Лафет</a>
+                                        <a href="#" class="nav-menu__link">Фахверковые</a>
+                                        <a href="#" class="nav-menu__link">Рубленное бревно</a>
+                                        <a href="#" class="nav-menu__link">Каркасные</a>
+                                        <a href="#" class="nav-menu__link">CLT панели</a>
+                                        <a href="#" class="nav-menu__link">Панельно-каркасные</a>
+                                        <a href="#" class="nav-menu__link">Kelo (кело)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="header__popup-item feedback">
+                        <h2 class="header__popup-title">Форма связи</h2>
+
+                        <form class="feedback__form form" id="modal-feedback-form" action="#" method="post">
+                            <div class="form__field">
+                                <input class="form__input form__input--grey" type="text" name="your-name" placeholder="Имя">
+                            </div>
+
+                            <div class="form__field">
+                                <input class="form__input form__input--grey" type="email" name="your-mail" placeholder="Электронная почта">
+                            </div>
+
+                            <div class="form__field">
+                                <input class="form__input form__input--grey" type="tel" name="your-phone" placeholder="Телефон" required>
+                            </div>
+
+                            <div class="form__field">
+                                <textarea class="form__input form__input--grey form__input--textarea" name="your-message" placeholder="Сообщение"></textarea>
+                            </div>
+
+                            <label class="form__file">
+                                <input type="file" name="your-files" placeholder="Прикрепить файлы">
+                                <span class="icon"></span>
+                                <span class="text">Прикрепить файлы</span>
+                            </label>
+
+                            <button class="form__send-btn button" type="submit">Написать</button>
+                        </form>
                     </div>
 
-                    <div class="h-menu__content-list">
-                        <div class="h-menu__content tabs__content active" data-tab-id="menu-build">
-                            <div class="h-menu__column">
-                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
-                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
+                    <div class="header__popup-item registration">
+                        <h2 class="header__popup-title">Регистрация</h2>
+                        <div class="header__popup-subtitle">Введите почту и пароль</div>
 
-                                <h3 class="h-menu__links-title">Типы строений</h3>
-
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Дома</a>
-                                    <a href="#" class="h-menu__link">Бани</a>
-                                    <a href="#" class="h-menu__link">Гаражи</a>
-                                    <a href="#" class="h-menu__link">Навесы</a>
-                                    <a href="#" class="h-menu__link">Коммерческие объекты</a>
-                                </div>
+                        <form class="registration__form form" id="registration-form" action="#" method="post">
+                            <div class="form__field">
+                                <input class="form__input form__input--grey" type="email" name="reg-mail" placeholder="Электронная почта">
                             </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
 
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
-                                </div>
+                            <div class="form__field">
+                                <input class="form__input form__input--grey" type="password" name="reg-pass" placeholder="Пароль">
                             </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
 
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
-                                </div>
+                            <div class="form__field">
+                                <input class="form__input form__input--grey" type="password" name="reg-pass-retry" placeholder="Пароль повторно">
                             </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
 
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
-                                </div>
+                            <button class="form__send-btn button" type="submit">Регистрация</button>
+                        </form>
+                    </div>
+
+                    <div class="header__popup-item login">
+                        <div class="login__main">
+                            <div class="login__types-wrap">
+                                <label class="login__user-type"><input type="radio" name="login-user-type" value="Пользователь" checked><span>Пользователь</span></label>
+                                <label class="login__user-type"><input type="radio" name="login-user-type" value="Профессионал"><span>Профессионал</span></label>
                             </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
+                            <div class="login__wrap">
+                                <form class="login__form form" id="login-form" action="#" method="post">
+                                    <div class="form__field">
+                                        <p class="form__name">Электронная почта / Телефон</p>
+                                        <input class="form__input" type="email" name="login-mail" placeholder="Электронная почта">
+                                    </div>
 
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
-                                </div>
-                            </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
+                                    <div class="form__field">
+                                        <p class="form__name">Пароль</p>
+                                        <input class="form__input" type="password" name="login-pass" placeholder="Пароль">
+                                    </div>
 
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
-                                </div>
+                                    <button class="form__send-btn button" type="submit">Войти</button>
+                                </form>
+
+                                <a href="javascript:void(0)" class="login__reg-link open-popup-btn" data-popup-target="registration">Регистрация</a>
+
+                                <ul class="socials">
+                                    <li class="socials__item">
+                                        <a href="#">
+                                            <svg>
+                                                <use xlink:href="./assets/img/sprite.svg#google"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="#">
+                                            <svg>
+                                                <use xlink:href="./assets/img/sprite.svg#yandex"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="socials__item">
+                                        <a href="#">
+                                            <svg>
+                                                <use xlink:href="./assets/img/sprite.svg#vk"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="h-menu__content tabs__content" data-tab-id="menu-buy">
-                            <div class="h-menu__column">
-                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
-                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
-
-                                <h3 class="h-menu__links-title">Типы строений</h3>
-
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Дома</a>
-                                    <a href="#" class="h-menu__link">Бани</a>
-                                    <a href="#" class="h-menu__link">Гаражи</a>
-                                    <a href="#" class="h-menu__link">Навесы</a>
-                                    <a href="#" class="h-menu__link">Коммерческие объекты</a>
+                        <div class="login__action">
+                            <h2 class="login__action-title">Domosbor <span>PRO</span></h2>
+                            <div class="login__action-wrap">
+                                <div class="login__action-item">
+                                    <a href="#" class="login__action-btn button">Сдать объект</a>
+                                    <p class="login__action-info">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet elementum eu sed sed. Nulla semper
+                                        euismod nam posuere egestas lorem venenatis. At urna cum pulvinar arcu morbi elementum amet et
+                                        enim. Tincidunt venenatis, turpis facilisi tempor nunc, eget netus nunc risus.
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
-
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                <div class="login__action-item">
+                                    <a href="#" class="login__action-btn button">Продать объект</a>
+                                    <p class="login__action-info">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet elementum eu sed sed. Nulla semper
+                                        euismod nam posuere egestas lorem venenatis. At urna cum pulvinar arcu morbi elementum amet et
+                                        enim. Tincidunt venenatis, turpis facilisi tempor nunc, eget netus nunc risus.
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="h-menu__content tabs__content" data-tab-id="menu-rent">
-                            <div class="h-menu__column">
-                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Магазин</a>
-                                <a href="#" class="h-menu__link h-menu__link--main">DOMOSBOR - Форум</a>
-
-                                <h3 class="h-menu__links-title">Типы строений</h3>
-
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Дома</a>
-                                    <a href="#" class="h-menu__link">Бани</a>
-                                    <a href="#" class="h-menu__link">Гаражи</a>
-                                    <a href="#" class="h-menu__link">Навесы</a>
-                                    <a href="#" class="h-menu__link">Коммерческие объекты</a>
-                                </div>
-                            </div>
-                            <div class="h-menu__column">
-                                <h3 class="h-menu__links-title">Технологии</h3>
-
-                                <div class="h-menu__links-list">
-                                    <a href="#" class="h-menu__link">Клееный брус</a>
-                                    <a href="#" class="h-menu__link">Лафет</a>
-                                    <a href="#" class="h-menu__link">Фахверковые</a>
-                                    <a href="#" class="h-menu__link">Рубленное бревно</a>
-                                    <a href="#" class="h-menu__link">Каркасные</a>
-                                    <a href="#" class="h-menu__link">CLT панели</a>
-                                    <a href="#" class="h-menu__link">Панельно-каркасные</a>
-                                    <a href="#" class="h-menu__link">Kelo (кело)</a>
+                                <div class="login__action-item">
+                                    <a href="#" class="login__action-btn button">Стать партнером сервиса</a>
+                                    <p class="login__action-info">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet elementum eu sed sed. Nulla semper
+                                        euismod nam posuere egestas lorem venenatis. At urna cum pulvinar arcu morbi elementum amet et
+                                        enim. Tincidunt venenatis, turpis facilisi tempor nunc, eget netus nunc risus.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
         <!-- End Header -->
 
@@ -502,11 +635,11 @@
                         </div>
 
                         <div class="form__field">
-                            <input class="form__input form__input--grey" type="email" name="your-phone" placeholder="Электронная почта">
+                            <input class="form__input form__input--grey" type="email" name="your-mail" placeholder="Электронная почта">
                         </div>
 
                         <div class="form__field">
-                            <input class="form__input form__input--grey" type="tel" name="your-mail" placeholder="Телефон" required>
+                            <input class="form__input form__input--grey" type="tel" name="your-phone" placeholder="Телефон" required>
                         </div>
 
                         <div class="form__field">
@@ -726,51 +859,7 @@
 
     <!-- Modal -->
 
-    <!--feedback-->
-    <div class="modal" id="modal-feedback">
-        <div class="modal__wrapper">
-            <div class="modal__container">
-                <h2 class="modal__title title">Обратная связь</h2>
 
-                <form class="modal__form form" id="modal-feedback-form" action="#" method="post">
-                    <div class="form__fields-group">
-                        <div class="form__field">
-                            <input class="form__input" type="text" name="your-name" placeholder="Как к вам обращаться?">
-                        </div>
-
-                        <div class="form__field">
-                            <input class="form__input" type="tel" name="your-phone" placeholder="Контактный телефон">
-                        </div>
-
-                        <div class="form__field">
-                            <input class="form__input" type="email" name="your-mail" placeholder="Ваш e-mail" required>
-                        </div>
-                    </div>
-
-                    <div class="form__field">
-                        <textarea class="form__input form__input--textarea" name="your-message" cols="30" rows="4" placeholder="Ваш вопрос"></textarea>
-                    </div>
-
-                    <div class="form__send-group">
-                        <div class="form__policy">
-                            <label class="form__policy-checkbox checkbox">
-                                <input type="checkbox" name="privacy-policy" required value="true" checked>
-                                <svg class="checkbox__icon">
-                                    <use xlink:href="./assets/img/sprite.svg#check"></use>
-                                </svg>
-                            </label>
-                            <p class="form__policy-msg">Я согласен с <a href="#">политикой конфиденциальности</a></p>
-                        </div>
-
-                        <button class="form__send-btn button" type="submit">Отправить</button>
-                    </div>
-                </form>
-
-                <button class="modal__close-btn" data-modal-close aria-label="Close modal"></button>
-            </div>
-
-        </div>
-    </div>
 
     <!-- End Modal -->
 
@@ -779,6 +868,7 @@
     <script src="./assets/js/nouislider.min.js" defer></script>
     <script src="./assets/js/swiper-bundle.min.js" defer></script>
     <script src="./assets/js/imask.min.js" defer></script>
+    <script src="./assets/js/slimselect.min.js" defer></script>
     <script src="./assets/js/main.js" defer></script>
 
     <!-- End JS -->

@@ -1,4 +1,4 @@
-class Modal {
+/*class Modal {
 	constructor(props) {
 		const defaultConfig = {
 			backscroll: true,
@@ -212,7 +212,7 @@ class Modal {
 		}
 		html.classList.add('modal-opened');
 	}
-}
+}*/
 
 class Accordion {
 	constructor(target, config) {
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Modals
 	 */
 
-	let modals = new Modal();
+	// let modals = new Modal();
 
 
 	/**
@@ -346,57 +346,100 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Header open mobile menu
 	 */
 
-	let header = document.querySelector('.header');
-	let headerOpenBtn = header.querySelector('.header__open-menu');
-	let isHeaderActive = false;
 	const html = document.documentElement;
+	const header = document.querySelector('.header');
+	const headerPopupWrap = header.querySelector('.header__popup-wrap');
+	let openMenuBtn = header.querySelector('.header__menu-btn');
+	let openPopupBtn = header.querySelectorAll('.open-popup-btn');
+	let isPopupShowed = false;
+	let isPopupAnimated = false;
 	let _scrollPosition = 0;
-	// let isHeaderAnim = false;
 
-	headerOpenBtn.addEventListener('click', openMenu, { once: true });
+	openPopupBtn.forEach(btn => {
+		let menuBtn = btn.classList.contains('header__menu-btn');
+		let targetContent = headerPopupWrap.querySelector('.header__popup-item.' + btn.dataset.popupTarget);
 
-	function openMenu() {
-		isHeaderActive = !isHeaderActive;
+		if (!targetContent) return;
 
-		header.classList.toggle('header--menu-opened');
-
-		if (!isHeaderActive) {
-			html.classList.remove('modal-opened');
-			html.style.marginRight = '';
-			header.style.paddingRight = '';
-			window.scrollTo(0, _scrollPosition);
-			html.style.top = '';
-		} else {
-			_scrollPosition = window.pageYOffset;
-			const marginSize = window.innerWidth - html.clientWidth;
-			html.style.top = `${-_scrollPosition}px`;
-
-			if (marginSize) {
-				html.style.marginRight = `${marginSize}px`;
-				header.style.paddingRight = `${parseInt(getComputedStyle(header).paddingRight, 10) + marginSize}px`;
+		btn.addEventListener('click', function () {
+			if (isPopupAnimated) {
+				return;
 			}
-			html.classList.add('modal-opened');
-		}
 
-		changeMenuBtn();
-		// isHeaderAnim = true;
+			if (!isPopupShowed) {
+				headerPopupWrap.querySelector('.header__popup-item.active').classList.remove('active');
+				targetContent.classList.add('active');
+				openPopup();
+				changeMenuBtn();
+			} else {
+				if (menuBtn) {
+					closePopup();
+					changeMenuBtn();
+				} else {
+					if (targetContent.classList.contains('active')) return;
+
+					let curPopup = headerPopupWrap.querySelector('.header__popup-item.active');
+					curPopup.style.opacity = 0;
+					curPopup.addEventListener('transitionend', function () {
+						curPopup.classList.remove('active');
+						curPopup.style.opacity = null;
+						targetContent.classList.add('active');
+						targetContent.style.opacity = 0;
+
+						window.requestAnimationFrame(function () {
+							window.requestAnimationFrame(function () {
+						targetContent.style.opacity = null;
+							});
+						});
+					}, { once: true });
+				}
+			}
+		});
+	});
+
+	function openPopup() {
+		header.classList.add('header--popup-opened');
+		isPopupShowed = true;
+
+		_scrollPosition = window.pageYOffset;
+		const marginSize = window.innerWidth - html.clientWidth;
+		html.style.top = `${-_scrollPosition}px`;
+
+		if (marginSize) {
+			html.style.marginRight = `${marginSize}px`;
+			header.style.paddingRight = `${parseInt(getComputedStyle(header).paddingRight, 10) + marginSize}px`;
+		}
+		html.classList.add('modal-opened');
+	}
+
+	function closePopup() {
+		header.classList.remove('header--popup-opened');
+		isPopupShowed = false;
+
+		html.classList.remove('modal-opened');
+		html.style.marginRight = '';
+		header.style.paddingRight = '';
+		window.scrollTo(0, _scrollPosition);
+		html.style.top = '';
 	}
 
 	function changeMenuBtn() {
-		if (!headerOpenBtn.classList.contains('cross')) {
-			headerOpenBtn.classList.add('collapse');
-			headerOpenBtn.addEventListener('transitionend', function () {
-				headerOpenBtn.classList.add('cross');
-				headerOpenBtn.addEventListener('transitionend', function () {
-					headerOpenBtn.addEventListener('click', openMenu, { once: true });
+		isPopupAnimated = true;
+
+		if (!openMenuBtn.classList.contains('cross')) {
+			openMenuBtn.classList.add('collapse');
+			openMenuBtn.addEventListener('transitionend', function () {
+				openMenuBtn.classList.add('cross');
+				openMenuBtn.addEventListener('transitionend', function () {
+					isPopupAnimated = false;
 				}, { once: true });
 			}, { once: true });
 		} else {
-			headerOpenBtn.classList.remove('cross');
-			headerOpenBtn.addEventListener('transitionend', function () {
-				headerOpenBtn.classList.remove('collapse');
-				headerOpenBtn.addEventListener('transitionend', function () {
-					headerOpenBtn.addEventListener('click', openMenu, { once: true });
+			openMenuBtn.classList.remove('cross');
+			openMenuBtn.addEventListener('transitionend', function () {
+				openMenuBtn.classList.remove('collapse');
+				openMenuBtn.addEventListener('transitionend', function () {
+					isPopupAnimated = false;
 				}, { once: true });
 			}, { once: true });
 		}
@@ -457,12 +500,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			snapValues[handle].value = values[handle].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 		});
 
-		// snapValues.forEach(val => {
-		// 	val.addEventListener('input', function (e) {
-		// 		val.value = val.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-		// 	});
-		// });
-
 		snapValues[0].addEventListener('change', function () {
 			sliderRange.noUiSlider.set([this.value, null]);
 		});
@@ -476,24 +513,67 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Tabs
 	 */
 
-	let tabs = document.querySelectorAll('.tabs');
+	let tabWraps = document.querySelectorAll('.tabs');
 
-	tabs.forEach(tab => {
-		let tabBtns = tab.querySelectorAll('.tabs__buttons .button');
+	tabWraps.forEach(tabWrap => {
+		let tabBtns = tabWrap.querySelectorAll('.tabs__buttons .button');
 		// let tabConts = tab.querySelectorAll('.tabs__content');
 
 		tabBtns.forEach(btn => {
+			let isAnimated = false;
 			btn.addEventListener('click', function (e) {
-				if (btn.classList.contains('active')) {
+				if (btn.classList.contains('active') || isAnimated == true) {
 					return;
 				}
 
-				tab.querySelectorAll('.active').forEach(activeEl => {
-					activeEl.classList.remove('active');
+				let activeBtn = tabWrap.querySelector('.tabs__buttons .button.active');
+				let activeEl = tabWrap.querySelector('.tabs__content.active');
+				let nextEl = document.querySelector(`.tabs__content[data-tab-id="${btn.dataset.tabTarget}"]`);
+
+				/*let activeElHeight = activeEl.offsetHeight;
+				activeEl.style.height = activeElHeight + 'px';
+
+				window.requestAnimationFrame(function () {
+					window.requestAnimationFrame(function () {
+						activeEl.style.height = 0;
+					});
 				});
 
-				btn.classList.add('active');
-				document.querySelector(`.tabs__content[data-tab-id="${btn.dataset.tabTarget}"]`).classList.add('active');
+				activeEl.addEventListener('transitionend', function () {
+					activeEl.style.height = null;
+					activeEl.classList.remove('active');
+					btn.classList.add('active');
+					nextEl.classList.add('active');
+					let nextElHeight = nextEl.offsetHeight;
+					nextEl.style.height = 0;
+
+					console.log(nextElHeight);
+
+					window.requestAnimationFrame(function () {
+						window.requestAnimationFrame(function () {
+							nextEl.style.height = nextElHeight + 'px';
+						});
+					});
+				}, { once: true });*/
+
+				isAnimated = true;
+				activeBtn.classList.remove('active');
+				activeEl.style.opacity = 0;
+
+				activeEl.addEventListener('transitionend', function () {
+					activeEl.style.opacity = null;
+					activeEl.classList.remove('active');
+					btn.classList.add('active');
+					nextEl.classList.add('active');
+					nextEl.style.opacity = 0;
+
+					window.requestAnimationFrame(function () {
+						window.requestAnimationFrame(function () {
+							nextEl.style.opacity = null;
+							isAnimated = false;
+						});
+					});
+				}, { once: true });
 			})
 		});
 	});
@@ -509,6 +589,20 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		itemClass: 'faq__item',
 		headerClass: 'faq__head',
 		bodyClass: 'faq__body',
+	});
+
+
+	/**
+	 * Selects
+	 */
+
+	let selects = document.querySelectorAll('.select');
+
+	selects.forEach(select => {
+		new SlimSelect({
+			select: select,
+			showSearch: false,
+		});
 	});
 
 
@@ -636,141 +730,141 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Form
 	 */
 
-	// let forms = document.querySelectorAll('.form');
+	/*let forms = document.querySelectorAll('.form');
 
-	// let showErr = function (input, msg) {
-	// 	let msgEl = document.createElement('div');
-	// 	let parent = input.parentElement;
+	let showErr = function (input, msg) {
+		let msgEl = document.createElement('div');
+		let parent = input.parentElement;
 
-	// 	input.classList.add('form__input--fault');
+		input.classList.add('form__input--fault');
 
-	// 	msgEl.textContent = msg;
-	// 	msgEl.classList.add('form__message');
-	// 	parent.appendChild(msgEl);
-	// 	msgEl.style.opacity = 1;
+		msgEl.textContent = msg;
+		msgEl.classList.add('form__message');
+		parent.appendChild(msgEl);
+		msgEl.style.opacity = 1;
 
-	// 	setTimeout(() => {
-	// 		input.classList.remove('form__input--fault');
-	// 		msgEl.style.opacity = null;
+		setTimeout(() => {
+			input.classList.remove('form__input--fault');
+			msgEl.style.opacity = null;
 
-	// 		msgEl.addEventListener('transitionend', function () {
-	// 			parent.removeChild(msgEl);
-	// 		});
-	// 	}, 3000);
-	// };
+			msgEl.addEventListener('transitionend', function () {
+				parent.removeChild(msgEl);
+			});
+		}, 3000);
+	};
 
-	// let createThxPage = function (form) {
-	// 	let thx = document.createElement('div');
-	// 	let icon = document.createElement('div');
-	// 	let title = document.createElement('div');
-	// 	let subtitle = document.createElement('div');
+	let createThxPage = function (form) {
+		let thx = document.createElement('div');
+		let icon = document.createElement('div');
+		let title = document.createElement('div');
+		let subtitle = document.createElement('div');
 
-	// 	thx.classList.add('thx');
-	// 	icon.classList.add('thx__icon');
-	// 	title.classList.add('thx__title', 'title');
-	// 	subtitle.classList.add('thx__subtitle');
+		thx.classList.add('thx');
+		icon.classList.add('thx__icon');
+		title.classList.add('thx__title', 'title');
+		subtitle.classList.add('thx__subtitle');
 
-	// 	title.textContent = 'Спасибо';
-	// 	subtitle.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit cursus nisi vel fermentum.';
+		title.textContent = 'Спасибо';
+		subtitle.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit cursus nisi vel fermentum.';
 
-	// 	thx.appendChild(icon);
-	// 	thx.appendChild(title);
-	// 	thx.appendChild(subtitle);
+		thx.appendChild(icon);
+		thx.appendChild(title);
+		thx.appendChild(subtitle);
 
-	// 	form.style.opacity = 0;
-	// 	form.addEventListener('transitionend', function () {
-	// 		this.style.display = 'none';
+		form.style.opacity = 0;
+		form.addEventListener('transitionend', function () {
+			this.style.display = 'none';
 
-	// 		thx.style.opacity = 0;
-	// 		this.parentElement.appendChild(thx);
+			thx.style.opacity = 0;
+			this.parentElement.appendChild(thx);
 
-	// 		raf(() => {
-	// 			thx.style.opacity = 1;
-	// 		});
-	// 	});
-	// }
+			raf(() => {
+				thx.style.opacity = 1;
+			});
+		});
+	}
 
-	// let send = function (form) {
-	// 	let formData = new FormData(form);
-	// 	let request = new XMLHttpRequest();
-	// 	let btn = form.querySelector('[type="submit"]');
-	// 	request.open('POST', 'form.php', true);
-	// 	request.setRequestHeader('accept', 'application/json');
+	let send = function (form) {
+		let formData = new FormData(form);
+		let request = new XMLHttpRequest();
+		let btn = form.querySelector('[type="submit"]');
+		request.open('POST', 'form.php', true);
+		request.setRequestHeader('accept', 'application/json');
 
-	// 	let statusMessage = form.querySelector('.form__status');
+		let statusMessage = form.querySelector('.form__status');
 
-	// 	if (!statusMessage) {
-	// 		statusMessage = document.createElement('div');
-	// 		statusMessage.classList.add('form__status');
-	// 		form.appendChild(statusMessage);
-	// 	}
+		if (!statusMessage) {
+			statusMessage = document.createElement('div');
+			statusMessage.classList.add('form__status');
+			form.appendChild(statusMessage);
+		}
 
-	// 	formData.append('page', document.title);
+		formData.append('page', document.title);
 
-	// 	btn.disabled = true;
+		btn.disabled = true;
 
-	// 	request.send(formData);
+		request.send(formData);
 
-	// 	request.onreadystatechange = function () {
-	// 		if (request.readyState === 4) {
-	// 			switch (request.status) {
-	// 				case 200:
-	// 					createThxPage(form);
+		request.onreadystatechange = function () {
+			if (request.readyState === 4) {
+				switch (request.status) {
+					case 200:
+						createThxPage(form);
 
-	// 					break;
+						break;
 
-	// 				case 404:
-	// 					statusMessage.innerHTML = "Сервер недоступен";
-	// 					btn.disabled = false;
+					case 404:
+						statusMessage.innerHTML = "Сервер недоступен";
+						btn.disabled = false;
 
-	// 					raf(() => {
-	// 						statusMessage.classList.add('form__status--showed');
-	// 					});
+						raf(() => {
+							statusMessage.classList.add('form__status--showed');
+						});
 
-	// 					break;
+						break;
 
-	// 				default:
-	// 					statusMessage.innerHTML = request.responseText;
-	// 					btn.disabled = false;
+					default:
+						statusMessage.innerHTML = request.responseText;
+						btn.disabled = false;
 
-	// 					raf(() => {
-	// 						statusMessage.classList.add('form__status--showed');
-	// 					});
+						raf(() => {
+							statusMessage.classList.add('form__status--showed');
+						});
 
-	// 					break;
-	// 			}
-	// 		}
-	// 	}
-	// };
+						break;
+				}
+			}
+		}
+	};
 
-	// forms.forEach(form => {
-	// 	form.addEventListener('submit', function (e) {
-	// 		e.preventDefault();
+	forms.forEach(form => {
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
 
-	// 		let inputs = this.querySelectorAll('input');
-	// 		let err = false;
+			let inputs = this.querySelectorAll('input');
+			let err = false;
 
-	// 		inputs.forEach(input => {
-	// 			switch (input.getAttribute('name')) {
-	// 				case 'phone':
-	// 					if (input.value.length < 18) {
-	// 						err = true;
-	// 						showErr(input, 'Введите правильный номер телефона!');
-	// 					}
+			inputs.forEach(input => {
+				switch (input.getAttribute('name')) {
+					case 'phone':
+						if (input.value.length < 18) {
+							err = true;
+							showErr(input, 'Введите правильный номер телефона!');
+						}
 
-	// 					break;
+						break;
 
-	// 				case 'name':
-	// 				default:
-	// 					break;
-	// 			}
-	// 		});
+					case 'name':
+					default:
+						break;
+				}
+			});
 
-	// 		if (!err) {
-	// 			// send
-	// 			send(e.target);
-	// 		}
-	// 	});
-	// });
+			if (!err) {
+				// send
+				send(e.target);
+			}
+		});
+	});*/
 
 });
