@@ -31,8 +31,14 @@
                             <div></div>
                         </a>
 
-                        <div class="header__search search">
-                            <button class="search__btn">
+                        <a href="tel:+88003015051" class="header__phone-mobile">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#phone"></use>
+                            </svg>
+                        </a>
+
+                        <form class="search hidden" action="#" method="get">
+                            <button type="submit" class="search__btn">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#magnifier"></use>
                                 </svg>
@@ -40,9 +46,9 @@
                             <label>
                                 <input type="search" name="search" placeholder="Поиск...">
                             </label>
-                        </div>
+                        </form>
 
-                        <div class="header__lang-switch">
+                        <div class="lang-switch">
                             <a href="#" class="active">RU</a>
                             <a href="#">EN</a>
                         </div>
@@ -69,9 +75,9 @@
                             </svg>
                         </a>
 
-                        <div class="header__call">
-                            <a href="tel:+88003015051" class="header__phone">8 (800) 301-50-51</a>
-                            <a href="javascript:void(0)" class="header__feedback-link open-popup-btn" data-popup-target="feedback">
+                        <div class="call">
+                            <a href="tel:+88003015051" class="call__phone">8 (800) 301-50-51</a>
+                            <a href="javascript:void(0)" class="call__feedback-link open-popup-btn" data-popup-target="feedback">
                                 Заказать обратный звонок
                             </a>
                         </div>
@@ -82,19 +88,70 @@
             <div class="header__popup-wrap">
                 <div class="container">
                     <nav class="header__popup-item nav-menu tabs active">
-                        <div class="nav-menu__tab-btns tabs__buttons">
-                            <a href="javascript:void(0)" class="button active" data-tab-target="menu-build">Построить</a>
-                            <a href="javascript:void(0)" class="button" data-tab-target="menu-buy">Купить</a>
-                            <a href="javascript:void(0)" class="button" data-tab-target="menu-rent">Арендовать</a>
+                        <div class="nav-menu__mobile-block">
+                            <div class="lang-switch">
+                                <a href="#" class="active">RU</a>
+                                <a href="#">EN</a>
+                            </div>
+                            <div class="nav-menu__links">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#arrows"></use>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#heart"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)" class="open-popup-btn" data-popup-target="login">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#login"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <form class="search" action="#" method="get">
+                                <button type="submit" class="search__btn">
+                                    <svg>
+                                        <use xlink:href="./assets/img/sprite.svg#magnifier"></use>
+                                    </svg>
+                                </button>
+                                <label>
+                                    <input type="search" name="search" placeholder="Поиск...">
+                                </label>
+                            </form>
+
+                            <div class="call">
+                                <a href="tel:+88003015051" class="call__phone">8 (800) 301-50-51</a>
+                                <a href="javascript:void(0)" class="call__feedback-link open-popup-btn" data-popup-target="feedback">
+                                    Заказать обратный звонок
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="nav-menu__content-list">
+                        <div class="nav-menu__type-btns tabs__head">
+                            <div class="tabs__placeholder button">
+                                <span>Построить</span>
+                                <div class="tabs__arrow"></div>
+                            </div>
+                            <div class="tabs__buttons">
+                                <button class="button active" data-tab-target="menu-build">Построить</button>
+                                <button class="button" data-tab-target="menu-buy">Купить</button>
+                                <button class="button" data-tab-target="menu-rent">Арендовать</button>
+                            </div>
+                        </div>
+
+                        <div class="nav-menu__content-list tabs__body">
                             <div class="nav-menu__content tabs__content active" data-tab-id="menu-build">
                                 <div class="nav-menu__column">
                                     <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Магазин</a>
                                     <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Форум</a>
 
-                                    <h3 class="nav-menu__links-title">Типы строений</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Типы строений</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Дома</a>
@@ -105,7 +162,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -119,7 +179,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -133,7 +196,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -147,7 +213,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -161,7 +230,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -181,7 +253,10 @@
                                     <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Магазин</a>
                                     <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Форум</a>
 
-                                    <h3 class="nav-menu__links-title">Типы строений</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Дома</a>
@@ -192,7 +267,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -212,7 +290,10 @@
                                     <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Магазин</a>
                                     <a href="#" class="nav-menu__link nav-menu__link--main">DOMOSBOR - Форум</a>
 
-                                    <h3 class="nav-menu__links-title">Типы строений</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Типы строений</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Дома</a>
@@ -223,7 +304,10 @@
                                     </div>
                                 </div>
                                 <div class="nav-menu__column">
-                                    <h3 class="nav-menu__links-title">Технологии</h3>
+                                    <h3 class="nav-menu__links-title">
+                                        <span>Технологии</span>
+                                        <i class="nav-menu__links-arrow"></i>
+                                    </h3>
 
                                     <div class="nav-menu__links-list">
                                         <a href="#" class="nav-menu__link">Клееный брус</a>
@@ -702,36 +786,56 @@
                     </div>
 
                     <div class="footer__nav-links">
-                        <h3 class="footer__links-title">Типы строений</h3>
-                        <a href="#" class="footer__link">Дома</a>
-                        <a href="#" class="footer__link">Бани</a>
-                        <a href="#" class="footer__link">Гаражи</a>
-                        <a href="#" class="footer__link">Навесы</a>
-                        <a href="#" class="footer__link">Коммерческие объекты</a>
+                        <h3 class="footer__links-title">
+                            <span>Типы строений</span>
+                            <i class="footer__links-arrow"></i>
+                        </h3>
+                        <div class="footer__links-list">
+                            <a href="#" class="footer__link">Дома</a>
+                            <a href="#" class="footer__link">Бани</a>
+                            <a href="#" class="footer__link">Гаражи</a>
+                            <a href="#" class="footer__link">Навесы</a>
+                            <a href="#" class="footer__link">Коммерческие объекты</a>
+                        </div>
                     </div>
 
                     <div class="footer__nav-links">
-                        <h3 class="footer__links-title">Сервис</h3>
-                        <a href="#" class="footer__link">О сервисе</a>
-                        <a href="#" class="footer__link">Галерея</a>
-                        <a href="#" class="footer__link">Блог</a>
-                        <a href="#" class="footer__link">Отзывы</a>
-                        <a href="#" class="footer__link">Услуги</a>
+                        <h3 class="footer__links-title">
+                            <span>Сервис</span>
+                            <i class="footer__links-arrow"></i>
+                        </h3>
+                        <div class="footer__links-list">
+                            <a href="#" class="footer__link">О сервисе</a>
+                            <a href="#" class="footer__link">Галерея</a>
+                            <a href="#" class="footer__link">Блог</a>
+                            <a href="#" class="footer__link">Отзывы</a>
+                            <a href="#" class="footer__link">Услуги</a>
+                        </div>
                     </div>
 
                     <div class="footer__nav-links">
-                        <h3 class="footer__links-title">Информация</h3>
-                        <a href="#" class="footer__link">Оплата</a>
-                        <a href="#" class="footer__link">Документы</a>
-                        <a href="#" class="footer__link">Контакты</a>
-                        <a href="#" class="footer__link">Сотрудничество</a>
+                        <h3 class="footer__links-title">
+                            <span>Информация</span>
+                            <i class="footer__links-arrow"></i>
+                        </h3>
+                        <div class="footer__links-list">
+                            <a href="#" class="footer__link">Оплата</a>
+                            <a href="#" class="footer__link">Документы</a>
+                            <a href="#" class="footer__link">Контакты</a>
+                            <a href="#" class="footer__link">Сотрудничество</a>
+                        </div>
                     </div>
 
                     <div class="footer__nav-links">
-                        <h3 class="footer__links-title">Партнеры сервиса</h3>
-                        <a href="#" class="footer__link">Архитекторы</a>
-                        <a href="#" class="footer__link">Дизайнеры</a>
-                        <a href="#" class="footer__link">Заводы</a>
+                        <h3 class="footer__links-title">
+                            <span>Партнеры сервиса</span>
+                            <i class="footer__links-arrow"></i>
+                        </h3>
+                        <div class="footer__links-list">
+                            <a href="#" class="footer__link">Архитекторы</a>
+                            <a href="#" class="footer__link">Дизайнеры</a>
+                            <a href="#" class="footer__link">Заводы</a>
+                        </div>
                     </div>
 
                     <div class="footer__contacts">
@@ -740,9 +844,9 @@
                             <a href="#">DOMOSBOR - Форум</a>
                         </div>
 
-                        <div class="footer__call">
-                            <a href="tel:+88003015051" class="footer__phone">8 (800) 301-50-51</a>
-                            <a href="#" class="footer__feedback-link" data-modal="modal-feedback">
+                        <div class="call">
+                            <a href="tel:+88003015051" class="call__phone">8 (800) 301-50-51</a>
+                            <a href="javascript:void(0)" class="call__feedback-link open-popup-btn" data-popup-target="feedback">
                                 Заказать обратный звонок
                             </a>
                         </div>
