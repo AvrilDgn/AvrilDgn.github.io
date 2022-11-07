@@ -473,13 +473,19 @@
 
                 <div class="proj-card-full__wrap">
                     <div class="proj-card-full__images-block tabs">
-                        <div class="proj-card-full__tab-btns tabs__buttons">
-                            <a href="javascript:void(0)" class="button active" data-tab-target="proj-build">Фасады</a>
-                            <a href="javascript:void(0)" class="button" data-tab-target="proj-buy">Планировки</a>
-                            <a href="javascript:void(0)" class="button" data-tab-target="proj-rent">Интерьер</a>
+                        <div class="proj-card-full__type-btns tabs__head">
+                            <div class="tabs__placeholder button">
+                                <span>Построить</span>
+                                <div class="tabs__arrow"></div>
+                            </div>
+                            <div class="proj-card-full__tab-btns tabs__buttons">
+                                <button class="button active" data-tab-target="proj-build">Фасады</button>
+                                <button class="button" data-tab-target="proj-buy">Планировки</button>
+                                <button class="button" data-tab-target="proj-rent">Интерьер</button>
+                            </div>
                         </div>
 
-                        <div class="proj-card-full__images-list">
+                        <div class="proj-card-full__images-list tabs__body">
                             <div class="proj-card-full__images-item tabs__content active" data-tab-id="proj-build">
                                 <div class="proj-card-full__main-slider slider">
                                     <div class="slider__wrap">
@@ -521,6 +527,7 @@
                                         <div class="slider__arrow slider__arrow--prev"></div>
                                         <div class="slider__arrow slider__arrow--next"></div>
                                     </div>
+                                    <div class="slider__pagination"></div>
                                 </div>
                             </div>
                             <div class="proj-card-full__images-item tabs__content" data-tab-id="proj-buy">
@@ -564,6 +571,7 @@
                                         <div class="slider__arrow slider__arrow--prev"></div>
                                         <div class="slider__arrow slider__arrow--next"></div>
                                     </div>
+                                    <div class="slider__pagination"></div>
                                 </div>
                             </div>
                             <div class="proj-card-full__images-item tabs__content" data-tab-id="proj-rent">
@@ -607,6 +615,7 @@
                                         <div class="slider__arrow slider__arrow--prev"></div>
                                         <div class="slider__arrow slider__arrow--next"></div>
                                     </div>
+                                    <div class="slider__pagination"></div>
                                 </div>
                             </div>
                         </div>
@@ -726,11 +735,11 @@
                     </ul>
                 </div>
 
-                <div class="proj-desc-additional">
+                <div class="proj-desc-additional  slider--lg">
                     <h3 class="proj-desc-additional__title">Дополнительная информация</h3>
-                    <div class="proj-desc-additional__list">
-                        <ul class="proj-desc-additional__col">
-                            <li class="proj-desc-additional__item">
+                    <div class="proj-desc-additional__list slider__list">
+                        <ul class="proj-desc-additional__col slider__slide">
+                            <li class="proj-desc-additional__item ">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#checkmark"></use>
                                 </svg>
@@ -747,7 +756,7 @@
                                 <div class="proj-desc-additional__type">Спальня</div>
                             </li>
                         </ul>
-                        <ul class="proj-desc-additional__col">
+                        <ul class="proj-desc-additional__col slider__slide">
                             <li class="proj-desc-additional__item">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#checkmark"></use>
@@ -761,7 +770,7 @@
                                 <div class="proj-desc-additional__type">Спальня</div>
                             </li>
                         </ul>
-                        <ul class="proj-desc-additional__col">
+                        <ul class="proj-desc-additional__col slider__slide">
                             <li class="proj-desc-additional__item">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#cross"></use>
@@ -779,7 +788,7 @@
                                 <div class="proj-desc-additional__type">Спальня</div>
                             </li>
                         </ul>
-                        <ul class="proj-desc-additional__col">
+                        <ul class="proj-desc-additional__col slider__slide">
                             <li class="proj-desc-additional__item">
                                 <svg>
                                     <use xlink:href="./assets/img/sprite.svg#cross"></use>
@@ -805,22 +814,30 @@
                 <h2 class="sec__title">Комплектации</h2>
 
                 <div class="configs__wrap tabs">
-                    <div class="configs__tab-btns tabs__buttons">
-                        <a href="javascript:void(0)" class="button active" data-tab-target="config-1">Комплектация 1</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="config-2">Комплектация 2</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="config-3">Комплектация 3</a>
-                        <a href="javascript:void(0)" class="button" data-tab-target="config-4">Комплектация 4</a>
+                    <div class="configs__tab-btns tabs__head">
+                        <div class="tabs__placeholder button">
+                            <span>Комплектация 1</span>
+                            <div class="tabs__arrow"></div>
+                        </div>
+                        <div class="tabs__buttons">
+                            <button class="button active" data-tab-target="config-1">Комплектация 1</button>
+                            <button class="button" data-tab-target="config-2">Комплектация 2</button>
+                            <button class="button" data-tab-target="config-3">Комплектация 3</button>
+                            <button class="button" data-tab-target="config-4">Комплектация 4</button>
+                        </div>
                     </div>
 
-                    <div class="configs__list">
+                    <div class="configs__list tabs__body">
                         <div class="config tabs__content active" data-tab-id="config-1">
                             <div class="config__wrap">
                                 <h3 class="config__title">Название комлектации</h3>
                                 <div class="config__desc">
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                 </div>
@@ -833,14 +850,18 @@
                                 <div class="config__desc">
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                 </div>
@@ -853,8 +874,10 @@
                                 <div class="config__desc">
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                 </div>
@@ -867,20 +890,26 @@
                                 <div class="config__desc">
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                     <p>
                                         Собственный деревянный дом — это жильё, в котором всё сделано с учётом личных потребностей
-                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании можно
-                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность выращивания
+                                        и предпочтений. Чистый воздух, возможность самостоятельного планирования участка (при желании
+                                        можно
+                                        дополнительно возвести баню, гараж, навес и иное необходимое сооружение) и возможность
+                                        выращивания
                                         овощей и фруктов — всё это вы получаете в частном доме.
                                     </p>
                                 </div>

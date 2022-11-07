@@ -5041,6 +5041,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
      object-fit: cover;
 }
 
+.proj-card-full__thumb-slider .slider__pagination {
+  display: none;
+}
+
 .proj-card-full__info-block {
   width: 100%;
 }
@@ -5171,13 +5175,13 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   width: 100%;
 }
 
-.configs__tab-btns {
+.configs .tabs__buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-.configs__tab-btns .button {
+.configs .tabs__buttons .button {
   width: 100%;
   height: 50px;
   font-weight: 700;
@@ -5191,15 +5195,15 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 
-.configs__tab-btns .button:not(.active) {
+.configs .tabs__buttons .button:not(.active) {
   background-color: transparent;
   font-weight: 500;
   color: #919191;
   border-color: transparent;
 }
 
-.configs__tab-btns .button:not(.active):focus,
-.configs__tab-btns .button:not(.active):hover {
+.configs .tabs__buttons .button:not(.active):focus,
+.configs .tabs__buttons .button:not(.active):hover {
   color: #919191;
   background-color: #F5F5F6;
 }
@@ -5341,6 +5345,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+}
+
+.proj-desc-additional__col.slider__slide > * {
+  height: initial;
 }
 
 .proj-desc-additional__item {
@@ -6467,6 +6475,15 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .proj-card-full__wrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .proj-card-full__images-block {
+    max-width: 700px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -6580,6 +6597,45 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .faq__feedback {
     width: calc(41.6666% - 15px);
+  }
+
+  .proj-card-full__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 0;
+  }
+
+  .proj-card-full__images-block {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .proj-card-full__main-slider {
+    height: initial;
+  }
+
+  .proj-card-full__info-block {
+    margin: 60px 0 0;
+    max-width: 700px;
+  }
+
+  .proj-desc-additional__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0;
+  }
+
+  .proj-desc-additional__col {
+    width: 230px;
   }
 
   .gallery__desc > *:first-child {
@@ -7000,6 +7056,34 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     margin-top: 20px;
   }
 
+  .proj-card-full {
+    padding-bottom: 40px;
+  }
+
+  .configs {
+    padding: 40px 0;
+  }
+
+  .configs__wrap {
+    margin-top: 40px;
+  }
+
+  .proj-desc {
+    padding: 40px 0;
+  }
+
+  .proj-desc__about {
+    margin-top: 40px;
+  }
+
+  .proj-desc .proj-desc-gen {
+    margin-top: 60px;
+  }
+
+  .proj-desc .proj-desc-additional {
+    margin-top: 60px;
+  }
+
   .search-result__list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -7264,6 +7348,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 @media screen and (max-width: 768px) {
+  .main__page-info {
+    padding-bottom: 30px;
+  }
+
   .main__page-head {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -7681,6 +7769,106 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     font-size: 18px;
   }
 
+  .proj-card-full__wrap {
+    padding-top: 0;
+  }
+
+  .proj-card-full__tab-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .proj-card-full__tab-btns .button {
+    width: 100%;
+    max-width: initial;
+    border: none;
+    background-color: #e5e5e6;
+  }
+
+  .proj-card-full__tab-btns .button:not(.active) {
+    background-color: #F5F5F6;
+  }
+
+  .proj-card-full .tabs__placeholder {
+    max-width: initial;
+    height: 50px;
+    background: #F5F5F6;
+    border-top: 4px solid #8DB338;
+    color: #49423D;
+  }
+
+  .proj-card-full .tabs__placeholder .tabs__arrow::before {
+    border-color: #49423D;
+  }
+
+  .configs__tab-btns {
+    max-width: 450px;
+  }
+
+  .configs .tabs__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+
+  .configs .tabs__buttons .button {
+    border: none;
+    background-color: #e5e5e6;
+  }
+
+  .configs .tabs__buttons .button:not(.active) {
+    background-color: #F5F5F6;
+  }
+
+  .configs .tabs__placeholder {
+    height: 50px;
+    background: #F5F5F6;
+    border-top: 4px solid #8DB338;
+    color: #49423D;
+  }
+
+  .configs .tabs__placeholder .tabs__arrow::before {
+    border-color: #49423D;
+  }
+
+  .configs__list {
+    margin-top: 30px;
+  }
+
+  .config {
+    padding: 40px 20px;
+  }
+
+  .config__wrap {
+    width: 100%;
+  }
+
+  .config__title {
+    font-size: 24px;
+  }
+
+  .proj-desc__about {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .proj-desc-gen__list {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+
   .pagination__arrow {
     width: 20px;
     height: 20px;
@@ -8022,6 +8210,34 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .faq__question {
     font-size: 16px;
+  }
+
+  .proj-card-full__thumb-slider {
+    padding: 0;
+  }
+
+  .proj-card-full__thumb-slider .slider__arrows {
+    display: none;
+  }
+
+  .proj-card-full__thumb-slider .slider__pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .proj-card-full__info-head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .proj-card-full__controls {
+    margin-top: 20px;
   }
 
   .search-result__list {

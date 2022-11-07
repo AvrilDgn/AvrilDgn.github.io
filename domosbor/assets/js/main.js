@@ -725,7 +725,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			spaceBetween: 30,
 			wrapperClass: 'slider__list',
 			slideClass: 'slider__slide',
-			slidesPerView: 3,
+			slidesPerView: 2,
 
 			freeMode: true,
 			watchSlidesProgress: true,
@@ -734,6 +734,17 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				nextEl: projCardThumbSlider.querySelector(".slider__arrow--next"),
 				prevEl: projCardThumbSlider.querySelector(".slider__arrow--prev"),
 				disabledClass: 'disabled',
+			},
+			pagination: {
+				el: projCardThumbSlider.querySelector(".slider__pagination"),
+				bulletClass: "slider__bullet",
+				bulletActiveClass: "active",
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+				},
 			},
 		});
 
