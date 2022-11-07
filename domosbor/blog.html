@@ -473,10 +473,15 @@
                 <div class="blog__desc">
                     <div class="blog__desc-text">Следите за новостями на нашем сайте. Нам важно, чтобы вы всегда были в курсе
                         всего интересного и важного, связанного с деревянным домостроением!</div>
-                    <div class="blog__search">
+                    <form class="blog__search" action="#" method="get">
                         <input type="search" name="search" placeholder="Поиск...">
-                        <button class="button">Искать в блоге</button>
-                    </div>
+                        <button class="button">
+                            <span>Искать в блоге</span>
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#magnifier"></use>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
 
                 <ul class="blog__list">
