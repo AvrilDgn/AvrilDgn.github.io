@@ -3743,9 +3743,11 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .cover {
-  background-image: url(../img/cover/background2.jpg);
+  background-color: #1C1C1C;
+  background-image: url(../img/cover/background.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .cover .container {
@@ -6833,13 +6835,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     padding: 40px 0 30px;
   }
 
-  .cover {
-    background-color: #1C1C1C;
-    background-size: contain;
-    background-position: center 29%;
-    background-repeat: no-repeat;
-  }
-
   .cover .container {
     min-height: calc(100vh - 60px);
   }
@@ -7656,8 +7651,17 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     margin-top: 30px;
   }
 
+  .cover {
+    background-image: url(../img/cover/background-mob.jpg);
+    background-position: center 29%;
+  }
+
   .cover .container {
     padding-top: 40px;
+  }
+
+  .cover__title {
+    font-size: 40px;
   }
 
   .cover .filter {
@@ -8106,6 +8110,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .cover__title {
     text-align: center;
+    font-size: 36px;
   }
 
   .cover__subtitle {
