@@ -1412,7 +1412,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .main {
   position: relative;
   margin: 0 auto;
-  padding-top: 80px;
   width: 100%;
   overflow: hidden;
 }
@@ -2003,7 +2002,8 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .project-card img {
   display: block;
   width: 100%;
-  height: 234px;
+  height: auto;
+  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -2143,7 +2143,8 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .project-card--second-type img {
-  height: 100%;
+  height: auto;
+  max-height: 500px;
 }
 
 .project-card--second-type .project-card__controls {
@@ -2199,6 +2200,9 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blog-card__wrap {
@@ -2544,6 +2548,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   height: 80px;
   width: 100%;
   z-index: 1200;
+}
+
+.header + * {
+  margin-top: 80px;
 }
 
 .header__main {
@@ -5017,9 +5025,14 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   width: 100%;
 }
 
+.proj-card-full__images-item img {
+  height: auto;
+  display: block;
+}
+
 .proj-card-full__main-slider {
   padding: 20px;
-  height: 460px;
+  max-height: 460px;
   background-color: #F5F5F6;
 }
 
@@ -5032,7 +5045,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .proj-card-full__thumb-slider .slider__slide {
-  height: 120px;
+  max-height: 130px;
   cursor: pointer;
 }
 
@@ -5624,6 +5637,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .gallery-type__item img {
   width: 100%;
   height: auto;
+  max-height: 410px;
   display: block;
 }
 
@@ -5643,13 +5657,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   gap: 50px 30px;
 }
 
-.gallery__item {
-  height: 410px;
-}
-
 .gallery__item img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 410px;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
@@ -5913,6 +5924,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   display: block;
   width: 100%;
   height: auto;
+  max-width: 630px;
 }
 
 .tech-projects {
@@ -5959,7 +5971,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .tech-plus-minus__wrap {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
@@ -6058,7 +6070,8 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .recommend-card img {
   display: block;
   width: 100%;
-  height: 234px;
+  height: auto;
+  max-height: 234px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -6692,10 +6705,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 @media screen and (max-width: 992px) {
-  .main {
-    padding-top: 60px;
-  }
-
   .main__page-title {
     font-size: 34px;
   }
@@ -6710,6 +6719,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .header {
     height: 60px;
+  }
+
+  .header + * {
+    margin-top: 60px;
   }
 
   .header__main .container {
@@ -8049,7 +8062,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .footer__wrap {
     grid-template-columns: repeat(1, 1fr);
-    gap: 60px;
+    gap: 30px;
   }
 
   .footer__wrap > *,
