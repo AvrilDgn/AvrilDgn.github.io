@@ -5913,7 +5913,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .tech-plus-minus__item svg {
   position: absolute;
-  top: 0;
+  top: 2px;
   left: 0;
   width: 1.25vw;
   height: 1.25vw;
