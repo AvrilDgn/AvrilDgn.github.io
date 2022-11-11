@@ -1855,7 +1855,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   margin-left: 0.52083vw;
   margin-right: 0.52083vw;
   display: block;
-  height: 1.04167vw;
+  width: 1.04167vw;
   height: 1.04167vw;
   background-color: #F5F5F6;
   -webkit-transition: background-color 0.3s ease-out;
@@ -3157,7 +3157,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .login__action-title span {
-  margin-top: 1.04167vw;
+  margin-left: 0.6em;
   font-weight: 700;
   font-size: 1.66667vw;
   color: #8DB338;
@@ -5894,17 +5894,11 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .tech-plus-minus__wrap {
   margin-top: 3.125vw;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5625vw;
 }
 
 .tech-plus-minus__list {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-  -webkit-column-gap: 3.64583vw;
-     -moz-column-gap: 3.64583vw;
-          column-gap: 3.64583vw;
   max-width: 30.72917vw;
 }
 
@@ -6631,7 +6625,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   }
 
   .slider__bullet {
-    height: 1.38889vw;
+    width: 1.38889vw;
   }
 
   .slider__bullet {
@@ -7204,10 +7198,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .login__action-title {
     font-size: 2.22222vw;
-  }
-
-  .login__action-title span {
-    margin-top: 1.38889vw;
   }
 
   .login__action-title span {
@@ -8751,12 +8741,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   }
 
   .tech-plus-minus__list {
-    -webkit-column-gap: 4.86111vw;
-       -moz-column-gap: 4.86111vw;
-            column-gap: 4.86111vw;
-  }
-
-  .tech-plus-minus__list {
     max-width: 40.97222vw;
   }
 
@@ -9383,7 +9367,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   }
 
   .slider__bullet {
-    height: 20px;
+    width: 20px;
   }
 
   .slider__bullet {
@@ -9962,10 +9946,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .login__action-title {
     font-size: 32px;
-  }
-
-  .login__action-title span {
-    margin-top: 20px;
   }
 
   .login__action-title span {
@@ -11677,13 +11657,11 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   }
 
   .tech-plus-minus__list {
-    -webkit-column-gap: 70px;
-       -moz-column-gap: 70px;
-            column-gap: 70px;
+    max-width: 590px;
   }
 
   .tech-plus-minus__list {
-    max-width: 590px;
+    max-width: 260px;
   }
 
   .tech-plus-minus__item {
