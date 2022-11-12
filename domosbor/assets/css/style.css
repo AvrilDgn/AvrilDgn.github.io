@@ -4751,7 +4751,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .faq__video {
   position: relative;
   width: 100%;
-  height: 18.75vw;
   cursor: pointer;
 }
 
@@ -4766,7 +4765,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .faq__video img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -8088,10 +8087,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     padding: 1.38889vw;
   }
 
-  .faq__video {
-    height: 25vw;
-  }
-
   .faq__play {
     width: 5.55556vw;
   }
@@ -10935,10 +10930,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     padding: 20px;
   }
 
-  .faq__video {
-    height: 360px;
-  }
-
   .faq__play {
     width: 80px;
   }
@@ -12662,7 +12653,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   }
 
   .partner-main__wrap {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, auto 1fr);
   }
 
   .partner-main__image {
@@ -12791,6 +12782,11 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   .main__find-count {
     margin-left: 0;
     margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .main__find-count {
+    font-size: 18px;
   }
 
   .sec__title {
@@ -13143,6 +13139,18 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     font-size: 18px;
   }
 
+  .faq__head {
+    padding: 14px 20px;
+  }
+
+  .faq__arrow::before {
+    width: 10px;
+    height: 10px;
+    border-width: 3px;
+    top: 17px;
+    right: 16px;
+  }
+
   .proj-card-full__wrap {
     padding-top: 0;
   }
@@ -13339,6 +13347,23 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     grid-template-columns: repeat(1, 1fr);
   }
 
+  .partners-filter__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .partners-filter__btn {
+    max-width: 310px;
+  }
+
   .partners-cards__list {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -13346,6 +13371,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   .partners-cards__item .partner-card {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .partner-main__wrap {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .partner-gen-info__merit {
@@ -13711,9 +13740,17 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   }
 
   .footer__socials-list {
+    margin-top: 30px;
+    max-width: 270px;
     max-width: 14.0625vw;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .footer__socials-item {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .cover__title {
@@ -13833,6 +13870,10 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     left: 20px;
     bottom: 20px;
     font-size: 16px;
+  }
+
+  .faq__head {
+    padding: 11px 20px;
   }
 
   .faq__question {
