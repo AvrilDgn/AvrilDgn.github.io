@@ -129,16 +129,70 @@
                     </a>
                 </div>
 
-                <div class="about__code-block code-block">
-                    <pre>
-				<code>
-					
-				</code>
-			</pre>
-                </div>
+                <ul class="about__code-block code-block">
+                    <li class="code-block__line"><span class="blue">pragma solidity</span> <span class="green">^0.7.0</span>;</li>
+                    <li class="code-block__line">&nbsp;</li>
+                    <li class="code-block__line"><span class="green">contract</span> PKOCoinMint <span class="red">is</span>
+                        Initializable {</li>
+                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;// define used libs</li>
+                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> SafeMath <span
+					class="blue">for uint256</span>;</li>
+                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> Address <span
+					class="blue">for address</span>;</li>
+                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> SafeERC20 <span
+					class="blue">for</span> ERC20;</li>
+                    <li class="code-block__line">&nbsp;</li>
+                    <li class="code-block__line">IPKOCoinMintAddressProvider <span>public</span> addressProvider;</li>
+                    <li class="code-block__line">&nbsp;</li>
+                    <li class="code-block__line"><span class="green">function</span> initialize(<span class="green">address</span>
+                        owner, <span class="green">address</span></li>
+                    <li class="code-block__line">_addressProvider) <span class="red">public</span> initializer {</li>
+                    <li class="code-block__line">&nbsp;</li>
+                    <li class="code-block__line">addressProvider = IPKOCoinMProvider(_addressProv</li>
+                </ul>
             </div>
         </section>
         <!-- End About -->
+
+        <!-- Steps -->
+        <section id="steps" class="steps">
+            <div class="container">
+                <h2 class="steps__title">Jak zacząć</h2>
+
+                <ul class="steps__list">
+                    <li class="steps__item step">
+                        <h3 class="step__title">Rejestracja</h3>
+                        <div class="step__description">
+                            Wypełnij formularz, aby zarejestrować się na stronie.
+                        </div>
+                    </li>
+                    <li class="steps__item step">
+                        <h3 class="step__title">Weryfikacja</h3>
+                        <div class="step__description">
+                            Poczekaj aż pracownik banku skontaktuje się z tobą, aby zweryfikować twoją osobowość.
+                        </div>
+                    </li>
+                    <li class="steps__item step">
+                        <h3 class="step__title">Zdobycie PKOCoin</h3>
+                        <div class="step__description">
+                            Zdobądź 50 darmowych monet za rejestrację. Weź udział w drugiej rudzie sprzedaży prywatnej.
+                        </div>
+                    </li>
+                    <li class="steps__item step">
+                        <h3 class="step__title">Użycie PKOCoin</h3>
+                        <div class="step__description">
+                            PKO BP umożliwia klientom sprzedaż swoich monet w dowolnym momencie po aktualnej cenie rundy, a także
+                            dokonywanie transakcji w ramach sieci PKOCoin.
+                        </div>
+                    </li>
+                </ul>
+
+                <a href="javascript:void(0)" class="steps__reg-btn button" data-popup-target="registration">
+                    Zdobądź 50 PKOCoins
+                </a>
+            </div>
+        </section>
+        <!-- End Steps -->
 
 
         <!-- Partners -->
