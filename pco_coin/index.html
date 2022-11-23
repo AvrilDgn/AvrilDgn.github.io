@@ -194,6 +194,79 @@
         </section>
         <!-- End Steps -->
 
+        <!-- Staking -->
+        <section id="staking" class="staking">
+            <div class="container">
+                <h2 class="staking__title">PKO Staking</h2>
+                <div class="staking__subtitle">Zamrażaj swoje monety i zarabiaj do 14% miesięcznie.</div>
+
+                <div class="staking__wrap">
+                    <div class="staking__calculator calc">
+                        <div class="calc__days">
+                            <h2 class="calc__title">Wybierz okres zamrażania monet</h2>
+                            <div class="calc__days-btns">
+                                <label class="calc__day-btn">
+                                    <input type="radio" name="calc-day" data-percent="6" value="7" checked>
+                                    <span>Staking przez 7 dni</span>
+                                </label>
+                                <label class="calc__day-btn">
+                                    <input type="radio" name="calc-day" data-percent="9" value="30">
+                                    <span>Staking przez 30 dni</span>
+                                </label>
+                                <label class="calc__day-btn">
+                                    <input type="radio" name="calc-day" data-percent="14" value="90">
+                                    <span>Staking przez 90 dni</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="calc__data">
+                            <div class="calc__rate">
+                                <h3 class="calc__title">Twoja stawka PKOCoin</h3>
+                                <label class="calc__rate-value">
+                                    <input id="calc-rate-val" type="text" maxlength="6" name="rate" value="1 500">
+                                    <span>monet</span>
+                                </label>
+                            </div>
+                            <div class="calc__percent">
+                                <h3 class="calc__title">Miesięczny dochód</h3>
+                                <div class="calc__percent-value">6%</div>
+                            </div>
+                        </div>
+
+                        <div class="calc__range-wrap range-slider" data-min="100" data-max="10000" data-start-value="1500" data-input="calc-rate-val">
+                            <button class="range-slider__change-btn range-slider__change-btn--minus"></button>
+                            <div class="range-slider__range"></div>
+                            <button class="range-slider__change-btn range-slider__change-btn--plus"></button>
+                        </div>
+
+                        <div class="calc__result">
+                            <h3 class="calc__title">ZYSK</h3>
+
+                            <div class="calc__result-group">
+                                <div class="calc__result-value calc__result-value--coin">90 monet</div>
+                                <div class="calc__result-value calc__result-value--zloty">1 872.9 zł</div>
+                            </div>
+                        </div>
+
+                        <div class="calc__info">Kalkulator oblicza wartość monet po opublikowaniu na giełdach.</div>
+                    </div>
+
+                    <div class="staking__content-block">
+                        <h3 class="staking__content-title">Jak działa PKO Staking?</h3>
+                        <div class="staking__description">PKO Staking to mechanizm, który nagradza użytkowników za zamrożenia
+                            ich monet na pewien czas, zapewniając w ten sposób bezpieczeństwo sieci i weryfikację transakcji pod
+                            kątem autentyczności. Nagroda za obstawianie wynosi od 6% do 14% miesięcznie, w zależności od okresu
+                            blokady monet.</div>
+                        <a href="javascript:void(0)" class="staking__reg-btn button" data-popup-target="registration">
+                            Staking PKOCoin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Staking -->
+
 
         <!-- Partners -->
         <section id="partners" class="partners">
@@ -405,8 +478,8 @@
     <script src="./assets/js/swiper-bundle.min.js" defer></script>
     <script src="./assets/js/imask.min.js" defer></script>
     <script src="./assets/js/slimselect.min.js" defer></script>
-
-    <script src="./assets/js/main.min.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <!-- <script src="./assets/js/main.min.js" defer></script> -->
 
     <!-- End JS -->
 

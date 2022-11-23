@@ -254,55 +254,128 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		}, true);
 	});
-	
+
+
+	/**
+	 * Calculator
+	 */
+
+	let calc = document.querySelector('.calc');
+	let calcDays = calc.querySelectorAll('input[name="calc-day"]');
+	let calcPercentView = calc.querySelector('.calc__percent-value');
+	let calcInput = document.querySelector('.calc__rate-value input[name="rate"]');
+	let calcResultCoin = calc.querySelector('.calc__result-value--coin');
+	let calcResultZloty = calc.querySelector('.calc__result-value--zloty');
+	let calcPercentValue = 0;
+	let calcMounth = 0;
+	let calcZloty = 20.81;
+
+	calcDays.forEach(btn => {
+		if (btn.checked) {
+			ChangePercent.call(btn);
+		}
+
+		btn.addEventListener('change', ChangePercent);
+	});
+
+	function ChangePercent() {
+		calcPercentValue = this.dataset.percent;
+		calcMounth = (Math.floor(30 / this.value) > 1 ? 1 / Math.floor(30 / this.value) : this.value / 30);
+
+		calcPercentView.textContent = calcPercentValue + '%';
+
+		CountResult();
+	}
+	function CountResult() {
+		let value = Math.floor(parseInt(calcInput.value.replace(/\s+/g, ''), 10) / 100 * calcPercentValue * calcMounth);
+
+		calcResultCoin.textContent = value;
+		calcResultZloty.textContent = (value * calcZloty).toFixed(2);
+
+		console.log(parseInt(calcInput.value.replace(/\s+/g, ''), 10) + ' ' + calcPercentValue + ' ' + calcMounth);
+	}
+
 
 	/**
 	 * Range Slider
 	 */
 
-	var rangeSliders = document.querySelectorAll('.range-slider');
+	var rangeSlider = document.querySelector('.range-slider');
 
-	rangeSliders.forEach(slider => {
-		let sliderRange = slider.querySelector('.range-slider__range');
-		let min = Number(slider.dataset.min);
-		let max = Number(slider.dataset.max);
+	let rangeMin = Number(rangeSlider.dataset.min);
+	let rangeMax = Number(rangeSlider.dataset.max);
+	let rangeStartValue = Number(rangeSlider.dataset.startValue);
+	let rangeInput = document.querySelector('#' + rangeSlider.dataset.input);
+	let rangeItem = rangeSlider.querySelector('.range-slider__range');
+	let rangeChangebtns = rangeSlider.querySelectorAll('.range-slider__change-btn');
 
-		noUiSlider.create(sliderRange, {
-			start: [min, max],
-			connect: true,
-			step: 1,
-			// tooltips: [wNumb({decimals: 2}), wNumb({decimals: 2})],
-			range: {
-				'min': min,
-				'max': max
+	noUiSlider.create(rangeItem, {
+		start: rangeStartValue,
+		connect: 'lower',
+		step: 1,
+		range: {
+			'min': rangeMin,
+			'max': rangeMax
+		},
+		format: {
+			from: function (value) {
+				return parseInt(value);
 			},
-			format: {
-				from: function (value) {
-					return parseInt(value);
-				},
-				to: function (value) {
-					return parseInt(value);
-				}
+			to: function (value) {
+				return parseInt(value);
 			}
-		});
-
-		let snapValues = [
-			slider.querySelector('input[name="min"]'),
-			slider.querySelector('input[name="max"]')
-		];
-
-		sliderRange.noUiSlider.on('update', function (values, handle) {
-			snapValues[handle].value = values[handle].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-		});
-
-		snapValues[0].addEventListener('change', function () {
-			sliderRange.noUiSlider.set([this.value, null]);
-		});
-		snapValues[1].addEventListener('change', function () {
-			sliderRange.noUiSlider.set([null, this.value]);
-		});
+		}
 	});
 
+	rangeItem.noUiSlider.on('update', function (values, handle) {
+		rangeInput.value = values[handle].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+		CountResult();
+	});
+
+	rangeInput.addEventListener('change', function () {
+		rangeItem.noUiSlider.set(this.value);
+	});
+
+	rangeChangebtns.forEach(btn => {
+		let pressed = false;
+		let up = false;
+
+		if (btn.classList.contains('range-slider__change-btn--plus')) {
+			up = true;
+		}
+
+		let pressOnListeners = [
+			'mousedown',
+			'touchstart'
+		];
+		let pressOffListeners = [
+			'mouseup',
+			'touchend'
+		];
+
+		for (const listener of pressOnListeners) {
+			btn.addEventListener(listener, function () {
+				pressed = true;
+			});
+		}
+		for (const listener of pressOffListeners) {
+			btn.addEventListener(listener, function () {
+				pressed = false;
+			});
+		}
+
+		setInterval(() => {
+			if (!pressed) return;
+
+			let value = rangeItem.noUiSlider.get();
+
+			if (up) {
+				rangeItem.noUiSlider.set((++value).toString());
+			} else {
+				rangeItem.noUiSlider.set((--value).toString());
+			}
+		}, 100);
+	});
 
 
 	/**
