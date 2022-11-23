@@ -379,6 +379,51 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
+	 * Diagram
+	 */
+
+	let diagram = document.querySelector('.diagram');
+	let diagramTypeView = diagram.querySelector('.diagram__title');
+	let diagramValView = diagram.querySelector('.diagram__subtitle');
+	let diagramPieces = diagram.querySelectorAll('.diagram__piece');
+
+	diagramPieces.forEach(piece => {
+		piece.addEventListener('click', function () {
+			changeDiagramPiece(this);
+		});
+		piece.addEventListener('mouseenter', function () {
+			changeDiagramTitle(this);
+		});
+		piece.addEventListener('toutchstart', function () {
+			changeDiagramTitle(this);
+		});
+	});
+
+	function changeDiagramPiece(newEl) {
+		let active = diagram.querySelector('.diagram__piece--active');
+		let activeD = active.getAttribute('d');
+		let activePath = active.dataset.path;
+
+		active.setAttribute('d', activePath);
+		active.dataset.path = activeD;
+		active.classList.remove('diagram__piece--active');
+
+		let newD = newEl.getAttribute('d');
+		let newPath = newEl.dataset.path;
+
+		newEl.setAttribute('d', newPath);
+		newEl.dataset.path = newD;
+		newEl.classList.add('diagram__piece--active');
+	}
+
+	function changeDiagramTitle(newEl) {
+		diagramTypeView.textContent = newEl.dataset.type;
+		diagramValView.textContent = newEl.dataset.value;
+	}
+
+
+
+	/**
 	 * Sliders
 	 */
 
