@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PKOCoin</title>
 
-
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- CSS -->
 
@@ -29,16 +35,16 @@
 
                 <ul class="header__nav nav">
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Jak zacząć</a>
+                        <a href="#steps" class="nav__link anchor">Jak zacząć</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Zarabianie na PKOCoin</a>
+                        <a href="#staking" class="nav__link anchor">Zarabianie na PKOCoin</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Tokenomia</a>
+                        <a href="#tokenomika" class="nav__link anchor">Tokenomia</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Mapa rozwoju</a>
+                        <a href="#roadmap" class="nav__link anchor">Mapa rozwoju</a>
                     </li>
                 </ul>
 
@@ -60,7 +66,7 @@
                         <a href="javascript:void(0)" class="cover__reg-btn button" data-popup-target="registration">
                             Zdobądź PKOCoin
                         </a>
-                        <a href="#" class="cover__more-btn button button--transparent">Więcej</a>
+                        <a href="#about" class="anchor cover__more-btn button button--transparent">Więcej</a>
                     </div>
                 </div>
 
@@ -87,7 +93,10 @@
                                 <div class="round-card__name">Sprzedaż prywatna (Runda 2)</div>
                                 <div class="round-card__price-title">Cena</div>
                                 <div class="round-card__price-value">1.54 zł </div>
-                                <div class="round-card__date">Do końca: 12d 16g 15m 32s</div>
+                                <div class="round-card__date timer" data-time-to="28.11.2022">
+                                    Do końca: <span class="timer__day">12d</span> <span class="timer__hour">16g</span> <span
+								class="timer__minute">15m</span> <span class="timer__second">32s</span>
+                                </div>
                             </div>
                         </li>
                         <li class="rounds__item">
@@ -288,7 +297,7 @@
 
                     </div>
 
-                    <div class="tokenomika__legend legend">
+                    <div class="tokenomika__legend legend">round-card
                         <h3 class="legend__title">Podzial</h3>
 
                         <ul class="legend__list">
@@ -331,6 +340,122 @@
         </section>
         <!-- End Tokenomika -->
 
+        <!-- Roadmap -->
+        <section id="roadmap" class="roadmap">
+            <div class="container">
+                <h2 class="roadmap__title">Mapa rozwoju</h2>
+                <div class="roadmap__subtitle">Oto, co się wydarzyło i co przed nami.</div>
+
+                <div class="roadmap__wrap">
+                    <ul class="roadmap__list">
+                        <li class="roadmap__item">
+                            <div class="roadmap-card">
+                                <div class="roadmap-card__hook">
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
+                                    <div class="roadmap-card__hook-circle"></div>
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--right"></div>
+                                    <div class="roadmap-card__hook-dotted"></div>
+                                </div>
+
+                                <div class="roadmap-card__date">12.09.2022</div>
+
+                                <div class="roadmap-card__name">Przedsprzedaż (Runda 1)</div>
+                                <div class="roadmap-card__desc">
+                                    <p>Udane uruchomienie PKOCoin.</p>
+                                    <p>Sprzedaż monet w pierwszej rundzie, która jest dostępna dla inwestorów prywatnych.</p>
+                                </div>
+
+                                <div class="roadmap-card__price-title">Cena</div>
+                                <div class="roadmap-card__price-value">0.36 zł</div>
+                                <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
+                                <div class="roadmap-card__minimum-value"><b>150</b> PKOCoins</div>
+
+                                <div class="roadmap-card__readiness">Gotowe</div>
+                            </div>
+                        </li>
+                        <li class="roadmap__item">
+                            <div class="roadmap-card">
+                                <div class="roadmap-card__hook">
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
+                                    <div class="roadmap-card__hook-circle"></div>
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--right"></div>
+                                    <div class="roadmap-card__hook-dotted"></div>
+                                </div>
+
+                                <div class="roadmap-card__date">16.10.2022</div>
+
+                                <div class="roadmap-card__name">Sprzedaż prywatna (Runda 2)</div>
+                                <div class="roadmap-card__desc">
+                                    <p>Airdrop, rozdanie bonusów dla użytkowników PKOCoin.</p>
+                                    <p>Ostatnia szansa na zakup PKOCoin przed wejściem inwestorów instytucjonalnych.</p>
+                                </div>
+
+                                <div class="roadmap-card__price-title">Cena</div>
+                                <div class="roadmap-card__price-value">1.54 zł</div>
+                                <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
+                                <div class="roadmap-card__minimum-value"><b>735</b> PKOCoins</div>
+
+                                <div class="roadmap-card__readiness timer" data-time-to="28.11.2022">
+                                    Do końca: <span class="timer__day">12d</span> <span class="timer__hour">16g</span> <span
+								class="timer__minute">15m</span> <span class="timer__second">32s</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="roadmap__item">
+                            <div class="roadmap-card">
+                                <div class="roadmap-card__hook">
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
+                                    <div class="roadmap-card__hook-circle"></div>
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--right"></div>
+                                    <div class="roadmap-card__hook-dotted"></div>
+                                </div>
+
+                                <div class="roadmap-card__date">28.11.2022</div>
+
+                                <div class="roadmap-card__name">ICO (Runda 3)</div>
+                                <div class="roadmap-card__desc">
+                                    <p>Sprzedaż monet do funduszy inwestycyjnych, towarzystw ubezpieczeniowych, spółdzielni kredytowych
+                                        (banków).</p>
+                                </div>
+
+                                <div class="roadmap-card__price-title">Cena</div>
+                                <div class="roadmap-card__price-value">8.14 zł</div>
+                                <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
+                                <div class="roadmap-card__minimum-value"><b>5400</b> PKOCoins</div>
+
+                                <div class="roadmap-card__readiness">Zaplanowano na 28.11.2022</div>
+                            </div>
+                        </li>
+                        <li class="roadmap__item">
+                            <div class="roadmap-card">
+                                <div class="roadmap-card__hook">
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
+                                    <div class="roadmap-card__hook-circle"></div>
+                                    <div class="roadmap-card__hook-line roadmap-card__hook-line--right"></div>
+                                    <div class="roadmap-card__hook-dotted"></div>
+                                </div>
+
+                                <div class="roadmap-card__date">25.12.2022</div>
+
+                                <div class="roadmap-card__name">Wyprzedaż główna (Runda 4)</div>
+                                <div class="roadmap-card__desc">
+                                    <p>Rozpoczęcie handlu na najwiekszych giełdach kryptowalutowych Binance, Coinbase, Bybit, KuCoin,
+                                        Huobi.</p>
+                                </div>
+
+                                <div class="roadmap-card__price-title">Cena</div>
+                                <div class="roadmap-card__price-value">20.81 zł</div>
+                                <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
+                                <div class="roadmap-card__minimum-value">Brak limitu zakupów</div>
+
+                                <div class="roadmap-card__readiness">Zaplanowano na 25.12.2022</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Roadmap -->
 
         <!-- Partners -->
         <section id="partners" class="partners">
@@ -515,6 +640,57 @@
         </section>
         <!-- End Team -->
 
+        <!-- Regester -->
+        <section id="regester" class="regester">
+            <div class="container">
+                <div class="regester__content">
+                    <h2 class="regester__title">Rejestracja</h2>
+
+                    <form class="regester__form form" id="regester-form" action="#" method="post">
+                        <div class="form__fields-group">
+                            <label class="form__field">
+                                <span class="form__name">Imię</span>
+                                <input class="form__input" type="text" name="your-name">
+                            </label>
+
+                            <label class="form__field">
+                                <span class="form__name">Nazwisko</span>
+                                <input class="form__input" type="text" name="your-surname">
+                            </label>
+                        </div>
+
+                        <div class="form__fields-group">
+                            <label class="form__field">
+                                <span class="form__name">Numer telefonu</span>
+                                <input class="form__input" type="email" name="your-mail" required>
+                            </label>
+
+                            <label class="form__field">
+                                <span class="form__name">Adres e-mail</span>
+                                <input class="form__input" type="tel" name="your-phone">
+                            </label>
+                        </div>
+
+                        <div class="form__submit-block">
+                            <div class="form__policy">
+                                <label class="form__policy-checkbox">
+                                    <input type="checkbox" name="privacy-policy" required value="true" checked>
+                                    <span></span>
+                                    <i></i>
+                                </label>
+                                <p class="form__policy-msg">Zgadzam się na przetwarzanie przez PKO Bank Polski SA moich danych osobowych.
+                                </p>
+                            </div>
+
+                            <button class="form__send-btn button" type="submit">Zarejestruj się</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="regester__image"></div>
+            </div>
+        </section>
+        <!-- End Regester -->
 
         <!-- Footer -->
         <footer id="footer" class="footer">

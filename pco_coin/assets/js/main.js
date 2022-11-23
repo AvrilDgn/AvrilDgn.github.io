@@ -231,6 +231,42 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
+	 * Smooth scrolling of anchor
+	 */
+
+	let anchorLinks = document.querySelectorAll('.anchor');
+	let header = document.querySelector('.header');
+
+	anchorLinks.forEach(link => {
+		link.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			let blockID = link.hash;
+			let target;
+
+			if (!blockID) {
+				target = document.body;
+			} else {
+				target = document.querySelector(blockID);
+			}
+
+			if (!target) {
+				return;
+			}
+
+			// if (headerMenu.classList.contains('header__menu--opened')) {
+			// 	menuCloseHandler();
+			// }
+
+			window.scrollTo({
+				behavior: 'smooth',
+				top: target.getBoundingClientRect().top + pageYOffset - header.offsetHeight,
+			})
+		})
+	});
+
+
+	/**
 	 * Input mask
 	 */
 
@@ -289,8 +325,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	function CountResult() {
 		let value = Math.floor(parseInt(calcInput.value.replace(/\s+/g, ''), 10) / 100 * calcPercentValue * calcMounth);
 
-		calcResultCoin.textContent = value;
-		calcResultZloty.textContent = (value * calcZloty).toFixed(2);
+		calcResultCoin.textContent = value + ' monet';
+		calcResultZloty.textContent = (value * calcZloty).toFixed(2) + ' zł';
 
 		console.log(parseInt(calcInput.value.replace(/\s+/g, ''), 10) + ' ' + calcPercentValue + ' ' + calcMounth);
 	}
@@ -421,6 +457,53 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		diagramValView.textContent = newEl.dataset.value;
 	}
 
+
+	/**
+	 * Timers
+	 */
+
+	let timers = document.querySelectorAll('.timer');
+
+	timers.forEach(timer => {
+		let date = (timer.dataset.timeTo).split('.');
+
+		const deadline = new Date(date[2], date[1] - 1, date[0]);
+
+		// id таймера
+		let timerId = null;
+		// склонение числительных
+		function declensionNum(num, words) {
+			return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+		}
+		// вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
+		function countdownTimer() {
+			const diff = deadline - new Date();
+			if (diff <= 0) {
+				clearInterval(timerId);
+			}
+			const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+			const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+			const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+			const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+			$days.textContent = days < 10 ? '0' + days : days;
+			$hours.textContent = hours < 10 ? '0' + hours : hours;
+			$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+			$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+			$days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
+			$hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
+			$minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+			$seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+		}
+		// получаем элементы, содержащие компоненты даты
+		const $days = timer.querySelector('.timer__day');
+		const $hours = timer.querySelector('.timer__hour');
+		const $minutes = timer.querySelector('.timer__minute');
+		const $seconds = timer.querySelector('.timer__second');
+		// вызываем функцию countdownTimer
+		countdownTimer();
+		// вызываем функцию countdownTimer каждую секунду
+		timerId = setInterval(countdownTimer, 1000);
+	});
 
 
 	/**

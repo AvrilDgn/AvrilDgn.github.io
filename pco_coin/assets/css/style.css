@@ -1167,6 +1167,24 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: white;
 }
 
+.form > *:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.form__fields-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form__fields-group > * {
+  width: calc(50% - 10px);
+}
+
+.form__fields-group > *:not(:first-child) {
+  margin-left: 20px;
+}
+
 .form__field {
   position: relative;
   width: 100%;
@@ -1231,6 +1249,131 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .form__input--fault {
   border-color: #E4202C;
+}
+
+.form__submit-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__submit-block > *:not(:first-child) {
+  margin-left: 60px;
+}
+
+.form__policy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form__policy-checkbox {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.form__policy-checkbox input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form__policy-checkbox input:checked + span {
+  background-color: #004C9A;
+  border-color: #004C9A;
+}
+
+.form__policy-checkbox input:checked + span + i::before,
+.form__policy-checkbox input:checked + span + i::after {
+  background-color: white;
+}
+
+.form__policy-checkbox span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  -webkit-transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+  -o-transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+  transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.form__policy-checkbox i {
+  position: absolute;
+  top: calc(50% + 5px);
+  left: calc(50% - 1px);
+}
+
+.form__policy-checkbox i::before,
+.form__policy-checkbox i::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  background-color: white;
+  -webkit-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+
+.form__policy-checkbox i::before {
+  right: 0;
+  width: 7px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: center right;
+      -ms-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.form__policy-checkbox i::after {
+  left: -1px;
+  width: 11px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: center left;
+      -ms-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.form__policy-msg {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  color: #585858;
+}
+
+.form__send-btn {
+  padding: 6px 30px;
 }
 
 .form__status {
@@ -2266,6 +2409,240 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: #585858;
 }
 
+.roadmap {
+  margin-top: 120px;
+}
+
+.roadmap__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.20833;
+  color: black;
+}
+
+.roadmap__subtitle {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #585858;
+}
+
+.roadmap__wrap {
+  margin-top: 30px;
+  overflow-x: hidden;
+}
+
+.roadmap__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: -20px;
+}
+
+.roadmap__item {
+  position: relative;
+  padding-top: 50px;
+  margin-right: 20px;
+  width: calc(25% - 20px);
+}
+
+.roadmap__item:nth-child(1) .roadmap-card {
+  border-color: #39A935;
+}
+
+.roadmap__item:nth-child(1) .roadmap-card__readiness {
+  color: #39A935;
+}
+
+.roadmap__item:nth-child(1) .roadmap-card__hook-line--left {
+  background-color: #004C9A;
+}
+
+.roadmap__item:nth-child(1) .roadmap-card__hook-line--right {
+  background-color: #004C9A;
+}
+
+.roadmap__item:nth-child(1) .roadmap-card__hook-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #39A935;
+}
+
+.roadmap__item:nth-child(1) .roadmap-card__hook-circle::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/check.svg);
+}
+
+.roadmap__item:nth-child(1) .roadmap-card__hook-dotted {
+  border-color: #39A935;
+}
+
+.roadmap__item:nth-child(2) .roadmap-card {
+  border-color: #004C9A;
+}
+
+.roadmap__item:nth-child(2) .roadmap-card__readiness {
+  color: #004C9A;
+}
+
+.roadmap__item:nth-child(2) .roadmap-card__hook-line--left {
+  background-color: #004C9A;
+}
+
+.roadmap__item:nth-child(2) .roadmap-card__hook-circle {
+  background-color: white;
+  border: 1px solid #004C9A;
+}
+
+.roadmap__item:nth-child(2) .roadmap-card__hook-dotted {
+  border-color: #004C9A;
+}
+
+.roadmap-card {
+  position: relative;
+  padding: 20px 10px 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+}
+
+.roadmap-card__hook {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 49px;
+}
+
+.roadmap-card__hook-line {
+  position: absolute;
+  top: 14px;
+  height: 2px;
+  width: calc(50% + 11px);
+  background-color: #dedede;
+  z-index: 1;
+}
+
+.roadmap-card__hook-line--left {
+  left: -11px;
+}
+
+.roadmap-card__hook-line--right {
+  right: -11px;
+}
+
+.roadmap-card__hook-circle {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #dedede;
+  z-index: 2;
+}
+
+.roadmap-card__hook-dotted {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 1px);
+  width: 0;
+  height: 100%;
+  border-right: 2px dashed #dedede;
+  z-index: 1;
+}
+
+.roadmap-card__date {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: black;
+}
+
+.roadmap-card__name {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: black;
+}
+
+.roadmap-card__desc {
+  margin-top: 20px;
+  margin-bottom: auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.44444;
+  color: #585858;
+}
+
+.roadmap-card__desc > *:not(:first-child) {
+  margin-top: 26px;
+}
+
+.roadmap-card__price-title {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22222;
+  color: #8d8d8d;
+}
+
+.roadmap-card__price-value {
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.21053;
+  color: black;
+}
+
+.roadmap-card__minimum-title {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22222;
+  color: #8d8d8d;
+}
+
+.roadmap-card__minimum-value {
+  margin-top: 5px;
+  margin-bottom: auto;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.20833;
+  color: black;
+}
+
+.roadmap-card__minimum-value b {
+  font-size: 38px;
+  line-height: 1.21053;
+}
+
+.roadmap-card__readiness {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #8d8d8d;
+}
+
 .partners {
   margin-top: 200px;
 }
@@ -2372,7 +2749,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .team {
   margin-top: 160px;
-  margin-bottom: 120px;
 }
 
 .team__title {
@@ -2447,6 +2823,54 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   font-size: 16px;
   line-height: 1.1875;
   color: #585858;
+}
+
+.regester {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.regester .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regester__content {
+  margin-right: 20px;
+  width: calc(50% - 10px);
+}
+
+.regester__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.20833;
+  color: black;
+}
+
+.regester__form {
+  margin-top: 30px;
+}
+
+.regester__form .form__fields-group:not(:first-of-type) {
+  margin-top: 50px;
+}
+
+.regester__image {
+  position: relative;
+  width: calc(50% - 10px);
+  background-image: url(../img/form/background.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.regester__image::before {
+  content: "";
+  padding-top: 64.467%;
+  display: block;
 }
 
 @media screen and (max-width: 992px) {
