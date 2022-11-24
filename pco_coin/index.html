@@ -33,25 +33,41 @@
                     <img src="./assets/img/logo.png" alt="logo">
                 </a>
 
-                <ul class="header__nav nav">
-                    <li class="nav__item">
-                        <a href="#steps" class="nav__link anchor">Jak zacząć</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#staking" class="nav__link anchor">Zarabianie na PKOCoin</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#tokenomika" class="nav__link anchor">Tokenomia</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#roadmap" class="nav__link anchor">Mapa rozwoju</a>
-                    </li>
-                </ul>
+                <div class="header__collapse">
+                    <div class="header__collapse-head">
+                        <a href="index.html" class="header__logo">
+                            <img src="./assets/img/logo.png" alt="logo">
+                        </a>
+
+                        <a href="javascript:void(0)" class="header__close-btn"></a>
+                    </div>
+
+                    <ul class="header__nav nav">
+                        <li class="nav__item">
+                            <a href="#steps" class="nav__link anchor">Jak zacząć</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#staking" class="nav__link anchor">Zarabianie na PKOCoin</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#tokenomika" class="nav__link anchor">Tokenomia</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#roadmap" class="nav__link anchor">Mapa rozwoju</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="javascript:void(0)" class="header__open-btn">
+                    <span></span>
+                </a>
 
                 <a href="javascript:void(0)" class="header__reg-btn button button--red" data-modal="modal-registration">
                     Rejestracja
                 </a>
             </div>
+
+            <div class="header__overlay"></div>
         </header>
         <!-- End Header -->
 
@@ -138,27 +154,31 @@
                     </a>
                 </div>
 
-                <ul class="about__code-block code-block">
-                    <li class="code-block__line"><span class="blue">pragma solidity</span> <span class="green">^0.7.0</span>;</li>
-                    <li class="code-block__line">&nbsp;</li>
-                    <li class="code-block__line"><span class="green">contract</span> PKOCoinMint <span class="red">is</span>
-                        Initializable {</li>
-                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;// define used libs</li>
-                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> SafeMath <span
-					class="blue">for uint256</span>;</li>
-                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> Address <span
-					class="blue">for address</span>;</li>
-                    <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> SafeERC20 <span
-					class="blue">for</span> ERC20;</li>
-                    <li class="code-block__line">&nbsp;</li>
-                    <li class="code-block__line">IPKOCoinMintAddressProvider <span>public</span> addressProvider;</li>
-                    <li class="code-block__line">&nbsp;</li>
-                    <li class="code-block__line"><span class="green">function</span> initialize(<span class="green">address</span>
-                        owner, <span class="green">address</span></li>
-                    <li class="code-block__line">_addressProvider) <span class="red">public</span> initializer {</li>
-                    <li class="code-block__line">&nbsp;</li>
-                    <li class="code-block__line">addressProvider = IPKOCoinMProvider(_addressProv</li>
-                </ul>
+                <div class="about__code-block code-block">
+                    <ul class="code-block__list">
+                        <li class="code-block__line"><span class="blue">pragma solidity</span> <span class="green">^0.7.0</span>;
+                        </li>
+                        <li class="code-block__line">&nbsp;</li>
+                        <li class="code-block__line"><span class="green">contract</span> PKOCoinMint <span class="red">is</span>
+                            Initializable {</li>
+                        <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;// define used libs</li>
+                        <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> SafeMath <span
+						class="blue">for uint256</span>;</li>
+                        <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> Address <span
+						class="blue">for address</span>;</li>
+                        <li class="code-block__line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">using</span> SafeERC20 <span
+						class="blue">for</span> ERC20;</li>
+                        <li class="code-block__line">&nbsp;</li>
+                        <li class="code-block__line">IPKOCoinMintAddressProvider <span>public</span> addressProvider;</li>
+                        <li class="code-block__line">&nbsp;</li>
+                        <li class="code-block__line"><span class="green">function</span> initialize(<span
+						class="green">address</span>
+                            owner, <span class="green">address</span></li>
+                        <li class="code-block__line">_addressProvider) <span class="red">public</span> initializer {</li>
+                        <li class="code-block__line">&nbsp;</li>
+                        <li class="code-block__line">addressProvider = IPKOCoinMProvider(_addressProv</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <!-- End About -->
@@ -346,9 +366,9 @@
                 <h2 class="roadmap__title">Mapa rozwoju</h2>
                 <div class="roadmap__subtitle">Oto, co się wydarzyło i co przed nami.</div>
 
-                <div class="roadmap__wrap">
-                    <ul class="roadmap__list">
-                        <li class="roadmap__item">
+                <div class="roadmap__wrap slider">
+                    <ul class="roadmap__list swiper-wrapper">
+                        <li class="roadmap__item swiper-slide">
                             <div class="roadmap-card">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
@@ -373,7 +393,7 @@
                                 <div class="roadmap-card__readiness">Gotowe</div>
                             </div>
                         </li>
-                        <li class="roadmap__item">
+                        <li class="roadmap__item swiper-slide">
                             <div class="roadmap-card">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
@@ -401,7 +421,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="roadmap__item">
+                        <li class="roadmap__item swiper-slide">
                             <div class="roadmap-card">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
@@ -423,10 +443,11 @@
                                 <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
                                 <div class="roadmap-card__minimum-value"><b>5400</b> PKOCoins</div>
 
-                                <div class="roadmap-card__readiness">Zaplanowano na <span class="timer__next-date">25.12.2022</span></div>
+                                <div class="roadmap-card__readiness">Zaplanowano na <span class="timer__next-date">25.12.2022</span>
+                                </div>
                             </div>
                         </li>
-                        <li class="roadmap__item">
+                        <li class="roadmap__item swiper-slide">
                             <div class="roadmap-card">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
@@ -452,6 +473,10 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="slider__arrows">
+                        <div class="slider__arrow slider__arrow--prev disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-41922273cf19fba4" aria-disabled="true"></div>
+                        <div class="slider__arrow slider__arrow--next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-41922273cf19fba4" aria-disabled="false"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -518,23 +543,23 @@
                 <h2 class="team__title">Kierownicy projektu</h2>
                 <div class="team__subtitle">Projektem PKOCoin zarządzają dyrektorzy banku PKO BP</div>
 
-                <div class="team__wrap">
-                    <ul class="team__list">
-                        <li class="team__item">
+                <div class="team__wrap slider">
+                    <ul class="team__list swiper-wrapper">
+                        <li class="team__item swiper-slide">
                             <div class="member-card">
                                 <div class="member-card__image"><img src="./assets/img/team/item-1.jpg" alt="member photo"></div>
                                 <div class="member-card__name">Paweł Gruza</div>
                                 <div class="member-card__desc">Dyrektor generalny</div>
                             </div>
                         </li>
-                        <li class="team__item">
+                        <li class="team__item swiper-slide">
                             <div class="member-card">
                                 <div class="member-card__image"><img src="./assets/img/team/item-2.jpg" alt="member photo"></div>
                                 <div class="member-card__name">Artur Kurcweil</div>
                                 <div class="member-card__desc">Wiceprezes Zarządu Banku nadzorujący Obszar Technologii</div>
                             </div>
                         </li>
-                        <li class="team__item">
+                        <li class="team__item swiper-slide">
                             <div class="member-card">
                                 <div class="member-card__image"><img src="./assets/img/team/item-3.jpg" alt="member photo"></div>
                                 <div class="member-card__name">Bartosz Drabikowski</div>
@@ -542,7 +567,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="team__item">
+                        <li class="team__item swiper-slide">
                             <div class="member-card">
                                 <div class="member-card__image"><img src="./assets/img/team/item-4.jpg" alt="member photo"></div>
                                 <div class="member-card__name">Marcin Eckert</div>
@@ -551,6 +576,10 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="slider__arrows">
+                        <div class="slider__arrow slider__arrow--prev disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-41922273cf19fba4" aria-disabled="true"></div>
+                        <div class="slider__arrow slider__arrow--next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-41922273cf19fba4" aria-disabled="false"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -594,7 +623,8 @@
                                     <span></span>
                                     <i></i>
                                 </label>
-                                <p class="form__policy-msg">Zgadzam się na przetwarzanie przez PKO Bank Polski SA moich danych osobowych.
+                                <p class="form__policy-msg">Zgadzam się na przetwarzanie przez PKO Bank Polski SA moich danych
+                                    osobowych.
                                 </p>
                             </div>
 

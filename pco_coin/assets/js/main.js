@@ -231,11 +231,39 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
+	 * Header mobile
+	 */
+
+	let header = document.querySelector('.header');
+	let headerOpenBtn = header.querySelector('.header__open-btn');
+	let headerCloseBtn = header.querySelector('.header__close-btn');
+	let headerOverlay = header.querySelector('.header__overlay');
+
+	headerOpenBtn.addEventListener('click', function() {
+		headerOpen();
+	});
+	headerCloseBtn.addEventListener('click', function() {
+		headerClose();
+	});
+	headerOverlay.addEventListener('click', function() {
+		headerClose();
+	});
+
+	function headerClose() {
+		header.classList.remove('header--showed');
+	}
+
+	function headerOpen() {
+		header.classList.add('header--showed');
+	}
+
+
+
+	/**
 	 * Smooth scrolling of anchor
 	 */
 
 	let anchorLinks = document.querySelectorAll('.anchor');
-	let header = document.querySelector('.header');
 
 	anchorLinks.forEach(link => {
 		link.addEventListener('click', function (e) {
@@ -254,9 +282,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				return;
 			}
 
-			// if (headerMenu.classList.contains('header__menu--opened')) {
-			// 	menuCloseHandler();
-			// }
+			headerClose();
 
 			window.scrollTo({
 				behavior: 'smooth',
@@ -499,27 +525,61 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 */
 
 	//mob sliders
-	let sliders = document.querySelectorAll(".slider--lg");
+	let roadmapSlider = document.querySelector(".roadmap__wrap");
 
-	sliders.forEach(slider => {
-		let swiperPagination = document.createElement('div');
-		swiperPagination.classList.add('slider__pagination');
-		slider.appendChild(swiperPagination);
-
-		new Swiper(slider, {
-			freeMode: true,
-			slidesPerView: "auto",
-			spaceBetween: 30,
-			wrapperClass: 'slider__list',
-			slideClass: 'slider__slide',
-			pagination: {
-				el: swiperPagination,
-				bulletClass: "slider__bullet",
-				bulletActiveClass: "active",
-				clickable: true,
+	new Swiper(roadmapSlider, {
+		spaceBetween: 20,
+		freeMode: true,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: roadmapSlider.querySelector(".slider__arrow--next"),
+			prevEl: roadmapSlider.querySelector(".slider__arrow--prev"),
+			disabledClass: 'disabled',
+		},
+		breakpoints: {
+			576: {
+				freeMode: true,
+				slidesPerView: "auto",
 			},
-		});
+			1200: {
+				freeMode: true,
+				// allowTouchMove: false,
+				slidesPerView: 4,
+			}
+		},
 	});
+
+	let teamSlider = document.querySelector('.team__wrap');
+	
+	new Swiper(teamSlider, {
+		freeMode: true,
+		spaceBetween: 20,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: teamSlider.querySelector(".slider__arrow--next"),
+			prevEl: teamSlider.querySelector(".slider__arrow--prev"),
+			disabledClass: 'disabled',
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+			1200: {
+				slidesPerView: 4,
+			}
+		},
+	});
+
+
+	//update sliders
+	function updateSliders() {
+		roadmapSlider.swiper.update();
+		teamSlider.swiper.update();
+	}
+	window.addEventListener('resize', updateSliders);
 
 
 	//partners
@@ -528,8 +588,24 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		allowTouchMove: false,
 		// duration: 1000,
 		speed: 10000,
-		slidesPerView: '6',
+		slidesPerView: 2,
 		// autoplay: true,
+		
+		breakpoints: {
+			576: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 4,
+			},
+			992: {
+				slidesPerView: 5,
+			},
+			1200: {
+				freeMode: false,
+				slidesPerView: 6,
+			},
+		},
 	});
 
 	(function infinite() {
