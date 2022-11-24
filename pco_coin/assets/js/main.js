@@ -465,9 +465,25 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let timers = document.querySelectorAll('.timer');
 
 	timers.forEach(timer => {
-		let date = (timer.dataset.timeTo).split('.');
+		let nearDays = timer.dataset.nearDays;
+		let nextDays = timer.dataset.nextDays;
+		let nearDateView = timer.querySelector('.timer__near-date');
+		let nextDateView = timer.querySelector('.timer__next-date');
 
-		const deadline = new Date(date[2], date[1] - 1, date[0]);
+		let date = new Date();
+		date.setHours(0);
+		date.setMinutes(0);
+		date.setSeconds(0);
+
+		let nearDate = new Date(date.getTime());
+		let nextDate = new Date(date.getTime());
+
+		nearDate.setDate(nearDate.getDate() + parseInt(nearDays));
+		nextDate.setDate(nextDate.getDate() + parseInt(nextDays));
+
+		nearDateView.textContent = nearDate.toLocaleDateString();
+		nextDateView.textContent = nextDate.toLocaleDateString();
+		
 
 		// id таймера
 		let timerId = null;
@@ -477,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		}
 		// вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
 		function countdownTimer() {
-			const diff = deadline - new Date();
+			const diff = nearDate - new Date();
 			if (diff <= 0) {
 				clearInterval(timerId);
 			}
