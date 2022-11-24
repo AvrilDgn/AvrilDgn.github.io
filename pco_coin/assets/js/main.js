@@ -267,32 +267,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
-	 * Input mask
-	 */
-
-	let phoneInputs = document.querySelectorAll('input[type=tel]');
-
-	phoneInputs.forEach(input => {
-		let patternMask = new IMask(input, {
-			mask: '+{7} (000) 000-00-00',
-			lazy: true,
-			placeholderChar: '_'
-		});
-
-		input.addEventListener('focus', function () {
-			patternMask.updateOptions({ lazy: false });
-		}, true);
-
-		input.addEventListener('blur', function () {
-			patternMask.updateOptions({ lazy: true });
-			if (!patternMask.masked.rawInputValue) {
-				patternMask.value = '';
-			}
-		}, true);
-	});
-
-
-	/**
 	 * Calculator
 	 */
 
@@ -327,8 +301,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		calcResultCoin.textContent = value + ' monet';
 		calcResultZloty.textContent = (value * calcZloty).toFixed(2) + ' zł';
-
-		console.log(parseInt(calcInput.value.replace(/\s+/g, ''), 10) + ' ' + calcPercentValue + ' ' + calcMounth);
 	}
 
 
@@ -483,7 +455,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		nearDateView.textContent = nearDate.toLocaleDateString();
 		nextDateView.textContent = nextDate.toLocaleDateString();
-		
+
 
 		// id таймера
 		let timerId = null;
@@ -572,144 +544,174 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	/**
+	 * Phone validation
+	 */
+
+	let phoneInputs = document.querySelectorAll('input[type=tel]');
+
+	phoneInputs.forEach(input => {
+		let patternMask = new IMask(input, {
+			mask: '+{48} 000-000-000',
+			lazy: true,
+			placeholderChar: '_'
+		});
+
+		input.addEventListener('focus', function () {
+			patternMask.updateOptions({ lazy: false });
+		}, true);
+
+		input.addEventListener('blur', function () {
+			patternMask.updateOptions({ lazy: true });
+			if (!patternMask.masked.rawInputValue) {
+				patternMask.value = '';
+			}
+		}, true);
+	});
+
+
+	/**
 	 * Form
 	 */
 
-	/*let forms = document.querySelectorAll('.form');
-
-	let showErr = function (input, msg) {
-		let msgEl = document.createElement('div');
-		let parent = input.parentElement;
-
-		input.classList.add('form__input--fault');
-
-		msgEl.textContent = msg;
-		msgEl.classList.add('form__message');
-		parent.appendChild(msgEl);
-		msgEl.style.opacity = 1;
-
-		setTimeout(() => {
-			input.classList.remove('form__input--fault');
-			msgEl.style.opacity = null;
-
-			msgEl.addEventListener('transitionend', function () {
-				parent.removeChild(msgEl);
-			});
-		}, 3000);
-	};
-
-	let createThxPage = function (form) {
-		let thx = document.createElement('div');
-		let icon = document.createElement('div');
-		let title = document.createElement('div');
-		let subtitle = document.createElement('div');
-
-		thx.classList.add('thx');
-		icon.classList.add('thx__icon');
-		title.classList.add('thx__title', 'title');
-		subtitle.classList.add('thx__subtitle');
-
-		title.textContent = 'Спасибо';
-		subtitle.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit cursus nisi vel fermentum.';
-
-		thx.appendChild(icon);
-		thx.appendChild(title);
-		thx.appendChild(subtitle);
-
-		form.style.opacity = 0;
-		form.addEventListener('transitionend', function () {
-			this.style.display = 'none';
-
-			thx.style.opacity = 0;
-			this.parentElement.appendChild(thx);
-
-			raf(() => {
-				thx.style.opacity = 1;
-			});
-		});
-	}
-
-	let send = function (form) {
-		let formData = new FormData(form);
-		let request = new XMLHttpRequest();
-		let btn = form.querySelector('[type="submit"]');
-		request.open('POST', 'form.php', true);
-		request.setRequestHeader('accept', 'application/json');
-
-		let statusMessage = form.querySelector('.form__status');
-
-		if (!statusMessage) {
-			statusMessage = document.createElement('div');
-			statusMessage.classList.add('form__status');
-			form.appendChild(statusMessage);
-		}
-
-		formData.append('page', document.title);
-
-		btn.disabled = true;
-
-		request.send(formData);
-
-		request.onreadystatechange = function () {
-			if (request.readyState === 4) {
-				switch (request.status) {
-					case 200:
-						createThxPage(form);
-
-						break;
-
-					case 404:
-						statusMessage.innerHTML = "Сервер недоступен";
-						btn.disabled = false;
-
-						raf(() => {
-							statusMessage.classList.add('form__status--showed');
-						});
-
-						break;
-
-					default:
-						statusMessage.innerHTML = request.responseText;
-						btn.disabled = false;
-
-						raf(() => {
-							statusMessage.classList.add('form__status--showed');
-						});
-
-						break;
-				}
-			}
-		}
-	};
+	let forms = document.querySelectorAll('.form');
 
 	forms.forEach(form => {
-		form.addEventListener('submit', function (e) {
-			e.preventDefault();
+		let inputs = form.querySelectorAll('input');
 
-			let inputs = this.querySelectorAll('input');
-			let err = false;
+		inputs.forEach(input => {
+			input.addEventListener('blur', function () {
+				let err = false;
 
-			inputs.forEach(input => {
+				if (input.value <= 1) {
+					showErr(input, 'Uzupełnij pole');
+					return;
+				}
+
 				switch (input.getAttribute('name')) {
-					case 'phone':
-						if (input.value.length < 18) {
+					case 'your-phone':
+						if (input.value.length < 15) {
 							err = true;
-							showErr(input, 'Введите правильный номер телефона!');
+							showErr(input, 'Pole wypełnione niepoprawnie');
 						}
 
 						break;
 
-					case 'name':
+					case 'your-mail':
+
+						let regexp = /^[\w\d%$:.-]+@\w+\.\w{2,5}$/;
+
+						if (!regexp.test(input.value)) {
+							err = true;
+							showErr(input, 'Niepoprawny format adresu email');
+						}
+
+						break;
+
+
+					case 'your-name':
+					case 'your-surname':
+						if (input.value.replace(/[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ]+/g, '').length > 0) {
+							err = true;
+							showErr(input, 'Wartość pola jest nieprawidłowa');
+						}
+
+						break;
+
+					default:
+						break;
+				}
+
+				if (!err) {
+					hideErr(input);
+				}
+			});
+		});
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			let err = false;
+
+			inputs.forEach(input => {
+				if (input.value <= 1) {
+					showErr(input, 'Uzupełnij pole');
+					err = true;
+					return;
+				}
+
+				switch (input.getAttribute('name')) {
+					case 'your-phone':
+						if (input.value.length < 15) {
+							err = true;
+							showErr(input, 'Pole wypełnione niepoprawnie');
+						}
+
+						break;
+
+					case 'your-mail':
+
+						let regexp = /^[\w\d%$:.-]+@\w+\.\w{2,5}$/;
+
+						if (!regexp.test(input.value)) {
+							err = true;
+							showErr(input, 'Niepoprawny format adresu email');
+						}
+
+						break;
+
+
+					case 'your-name':
+					case 'your-surname':
+						if (input.value.replace(/[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ]+/g, '').length > 0) {
+							err = true;
+							showErr(input, 'Wartość pola jest nieprawidłowa');
+						}
+
+						break;
+
 					default:
 						break;
 				}
 			});
 
 			if (!err) {
-				// send
-				send(e.target);
+				location.href = this.getAttribute('action');
 			}
 		});
-	});*/
+	});
 
+	function showErr(input, msg) {
+		let msgEl = input.parentElement.querySelector('.form__message');
+
+		if (msgEl == null) {
+			msgEl = document.createElement('div');
+			msgEl.classList.add('form__message');
+			input.parentElement.appendChild(msgEl);
+		}
+
+		input.classList.add('form__input--fault');
+
+		msgEl.textContent = msg;
+		msgEl.style.opacity = 0;
+
+		window.requestAnimationFrame(function () {
+			window.requestAnimationFrame(function () {
+				msgEl.style.opacity = 1;
+			});
+		});
+	};
+
+	function hideErr(input) {
+		let msgEl = input.parentElement.querySelector('.form__message');
+
+		input.classList.remove('form__input--fault');
+
+		if (msgEl) {
+			msgEl.style.opacity = 0;
+
+			msgEl.addEventListener('transitionend', function () {
+				input.parentElement.removeChild(msgEl);
+			}, { once: true });
+		}
+	}
 });

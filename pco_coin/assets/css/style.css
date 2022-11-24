@@ -1234,8 +1234,8 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: #585858;
 }
 
-.form__input:focus,
-.form__input:active {
+.form__input:not(.form__input--fault):focus,
+.form__input:not(.form__input--fault):active {
   border-color: #004C9A;
 }
 
@@ -1329,7 +1329,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .form__policy-checkbox i::before,
 .form__policy-checkbox i::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   display: block;
@@ -1374,29 +1374,21 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   padding: 6px 30px;
 }
 
-.form__status {
-  margin-top: 15px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2;
-  text-align: center;
+.form__message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 500;
+  font-size: 14px;
   color: #E4202C;
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%);
-  opacity: 0;
+  -webkit-transform: translateY(23px);
+      -ms-transform: translateY(23px);
+          transform: translateY(23px);
   -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
   transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
   -o-transition: transform 0.2s ease-out, opacity 0.2s ease-out;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
-}
-
-.form__status--showed {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -3040,6 +3032,115 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   content: "";
   padding-top: 64.467%;
   display: block;
+}
+
+.thx .container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.thx__logo {
+  width: 34px;
+}
+
+.thx__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.thx__title {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.21053;
+  color: black;
+  text-align: center;
+}
+
+.thx__loader {
+  position: relative;
+  margin-top: 30px;
+}
+
+.thx__timer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.08;
+  color: black;
+}
+
+.thx__spinner {
+  width: 67px;
+  height: 71px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/spinner.svg);
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation: rotate-loader 1.5s linear infinite;
+          animation: rotate-loader 1.5s linear infinite;
+}
+
+.thx__check {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.08;
+  color: #585858;
+  text-align: center;
+}
+
+.thx__msg {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.44;
+  color: #585858;
+  text-align: center;
+}
+
+@-webkit-keyframes rotate-loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotate-loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
 }
 
 @media screen and (max-width: 992px) {
