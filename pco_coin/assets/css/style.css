@@ -1167,10 +1167,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   color: white;
 }
 
-.form > *:not(:last-child) {
-  margin-bottom: 30px;
-}
-
 .form__fields-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1187,6 +1183,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .form__field {
   position: relative;
+  display: block;
   width: 100%;
   z-index: 1;
 }
@@ -1252,6 +1249,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 }
 
 .form__submit-block {
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1472,6 +1470,187 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 .nav a:hover {
   color: #004C9A;
   text-decoration: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.modal__wrapper {
+  position: relative;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(33, 34, 37, 0.6);
+}
+
+.modal__container {
+  position: relative;
+  margin: 50px 0;
+  padding: 50px 60px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  overflow: visible;
+  -webkit-transition: opacity 0.2s ease-out 0s, -webkit-transform 0.2s ease-out 0s;
+  transition: opacity 0.2s ease-out 0s, -webkit-transform 0.2s ease-out 0s;
+  -o-transition: transform 0.2s ease-out 0s, opacity 0.2s ease-out 0s;
+  transition: transform 0.2s ease-out 0s, opacity 0.2s ease-out 0s;
+  transition: transform 0.2s ease-out 0s, opacity 0.2s ease-out 0s, -webkit-transform 0.2s ease-out 0s;
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0;
+}
+
+.modal__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.20833;
+  color: black;
+  text-align: center;
+}
+
+.modal__form {
+  margin-top: 40px;
+  max-width: 392px;
+  width: 100%;
+}
+
+.modal__form .form__field {
+  margin-bottom: 36px;
+}
+
+.modal__form .form__send-btn {
+  margin-top: 22px;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  -webkit-transition: opacity ease-out 0.3s;
+  -o-transition: opacity ease-out 0.3s;
+  transition: opacity ease-out 0.3s;
+  cursor: pointer;
+  outline: none;
+  z-index: 10;
+}
+
+.modal__close-btn::before,
+.modal__close-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #004C9A;
+}
+
+.modal__close-btn::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal__close-btn:hover,
+.modal__close-btn:focus {
+  opacity: 0.75;
+}
+
+.modal--active {
+  opacity: 1;
+}
+
+.modal--active .modal__container {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.modal--moved,
+.modal--active {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.modal--show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal--visible {
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -2687,11 +2866,17 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.partners__wrap .swiper-wrapper {
+  -webkit-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
 .partners__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 3400px;
+  width: 100%;
 }
 
 .partner-card {
@@ -2710,8 +2895,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
           align-items: center;
   height: 150px;
   width: 200px;
-  -webkit-animation: trans-partners 17s linear infinite;
-          animation: trans-partners 17s linear infinite;
 }
 
 .partner-card__logo {
@@ -2731,20 +2914,6 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   font-weight: 500;
   font-size: 22px;
   color: black;
-}
-
-@-webkit-keyframes trans-partners {
-  100% {
-    -webkit-transform: translateX(-1700px);
-            transform: translateX(-1700px);
-  }
-}
-
-@keyframes trans-partners {
-  100% {
-    -webkit-transform: translateX(-1700px);
-            transform: translateX(-1700px);
-  }
 }
 
 .team {

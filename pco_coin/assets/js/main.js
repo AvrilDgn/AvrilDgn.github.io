@@ -534,6 +534,27 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
+	//partners
+	let sliderPartners = new Swiper(".partners__wrap", {
+		loop: true,
+		allowTouchMove: false,
+		// duration: 1000,
+		speed: 10000,
+		slidesPerView: '6',
+		// autoplay: true,
+	});
+
+	(function infinite() {
+		sliderPartners.slideTo(sliderPartners.slides.length);
+		sliderPartners.once('transitionEnd', function () {
+			sliderPartners.slideTo(sliderPartners.params.slidesPerView, 0, false);
+			setTimeout(function () {
+				infinite();
+			}, 0);
+		});
+	})();
+
+
 	/**
 	 * Form
 	 */
