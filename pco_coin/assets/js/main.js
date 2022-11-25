@@ -234,26 +234,42 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Header mobile
 	 */
 
+	let html = document.documentElement;
 	let header = document.querySelector('.header');
 	let headerOpenBtn = header.querySelector('.header__open-btn');
 	let headerCloseBtn = header.querySelector('.header__close-btn');
 	let headerOverlay = header.querySelector('.header__overlay');
+	let _scrollPosition = 0;
 
-	headerOpenBtn.addEventListener('click', function() {
+	headerOpenBtn.addEventListener('click', function () {
 		headerOpen();
 	});
-	headerCloseBtn.addEventListener('click', function() {
+	headerCloseBtn.addEventListener('click', function () {
 		headerClose();
 	});
-	headerOverlay.addEventListener('click', function() {
+	headerOverlay.addEventListener('click', function () {
 		headerClose();
 	});
 
 	function headerClose() {
+		html.classList.remove('modal-opened');
+		html.style.marginRight = '';
+		header.style.paddingRight = '';
+		window.scrollTo(0, _scrollPosition);
+		html.style.top = '';
 		header.classList.remove('header--showed');
 	}
 
 	function headerOpen() {
+		_scrollPosition = window.pageYOffset;
+		const marginSize = window.innerWidth - html.clientWidth;
+		html.style.top = `${-_scrollPosition}px`;
+
+		if (marginSize) {
+			html.style.marginRight = `${marginSize}px`;
+			header.style.paddingRight = `${parseInt(getComputedStyle(header).paddingRight, 10) + marginSize}px`;
+		}
+		html.classList.add('modal-opened');
 		header.classList.add('header--showed');
 	}
 
@@ -550,7 +566,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 	let teamSlider = document.querySelector('.team__wrap');
-	
+
 	new Swiper(teamSlider, {
 		freeMode: true,
 		spaceBetween: 20,
@@ -590,7 +606,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		speed: 10000,
 		slidesPerView: 2,
 		// autoplay: true,
-		
+
 		breakpoints: {
 			576: {
 				slidesPerView: 3,
