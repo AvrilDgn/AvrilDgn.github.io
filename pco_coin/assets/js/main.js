@@ -6,7 +6,7 @@ class Modal {
 			closeOnOverlay: true,
 			closeOnEsc: true,
 			closeBtnAttrName: 'data-modal-close',
-			catchFocus: true,
+			catchFocus: false,
 			fixedSelectors: '*[data-fixed]',
 			beforeOpen: () => { },
 			afterClose: () => { },

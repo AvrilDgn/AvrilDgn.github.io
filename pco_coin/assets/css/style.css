@@ -960,15 +960,12 @@ p {
 a {
   color: inherit;
   background-color: transparent;
+  outline: none;
 }
 
 a:hover {
   text-decoration: none;
   color: inherit;
-}
-
-a:focus {
-  outline: 1px solid #949494;
 }
 
 a:hover,
@@ -1014,6 +1011,7 @@ textarea {
   font-size: 100%;
   line-height: 1.5;
   border: none;
+  outline: none;
 }
 
 button:focus,
@@ -3779,5 +3777,86 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
   .roadmap__item {
     width: 100%;
+  }
+
+  .roadmap__item .roadmap-card {
+    height: initial;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .cover__title {
+    font-size: 32px;
+  }
+
+  .calc__rate-value {
+    margin-top: 15px;
+  }
+
+  .calc__rate-value input {
+    width: 120px;
+    height: 50px;
+    font-size: 25px;
+  }
+
+  .calc__rate-value span {
+    font-size: 16px;
+  }
+
+  .calc__percent-value {
+    margin-top: 0;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .calc__result-value {
+    font-size: 25px;
+  }
+
+  .legend__item:not(.legend__item--result)::before {
+    margin-right: 6px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .legend__item-type {
+    font-size: 16px;
+  }
+
+  .legend__item-value {
+    font-size: 16px;
+  }
+
+  .roadmap-card__name {
+    font-size: 18px;
+  }
+
+  .roadmap-card__desc {
+    font-size: 16px;
+  }
+
+  .roadmap-card__price-title {
+    margin-top: 20px;
+  }
+
+  .roadmap-card__price-value {
+    font-size: 28px;
+  }
+
+  .roadmap-card__minimum-title {
+    font-size: 16px;
+  }
+
+  .roadmap-card__minimum-value {
+    font-size: 18px;
+  }
+
+  .roadmap-card__minimum-value b {
+    font-size: 28px;
+  }
+
+  .roadmap-card__readiness {
+    margin-top: 20px;
+    font-size: 18px;
   }
 }
