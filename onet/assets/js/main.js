@@ -29,7 +29,19 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 		reviewSendForm.addEventListener('transitionend', function() {
 			reviewSendForm.style.display = 'none';
+			reviewSendModeration.style.position = 'static';
 			reviewSendModeration.style.opacity = 1;
+		});
+	});
+
+
+	//review like
+
+	let likeIcon = document.querySelectorAll('.review-card__like i');
+
+	likeIcon.forEach(icon => {
+		icon.addEventListener('click', function() {
+			this.classList.toggle('active');
 		});
 	});
 });

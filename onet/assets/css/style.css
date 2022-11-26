@@ -7424,7 +7424,6 @@ blockquote {
   background: url(https://ocdn.eu/phx/quote.png) 0 0 no-repeat;
   padding-left: 3em;
   font-style: italic;
-  font-size: 1.15em;
 }
 
 .par {
@@ -7498,6 +7497,7 @@ blockquote {
 }
 
 .review-send__moderation {
+  position: absolute;
   padding: 10px;
   background-color: #ffd200;
   font-weight: 700;
@@ -7615,6 +7615,15 @@ blockquote {
   color: #000000;
 }
 
+.review-card__msg a {
+  color: #0c55e2;
+}
+
+.review-card__msg a:hover {
+  color: #0c55e2;
+  text-decoration: underline;
+}
+
 .review-card__controlls {
   margin-top: 5px;
   display: -webkit-box;
@@ -7636,12 +7645,33 @@ blockquote {
 }
 
 .review-card__like i {
+  position: relative;
   margin-right: 6px;
   display: block;
   width: 15px;
   height: 18px;
   background-image: url(../img/rew-like.svg);
   cursor: pointer;
+}
+
+.review-card__like i::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/rew-like-active.svg);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.review-card__like i:hover::before,
+.review-card__like i.active::before {
+  opacity: 1;
 }
 
 .review-card__like span {
