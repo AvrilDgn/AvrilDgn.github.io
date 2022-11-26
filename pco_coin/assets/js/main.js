@@ -240,6 +240,8 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let headerCloseBtn = header.querySelector('.header__close-btn');
 	let headerOverlay = header.querySelector('.header__overlay');
 	let _scrollPosition = 0;
+	let isHeaderMenu = false;
+	const mediaQueryMenu = window.matchMedia('(min-width: 992px)');
 
 	headerOpenBtn.addEventListener('click', function () {
 		headerOpen();
@@ -258,6 +260,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		window.scrollTo(0, _scrollPosition);
 		html.style.top = '';
 		header.classList.remove('header--showed');
+		isHeaderMenu = false;
 	}
 
 	function headerOpen() {
@@ -271,8 +274,16 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		}
 		html.classList.add('modal-opened');
 		header.classList.add('header--showed');
+		isHeaderMenu = true;
 	}
 
+	function closeMenu(e) {
+		if (e.matches && isHeaderMenu) {
+			headerClose();
+		}
+	}
+	mediaQueryMenu.addEventListener('change', closeMenu);
+	closeMenu(mediaQueryMenu);
 
 
 	/**
@@ -298,7 +309,9 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				return;
 			}
 
-			headerClose();
+			if (isHeaderMenu) {
+				headerClose();
+			}
 
 			window.scrollTo({
 				behavior: 'smooth',
