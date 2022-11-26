@@ -2763,6 +2763,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
 
 .legend__item--result .legend__item-type {
   font-weight: 700;
+  width: 40%;
 }
 
 .legend__item--blue::before {
@@ -2798,7 +2799,7 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
   font-size: 18px;
   line-height: 1.22222;
   color: #585858;
-  width: calc(50% - 41px);
+  width: calc(40% - 41px);
 }
 
 .legend__item-value {
@@ -3783,14 +3784,22 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     margin-right: 5px;
   }
 
+  .legend__item--result .legend__item-type {
+    width: 35%;
+  }
+
   .legend__item-type {
     padding-right: 0;
+    width: calc(35% - 35px);
     font-size: 12px;
+    -webkit-box-flex: initial;
+        -ms-flex-positive: initial;
+            flex-grow: initial;
   }
 
   .legend__item-value {
     padding-left: 5px;
-    width: 60%;
+    width: 65%;
     font-size: 14px;
   }
 
@@ -3851,7 +3860,12 @@ button:not(:disabled):not(.disabled):not([class*="“--disabled”"]) {
     height: 25px;
   }
 
+  .legend__item--result .legend__item-type {
+    width: 35%;
+  }
+
   .legend__item-type {
+    width: calc(35% - 30px);
     font-size: 10px;
   }
 

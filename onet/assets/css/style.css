@@ -7585,12 +7585,15 @@ blockquote {
 }
 
 .review-card__head {
+  margin-right: -10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .review-card__name {
@@ -7602,6 +7605,7 @@ blockquote {
 }
 
 .review-card__time {
+  margin-right: 10px;
   font-size: 14px;
   line-height: 1.86;
   color: #656565;
@@ -7937,10 +7941,6 @@ blockquote {
     margin-top: 10px;
     margin-left: initial;
     text-align: center;
-  }
-
-  .reviews-list__item ul {
-    padding-left: 25px;
   }
 
   .review-card__avatar {
@@ -8388,8 +8388,20 @@ blockquote {
 }
 
 @media screen and (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+
   .navigation__item a {
     padding: 12px;
+  }
+
+  .Lead_imageWrapper___RUgY {
+    margin: 0 -15px;
+  }
+
+  blockquote {
+    margin: 0 -15px;
   }
 }
 

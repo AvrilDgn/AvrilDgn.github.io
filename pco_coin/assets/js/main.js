@@ -577,6 +577,18 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		},
 	});
+	
+	let mediaQueryRoadmap = window.matchMedia('(max-width: 576px)');
+	function changeRoadmapSlider(e) {
+		if (e.matches) {
+			roadmapSlider.swiper.slideTo(1, false,false);
+		} else {
+			roadmapSlider.swiper.slideTo(0, false,false);
+		}
+	}
+	mediaQueryRoadmap.addEventListener('change', changeRoadmapSlider);
+	changeRoadmapSlider(mediaQueryRoadmap);
+
 
 	let teamSlider = document.querySelector('.team__wrap');
 
