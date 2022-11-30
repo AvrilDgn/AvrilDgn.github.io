@@ -565,10 +565,37 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		});
 	});
 
-	//mob sliders
-	let sliders = document.querySelectorAll(".slider--lg");
 
-	sliders.forEach(slider => {
+	//about page description text slider
+	let aboutDescSliders = document.querySelectorAll('.about__desc.slider');
+
+	aboutDescSliders.forEach(slider => {
+		let counter = slider.querySelector('.about__desc-number');
+
+		let el = new Swiper(slider.querySelector(".slider__wrap"), {
+			spaceBetween: 30,
+			wrapperClass: 'slider__list',
+			slideClass: 'slider__slide',
+			freeMode: false,
+			slidesPerView: 1,
+
+			navigation: {
+				nextEl: slider.querySelector(".slider__arrow--next"),
+				prevEl: slider.querySelector(".slider__arrow--prev"),
+				disabledClass: 'disabled',
+			},
+		});
+
+		el.on('slideChange', function (e) {
+			counter.textContent = '0' + (e.activeIndex + 1);
+		})
+	});
+
+
+	//mob sliders
+	let mobileSliders = document.querySelectorAll(".slider--lg");
+
+	mobileSliders.forEach(slider => {
 		let swiperPagination = document.createElement('div');
 		swiperPagination.classList.add('slider__pagination');
 		slider.appendChild(swiperPagination);
@@ -590,12 +617,12 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 
 	//update sliders
-	function updateSliders() {
-		document.querySelectorAll(".slider").forEach(slider => {
+	function updateMobileSliders() {
+		mobileSliders.forEach(slider => {
 			slider.swiper.update();
 		});
 	}
-	window.addEventListener('resize', updateSliders);
+	window.addEventListener('resize', updateMobileSliders);
 
 
 	/**
