@@ -5,7 +5,7 @@ class Accordion {
 			alwaysOpen: true,
 			duration: 350,
 			itemClass: 'accordion__item',
-			headerClass: 'accordion__header',
+			headClass: 'accordion__head',
 			bodyClass: 'accordion__body',
 		};
 		this._config = Object.assign(defaultConfig, config);
@@ -17,7 +17,7 @@ class Accordion {
 		}
 
 		this._el.addEventListener('click', (e) => {
-			const elHeader = e.target.closest('.' + this._config.headerClass);
+			const elHeader = e.target.closest('.' + this._config.headClass);
 
 			if (!elHeader) {
 				return;
@@ -32,52 +32,50 @@ class Accordion {
 		});
 	}
 	show(el) {
-		const elBody = el.querySelector('.' + this._config.bodyClass);
-		if (elBody.classList.contains('collapsing') || el.classList.contains('show')) {
-			return;
-		}
-		elBody.style.display = 'block';
-		const height = elBody.offsetHeight;
-		elBody.style.height = 0;
-		elBody.style.overflow = 'hidden';
-		elBody.style.transition = `height ${this._config.duration}ms ease`;
-		elBody.classList.add('collapsing');
-		el.classList.add('slidedown');
-		elBody.offsetHeight;
-		elBody.style.height = `${height}px`;
-		window.setTimeout(() => {
-			elBody.classList.remove('collapsing');
-			el.classList.remove('slidedown');
-			elBody.classList.add('collapse');
-			el.classList.add('show');
-			elBody.style.display = '';
-			elBody.style.height = '';
-			elBody.style.transition = '';
-			elBody.style.overflow = '';
-		}, this._config.duration);
+		const body = el.querySelector('.' + this._config.bodyClass);
+
+		// 	window.requestAnimationFrame(function () {
+		// 		callback();
+		// 	});
+		el.classList.add('show');
+		const height = body.offsetHeight;
+		body.style.height = 0;
+		body.style.overflow = 'hidden';
+		body.style.transition = `height ${this._config.duration}ms ease-out`;
+		body.classList.add('collapsing');
+		body.offsetHeight;
+		body.style.height = `${height}px`;
+
+		body.addEventListener('transitionend', function () {
+			body.classList.remove('collapsing');
+			body.classList.add('collapse');
+			body.style.display = '';
+			body.style.height = '';
+			body.style.transition = '';
+			body.style.overflow = '';
+		}, { once: true });
 	}
 	hide(el) {
-		const elBody = el.querySelector('.' + this._config.bodyClass);
-		if (elBody.classList.contains('collapsing') || !el.classList.contains('show')) {
-			return;
-		}
-		elBody.style.height = `${elBody.offsetHeight}px`;
-		elBody.offsetHeight;
-		elBody.style.display = 'block';
-		elBody.style.height = 0;
-		elBody.style.overflow = 'hidden';
-		elBody.style.transition = `height ${this._config.duration}ms ease`;
-		elBody.classList.remove('collapse');
+		const body = el.querySelector('.' + this._config.bodyClass);
+
+		body.style.height = `${body.offsetHeight}px`;
+		body.offsetHeight;
+		body.style.display = 'block';
+		body.style.height = 0;
+		body.style.overflow = 'hidden';
+		body.style.transition = `height ${this._config.duration}ms ease-out`;
+		body.classList.remove('collapse');
 		el.classList.remove('show');
-		elBody.classList.add('collapsing');
-		window.setTimeout(() => {
-			elBody.classList.remove('collapsing');
-			elBody.classList.add('collapse');
-			elBody.style.display = '';
-			elBody.style.height = '';
-			elBody.style.transition = '';
-			elBody.style.overflow = '';
-		}, this._config.duration);
+		body.classList.add('collapsing');
+
+		body.addEventListener('transitionend', function () {
+			body.classList.remove('collapsing');
+			body.classList.add('collapse');
+			body.style.display = '';
+			body.style.height = '';
+			body.style.transition = '';
+			body.style.overflow = '';
+		}, { once: true });
 	}
 	toggle(el) {
 		el.classList.contains('show') ? this.hide(el) : this.show(el);
@@ -355,7 +353,6 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	tabWraps.forEach(tabWrap => {
 		let btns = tabWrap.querySelectorAll('.tabs__buttons .button');
 		let placeholder = tabWrap.querySelector('.tabs__placeholder');
-		// let tabConts = tab.querySelectorAll('.tabs__content');
 
 		placeholder.addEventListener('click', function () {
 			tabWrap.classList.toggle('opened');
@@ -394,33 +391,31 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 						});
 					});
 				}, { once: true });
-
-				/*let activeElHeight = activeEl.offsetHeight;
-				activeEl.style.height = activeElHeight + 'px';
-
-				window.requestAnimationFrame(function () {
-					window.requestAnimationFrame(function () {
-						activeEl.style.height = 0;
-					});
-				});
-
-				activeEl.addEventListener('transitionend', function () {
-					activeEl.style.height = null;
-					activeEl.classList.remove('active');
-					btn.classList.add('active');
-					nextEl.classList.add('active');
-					let nextElHeight = nextEl.offsetHeight;
-					nextEl.style.height = 0;
-
-					console.log(nextElHeight);
-
-					window.requestAnimationFrame(function () {
-						window.requestAnimationFrame(function () {
-							nextEl.style.height = nextElHeight + 'px';
-						});
-					});
-				}, { once: true });*/
 			})
+		});
+	});
+
+
+	/**
+	 * Type Selection
+	 */
+
+	let typeSelections = document.querySelectorAll('.type-selection');
+
+	typeSelections.forEach(wrapper => {
+		let head = wrapper.querySelector('.type-selection__selected');
+		let headText = wrapper.querySelector('.type-selection__selected-text');
+		let inputs = wrapper.querySelectorAll('input');
+
+		head.addEventListener('click', function () {
+			wrapper.classList.toggle('show');
+		});
+
+		inputs.forEach(input => {
+			input.addEventListener('change', function () {
+				headText.textContent = this.value;
+				wrapper.classList.toggle('show');
+			});
 		});
 	});
 
@@ -433,8 +428,24 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		alwaysOpen: false,
 		duration: 350,
 		itemClass: 'faq__item',
-		headerClass: 'faq__head',
+		headClass: 'faq__head',
 		bodyClass: 'faq__body',
+	});
+
+	new Accordion('.cooperation__list', {
+		alwaysOpen: false,
+		duration: 350,
+		itemClass: 'cooperation-item',
+		headClass: 'cooperation-item__head',
+		bodyClass: 'cooperation-item__body',
+	});
+
+	new Accordion('.services__list', {
+		alwaysOpen: false,
+		duration: 350,
+		itemClass: 'service-item',
+		headClass: 'service-item__head',
+		bodyClass: 'service-item__body',
 	});
 
 
