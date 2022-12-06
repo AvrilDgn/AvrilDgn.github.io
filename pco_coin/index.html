@@ -92,43 +92,42 @@
         <!-- End Cover -->
 
         <!-- Rounds -->
-        <section id="rounds" class="rounds timer" data-near-days="7" data-next-days="34">
+        <section id="rounds" class="rounds timer" data-complited-text="Zakończony">
             <div class="container">
                 <div class="rounds__wrap">
                     <ul class="rounds__list">
                         <li class="rounds__item">
-                            <div class="round-card">
+                            <div class="round-card timer__item" data-days-before="-64">
                                 <div class="round-card__name">Przedsprzedaż (Runda 1)</div>
                                 <div class="round-card__price-title">Cena</div>
                                 <div class="round-card__price-value">0.36 zł </div>
-                                <div class="round-card__date">Zakończony</div>
+                                <div class="round-card__date timer__readiness">Zakończony</div>
                             </div>
                         </li>
                         <li class="rounds__item">
-                            <div class="round-card">
+                            <div class="round-card timer__item" data-days-before="-30">
                                 <div class="round-card__name">Sprzedaż prywatna (Runda 2)</div>
                                 <div class="round-card__price-title">Cena</div>
                                 <div class="round-card__price-value">1.54 zł </div>
-                                <div class="round-card__date">
-                                    Do końca: <span class="timer__day">12</span>d <span class="timer__hour">16</span>g <span
-								class="timer__minute">15</span>m <span class="timer__second">32</span>s
+                                <div class="round-card__date timer__readiness">
+                                    Do końca: 12d 16g 15m 32s
                                 </div>
                             </div>
                         </li>
                         <li class="rounds__item">
-                            <div class="round-card">
+                            <div class="round-card timer__item" data-days-before="12">
                                 <div class="round-card__name">ICO (Runda 3)</div>
                                 <div class="round-card__price-title">Cena</div>
                                 <div class="round-card__price-value">8.14 zł </div>
-                                <div class="round-card__date">Zaplanowano na <span class="timer__near-date">28.11.2022</span></div>
+                                <div class="round-card__date timer__readiness">Zaplanowano na 28.11.2022</div>
                             </div>
                         </li>
                         <li class="rounds__item">
-                            <div class="round-card">
+                            <div class="round-card timer__item" data-days-before="39">
                                 <div class="round-card__name">Wyprzedaż główna (Runda 4)</div>
                                 <div class="round-card__price-title">Cena</div>
                                 <div class="round-card__price-value">20.81 zł </div>
-                                <div class="round-card__date">Zaplanowano na <span class="timer__next-date">25.12.2022</span></div>
+                                <div class="round-card__date timer__readiness">Zaplanowano na 25.12.2022</div>
                             </div>
                         </li>
                     </ul>
@@ -274,7 +273,7 @@
 
                             <div class="calc__result-group">
                                 <div class="calc__result-value calc__result-value--coin">90 monet</div>
-                                <div class="calc__result-value calc__result-value--zloty">1 872.9 zł</div>
+                                <div class="calc__result-value calc__result-value--zloty" data-zloty="20.81">1 872.9 zł</div>
                             </div>
                         </div>
 
@@ -361,7 +360,7 @@
         <!-- End Tokenomika -->
 
         <!-- Roadmap -->
-        <section id="roadmap" class="roadmap timer" data-near-days="7" data-next-days="34">
+        <section id="roadmap" class="roadmap timer" data-complited-text="Gotowe">
             <div class="container">
                 <h2 class="roadmap__title">Mapa rozwoju</h2>
                 <div class="roadmap__subtitle">Oto, co się wydarzyło i co przed nami.</div>
@@ -369,7 +368,7 @@
                 <div class="roadmap__wrap slider">
                     <ul class="roadmap__list swiper-wrapper">
                         <li class="roadmap__item swiper-slide">
-                            <div class="roadmap-card">
+                            <div class="roadmap-card timer__item" data-days-before="-64">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
                                     <div class="roadmap-card__hook-circle"></div>
@@ -377,7 +376,7 @@
                                     <div class="roadmap-card__hook-dotted"></div>
                                 </div>
 
-                                <div class="roadmap-card__date">12.09.2022</div>
+                                <div class="roadmap-card__date timer__date">12.09.2022</div>
 
                                 <div class="roadmap-card__name">Przedsprzedaż (Runda 1)</div>
                                 <div class="roadmap-card__desc">
@@ -390,11 +389,11 @@
                                 <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
                                 <div class="roadmap-card__minimum-value"><b>150</b> PKOCoins</div>
 
-                                <div class="roadmap-card__readiness">Gotowe</div>
+                                <div class="roadmap-card__readiness timer__readiness">Gotowe</div>
                             </div>
                         </li>
                         <li class="roadmap__item swiper-slide">
-                            <div class="roadmap-card">
+                            <div class="roadmap-card timer__item" data-days-before="-30">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
                                     <div class="roadmap-card__hook-circle"></div>
@@ -402,7 +401,7 @@
                                     <div class="roadmap-card__hook-dotted"></div>
                                 </div>
 
-                                <div class="roadmap-card__date">16.10.2022</div>
+                                <div class="roadmap-card__date timer__date">16.10.2022</div>
 
                                 <div class="roadmap-card__name">Sprzedaż prywatna (Runda 2)</div>
                                 <div class="roadmap-card__desc">
@@ -415,14 +414,13 @@
                                 <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
                                 <div class="roadmap-card__minimum-value"><b>735</b> PKOCoins</div>
 
-                                <div class="roadmap-card__readiness">
-                                    Do końca: <span class="timer__day">12</span>d <span class="timer__hour">16</span>g <span
-								class="timer__minute">15</span>m <span class="timer__second">32</span>s
+                                <div class="roadmap-card__readiness timer__readiness">
+                                    Do końca: 12d 16g 15m 32s
                                 </div>
                             </div>
                         </li>
                         <li class="roadmap__item swiper-slide">
-                            <div class="roadmap-card">
+                            <div class="roadmap-card timer__item" data-days-before="12">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
                                     <div class="roadmap-card__hook-circle"></div>
@@ -430,7 +428,7 @@
                                     <div class="roadmap-card__hook-dotted"></div>
                                 </div>
 
-                                <div class="roadmap-card__date"><span class="timer__near-date">28.11.2022</span></div>
+                                <div class="roadmap-card__date timer__date">28.11.2022</div>
 
                                 <div class="roadmap-card__name">ICO (Runda 3)</div>
                                 <div class="roadmap-card__desc">
@@ -443,12 +441,11 @@
                                 <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
                                 <div class="roadmap-card__minimum-value"><b>5400</b> PKOCoins</div>
 
-                                <div class="roadmap-card__readiness">Zaplanowano na <span class="timer__next-date">25.12.2022</span>
-                                </div>
+                                <div class="roadmap-card__readiness timer__readiness">Zaplanowano na 25.12.2022</div>
                             </div>
                         </li>
                         <li class="roadmap__item swiper-slide">
-                            <div class="roadmap-card">
+                            <div class="roadmap-card timer__item" data-days-before="39">
                                 <div class="roadmap-card__hook">
                                     <div class="roadmap-card__hook-line roadmap-card__hook-line--left"></div>
                                     <div class="roadmap-card__hook-circle"></div>
@@ -456,7 +453,7 @@
                                     <div class="roadmap-card__hook-dotted"></div>
                                 </div>
 
-                                <div class="roadmap-card__date">25.12.2022</div>
+                                <div class="roadmap-card__date timer__date">25.12.2022</div>
 
                                 <div class="roadmap-card__name">Wyprzedaż główna (Runda 4)</div>
                                 <div class="roadmap-card__desc">
@@ -469,7 +466,7 @@
                                 <div class="roadmap-card__minimum-title">Minimalna ilość monet</div>
                                 <div class="roadmap-card__minimum-value">Brak limitu zakupów</div>
 
-                                <div class="roadmap-card__readiness">Zaplanowano na 25.12.2022</div>
+                                <div class="roadmap-card__readiness timer__readiness">Zaplanowano na 25.12.2022</div>
                             </div>
                         </li>
                     </ul>
@@ -708,8 +705,7 @@
     <script src="./assets/js/swiper-bundle.min.js" defer></script>
     <script src="./assets/js/imask.min.js" defer></script>
     <script src="./assets/js/slimselect.min.js" defer></script>
-    <script src="./assets/js/main.js" defer></script>
-    <!-- <script src="./assets/js/main.min.js" defer></script> -->
+    <script src="./assets/js/main.min.js" defer></script>
 
     <!-- End JS -->
 

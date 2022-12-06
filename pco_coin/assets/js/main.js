@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	let calcResultZloty = calc.querySelector('.calc__result-value--zloty');
 	let calcPercentValue = 0;
 	let calcMounth = 0;
-	let calcZloty = 20.81;
+	let calcZloty = Number(calcResultZloty.dataset.zloty);
 
 	calcDays.forEach(btn => {
 		if (btn.checked) {
@@ -491,62 +491,133 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 
 	let timers = document.querySelectorAll('.timer');
 
+
+	// timers.forEach(timer => {
+	// 	let nearDays = timer.dataset.nearDays;
+	// 	let nextDays = timer.dataset.nextDays;
+	// 	let nearDateView = timer.querySelector('.timer__near-date');
+	// 	let nextDateView = timer.querySelector('.timer__next-date');
+
+	// 	let date = new Date();
+	// 	date.setHours(0);
+	// 	date.setMinutes(0);
+	// 	date.setSeconds(0);
+
+	// 	let nearDate = new Date(date.getTime());
+	// 	let nextDate = new Date(date.getTime());
+
+	// 	nearDate.setDate(nearDate.getDate() + parseInt(nearDays));
+	// 	nextDate.setDate(nextDate.getDate() + parseInt(nextDays));
+
+	// 	nearDateView.textContent = nearDate.toLocaleDateString();
+	// 	nextDateView.textContent = nextDate.toLocaleDateString();
+
+
+	// 	// id таймера
+	// 	let timerId = null;
+	// 	// склонение числительных
+	// 	function declensionNum(num, words) {
+	// 		return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+	// 	}
+	// 	// вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
+	// 	function countdownTimer() {
+	// 		const diff = nearDate - new Date();
+	// 		if (diff <= 0) {
+	// 			clearInterval(timerId);
+	// 		}
+	// 		const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+	// 		const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+	// 		const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+	// 		const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+	// 		$days.textContent = days < 10 ? '0' + days : days;
+	// 		$hours.textContent = hours < 10 ? '0' + hours : hours;
+	// 		$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+	// 		$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+	// 		$days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
+	// 		$hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
+	// 		$minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+	// 		$seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+	// 	}
+	// 	// получаем элементы, содержащие компоненты даты
+	// 	const $days = timer.querySelector('.timer__day');
+	// 	const $hours = timer.querySelector('.timer__hour');
+	// 	const $minutes = timer.querySelector('.timer__minute');
+	// 	const $seconds = timer.querySelector('.timer__second');
+	// 	// вызываем функцию countdownTimer
+	// 	countdownTimer();
+	// 	// вызываем функцию countdownTimer каждую секунду
+	// 	timerId = setInterval(countdownTimer, 1000);
+	// });
+
+
 	timers.forEach(timer => {
-		let nearDays = timer.dataset.nearDays;
-		let nextDays = timer.dataset.nextDays;
-		let nearDateView = timer.querySelector('.timer__near-date');
-		let nextDateView = timer.querySelector('.timer__next-date');
+		let items = timer.querySelectorAll('.timer__item');
+		let complitedText = timer.dataset.complitedText;
+		let dateList = [];
+		let daysList = [];
 
-		let date = new Date();
-		date.setHours(0);
-		date.setMinutes(0);
-		date.setSeconds(0);
+		items.forEach(item => {
+			let daysBefore = item.dataset.daysBefore;
 
-		let nearDate = new Date(date.getTime());
-		let nextDate = new Date(date.getTime());
+			let date = new Date();
+			date.setHours(0);
+			date.setMinutes(0);
+			date.setSeconds(0);
 
-		nearDate.setDate(nearDate.getDate() + parseInt(nearDays));
-		nextDate.setDate(nextDate.getDate() + parseInt(nextDays));
+			let nextDate = new Date(date.getTime());
+			nextDate.setDate(nextDate.getDate() + parseInt(daysBefore));
 
-		nearDateView.textContent = nearDate.toLocaleDateString();
-		nextDateView.textContent = nextDate.toLocaleDateString();
+			daysList.push(daysBefore);
+			dateList.push(nextDate);
+		});
 
+		let activeEl = false;
+		for (let i = 0; i < items.length; i++) {
+			const item = items[i];
+			let dateView = item.querySelector('.timer__date');
+			let timerView = item.querySelector('.timer__readiness');
 
-		// id таймера
-		let timerId = null;
-		// склонение числительных
-		function declensionNum(num, words) {
-			return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
-		}
-		// вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
-		function countdownTimer() {
-			const diff = nearDate - new Date();
-			if (diff <= 0) {
-				clearInterval(timerId);
+			if (dateView) {
+				dateView.textContent = dateList[i].toLocaleDateString();
 			}
-			const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
-			const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
-			const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
-			const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
-			$days.textContent = days < 10 ? '0' + days : days;
-			$hours.textContent = hours < 10 ? '0' + hours : hours;
-			$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-			$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
-			$days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-			$hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-			$minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-			$seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+
+			if (daysList[i+1] <= 0) {
+				timerView.textContent = complitedText;
+			} else {
+				if (activeEl) {
+					timerView.textContent = dateList[i].toLocaleDateString();
+					timerView.textContent = `Zaplanowano na ${dateList[i].toLocaleDateString()}`;
+				} else {
+					activeEl = true;
+					let timerInterval = null;
+
+					timerView.textContent = countdownTimer(dateList[i + 1], timerInterval);
+					timerInterval = setInterval(function() {
+						timerView.textContent = countdownTimer(dateList[i + 1], timerInterval);
+					}, 1000);
+				}
+			}
 		}
-		// получаем элементы, содержащие компоненты даты
-		const $days = timer.querySelector('.timer__day');
-		const $hours = timer.querySelector('.timer__hour');
-		const $minutes = timer.querySelector('.timer__minute');
-		const $seconds = timer.querySelector('.timer__second');
-		// вызываем функцию countdownTimer
-		countdownTimer();
-		// вызываем функцию countdownTimer каждую секунду
-		timerId = setInterval(countdownTimer, 1000);
 	});
+
+	function countdownTimer(diffDate, interval) {
+		const diff = diffDate - new Date();
+
+		if (diff <= 0) {
+			clearInterval(interval);
+		}
+
+		const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+		const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+		const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+		const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+		const $days = days < 10 ? '0' + days : days;
+		const $hours = hours < 10 ? '0' + hours : hours;
+		const $minutes = minutes < 10 ? '0' + minutes : minutes;
+		const $seconds = seconds < 10 ? '0' + seconds : seconds;
+		
+		return `Do końca: ${$days}d ${$hours}g ${$minutes}m ${$seconds}s`;
+	}
 
 
 	/**
@@ -577,13 +648,13 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			}
 		},
 	});
-	
+
 	let mediaQueryRoadmap = window.matchMedia('(max-width: 576px)');
 	function changeRoadmapSlider(e) {
 		if (e.matches) {
-			roadmapSlider.swiper.slideTo(1, false,false);
+			roadmapSlider.swiper.slideTo(1, false, false);
 		} else {
-			roadmapSlider.swiper.slideTo(0, false,false);
+			roadmapSlider.swiper.slideTo(0, false, false);
 		}
 	}
 	mediaQueryRoadmap.addEventListener('change', changeRoadmapSlider);

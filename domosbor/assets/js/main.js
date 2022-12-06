@@ -280,10 +280,10 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	 * Search
 	 */
 
-	let search = document.querySelectorAll('.search');
+	let search = document.querySelectorAll('.search-bar');
 
 	search.forEach(el => {
-		let openBtn = el.querySelector('.search__btn');
+		let openBtn = el.querySelector('.search-bar__btn');
 		let hidden = el.classList.contains('hidden');
 
 		openBtn.addEventListener('click', function (e) {
@@ -600,6 +600,45 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 		el.on('slideChange', function (e) {
 			counter.textContent = '0' + (e.activeIndex + 1);
 		})
+	});
+
+
+	//cabinet obj media slider
+	let cabinetMediaSliders = document.querySelectorAll('.cabinet-media.slider');
+
+	cabinetMediaSliders.forEach(slider => {
+		let el = new Swiper(slider.querySelector(".slider__wrap"), {
+			spaceBetween: 30,
+			wrapperClass: 'slider__list',
+			slideClass: 'slider__slide',
+			freeMode: false,
+			slidesPerView: 1,
+
+			navigation: {
+				nextEl: slider.querySelector(".slider__arrow--next"),
+				prevEl: slider.querySelector(".slider__arrow--prev"),
+				disabledClass: 'disabled',
+			},
+			
+			pagination: {
+				el: slider.querySelector(".slider__pagination"),
+				bulletClass: "slider__bullet",
+				bulletActiveClass: "active",
+				clickable: true,
+			},
+
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 3,
+				},
+				1200: {
+					slidesPerView: 5,
+				},
+			},
+		});
 	});
 
 
