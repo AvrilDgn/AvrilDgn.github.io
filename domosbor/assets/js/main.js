@@ -603,6 +603,30 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 	});
 
 
+	//chat slider
+	let chatSliders = document.querySelectorAll('.cabinet-chat__messages');
+
+	chatSliders.forEach(slider => {
+		let scrollbar = document.createElement('div');
+		scrollbar.classList.add('swiper-scrollbar');
+		slider.appendChild(scrollbar);
+
+		let swiper = new Swiper(slider, {
+			direction: "vertical",
+			wrapperClass: 'cabinet-chat__messages-wrap',
+			slideClass: 'cabinet-chat__messages-content',
+			slidesPerView: "auto",
+			freeMode: true,
+			scrollbar: {
+				el: scrollbar,
+			},
+			mousewheel: true,
+		});
+
+		swiper.scrollbar.setTranslate('translate3d(0px, 300px, 0px)');
+	});
+
+
 	//cabinet obj media slider
 	let cabinetMediaSliders = document.querySelectorAll('.cabinet-media.slider');
 
@@ -619,7 +643,7 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 				prevEl: slider.querySelector(".slider__arrow--prev"),
 				disabledClass: 'disabled',
 			},
-			
+
 			pagination: {
 				el: slider.querySelector(".slider__pagination"),
 				bulletClass: "slider__bullet",

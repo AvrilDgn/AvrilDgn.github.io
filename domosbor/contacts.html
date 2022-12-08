@@ -470,27 +470,31 @@
                     <h1 class="main__page-title">Контакты</h1>
                 </div>
 
-                <div class="contacts-data">
-                    <h2 class="contacts-data__title">Санкт-Петербург</h2>
+                <div class="contacts__wrap">
+                    <div class="contacts-data">
+                        <h2 class="contacts-data__title">Санкт-Петербург</h2>
 
-                    <div class="contacts-data__info-item">
-                        <svg>
-                            <use xlink:href="./assets/img/sprite.svg#map-pin"></use>
-                        </svg>
-                        <div>Проспект Петрова, дом 111, корп. 1, офис 125</div>
+                        <div class="contacts-data__info-item">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#map-pin"></use>
+                            </svg>
+                            <div>Проспект Петрова, дом 111, корп. 1, офис 125</div>
+                        </div>
+                        <div class="contacts-data__info-item">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#phone"></use>
+                            </svg>
+                            <div><a href="tel:88003015051">8 (800) 301 50 51</a></div>
+                        </div>
+                        <div class="contacts-data__info-item">
+                            <svg>
+                                <use xlink:href="./assets/img/sprite.svg#mail"></use>
+                            </svg>
+                            <div><a href="mailto:info@domosbor.ru">info@domosbor.ru</a></div>
+                        </div>
                     </div>
-                    <div class="contacts-data__info-item">
-                        <svg>
-                            <use xlink:href="./assets/img/sprite.svg#phone"></use>
-                        </svg>
-                        <div><a href="tel:88003015051">8 (800) 301 50 51</a></div>
-                    </div>
-                    <div class="contacts-data__info-item">
-                        <svg>
-                            <use xlink:href="./assets/img/sprite.svg#mail"></use>
-                        </svg>
-                        <div><a href="mailto:info@domosbor.ru">info@domosbor.ru</a></div>
-                    </div>
+
+                    <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/-/CCUjvBRqdD"></iframe>
                 </div>
 
                 <div class="contacts-requisites">
@@ -548,88 +552,7 @@
         <!-- Faq -->
         <section id="faq" class="faq sec">
             <div class="container">
-                <h2 class="sec__title">Частые вопросы</h2>
-
                 <div class="faq__wrap">
-                    <ul class="faq__list">
-                        <li class="faq__item">
-                            <div class="faq__head">
-                                <h3 class="faq__question">Вопрос 1 ?</h3>
-                                <div class="faq__arrow"></div>
-                            </div>
-                            <div class="faq__body">
-                                <div class="faq__answer">
-                                    <div class="faq__video">
-                                        <img src="./assets/img/faq/image.jpg" alt="">
-
-                                        <div class="faq__play">
-                                            <svg>
-                                                <use xlink:href="./assets/img/sprite.svg#play"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="faq__item">
-                            <div class="faq__head">
-                                <h3 class="faq__question">Вопрос 2 ?</h3>
-                                <div class="faq__arrow"></div>
-                            </div>
-                            <div class="faq__body">
-                                <div class="faq__answer">
-                                    <div class="faq__video">
-                                        <img src="./assets/img/faq/image.jpg" alt="">
-
-                                        <div class="faq__play">
-                                            <svg>
-                                                <use xlink:href="./assets/img/sprite.svg#play"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="faq__item">
-                            <div class="faq__head">
-                                <h3 class="faq__question">Вопрос 3 ?</h3>
-                                <div class="faq__arrow"></div>
-                            </div>
-                            <div class="faq__body">
-                                <div class="faq__answer">
-                                    <div class="faq__video">
-                                        <img src="./assets/img/faq/image.jpg" alt="">
-
-                                        <div class="faq__play">
-                                            <svg>
-                                                <use xlink:href="./assets/img/sprite.svg#play"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="faq__item">
-                            <div class="faq__head">
-                                <h3 class="faq__question">Вопрос 4 ?</h3>
-                                <div class="faq__arrow"></div>
-                            </div>
-                            <div class="faq__body">
-                                <div class="faq__answer">
-                                    <div class="faq__video">
-                                        <img src="./assets/img/faq/image.jpg" alt="">
-
-                                        <div class="faq__play">
-                                            <svg>
-                                                <use xlink:href="./assets/img/sprite.svg#play"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-
                     <div class="faq__feedback">
                         <h3 class="faq__feedback-title">Не нашли нужный ответ?</h3>
                         <div class="faq__feedback-subtitle">Мы готовы ответить на любой ваш вопрос!</div>
@@ -888,7 +811,7 @@
     <script src="./assets/js/imask.min.js" defer></script>
     <script src="./assets/js/slimselect.min.js" defer></script>
 
-    <script src="./assets/js/main.min.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
 
     <!-- End JS -->
 

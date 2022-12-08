@@ -541,33 +541,63 @@
                             </a>
                         </div>
                         <div class="cabinet-chat__messages">
-                            <div class="cabinet-chat__messages-content chat-messages">
-                                <div class="chat-messages__group">
-                                    <div class="chat-messages__avatar">
-                                        <img src="./assets/img/cabinet/manager-min.jpg" alt="">
+                            <div class="cabinet-chat__messages-wrap slider__list">
+                                <div class="cabinet-chat__messages-content chat-messages slider__slide">
+                                    <div class="chat-messages__group">
+                                        <div class="chat-messages__avatar">
+                                            <img src="./assets/img/cabinet/manager-min.jpg" alt="">
+                                        </div>
+                                        <div class="chat-messages__list">
+                                            <div class="chat-messages__text">Добрый день! Подготовили ваш проект.</div>
+                                            <div class="chat-messages__text">Перешлю вам на почту.</div>
+                                            <div class="chat-messages__text">У вас есть какие-то вопросы ко мне?</div>
+                                        </div>
                                     </div>
-                                    <div class="chat-messages__list">
-                                        <div class="chat-messages__text">Добрый день! Подготовили ваш проект.</div>
-                                        <div class="chat-messages__text">Перешлю вам на почту.</div>
-                                        <div class="chat-messages__text">У вас есть какие-то вопросы ко мне?</div>
-                                    </div>
-                                </div>
 
-                                <div class="chat-messages__group chat-messages__group--user">
-                                    <div class="chat-messages__avatar">
-                                        <img src="./assets/img/cabinet/avatar-min.jpg" alt="">
+                                    <div class="chat-messages__group chat-messages__group--user">
+                                        <div class="chat-messages__avatar">
+                                            <img src="./assets/img/cabinet/avatar-min.jpg" alt="">
+                                        </div>
+                                        <div class="chat-messages__list">
+                                            <div class="chat-messages__text">Добрый! Спасибо просмотрю!</div>
+                                        </div>
                                     </div>
-                                    <div class="chat-messages__list">
-                                        <div class="chat-messages__text">Добрый! Спасибо просмотрю!</div>
-                                    </div>
-                                </div>
 
-                                <div class="chat-messages__group chat-messages__group--user">
-                                    <div class="chat-messages__avatar">
-                                        <img src="./assets/img/cabinet/avatar-min.jpg" alt="">
+                                    <div class="chat-messages__group chat-messages__group--user">
+                                        <div class="chat-messages__avatar">
+                                            <img src="./assets/img/cabinet/avatar-min.jpg" alt="">
+                                        </div>
+                                        <div class="chat-messages__list">
+                                            <div class="chat-messages__text">Вопросов пока нет.</div>
+                                        </div>
                                     </div>
-                                    <div class="chat-messages__list">
-                                        <div class="chat-messages__text">Вопросов пока нет.</div>
+                                    <div class="chat-messages__group">
+                                        <div class="chat-messages__avatar">
+                                            <img src="./assets/img/cabinet/manager-min.jpg" alt="">
+                                        </div>
+                                        <div class="chat-messages__list">
+                                            <div class="chat-messages__text">Добрый день! Подготовили ваш проект.</div>
+                                            <div class="chat-messages__text">Перешлю вам на почту.</div>
+                                            <div class="chat-messages__text">У вас есть какие-то вопросы ко мне?</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-messages__group chat-messages__group--user">
+                                        <div class="chat-messages__avatar">
+                                            <img src="./assets/img/cabinet/avatar-min.jpg" alt="">
+                                        </div>
+                                        <div class="chat-messages__list">
+                                            <div class="chat-messages__text">Добрый! Спасибо просмотрю!</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-messages__group chat-messages__group--user">
+                                        <div class="chat-messages__avatar">
+                                            <img src="./assets/img/cabinet/avatar-min.jpg" alt="">
+                                        </div>
+                                        <div class="chat-messages__list">
+                                            <div class="chat-messages__text">Вопросов пока нет.</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -687,6 +717,354 @@
         <section class="cabinet-editing sec">
             <div class="container">
                 <h2 class="sec__title">Редактирование данных</h2>
+
+                <div class="cabinet-editing__card-list">
+                    <div class="cabinet-editing__card cabinet-edit-card">
+                        <h3 class="cabinet-edit-card__title">Общая информация</h3>
+
+                        <table class="cabinet-edit-card__table">
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Название бренда:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>SKOBEX Technologies</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Фактическое местонахождение:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>Москва, пр. Вернандского, 113</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Описание компании:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p><strong>SKOBEX TECHNOLOGIES</strong> — это производитель современных каркасно-панельных
+                                        домокомплектов. Компания
+                                        поставляет надёжные и экологичные конструкции из качественных материалов. Домокомплекты SKOBEX
+                                        просты в сборке и собираются профессиональной бригадой за 3-7 дней.</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Email адрес:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru">user@mail.ru</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="cabinet-editing__card cabinet-edit-card">
+                        <h3 class="cabinet-edit-card__title">Реквизиты</h3>
+
+                        <table class="cabinet-edit-card__table">
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Реквизиты
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>ООО «SKOBEX»</p>
+                                    <p>ИНН: 999999999</p>
+                                    <p>ОГРН: 99999999999</p>
+                                    <p>Сервис SKOBEX</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Загрузка реквизитов:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Какая гарантия на ваш домокомплект?
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <ul>
+                                        <li>Каркас панелей – 5 лет;</li>
+                                        <li>Лакокрасочное покрытие видимых фасадных деревянных элементов – 1 год;</li>
+                                        <li>Двери наружные, лестницы временные монтажные – гарантия не распространяется;</li>
+                                        <li>Оконные конструкции – 1 год;</li>
+                                        <li>Иные материалы и комплектующие Товара – гарантия предоставляется согласно паспорта
+                                            Производителя.</li>
+                                    </ul>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="cabinet-editing__card cabinet-edit-card">
+                        <h3 class="cabinet-edit-card__title">Производственная информация</h3>
+
+                        <table class="cabinet-edit-card__table">
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Объем продукции (в год):
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>От 50 до 70 домокомплектов</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Список оборудования:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>Универсальный домостроительный центр с ЧПУ Hundegger Speed-Cut Maschine SC3-160</p>
+                                    <p>Программа Dietrich's для всех видов деревянного строительства</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Производственные площади:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>1500 м2</p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Сечение бруса
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        Доска камерной сушки 45х95, 45х145, 45х195 - применяется в каркасе
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Порода древесины:
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        Ангарская сосна, Алтайская сосна, Лиственница, Сосна, Ель, Кедр, Кело
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__edit-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#edit"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="cabinet-editing__card cabinet-edit-card">
+                        <h3 class="cabinet-edit-card__title">Производственная информация</h3>
+
+                        <table class="cabinet-edit-card__table">
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Сертификаты на продукцию
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Типовой договор
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Логотип
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Видео о вашем заводе
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Сертификат нашего дилерства
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Интервью с директором
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="cabinet-edit-card__row">
+                                <th class="cabinet-edit-card__name">
+                                    Отзывы
+                                </th>
+                                <td class="cabinet-edit-card__info">
+                                    <p>
+                                        <a href="mailto:user@mail.ru" class="green-text">Загружено 5 файлов</a>
+                                    </p>
+                                </td>
+                                <td class="cabinet-edit-card__action">
+                                    <a class="cabinet-edit-card__upload-btn" href="#">
+                                        <svg>
+                                            <use xlink:href="./assets/img/sprite.svg#upload"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- End Data Editing -->
@@ -888,7 +1266,7 @@
     <script src="./assets/js/imask.min.js" defer></script>
     <script src="./assets/js/slimselect.min.js" defer></script>
 
-    <script src="./assets/js/main.min.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
 
     <!-- End JS -->
 
