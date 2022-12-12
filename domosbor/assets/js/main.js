@@ -652,8 +652,11 @@ document.addEventListener("DOMContentLoaded", function (domLoadedEvent) {
 			},
 
 			breakpoints: {
-				768: {
+				576: {
 					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 3,
 				},
 				992: {
 					slidesPerView: 3,
