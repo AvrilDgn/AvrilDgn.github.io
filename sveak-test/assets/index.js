@@ -61,7 +61,7 @@ function header() {
     menuBtn.classList.add("header__menu-btn--cross");
     header2.classList.add("header--menu-opened");
     menu.addEventListener("transitionend", function() {
-      if (window.innerWidth < 640) {
+      if (window.innerWidth < 576) {
         fixScroll();
       }
       cb();
@@ -71,7 +71,7 @@ function header() {
   }) => {
     menuBtn.classList.remove("header__menu-btn--cross");
     header2.classList.remove("header--menu-opened");
-    if (window.innerWidth < 640) {
+    if (window.innerWidth < 576) {
       unfixScroll();
     }
     cb();
