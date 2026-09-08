@@ -1240,7 +1240,10 @@ body {
   flex-direction: column;
   gap: 3px;
   background: none;
+  opacity: 0.15;
   z-index: 20;
+  transition: var(--transition);
+  transition-property: opacity, transform;
 }
 @media screen and (min-width: 1024px) {
   .header__menu-btn {
@@ -1261,9 +1264,8 @@ body {
   width: 24px;
   background-color: #000;
   border-radius: 2px;
-  opacity: 0.15;
   transition: var(--transition);
-  transition-property: opacity, transform, top;
+  transition-property: transform, top;
 }
 .header__menu-btn span:nth-child(1) {
   top: 0;
@@ -1274,7 +1276,7 @@ body {
 .header__menu-btn span:nth-child(3) {
   top: 16px;
 }
-.header__menu-btn:hover span, .header__menu-btn:focus-visible span {
+.header__menu-btn:hover, .header__menu-btn:focus-visible {
   opacity: 0.5;
 }
 .header__menu-btn--cross span {
