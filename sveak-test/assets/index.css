@@ -1242,7 +1242,8 @@ body {
   background: none;
   opacity: 0.15;
   z-index: 20;
-  transition: var(--transition) opacity;
+  transition: var(--transition);
+  transition-property: opacity, transform;
 }
 @media screen and (min-width: 1024px) {
   .header__menu-btn {
@@ -1497,7 +1498,8 @@ body {
   border-radius: 10px;
   text-decoration: none;
   cursor: pointer;
-  transition: var(--transition) background-color;
+  transition: var(--transition);
+  transition-property: background-color, opacity, transform !important;
 }
 @media screen and (min-width: 420px) {
   .card {
